@@ -653,8 +653,8 @@ const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&':'&amp;', '<':'&lt;', 
 const art = p => `<svg viewBox="0 0 200 200" role="img" aria-label="${esc(p.name)}">${ART[p.art]}</svg>`;
 const grad = p => (p.g && p.g.length === 2) ? `--g1:${p.g[0]};--g2:${p.g[1]}` : '--g1:#EEF2F7;--g2:#D5DEE9';
 const hasPhoto = p => !!(p && Array.isArray(p.imgs) && p.imgs.length);
-const visual = (p, i = 0) => hasPhoto(p)
-  ? `<img src="${esc(p.imgs[i])}" alt="${esc(p.name)}" loading="lazy" decoding="async">`
+const visual = (p, i = 0, small = false) => hasPhoto(p)
+  ? `<img src="${esc(small && p.thumb ? p.thumb : p.imgs[i])}" alt="${esc(p.name)}" loading="lazy" decoding="async">`
   : (ART[p.art] ? art(p) : '');
 const LABELS = { pendiente:'Pendiente', aprobado:'Aprobado', camino:'En camino', entregado:'Entregado', rechazado:'Rechazado' };
 const MONTHS = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
@@ -697,7 +697,7 @@ function renderGrid() {
     (!q || norm(`${p.name} ${p.desc} ${catLabel(p.cat)}`).includes(q)));
   $('#grid').innerHTML = list.map(p => `<article class="card">
       <div class="media${hasPhoto(p) ? ' photo' : ''}" style="${grad(p)}">
-        <button class="media-btn" type="button" data-open="${p.id}" aria-label="Ver ${esc(p.name)}">${visual(p)}</button>
+        <button class="media-btn" type="button" data-open="${p.id}" aria-label="Ver ${esc(p.name)}">${visual(p, 0, true)}</button>
         <span class="price-pill">${money(p.price)}</span>
         <button class="add" type="button" data-add="${p.id}" aria-label="Agregar ${esc(p.name)} al carrito">${ic('plus')}</button>
       </div>
@@ -1257,7 +1257,7 @@ async function loadCatalog() {
     const data = await res.json();
     const list = Array.isArray(data) ? data : data && data.products;
     if (!Array.isArray(list)) return;
-    const clean = list.filter(p => p && p.id && p.name && Number(p.price) > 0)
+    const clean = list.filter(p => p && p.id && p.name && Number(p.price) > 0 && p.status !== 'pendiente' && p.status !== 'rechazado')
       .map(p => ({ ...p, price: Number(p.price), cat: CATS.some(c => c.id === p.cat) ? p.cat : 'otros', feats: Array.isArray(p.feats) ? p.feats : [], desc: p.desc || '' }));
     if (!clean.length) return;
     PRODUCTS = clean; byId = Object.fromEntries(PRODUCTS.map(p => [p.id, p]));

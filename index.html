@@ -178,6 +178,8 @@ p{margin:0}
 .price-pill{position:absolute;z-index:1;left:8px;bottom:8px;height:32px;padding:0 12px;border-radius:16px;display:flex;align-items:center;font-size:15px;font-weight:700;letter-spacing:-.01em;font-variant-numeric:tabular-nums;
   color:var(--photo-ink);background:var(--photo-glass);-webkit-backdrop-filter:blur(6px) saturate(2) brightness(1.08);backdrop-filter:blur(6px) saturate(2) brightness(1.08);
   box-shadow:0 0 0 .5px var(--photo-edge),inset 0 1px 0 rgba(255,255,255,1),inset 0 0 0 .5px rgba(255,255,255,.6),inset 0 -6px 10px -8px var(--photo-edge),0 6px 14px -10px rgba(10,20,40,.4);pointer-events:none}
+.pend-pill{position:absolute;z-index:1;left:8px;top:8px;padding:4px 9px;border-radius:10px;background:var(--warn);color:#FFFFFF;font-size:11px;font-weight:700;letter-spacing:.02em}
+.review-bar{margin-top:14px;padding:10px 14px;border-radius:16px;background:var(--warn-soft);color:var(--warn);font-size:14px;font-weight:600}
 .add{position:absolute;z-index:1;right:8px;bottom:8px;width:36px;height:36px;border:0;border-radius:18px;display:grid;place-items:center;background:var(--accent-glass);color:var(--accent-ink);-webkit-backdrop-filter:blur(4px) saturate(1.6);backdrop-filter:blur(4px) saturate(1.6);
   box-shadow:inset 0 1px 0 rgba(255,255,255,.6),inset 0 0 0 .5px rgba(255,255,255,.4),inset 0 -3px 6px rgba(0,0,0,.14),0 8px 16px -8px var(--accent);transition:transform .45s var(--ease-spring)}
 .add svg{width:20px;height:20px}
@@ -610,12 +612,14 @@ const TIENDA = {
   abono: 0.5
 };
 const LIVE = !!TIENDA.api;
+const REVIEW = location.hash === '#revisar';
 const ABONO = TIENDA.abono;
 const CATS = [
   { id:'todo', label:'Todo' },
   { id:'hogar', label:'Hogar y organización' },
   { id:'cocina', label:'Cocina' },
   { id:'cuidado', label:'Cuidado personal' },
+  { id:'navidad', label:'Navidad' },
   { id:'bebes', label:'Bebés y salud' },
   { id:'otros', label:'Otros' }
 ];
@@ -698,7 +702,7 @@ function renderGrid() {
   $('#grid').innerHTML = list.map(p => `<article class="card">
       <div class="media${hasPhoto(p) ? ' photo' : ''}" style="${grad(p)}">
         <button class="media-btn" type="button" data-open="${p.id}" aria-label="Ver ${esc(p.name)}">${visual(p, 0, true)}</button>
-        <span class="price-pill">${money(p.price)}</span>
+        <span class="price-pill">${money(p.price)}</span>${p.status === 'pendiente' ? '<span class="pend-pill">Por aprobar</span>' : ''}
         <button class="add" type="button" data-add="${p.id}" aria-label="Agregar ${esc(p.name)} al carrito">${ic('plus')}</button>
       </div>
       <button class="card-text" type="button" data-open="${p.id}"><span class="name">${esc(p.name)}</span><span class="cat">${catLabel(p.cat)}</span></button>
@@ -1017,7 +1021,7 @@ function setView(v, fromHash) {
   $('#compact').textContent = v === 'pedidos' ? 'Mis pedidos' : 'Vitrina';
   if (changed) { window.scrollTo(0, 0); relensSoon(); }
   if (v === 'pedidos') refreshOrders();
-  if (!fromHash && location.hash !== '#' + v) { try { location.hash = v; } catch (e) {} }
+  if (!fromHash && !REVIEW && location.hash !== '#' + v) { try { location.hash = v; } catch (e) {} }
   onScroll();
 }
 
@@ -1257,7 +1261,7 @@ async function loadCatalog() {
     const data = await res.json();
     const list = Array.isArray(data) ? data : data && data.products;
     if (!Array.isArray(list)) return;
-    const clean = list.filter(p => p && p.id && p.name && Number(p.price) > 0 && p.status !== 'pendiente' && p.status !== 'rechazado')
+    const clean = list.filter(p => p && p.id && p.name && Number(p.price) > 0 && (REVIEW ? p.status !== 'rechazado' : (p.status !== 'pendiente' && p.status !== 'rechazado')))
       .map(p => ({ ...p, price: Number(p.price), cat: CATS.some(c => c.id === p.cat) ? p.cat : 'otros', feats: Array.isArray(p.feats) ? p.feats : [], desc: p.desc || '' }));
     if (!clean.length) return;
     PRODUCTS = clean; byId = Object.fromEntries(PRODUCTS.map(p => [p.id, p]));
@@ -1272,6 +1276,7 @@ function footNote() {
 
 /* ---------- Inicio ---------- */
 if (LIVE) { const pill = $('.preview-pill'); if (pill) pill.remove(); }
+if (REVIEW) $('.notice').insertAdjacentHTML('beforebegin', '<p class="review-bar">Modo revisión: aquí ves también los productos por aprobar. Las clientas no los ven.</p>');
 $('#trackHint').hidden = LIVE;
 renderChips(); renderGrid(); renderOrders(); updateBadge(); deadline(); footNote();
 loadCatalog();

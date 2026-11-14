@@ -24,8 +24,9 @@ from rapidocr_onnxruntime import RapidOCR
 RAIZ = os.path.join(os.path.dirname(__file__), '..')
 SALIDA = os.path.join(RAIZ, 'img', 'p')
 AZUL = (30, 102, 245)
-RE_PRECIO = re.compile(r'(\$|precio|\d+[.,]\d{2}\b|^\d{1,3}$)', re.I)
+RE_PRECIO = re.compile(r'(\$\s*\d|precio|\b\d{1,3}[.,]\d{2}\b)', re.I)
 RE_PROVEEDOR = re.compile(r'(\d{3}[\s.-]?\d{3}[\s.-]?\d{3,4}|@|t\.me|https?:|www\.|kayde|pandita|importadora|whats|pedidos|cons[ií]guelo|env[ií]os|mayor|precio vip)', re.I)
+RE_MARCA = re.compile(r'(kayde|pandita|importadora|s[ií]guenos)', re.I)
 FUENTES = ['/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf', '/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf']
 
 ocr = RapidOCR()
@@ -47,10 +48,11 @@ def limpiar(ruta, precio):
     h, w = img.shape[:2]
     resultado, _ = ocr(img)
     mascara = np.zeros((h, w), np.uint8)
-    cajas_precio = []
+    cajas_precio, marca = [], False
     for caja, txt, conf in (resultado or []):
-        if conf < 0.5:
+        if float(conf) < 0.5:
             continue
+        marca = marca or bool(RE_MARCA.search(txt))
         es_precio = bool(RE_PRECIO.search(txt))
         if es_precio or RE_PROVEEDOR.search(txt):
             pts = np.array(caja, np.int32)
@@ -65,13 +67,19 @@ def limpiar(ruta, precio):
     if cajas_precio:
         # junta las cajas de precio cercanas y pone la etiqueta nueva en la más grande
         x, y, bw, bh = max(cajas_precio, key=lambda b: b[2] * b[3])
+        # une las cajas de precio vecinas (p. ej. "Precio:" arriba de "$6.99") para taparlas todas
+        cerca = [b for b in cajas_precio if abs((b[1] + b[3] / 2) - (y + bh / 2)) < bh * 2.2 and abs((b[0] + b[2] / 2) - (x + bw / 2)) < max(bw, b[2]) * 1.5]
+        ux0, uy0 = min(b[0] for b in cerca), min(b[1] for b in cerca)
+        ux1, uy1 = max(b[0] + b[2] for b in cerca), max(b[1] + b[3] for b in cerca)
         tam = max(30, min(int(bh * 1.25), int(h * 0.09)))
         f = fuente(tam)
         texto = dinero(precio)
         tw, th = f.getbbox(texto)[2], f.getbbox(texto)[3]
         px, py = int(tam * 0.55), int(tam * 0.32)
-        ancho, alto = tw + 2 * px, th + 2 * py
-        cx, cy = x + bw / 2, y + bh / 2
+        ancho = max(tw + 2 * px, ux1 - ux0 + 24)
+        alto = max(th + 2 * py, uy1 - uy0 + 16)
+        px, py = (ancho - tw) // 2, (alto - th) // 2
+        cx, cy = (ux0 + ux1) / 2, (uy0 + uy1) / 2
         x0 = int(min(max(8, cx - ancho / 2), w - ancho - 8))
         y0 = int(min(max(8, cy - alto / 2), h - alto - 8))
         capa = Image.new('RGBA', pil.size, (0, 0, 0, 0))
@@ -80,7 +88,7 @@ def limpiar(ruta, precio):
         d.rounded_rectangle([x0, y0, x0 + ancho, y0 + alto], radius=alto // 2, fill=AZUL + (255,))
         d.text((x0 + px, y0 + py - f.getbbox(texto)[1] // 2), texto, font=f, fill=(255, 255, 255, 255))
         pil = Image.alpha_composite(pil.convert('RGBA'), capa).convert('RGB')
-    return pil, borrado, bool(cajas_precio)
+    return pil, borrado, bool(cajas_precio), marca or bool(cajas_precio)
 
 
 def main():
@@ -94,9 +102,15 @@ def main():
     actuales = {p['id']: p for p in catalogo.get('products', []) if p.get('imgs')}  # se quitan los de ilustración
     hoy = datetime.now(timezone.utc).isoformat()
     for it in items:
-        imgs = []
+        fotos = []
         for i, foto in enumerate(it['fotos'][:4]):
-            pil, borrado, con_precio = limpiar(os.path.join(entrada, foto), it['price'])
+            pil, borrado, con_precio, marca = limpiar(os.path.join(entrada, foto), it['price'])
+            fotos.append((pil, marca))
+            if borrado:
+                print(f"{it['id']} foto {i}: texto del proveedor borrado{', precio nuevo' if con_precio else ''}{', afiche con marca' if marca else ''}")
+        limpias = [p for p, m in fotos if not m] or [p for p, m in fotos]  # afiches del proveedor solo si no hay otra foto
+        imgs = []
+        for i, pil in enumerate(limpias):
             grande = pil.copy(); grande.thumbnail((1000, 1000))
             nombre = f"{it['id'].lower()}-{i}.jpg"
             grande.save(os.path.join(SALIDA, nombre), 'JPEG', quality=82, optimize=True, progressive=True)
@@ -104,7 +118,6 @@ def main():
             if i == 0:
                 peq = pil.copy(); peq.thumbnail((560, 560))
                 peq.save(os.path.join(SALIDA, f"{it['id'].lower()}-s.jpg"), 'JPEG', quality=80, optimize=True, progressive=True)
-            print(f"{it['id']} foto {i}: {'texto borrado' if borrado else 'sin texto'}{', precio nuevo' if con_precio else ''}")
         actuales[it['id']] = {
             'id': it['id'], 'name': it['name'], 'cat': it['cat'], 'price': it['price'], 'desc': it['desc'],
             'feats': it.get('feats', []), 'imgs': imgs, 'thumb': f"img/p/{it['id'].lower()}-s.jpg",

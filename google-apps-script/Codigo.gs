@@ -15,7 +15,7 @@ const CONFIG = {
   CARPETA: 'Comprobantes',
   CORREO_AVISOS: '',          // vacío = el correo de la cuenta dueña de la hoja
   ABONO: 0.5,
-  PRODUCTOS_URL: '',          // ej. https://mxurycio.github.io/vitrina/products.json (para verificar precios)
+  PRODUCTOS_URL: 'https://mxurycio.github.io/vitrina/products.json', // catálogo publicado, para verificar precios
   MAX_PEDIDOS_POR_CELULAR_HORA: 5
 };
 

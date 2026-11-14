@@ -16,10 +16,11 @@ const CONFIG = {
   CORREO_AVISOS: '',          // vacío = el correo de la cuenta dueña de la hoja
   ABONO: 0.5,
   PRODUCTOS_URL: 'https://tiendaonline-ec.github.io/products.json', // catálogo publicado, para verificar precios
-  MAX_PEDIDOS_POR_CELULAR_HORA: 5
+  MAX_PEDIDOS_POR_CELULAR_HORA: 5,
+  ZONA_LOCAL: ['La Maná', 'Guasaganda', 'Pucayacu']  // donde se entrega directamente; lo demás va por servicio de entrega
 };
 
-const COLS = ['Fecha', 'Código', 'Estado', 'Nombre', 'Apellido', 'Cédula', 'Celular', 'Productos', 'Códigos',
+const COLS = ['Fecha', 'Código', 'Estado', 'Nombre', 'Apellido', 'Cédula', 'Celular', 'Ciudad/cantón', 'Dirección', 'Envío', 'Productos', 'Códigos',
   'Total', 'Abono', 'Saldo', 'N.º comprobante', 'Monto depositado', 'Comprobante', 'Alertas',
   'Aceptó condiciones', 'Huella foto'];
 const C = Object.fromEntries(COLS.map((c, i) => [c, i]));
@@ -65,13 +66,17 @@ function configurar() {
 /* ---------- Pedidos ---------- */
 function crearPedido_(d) {
   const t = s => String(s == null ? '' : s).trim();
-  const nombre = t(d.name), apellido = t(d.last), cedula = t(d.cedula), cel = t(d.phone);
-  const num = t(d.receipt && d.receipt.num);
+  const nombre = t(d.name).slice(0, 60), apellido = t(d.last).slice(0, 60), cedula = t(d.cedula), cel = t(d.phone);
+  const ciudad = t(d.city).replace(/\s+/g, ' ').slice(0, 60), direccion = t(d.address).replace(/\s+/g, ' ').slice(0, 200);
+  const num = t(d.receipt && d.receipt.num).slice(0, 40);
   const monto = Number(d.receipt && d.receipt.amount);
 
   if (nombre.length < 2 || apellido.length < 2) return { ok: false, error: 'Faltan el nombre o el apellido.' };
   if (!cedulaOk_(cedula)) return { ok: false, error: 'La cédula no es válida.' };
   if (!/^09\d{8}$/.test(cel)) return { ok: false, error: 'El celular no es válido.' };
+  if (ciudad.length < 3) return { ok: false, error: 'Falta la ciudad o cantón de entrega.' };
+  if (direccion.length < 5) return { ok: false, error: 'Falta la dirección de entrega.' };
+  const envio = esLocal_(ciudad) ? 'Local' : 'Servicio de entrega (costo aparte)';
   if (!Array.isArray(d.items) || !d.items.length) return { ok: false, error: 'El carrito está vacío.' };
   if (num.length < 4) return { ok: false, error: 'Falta el número de comprobante.' };
   if (!d.photo || !/^data:image\/(jpeg|png|webp);base64,/.test(d.photo)) return { ok: false, error: 'Falta la foto del comprobante.' };
@@ -121,7 +126,8 @@ function crearPedido_(d) {
     if (!(monto > 0) || monto + 0.005 < abono) alertas.push(`Monto ${fmt_(monto || 0)} menor al abono ${fmt_(abono)}`);
 
     const ahora = new Date();
-    const fila = [ahora, code, 'Pendiente', nombre, apellido, "'" + cedula, "'" + cel,
+    const fila = [ahora, code, 'Pendiente', texto_(nombre), texto_(apellido), "'" + cedula, "'" + cel,
+      texto_(ciudad), texto_(direccion), envio,
       items.map(i => `${i.qty} x ${i.name}`).join('\n'), items.map(i => `${i.id} x${i.qty}`).join(', '),
       total, abono, r2_(total - abono), "'" + num, monto > 0 ? monto : '', 'Ver foto', alertas.join(' · '), ahora, huella];
     sh.appendRow(fila);
@@ -131,7 +137,7 @@ function crearPedido_(d) {
     if (alertas.length) sh.getRange(r, 1, 1, COLS.length - 1).setBackground('#FDE2E2');
 
     cache.put(kCel, String(usados + 1), 3600);
-    avisar_({ code, nombre, apellido, cel, items, total, abono, num, monto, archivo, alertas });
+    avisar_({ code, nombre, apellido, cel, ciudad, direccion, envio, items, total, abono, num, monto, archivo, alertas });
     return { ok: true, code, total, abono, status: 'pendiente', date: ahora.toISOString() };
   } finally {
     lock.releaseLock();
@@ -166,6 +172,8 @@ function avisar_(p) {
   const cuerpo = [
     `Pedido ${p.code}`,
     `Cliente: ${p.nombre} ${p.apellido} · ${p.cel}`,
+    `Entrega: ${p.direccion}, ${p.ciudad}`,
+    `Envío: ${p.envio}`,
     '',
     ...p.items.map(i => `${i.qty} x ${i.name}   ${fmt_(i.price * i.qty)}`),
     '',
@@ -208,12 +216,24 @@ function hoja_() {
     sh = ss.getSheets()[0];
     if (sh.getLastRow() > 0) sh = ss.insertSheet(CONFIG.HOJA); else sh.setName(CONFIG.HOJA);
   }
-  if (sh.getRange(1, 1).getValue() !== COLS[0]) preparar_(sh);
+  const enc = sh.getRange(1, 1, 1, COLS.length).getValues()[0];
+  if (enc.join('|') !== COLS.join('|')) preparar_(sh);
   return sh;
 }
 
+/* Pone los encabezados y formatos. Si cambian las columnas, rehace la hoja (solo mientras no haya pedidos con el formato anterior). */
 function preparar_(sh) {
   const filas = Math.max(1, sh.getMaxRows() - 1);
+  if (sh.getLastRow() > 1 && sh.getRange(1, 1).getValue() === COLS[0]) {
+    // ya hay pedidos con otras columnas: los guarda en una hoja aparte antes de rehacer
+    const copia = sh.copyTo(sh.getParent()).setName('Pedidos anteriores ' + Utilities.formatDate(new Date(), 'America/Guayaquil', 'yyyy-MM-dd HH.mm'));
+    copia.hideSheet();
+    sh.getRange(2, 1, sh.getLastRow() - 1, sh.getMaxColumns()).clearContent();
+  }
+  sh.showColumns(1, sh.getMaxColumns());
+  sh.getRange(2, 1, filas, sh.getMaxColumns()).clearFormat().clearDataValidations();
+  sh.setColumnWidths(1, COLS.length, 120);
+  sh.getRange(1, 1, 1, sh.getMaxColumns()).clearContent();
   sh.getRange(1, 1, 1, COLS.length).setValues([COLS]).setFontWeight('bold').setBackground('#1E66F5').setFontColor('#FFFFFF');
   sh.setFrozenRows(1);
   sh.getRange(2, C['Estado'] + 1, filas, 1).setDataValidation(
@@ -222,7 +242,10 @@ function preparar_(sh) {
   sh.getRange(2, C['Aceptó condiciones'] + 1, filas, 1).setNumberFormat('dd/mm/yyyy hh:mm');
   ['Total', 'Abono', 'Saldo', 'Monto depositado'].forEach(c => sh.getRange(2, C[c] + 1, filas, 1).setNumberFormat('$#,##0.00'));
   sh.getRange(2, C['Productos'] + 1, filas, 1).setWrap(true);
+  sh.getRange(2, C['Dirección'] + 1, filas, 1).setWrap(true);
   sh.setColumnWidth(C['Productos'] + 1, 260);
+  sh.setColumnWidth(C['Dirección'] + 1, 240);
+  sh.setColumnWidth(C['Envío'] + 1, 170);
   sh.setColumnWidth(C['Alertas'] + 1, 240);
   sh.hideColumns(C['Huella foto'] + 1);
 }
@@ -273,6 +296,13 @@ function aleatorio_(n) {
   return s;
 }
 
+const sinTildes_ = s => String(s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9]/g, '');
+function esLocal_(ciudad) {
+  const n = sinTildes_(ciudad);
+  return !!n && CONFIG.ZONA_LOCAL.some(z => n.includes(sinTildes_(z)));
+}
+// evita que un texto escrito por la clienta se lea como fórmula en la hoja
+const texto_ = s => /^[=+\-@]/.test(s) ? "'" + s : s;
 const r2_ = n => Math.round(n * 100) / 100;
 const fmt_ = n => '$' + Number(n).toFixed(2);
 function out_(o) { return ContentService.createTextOutput(JSON.stringify(o)).setMimeType(ContentService.MimeType.JSON); }

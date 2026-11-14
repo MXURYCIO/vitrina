@@ -186,6 +186,14 @@ p{margin:0}
 .w-steps strong{display:block;font-size:15px}
 .w-steps p{margin-top:2px;font-size:14px;color:var(--muted)}
 .w-note{padding:12px 14px;border-radius:16px;background:var(--panel-in);box-shadow:0 0 0 .5px var(--hair),inset 0 1px 0 var(--rim-lo);font-size:14px;color:var(--muted)}
+.w-info{margin:0;list-style:none;display:grid;gap:10px}
+.w-info li,.ship-mini,.ship-note{display:flex;align-items:flex-start;gap:10px;line-height:1.45}
+.w-info svg,.ship-mini svg,.ship-note svg{flex:none;width:20px;height:20px;margin-top:1px}
+.ship-mini{margin:12px 2px 0;font-size:13px;color:var(--muted)}
+.ship-note{margin:0;padding:12px 14px;border-radius:16px;background:var(--panel-in);box-shadow:0 0 0 .5px var(--hair),inset 0 1px 0 var(--rim-lo);font-size:14px;color:var(--muted);transition:background .2s,color .2s}
+.ship-note.ok{background:var(--accent-soft);color:var(--accent);box-shadow:none}
+.ship-note.far{background:var(--warn-soft);color:var(--warn);box-shadow:none}
+.ship-note strong{font-weight:700}
 .review-bar{margin-top:14px;padding:10px 14px;border-radius:16px;background:var(--warn-soft);color:var(--warn);font-size:14px;font-weight:600}
 .add{position:absolute;z-index:1;right:8px;bottom:8px;width:36px;height:36px;border:0;border-radius:18px;display:grid;place-items:center;background:var(--accent-glass);color:var(--accent-ink);-webkit-backdrop-filter:blur(4px) saturate(1.6);backdrop-filter:blur(4px) saturate(1.6);
   box-shadow:inset 0 1px 0 rgba(255,255,255,.6),inset 0 0 0 .5px rgba(255,255,255,.4),inset 0 -3px 6px rgba(0,0,0,.14),0 8px 16px -8px var(--accent);transition:transform .45s var(--ease-spring)}
@@ -218,6 +226,10 @@ p{margin:0}
 .field input::placeholder{color:var(--muted);opacity:.7}
 .field input:focus{box-shadow:inset 0 0 0 2px var(--accent)}
 .field.err input{box-shadow:inset 0 0 0 2px var(--bad)}
+.field textarea{display:block;width:100%;min-height:78px;padding:12px 14px;border:0;border-radius:14px;background:var(--field);color:var(--fg);font:inherit;font-size:16px;line-height:1.4;box-shadow:inset 0 0 0 1px var(--hair);outline:none;resize:none;transition:box-shadow .2s}
+.field textarea::placeholder{color:var(--muted);opacity:.7}
+.field textarea:focus{box-shadow:inset 0 0 0 2px var(--accent)}
+.field.err textarea{box-shadow:inset 0 0 0 2px var(--bad)}
 .msg{margin:0;font-size:13px;color:var(--bad)}
 .msg:empty{display:none}
 .hint{font-size:13px;color:var(--muted)}
@@ -540,7 +552,9 @@ const P = {
   trash:'<path d="M4 7h16M9 7V4.5h6V7M6.5 7l1 12.5a1 1 0 0 0 1 .9h7a1 1 0 0 0 1-.9l1-12.5"/>',
   chat:'<path d="M4 20l1.4-3.9A8 8 0 1 1 8 18.7L4 20Z"/>',
   upload:'<path d="M12 15V4M7.5 8.5 12 4l4.5 4.5"/><path d="M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/>',
-  shield:'<path d="M12 3 5 6v5.5c0 4.2 3 7.6 7 9.5 4-1.9 7-5.3 7-9.5V6l-7-3Z"/><path d="m9 12 2 2 4-4"/>'
+  shield:'<path d="M12 3 5 6v5.5c0 4.2 3 7.6 7 9.5 4-1.9 7-5.3 7-9.5V6l-7-3Z"/><path d="m9 12 2 2 4-4"/>',
+  pin:'<path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11Z"/><circle cx="12" cy="10" r="2.4"/>',
+  truck:'<path d="M3.5 16.5V7a1 1 0 0 1 1-1H14v10.5"/><path d="M14 9.5h3.5l3 3.3v3.7h-1.4"/><path d="M9.1 16.5h5.8"/><circle cx="7" cy="17" r="1.9"/><circle cx="17" cy="17" r="1.9"/>'
 };
 const ic = (n, sw) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="${sw || (n === 'plus' || n === 'minus' || n === 'check' ? 2.3 : 1.8)}" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${P[n]}</svg>`;
 
@@ -616,7 +630,11 @@ const TIENDA = {
   api: 'https://script.google.com/macros/s/AKfycbywrPJEbKgH-oXCTCEK7a1EEl_fi_KHjWO-kxbWKzbg1zOo0rNIVCqDL505QwAGfWNL/exec', // aplicación web de Google Apps Script; vacía = modo de prueba
   whatsapp: '',            // número de la tienda con código de país, ej. 593991234567
   banco: { banco: 'Banco Pichincha (ejemplo)', tipo: 'Cuenta de ahorros', numero: '2200000000', titular: 'Por configurar', cedula: '' },
-  abono: 0.5
+  abono: 0.5,
+  // Entregas: cantones o parroquias donde se entrega directamente (se comparan sin tildes ni mayúsculas).
+  // Cualquier otra ciudad ve el aviso de envío por servicio de entrega con costo aparte.
+  zona: 'La Maná y sus alrededores',
+  zonaLocal: ['La Maná', 'Guasaganda', 'Pucayacu']
 };
 const LIVE = !!TIENDA.api;
 const REVIEW = location.hash === '#revisar';
@@ -834,11 +852,26 @@ function openCart() {
         <div class="line-main"><p class="line-name">${esc(p.name)}</p><p class="line-price">${money(p.price)} c/u</p>
           <div class="stepper sm"><button type="button" data-act="q" data-id="${p.id}" data-d="-1" aria-label="${q === 1 ? 'Quitar del carrito' : 'Quitar uno'}">${q === 1 ? ic('trash') : ic('minus')}</button><output>${q}</output><button type="button" data-act="q" data-id="${p.id}" data-d="1" aria-label="Agregar uno">${ic('plus')}</button></div></div>
         <p class="line-total">${money(p.price * q)}</p></li>`).join('')}</ul>
-     <dl class="sum"><div><dt>Total del pedido</dt><dd>${money(t)}</dd></div><div class="hl"><dt>Abono para reservar (50%)</dt><dd>${money(a)}</dd></div><div><dt>Saldo pendiente</dt><dd>${money(s)}</dd></div></dl>`,
+     <dl class="sum"><div><dt>Total del pedido</dt><dd>${money(t)}</dd></div><div class="hl"><dt>Abono para reservar (50%)</dt><dd>${money(a)}</dd></div><div><dt>Saldo pendiente</dt><dd>${money(s)}</dd></div></dl>
+     <p class="ship-mini">${ic('truck')}<span>Entregamos en ${TIENDA.zona}. A otras ciudades enviamos por servicio de entrega, con costo de envío aparte.</span></p>`,
     `<button class="btn primary" type="button" data-act="checkout">Reservar con ${money(a)}</button>`);
 }
 
 const field = (id, label, o = {}) => `<div class="field"><label for="${id}">${label}</label><input id="${id}" type="${o.type || 'text'}" autocomplete="${o.ac || 'off'}"${o.im ? ` inputmode="${o.im}"` : ''}${o.max ? ` maxlength="${o.max}"` : ''}${o.ph ? ` placeholder="${o.ph}"` : ''} value="${esc(o.val || '')}"><p class="msg" data-for="${id}"></p></div>`;
+const area = (id, label, o = {}) => `<div class="field"><label for="${id}">${label}</label><textarea id="${id}" rows="2" autocomplete="${o.ac || 'off'}"${o.max ? ` maxlength="${o.max}"` : ''}${o.ph ? ` placeholder="${o.ph}"` : ''}>${esc(o.val || '')}</textarea><p class="msg" data-for="${id}"></p></div>`;
+const sinTildes = s => String(s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9]/g, '');
+const esLocal = c => { const n = sinTildes(c); return !!n && TIENDA.zonaLocal.some(z => n.includes(sinTildes(z))); };
+function shipNote(city) {
+  const c = String(city || '').trim();
+  if (c.length < 3) return { k: '', html: `${ic('truck')}<span>Entregamos en ${TIENDA.zona}. A otras ciudades enviamos por servicio de entrega y el costo del envío lo pagas aparte.</span>` };
+  if (esLocal(c)) return { k: 'ok', html: `${ic('pin')}<span><strong>Entrega en ${TIENDA.zona}.</strong></span>` };
+  return { k: 'far', html: `${ic('truck')}<span><strong>Envío a ${esc(c)} por servicio de entrega.</strong> El costo del envío no está incluido en el total; lo pagas aparte según la tarifa del servicio de entrega.</span>` };
+}
+function paintShip() {
+  const box = $('#shipNote'); if (!box) return;
+  const n = shipNote(($('#cCiudad') || {}).value);
+  box.className = 'ship-note' + (n.k ? ' ' + n.k : ''); box.innerHTML = n.html;
+}
 const bankRow = (k, v) => `<div class="bank-row"><span class="k">${k}</span><span class="v">${esc(v)}</span><button class="copy" type="button" data-act="copy" data-v="${esc(v)}" aria-label="Copiar ${k.toLowerCase()}">${ic('copy')}</button></div>`;
 function openCheckout() {
   const { t, a } = totals();
@@ -851,18 +884,23 @@ function openCheckout() {
          <div class="fields two">${field('cNombre', 'Nombre', { ac:'given-name', val:d.cNombre })}${field('cApellido', 'Apellido', { ac:'family-name', val:d.cApellido })}</div>
          <div class="fields two">${field('cCedula', 'Cédula', { im:'numeric', max:10, val:d.cCedula })}${field('cCel', 'Celular', { type:'tel', ac:'tel', im:'numeric', max:10, ph:'09xxxxxxxx', val:d.cCel })}</div>
        </section>
-       <section class="co-sec"><h3><span class="n">2</span>Deposita el abono</h3>
+       <section class="co-sec"><h3><span class="n">2</span>Dirección de entrega</h3>
+         ${field('cCiudad', 'Ciudad o cantón', { ac:'address-level2', max:60, ph:'Ej.: La Maná', val:d.cCiudad })}
+         ${area('cDir', 'Dirección', { ac:'street-address', max:200, ph:'Barrio, calle y una referencia (ej.: frente al parque)', val:d.cDir })}
+         <p id="shipNote" class="ship-note${shipNote(d.cCiudad).k ? ' ' + shipNote(d.cCiudad).k : ''}">${shipNote(d.cCiudad).html}</p>
+       </section>
+       <section class="co-sec"><h3><span class="n">3</span>Deposita el abono</h3>
          <div class="bank"><div class="bank-amt"><span>Monto a depositar</span><strong>${money(a)}</strong></div>
            ${bankRow('Banco', TIENDA.banco.banco)}${bankRow(TIENDA.banco.tipo, TIENDA.banco.numero)}${bankRow('Titular', TIENDA.banco.titular)}${TIENDA.banco.cedula ? bankRow('Cédula', TIENDA.banco.cedula) : ''}</div>
        </section>
-       <section class="co-sec"><h3><span class="n">3</span>Sube tu comprobante</h3>
+       <section class="co-sec"><h3><span class="n">4</span>Sube tu comprobante</h3>
          <label class="upload" for="cFoto" id="upLabel">${ic('upload')}<span class="u-txt"><strong id="upTitle">Foto del comprobante</strong><small id="upSub">Toca para elegir la imagen</small></span><img id="upPrev" alt="Vista previa del comprobante" hidden></label>
          <input id="cFoto" class="vh" type="file" accept="image/*">
          <p class="msg" data-for="cFoto"></p>
          <div class="fields two">${field('cNum', 'N.º de comprobante', { val:d.cNum })}${field('cMonto', 'Monto depositado', { im:'decimal', max:8, ph:money(a).slice(1), val:d.cMonto })}</div>
        </section>
-       <section class="co-sec"><h3><span class="n">4</span>Condiciones</h3>
-         <ul class="terms"><li>El abono del 50% reserva tu pedido.</li><li>El abono no se devuelve, salvo que el producto no esté disponible. En ese caso te devolvemos el 100%.</li><li>Confirmamos tu pedido cuando verificamos el depósito.</li></ul>
+       <section class="co-sec"><h3><span class="n">5</span>Condiciones</h3>
+         <ul class="terms"><li>El abono del 50% reserva tu pedido.</li><li>El abono no se devuelve, salvo que el producto no esté disponible. En ese caso te devolvemos el 100%.</li><li>Confirmamos tu pedido cuando verificamos el depósito.</li><li>Entregamos en ${TIENDA.zona}. A otras ciudades enviamos por servicio de entrega y el costo del envío lo pagas aparte.</li></ul>
          <label class="check" for="cTerms" id="termsLabel"><input id="cTerms" type="checkbox"><span class="box">${ic('check')}</span><span>Leí y acepto las condiciones de reserva</span></label>
          <p class="msg" data-for="cTerms"></p>
        </section>
@@ -915,6 +953,8 @@ async function submitCheckout() {
   if (v('cApellido').length < 2) e.cApellido = 'Escribe tu apellido.';
   if (!cedulaOk(v('cCedula'))) e.cCedula = 'Revisa tu cédula: deben ser 10 dígitos válidos.';
   if (!/^09\d{8}$/.test(v('cCel'))) e.cCel = 'Escribe tu celular de 10 dígitos, empieza con 09.';
+  if (v('cCiudad').length < 3) e.cCiudad = 'Escribe tu ciudad o cantón.';
+  if (v('cDir').length < 8) e.cDir = 'Escribe tu dirección con una referencia para encontrarte.';
   if (!$('#cFoto').files.length) e.cFoto = 'Sube la foto de tu comprobante.';
   if (v('cNum').length < 4) e.cNum = 'Escribe el número que aparece en tu comprobante.';
   if (!(monto > 0)) e.cMonto = 'Escribe el monto que depositaste.';
@@ -937,6 +977,7 @@ async function submitCheckout() {
   const now = new Date().toISOString();
   const items = cartLines().map(({ p, q }) => ({ id: p.id, name: p.name, price: p.price, qty: q }));
   const order = { code: '', date: now, name: v('cNombre'), last: v('cApellido'), phone: v('cCel'),
+    city: v('cCiudad'), address: v('cDir').replace(/\s+/g, ' '),
     items, total: t, abono: a, status: 'pendiente', receipt: { num: v('cNum'), amount: monto }, termsAt: now };
   if (LIVE) {
     const btn = $('#sheetFoot .btn'), errBox = $('#coErr');
@@ -944,7 +985,7 @@ async function submitCheckout() {
     try {
       const photo = await compressImage($('#cFoto').files[0]);
       const r = await api({ action: 'order', name: order.name, last: order.last, cedula: v('cCedula'), phone: order.phone,
-        items, receipt: order.receipt, photo, terms: true });
+        city: order.city, address: order.address, items, receipt: order.receipt, photo, terms: true });
       if (!r || !r.ok) throw new Error((r && r.error) || 'No se pudo enviar el pedido.');
       order.code = r.code; order.date = r.date || now; order.total = r.total; order.abono = r.abono;
     } catch (err) {
@@ -965,7 +1006,7 @@ async function submitCheckout() {
   openSuccess(order);
 }
 function openSuccess(o) {
-  const text = `Hola, hice un pedido en ${TIENDA.nombre}.\nCódigo: ${o.code}\nTotal: ${money(o.total)}\nAbono depositado: ${money(o.abono)}\nNombre: ${o.name} ${o.last}`.trim();
+  const text = `Hola, hice un pedido en ${TIENDA.nombre}.\nCódigo: ${o.code}\nTotal: ${money(o.total)}\nAbono depositado: ${money(o.abono)}\nNombre: ${o.name} ${o.last}${o.city ? `\nEntrega: ${o.city}, ${o.address}` : ''}`.trim();
   openSheet('success', 'Pedido enviado',
     `<div class="done"><span class="done-ic">${ic('check')}</span><p class="done-t">Recibimos tu pedido</p><p class="muted">Revisaremos tu comprobante y actualizaremos el estado.</p>
       <div class="code-box"><span>Tu código de pedido</span><strong>${o.code}</strong><button class="copy-lg" type="button" data-act="copy" data-v="${o.code}">${ic('copy')}Copiar código</button></div>
@@ -999,6 +1040,7 @@ function openOrderObj(o) {
      ${o.status === 'rechazado' ? '<p class="rejected">No pudimos verificar tu comprobante. Escríbenos por WhatsApp para revisarlo.</p>' : `<ol class="timeline">${STEPS.map((s, i) => `<li class="${i < idx ? 'is-done' : i === idx ? 'is-now' : ''}"><span class="tl-dot">${i < idx ? ic('check', 2.6) : ''}</span><div><p class="tl-t">${s[1]}</p>${i <= idx ? `<p class="tl-d">${s[2]}</p>` : ''}</div></li>`).join('')}</ol>`}
      <h3 class="od-sub">Productos</h3>
      <ul class="lines">${rows}</ul>
+     ${o.city ? `<h3 class="od-sub">Entrega</h3><p class="ship-note">${ic(esLocal(o.city) ? 'pin' : 'truck')}<span>${esc(o.address)}, ${esc(o.city)}${esLocal(o.city) ? '' : '<br>Envío por servicio de entrega, con costo aparte.'}</span></p>` : ''}
      <dl class="sum"><div><dt>Total</dt><dd>${money(o.total)}</dd></div><div><dt>Abono</dt><dd>${money(o.abono)}</dd></div><div class="hl"><dt>Saldo pendiente</dt><dd>${money(o.total - o.abono)}</dd></div></dl>`, '');
 }
 
@@ -1095,6 +1137,7 @@ document.addEventListener('input', e => {
   if (el.id === 'cCedula' || el.id === 'cCel' || el.id === 'tPhone') el.value = el.value.replace(/\D/g, '');
   if (el.closest && el.closest('#coForm') && el.type !== 'file' && el.type !== 'checkbox') {
     const d = store.get('vt-draft', {}) || {}; d[el.id] = el.value; store.set('vt-draft', d);
+    if (el.id === 'cCiudad') paintShip();
     const f = el.closest('.field'); if (f && f.classList.contains('err')) { f.classList.remove('err'); const m = f.querySelector('.msg'); if (m) m.textContent = ''; }
   }
 });
@@ -1283,7 +1326,7 @@ async function loadCatalog() {
   } catch (e) {}
 }
 function footNote() {
-  $('#footNote').textContent = 'Precios en dólares (USD).' + (PRODUCTS.some(hasPhoto) ? '' : ' Las imágenes son ilustraciones de referencia.');
+  $('#footNote').textContent = `Precios en dólares (USD). Entregas en ${TIENDA.zona}; a otras ciudades, envío con costo aparte.` +(PRODUCTS.some(hasPhoto) ? '' : ' Las imágenes son ilustraciones de referencia.');
 }
 
 /* ---------- Inicio ---------- */
@@ -1300,7 +1343,8 @@ if (!REVIEW && !store.get('vt-welcome', 0)) {
         <li><span class="step-n">2</span><div><strong>Reserva con el 50%</strong><p>Deposita el abono a nuestra cuenta y sube la foto del comprobante.</p></div></li>
         <li><span class="step-n">3</span><div><strong>Sigue tu pedido</strong><p>Recibes un código para ver si está aprobado, en camino o entregado.</p></div></li>
       </ol>
-      <p class="w-note">Cada noche a las 10:00 p. m. llegan productos nuevos.</p></div>`,
+      <ul class="w-note w-info"><li>${ic('truck')}<span>Entregamos en ${TIENDA.zona}. A otras ciudades enviamos por servicio de entrega, con costo de envío aparte.</span></li>
+        <li>${ic('moon')}<span>Cada noche a las 10:00 p. m. llegan productos nuevos.</span></li></ul></div>`,
     `<button class="btn primary" type="button" data-act="welcome">Aceptar y ver productos</button>`);
 }
 setView(location.hash.slice(1), true);

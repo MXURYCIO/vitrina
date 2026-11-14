@@ -1,4 +1,4 @@
-# Vitrina
+# Tienda Online
 
 Tienda en línea pensada para celular: catálogo, carrito, reserva con abono del 50% y comprobante de depósito, y seguimiento con código de pedido.
 
@@ -6,7 +6,7 @@ Tienda en línea pensada para celular: catálogo, carrito, reserva con abono del
 
 - `index.html`: la tienda completa (diseño, carrito, reserva y seguimiento). Arriba del código está `TIENDA`, con la dirección de Google, el número de WhatsApp y los datos bancarios.
 - `products.json`: el catálogo. Cada noche se actualiza con los productos nuevos aprobados.
-- `google-apps-script/Codigo.gs`: el programa que va en la hoja de Google "Vitrina · Pedidos". Recibe los pedidos, guarda los comprobantes en Drive, marca alertas y envía el aviso por correo.
+- `google-apps-script/Codigo.gs`: el programa que va en la hoja de Google "Tienda Online · Pedidos". Recibe los pedidos, guarda los comprobantes en Drive, marca alertas y envía el aviso por correo.
 
 ## Estados de un pedido
 

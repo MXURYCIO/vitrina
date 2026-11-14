@@ -1,8 +1,8 @@
 /**
- * Vitrina · Recepción de pedidos
+ * Tienda Online · Recepción de pedidos
  *
  * Proyecto de Apps Script de la tienda. La primera vez que se ejecuta "configurar" crea en tu
- * Google Drive la carpeta "Vitrina" con la hoja "Vitrina · Pedidos" y la carpeta "Comprobantes".
+ * Google Drive la carpeta "Tienda Online" con la hoja "Tienda Online · Pedidos" y la carpeta "Comprobantes".
  * Recibe cada pedido de la tienda, guarda la foto del comprobante en Drive,
  * escribe una fila en la hoja, marca alertas y envía un correo de aviso.
  * También responde el seguimiento de pedidos (código + últimos 4 del celular).
@@ -10,8 +10,8 @@
 
 const CONFIG = {
   HOJA: 'Pedidos',
-  LIBRO: 'Vitrina · Pedidos',
-  CARPETA_RAIZ: 'Vitrina',
+  LIBRO: 'Tienda Online · Pedidos',
+  CARPETA_RAIZ: 'Tienda Online',
   CARPETA: 'Comprobantes',
   CORREO_AVISOS: '',          // vacío = el correo de la cuenta dueña de la hoja
   ABONO: 0.5,
@@ -47,14 +47,17 @@ function doPost(e) {
 function doGet(e) {
   const p = (e && e.parameter) || {};
   if (p.action === 'track') return out_(consultar_(p.code, p.last4));
-  return out_({ ok: true, tienda: 'Vitrina' });
+  return out_({ ok: true, tienda: 'Tienda Online' });
 }
 
 /* Ejecuta esta función una vez si quieres crear la hoja y la carpeta antes del primer pedido. */
 function configurar() {
   const ss = libro_();
   hoja_();
-  carpeta_();
+  const comp = carpeta_();
+  // pone los nombres actuales a la hoja y a la carpeta principal
+  try { DriveApp.getFileById(ss.getId()).setName(CONFIG.LIBRO); } catch (err) {}
+  try { const p = comp.getParents(); if (p.hasNext()) p.next().setName(CONFIG.CARPETA_RAIZ); } catch (err) {}
   console.log('Hoja de pedidos: ' + ss.getUrl());
   return ss.getUrl();
 }
@@ -104,7 +107,7 @@ function crearPedido_(d) {
     const datos = sh.getLastRow() > 1 ? sh.getRange(2, 1, sh.getLastRow() - 1, COLS.length).getValues() : [];
     const codigos = new Set(datos.map(r => r[C['Código']]));
     let code;
-    do { code = 'VT-' + aleatorio_(4); } while (codigos.has(code));
+    do { code = 'PED-' + aleatorio_(4); } while (codigos.has(code));
 
     const ext = mime.split('/')[1] === 'jpeg' ? 'jpg' : mime.split('/')[1];
     const archivo = carpeta_().createFile(Utilities.newBlob(bytes, mime, `${code}_${num.replace(/[^\w-]/g, '')}.${ext}`));
@@ -139,7 +142,7 @@ function crearPedido_(d) {
 function consultar_(code, last4) {
   code = String(code || '').toUpperCase().trim();
   last4 = String(last4 || '').trim();
-  if (!/^VT-[A-Z0-9]{4}$/.test(code) || !/^\d{4}$/.test(last4)) return { ok: false, error: 'Datos incompletos.' };
+  if (!/^PED-[A-Z0-9]{4}$/.test(code) || !/^\d{4}$/.test(last4)) return { ok: false, error: 'Datos incompletos.' };
   const sh = hoja_();
   if (sh.getLastRow() < 2) return { ok: false, error: 'No encontrado.' };
   const celda = sh.getRange(2, C['Código'] + 1, sh.getLastRow() - 1, 1).createTextFinder(code).matchEntireCell(true).findNext();

@@ -1,8 +1,7 @@
 {
- "updated": "2026-11-14T23:06:31.421653+00:00",
  "products": [
   {
-   "id": "VT-101",
+   "id": "P-101",
    "name": "Set de 4 ollas de acero inoxidable",
    "cat": "cocina",
    "price": 27,
@@ -13,15 +12,15 @@
     "Para el uso diario en tu cocina"
    ],
    "imgs": [
-    "img/p/vt-101-0.jpg"
+    "img/p/p-101-0.jpg"
    ],
-   "thumb": "img/p/vt-101-s.jpg",
+   "thumb": "img/p/p-101-s.jpg",
    "src": "f3b264ce57c9",
-   "added": "2026-11-14T23:06:31.421653+00:00",
+   "added": "2026-11-14T23:18:16.903581+00:00",
    "status": "pendiente"
   },
   {
-   "id": "VT-102",
+   "id": "P-102",
    "name": "Bandeja de vidrio redonda con tapa",
    "cat": "cocina",
    "price": 13,
@@ -32,16 +31,16 @@
     "Fácil de lavar y reutilizar"
    ],
    "imgs": [
-    "img/p/vt-102-0.jpg",
-    "img/p/vt-102-1.jpg"
+    "img/p/p-102-0.jpg",
+    "img/p/p-102-1.jpg"
    ],
-   "thumb": "img/p/vt-102-s.jpg",
+   "thumb": "img/p/p-102-s.jpg",
    "src": "e901b8cef686",
-   "added": "2026-11-14T23:06:31.421653+00:00",
+   "added": "2026-11-14T23:18:16.903581+00:00",
    "status": "pendiente"
   },
   {
-   "id": "VT-103",
+   "id": "P-103",
    "name": "Huevera plegable de 3 niveles",
    "cat": "cocina",
    "price": 6,
@@ -52,18 +51,18 @@
     "Evita que los huevos se rompan"
    ],
    "imgs": [
-    "img/p/vt-103-0.jpg",
-    "img/p/vt-103-1.jpg",
-    "img/p/vt-103-2.jpg",
-    "img/p/vt-103-3.jpg"
+    "img/p/p-103-0.jpg",
+    "img/p/p-103-1.jpg",
+    "img/p/p-103-2.jpg",
+    "img/p/p-103-3.jpg"
    ],
-   "thumb": "img/p/vt-103-s.jpg",
+   "thumb": "img/p/p-103-s.jpg",
    "src": "b4e6b59b2165",
-   "added": "2026-11-14T23:06:31.421653+00:00",
+   "added": "2026-11-14T23:18:16.903581+00:00",
    "status": "pendiente"
   },
   {
-   "id": "VT-104",
+   "id": "P-104",
    "name": "Hervidor eléctrico plegable 600 ml",
    "cat": "cocina",
    "price": 12,
@@ -74,18 +73,17 @@
     "Base de acero inoxidable y silicona apta para alimentos"
    ],
    "imgs": [
-    "img/p/vt-104-0.jpg",
-    "img/p/vt-104-1.jpg",
-    "img/p/vt-104-2.jpg",
-    "img/p/vt-104-3.jpg"
+    "img/p/p-104-0.jpg",
+    "img/p/p-104-1.jpg",
+    "img/p/p-104-2.jpg"
    ],
-   "thumb": "img/p/vt-104-s.jpg",
+   "thumb": "img/p/p-104-s.jpg",
    "src": "581c5a2d464e",
-   "added": "2026-11-14T23:06:31.421653+00:00",
+   "added": "2026-11-14T23:18:16.903581+00:00",
    "status": "pendiente"
   },
   {
-   "id": "VT-105",
+   "id": "P-105",
    "name": "Jarra de vidrio 2 L con 4 tazas",
    "cat": "cocina",
    "price": 6,
@@ -96,18 +94,18 @@
     "Color verde"
    ],
    "imgs": [
-    "img/p/vt-105-0.jpg",
-    "img/p/vt-105-1.jpg",
-    "img/p/vt-105-2.jpg",
-    "img/p/vt-105-3.jpg"
+    "img/p/p-105-0.jpg",
+    "img/p/p-105-1.jpg",
+    "img/p/p-105-2.jpg",
+    "img/p/p-105-3.jpg"
    ],
-   "thumb": "img/p/vt-105-s.jpg",
+   "thumb": "img/p/p-105-s.jpg",
    "src": "1bab62f5449e",
-   "added": "2026-11-14T23:06:31.421653+00:00",
+   "added": "2026-11-14T23:18:16.903581+00:00",
    "status": "pendiente"
   },
   {
-   "id": "VT-106",
+   "id": "P-106",
    "name": "Platera de 2 pisos con puertas",
    "cat": "cocina",
    "price": 37,
@@ -118,16 +116,15 @@
     "Puertas tipo vitrina"
    ],
    "imgs": [
-    "img/p/vt-106-0.jpg",
-    "img/p/vt-106-1.jpg"
+    "img/p/p-106-0.jpg"
    ],
-   "thumb": "img/p/vt-106-s.jpg",
+   "thumb": "img/p/p-106-s.jpg",
    "src": "19b23376f5d1",
-   "added": "2026-11-14T23:06:31.421653+00:00",
+   "added": "2026-11-14T23:18:16.903581+00:00",
    "status": "pendiente"
   },
   {
-   "id": "VT-107",
+   "id": "P-107",
    "name": "Soporte de pared para utensilios",
    "cat": "cocina",
    "price": 6,
@@ -138,18 +135,18 @@
     "Libera espacio en el mesón"
    ],
    "imgs": [
-    "img/p/vt-107-0.jpg",
-    "img/p/vt-107-1.jpg",
-    "img/p/vt-107-2.jpg",
-    "img/p/vt-107-3.jpg"
+    "img/p/p-107-0.jpg",
+    "img/p/p-107-1.jpg",
+    "img/p/p-107-2.jpg",
+    "img/p/p-107-3.jpg"
    ],
-   "thumb": "img/p/vt-107-s.jpg",
+   "thumb": "img/p/p-107-s.jpg",
    "src": "ce7cb150b8f8",
-   "added": "2026-11-14T23:06:31.421653+00:00",
+   "added": "2026-11-14T23:18:16.903581+00:00",
    "status": "pendiente"
   },
   {
-   "id": "VT-108",
+   "id": "P-108",
    "name": "Batidor eléctrico para espuma de café",
    "cat": "cocina",
    "price": 3,
@@ -160,18 +157,16 @@
     "Colores surtidos"
    ],
    "imgs": [
-    "img/p/vt-108-0.jpg",
-    "img/p/vt-108-1.jpg",
-    "img/p/vt-108-2.jpg",
-    "img/p/vt-108-3.jpg"
+    "img/p/p-108-0.jpg",
+    "img/p/p-108-1.jpg"
    ],
-   "thumb": "img/p/vt-108-s.jpg",
+   "thumb": "img/p/p-108-s.jpg",
    "src": "507a8f5c02e3",
-   "added": "2026-11-14T23:06:31.421653+00:00",
+   "added": "2026-11-14T23:18:16.903581+00:00",
    "status": "pendiente"
   },
   {
-   "id": "VT-109",
+   "id": "P-109",
    "name": "Organizador de 5 niveles con ruedas",
    "cat": "hogar",
    "price": 14,
@@ -182,17 +177,17 @@
     "Para productos de limpieza, belleza o toallas"
    ],
    "imgs": [
-    "img/p/vt-109-0.jpg",
-    "img/p/vt-109-1.jpg",
-    "img/p/vt-109-2.jpg"
+    "img/p/p-109-0.jpg",
+    "img/p/p-109-1.jpg",
+    "img/p/p-109-2.jpg"
    ],
-   "thumb": "img/p/vt-109-s.jpg",
+   "thumb": "img/p/p-109-s.jpg",
    "src": "791228741233",
-   "added": "2026-11-14T23:06:31.421653+00:00",
+   "added": "2026-11-14T23:18:16.903581+00:00",
    "status": "pendiente"
   },
   {
-   "id": "VT-110",
+   "id": "P-110",
    "name": "Perchero hexagonal con ruedas",
    "cat": "hogar",
    "price": 14,
@@ -204,17 +199,15 @@
     "Para casa, tienda o emprendimiento"
    ],
    "imgs": [
-    "img/p/vt-110-0.jpg",
-    "img/p/vt-110-1.jpg",
-    "img/p/vt-110-2.jpg"
+    "img/p/p-110-0.jpg"
    ],
-   "thumb": "img/p/vt-110-s.jpg",
+   "thumb": "img/p/p-110-s.jpg",
    "src": "dffceed3f83f",
-   "added": "2026-11-14T23:06:31.421653+00:00",
+   "added": "2026-11-14T23:18:16.903581+00:00",
    "status": "pendiente"
   },
   {
-   "id": "VT-111",
+   "id": "P-111",
    "name": "Zapatera de 4 niveles con cubierta",
    "cat": "hogar",
    "price": 16,
@@ -225,17 +218,16 @@
     "Para dormitorio, clóset o entrada"
    ],
    "imgs": [
-    "img/p/vt-111-0.jpg",
-    "img/p/vt-111-1.jpg",
-    "img/p/vt-111-2.jpg"
+    "img/p/p-111-0.jpg",
+    "img/p/p-111-1.jpg"
    ],
-   "thumb": "img/p/vt-111-s.jpg",
+   "thumb": "img/p/p-111-s.jpg",
    "src": "6bac675574e5",
-   "added": "2026-11-14T23:06:31.421653+00:00",
+   "added": "2026-11-14T23:18:16.903581+00:00",
    "status": "pendiente"
   },
   {
-   "id": "VT-112",
+   "id": "P-112",
    "name": "Carrito rodante de 3 niveles",
    "cat": "hogar",
    "price": 15,
@@ -246,16 +238,15 @@
     "Estable y resistente"
    ],
    "imgs": [
-    "img/p/vt-112-0.jpg",
-    "img/p/vt-112-1.jpg"
+    "img/p/p-112-0.jpg"
    ],
-   "thumb": "img/p/vt-112-s.jpg",
+   "thumb": "img/p/p-112-s.jpg",
    "src": "55c7f60a0b25",
-   "added": "2026-11-14T23:06:31.421653+00:00",
+   "added": "2026-11-14T23:18:16.903581+00:00",
    "status": "pendiente"
   },
   {
-   "id": "VT-113",
+   "id": "P-113",
    "name": "Zapatera de doble puerta",
    "cat": "hogar",
    "price": 18,
@@ -266,17 +257,17 @@
     "Estructura firme"
    ],
    "imgs": [
-    "img/p/vt-113-0.jpg",
-    "img/p/vt-113-1.jpg",
-    "img/p/vt-113-2.jpg"
+    "img/p/p-113-0.jpg",
+    "img/p/p-113-1.jpg",
+    "img/p/p-113-2.jpg"
    ],
-   "thumb": "img/p/vt-113-s.jpg",
+   "thumb": "img/p/p-113-s.jpg",
    "src": "1334314f7e36",
-   "added": "2026-11-14T23:06:31.421653+00:00",
+   "added": "2026-11-14T23:18:16.903581+00:00",
    "status": "pendiente"
   },
   {
-   "id": "VT-114",
+   "id": "P-114",
    "name": "Organizador de baño sobre inodoro",
    "cat": "hogar",
    "price": 11,
@@ -287,17 +278,17 @@
     "Para toallas y artículos de aseo"
    ],
    "imgs": [
-    "img/p/vt-114-0.jpg",
-    "img/p/vt-114-1.jpg",
-    "img/p/vt-114-2.jpg"
+    "img/p/p-114-0.jpg",
+    "img/p/p-114-1.jpg",
+    "img/p/p-114-2.jpg"
    ],
-   "thumb": "img/p/vt-114-s.jpg",
+   "thumb": "img/p/p-114-s.jpg",
    "src": "c2c90217714a",
-   "added": "2026-11-14T23:06:31.421653+00:00",
+   "added": "2026-11-14T23:18:16.903581+00:00",
    "status": "pendiente"
   },
   {
-   "id": "VT-115",
+   "id": "P-115",
    "name": "Organizador giratorio 360° de maquillaje",
    "cat": "cuidado",
    "price": 7,
@@ -308,18 +299,18 @@
     "Compartimentos para brochas y labiales"
    ],
    "imgs": [
-    "img/p/vt-115-0.jpg",
-    "img/p/vt-115-1.jpg",
-    "img/p/vt-115-2.jpg",
-    "img/p/vt-115-3.jpg"
+    "img/p/p-115-0.jpg",
+    "img/p/p-115-1.jpg",
+    "img/p/p-115-2.jpg",
+    "img/p/p-115-3.jpg"
    ],
-   "thumb": "img/p/vt-115-s.jpg",
+   "thumb": "img/p/p-115-s.jpg",
    "src": "bd6f17ee4238",
-   "added": "2026-11-14T23:06:31.421653+00:00",
+   "added": "2026-11-14T23:18:16.903581+00:00",
    "status": "pendiente"
   },
   {
-   "id": "VT-116",
+   "id": "P-116",
    "name": "Espejo de cuerpo entero con soporte",
    "cat": "hogar",
    "price": 23,
@@ -331,18 +322,18 @@
     "Color negro"
    ],
    "imgs": [
-    "img/p/vt-116-0.jpg",
-    "img/p/vt-116-1.jpg",
-    "img/p/vt-116-2.jpg",
-    "img/p/vt-116-3.jpg"
+    "img/p/p-116-0.jpg",
+    "img/p/p-116-1.jpg",
+    "img/p/p-116-2.jpg",
+    "img/p/p-116-3.jpg"
    ],
-   "thumb": "img/p/vt-116-s.jpg",
+   "thumb": "img/p/p-116-s.jpg",
    "src": "01d69d12bfaa",
-   "added": "2026-11-14T23:06:31.421653+00:00",
+   "added": "2026-11-14T23:18:16.903581+00:00",
    "status": "pendiente"
   },
   {
-   "id": "VT-117",
+   "id": "P-117",
    "name": "Adorno navideño tetera musical",
    "cat": "navidad",
    "price": 18,
@@ -353,18 +344,18 @@
     "Ideal para decorar o regalar"
    ],
    "imgs": [
-    "img/p/vt-117-0.jpg",
-    "img/p/vt-117-1.jpg",
-    "img/p/vt-117-2.jpg",
-    "img/p/vt-117-3.jpg"
+    "img/p/p-117-0.jpg",
+    "img/p/p-117-1.jpg",
+    "img/p/p-117-2.jpg",
+    "img/p/p-117-3.jpg"
    ],
-   "thumb": "img/p/vt-117-s.jpg",
+   "thumb": "img/p/p-117-s.jpg",
    "src": "dfb8c2c57ee3",
-   "added": "2026-11-14T23:06:31.421653+00:00",
+   "added": "2026-11-14T23:18:16.903581+00:00",
    "status": "pendiente"
   },
   {
-   "id": "VT-118",
+   "id": "P-118",
    "name": "Adorno navideño tren musical",
    "cat": "navidad",
    "price": 16,
@@ -375,18 +366,18 @@
     "Ideal para decorar o regalar"
    ],
    "imgs": [
-    "img/p/vt-118-0.jpg",
-    "img/p/vt-118-1.jpg",
-    "img/p/vt-118-2.jpg",
-    "img/p/vt-118-3.jpg"
+    "img/p/p-118-0.jpg",
+    "img/p/p-118-1.jpg",
+    "img/p/p-118-2.jpg",
+    "img/p/p-118-3.jpg"
    ],
-   "thumb": "img/p/vt-118-s.jpg",
+   "thumb": "img/p/p-118-s.jpg",
    "src": "87ebd2b7fa7e",
-   "added": "2026-11-14T23:06:31.421653+00:00",
+   "added": "2026-11-14T23:18:16.903581+00:00",
    "status": "pendiente"
   },
   {
-   "id": "VT-119",
+   "id": "P-119",
    "name": "Alfombra navideña",
    "cat": "navidad",
    "price": 17,
@@ -397,15 +388,15 @@
     "Para sala o habitación"
    ],
    "imgs": [
-    "img/p/vt-119-0.jpg"
+    "img/p/p-119-0.jpg"
    ],
-   "thumb": "img/p/vt-119-s.jpg",
+   "thumb": "img/p/p-119-s.jpg",
    "src": "80cddad0ec37",
-   "added": "2026-11-14T23:06:31.421653+00:00",
+   "added": "2026-11-14T23:18:16.903581+00:00",
    "status": "pendiente"
   },
   {
-   "id": "VT-120",
+   "id": "P-120",
    "name": "Combo secador y plancha de cabello Sonar",
    "cat": "cuidado",
    "price": 20,
@@ -416,17 +407,17 @@
     "Reduce el frizz"
    ],
    "imgs": [
-    "img/p/vt-120-0.jpg",
-    "img/p/vt-120-1.jpg",
-    "img/p/vt-120-2.jpg"
+    "img/p/p-120-0.jpg",
+    "img/p/p-120-1.jpg",
+    "img/p/p-120-2.jpg"
    ],
-   "thumb": "img/p/vt-120-s.jpg",
+   "thumb": "img/p/p-120-s.jpg",
    "src": "5613e1c39353",
-   "added": "2026-11-14T23:06:31.421653+00:00",
+   "added": "2026-11-14T23:18:16.903581+00:00",
    "status": "pendiente"
   },
   {
-   "id": "VT-121",
+   "id": "P-121",
    "name": "Set de masajeadores corporales",
    "cat": "cuidado",
    "price": 10,
@@ -436,17 +427,17 @@
     "Incluye pulidor de callos"
    ],
    "imgs": [
-    "img/p/vt-121-0.jpg",
-    "img/p/vt-121-1.jpg",
-    "img/p/vt-121-2.jpg"
+    "img/p/p-121-0.jpg",
+    "img/p/p-121-1.jpg",
+    "img/p/p-121-2.jpg"
    ],
-   "thumb": "img/p/vt-121-s.jpg",
+   "thumb": "img/p/p-121-s.jpg",
    "src": "b7c0c47bb660",
-   "added": "2026-11-14T23:06:31.421653+00:00",
+   "added": "2026-11-14T23:18:16.903581+00:00",
    "status": "pendiente"
   },
   {
-   "id": "VT-122",
+   "id": "P-122",
    "name": "Pistola masajeadora inalámbrica",
    "cat": "cuidado",
    "price": 15,
@@ -457,17 +448,17 @@
     "Para cuello, espalda y piernas"
    ],
    "imgs": [
-    "img/p/vt-122-0.jpg",
-    "img/p/vt-122-1.jpg",
-    "img/p/vt-122-2.jpg"
+    "img/p/p-122-0.jpg",
+    "img/p/p-122-1.jpg",
+    "img/p/p-122-2.jpg"
    ],
-   "thumb": "img/p/vt-122-s.jpg",
+   "thumb": "img/p/p-122-s.jpg",
    "src": "904d6cbecaac",
-   "added": "2026-11-14T23:06:31.421653+00:00",
+   "added": "2026-11-14T23:18:16.903581+00:00",
    "status": "pendiente"
   },
   {
-   "id": "VT-123",
+   "id": "P-123",
    "name": "Mini afeitadora recargable 3 en 1",
    "cat": "cuidado",
    "price": 12,
@@ -478,18 +469,17 @@
     "Marca Sonar"
    ],
    "imgs": [
-    "img/p/vt-123-0.jpg",
-    "img/p/vt-123-1.jpg",
-    "img/p/vt-123-2.jpg",
-    "img/p/vt-123-3.jpg"
+    "img/p/p-123-0.jpg",
+    "img/p/p-123-1.jpg",
+    "img/p/p-123-2.jpg"
    ],
-   "thumb": "img/p/vt-123-s.jpg",
+   "thumb": "img/p/p-123-s.jpg",
    "src": "bcfa2d866937",
-   "added": "2026-11-14T23:06:31.421653+00:00",
+   "added": "2026-11-14T23:18:16.903581+00:00",
    "status": "pendiente"
   },
   {
-   "id": "VT-124",
+   "id": "P-124",
    "name": "Bacinica sillita para bebé",
    "cat": "bebes",
    "price": 14,
@@ -501,18 +491,15 @@
     "Rosado o azul"
    ],
    "imgs": [
-    "img/p/vt-124-0.jpg",
-    "img/p/vt-124-1.jpg",
-    "img/p/vt-124-2.jpg",
-    "img/p/vt-124-3.jpg"
+    "img/p/p-124-0.jpg"
    ],
-   "thumb": "img/p/vt-124-s.jpg",
+   "thumb": "img/p/p-124-s.jpg",
    "src": "2cf4b0ea76d8",
-   "added": "2026-11-14T23:06:31.421653+00:00",
+   "added": "2026-11-14T23:18:16.903581+00:00",
    "status": "pendiente"
   },
   {
-   "id": "VT-125",
+   "id": "P-125",
    "name": "Columpio para bebés",
    "cat": "bebes",
    "price": 21,
@@ -523,15 +510,16 @@
     "Para bebés y niños pequeños"
    ],
    "imgs": [
-    "img/p/vt-125-0.jpg",
-    "img/p/vt-125-1.jpg",
-    "img/p/vt-125-2.jpg",
-    "img/p/vt-125-3.jpg"
+    "img/p/p-125-0.jpg",
+    "img/p/p-125-1.jpg",
+    "img/p/p-125-2.jpg",
+    "img/p/p-125-3.jpg"
    ],
-   "thumb": "img/p/vt-125-s.jpg",
+   "thumb": "img/p/p-125-s.jpg",
    "src": "a4ec6390de27",
-   "added": "2026-11-14T23:06:31.421653+00:00",
+   "added": "2026-11-14T23:18:16.903581+00:00",
    "status": "pendiente"
   }
- ]
+ ],
+ "updated": "2026-11-14T23:18:16.903581+00:00"
 }

@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#EDF0F5" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#080B11" media="(prefers-color-scheme: dark)">
 <meta name="description" content="Productos para el hogar, la cocina y el cuidado personal. Reserva con el 50% y sigue tu pedido con tu código.">
-<title>Tienda Vitrina</title>
+<title>Tienda Online</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400..800&display=swap">
@@ -179,6 +179,13 @@ p{margin:0}
   color:var(--photo-ink);background:var(--photo-glass);-webkit-backdrop-filter:blur(6px) saturate(2) brightness(1.08);backdrop-filter:blur(6px) saturate(2) brightness(1.08);
   box-shadow:0 0 0 .5px var(--photo-edge),inset 0 1px 0 rgba(255,255,255,1),inset 0 0 0 .5px rgba(255,255,255,.6),inset 0 -6px 10px -8px var(--photo-edge),0 6px 14px -10px rgba(10,20,40,.4);pointer-events:none}
 .pend-pill{position:absolute;z-index:1;left:8px;top:8px;padding:4px 9px;border-radius:10px;background:var(--warn);color:#FFFFFF;font-size:11px;font-weight:700;letter-spacing:.02em}
+.welcome{display:grid;gap:14px}
+.welcome-intro{font-size:16px;line-height:1.5}
+.w-steps{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.w-steps li{display:flex;gap:12px;align-items:flex-start}
+.w-steps strong{display:block;font-size:15px}
+.w-steps p{margin-top:2px;font-size:14px;color:var(--muted)}
+.w-note{padding:12px 14px;border-radius:16px;background:var(--panel-in);box-shadow:0 0 0 .5px var(--hair),inset 0 1px 0 var(--rim-lo);font-size:14px;color:var(--muted)}
 .review-bar{margin-top:14px;padding:10px 14px;border-radius:16px;background:var(--warn-soft);color:var(--warn);font-size:14px;font-weight:600}
 .add{position:absolute;z-index:1;right:8px;bottom:8px;width:36px;height:36px;border:0;border-radius:18px;display:grid;place-items:center;background:var(--accent-glass);color:var(--accent-ink);-webkit-backdrop-filter:blur(4px) saturate(1.6);backdrop-filter:blur(4px) saturate(1.6);
   box-shadow:inset 0 1px 0 rgba(255,255,255,.6),inset 0 0 0 .5px rgba(255,255,255,.4),inset 0 -3px 6px rgba(0,0,0,.14),0 8px 16px -8px var(--accent);transition:transform .45s var(--ease-spring)}
@@ -429,7 +436,7 @@ p{margin:0}
       <div class="top-row">
         <div>
           <p class="eyebrow">Hogar · Cocina · Cuidado personal</p>
-          <h1 class="large-title" id="ttlTienda">Vitrina</h1>
+          <h1 class="large-title" id="ttlTienda">Tienda Online</h1>
         </div>
         <span class="preview-pill">Vista previa</span>
       </div>
@@ -470,12 +477,12 @@ p{margin:0}
     <form class="track" id="trackForm" novalidate>
       <h2>Buscar un pedido</h2>
       <div class="fields two">
-        <div class="field"><label for="tCode">Código de pedido</label><input id="tCode" type="text" placeholder="VT-H4QX" autocomplete="off" autocapitalize="characters" spellcheck="false"></div>
+        <div class="field"><label for="tCode">Código de pedido</label><input id="tCode" type="text" placeholder="PED-H4QX" autocomplete="off" autocapitalize="characters" spellcheck="false"></div>
         <div class="field"><label for="tPhone">Últimos 4 del celular</label><input id="tPhone" type="text" inputmode="numeric" maxlength="4" placeholder="1234" autocomplete="off"></div>
       </div>
       <p class="form-error" id="trackErr" role="alert" hidden></p>
       <button class="btn primary" type="submit">Ver estado</button>
-      <p class="hint" id="trackHint">Prueba con el pedido de ejemplo: VT-H4QX y 1234.</p>
+      <p class="hint" id="trackHint">Prueba con el pedido de ejemplo: PED-H4QX y 1234.</p>
     </form>
     <h2 class="sec-title">En este celular</h2>
     <div class="order-list" id="orderList"></div>
@@ -484,7 +491,7 @@ p{margin:0}
 
 <div class="edge-top" aria-hidden="true"></div>
 <div class="edge-bottom" aria-hidden="true"></div>
-<button class="compact glass" id="compact" type="button" aria-hidden="true" tabindex="-1">Vitrina</button>
+<button class="compact glass" id="compact" type="button" aria-hidden="true" tabindex="-1">Tienda Online</button>
 
 <nav class="dock" id="dock" aria-label="Navegación principal">
   <div class="tabs glass" id="tabs" role="tablist" data-sel="0">
@@ -605,10 +612,10 @@ const ART = {
 /* ---------- Datos (8 productos reales de los canales, con margen aplicado) ---------- */
 /* ===== Configuración de la tienda (se edita aquí) ===== */
 const TIENDA = {
-  nombre: 'Vitrina',
+  nombre: 'Tienda Online',
   api: 'https://script.google.com/macros/s/AKfycbywrPJEbKgH-oXCTCEK7a1EEl_fi_KHjWO-kxbWKzbg1zOo0rNIVCqDL505QwAGfWNL/exec', // aplicación web de Google Apps Script; vacía = modo de prueba
   whatsapp: '',            // número de la tienda con código de país, ej. 593991234567
-  banco: { banco: 'Banco Pichincha (ejemplo)', tipo: 'Cuenta de ahorros', numero: '2200000000', titular: 'Vitrina (por configurar)', cedula: '' },
+  banco: { banco: 'Banco Pichincha (ejemplo)', tipo: 'Cuenta de ahorros', numero: '2200000000', titular: 'Por configurar', cedula: '' },
   abono: 0.5
 };
 const LIVE = !!TIENDA.api;
@@ -624,28 +631,28 @@ const CATS = [
   { id:'otros', label:'Otros' }
 ];
 let PRODUCTS = [
-  { id:'VT-101', name:'Organizador de 5 niveles', cat:'hogar', price:14, art:'organizer', g:['#EAF1FC','#C9D9F3'],
+  { id:'P-101', name:'Organizador de 5 niveles', cat:'hogar', price:14, art:'organizer', g:['#EAF1FC','#C9D9F3'],
     desc:'Organizador de 5 niveles, resistente y con ruedas giratorias. Ideal para baño, dormitorio, cocina o lavandería.',
     feats:['5 niveles amplios de almacenamiento','Ruedas giratorias para moverlo fácil','Para productos de limpieza, belleza o toallas'] },
-  { id:'VT-102', name:'Zapatera de 4 niveles con cubierta', cat:'hogar', price:16, art:'shoecover', g:['#EEF2F7','#D2DCE8'],
+  { id:'P-102', name:'Zapatera de 4 niveles con cubierta', cat:'hogar', price:16, art:'shoecover', g:['#EEF2F7','#D2DCE8'],
     desc:'Zapatera con cubierta enrollable que protege tu calzado del polvo. Moderna y fácil de armar.',
     feats:['4 niveles','Cubierta enrollable contra el polvo','Para clóset, dormitorio o entrada'] },
-  { id:'VT-103', name:'Perchero hexagonal con ruedas', cat:'hogar', price:14, art:'hexrack', g:['#EAF2F6','#C9DCE6'],
+  { id:'P-103', name:'Perchero hexagonal con ruedas', cat:'hogar', price:14, art:'hexrack', g:['#EAF2F6','#C9DCE6'],
     desc:'Perchero de gran capacidad para tener tu ropa ordenada y a la vista. Se mueve con facilidad.',
     feats:['Gran capacidad','Estructura resistente','Ruedas para trasladarlo','Para casa, tienda o emprendimiento'] },
-  { id:'VT-104', name:'Zapatera tipo armario', cat:'hogar', price:21, art:'wardrobe', g:['#F0F2F5','#D7DDE5'],
+  { id:'P-104', name:'Zapatera tipo armario', cat:'hogar', price:21, art:'wardrobe', g:['#F0F2F5','#D7DDE5'],
     desc:'Zapatera cerrada tipo armario, con ganchos y bolsillos laterales. Guarda zapatos, botas y sandalias.',
     feats:['Ganchos y bolsillos laterales','Puertas con cierre','Aprovecha el espacio vertical'] },
-  { id:'VT-105', name:'Carrito rodante de 3 niveles', cat:'cocina', price:15, art:'cart', g:['#ECF3F9','#CCDFEE'],
+  { id:'P-105', name:'Carrito rodante de 3 niveles', cat:'cocina', price:15, art:'cart', g:['#ECF3F9','#CCDFEE'],
     desc:'Carrito de 3 niveles con ruedas que giran 360°. Estable y amplio para especias, frutas o cosméticos.',
     feats:['Ruedas que giran 360°','3 canastas amplias','Estable y resistente'] },
-  { id:'VT-106', name:'Set de masajeadores corporales', cat:'cuidado', price:10, art:'roller', g:['#EEF2F3','#D3DDE0'],
+  { id:'P-106', name:'Set de masajeadores corporales', cat:'cuidado', price:10, art:'roller', g:['#EEF2F3','#D3DDE0'],
     desc:'Set con dos modelos de masajeador para relajar el cuerpo, más un pulidor de callos.',
     feats:['2 modelos de masajeador','Incluye pulidor de callos'] },
-  { id:'VT-107', name:'Nebulizador portátil', cat:'bebes', price:7, art:'nebulizer', g:['#E8F6F8','#C6E6EC'],
+  { id:'P-107', name:'Nebulizador portátil', cat:'bebes', price:7, art:'nebulizer', g:['#E8F6F8','#C6E6EC'],
     desc:'Nebulizador compacto y silencioso, con mascarilla para niño y para adulto. Funciona con cable o con pilas.',
     feats:['3 niveles','Mascarilla para niño y adulto','Funcionamiento silencioso','Con cable o con pilas'] },
-  { id:'VT-108', name:'Pistola masajeadora inalámbrica', cat:'cuidado', price:15, art:'gun', g:['#EDF0F4','#CBD4DF'],
+  { id:'P-108', name:'Pistola masajeadora inalámbrica', cat:'cuidado', price:15, art:'gun', g:['#EDF0F4','#CBD4DF'],
     desc:'Masajeador eléctrico para relajar la tensión muscular de cuello, espalda y piernas.',
     feats:['6 niveles de intensidad','Inalámbrica, incluye cargador','Para cuello, espalda y piernas'] }
 ];
@@ -666,8 +673,8 @@ const DAYS = ['domingo','lunes','martes','miércoles','jueves','viernes','sábad
 const hm = d => { let h = d.getHours(); const m = String(d.getMinutes()).padStart(2, '0'); const pm = h >= 12; h = h % 12 || 12; return `${h}:${m} ${pm ? 'p. m.' : 'a. m.'}`; };
 const fmtDate = iso => { const d = new Date(iso); return `${d.getDate()} de ${MONTHS[d.getMonth()].slice(0, 3)}., ${hm(d)}`; };
 
-const EXAMPLE = { code:'VT-H4QX', example:true, date:'2026-11-12T19:20:00', name:'Ejemplo', last:'', phone:'0991231234',
-  items:[{ id:'VT-103', qty:1 }, { id:'VT-106', qty:2 }], total:34, abono:17, status:'camino' };
+const EXAMPLE = { code:'PED-H4QX', example:true, date:'2026-11-12T19:20:00', name:'Ejemplo', last:'', phone:'0991231234',
+  items:[{ id:'P-103', qty:1 }, { id:'P-106', qty:2 }], total:34, abono:17, status:'camino' };
 const STEPS = [
   ['pendiente', 'Pendiente de aprobación', 'Recibimos tu pedido y estamos revisando tu comprobante.'],
   ['aprobado', 'Aprobado', 'Verificamos tu abono. Tu pedido está confirmado.'],
@@ -785,6 +792,7 @@ function openSheet(kind, title, html, footHtml) {
 }
 function closeSheet() {
   if (!sheet.classList.contains('open')) return;
+  if (sheet.dataset.kind === 'welcome') store.set('vt-welcome', 1);
   sheet.classList.remove('open'); scrim.classList.remove('on');
   sheet.setAttribute('inert', '');
   document.documentElement.classList.remove('locked');
@@ -873,7 +881,7 @@ function cedulaOk(c) {
 function newCode() {
   const A = '23456789ABCDEFGHJKLMNPQRSTUVWXYZ';
   let c;
-  do { c = 'VT-' + Array.from(crypto.getRandomValues(new Uint8Array(4)), b => A[b % 32]).join(''); }
+  do { c = 'PED-' + Array.from(crypto.getRandomValues(new Uint8Array(4)), b => A[b % 32]).join(''); }
   while (allOrders().some(o => o.code === c));
   return c;
 }
@@ -1018,7 +1026,7 @@ function setView(v, fromHash) {
   $('#tabs').dataset.sel = v === 'pedidos' ? '1' : '0';
   const ind = $('#tabInd');
   if (changed && !reduceMotion) { ind.classList.add('stretch'); setTimeout(() => ind.classList.remove('stretch'), 230); }
-  $('#compact').textContent = v === 'pedidos' ? 'Mis pedidos' : 'Vitrina';
+  $('#compact').textContent = v === 'pedidos' ? 'Mis pedidos' : TIENDA.nombre;
   if (changed) { window.scrollTo(0, 0); relensSoon(); }
   if (v === 'pedidos') refreshOrders();
   if (!fromHash && !REVIEW && location.hash !== '#' + v) { try { location.hash = v; } catch (e) {} }
@@ -1067,6 +1075,7 @@ document.addEventListener('click', e => {
     case 'browse': closeSheet(); setView('tienda'); break;
     case 'copy': copyText(t.dataset.v); break;
     case 'order': openOrder(t.dataset.code); break;
+    case 'welcome': store.set('vt-welcome', 1); closeSheet(); break;
   }
 });
 $('#cartBtn').addEventListener('click', openCart);
@@ -1110,11 +1119,11 @@ $('#q').addEventListener('keydown', e => { if (e.key === 'Enter') e.target.blur(
 $('#trackForm').addEventListener('submit', async e => {
   e.preventDefault();
   let code = $('#tCode').value.toUpperCase().replace(/[^A-Z0-9]/g, '');
-  if (code.startsWith('VT')) code = code.slice(2);
-  code = 'VT-' + code;
+  code = code.replace(/^(PED|VT)/, '');
+  code = 'PED-' + code;
   const l4 = $('#tPhone').value.trim();
   const err = $('#trackErr');
-  if (code.length < 7 || l4.length !== 4) { err.textContent = 'Escribe el código y los últimos 4 dígitos de tu celular.'; err.hidden = false; return; }
+  if (code.length < 8 || l4.length !== 4) { err.textContent = 'Escribe el código y los últimos 4 dígitos de tu celular.'; err.hidden = false; return; }
   const local = allOrders().find(x => x.code === code && x.phone.slice(-4) === l4);
   if (LIVE) {
     const btn = $('#trackForm .btn'); btn.disabled = true; btn.textContent = 'Buscando…';
@@ -1200,7 +1209,8 @@ const lowEnd = (navigator.deviceMemory && navigator.deviceMemory < 4) || (naviga
 const canLens = isBlink && !lowEnd && !matchMedia('(prefers-reduced-transparency: reduce)').matches;
 const SVGNS = 'http://www.w3.org/2000/svg';
 const defs = $('#lensDefs');
-function lensMap(W, H, rad) {
+function lensMap(W0, H0, rad0) {
+  const S = 2, W = W0 * S, H = H0 * S, rad = rad0 * S;
   const c = document.createElement('canvas'); c.width = W; c.height = H;
   const x = c.getContext('2d'); const im = x.createImageData(W, H); const d = im.data;
   const R = Math.min(rad, W / 2, H / 2), band = Math.max(8, Math.min(W, H) * .5);
@@ -1233,17 +1243,19 @@ function applyLens(el, i) {
     f = document.createElementNS(SVGNS, 'filter'); f.id = id;
     f.setAttribute('color-interpolation-filters', 'sRGB');
     f.setAttribute('filterUnits', 'userSpaceOnUse');
-    f.append(document.createElementNS(SVGNS, 'feImage'), document.createElementNS(SVGNS, 'feDisplacementMap'));
+    f.append(document.createElementNS(SVGNS, 'feImage'), document.createElementNS(SVGNS, 'feGaussianBlur'), document.createElementNS(SVGNS, 'feDisplacementMap'), document.createElementNS(SVGNS, 'feGaussianBlur'));
     defs.append(f);
   }
-  const [img, dm] = f.children;
+  const [img, mapBlur, dm, outBlur] = f.children;
+  mapBlur.setAttribute('in', 'map'); mapBlur.setAttribute('stdDeviation', '1.2'); mapBlur.setAttribute('result', 'mapSoft');
+  outBlur.setAttribute('stdDeviation', '0.55');
   f.setAttribute('x', 0); f.setAttribute('y', 0); f.setAttribute('width', W); f.setAttribute('height', H);
   img.setAttribute('href', lensMap(W, H, rad)); img.setAttribute('result', 'map'); img.setAttribute('preserveAspectRatio', 'none');
   img.setAttribute('x', 0); img.setAttribute('y', 0); img.setAttribute('width', W); img.setAttribute('height', H);
-  dm.setAttribute('in', 'SourceGraphic'); dm.setAttribute('in2', 'map');
+  dm.setAttribute('in', 'SourceGraphic'); dm.setAttribute('in2', 'mapSoft');
   dm.setAttribute('xChannelSelector', 'R'); dm.setAttribute('yChannelSelector', 'G');
-  dm.setAttribute('scale', Math.round(Math.min(46, Math.max(20, Math.min(W, H) * .58))));
-  el.style.backdropFilter = `url(#${id}) blur(.6px) saturate(2) brightness(1.06)`;
+  dm.setAttribute('scale', Math.round(Math.min(38, Math.max(16, Math.min(W, H) * .48))));
+  el.style.backdropFilter = `url(#${id}) saturate(2) brightness(1.06)`;
   el.classList.add('lensed');
 }
 const lensEls = [$('#tabs'), $('#cartBtn'), $('#compact')];
@@ -1280,6 +1292,17 @@ if (REVIEW) $('.notice').insertAdjacentHTML('beforebegin', '<p class="review-bar
 $('#trackHint').hidden = LIVE;
 renderChips(); renderGrid(); renderOrders(); updateBadge(); deadline(); footNote();
 loadCatalog();
+if (!REVIEW && !store.get('vt-welcome', 0)) {
+  openSheet('welcome', `Bienvenida a ${TIENDA.nombre}`,
+    `<div class="welcome"><p class="welcome-intro">Productos para tu hogar, tu cocina y tu cuidado personal. Así funciona:</p>
+      <ol class="w-steps">
+        <li><span class="step-n">1</span><div><strong>Elige y agrega al carrito</strong><p>Toca un producto para ver sus fotos y detalles.</p></div></li>
+        <li><span class="step-n">2</span><div><strong>Reserva con el 50%</strong><p>Deposita el abono a nuestra cuenta y sube la foto del comprobante.</p></div></li>
+        <li><span class="step-n">3</span><div><strong>Sigue tu pedido</strong><p>Recibes un código para ver si está aprobado, en camino o entregado.</p></div></li>
+      </ol>
+      <p class="w-note">Cada noche a las 10:00 p. m. llegan productos nuevos.</p></div>`,
+    `<button class="btn primary" type="button" data-act="welcome">Aceptar y ver productos</button>`);
+}
 setView(location.hash.slice(1), true);
 relens(); onScroll();
 setInterval(deadline, 60000);

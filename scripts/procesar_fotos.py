@@ -27,6 +27,8 @@ AZUL = (30, 102, 245)
 RE_PRECIO = re.compile(r'(\$\s*\d|precio|\b\d{1,3}[.,]\d{2}\b)', re.I)
 RE_PROVEEDOR = re.compile(r'(\d{3}[\s.-]?\d{3}[\s.-]?\d{3,4}|@|t\.me|https?:|www\.|kayde|pandita|importadora|whats|pedidos|cons[ií]guelo|env[ií]os|mayor|precio vip)', re.I)
 RE_MARCA = re.compile(r'(kayde|pandita|importadora|s[ií]guenos)', re.I)
+# texto en portugués o inglés (las fotos de catálogo chino suelen traerlo)
+RE_EXTRANJERO = re.compile(r'(ção|ções|ões|ã|õ|acao|icao|ucao|coes|voce|\bnao\b|com ?cabo|\bpara o\b|with|design|sturdy|storage|rotat|wheel|shop|details|pulley|hang|toddler|potty|training|reliable|practical|soup ?pot|\bnew\b|\bsize\b|power|\beasy\b|\bfree\b|\bthe\b)', re.I)
 FUENTES = ['/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf', '/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf']
 
 ocr = RapidOCR()
@@ -48,13 +50,15 @@ def limpiar(ruta, precio):
     h, w = img.shape[:2]
     resultado, _ = ocr(img)
     mascara = np.zeros((h, w), np.uint8)
-    cajas_precio, marca = [], False
+    cajas_precio, marca, extranjero = [], False, False
     for caja, txt, conf in (resultado or []):
         if float(conf) < 0.5:
             continue
         marca = marca or bool(RE_MARCA.search(txt))
+        es_ext = bool(RE_EXTRANJERO.search(txt))
+        extranjero = extranjero or es_ext
         es_precio = bool(RE_PRECIO.search(txt))
-        if es_precio or RE_PROVEEDOR.search(txt):
+        if es_precio or es_ext or RE_PROVEEDOR.search(txt):
             pts = np.array(caja, np.int32)
             cv2.fillPoly(mascara, [pts], 255)
             if es_precio:
@@ -88,7 +92,9 @@ def limpiar(ruta, precio):
         d.rounded_rectangle([x0, y0, x0 + ancho, y0 + alto], radius=alto // 2, fill=AZUL + (255,))
         d.text((x0 + px, y0 + py - f.getbbox(texto)[1] // 2), texto, font=f, fill=(255, 255, 255, 255))
         pil = Image.alpha_composite(pil.convert('RGBA'), capa).convert('RGB')
-    return pil, borrado, bool(cajas_precio), marca or bool(cajas_precio)
+    # nota: 0 = foto limpia, 1 = tenía texto en otro idioma (ya borrado), 2 = afiche del proveedor
+    nota = 2 if (marca or cajas_precio) else 1 if extranjero else 0
+    return pil, borrado, bool(cajas_precio), nota
 
 
 def main():
@@ -104,11 +110,12 @@ def main():
     for it in items:
         fotos = []
         for i, foto in enumerate(it['fotos'][:4]):
-            pil, borrado, con_precio, marca = limpiar(os.path.join(entrada, foto), it['price'])
-            fotos.append((pil, marca))
+            pil, borrado, con_precio, nota = limpiar(os.path.join(entrada, foto), it['price'])
+            fotos.append((pil, nota))
             if borrado:
-                print(f"{it['id']} foto {i}: texto del proveedor borrado{', precio nuevo' if con_precio else ''}{', afiche con marca' if marca else ''}")
-        limpias = [p for p, m in fotos if not m] or [p for p, m in fotos]  # afiches del proveedor solo si no hay otra foto
+                print(f"{it['id']} foto {i}: texto borrado{', precio nuevo' if con_precio else ''}{' (afiche del proveedor)' if nota == 2 else ' (otro idioma)' if nota == 1 else ''}")
+        mejor = min(n for _, n in fotos)
+        limpias = [p for p, n in fotos if n == mejor]  # solo las fotos más limpias disponibles
         imgs = []
         for i, pil in enumerate(limpias):
             grande = pil.copy(); grande.thumbnail((1000, 1000))

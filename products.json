@@ -1,0 +1,150 @@
+{
+  "updated": "2026-11-14T19:57:46.338Z",
+  "products": [
+    {
+      "id": "VT-101",
+      "name": "Organizador de 5 niveles",
+      "cat": "hogar",
+      "price": 14,
+      "desc": "Organizador de 5 niveles, resistente y con ruedas giratorias. Ideal para baño, dormitorio, cocina o lavandería.",
+      "feats": [
+        "5 niveles amplios de almacenamiento",
+        "Ruedas giratorias para moverlo fácil",
+        "Para productos de limpieza, belleza o toallas"
+      ],
+      "imgs": [],
+      "art": "organizer",
+      "g": [
+        "#EAF1FC",
+        "#C9D9F3"
+      ]
+    },
+    {
+      "id": "VT-102",
+      "name": "Zapatera de 4 niveles con cubierta",
+      "cat": "hogar",
+      "price": 16,
+      "desc": "Zapatera con cubierta enrollable que protege tu calzado del polvo. Moderna y fácil de armar.",
+      "feats": [
+        "4 niveles",
+        "Cubierta enrollable contra el polvo",
+        "Para clóset, dormitorio o entrada"
+      ],
+      "imgs": [],
+      "art": "shoecover",
+      "g": [
+        "#EEF2F7",
+        "#D2DCE8"
+      ]
+    },
+    {
+      "id": "VT-103",
+      "name": "Perchero hexagonal con ruedas",
+      "cat": "hogar",
+      "price": 14,
+      "desc": "Perchero de gran capacidad para tener tu ropa ordenada y a la vista. Se mueve con facilidad.",
+      "feats": [
+        "Gran capacidad",
+        "Estructura resistente",
+        "Ruedas para trasladarlo",
+        "Para casa, tienda o emprendimiento"
+      ],
+      "imgs": [],
+      "art": "hexrack",
+      "g": [
+        "#EAF2F6",
+        "#C9DCE6"
+      ]
+    },
+    {
+      "id": "VT-104",
+      "name": "Zapatera tipo armario",
+      "cat": "hogar",
+      "price": 21,
+      "desc": "Zapatera cerrada tipo armario, con ganchos y bolsillos laterales. Guarda zapatos, botas y sandalias.",
+      "feats": [
+        "Ganchos y bolsillos laterales",
+        "Puertas con cierre",
+        "Aprovecha el espacio vertical"
+      ],
+      "imgs": [],
+      "art": "wardrobe",
+      "g": [
+        "#F0F2F5",
+        "#D7DDE5"
+      ]
+    },
+    {
+      "id": "VT-105",
+      "name": "Carrito rodante de 3 niveles",
+      "cat": "cocina",
+      "price": 15,
+      "desc": "Carrito de 3 niveles con ruedas que giran 360°. Estable y amplio para especias, frutas o cosméticos.",
+      "feats": [
+        "Ruedas que giran 360°",
+        "3 canastas amplias",
+        "Estable y resistente"
+      ],
+      "imgs": [],
+      "art": "cart",
+      "g": [
+        "#ECF3F9",
+        "#CCDFEE"
+      ]
+    },
+    {
+      "id": "VT-106",
+      "name": "Set de masajeadores corporales",
+      "cat": "cuidado",
+      "price": 10,
+      "desc": "Set con dos modelos de masajeador para relajar el cuerpo, más un pulidor de callos.",
+      "feats": [
+        "2 modelos de masajeador",
+        "Incluye pulidor de callos"
+      ],
+      "imgs": [],
+      "art": "roller",
+      "g": [
+        "#EEF2F3",
+        "#D3DDE0"
+      ]
+    },
+    {
+      "id": "VT-107",
+      "name": "Nebulizador portátil",
+      "cat": "bebes",
+      "price": 7,
+      "desc": "Nebulizador compacto y silencioso, con mascarilla para niño y para adulto. Funciona con cable o con pilas.",
+      "feats": [
+        "3 niveles",
+        "Mascarilla para niño y adulto",
+        "Funcionamiento silencioso",
+        "Con cable o con pilas"
+      ],
+      "imgs": [],
+      "art": "nebulizer",
+      "g": [
+        "#E8F6F8",
+        "#C6E6EC"
+      ]
+    },
+    {
+      "id": "VT-108",
+      "name": "Pistola masajeadora inalámbrica",
+      "cat": "cuidado",
+      "price": 15,
+      "desc": "Masajeador eléctrico para relajar la tensión muscular de cuello, espalda y piernas.",
+      "feats": [
+        "6 niveles de intensidad",
+        "Inalámbrica, incluye cargador",
+        "Para cuello, espalda y piernas"
+      ],
+      "imgs": [],
+      "art": "gun",
+      "g": [
+        "#EDF0F4",
+        "#CBD4DF"
+      ]
+    }
+  ]
+}

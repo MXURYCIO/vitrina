@@ -1641,7 +1641,7 @@
    "name": "Bandeja de vidrio redonda con tapa",
    "cat": "cocina",
    "price": 13,
-   "desc": "Bandeja redonda de vidrio de alta calidad con tapa hermética y segura. Sirve para guardar, servir y conservar tus alimentos en la refrigeradora sin que pierdan sabor. Es fácil de limpiar y se puede reutilizar todas las veces que quieras.",
+   "desc": "Bandeja redonda de vidrio de alta calidad con tapa hermética y segura. Sirve para guardar, servir y conservar tus alimentos en la refrigeradora o llevarlos a la mesa. Es fácil de limpiar y se puede reutilizar todas las veces que quieras.",
    "feats": [
     "Vidrio de alta calidad",
     "Tapa hermética",
@@ -1727,9 +1727,9 @@
    "name": "Platera de 2 pisos con puertas",
    "cat": "cocina",
    "price": 37,
-   "desc": "Platera de 2 pisos con estructura metálica resistente y puertas tipo vitrina que protegen tu vajilla del polvo. Tiene amplio espacio para platos, vasos y utensilios, y 2 escurridores para que la vajilla se seque ordenada. Ayuda a mantener la cocina limpia y aprovechar mejor el espacio.",
+   "desc": "Platera de 2 pisos y 2 pozos con estructura metálica resistente y puertas tipo vitrina que protegen tu vajilla. Tiene amplio espacio para platos y utensilios, con un diseño moderno y práctico. Ayuda a mantener la cocina limpia, ordenada y a aprovechar mejor cada espacio.",
    "feats": [
-    "2 pisos y 2 escurridores",
+    "2 pisos y 2 pozos",
     "Puertas tipo vitrina",
     "Estructura metálica resistente",
     "Diseño moderno"
@@ -1790,7 +1790,7 @@
    "name": "Organizador de 5 niveles con ruedas",
    "cat": "hogar",
    "price": 14,
-   "desc": "Organizador de 5 niveles amplios, moderno y resistente, con ruedas giratorias para moverlo con facilidad. Ideal para el baño, dormitorio, cocina o lavandería. Perfecto para ordenar productos de limpieza, artículos de belleza, toallas o víveres.",
+   "desc": "Organizador de 5 niveles amplios, moderno y resistente, con ruedas giratorias para moverlo con facilidad. Ideal para el baño, dormitorio, cocina o lavandería. Perfecto para ordenar productos de limpieza, artículos de belleza, toallas y mucho más.",
    "feats": [
     "5 niveles amplios",
     "Ruedas giratorias",

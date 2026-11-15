@@ -18,12 +18,14 @@ const CONFIG = {
   PRODUCTOS_URL: 'https://tiendaonline-ec.github.io/products.json', // catálogo publicado, para verificar precios
   MAX_PEDIDOS_POR_CELULAR_HORA: 5,
   MAX_PEDIDOS_POR_HORA: 40,
-  ZONA_LOCAL: ['La Maná', 'Guasaganda', 'Pucayacu']  // donde se entrega directamente; lo demás va por servicio de entrega
+  ZONA_LOCAL: ['La Maná', 'Guasaganda', 'Pucayacu'], // donde se entrega directamente; lo demás va por servicio de entrega
+  CUENTA_DESTINO: '2216883431',                       // cuenta donde depositan (la misma que muestra la tienda)
+  TITULAR_CLAVES: ['Yomaira', 'Moreira Litardo']      // partes del nombre del titular que pueden salir en el comprobante
 };
 
 const COLS = ['Fecha', 'Código', 'Estado', 'Nombre', 'Apellido', 'Cédula', 'Celular', 'Ciudad/cantón', 'Dirección', 'Envío', 'Productos', 'Códigos',
   'Total', 'Abono', 'Saldo', 'N.º comprobante', 'Monto depositado', 'Comprobante', 'Alertas',
-  'Aceptó condiciones', 'Huella foto'];
+  'Aceptó condiciones', 'Huella foto', 'Comprobante leído'];
 const C = Object.fromEntries(COLS.map((c, i) => [c, i]));
 const ESTADOS = ['Pendiente', 'Aprobado', 'En camino', 'Entregado', 'Rechazado'];
 const ESTADO_KEY = { 'Pendiente': 'pendiente', 'Aprobado': 'aprobado', 'En camino': 'camino', 'Entregado': 'entregado', 'Rechazado': 'rechazado' };
@@ -128,6 +130,8 @@ function crearPedido_(d) {
   const bytes = Utilities.base64Decode(b64);
   if (bytes.length > 6 * 1024 * 1024) return { ok: false, error: 'La foto del comprobante es muy pesada.' };
   const huella = Utilities.base64Encode(Utilities.computeDigest(Utilities.DigestAlgorithm.MD5, bytes));
+  // lectura automática de la foto: monto, cuenta de destino y número de comprobante (antes del candado, porque tarda unos segundos)
+  const lectura = leerComprobante_(bytes, mime, monto, abono, num);
 
   const lock = LockService.getScriptLock();
   lock.waitLock(20000);
@@ -148,25 +152,86 @@ function crearPedido_(d) {
       if (r[C['Huella foto']] && r[C['Huella foto']] === huella) alertas.push(`Misma foto que ${r[C['Código']]}`);
     });
     if (!(monto > 0) || monto + 0.005 < abono) alertas.push(`Monto ${fmt_(monto || 0)} menor al abono ${fmt_(abono)}`);
+    lectura.alertas.forEach(a => alertas.push(a));
 
     const ahora = new Date();
     const fila = [ahora, code, 'Pendiente', texto_(nombre), texto_(apellido), "'" + cedula, "'" + cel,
       texto_(ciudad), texto_(direccion), envio,
       items.map(i => `${i.qty} x ${i.name}`).join('\n'), items.map(i => `${i.id} x${i.qty}`).join(', '),
-      total, abono, r2_(total - abono), "'" + num, monto > 0 ? monto : '', 'Ver foto', alertas.join(' · '), ahora, huella];
+      total, abono, r2_(total - abono), "'" + num, monto > 0 ? monto : '', 'Ver foto', alertas.join(' · '), ahora, huella, lectura.resumen];
     sh.appendRow(fila);
     const r = sh.getLastRow();
     sh.getRange(r, C['Comprobante'] + 1).setRichTextValue(
       SpreadsheetApp.newRichTextValue().setText('Ver foto').setLinkUrl(archivo.getUrl()).build());
-    if (alertas.length) sh.getRange(r, 1, 1, COLS.length - 1).setBackground('#FDE2E2');
+    if (alertas.length) sh.getRange(r, 1, 1, COLS.length).setBackground('#FDE2E2');
 
     cache.put(kCel, String(usados + 1), 3600);
     cache.put(kHora, String(Number(cache.get(kHora) || 0) + 1), 3600);
-    avisar_({ code, nombre, apellido, cel, ciudad, direccion, envio, items, total, abono, num, monto, archivo, alertas });
+    avisar_({ code, nombre, apellido, cel, ciudad, direccion, envio, items, total, abono, num, monto, archivo, alertas, lectura: lectura.resumen });
     return { ok: true, code, total, abono, status: 'pendiente', date: ahora.toISOString() };
   } finally {
     lock.releaseLock();
   }
+}
+
+/* ---------- Lectura automática del comprobante ----------
+ * Convierte la foto en texto con el lector de Google Drive y revisa tres cosas:
+ * que el monto declarado aparezca, que no sea menor al abono y que se vea la cuenta (o el nombre) de destino.
+ * Nunca rechaza el pedido: solo agrega alertas para que la dueña lo revise antes de aprobar. */
+function leerComprobante_(bytes, mime, monto, abono, num) {
+  let texto = '', id = null;
+  try {
+    const f = Drive.Files.create({ name: 'lectura-comprobante-temporal', mimeType: 'application/vnd.google-apps.document' },
+      Utilities.newBlob(bytes, mime, 'comprobante'), { ocrLanguage: 'es', fields: 'id' });
+    id = f.id;
+    const res = UrlFetchApp.fetch('https://www.googleapis.com/drive/v3/files/' + id + '/export?mimeType=text%2Fplain',
+      { headers: { Authorization: 'Bearer ' + ScriptApp.getOAuthToken() }, muteHttpExceptions: true });
+    if (res.getResponseCode() === 200) texto = res.getContentText();
+  } catch (err) {
+    console.error(err);
+  } finally {
+    if (id) { try { Drive.Files.remove(id); } catch (e) { try { DriveApp.getFileById(id).setTrashed(true); } catch (e2) {} } }
+  }
+  return analizarComprobante_(texto, monto, abono, num);
+}
+
+function analizarComprobante_(texto, monto, abono, num) {
+  const t = String(texto || '').replace(/ /g, ' ');
+  const out = { texto: t, alertas: [], resumen: '' };
+  if (!t.replace(/\s/g, '')) {
+    out.alertas.push('No se pudo leer la foto del comprobante');
+    out.resumen = 'No se pudo leer la foto';
+    return out;
+  }
+  // montos: "$5,00", "$ 5.00", "USD 12.50", "1.234,56"
+  const montos = [];
+  const re = /(\$|usd|us\$)?\s?(\d{1,3}(?:[.,]\d{3})+[.,]\d{2}|\d{1,5}[.,]\d{2})(?!\d)/gi;
+  let m;
+  while ((m = re.exec(t))) {
+    const raw = m[2], k = Math.max(raw.lastIndexOf('.'), raw.lastIndexOf(','));
+    const v = Number(raw.slice(0, k).replace(/[.,]/g, '') + '.' + raw.slice(k + 1));
+    if (v > 0 && v < 100000) montos.push({ v, signo: !!m[1] });
+  }
+  const conSigno = montos.filter(x => x.signo).map(x => x.v);
+  const todos = montos.map(x => x.v);
+  const lista = [...new Set(conSigno.length ? conSigno : todos)];
+  const cerca = (a, b) => Math.abs(a - b) < 0.006;
+  const digitos = t.replace(/\D/g, '');
+  const plano = sinTildes_(t);
+
+  if (!todos.length) out.alertas.push('No se encontró el monto en el comprobante');
+  else {
+    if (!(monto > 0) || !todos.some(v => cerca(v, monto))) out.alertas.push(`El comprobante no muestra ${fmt_(monto || 0)} (se leyó ${lista.slice(0, 3).map(fmt_).join(', ')})`);
+    if (Math.max(...lista) + 0.005 < abono) out.alertas.push(`El comprobante muestra ${fmt_(Math.max(...lista))}, menos que el abono ${fmt_(abono)}`);
+  }
+  const ult4 = CONFIG.CUENTA_DESTINO.slice(-4);
+  const cuentaOk = digitos.includes(ult4) || CONFIG.TITULAR_CLAVES.some(k => plano.includes(sinTildes_(k)));
+  if (!cuentaOk) out.alertas.push(`No se ve la cuenta de destino (termina en ${ult4}) ni el nombre del titular`);
+  const nd = String(num || '').replace(/\D/g, '');
+  const numOk = nd.length >= 4 && digitos.includes(nd);
+  if (nd.length >= 4 && !numOk) out.alertas.push(`El N.º de comprobante ${num} no aparece en la foto`);
+  out.resumen = `Monto leído: ${lista.length ? lista.slice(0, 3).map(fmt_).join(', ') : 'no se encontró'} · Cuenta destino: ${cuentaOk ? 'sí' : 'no'} · N.º: ${numOk ? 'sí' : 'no'}`;
+  return out;
 }
 
 /* ---------- Revisión de productos (solo dueño, con PIN) ----------
@@ -187,6 +252,13 @@ function admin_(d) {
     return { ok: false, pin: true, error: 'PIN incorrecto.' };
   }
   if (d.op === 'revision') return { ok: true, revision: leerRev_() };
+  if (d.op === 'leer') {
+    // prueba de la lectura automática sin crear pedido
+    if (!d.photo || !/^data:image\/(jpeg|png|webp);base64,/.test(d.photo)) return { ok: false, error: 'Falta la foto.' };
+    const bytes = Utilities.base64Decode(d.photo.slice(d.photo.indexOf(',') + 1));
+    const l = leerComprobante_(bytes, d.photo.slice(5, d.photo.indexOf(';')), Number(d.monto), Number(d.abono || d.monto), String(d.num || ''));
+    return { ok: true, resumen: l.resumen, alertas: l.alertas, texto: l.texto.slice(0, 600) };
+  }
   if (d.op === 'decidir') return decidir_(d);
   return { ok: false, error: 'Acción desconocida.' };
 }
@@ -303,6 +375,7 @@ function avisar_(p) {
     `Total: ${fmt_(p.total)}`,
     `Abono a verificar: ${fmt_(p.abono)}`,
     `Comprobante N.º ${p.num} por ${fmt_(p.monto || 0)}`,
+    `Lectura automática de la foto: ${p.lectura}`,
     p.alertas.length ? `Alertas: ${p.alertas.join(' · ')}` : 'Sin alertas.',
     '',
     `Hoja de pedidos: ${libro_().getUrl()}`
@@ -340,8 +413,22 @@ function hoja_() {
     if (sh.getLastRow() > 0 || sh.getName() === 'Resumen') sh = ss.insertSheet(CONFIG.HOJA); else sh.setName(CONFIG.HOJA);
   }
   const enc = sh.getRange(1, 1, 1, COLS.length).getValues()[0];
-  if (enc.join('|') !== COLS.join('|')) preparar_(sh);
+  if (enc.join('|') !== COLS.join('|')) {
+    // si solo faltan columnas nuevas al final, se agregan sin tocar los pedidos que ya hay
+    const n = enc.indexOf('');
+    const soloFaltan = n > 0 && enc.slice(0, n).join('|') === COLS.slice(0, n).join('|') && enc.slice(n).every(v => v === '');
+    if (soloFaltan) agregarCols_(sh, n); else preparar_(sh);
+  }
   return sh;
+}
+
+function agregarCols_(sh, desde) {
+  sh.getRange(1, desde + 1, 1, COLS.length - desde).setValues([COLS.slice(desde)])
+    .setFontWeight('bold').setBackground('#1E66F5').setFontColor('#FFFFFF');
+  if (C['Comprobante leído'] >= desde) {
+    sh.setColumnWidth(C['Comprobante leído'] + 1, 280);
+    sh.getRange(2, C['Comprobante leído'] + 1, Math.max(1, sh.getMaxRows() - 1), 1).setWrap(true);
+  }
 }
 
 /* Pone los encabezados y formatos. Si cambian las columnas, rehace la hoja (solo mientras no haya pedidos con el formato anterior). */
@@ -371,6 +458,8 @@ function preparar_(sh) {
   sh.setColumnWidth(C['Envío'] + 1, 170);
   sh.setColumnWidth(C['Alertas'] + 1, 240);
   sh.hideColumns(C['Huella foto'] + 1);
+  sh.setColumnWidth(C['Comprobante leído'] + 1, 280);
+  sh.getRange(2, C['Comprobante leído'] + 1, filas, 1).setWrap(true);
 }
 
 /* Hoja "Resumen": las cuentas de la tienda con fórmulas que se actualizan solas con cada pedido. */

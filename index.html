@@ -369,6 +369,14 @@ p{margin:0}
 .fly{position:fixed;z-index:70;width:18px;height:18px;margin:-9px 0 0 -9px;border-radius:9px;background:var(--accent);box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 6px 14px -4px var(--accent);pointer-events:none}
 
 /* ---------- Hojas ---------- */
+.to-top{position:fixed;z-index:41;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(env(safe-area-inset-bottom,0px) + 90px);
+  width:48px;height:48px;border:0;border-radius:24px;display:grid;place-items:center;color:var(--fg);
+  opacity:0;transform:translateY(14px) scale(.85);pointer-events:none;transition:opacity .25s,transform .45s var(--ease-spring),bottom .45s var(--ease-spring)}
+.to-top svg{width:22px;height:22px}
+.to-top.on{opacity:1;transform:none;pointer-events:auto}
+.to-top:active{transform:scale(.9)}
+.dock.min~.to-top{bottom:calc(env(safe-area-inset-bottom,0px) + 74px)}
+@media (min-width:620px){.to-top{right:max(24px,calc(50% - 300px))}}
 .scrim{position:fixed;inset:0;z-index:50;background:var(--scrim);opacity:0;pointer-events:none;transition:opacity .35s}
 .scrim.on{opacity:1;pointer-events:auto}
 .sheet{position:fixed;z-index:51;left:max(8px,env(safe-area-inset-left,0px));right:max(8px,env(safe-area-inset-right,0px));bottom:calc(8px + env(safe-area-inset-bottom,0px));
@@ -587,6 +595,8 @@ p{margin:0}
   <button class="cart-btn glass" id="cartBtn" type="button" aria-label="Abrir carrito"><span data-ic="bag" style="display:contents"></span><span class="badge" id="badge" hidden>0</span></button>
 </nav>
 
+<button class="to-top glass" id="toTop" type="button" aria-label="Volver arriba" tabindex="-1"><span data-ic="up" style="display:contents"></span></button>
+
 <div class="scrim" id="scrim"></div>
 <section class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle" inert>
   <div class="sheet-top" id="sheetTop">
@@ -628,6 +638,7 @@ const P = {
   shield:'<path d="M12 3 5 6v5.5c0 4.2 3 7.6 7 9.5 4-1.9 7-5.3 7-9.5V6l-7-3Z"/><path d="m9 12 2 2 4-4"/>',
   pin:'<path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11Z"/><circle cx="12" cy="10" r="2.4"/>',
   pencil:'<path d="M4 20h4L19 9l-4-4L4 16v4Z"/><path d="m13.5 6.5 4 4"/>',
+  up:'<path d="M12 19V5"/><path d="m5.5 11.5 6.5-6.5 6.5 6.5"/>',
   truck:'<path d="M3.5 16.5V7a1 1 0 0 1 1-1H14v10.5"/><path d="M14 9.5h3.5l3 3.3v3.7h-1.4"/><path d="M9.1 16.5h5.8"/><circle cx="7" cy="17" r="1.9"/><circle cx="17" cy="17" r="1.9"/>'
 };
 const ic = (n, sw) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="${sw || (n === 'plus' || n === 'minus' || n === 'check' ? 2.3 : 1.8)}" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${P[n]}</svg>`;
@@ -811,7 +822,7 @@ function renderGrid() {
   $('#grid').innerHTML = REVIEW ? list.map(rvRow).join('') : list.map(p => `<article class="card">
       <div class="media${hasPhoto(p) ? ' photo' : ''}" style="${grad(p)}">
         <button class="media-btn" type="button" data-open="${p.id}" aria-label="Ver ${esc(p.name)}">${visual(p, 0, true)}</button>
-        <span class="price-pill">${money(p.price)}</span>${p.status === 'pendiente' ? '<span class="pend-pill">Por aprobar</span>' : ''}
+        <span class="price-pill">${money(p.price)}</span>
         <button class="add" type="button" data-add="${p.id}" aria-label="Agregar ${esc(p.name)} al carrito">${ic('plus')}</button>
       </div>
       <button class="card-text" type="button" data-open="${p.id}"><span class="name">${esc(p.name)}</span><span class="cat">${catLabel(p.cat)}</span></button>
@@ -1227,6 +1238,8 @@ document.addEventListener('click', e => {
   }
 });
 $('#cartBtn').addEventListener('click', openCart);
+const toTop = $('#toTop');
+toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' }));
 $('#compact').addEventListener('click', () => window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' }));
 $('#sheetClose').addEventListener('click', closeSheet);
 scrim.addEventListener('click', closeSheet);
@@ -1342,6 +1355,8 @@ function onScroll() {
       root.classList.toggle('title-off', off);
       compact.setAttribute('aria-hidden', String(!off)); compact.tabIndex = off ? 0 : -1;
     }
+    const arriba = y > window.innerHeight * 1.2;
+    if (arriba !== toTop.classList.contains('on')) { toTop.classList.toggle('on', arriba); toTop.tabIndex = arriba ? 0 : -1; }
     if (y > lastY + 8 && y > 260) dock.classList.add('min');
     else if (y < lastY - 8 || y < 140) dock.classList.remove('min');
     lastY = y;

@@ -252,6 +252,8 @@ function admin_(d) {
     return { ok: false, pin: true, error: 'PIN incorrecto.' };
   }
   if (d.op === 'revision') return { ok: true, revision: leerRev_() };
+  if (d.op === 'pedidos') return buscarPedidos_(String(d.q || ''));
+  if (d.op === 'estado') return cambiarEstado_(String(d.code || ''), String(d.estado || ''));
   if (d.op === 'leer') {
     // prueba de la lectura automática sin crear pedido
     if (!d.photo || !/^data:image\/(jpeg|png|webp);base64,/.test(d.photo)) return { ok: false, error: 'Falta la foto.' };
@@ -357,6 +359,66 @@ function consultar_(code, last4) {
     date: new Date(r[C['Fecha']]).toISOString(), total: Number(r[C['Total']]), abono: Number(r[C['Abono']]),
     items, lines: String(r[C['Productos']]).split('\n').filter(Boolean)
   };
+}
+
+/* ---------- Pedidos para la dueña (con PIN) ---------- */
+// Busca por código (PED-XXXX o solo XXXX), nombre/apellido o celular. Sin búsqueda devuelve los más recientes.
+function buscarPedidos_(q) {
+  const sh = hoja_();
+  const n = sh.getLastRow() - 1;
+  if (n < 1) return { ok: true, pedidos: [] };
+  const vals = sh.getRange(2, 1, n, COLS.length).getValues();
+  const fotos = sh.getRange(2, C['Comprobante'] + 1, n, 1).getRichTextValues();
+  const qTxt = sinTildes_(q), qCode = q.toUpperCase().replace(/[^A-Z0-9]/g, '').replace(/^PED/, ''), qNum = q.replace(/\D/g, '');
+  const out = [];
+  for (let i = n - 1; i >= 0 && out.length < 60; i--) {
+    const r = vals[i];
+    const code = String(r[C['Código']] || '');
+    if (!code) continue;
+    if (q.trim()) {
+      const porCodigo = qCode.length >= 2 && code.replace(/^PED-/, '').includes(qCode);
+      const porNombre = qTxt.length >= 2 && sinTildes_(r[C['Nombre']] + ' ' + r[C['Apellido']]).includes(qTxt);
+      const porCelular = qNum.length >= 4 && String(r[C['Celular']]).includes(qNum);
+      if (!porCodigo && !porNombre && !porCelular) continue;
+    }
+    out.push(filaPedido_(r, fotos[i][0]));
+  }
+  return { ok: true, pedidos: out };
+}
+
+function filaPedido_(r, rich) {
+  const fecha = r[C['Fecha']] instanceof Date ? r[C['Fecha']] : new Date(r[C['Fecha']]);
+  return {
+    code: String(r[C['Código']]), fecha: Utilities.formatDate(fecha, 'America/Guayaquil', 'dd/MM/yyyy HH:mm'),
+    estado: ESTADO_KEY[r[C['Estado']]] || 'pendiente',
+    nombre: String(r[C['Nombre']]), apellido: String(r[C['Apellido']]), cedula: String(r[C['Cédula']]), celular: String(r[C['Celular']]),
+    ciudad: String(r[C['Ciudad/cantón']] || ''), direccion: String(r[C['Dirección']] || ''), envio: String(r[C['Envío']] || ''),
+    productos: String(r[C['Productos']]).split('\n').filter(Boolean),
+    total: Number(r[C['Total']]) || 0, abono: Number(r[C['Abono']]) || 0, saldo: Number(r[C['Saldo']]) || 0,
+    num: String(r[C['N.º comprobante']] || ''), monto: Number(r[C['Monto depositado']]) || 0,
+    foto: rich && rich.getLinkUrl() ? rich.getLinkUrl() : '',
+    alertas: String(r[C['Alertas']] || ''), lectura: String(r[C['Comprobante leído']] || '')
+  };
+}
+
+function cambiarEstado_(code, estado) {
+  code = code.toUpperCase().trim();
+  const texto = Object.keys(ESTADO_KEY).find(k => ESTADO_KEY[k] === estado);
+  if (!/^PED-[A-Z0-9]{4}$/.test(code) || !texto) return { ok: false, error: 'Datos no válidos.' };
+  const lock = LockService.getScriptLock();
+  lock.waitLock(20000);
+  try {
+    const sh = hoja_();
+    if (sh.getLastRow() < 2) return { ok: false, error: 'No encontrado.' };
+    const celda = sh.getRange(2, C['Código'] + 1, sh.getLastRow() - 1, 1).createTextFinder(code).matchEntireCell(true).findNext();
+    if (!celda) return { ok: false, error: 'No encontrado.' };
+    const fila = celda.getRow();
+    sh.getRange(fila, C['Estado'] + 1).setValue(texto);
+    const r = sh.getRange(fila, 1, 1, COLS.length).getValues()[0];
+    return { ok: true, pedido: filaPedido_(r, sh.getRange(fila, C['Comprobante'] + 1).getRichTextValue()) };
+  } finally {
+    lock.releaseLock();
+  }
 }
 
 /* ---------- Aviso por correo ---------- */

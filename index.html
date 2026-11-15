@@ -706,7 +706,8 @@ const statusPill = s => `<span class="status" data-s="${LABELS[s] ? s : 'pendien
 const state = { cat:'todo', q:'', view:'tienda', loading: LIVE, loadFail: false };
 let cart = store.get('vt-cart', {});
 if (typeof cart !== 'object' || !cart) cart = {};
-Object.keys(cart).forEach(k => { if (!byId[k] || !(cart[k] > 0)) delete cart[k]; });
+// en la tienda real el catálogo llega después; ahí (loadCatalog) se quitan los productos que ya no existen
+Object.keys(cart).forEach(k => { if ((!LIVE && !byId[k]) || !(cart[k] > 0)) delete cart[k]; });
 let orders = store.get('vt-orders', []);
 if (!Array.isArray(orders)) orders = [];
 const allOrders = () => LIVE ? [...orders] : [...orders, EXAMPLE];

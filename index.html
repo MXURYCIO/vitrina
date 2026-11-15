@@ -409,6 +409,17 @@ p{margin:0}
 .stepper.sm{height:38px;padding:2px;border-radius:19px;margin-top:8px;width:max-content}
 .stepper.sm button{width:34px;height:34px;border-radius:17px}
 .stepper.sm svg{width:16px;height:16px}
+.stepper button:disabled{opacity:.35}
+.line-ctl{display:flex;align-items:center;flex-wrap:wrap;gap:6px 10px;margin-top:8px}
+.line-ctl .stepper.sm{margin-top:0}
+.line-rm{display:inline-flex;align-items:center;gap:4px;height:34px;padding:0 10px;border:0;border-radius:17px;background:none;color:var(--bad);font-size:13px;font-weight:600}
+.line-rm svg{width:15px;height:15px}
+.cart-clear{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px;margin-top:16px;font-size:14px;font-weight:600}
+.cart-clear span{flex-basis:100%;text-align:center}
+.link-btn{display:inline-flex;align-items:center;gap:6px;height:38px;padding:0 15px;border:0;border-radius:19px;background:var(--bad-soft);color:var(--bad);font-size:14px;font-weight:600}
+.link-btn svg{width:16px;height:16px}
+.link-btn.plain{background:var(--field);color:var(--fg);box-shadow:inset 0 0 0 1px var(--hair)}
+.link-btn.solid{background:var(--bad);color:var(--surface)}
 
 .lines{list-style:none;margin:0;padding:0;display:grid;gap:14px}
 .line{display:flex;gap:12px;align-items:flex-start}
@@ -909,6 +920,7 @@ function openProduct(id) {
   }, { passive: true });
 }
 
+const clearBtn = () => `<button class="link-btn" type="button" data-act="clearask">${ic('trash')}Vaciar carrito</button>`;
 function openCart() {
   const lines = cartLines();
   if (!lines.length) {
@@ -922,8 +934,10 @@ function openCart() {
     `<ul class="lines">${lines.map(({ p, q }) => `<li class="line">
         <div class="thumb${hasPhoto(p) ? ' photo' : ''}" style="${grad(p)}">${visual(p)}</div>
         <div class="line-main"><p class="line-name">${esc(p.name)}</p><p class="line-price">${money(p.price)} c/u</p>
-          <div class="stepper sm"><button type="button" data-act="q" data-id="${p.id}" data-d="-1" aria-label="${q === 1 ? 'Quitar del carrito' : 'Quitar uno'}">${q === 1 ? ic('trash') : ic('minus')}</button><output>${q}</output><button type="button" data-act="q" data-id="${p.id}" data-d="1" aria-label="Agregar uno">${ic('plus')}</button></div></div>
+          <div class="line-ctl"><div class="stepper sm"><button type="button" data-act="q" data-id="${p.id}" data-d="-1" aria-label="Quitar uno"${q === 1 ? ' disabled' : ''}>${ic('minus')}</button><output>${q}</output><button type="button" data-act="q" data-id="${p.id}" data-d="1" aria-label="Agregar uno"${q >= 20 ? ' disabled' : ''}>${ic('plus')}</button></div>
+            <button class="line-rm" type="button" data-act="rm" data-id="${p.id}" aria-label="Quitar ${esc(p.name)} del carrito">${ic('trash')}Quitar</button></div></div>
         <p class="line-total">${money(p.price * q)}</p></li>`).join('')}</ul>
+     <div class="cart-clear" id="cartClear">${clearBtn()}</div>
      <dl class="sum"><div><dt>Total del pedido</dt><dd>${money(t)}</dd></div><div class="hl"><dt>Abono para reservar (50%)</dt><dd>${money(a)}</dd></div><div><dt>Saldo pendiente</dt><dd>${money(s)}</dd></div></dl>
      <p class="ship-mini">${ic('truck')}<span>Entregamos en ${TIENDA.zona}. A otras ciudades enviamos por servicio de entrega, con costo de envío aparte.</span></p>`,
     `<button class="btn primary" type="button" data-act="checkout">Reservar con ${money(a)}</button>`);
@@ -1190,6 +1204,10 @@ document.addEventListener('click', e => {
     }
     case 'pdadd': addToCart(sheet.dataset.pid, +sheet.dataset.qty || 1, t); closeSheet(); break;
     case 'q': setQty(id, (cart[id] || 0) + (+t.dataset.d)); openCart(); break;
+    case 'rm': { const p = byId[id]; setQty(id, 0); openCart(); if (p) toast(`Quitado: ${p.name}`); break; }
+    case 'clearask': $('#cartClear').innerHTML = `<span>¿Quitar todos los productos?</span><button class="link-btn plain" type="button" data-act="clearno">Cancelar</button><button class="link-btn solid" type="button" data-act="clearyes">Sí, vaciar</button>`; break;
+    case 'clearno': $('#cartClear').innerHTML = clearBtn(); break;
+    case 'clearyes': cart = {}; saveCart(); updateBadge(); openCart(); toast('Carrito vacío'); break;
     case 'checkout': openCheckout(); break;
     case 'browse': closeSheet(); setView('tienda'); break;
     case 'copy': copyText(t.dataset.v); break;

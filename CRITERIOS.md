@@ -1,6 +1,6 @@
 # Criterios para elegir y preparar productos
 
-Reglas que sigue la actualización de cada noche (y cualquier carga manual) al pasar productos de los canales de Telegram a la tienda. Las decidió el dueño de la tienda.
+Reglas que sigue la actualización de los domingos, martes y jueves (y cualquier carga manual) al pasar productos de los canales de Telegram a la tienda. Las decidió el dueño de la tienda.
 
 ## 1. Prioridades de temporada (noviembre y diciembre de 2026)
 

@@ -21,6 +21,9 @@ import numpy as np
 from PIL import Image, ImageDraw, ImageFont
 from rapidocr_onnxruntime import RapidOCR
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from mejorar_foto import mejorar, necesita  # noqa: E402
+
 RAIZ = os.path.join(os.path.dirname(__file__), '..')
 SALIDA = os.path.join(RAIZ, 'img', 'p')
 AZUL = (30, 102, 245)
@@ -118,6 +121,8 @@ def main():
         limpias = [p for p, n in fotos if n == mejor]  # solo las fotos más limpias disponibles
         imgs = []
         for i, pil in enumerate(limpias):
+            if necesita(pil):  # foto pequeña o borrosa: súper resolución en el mismo paso
+                pil = mejorar(pil); print(f"{it['id']} foto {i}: mejorada con súper resolución")
             grande = pil.copy(); grande.thumbnail((1000, 1000))
             nombre = f"{it['id'].lower()}-{i}.jpg"
             grande.save(os.path.join(SALIDA, nombre), 'JPEG', quality=82, optimize=True, progressive=True)

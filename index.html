@@ -675,6 +675,8 @@ let PRODUCTS = [
     feats:['6 niveles de intensidad','Inalámbrica, incluye cargador','Para cuello, espalda y piernas'] }
 ];
 let byId = Object.fromEntries(PRODUCTS.map(p => [p.id, p]));
+// En la tienda real solo se muestran productos del catálogo publicado (nunca los de ejemplo)
+if (LIVE) { PRODUCTS = []; byId = {}; }
 const catLabel = id => (CATS.find(c => c.id === id) || {}).label || '';
 const r2 = n => Math.round(n * 100) / 100;
 const money = n => { const v = r2(n); return '$' + (Number.isInteger(v) ? v : v.toFixed(2)); };
@@ -701,7 +703,7 @@ const STEPS = [
 ];
 const statusPill = s => `<span class="status" data-s="${LABELS[s] ? s : 'pendiente'}">${LABELS[s] || LABELS.pendiente}</span>`;
 
-const state = { cat:'todo', q:'', view:'tienda' };
+const state = { cat:'todo', q:'', view:'tienda', loading: LIVE, loadFail: false };
 let cart = store.get('vt-cart', {});
 if (typeof cart !== 'object' || !cart) cart = {};
 Object.keys(cart).forEach(k => { if (!byId[k] || !(cart[k] > 0)) delete cart[k]; });
@@ -736,8 +738,9 @@ function renderGrid() {
   $('#count').textContent = `${list.length} ${list.length === 1 ? 'producto' : 'productos'}`;
   const empty = $('#empty');
   empty.hidden = list.length > 0;
-  if (!list.length) empty.textContent = state.q.trim()
-    ? `No encontramos productos con “${state.q.trim()}”. Prueba con otra palabra.`
+  if (!list.length) empty.textContent = state.loading ? 'Cargando productos…'
+    : state.loadFail ? 'No se pudieron cargar los productos. Revisa tu conexión y vuelve a abrir la página.'
+    : state.q.trim() ? `No encontramos productos con “${state.q.trim()}”. Prueba con otra palabra.`
     : 'No hay productos en esta categoría por ahora.';
 }
 function deadline() {
@@ -1310,6 +1313,7 @@ window.addEventListener('resize', () => relensSoon(150));
 if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => relensSoon(0));
 
 async function loadCatalog() {
+  let ok = false;
   try {
     const res = await fetch('products.json', { cache: 'no-cache' });
     if (!res.ok) return;
@@ -1318,12 +1322,15 @@ async function loadCatalog() {
     if (!Array.isArray(list)) return;
     const clean = list.filter(p => p && p.id && p.name && Number(p.price) > 0 && (REVIEW ? p.status !== 'rechazado' : (p.status !== 'pendiente' && p.status !== 'rechazado')))
       .map(p => ({ ...p, price: Number(p.price), cat: CATS.some(c => c.id === p.cat) ? p.cat : 'otros', feats: Array.isArray(p.feats) ? p.feats : [], desc: p.desc || '' }));
-    if (!clean.length) return;
+    ok = true;
+    if (!clean.length && !LIVE) return;
     PRODUCTS = clean; byId = Object.fromEntries(PRODUCTS.map(p => [p.id, p]));
     Object.keys(cart).forEach(k => { if (!byId[k]) delete cart[k]; }); saveCart(); updateBadge();
     if (state.cat !== 'todo' && !PRODUCTS.some(p => p.cat === state.cat)) state.cat = 'todo';
     renderChips(); renderGrid(); renderOrders(); footNote();
-  } catch (e) {}
+  } catch (e) {} finally {
+    if (state.loading) { state.loading = false; state.loadFail = !ok; renderGrid(); }
+  }
 }
 function footNote() {
   $('#footNote').textContent = `Precios en dólares (USD). Entregas en ${TIENDA.zona}; a otras ciudades, envío con costo aparte.` +(PRODUCTS.some(hasPhoto) ? '' : ' Las imágenes son ilustraciones de referencia.');

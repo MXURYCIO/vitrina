@@ -59,6 +59,7 @@ function configurar() {
   // pone los nombres actuales a la hoja y a la carpeta principal
   try { DriveApp.getFileById(ss.getId()).setName(CONFIG.LIBRO); } catch (err) {}
   try { const p = comp.getParents(); if (p.hasNext()) p.next().setName(CONFIG.CARPETA_RAIZ); } catch (err) {}
+  resumen_();
   console.log('Hoja de pedidos: ' + ss.getUrl());
   return ss.getUrl();
 }
@@ -214,7 +215,7 @@ function hoja_() {
   let sh = ss.getSheetByName(CONFIG.HOJA);
   if (!sh) {
     sh = ss.getSheets()[0];
-    if (sh.getLastRow() > 0) sh = ss.insertSheet(CONFIG.HOJA); else sh.setName(CONFIG.HOJA);
+    if (sh.getLastRow() > 0 || sh.getName() === 'Resumen') sh = ss.insertSheet(CONFIG.HOJA); else sh.setName(CONFIG.HOJA);
   }
   const enc = sh.getRange(1, 1, 1, COLS.length).getValues()[0];
   if (enc.join('|') !== COLS.join('|')) preparar_(sh);
@@ -248,6 +249,55 @@ function preparar_(sh) {
   sh.setColumnWidth(C['Envío'] + 1, 170);
   sh.setColumnWidth(C['Alertas'] + 1, 240);
   sh.hideColumns(C['Huella foto'] + 1);
+}
+
+/* Hoja "Resumen": las cuentas de la tienda con fórmulas que se actualizan solas con cada pedido. */
+function resumen_() {
+  const ss = libro_();
+  hoja_();
+  const letra = i => { let s = '', n = i + 1; while (n) { const m = (n - 1) % 26; s = String.fromCharCode(65 + m) + s; n = Math.floor((n - 1) / 26); } return s; };
+  const R = c => `'${CONFIG.HOJA}'!${letra(C[c])}2:${letra(C[c])}`;
+  const E = R('Estado'), F = R('Fecha');
+  const sumaEn = (col, estados) => estados.map(e => `SUMIF(${E},"${e}",${R(col)})`).join('+');
+  const CONF = ['Aprobado', 'En camino', 'Entregado'];
+  const lunes = 'TODAY()-WEEKDAY(TODAY(),2)+1', mes = 'EOMONTH(TODAY(),-1)+1';
+
+  let sh = ss.getSheetByName('Resumen');
+  if (!sh) sh = ss.insertSheet('Resumen', 0);
+  sh.clear();
+  const filas = [
+    ['Resumen de la tienda', ''],
+    ['Se actualiza solo con cada pedido. Los pedidos rechazados no cuentan.', ''],
+    ['', ''],
+    ['Cuentas', 'Valor'],
+    ['Ventas confirmadas (aprobados, en camino y entregados)', '=' + sumaEn('Total', CONF)],
+    ['Dinero recibido (abonos confirmados + saldos de entregados)', `=${sumaEn('Abono', CONF)}+${sumaEn('Saldo', ['Entregado'])}`],
+    ['Saldo por cobrar (aprobados y en camino)', '=' + sumaEn('Saldo', ['Aprobado', 'En camino'])],
+    ['Abonos por verificar (pedidos pendientes)', '=' + sumaEn('Abono', ['Pendiente'])],
+    ['Pedidos de esta semana (desde el lunes)', `=COUNTIFS(${F},">="&(${lunes}),${E},"<>Rechazado")`],
+    ['Monto pedido esta semana', `=SUMIFS(${R('Total')},${F},">="&(${lunes}),${E},"<>Rechazado")`],
+    ['Pedidos de este mes', `=COUNTIFS(${F},">="&(${mes}),${E},"<>Rechazado")`],
+    ['Monto pedido este mes', `=SUMIFS(${R('Total')},${F},">="&(${mes}),${E},"<>Rechazado")`],
+    ['Pedidos con alerta (revisar comprobante)', `=COUNTIF(${R('Alertas')},"?*")`],
+    ['Envíos fuera de La Maná (sin rechazados)', `=COUNTIFS(${R('Envío')},"Servicio*",${E},"<>Rechazado")`]
+  ];
+  sh.getRange(1, 1, filas.length, 2).setValues(filas);
+  const t0 = filas.length + 2;
+  const tabla = [['Pedidos por estado', 'Pedidos', 'Total', 'Abono', 'Saldo']].concat(ESTADOS.map(e => [e,
+    `=COUNTIF(${E},"${e}")`, `=SUMIF(${E},"${e}",${R('Total')})`, `=SUMIF(${E},"${e}",${R('Abono')})`, `=SUMIF(${E},"${e}",${R('Saldo')})`]));
+  sh.getRange(t0, 1, tabla.length, 5).setValues(tabla);
+
+  sh.getRange('A1').setFontSize(16).setFontWeight('bold');
+  sh.getRange('A2').setFontColor('#6B7280').setFontStyle('italic');
+  [sh.getRange(4, 1, 1, 2), sh.getRange(t0, 1, 1, 5)].forEach(r => r.setFontWeight('bold').setBackground('#1E66F5').setFontColor('#FFFFFF'));
+  [5, 6, 7, 8, 10, 12].forEach(r => sh.getRange(r, 2).setNumberFormat('$#,##0.00'));
+  [9, 11, 13, 14].forEach(r => sh.getRange(r, 2).setNumberFormat('0'));
+  sh.getRange(t0 + 1, 3, ESTADOS.length, 3).setNumberFormat('$#,##0.00');
+  sh.getRange(6, 1, 1, 2).setFontWeight('bold');
+  sh.setColumnWidth(1, 400);
+  sh.setColumnWidths(2, 4, 110);
+  sh.setFrozenRows(0);
+  return sh;
 }
 
 function carpeta_() {

@@ -33,6 +33,10 @@ Elegir primero, en este orden:
 - Solo fotos reales del producto.
 - Sin texto en otros idiomas (inglés, portugués, chino, etc.). Si todas lo tienen, recortar o borrar ese texto.
 - Sin afiches del proveedor, logos, precios viejos ni números de contacto.
+- Fotos de cajas o empaques con texto en otro idioma: se quitan si hay otras fotos limpias; si no, se recorta o se borra ese texto. El texto impreso en el propio producto (marca, "Merry Christmas" de un adorno) se deja.
+- Medidas solo en centímetros o milímetros: se borran las pulgadas (in, inch) y las libras (lb).
+- Sin marcas de agua, íconos de capturas de pantalla ni fotos de otra marca distinta a la del producto.
+- Los datos útiles que aparecen en las fotos (medidas, piezas incluidas, funciones) también van en la descripción.
 
 ## 5. Precio
 

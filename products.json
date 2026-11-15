@@ -5,9 +5,9 @@
    "name": "Soporte de celular para carro, giratorio 360°",
    "cat": "herramientas",
    "price": 5,
-   "desc": "Soporte de celular para el carro con base de ventosa y brazo extensible de 9,5 a 15,5 cm. Su rótula gira 360 grados para ponerlo en vertical u horizontal, y tiene brazos laterales regulables con almohadillas de silicona que absorben los golpes y evitan vibraciones en caminos irregulares. Mantiene el celular firme y a la vista mientras manejas.",
+   "desc": "Soporte de celular para el carro con base de ventosa para el tablero o el parabrisas y brazo extensible de 9,5 a 15,5 cm. Su rótula gira 360 grados para ponerlo en vertical u horizontal, y tiene brazos laterales regulables con almohadillas de silicona que absorben los golpes y evitan vibraciones en caminos irregulares. Mantiene el celular firme y a la vista mientras manejas.",
    "feats": [
-    "Base de ventosa",
+    "Ventosa para tablero o parabrisas",
     "Brazo extensible de 9,5 a 15,5 cm",
     "Gira 360°",
     "Brazos regulables con silicona"
@@ -134,12 +134,13 @@
    "name": "Carruaje navideño musical con nieve",
    "cat": "navidad",
    "price": 42,
-   "desc": "Carruaje navideño musical que simula nieve, con un sonido que llena todo de espíritu navideño. Funciona con cable o a pilas. Mide 22 cm de alto por 26 cm de ancho, perfecto para la sala, la mesa navideña o como regalo especial.",
+   "desc": "Carruaje navideño de resina con luces, escena navideña y efecto de nieve, que toca 8 canciones navideñas. Tiene temporizador de 6 horas y funciona con cable USB o con 3 pilas AA (no incluidas). Mide 22 cm de alto por 26 cm de ancho, perfecto para la sala, la mesa navideña o como regalo especial.",
    "feats": [
     "Medidas: 22 x 26 cm",
-    "Musical con efecto de nieve",
-    "Funciona con cable o pilas",
-    "Ideal para regalar"
+    "8 canciones navideñas",
+    "Luces y efecto de nieve",
+    "Temporizador de 6 horas",
+    "Cable USB o 3 pilas AA (no incluidas)"
    ],
    "imgs": [
     "img/p/p-131-0.jpg",
@@ -536,7 +537,7 @@
     "Ideal para regalar"
    ],
    "imgs": [
-    "img/p/p-149-0.jpg"
+    "img/p/p-149-1.jpg"
    ],
    "thumb": "img/p/p-149-s.jpg",
    "src": "3d69d02e97ed",
@@ -555,7 +556,6 @@
     "Estimula la puntería"
    ],
    "imgs": [
-    "img/p/p-150-0.jpg",
     "img/p/p-150-1.jpg",
     "img/p/p-150-2.jpg"
    ],
@@ -576,7 +576,6 @@
     "Coleccionables"
    ],
    "imgs": [
-    "img/p/p-151-0.jpg",
     "img/p/p-151-1.jpg",
     "img/p/p-151-2.jpg"
    ],
@@ -612,10 +611,11 @@
    "name": "Futbolín de mesa",
    "cat": "juguetes",
    "price": 27,
-   "desc": "Futbolín de mesa compacto y resistente para partidos épicos en familia o con amigos. Cabe en la sala, el dormitorio o cualquier rincón, y es fácil de armar y guardar. Diversión para todas las edades.",
+   "desc": "Futbolín de mesa compacto y resistente para partidos épicos en familia o con amigos. Tiene marcador deslizante, salida para recoger las pelotas, jugadores duraderos y barras con agarres cómodos. Cabe en la sala, el dormitorio o cualquier rincón, y casi no necesita armado.",
    "feats": [
     "Diseño compacto",
-    "Fácil de armar",
+    "Marcador deslizante",
+    "Agarres cómodos",
     "Para todas las edades"
    ],
    "imgs": [
@@ -642,8 +642,7 @@
    ],
    "imgs": [
     "img/p/p-154-0.jpg",
-    "img/p/p-154-1.jpg",
-    "img/p/p-154-2.jpg"
+    "img/p/p-154-1.jpg"
    ],
    "thumb": "img/p/p-154-s.jpg",
    "src": "bc37ba0bf37f",
@@ -677,10 +676,11 @@
    "name": "Triciclo 3 en 1 para niños",
    "cat": "juguetes",
    "price": 27,
-   "desc": "Triciclo 3 en 1 que crece con tu peque: con ruedas de apoyo para empezar, sin pedales para deslizarse y con pedales para recorrer todos los caminos. Diseño ergonómico y ajustable, con estructura resistente y liviana. Mide aprox. 65 cm de largo y 52 cm de alto. Viene en rojo o amarillo, según disponibilidad.",
+   "desc": "Triciclo 3 en 1 que crece con tu peque: con ruedas de apoyo para empezar, sin pedales para deslizarse y con pedales para recorrer todos los caminos. El asiento se regula de 26 a 36 cm y el manubrio de 39 a 45 cm. Mide aprox. 65 cm de largo y 52 cm de alto, con estructura resistente y liviana. Viene en rojo o amarillo, según disponibilidad.",
    "feats": [
     "3 formas de uso",
-    "Ajustable",
+    "Asiento regulable: 26 a 36 cm",
+    "Manubrio regulable: 39 a 45 cm",
     "Medidas aprox.: 65 x 52 cm",
     "Color rojo o amarillo, según disponibilidad"
    ],
@@ -731,9 +731,7 @@
     "Ideal para regalar"
    ],
    "imgs": [
-    "img/p/p-158-0.jpg",
     "img/p/p-158-1.jpg",
-    "img/p/p-158-2.jpg",
     "img/p/p-158-3.jpg"
    ],
    "thumb": "img/p/p-158-s.jpg",
@@ -775,7 +773,6 @@
     "Color según disponibilidad"
    ],
    "imgs": [
-    "img/p/p-160-0.jpg",
     "img/p/p-160-1.jpg",
     "img/p/p-160-2.jpg",
     "img/p/p-160-3.jpg"
@@ -814,12 +811,12 @@
    "name": "Mesa de billar infantil",
    "cat": "juguetes",
    "price": 39,
-   "desc": "Mesa de billar infantil con estructura de acabado de madera, paño verde y bordes reforzados para mayor seguridad. Incluye 2 tacos, juego de bolas numeradas con bola blanca y triángulo. Ideal para niños y espacios pequeños en casa, sala de juegos u oficina.",
+   "desc": "Mesa de billar infantil con tablero de madera, paño verde de alta calidad y esquinas reforzadas contra golpes. Incluye 2 tacos de madera maciza, juego de bolas numeradas con bola blanca y triángulo. Ideal para niños y espacios pequeños en casa, sala de juegos u oficina.",
    "feats": [
     "Incluye 2 tacos, bolas y triángulo",
+    "Tablero de madera",
     "Paño verde",
-    "Bordes reforzados",
-    "Para espacios pequeños"
+    "Esquinas reforzadas"
    ],
    "imgs": [
     "img/p/p-162-0.jpg",
@@ -859,17 +856,16 @@
    "name": "Báscula digital para bebés y mascotas, hasta 20 kg",
    "cat": "bebes",
    "price": 27,
-   "desc": "Báscula digital para pesar bebés o mascotas de forma cómoda y precisa. Tiene pantalla digital fácil de leer, base amplia y material resistente. Pesa hasta 20 kg y mide 55 x 32 cm. Ideal para el hogar o la veterinaria.",
+   "desc": "Báscula digital para pesar bebés o mascotas de forma cómoda y precisa. Tiene pantalla digital fácil de leer, base amplia y material resistente. Pesa hasta 20 kg y mide 55 x 32 cm, con 2,7 cm de grosor. Ideal para el hogar o la veterinaria.",
    "feats": [
     "Capacidad: hasta 20 kg",
     "Pantalla digital",
-    "Medidas: 55 x 32 cm",
+    "Medidas: 55 x 32 x 2,7 cm",
     "Para bebés y mascotas"
    ],
    "imgs": [
-    "img/p/p-164-0.jpg",
     "img/p/p-164-1.jpg",
-    "img/p/p-164-2.jpg"
+    "img/p/p-164-3.jpg"
    ],
    "thumb": "img/p/p-164-s.jpg",
    "src": "d28d842f90d0",
@@ -881,11 +877,12 @@
    "name": "Extractor de leche materna eléctrico",
    "cat": "bebes",
    "price": 11,
-   "desc": "Extractor de leche materna eléctrico con 3 modos de uso: masaje, lactancia y succión. Es silencioso y cómodo, se adapta al pecho para una succión sin dolor y es libre de BPA. El color se entrega según disponibilidad.",
+   "desc": "Extractor de leche materna eléctrico con 3 modos de uso: masaje, lactancia y succión. Es silencioso y cómodo, se adapta al pecho para una succión sin dolor y es libre de BPA. Mide aprox. 20 cm de alto. El color se entrega según disponibilidad.",
    "feats": [
     "3 modos de uso",
     "Silencioso",
     "Libre de BPA",
+    "Alto aprox.: 20 cm",
     "Color según disponibilidad"
    ],
    "imgs": [
@@ -910,8 +907,7 @@
     "Marca HI-LUXE"
    ],
    "imgs": [
-    "img/p/p-166-0.jpg",
-    "img/p/p-166-1.jpg"
+    "img/p/p-166-0.jpg"
    ],
    "thumb": "img/p/p-166-s.jpg",
    "src": "8a3d648273e8",
@@ -923,12 +919,12 @@
    "name": "Olla de vidrio con tapa, 16 cm",
    "cat": "cocina",
    "price": 10,
-   "desc": "Olla de vidrio de borosilicato, un material seguro, sin plomo y que no reacciona con los alimentos. Su vidrio transparente deja ver la cocción sin destapar y resiste el calor. Mide 16 cm de diámetro y 14 cm de alto con tapa.",
+   "desc": "Olla de vidrio de borosilicato, un material seguro, sin plomo y que no reacciona con los alimentos. Su vidrio transparente deja ver la cocción sin destapar y resiste el calor. Mide aprox. 16 cm de diámetro (22 cm con asas) y unos 15 cm de alto con tapa.",
    "feats": [
-    "Diámetro: 16 cm",
-    "Altura con tapa: 14 cm",
+    "Diámetro aprox.: 16 cm",
     "Vidrio de borosilicato",
-    "Resistente al calor"
+    "Resistente al calor",
+    "Tapa de vidrio"
    ],
    "imgs": [
     "img/p/p-167-0.jpg",
@@ -945,11 +941,12 @@
    "name": "Licuadora Ultra HI-LUXE",
    "cat": "cocina",
    "price": 90,
-   "desc": "Licuadora Ultra HI-LUXE con 3 funciones, 4 cuchillas y control de velocidades. Potente y de excelente calidad para batidos, jugos y salsas en casa o en tu negocio.",
+   "desc": "Licuadora Ultra HI-LUXE de 1200 W con vaso de 2 litros, 4 cuchillas, 3 funciones y control de velocidades. Funciona a 110 V e incluye removedor. Potente y de excelente calidad para batidos, jugos y salsas en casa o en tu negocio.",
    "feats": [
-    "3 funciones",
-    "4 cuchillas",
-    "Control de velocidades",
+    "Potencia: 1200 W",
+    "Vaso de 2 litros",
+    "4 cuchillas y 3 funciones",
+    "Incluye removedor",
     "Marca HI-LUXE"
    ],
    "imgs": [
@@ -1033,8 +1030,9 @@
    "name": "Limpiador arranca grasa",
    "cat": "cocina",
    "price": 4,
-   "desc": "Limpiador arranca grasa en spray para una limpieza profunda de la cocina. Ayuda a quitar la grasa difícil y la suciedad acumulada en cocinas, campanas, mesones y superficies.",
+   "desc": "Limpiador arranca grasa en spray de 500 ml para una limpieza profunda de la cocina. Ayuda a quitar la grasa difícil y la suciedad acumulada en cocinas, campanas, mesones y superficies.",
    "feats": [
+    "Contenido: 500 ml",
     "Para grasa difícil",
     "En spray",
     "Para cocinas, campanas y mesones"
@@ -1102,7 +1100,6 @@
     "Para dormitorio, sala o TV"
    ],
    "imgs": [
-    "img/p/p-176-0.jpg",
     "img/p/p-176-1.jpg",
     "img/p/p-176-3.jpg"
    ],
@@ -1136,11 +1133,12 @@
    "name": "Plancha a seco HI-LUXE de 1000 W",
    "cat": "hogar",
    "price": 16,
-   "desc": "Plancha a seco HI-LUXE de 1000 W a 110 V con suela antiadherente que se desliza suave sobre la ropa. Liviana y práctica para el planchado de todos los días.",
+   "desc": "Plancha a seco HI-LUXE de 1000 W a 110 V con base antiadherente que se desliza suave sobre la ropa y control de temperatura. Liviana, fácil de usar y práctica para el planchado de todos los días.",
    "feats": [
     "Potencia: 1000 W",
     "Voltaje: 110 V",
-    "Suela antiadherente",
+    "Base antiadherente",
+    "Control de temperatura",
     "Marca HI-LUXE"
    ],
    "imgs": [
@@ -1177,12 +1175,13 @@
    "name": "Ventilador recargable con panel solar",
    "cat": "hogar",
    "price": 42,
-   "desc": "Ventilador portátil recargable que incluye panel solar para cargarlo y 2 focos LED para iluminar. Tiene botones de control en la base y diseño portátil para llevarlo de un espacio a otro de la casa. Práctico para mantener tus espacios frescos.",
+   "desc": "Ventilador portátil recargable con panel solar para cargarlo durante el día y 2 focos LED para iluminar de noche. Tiene batería recargable, varias velocidades y botones de control en la base. Viene en kit completo con panel solar, 2 focos y cables de conexión. Ideal para la casa y para la noche.",
    "feats": [
     "Incluye panel solar",
     "Incluye 2 focos LED",
-    "Recargable",
-    "Portátil"
+    "Varias velocidades",
+    "Batería recargable",
+    "Kit con cables de conexión"
    ],
    "imgs": [
     "img/p/p-180-0.jpg",
@@ -1220,9 +1219,9 @@
    "name": "Mini máquina de coser portátil",
    "cat": "hogar",
    "price": 17,
-   "desc": "Mini máquina de coser portátil, liviana y de diseño minimalista. Mide aprox. 20 x 19 x 13 cm y es muy sencilla de usar con el hilo correcto. Ideal para arreglos y costuras rápidas en casa o como regalo.",
+   "desc": "Mini máquina de coser portátil, liviana y de diseño minimalista, con botón de encendido. Mide aprox. 20 cm de ancho, 12 cm de fondo y 22 cm de alto, y es muy sencilla de usar con el hilo correcto. Ideal para arreglos y costuras rápidas en casa o como regalo.",
    "feats": [
-    "Medidas aprox.: 20 x 19 x 13 cm",
+    "Medidas aprox.: 20 x 12 x 22 cm",
     "Portátil y liviana",
     "Fácil de usar",
     "Ideal para regalar"
@@ -1263,7 +1262,7 @@
    "name": "Salida de baño de toalla 135 x 80 cm",
    "cat": "cuidado",
    "price": 4,
-   "desc": "Salida de baño tipo vestido de toalla, suave, cómoda y absorbente. Es de secado rápido y se puede lavar en lavadora. Medida aproximada: 135 x 80 cm. Disponible en celeste y amarillo, según disponibilidad.",
+   "desc": "Salida de baño tipo vestido de toalla, suave, cómoda y absorbente. Es de secado rápido y se puede lavar en lavadora. Medida aproximada: 135 x 80 cm. Ideal para la casa o para viajes. Disponible en celeste y amarillo, según disponibilidad.",
    "feats": [
     "Medidas aprox.: 135 x 80 cm",
     "Secado rápido",
@@ -1283,15 +1282,15 @@
    "name": "Antifaz para dormir con audífonos bluetooth",
    "cat": "cuidado",
    "price": 8,
-   "desc": "Antifaz para dormir con audífonos bluetooth integrados, de tela súper suave y cómoda. Se conecta fácil a tu celular para escuchar música o sonidos relajantes. Es recargable. Ideal para viajes, siestas y descanso.",
+   "desc": "Antifaz para dormir con audífonos Bluetooth 5.0 integrados, de algodón suave y con correa ajustable para todas las tallas de cabeza. Bloquea la luz por completo y te deja escuchar música, contestar llamadas con su micrófono y relajarte con un alcance de hasta 15 m. Es recargable. Ideal para viajes, siestas y descanso.",
    "feats": [
-    "Audífonos bluetooth",
-    "Recargable",
-    "Tela suave",
-    "Ideal para viajes"
+    "Bluetooth 5.0, alcance 15 m",
+    "Música y llamadas con micrófono",
+    "Algodón suave",
+    "Correa ajustable",
+    "Recargable"
    ],
    "imgs": [
-    "img/p/p-185-0.jpg",
     "img/p/p-185-1.jpg",
     "img/p/p-185-2.jpg",
     "img/p/p-185-3.jpg"
@@ -1333,7 +1332,6 @@
     "Color según disponibilidad"
    ],
    "imgs": [
-    "img/p/p-187-0.jpg",
     "img/p/p-187-1.jpg",
     "img/p/p-187-2.jpg",
     "img/p/p-187-3.jpg"
@@ -1410,12 +1408,12 @@
    "name": "Parlante bluetooth tipo megáfono con radio",
    "cat": "tecno",
    "price": 11,
-   "desc": "Parlante bluetooth tipo megáfono, recargable, con radio FM y entrada para pendrive. Es fácil de llevar a cualquier lugar para escuchar tu música donde quieras.",
+   "desc": "Parlante bluetooth tipo megáfono, recargable, con radio FM. Incluye micrófono de diadema y tiene entradas USB, SD y AUX. Es fácil de llevar a cualquier lugar para escuchar tu música o hablar en voz alta.",
    "feats": [
     "Bluetooth y radio FM",
-    "Entrada para pendrive",
-    "Recargable",
-    "Portátil"
+    "Incluye micrófono de diadema",
+    "Entradas USB, SD y AUX",
+    "Recargable"
    ],
    "imgs": [
     "img/p/p-191-0.jpg",
@@ -1451,7 +1449,7 @@
    "name": "Micrófono inalámbrico doble para celular",
    "cat": "tecno",
    "price": 14,
-   "desc": "Kit con dos micrófonos inalámbricos redondos con clip magnético y un receptor que se conecta directo al celular por el puerto tipo C. Tiene reducción de ruido inteligente para un audio claro y batería de 5 a 7 horas. Ideal para videos, entrevistas, clases y transmisiones en vivo.",
+   "desc": "Kit con dos micrófonos inalámbricos redondos con clip magnético y un receptor que se conecta directo al celular por el puerto tipo C. Tiene reducción de ruido inteligente para un audio claro y batería de 5 a 7 horas. Los micrófonos miden 2,5 cm y el receptor 4,5 cm. Ideal para videos, entrevistas, clases y transmisiones en vivo en redes sociales.",
    "feats": [
     "2 micrófonos inalámbricos",
     "Conexión tipo C",
@@ -1473,12 +1471,12 @@
    "name": "Cargador inalámbrico 3 en 1 plegable",
    "cat": "tecno",
    "price": 10,
-   "desc": "Cargador inalámbrico plegable 3 en 1 que carga al mismo tiempo celular, reloj inteligente y audífonos. Ofrece carga rápida de hasta 15 W con alineación magnética, compatible con equipos MagSafe. Mide 24 x 7,5 cm abierto y es ideal para viajes.",
+   "desc": "Cargador inalámbrico plegable 3 en 1 que carga al mismo tiempo celular, reloj inteligente y audífonos. Ofrece carga rápida de hasta 15 W con alineación magnética, compatible con equipos MagSafe. Abierto mide 24 x 7,5 cm y apenas 1,5 cm de grosor, ideal para viajes.",
    "feats": [
     "Carga 3 equipos a la vez",
     "Hasta 15 W",
     "Compatible con MagSafe",
-    "Plegable: 24 x 7,5 cm"
+    "Plegable: 24 x 7,5 x 1,5 cm"
    ],
    "imgs": [
     "img/p/p-194-0.jpg",
@@ -1600,11 +1598,12 @@
    "name": "Cepillo telescópico para lavar carros",
    "cat": "herramientas",
    "price": 15,
-   "desc": "Cepillo telescópico con paso de agua para lavar carros, camionetas y vehículos grandes. Su mango largo ayuda a llegar a las partes altas y difíciles sin esfuerzo.",
+   "desc": "Cepillo telescópico de aluminio liviano y resistente, con paso de agua para lavar carros, camionetas y vehículos grandes. Se conecta a la manguera y tiene selector para controlar el flujo de agua, con acople rápido para mangueras estándar. Su mango de largo ajustable y su empuñadura de espuma antideslizante ayudan a llegar a las partes altas y difíciles.",
    "feats": [
-    "Mango telescópico",
-    "Con paso de agua",
-    "Para carros y camionetas"
+    "Tubo telescópico de aluminio",
+    "Se conecta a la manguera",
+    "Selector de flujo de agua",
+    "Empuñadura de espuma antideslizante"
    ],
    "imgs": [
     "img/p/p-200-0.jpg",
@@ -1662,12 +1661,12 @@
    "name": "Huevera plegable de 3 niveles",
    "cat": "cocina",
    "price": 6,
-   "desc": "Huevera plegable de plástico con 3 niveles para la refrigeradora o el mesón. Mantiene los huevos ordenados, a la vista y separados para que no choquen ni se rompan. Cuando no la usas, se pliega para ocupar menos espacio.",
+   "desc": "Huevera plegable de plástico con 3 niveles para la refrigeradora o el mesón. Mantiene los huevos ordenados, a la vista y separados para que no choquen ni se rompan. Mide aprox. 19,5 cm de largo, 10 cm de fondo y 20,5 cm de alto, y cuando no la usas se pliega para ocupar menos espacio.",
    "feats": [
     "3 niveles",
+    "Medidas aprox.: 19,5 x 10 x 20,5 cm",
     "Plegable",
-    "Evita que los huevos se rompan",
-    "Para refrigeradora o mesón"
+    "Evita que los huevos se rompan"
    ],
    "imgs": [
     "img/p/p-103-0.jpg",
@@ -1685,9 +1684,10 @@
    "name": "Hervidor eléctrico plegable 600 ml",
    "cat": "cocina",
    "price": 12,
-   "desc": "Hervidor eléctrico con cuerpo de silicona de grado alimenticio que se pliega para guardarlo en maletas, mochilas o gabinetes. Tiene capacidad de 600 ml y base con placa calefactora de acero inoxidable. Perfecto para preparar té, café o aguas aromáticas en casa, en la oficina o de viaje.",
+   "desc": "Hervidor eléctrico con cuerpo de silicona de grado alimenticio que se pliega para guardarlo en maletas, mochilas o gabinetes. Tiene capacidad de 600 ml, hierve el agua en minutos y su base tiene placa calefactora de acero inoxidable. Perfecto para preparar té, café o aguas aromáticas en casa, en la oficina o de viaje.",
    "feats": [
     "Capacidad: 600 ml",
+    "Hierve agua en minutos",
     "Plegable para viajes",
     "Silicona de grado alimenticio",
     "Placa de acero inoxidable"
@@ -1747,12 +1747,12 @@
    "name": "Soporte de pared para utensilios",
    "cat": "cocina",
    "price": 6,
-   "desc": "Organizador de pared para la cocina con ranuras para guardar cuchillos de forma segura y ganchos deslizables. En los ganchos puedes colgar batidores, tijeras, cucharones o paños. Libera espacio en el mesón y deja todo a la mano.",
+   "desc": "Organizador de pared para la cocina de aprox. 40 cm de largo, con ranuras para guardar cuchillos de forma segura y ganchos deslizables. En los ganchos puedes colgar batidores, tijeras, cucharones o paños. Libera espacio en el mesón y deja todo a la mano.",
    "feats": [
+    "Largo aprox.: 40 cm",
     "Ranuras para cuchillos",
     "Ganchos deslizables",
-    "Se instala en la pared",
-    "Libera espacio en el mesón"
+    "Se instala en la pared"
    ],
    "imgs": [
     "img/p/p-107-0.jpg",
@@ -1895,12 +1895,12 @@
    "name": "Organizador de baño sobre inodoro",
    "cat": "hogar",
    "price": 11,
-   "desc": "Organizador de baño de varios niveles que se coloca sobre el inodoro para aprovechar un espacio que casi nunca se usa. Ideal para toallas, papel higiénico, productos de aseo y accesorios. Le da a tu baño un toque de orden y elegancia.",
+   "desc": "Organizador de baño de varios niveles que se coloca sobre el inodoro para aprovechar un espacio que casi nunca se usa. Su estructura tipo H se apoya firme en el piso sin caerse. Ideal para toallas, papel higiénico, productos de aseo y accesorios.",
    "feats": [
     "Varios niveles",
+    "Estructura tipo H firme",
     "Se coloca sobre el inodoro",
-    "Para toallas y productos de aseo",
-    "Diseño moderno"
+    "Para toallas y productos de aseo"
    ],
    "imgs": [
     "img/p/p-114-0.jpg",
@@ -1917,12 +1917,13 @@
    "name": "Organizador giratorio 360° de maquillaje",
    "cat": "cuidado",
    "price": 7,
-   "desc": "Organizador de maquillaje que gira 360° para encontrar lo que buscas en un instante. Tiene tapa transparente que protege las brochas y productos del polvo, y varios compartimentos para brochas, labiales y más. Elegante, compacto y muy fácil de limpiar.",
+   "desc": "Organizador de maquillaje que gira 360° para encontrar lo que buscas en un instante. Tiene cubierta de plástico ABS muy transparente que protege las brochas del polvo y la humedad, compartimentos separados, placa divisoria estable al girar y pies antideslizantes. Mide aprox. 24 cm de alto con la cubierta y 12 cm de diámetro.",
    "feats": [
     "Gira 360°",
-    "Tapa transparente",
-    "Varios compartimentos",
-    "Fácil de limpiar"
+    "Cubierta transparente contra polvo y humedad",
+    "Compartimentos separados",
+    "Pies antideslizantes",
+    "Alto aprox.: 24 cm"
    ],
    "imgs": [
     "img/p/p-115-0.jpg",
@@ -1968,7 +1969,6 @@
     "Ideal para regalar"
    ],
    "imgs": [
-    "img/p/p-117-0.jpg",
     "img/p/p-117-1.jpg",
     "img/p/p-117-2.jpg",
     "img/p/p-117-3.jpg"
@@ -2026,16 +2026,14 @@
    "name": "Combo secador y plancha de cabello Sonar",
    "cat": "cuidado",
    "price": 20,
-   "desc": "Combo profesional de secador y plancha para el cabello de la marca Sonar. Te permite secar y alisar en casa con resultados de salón. Ayuda a reducir el encrespamiento y a mantener el cabello hidratado.",
+   "desc": "Combo profesional 2 en 1 de secador y plancha para el cabello, marca Sonar, modelo SN-012. Te permite secar y alisar en casa con resultados de salón. Ayuda a reducir el encrespamiento y a mantener el cabello hidratado.",
    "feats": [
     "Secador + plancha",
-    "Marca Sonar",
+    "Marca Sonar, modelo SN-012",
     "Reduce el frizz",
     "Ideal para regalar"
    ],
    "imgs": [
-    "img/p/p-120-0.jpg",
-    "img/p/p-120-1.jpg",
     "img/p/p-120-2.jpg"
    ],
    "thumb": "img/p/p-120-s.jpg",
@@ -2055,8 +2053,6 @@
     "Para uso en casa"
    ],
    "imgs": [
-    "img/p/p-121-0.jpg",
-    "img/p/p-121-1.jpg",
     "img/p/p-121-2.jpg"
    ],
    "thumb": "img/p/p-121-s.jpg",
@@ -2078,8 +2074,7 @@
    ],
    "imgs": [
     "img/p/p-122-0.jpg",
-    "img/p/p-122-1.jpg",
-    "img/p/p-122-2.jpg"
+    "img/p/p-122-1.jpg"
    ],
    "thumb": "img/p/p-122-s.jpg",
    "src": "904d6cbecaac",
@@ -2091,12 +2086,13 @@
    "name": "Mini afeitadora recargable 3 en 1",
    "cat": "cuidado",
    "price": 12,
-   "desc": "Mini afeitadora recargable 3 en 1 de la marca Sonar, con acabado dorado. Incluye accesorios para perfilar la barba, hacer cortes modernos y retirar el vello de la nariz. Práctica para el día a día y para viajes.",
+   "desc": "Mini afeitadora recargable 3 en 1 de la marca Sonar, con acabado dorado. Incluye peines guía de 1, 2 y 3 mm, cabezal para vello de nariz, cable USB de carga, cepillo de limpieza y aceite. Sirve para perfilar la barba, hacer cortes modernos y retirar el vello de la nariz.",
    "feats": [
-    "3 en 1 con accesorios",
-    "Recargable",
-    "Marca Sonar",
-    "Acabado dorado"
+    "3 en 1",
+    "Peines guía de 1, 2 y 3 mm",
+    "Cabezal para nariz",
+    "Recargable por USB",
+    "Marca Sonar"
    ],
    "imgs": [
     "img/p/p-123-0.jpg",
@@ -2133,11 +2129,13 @@
    "name": "Columpio para bebés",
    "cat": "bebes",
    "price": 21,
-   "desc": "Columpio portátil diseñado para bebés y niños pequeños. Se puede usar dentro o fuera de casa y llevarlo a donde vayas. Un regalo divertido para que los peques jueguen seguros.",
+   "desc": "Columpio portátil para bebés y niños, apto hasta los 13 años y con capacidad de carga de hasta 100 kg. El asiento mide aprox. 35 x 35 cm y las cuerdas se regulan de 90 a 170 cm. Incluye correas, mosquetones, ganchos con tornillos de seguridad y bolsa para guardarlo. Se instala dentro o fuera de casa: en el jardín, el patio o el parque.",
    "feats": [
-    "Portátil",
-    "Para interiores y exteriores",
-    "Para bebés y niños pequeños"
+    "Hasta 13 años",
+    "Soporta hasta 100 kg",
+    "Asiento: 35 x 35 cm",
+    "Cuerdas regulables de 90 a 170 cm",
+    "Incluye accesorios y bolsa"
    ],
    "imgs": [
     "img/p/p-125-0.jpg",

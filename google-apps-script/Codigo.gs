@@ -33,6 +33,8 @@ function doPost(e) {
   try { d = JSON.parse(e.postData.contents); } catch (err) { return out_({ ok: false, error: 'Solicitud inválida.' }); }
   try {
     if (d.action === 'order') return out_(crearPedido_(d));
+    if (d.action === 'estados') return out_({ ok: true, estados: estados_() });
+    if (d.action === 'admin') return out_(admin_(d));
     if (d.action === 'track') return out_(consultar_(d.code, d.last4));
     if (d.action === 'trackMany') {
       const list = Array.isArray(d.list) ? d.list.slice(0, 20) : [];
@@ -41,13 +43,14 @@ function doPost(e) {
     return out_({ ok: false, error: 'Acción desconocida.' });
   } catch (err) {
     console.error(err);
-    return out_({ ok: false, error: 'No se pudo procesar el pedido. Intenta de nuevo.' });
+    return out_({ ok: false, error: d.action === 'order' ? 'No se pudo procesar el pedido. Intenta de nuevo.' : 'No se pudo completar. Intenta de nuevo.' });
   }
 }
 
 function doGet(e) {
   const p = (e && e.parameter) || {};
   if (p.action === 'track') return out_(consultar_(p.code, p.last4));
+  if (p.action === 'estados') return out_({ ok: true, estados: estados_() });
   return out_({ ok: true, tienda: 'Tienda Online' });
 }
 
@@ -60,6 +63,7 @@ function configurar() {
   try { DriveApp.getFileById(ss.getId()).setName(CONFIG.LIBRO); } catch (err) {}
   try { const p = comp.getParents(); if (p.hasNext()) p.next().setName(CONFIG.CARPETA_RAIZ); } catch (err) {}
   resumen_();
+  hojaRev_();
   console.log('Hoja de pedidos: ' + ss.getUrl());
   return ss.getUrl();
 }
@@ -90,12 +94,14 @@ function crearPedido_(d) {
 
   // Precios: si hay catálogo publicado se usan sus precios, no los que manda el navegador.
   const catalogo = catalogo_();
+  const est = catalogo ? estados_() : {};
   const items = d.items.slice(0, 30).map(it => {
     const id = t(it.id);
     const qty = Math.max(1, Math.min(20, Math.floor(Number(it.qty) || 1)));
     const p = catalogo ? catalogo[id] : null;
+    if (catalogo && (!p || (est[id] || p.status || 'aprobado') !== 'aprobado')) return null; // solo productos aprobados
     return { id, qty, name: p ? p.name : t(it.name), price: p ? Number(p.price) : Number(it.price) };
-  }).filter(it => it.id && it.price > 0);
+  }).filter(it => it && it.id && it.price > 0);
   if (!items.length) return { ok: false, error: 'Los productos ya no están disponibles.' };
   const total = r2_(items.reduce((s, i) => s + i.price * i.qty, 0));
   const abono = r2_(total * CONFIG.ABONO);
@@ -143,6 +149,104 @@ function crearPedido_(d) {
   } finally {
     lock.releaseLock();
   }
+}
+
+/* ---------- Revisión de productos (solo dueño, con PIN) ----------
+ * La tienda muestra a las clientas solo los productos aprobados. Las decisiones del dueño se guardan
+ * en la hoja "Revisión" (una fila por producto). El PIN vive en Propiedades del script (ADMIN_PIN),
+ * nunca en este código, que es público en GitHub. */
+const REV_COLS = ['ID', 'Producto', 'Estado', 'Comentario', 'Actualizado'];
+const REV_TXT = { pendiente: 'Por aprobar', aprobado: 'Aprobado', rechazado: 'Rechazado', editar: 'Editar' };
+
+function admin_(d) {
+  const pin = PropertiesService.getScriptProperties().getProperty('ADMIN_PIN');
+  if (!pin) return { ok: false, error: 'Falta configurar el PIN de dueño.' };
+  const cache = CacheService.getScriptCache();
+  const fallas = Number(cache.get('pin_fallas') || 0);
+  if (fallas >= 8) return { ok: false, error: 'Demasiados intentos con PIN incorrecto. Espera 15 minutos.' };
+  if (String(d.pin || '') !== pin) {
+    cache.put('pin_fallas', String(fallas + 1), 900);
+    return { ok: false, pin: true, error: 'PIN incorrecto.' };
+  }
+  if (d.op === 'revision') return { ok: true, revision: leerRev_() };
+  if (d.op === 'decidir') return decidir_(d);
+  return { ok: false, error: 'Acción desconocida.' };
+}
+
+function decidir_(d) {
+  const estado = String(d.estado || '');
+  if (!REV_TXT[estado]) return { ok: false, error: 'Estado no válido.' };
+  const comentario = String(d.comentario || '').trim().slice(0, 500);
+  if (estado === 'editar' && comentario.length < 3) return { ok: false, error: 'Escribe qué quieres cambiar.' };
+  const ids = (Array.isArray(d.ids) ? d.ids : []).map(x => String(x).trim()).filter(id => /^[A-Z]{1,4}-\d{1,6}$/.test(id)).slice(0, 300);
+  if (!ids.length) return { ok: false, error: 'No hay productos para actualizar.' };
+  const cat = catalogo_() || {};
+  const lock = LockService.getScriptLock();
+  lock.waitLock(20000);
+  try {
+    const sh = hojaRev_();
+    const n = sh.getLastRow() - 1;
+    const filas = n > 0 ? sh.getRange(2, 1, n, REV_COLS.length).getValues() : [];
+    const pos = {};
+    filas.forEach((r, i) => { pos[String(r[0]).trim()] = i; });
+    const ahora = new Date();
+    ids.forEach(id => {
+      const fila = [id, cat[id] ? cat[id].name : '', REV_TXT[estado], estado === 'editar' ? comentario : '', ahora];
+      if (id in pos) { if (!fila[1]) fila[1] = filas[pos[id]][1]; filas[pos[id]] = fila; }
+      else { pos[id] = filas.length; filas.push(fila); }
+    });
+    sh.getRange(2, 1, filas.length, REV_COLS.length)
+      .setValues(filas.map(r => [r[0], texto_(String(r[1] || '')), r[2], texto_(String(r[3] || '')), r[4]]));
+    CacheService.getScriptCache().remove('estados');
+    return { ok: true, estados: estados_() };
+  } finally {
+    lock.releaseLock();
+  }
+}
+
+// { id: { s: 'aprobado' | 'rechazado' | 'editar' | 'pendiente', c: comentario } }
+function leerRev_() {
+  const sh = hojaRev_();
+  const n = sh.getLastRow() - 1;
+  const out = {};
+  if (n < 1) return out;
+  sh.getRange(2, 1, n, 4).getValues().forEach(r => {
+    const id = String(r[0]).trim();
+    if (!id) return;
+    const s = Object.keys(REV_TXT).find(k => REV_TXT[k] === r[2]) || 'pendiente';
+    out[id] = { s, c: String(r[3] || '') };
+  });
+  return out;
+}
+
+// lo que ve la tienda: solo el estado de cada producto (sin comentarios), guardado 5 minutos
+function estados_() {
+  const cache = CacheService.getScriptCache();
+  const c = cache.get('estados');
+  if (c) return JSON.parse(c);
+  const e = {};
+  Object.entries(leerRev_()).forEach(([id, v]) => { e[id] = v.s; });
+  cache.put('estados', JSON.stringify(e), 300);
+  return e;
+}
+
+function hojaRev_() {
+  const ss = libro_();
+  let sh = ss.getSheetByName('Revisión');
+  if (!sh) {
+    sh = ss.insertSheet('Revisión');
+    sh.getRange(1, 1, 1, REV_COLS.length).setValues([REV_COLS]).setFontWeight('bold').setBackground('#1E66F5').setFontColor('#FFFFFF');
+    sh.setFrozenRows(1);
+    const filas = Math.max(1, sh.getMaxRows() - 1);
+    sh.getRange(2, 3, filas, 1).setDataValidation(
+      SpreadsheetApp.newDataValidation().requireValueInList(Object.values(REV_TXT), true).setAllowInvalid(false).build());
+    sh.getRange(2, 5, filas, 1).setNumberFormat('dd/mm/yyyy hh:mm');
+    sh.getRange(2, 4, filas, 1).setWrap(true);
+    sh.setColumnWidth(2, 280);
+    sh.setColumnWidth(4, 320);
+    sh.setColumnWidth(5, 140);
+  }
+  return sh;
 }
 
 /* ---------- Seguimiento ---------- */

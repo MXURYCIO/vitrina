@@ -279,6 +279,15 @@ body.rv-ped #chips,body.rv-ped .sec-head,body.rv-ped #grid,body.rv-ped #empty{di
 .rv-pill[data-s="aprobado"]{background:var(--ok-soft);color:var(--ok)}
 .rv-pill[data-s="rechazado"]{background:var(--bad-soft);color:var(--bad)}
 .rv-meta{margin:0;font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.rv-prices{margin:0;display:flex;flex-wrap:wrap;gap:4px 10px;font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.rv-prices b{color:var(--fg);font-weight:700}
+.rv-gain{color:var(--ok);font-weight:600}
+.pd-costo{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:12px 0 0;padding:12px;border-radius:18px;background:var(--panel-in);box-shadow:0 0 0 .5px var(--hair)}
+.pd-costo div{min-width:0}
+.pd-costo dt{font-size:12px;color:var(--muted);line-height:1.25}
+.pd-costo dd{margin:4px 0 0;font-size:17px;font-weight:700;font-variant-numeric:tabular-nums}
+.pd-costo div:last-child dd{color:var(--ok)}
+.pd-costo small{font-size:12px;font-weight:600}
 .rv-note{margin:0;display:flex;gap:6px;align-items:flex-start;padding:8px 10px;border-radius:12px;background:var(--info-soft);color:var(--info);font-size:13px;line-height:1.35;overflow-wrap:anywhere}
 .rv-note svg{flex:none;width:15px;height:15px;margin-top:1px}
 .rv-acts{display:grid;grid-template-columns:minmax(0,1fr);gap:6px}
@@ -972,7 +981,7 @@ function openProduct(id) {
     `${hasPhoto(p) && p.imgs.length > 1
         ? `<div class="gallery" style="${grad(p)}"><div class="g-track" id="gTrack">${p.imgs.map((src, i) => `<img src="${esc(src)}" alt="${esc(p.name)}, foto ${i + 1}" loading="${i ? 'lazy' : 'eager'}" decoding="async">`).join('')}</div><div class="g-dots" aria-hidden="true">${p.imgs.map((_, i) => `<span class="${i ? '' : 'on'}"></span>`).join('')}</div></div>`
         : `<div class="pd-media${hasPhoto(p) ? ' photo' : ''}" style="${grad(p)}">${visual(p)}</div>`}
-     ${REVIEW ? `<p><span class="rv-pill" data-s="${eff(p)}">${RV_LABEL[eff(p)] || eff(p)}</span></p>${REVC[p.id] && eff(p) === 'editar' ? `<p class="rv-note">${ic('pencil')}<span>${esc(REVC[p.id])}</span></p>` : ''}` : ''}
+     ${REVIEW ? `<p><span class="rv-pill" data-s="${eff(p)}">${RV_LABEL[eff(p)] || eff(p)}</span></p>${REVC[p.id] && eff(p) === 'editar' ? `<p class="rv-note">${ic('pencil')}<span>${esc(REVC[p.id])}</span></p>` : ''}${costoBox(p)}` : ''}
      <div class="pd-row"><div><p class="pd-cat">${catLabel(p.cat)} · ${p.id}</p><p class="pd-price">${money(p.price)}</p></div>
        <p class="pd-abono">${ic('shield')}Lo reservas con ${money(p.price * ABONO)}</p></div>
      <p class="pd-desc">${esc(p.desc)}</p>
@@ -1539,7 +1548,8 @@ function rvRow(p) {
     <button class="thumb rv-thumb${hasPhoto(p) ? ' photo' : ''}" type="button" data-open="${p.id}" style="${grad(p)}" aria-label="Ver fotos de ${esc(p.name)}">${visual(p, 0, true)}</button>
     <div class="rv-main">
       <div class="rv-top"><button class="rv-name" type="button" data-open="${p.id}">${esc(p.name)}</button><span class="rv-pill" data-s="${s}">${RV_LABEL[s] || s}</span></div>
-      <p class="rv-meta">${money(p.price)} · ${catLabel(p.cat)} · ${p.id}</p>
+      ${rvPrices(p)}
+      <p class="rv-meta">${catLabel(p.cat)} · ${p.id}</p>
       ${REVC[p.id] && s === 'editar' ? `<p class="rv-note">${ic('pencil')}<span>${esc(REVC[p.id])}</span></p>` : ''}
     </div>
     ${rvActs(p)}</article>`;
@@ -1638,6 +1648,36 @@ function setRevision(rev) {
   if (!rev) return;
   REVC = {}; Object.entries(rev).forEach(([id, v]) => { if (v && v.c) REVC[id] = v.c; });
 }
+/* Precio de Telegram: va cifrado en costos.json y solo se descifra aquí con la llave que Google entrega con el PIN.
+   La página de clientas nunca descarga ese archivo. */
+let COSTO = {}, costoListo = false;
+async function loadCostos(llave) {
+  if (!REVIEW || !llave || costoListo || !(window.crypto && crypto.subtle)) return;
+  try {
+    const der = Uint8Array.from(atob(llave), c => c.charCodeAt(0));
+    const key = await crypto.subtle.importKey('pkcs8', der, { name: 'RSA-OAEP', hash: 'SHA-256' }, false, ['decrypt']);
+    const res = await fetch('costos.json', { cache: 'no-cache' });
+    if (!res.ok) return;
+    const { costos = {} } = await res.json();
+    const dec = new TextDecoder();
+    const out = {};
+    await Promise.all(Object.entries(costos).map(async ([id, b64]) => {
+      try {
+        const buf = await crypto.subtle.decrypt({ name: 'RSA-OAEP' }, key, Uint8Array.from(atob(b64), c => c.charCodeAt(0)));
+        const v = Number(dec.decode(buf)); if (v > 0) out[id] = v;
+      } catch (e) {}
+    }));
+    COSTO = out; costoListo = true;
+    renderGrid();
+    const pid = sheet.dataset.pid;
+    if (sheet.classList.contains('open') && sheet.dataset.kind === 'product' && pid) { const box = $('#pdCosto'); if (box) box.outerHTML = costoBox(byId[pid]); }
+  } catch (e) {}
+}
+const ganancia = p => { const c = COSTO[p.id]; return c ? { c, g: r2(p.price - c), pc: Math.round((p.price - c) / c * 100) } : null; };
+const rvPrices = p => { const x = ganancia(p);
+  return `<p class="rv-prices"><span>Telegram <b>${x ? money(x.c) : (costoListo ? 'sin dato' : '…')}</b></span><span>Tienda <b>${money(p.price)}</b></span>${x ? `<span class="rv-gain">Ganas ${money(x.g)} (${x.pc}%)</span>` : ''}</p>`; };
+const costoBox = p => { const x = p && ganancia(p);
+  return `<dl class="pd-costo" id="pdCosto"><div><dt>Precio en Telegram</dt><dd>${x ? money(x.c) : (costoListo ? 'Sin dato' : 'Cargando…')}</dd></div><div><dt>Precio en la tienda</dt><dd>${p ? money(p.price) : ''}</dd></div><div><dt>Ganancia</dt><dd>${x ? `${money(x.g)} <small>(${x.pc}%)</small>` : '…'}</dd></div></dl>`; };
 function openPin(err) {
   openSheet('pin', 'PIN de dueño',
     `<form id="pinForm" class="rv-form" novalidate><p class="muted">Escribe tu PIN para ver y revisar los productos. Queda guardado en este celular.</p>
@@ -1653,7 +1693,7 @@ async function submitPin() {
   try {
     const r = await api({ action: 'admin', pin, op: 'revision' });
     if (!r || !r.ok) { btn.disabled = false; btn.textContent = 'Entrar'; pinErr((r && r.error) || 'PIN incorrecto.'); return; }
-    store.set('vt-pin', pin); setRevision(r.revision);
+    store.set('vt-pin', pin); setRevision(r.revision); loadCostos(r.llave);
     const next = rvPending; rvPending = null;
     closeSheet(); applyVisible();
     if (next) next(); else toast('Listo, ya puedes revisar');
@@ -1712,7 +1752,7 @@ if (REVIEW) {
   if (rvLocked()) { renderReviewBar(); setTimeout(() => { if (rvLocked()) openPin(); }, 400); }
   // si este celular ya tiene el PIN, trae los comentarios de edición
   if (LIVE && getPin()) api({ action: 'admin', pin: getPin(), op: 'revision' })
-    .then(r => { if (r && r.ok) { setRevision(r.revision); renderGrid(); } else if (r && r.pin) { store.set('vt-pin', ''); applyVisible(); openPin(r.error); } }, () => {});
+    .then(r => { if (r && r.ok) { setRevision(r.revision); renderGrid(); loadCostos(r.llave); } else if (r && r.pin) { store.set('vt-pin', ''); applyVisible(); openPin(r.error); } }, () => {});
 }
 $('#trackHint').hidden = LIVE;
 renderChips(); renderGrid(); renderOrders(); updateBadge(); deadline(); footNote();

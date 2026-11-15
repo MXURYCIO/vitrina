@@ -42,6 +42,8 @@ Margen sobre el precio del proveedor, redondeado hacia arriba al dólar:
 - de $5 a $9.99: +75 %
 - $10 o más: +50 %
 
+El precio de Telegram de cada producto nuevo se guarda cifrado en `costos.json` con `python3 scripts/costos.py P-201=3.50`. Nunca va en `products.json` ni en ningún otro archivo público. Solo la página de revisión lo muestra (precio de Telegram, precio de la tienda y ganancia), después de ingresar el PIN.
+
 ## 6. Aprobación
 
 Todo producto nuevo entra como "Por aprobar". Solo se publica cuando el dueño lo aprueba en la página de revisión.

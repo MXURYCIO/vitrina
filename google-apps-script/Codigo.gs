@@ -251,7 +251,8 @@ function admin_(d) {
     cache.put('pin_fallas', String(fallas + 1), 900);
     return { ok: false, pin: true, error: 'PIN incorrecto.' };
   }
-  if (d.op === 'revision') return { ok: true, revision: leerRev_() };
+  // la llave COSTOS_LLAVE (Propiedades del script) descifra costos.json: el precio de Telegram que solo ve el dueño
+  if (d.op === 'revision') return { ok: true, revision: leerRev_(), llave: PropertiesService.getScriptProperties().getProperty('COSTOS_LLAVE') || '' };
   if (d.op === 'pedidos') return buscarPedidos_(String(d.q || ''));
   if (d.op === 'estado') return cambiarEstado_(String(d.code || ''), String(d.estado || ''));
   if (d.op === 'leer') {

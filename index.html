@@ -164,6 +164,33 @@ p{margin:0}
 .chip[aria-pressed="true"]{background:var(--accent-glass);color:var(--accent-ink);box-shadow:inset 0 1px 0 rgba(255,255,255,.55),inset 0 0 0 .5px rgba(255,255,255,.35),inset 0 -3px 8px rgba(0,0,0,.10),0 8px 18px -10px var(--accent)}
 .chip[aria-pressed="true"] .chip-n{color:inherit;opacity:.8}
 
+.tools{display:flex;gap:10px;margin-top:18px}
+.tools:empty{display:none}
+.tool{flex:1 1 0;min-width:0;display:flex;align-items:center;gap:8px;height:46px;padding:0 12px 0 14px;border:0;border-radius:23px;background:var(--glass-strong);color:var(--fg);font-size:15px;font-weight:600;text-align:left;
+  -webkit-backdrop-filter:blur(10px) saturate(1.8);backdrop-filter:blur(10px) saturate(1.8);
+  box-shadow:0 0 0 .5px var(--edge),inset 0 1px 0 var(--rim-hi),inset 0 0 0 .5px var(--rim-lo),0 4px 12px -8px var(--shadow);transition:transform .4s var(--ease-spring),background .2s,color .2s}
+.tool:active{transform:scale(.96)}
+.tool svg{flex:none;width:19px;height:19px}
+.tool .t-txt{flex:1;min-width:0;display:flex;flex-direction:column;line-height:1.15}
+.tool .t-lab{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tool .t-val{font-size:12px;font-weight:500;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tool .t-chev{width:16px;height:16px;opacity:.6}
+.tool[aria-pressed="true"]{background:var(--accent-glass);color:var(--accent-ink);box-shadow:inset 0 1px 0 rgba(255,255,255,.55),inset 0 0 0 .5px rgba(255,255,255,.35),inset 0 -3px 8px rgba(0,0,0,.10),0 8px 18px -10px var(--accent)}
+.tool[aria-pressed="true"] .t-val{color:inherit;opacity:.85}
+.opts{display:grid;gap:8px;margin:0;padding:0;list-style:none}
+.opt{width:100%;display:flex;align-items:center;gap:12px;min-height:52px;padding:10px 16px;border:0;border-radius:16px;background:var(--panel-in);color:var(--fg);font-size:16px;font-weight:600;text-align:left;box-shadow:0 0 0 .5px var(--hair);transition:transform .3s var(--ease-spring),background .2s}
+.opt:active{transform:scale(.98)}
+.opt .o-lab{flex:1;min-width:0}
+.opt .o-n{font-size:13px;font-weight:600;color:var(--muted);font-variant-numeric:tabular-nums}
+.opt .o-ck{flex:none;width:22px;height:22px;display:grid;place-items:center;border-radius:11px;box-shadow:inset 0 0 0 1.5px var(--hair)}
+.opt .o-ck svg{width:14px;height:14px;opacity:0}
+.opt[aria-checked="true"]{background:var(--accent-soft);color:var(--accent);box-shadow:0 0 0 1.5px var(--accent)}
+.opt[aria-checked="true"] .o-n{color:var(--accent)}
+.opt[aria-checked="true"] .o-ck{background:var(--accent);color:var(--surface);box-shadow:none}
+.opt[aria-checked="true"] .o-ck svg{opacity:1}
+.opt-head{margin:14px 2px 8px;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.opt-head:first-child{margin-top:0}
+
 .sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin:18px 2px 12px}
 .sec-head h2{margin:0;font-family:var(--font-display);font-size:22px;font-weight:700;letter-spacing:-.022em}
 .count{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
@@ -208,7 +235,7 @@ p{margin:0}
 .ship-note strong{font-weight:700}
 .review-bar{margin-top:14px;padding:10px 14px;border-radius:16px;background:var(--warn-soft);color:var(--warn);font-size:14px;font-weight:600}
 /* Pedidos para la dueña */
-body.rv-ped #chips,body.rv-ped .sec-head,body.rv-ped #grid,body.rv-ped #empty{display:none!important}
+body.rv-ped #tools,body.rv-ped .sec-head,body.rv-ped #grid,body.rv-ped #empty{display:none!important}
 .rv-seg{display:grid;grid-template-columns:1fr 1fr;gap:4px;padding:4px;border-radius:16px;background:var(--panel-in);box-shadow:0 0 0 .5px var(--hair)}
 .rv-seg button{height:40px;border:0;border-radius:12px;background:none;color:var(--fg);font-size:15px;font-weight:700}
 .rv-seg button[aria-selected="true"]{background:var(--accent);color:var(--accent-ink);box-shadow:0 6px 14px -8px var(--accent)}
@@ -600,7 +627,7 @@ body.rv-ped #chips,body.rv-ped .sec-head,body.rv-ped #grid,body.rv-ped #empty{di
     <section class="rv-bar" id="rvBar" aria-label="Revisión de productos" hidden></section>
     <section class="rv-orders" id="rvOrders" aria-label="Pedidos de clientas" hidden></section>
 
-    <nav class="chips" id="chips" aria-label="Categorías"></nav>
+    <nav class="tools" id="tools" aria-label="Categorías y orden"></nav>
 
     <div class="sec-head"><h2 id="secTitle">Llegaron hoy</h2><span class="count" id="count"></span></div>
     <div class="grid" id="grid"></div>
@@ -696,6 +723,9 @@ const P = {
   up:'<path d="M12 19V5"/><path d="m5.5 11.5 6.5-6.5 6.5 6.5"/>',
   warn:'<path d="M12 3.5 2.5 20h19L12 3.5Z"/><path d="M12 10v4.5"/><path d="M12 17.5h.01"/>',
   image:'<rect x="3.5" y="4.5" width="17" height="15" rx="3"/><circle cx="9" cy="10" r="1.8"/><path d="m20.5 16-5-5-8 8.5"/>',
+  grid:'<rect x="4" y="4" width="6.5" height="6.5" rx="1.6"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.6"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.6"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.6"/>',
+  sliders:'<path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2.2"/><circle cx="9" cy="17" r="2.2"/>',
+  chev:'<path d="m7 10 5 5 5-5"/>',
   truck:'<path d="M3.5 16.5V7a1 1 0 0 1 1-1H14v10.5"/><path d="M14 9.5h3.5l3 3.3v3.7h-1.4"/><path d="M9.1 16.5h5.8"/><circle cx="7" cy="17" r="1.9"/><circle cx="17" cy="17" r="1.9"/>'
 };
 const ic = (n, sw) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="${sw || (n === 'plus' || n === 'minus' || n === 'check' ? 2.3 : 1.8)}" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${P[n]}</svg>`;
@@ -851,7 +881,15 @@ const STEPS = [
 ];
 const statusPill = s => `<span class="status" data-s="${LABELS[s] ? s : 'pendiente'}">${LABELS[s] || LABELS.pendiente}</span>`;
 
-const state = { cat:'todo', q:'', view:'tienda', loading: LIVE, loadFail: false };
+const SORTS = [
+  { id: 'rec', label: 'Recomendados', short: '' },
+  { id: 'az', label: 'Nombre: de la A a la Z', short: 'A a Z' },
+  { id: 'za', label: 'Nombre: de la Z a la A', short: 'Z a A' },
+  { id: 'pdesc', label: 'Precio: de mayor a menor', short: 'Mayor precio' },
+  { id: 'pasc', label: 'Precio: de menor a mayor', short: 'Menor precio' }
+];
+const state = { cat:'todo', q:'', view:'tienda', loading: LIVE, loadFail: false, sort: 'rec' };
+{ const s0 = store.get('vt-sort', 'rec'); if (SORTS.some(o => o.id === s0)) state.sort = s0; }
 let cart = store.get('vt-cart', {});
 if (typeof cart !== 'object' || !cart) cart = {};
 // en la tienda real el catálogo llega después; ahí (loadCatalog) se quitan los productos que ya no existen
@@ -865,17 +903,44 @@ $$('[data-ic]').forEach(el => { if (el.style.display === 'contents') el.outerHTM
 
 /* ---------- Tienda ---------- */
 const norm = s => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+const catCounts = () => { const n = { todo: PRODUCTS.length }; PRODUCTS.forEach(p => { n[p.cat] = (n[p.cat] || 0) + 1; }); return n; };
+const sortOf = id => SORTS.find(o => o.id === id) || SORTS[0];
 function renderChips() {
-  if (rvLocked()) { $('#chips').innerHTML = ''; return; }
-  const counts = { todo: PRODUCTS.length };
-  PRODUCTS.forEach(p => { counts[p.cat] = (counts[p.cat] || 0) + 1; });
-  $('#chips').innerHTML = CATS.filter(c => counts[c.id]).map(c =>
-    `<button class="chip" type="button" data-cat="${c.id}" aria-pressed="${state.cat === c.id}">${c.label}<span class="chip-n">${counts[c.id]}</span></button>`).join('');
+  const box = $('#tools');
+  if (rvLocked()) { box.innerHTML = ''; return; }
+  const catOn = state.cat !== 'todo', sortOn = state.sort !== 'rec';
+  box.innerHTML = `<button class="tool" type="button" data-act="cats" aria-pressed="${catOn}" aria-haspopup="dialog">${ic('grid')}<span class="t-txt"><span class="t-lab">Categorías</span><span class="t-val">${catOn ? catLabel(state.cat) : 'Todas'}</span></span>${ic('chev')}</button>
+    <button class="tool" type="button" data-act="sorts" aria-pressed="${sortOn}" aria-haspopup="dialog">${ic('sliders')}<span class="t-txt"><span class="t-lab">Filtro</span><span class="t-val">${sortOn ? sortOf(state.sort).short : 'Ordenar por'}</span></span>${ic('chev')}</button>`;
+  $$('#tools .tool > svg:last-child').forEach(s => s.classList.add('t-chev'));
+}
+function openCats() {
+  const n = catCounts();
+  const opts = CATS.filter(c => n[c.id]).map(c => `<li><button class="opt" type="button" role="radio" data-act="setcat" data-v="${c.id}" aria-checked="${state.cat === c.id}"><span class="o-lab">${c.id === 'todo' ? 'Todas las categorías' : c.label}</span><span class="o-n">${n[c.id]}</span><span class="o-ck">${ic('check')}</span></button></li>`).join('');
+  openSheet('cats', 'Categorías', `<ul class="opts" role="radiogroup" aria-label="Categorías">${opts}</ul>`);
+}
+function openSorts() {
+  const opts = SORTS.map(o => `<li><button class="opt" type="button" role="radio" data-act="setsort" data-v="${o.id}" aria-checked="${state.sort === o.id}"><span class="o-lab">${o.label}</span><span class="o-ck">${ic('check')}</span></button></li>`).join('');
+  openSheet('sorts', 'Filtro', `<p class="opt-head">Ordenar por</p><ul class="opts" role="radiogroup" aria-label="Ordenar por">${opts}</ul>`);
+}
+function toGrid() {
+  const h = $('.sec-head'); if (!h) return;
+  const y = h.getBoundingClientRect().top + window.scrollY - 90;
+  if (window.scrollY > y) window.scrollTo({ top: Math.max(0, y), behavior: reduceMotion ? 'auto' : 'smooth' });
+}
+const byName = (a, b) => a.name.localeCompare(b.name, 'es', { sensitivity: 'base', numeric: true });
+function sortList(list) {
+  switch (state.sort) {
+    case 'az': return list.sort(byName);
+    case 'za': return list.sort((a, b) => byName(b, a));
+    case 'pdesc': return list.sort((a, b) => b.price - a.price || byName(a, b));
+    case 'pasc': return list.sort((a, b) => a.price - b.price || byName(a, b));
+    default: return list;
+  }
 }
 function renderGrid() {
   const q = norm(state.q.trim());
-  const list = PRODUCTS.filter(p => (state.cat === 'todo' || p.cat === state.cat) &&
-    (!q || norm(`${p.name} ${p.desc} ${catLabel(p.cat)}`).includes(q)));
+  const list = sortList(PRODUCTS.filter(p => (state.cat === 'todo' || p.cat === state.cat) &&
+    (!q || norm(`${p.name} ${p.desc} ${catLabel(p.cat)}`).includes(q))));
   const locked = rvLocked();
   if (locked) list.length = 0;
   $('#grid').classList.toggle('rv-list', REVIEW);
@@ -887,7 +952,7 @@ function renderGrid() {
       </div>
       <button class="card-text" type="button" data-open="${p.id}"><span class="name">${esc(p.name)}</span><span class="cat">${catLabel(p.cat)}</span></button>
     </article>`).join('');
-  $('#secTitle').textContent = state.q.trim() ? 'Resultados' : state.cat === 'todo' ? (REVIEW ? 'Productos' : 'Llegaron hoy') : catLabel(state.cat);
+  $('#secTitle').textContent = state.q.trim() ? 'Resultados' : state.cat === 'todo' ? (REVIEW ? 'Productos' : state.sort !== 'rec' ? 'Todos los productos' : 'Llegaron hoy') : catLabel(state.cat);
   $('#count').textContent = `${list.length} ${list.length === 1 ? 'producto' : 'productos'}`;
   const empty = $('#empty');
   empty.hidden = list.length > 0;
@@ -1277,6 +1342,10 @@ document.addEventListener('click', e => {
       sheet.dataset.qty = q; $('#pdQty').textContent = q; $('#pdTotal').textContent = money(p.price * q);
       break;
     }
+    case 'cats': openCats(); break;
+    case 'sorts': openSorts(); break;
+    case 'setcat': state.cat = t.dataset.v; closeSheet(); renderChips(); renderGrid(); toGrid(); break;
+    case 'setsort': state.sort = t.dataset.v; store.set('vt-sort', state.sort); closeSheet(); renderChips(); renderGrid(); toGrid(); break;
     case 'pdadd': addToCart(sheet.dataset.pid, +sheet.dataset.qty || 1, t); closeSheet(); break;
     case 'q': setQty(id, (cart[id] || 0) + (+t.dataset.d)); openCart(); break;
     case 'rm': { const p = byId[id]; setQty(id, 0); openCart(); if (p) toast(`Quitado: ${p.name}`); break; }

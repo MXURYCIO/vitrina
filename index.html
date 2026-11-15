@@ -363,7 +363,7 @@ p{margin:0}
 .edge-bottom{position:fixed;inset:auto 0 0;z-index:39;height:calc(env(safe-area-inset-bottom,0px) + 96px);pointer-events:none;background:linear-gradient(transparent,var(--bg-fade))}
 
 .toast{position:fixed;z-index:60;left:50%;bottom:calc(env(safe-area-inset-bottom,0px) + 92px);translate:-50% 18px;opacity:0;pointer-events:none;
-  max-width:calc(100% - 32px);padding:10px 16px;border-radius:20px;font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  width:max-content;max-width:min(420px,calc(100% - 32px));padding:10px 16px;border-radius:20px;font-size:14px;font-weight:600;line-height:1.35;text-align:center;
   transition:translate .5s var(--ease-spring),opacity .25s}
 .toast.show{translate:-50% 0;opacity:1}
 .fly{position:fixed;z-index:70;width:18px;height:18px;margin:-9px 0 0 -9px;border-radius:9px;background:var(--accent);box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 6px 14px -4px var(--accent);pointer-events:none}
@@ -986,7 +986,7 @@ function openCheckout() {
          <div class="fields two">${field('cNum', 'N.º de comprobante', { val:d.cNum })}${field('cMonto', 'Monto depositado', { im:'decimal', max:8, ph:money(a).slice(1), val:d.cMonto })}</div>
        </section>
        <section class="co-sec"><h3><span class="n">5</span>Condiciones</h3>
-         <ul class="terms"><li>El abono del 50% reserva tu pedido.</li><li>El abono no se devuelve, salvo que el producto no esté disponible. En ese caso te devolvemos el 100%.</li><li>Confirmamos tu pedido cuando verificamos el depósito.</li><li>Entregamos en ${TIENDA.zona}. A otras ciudades enviamos por servicio de entrega y el costo del envío lo pagas aparte.</li></ul>
+         <ul class="terms"><li>El abono del 50% reserva tu pedido.</li><li>El abono no se devuelve. Solo si algún producto de tu pedido no está disponible, te devolvemos el abono de ese producto (el 50% de su precio).</li><li>Confirmamos tu pedido cuando verificamos el depósito.</li><li>Entregamos en ${TIENDA.zona}. A otras ciudades enviamos por servicio de entrega y el costo del envío lo pagas aparte.</li></ul>
          <label class="check" for="cTerms" id="termsLabel"><input id="cTerms" type="checkbox"><span class="box">${ic('check')}</span><span>Leí y acepto las condiciones de reserva</span></label>
          <p class="msg" data-for="cTerms"></p>
        </section>

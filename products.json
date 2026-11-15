@@ -84,19 +84,16 @@
   },
   {
    "id": "P-105",
-   "name": "Jarra de vidrio 2 L con 4 tazas",
+   "name": "Jarra de vidrio 2 L con 4 tazas, verde",
    "cat": "cocina",
    "price": 6,
-   "desc": "Juego de jarra de vidrio de 2 litros con 4 tazas. Perfecto para reuniones y para servir bebidas frías o calientes.",
+   "desc": "Juego de jarra de vidrio de 2 litros con 4 tazas, disponible solo en color verde. Perfecto para reuniones y para servir bebidas frías o calientes.",
    "feats": [
+    "Disponible solo en color verde",
     "Jarra de 2 litros",
-    "4 tazas de vidrio",
-    "Color verde"
+    "4 tazas de vidrio"
    ],
    "imgs": [
-    "img/p/p-105-0.jpg",
-    "img/p/p-105-1.jpg",
-    "img/p/p-105-2.jpg",
     "img/p/p-105-3.jpg"
    ],
    "thumb": "img/p/p-105-s.jpg",
@@ -150,15 +147,14 @@
    "name": "Batidor eléctrico para espuma de café",
    "cat": "cocina",
    "price": 3,
-   "desc": "Mini batidor a pilas para hacer espuma de leche, capuchinos o batir huevos en segundos.",
+   "desc": "Mini batidor a pilas para hacer espuma de leche, capuchinos o batir huevos en segundos. El color es surtido, según disponibilidad.",
    "feats": [
     "Portátil y fácil de usar",
     "Para café, leche o huevos",
-    "Colores surtidos"
+    "Color surtido, según disponibilidad"
    ],
    "imgs": [
-    "img/p/p-108-0.jpg",
-    "img/p/p-108-1.jpg"
+    "img/p/p-108-0.jpg"
    ],
    "thumb": "img/p/p-108-s.jpg",
    "src": "507a8f5c02e3",
@@ -235,7 +231,8 @@
    "feats": [
     "Ruedas que giran 360°",
     "3 canastas amplias",
-    "Estable y resistente"
+    "Estable y resistente",
+    "Color según disponibilidad"
    ],
    "imgs": [
     "img/p/p-112-0.jpg"
@@ -311,21 +308,18 @@
   },
   {
    "id": "P-116",
-   "name": "Espejo de cuerpo entero con soporte",
+   "name": "Espejo de cuerpo entero con soporte, negro",
    "cat": "hogar",
    "price": 23,
-   "desc": "Espejo de cuerpo entero inclinable, con marco metálico y ruedas para moverlo de un lugar a otro.",
+   "desc": "Espejo de cuerpo entero inclinable, disponible solo en color negro. Tiene marco metálico y ruedas para moverlo de un lugar a otro.",
    "feats": [
+    "Disponible solo en color negro",
     "Marco metálico resistente",
     "Inclinable",
-    "Con ruedas",
-    "Color negro"
+    "Con ruedas"
    ],
    "imgs": [
-    "img/p/p-116-0.jpg",
-    "img/p/p-116-1.jpg",
-    "img/p/p-116-2.jpg",
-    "img/p/p-116-3.jpg"
+    "img/p/p-116-1.jpg"
    ],
    "thumb": "img/p/p-116-s.jpg",
    "src": "01d69d12bfaa",
@@ -445,7 +439,8 @@
    "feats": [
     "6 niveles de intensidad",
     "Inalámbrica, incluye cargador",
-    "Para cuello, espalda y piernas"
+    "Para cuello, espalda y piernas",
+    "Color según disponibilidad"
    ],
    "imgs": [
     "img/p/p-122-0.jpg",
@@ -483,12 +478,12 @@
    "name": "Bacinica sillita para bebé",
    "cat": "bebes",
    "price": 14,
-   "desc": "Bacinica con respaldo y apoyabrazos para que tu peque se sienta seguro. El recipiente se saca para limpiarlo fácil.",
+   "desc": "Bacinica con respaldo y apoyabrazos para que tu peque se sienta seguro. Disponible en rosado y azul, según disponibilidad. El recipiente se saca para limpiarlo fácil.",
    "feats": [
     "Respaldo y apoyabrazos",
     "Recipiente desmontable",
     "De 18 meses a 4 años aprox.",
-    "Rosado o azul"
+    "Disponible en rosado y azul (según disponibilidad)"
    ],
    "imgs": [
     "img/p/p-124-0.jpg"

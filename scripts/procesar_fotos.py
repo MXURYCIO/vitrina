@@ -28,7 +28,7 @@ RE_PRECIO = re.compile(r'(\$\s*\d|precio|\b\d{1,3}[.,]\d{2}\b)', re.I)
 RE_PROVEEDOR = re.compile(r'(\d{3}[\s.-]?\d{3}[\s.-]?\d{3,4}|@|t\.me|https?:|www\.|kayde|pandita|importadora|whats|pedidos|cons[ií]guelo|env[ií]os|mayor|precio vip)', re.I)
 RE_MARCA = re.compile(r'(kayde|pandita|importadora|s[ií]guenos)', re.I)
 # texto en portugués o inglés (las fotos de catálogo chino suelen traerlo)
-RE_EXTRANJERO = re.compile(r'(ção|ções|ões|ã|õ|acao|icao|ucao|coes|voce|\bnao\b|com ?cabo|\bpara o\b|with|design|sturdy|storage|rotat|wheel|shop|details|pulley|hang|toddler|potty|training|reliable|practical|soup ?pot|\bnew\b|\bsize\b|power|\beasy\b|\bfree\b|\bthe\b)', re.I)
+RE_EXTRANJERO = re.compile(r'(ção|ções|ões|ã|õ|acao|icao|ucao|coes|voce|\bnao\b|com ?cabo|\bcom\b|\bpara o\b|pilhas|limpar|limpeza|haste|with|design|sturdy|storage|rotat|wheel|shop|details|product|pulley|hang|toddler|potty|training|reliable|practical|soup ?pot|\bnew\b|\bsize\b|power|\beasy\b|\bfree\b|\bthe\b|\bpink\b|\bblue\b|\bblack\b|\bwhite\b|\bgr[ae]y\b|\bgreen\b|\bpurple\b|\byellow\b|hair|clipper|shaver|trimmer|[\u3040-\u30ff\u4e00-\u9fff\uac00-\ud7af])', re.I)
 FUENTES = ['/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf', '/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf']
 
 ocr = RapidOCR()

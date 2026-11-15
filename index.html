@@ -7,6 +7,18 @@
 <meta name="theme-color" content="#080B11" media="(prefers-color-scheme: dark)">
 <meta name="description" content="Productos para el hogar, la cocina y el cuidado personal. Reserva con el 50% y sigue tu pedido con tu código.">
 <title>Tienda Online</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%231E66F5'/%3E%3Cg fill='none' stroke='white' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9h12l-1 9.5a1 1 0 0 1-1 .9H8a1 1 0 0 1-1-.9L6 9Z'/%3E%3Cpath d='M9.5 11V8a2.5 2.5 0 0 1 5 0v3'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="img/icono-180.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Tienda Online">
+<meta property="og:title" content="Tienda Online">
+<meta property="og:description" content="Productos para el hogar, la cocina y el cuidado personal. Reserva con el 50% y sigue tu pedido con tu código.">
+<meta property="og:url" content="https://tiendaonline-ec.github.io/">
+<meta property="og:image" content="https://tiendaonline-ec.github.io/img/compartir.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="es_EC">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400..800&display=swap">
@@ -1045,14 +1057,19 @@ async function submitCheckout() {
     try {
       const photo = await compressImage($('#cFoto').files[0]);
       const r = await api({ action: 'order', name: order.name, last: order.last, cedula: v('cCedula'), phone: order.phone,
-        city: order.city, address: order.address, items, receipt: order.receipt, photo, terms: true });
-      if (!r || !r.ok) throw new Error((r && r.error) || 'No se pudo enviar el pedido.');
+        city: order.city, address: order.address, items, total: t, receipt: order.receipt, photo, terms: true });
+      if (!r || !r.ok) { const e = new Error((r && r.error) || 'No se pudo enviar el pedido.'); e.server = true; e.code = r && r.code; throw e; }
       order.code = r.code; order.date = r.date || now; order.total = r.total; order.abono = r.abono;
     } catch (err) {
       sending = false; btn.disabled = false; btn.textContent = 'Enviar pedido';
-      errBox.textContent = err.message === 'red' || err.message === 'Failed to fetch' || err.name === 'TypeError'
-        ? 'No se pudo enviar. Revisa tu conexión a internet e inténtalo de nuevo.'
-        : err.message === 'foto' ? 'No se pudo leer la foto del comprobante. Elige otra imagen.' : err.message;
+      if (err.code === 'catalogo') {
+        // un producto cambió de precio o ya no está: se recarga el catálogo y se muestra el carrito actualizado
+        await loadCatalog(); openCart(); toast(err.message, 7000);
+        return;
+      }
+      errBox.textContent = err.server ? err.message
+        : err.message === 'foto' ? 'No se pudo leer la foto del comprobante. Elige otra imagen.'
+        : 'No se pudo enviar. Revisa tu conexión a internet e inténtalo de nuevo.';
       errBox.hidden = false; errBox.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'center' });
       return;
     }
@@ -1071,8 +1088,8 @@ function openSuccess(o) {
     `<div class="done"><span class="done-ic">${ic('check')}</span><p class="done-t">Recibimos tu pedido</p><p class="muted">Revisaremos tu comprobante y actualizaremos el estado.</p>
       <div class="code-box"><span>Tu código de pedido</span><strong>${o.code}</strong><button class="copy-lg" type="button" data-act="copy" data-v="${o.code}">${ic('copy')}Copiar código</button></div>
       <p class="muted sm">Para ver tu pedido usa este código y los últimos 4 dígitos de tu celular (${o.phone.slice(-4)}).</p></div>`,
-    `<div class="foot-stack"><a class="btn primary" href="https://wa.me/${TIENDA.whatsapp}?text=${encodeURIComponent(text)}" target="_blank" rel="noopener">${ic('chat')}Enviar por WhatsApp</a>
-      <button class="btn secondary" type="button" data-act="order" data-code="${o.code}">Ver mi pedido</button></div>`);
+    `<div class="foot-stack">${TIENDA.whatsapp ? `<a class="btn primary" href="https://wa.me/${TIENDA.whatsapp}?text=${encodeURIComponent(text)}" target="_blank" rel="noopener">${ic('chat')}Enviar por WhatsApp</a>` : ''}
+      <button class="btn ${TIENDA.whatsapp ? 'secondary' : 'primary'}" type="button" data-act="order" data-code="${o.code}">Ver mi pedido</button></div>`);
 }
 
 /* ---------- Pedidos ---------- */
@@ -1097,7 +1114,7 @@ function openOrderObj(o) {
   openSheet('order', 'Mi pedido',
     `${o.example ? '<p class="demo-note">Pedido de ejemplo para mostrar el seguimiento.</p>' : ''}
      <div class="od-head"><div><p class="od-code">${o.code}</p><p class="muted sm">${fmtDate(o.date)}</p></div>${statusPill(o.status)}</div>
-     ${o.status === 'rechazado' ? '<p class="rejected">No pudimos verificar tu comprobante. Escríbenos por WhatsApp para revisarlo.</p>' : `<ol class="timeline">${STEPS.map((s, i) => `<li class="${i < idx ? 'is-done' : i === idx ? 'is-now' : ''}"><span class="tl-dot">${i < idx ? ic('check', 2.6) : ''}</span><div><p class="tl-t">${s[1]}</p>${i <= idx ? `<p class="tl-d">${s[2]}</p>` : ''}</div></li>`).join('')}</ol>`}
+     ${o.status === 'rechazado' ? `<p class="rejected">No pudimos verificar tu comprobante. ${TIENDA.whatsapp ? 'Escríbenos por WhatsApp para revisarlo.' : 'Comunícate con la tienda para revisarlo.'}</p>` : `<ol class="timeline">${STEPS.map((s, i) => `<li class="${i < idx ? 'is-done' : i === idx ? 'is-now' : ''}"><span class="tl-dot">${i < idx ? ic('check', 2.6) : ''}</span><div><p class="tl-t">${s[1]}</p>${i <= idx ? `<p class="tl-d">${s[2]}</p>` : ''}</div></li>`).join('')}</ol>`}
      <h3 class="od-sub">Productos</h3>
      <ul class="lines">${rows}</ul>
      ${o.city ? `<h3 class="od-sub">Entrega</h3><p class="ship-note">${ic(esLocal(o.city) ? 'pin' : 'truck')}<span>${esc(o.address)}, ${esc(o.city)}${esLocal(o.city) ? '' : '<br>Envío por servicio de entrega, con costo aparte.'}</span></p>` : ''}
@@ -1137,9 +1154,9 @@ function setView(v, fromHash) {
 
 /* ---------- Avisos ---------- */
 let toastT;
-function toast(msg) {
+function toast(msg, ms = 1800) {
   const t = $('#toast'); t.textContent = msg; t.classList.add('show');
-  clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove('show'), 1800);
+  clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove('show'), Math.max(ms, Math.min(6000, msg.length * 60)));
 }
 function copyText(v) {
   const fallback = () => {

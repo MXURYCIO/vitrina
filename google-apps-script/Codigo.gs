@@ -17,6 +17,7 @@ const CONFIG = {
   ABONO: 0.5,
   PRODUCTOS_URL: 'https://tiendaonline-ec.github.io/products.json', // catálogo publicado, para verificar precios
   MAX_PEDIDOS_POR_CELULAR_HORA: 5,
+  MAX_PEDIDOS_POR_HORA: 40,
   ZONA_LOCAL: ['La Maná', 'Guasaganda', 'Pucayacu']  // donde se entrega directamente; lo demás va por servicio de entrega
 };
 
@@ -92,19 +93,35 @@ function crearPedido_(d) {
   const usados = Number(cache.get(kCel) || 0);
   if (usados >= CONFIG.MAX_PEDIDOS_POR_CELULAR_HORA) return { ok: false, error: 'Demasiados pedidos seguidos con este celular. Intenta más tarde.' };
 
-  // Precios: si hay catálogo publicado se usan sus precios, no los que manda el navegador.
+  // Límite general por hora: evita que alguien llene la hoja (y el cupo de correos) con pedidos falsos.
+  const kHora = 'pedidos_hora';
+  const enHora = Number(cache.get(kHora) || 0);
+  if (enHora >= CONFIG.MAX_PEDIDOS_POR_HORA) return { ok: false, error: 'Estamos recibiendo muchos pedidos. Intenta de nuevo en unos minutos.' };
+
+  // Precios: siempre los del catálogo publicado, nunca los que manda el navegador (que se pueden manipular).
   const catalogo = catalogo_();
-  const est = catalogo ? estados_() : {};
-  const items = d.items.slice(0, 30).map(it => {
+  if (!catalogo) return { ok: false, error: 'No pudimos verificar los precios. Intenta de nuevo en un momento.' };
+  const est = estados_();
+  const pedidos = {};
+  d.items.slice(0, 30).forEach(it => {
     const id = t(it.id);
-    const qty = Math.max(1, Math.min(20, Math.floor(Number(it.qty) || 1)));
-    const p = catalogo ? catalogo[id] : null;
-    if (catalogo && (!p || (est[id] || p.status || 'aprobado') !== 'aprobado')) return null; // solo productos aprobados
-    return { id, qty, name: p ? p.name : t(it.name), price: p ? Number(p.price) : Number(it.price) };
-  }).filter(it => it && it.id && it.price > 0);
-  if (!items.length) return { ok: false, error: 'Los productos ya no están disponibles.' };
+    if (!id) return;
+    pedidos[id] = Math.min(20, (pedidos[id] || 0) + Math.max(1, Math.floor(Number(it.qty) || 1)));
+  });
+  const items = [], faltan = [];
+  Object.keys(pedidos).forEach(id => {
+    const p = catalogo[id];
+    if (!p || !(Number(p.price) > 0) || (est[id] || p.status || 'aprobado') !== 'aprobado') { faltan.push(p ? p.name : id); return; }
+    items.push({ id, qty: pedidos[id], name: p.name, price: Number(p.price) });
+  });
+  if (faltan.length) return { ok: false, code: 'catalogo', error: `Ya no está disponible: ${faltan.join(', ')}. Quítalo del carrito para continuar.` };
+  if (!items.length) return { ok: false, error: 'El carrito está vacío.' };
   const total = r2_(items.reduce((s, i) => s + i.price * i.qty, 0));
   const abono = r2_(total * CONFIG.ABONO);
+  // si el total que vio la clienta no coincide (precio cambiado o manipulado), no se registra el pedido
+  if (d.total != null && Math.abs(Number(d.total) - total) > 0.009) {
+    return { ok: false, code: 'catalogo', error: `Los precios se actualizaron. El total correcto es ${fmt_(total)} y el abono ${fmt_(abono)}. Revisa tu carrito.` };
+  }
 
   const b64 = d.photo.slice(d.photo.indexOf(',') + 1);
   const mime = d.photo.slice(5, d.photo.indexOf(';'));
@@ -144,6 +161,7 @@ function crearPedido_(d) {
     if (alertas.length) sh.getRange(r, 1, 1, COLS.length - 1).setBackground('#FDE2E2');
 
     cache.put(kCel, String(usados + 1), 3600);
+    cache.put(kHora, String(Number(cache.get(kHora) || 0) + 1), 3600);
     avisar_({ code, nombre, apellido, cel, ciudad, direccion, envio, items, total, abono, num, monto, archivo, alertas });
     return { ok: true, code, total, abono, status: 'pendiente', date: ahora.toISOString() };
   } finally {

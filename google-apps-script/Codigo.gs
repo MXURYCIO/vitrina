@@ -265,6 +265,12 @@ function resumen_() {
   let sh = ss.getSheetByName('Resumen');
   if (!sh) sh = ss.insertSheet('Resumen', 0);
   sh.clear();
+  // la hoja en español separa los argumentos con ";" en vez de ","; se prueba cuál acepta
+  const prueba = sh.getRange('Z1');
+  prueba.setFormula('=SUM(1,2)'); SpreadsheetApp.flush();
+  const sep = prueba.getValue() === 3 ? ',' : ';';
+  prueba.clearContent();
+  const f = x => sep === ',' ? x : x.replace(/,/g, ';');
   const filas = [
     ['Resumen de la tienda', ''],
     ['Se actualiza solo con cada pedido. Los pedidos rechazados no cuentan.', ''],
@@ -281,15 +287,14 @@ function resumen_() {
     ['Pedidos con alerta (revisar comprobante)', `=COUNTIF(${R('Alertas')},"?*")`],
     ['Envíos fuera de La Maná (sin rechazados)', `=COUNTIFS(${R('Envío')},"Servicio*",${E},"<>Rechazado")`]
   ];
-  // los textos van con setValues y las fórmulas con setFormulas (que siempre usa comas, sin importar el idioma de la hoja)
   sh.getRange(1, 1, filas.length, 1).setValues(filas.map(f => [f[0]]));
   sh.getRange(4, 2).setValue('Valor');
-  sh.getRange(5, 2, filas.length - 4, 1).setFormulas(filas.slice(4).map(f => [f[1]]));
+  sh.getRange(5, 2, filas.length - 4, 1).setFormulas(filas.slice(4).map(r => [f(r[1])]));
   const t0 = filas.length + 2;
   sh.getRange(t0, 1, 1, 5).setValues([['Pedidos por estado', 'Pedidos', 'Total', 'Abono', 'Saldo']]);
   sh.getRange(t0 + 1, 1, ESTADOS.length, 1).setValues(ESTADOS.map(e => [e]));
   sh.getRange(t0 + 1, 2, ESTADOS.length, 4).setFormulas(ESTADOS.map(e => [
-    `=COUNTIF(${E},"${e}")`, `=SUMIF(${E},"${e}",${R('Total')})`, `=SUMIF(${E},"${e}",${R('Abono')})`, `=SUMIF(${E},"${e}",${R('Saldo')})`]));
+    `=COUNTIF(${E},"${e}")`, `=SUMIF(${E},"${e}",${R('Total')})`, `=SUMIF(${E},"${e}",${R('Abono')})`, `=SUMIF(${E},"${e}",${R('Saldo')})`].map(f)));
 
   sh.getRange('A1').setFontSize(16).setFontWeight('bold');
   sh.getRange('A2').setFontColor('#6B7280').setFontStyle('italic');

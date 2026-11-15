@@ -37,6 +37,7 @@ Elegir primero, en este orden:
 - Medidas solo en centímetros o milímetros: se borran las pulgadas (in, inch) y las libras (lb).
 - Sin marcas de agua, íconos de capturas de pantalla ni fotos de otra marca distinta a la del producto.
 - Los datos útiles que aparecen en las fotos (medidas, piezas incluidas, funciones) también van en la descripción.
+- Fotos pequeñas (lado mayor menor a 600 px) o borrosas: se mejoran con súper resolución (Real-ESRGAN x4) antes de publicarlas, hasta 1000 px.
 
 ## 5. Precio
 

@@ -281,11 +281,15 @@ function resumen_() {
     ['Pedidos con alerta (revisar comprobante)', `=COUNTIF(${R('Alertas')},"?*")`],
     ['Envíos fuera de La Maná (sin rechazados)', `=COUNTIFS(${R('Envío')},"Servicio*",${E},"<>Rechazado")`]
   ];
-  sh.getRange(1, 1, filas.length, 2).setValues(filas);
+  // los textos van con setValues y las fórmulas con setFormulas (que siempre usa comas, sin importar el idioma de la hoja)
+  sh.getRange(1, 1, filas.length, 1).setValues(filas.map(f => [f[0]]));
+  sh.getRange(4, 2).setValue('Valor');
+  sh.getRange(5, 2, filas.length - 4, 1).setFormulas(filas.slice(4).map(f => [f[1]]));
   const t0 = filas.length + 2;
-  const tabla = [['Pedidos por estado', 'Pedidos', 'Total', 'Abono', 'Saldo']].concat(ESTADOS.map(e => [e,
+  sh.getRange(t0, 1, 1, 5).setValues([['Pedidos por estado', 'Pedidos', 'Total', 'Abono', 'Saldo']]);
+  sh.getRange(t0 + 1, 1, ESTADOS.length, 1).setValues(ESTADOS.map(e => [e]));
+  sh.getRange(t0 + 1, 2, ESTADOS.length, 4).setFormulas(ESTADOS.map(e => [
     `=COUNTIF(${E},"${e}")`, `=SUMIF(${E},"${e}",${R('Total')})`, `=SUMIF(${E},"${e}",${R('Abono')})`, `=SUMIF(${E},"${e}",${R('Saldo')})`]));
-  sh.getRange(t0, 1, tabla.length, 5).setValues(tabla);
 
   sh.getRange('A1').setFontSize(16).setFontWeight('bold');
   sh.getRange('A2').setFontColor('#6B7280').setFontStyle('italic');

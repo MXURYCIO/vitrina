@@ -147,6 +147,13 @@ p{margin:0}
 .notice{margin-top:16px;display:grid;gap:12px;padding:14px 16px;border-radius:22px}
 @media (min-width:640px){.notice{grid-template-columns:1fr 1fr}}
 .n-row{display:flex;gap:12px;align-items:center;min-width:0}
+.n-btn{grid-column:1/-1;width:100%;margin:0;padding:12px 0 0;border:0;border-top:.5px solid var(--hair);border-radius:0;background:none;color:var(--fg);font:inherit;text-align:left;cursor:pointer}
+.n-btn[hidden]{display:none}
+.n-btn strong{color:var(--accent)}
+.n-btn .n-ic{background:var(--accent);color:var(--accent-ink)}
+.n-btn .n-chev{margin-left:auto;display:grid;color:var(--muted)}
+.n-btn .n-chev svg{width:18px;height:18px}
+.n-btn:active{opacity:.7}
 .n-ic{flex:none;width:36px;height:36px;border-radius:12px;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent)}
 .n-ic svg{width:20px;height:20px}
 .n-row strong{display:block;font-size:15px;font-weight:600;line-height:1.3}
@@ -465,7 +472,24 @@ body.rv-ped #tools,body.rv-ped .sec-head,body.rv-ped #grid,body.rv-ped #empty{di
 .to-top.on{opacity:1;transform:none;pointer-events:auto}
 .to-top:active{transform:scale(.9)}
 .dock.min~.to-top{bottom:calc(env(safe-area-inset-bottom,0px) + 74px)}
-@media (min-width:620px){.to-top{right:max(24px,calc(50% - 300px))}}
+@media (min-width:620px){.to-top{right:max(28px,env(safe-area-inset-right,0px))}}
+/* Accesos rápidos: en el celular flotan arriba (se esconden al bajar); en PC van en una barra a la izquierda */
+.fab{position:fixed;z-index:41;left:50%;top:calc(env(safe-area-inset-top,0px) + 56px);display:flex;gap:2px;padding:4px;border-radius:28px;
+  translate:-50% calc(-100% - 90px);opacity:0;pointer-events:none;transition:translate .5s var(--ease-spring),opacity .25s}
+.fab.on{translate:-50% 0;opacity:1;pointer-events:auto}
+.fab button{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-width:66px;height:50px;padding:0 6px;border:0;border-radius:24px;background:none;color:var(--fg);font-size:10.5px;font-weight:600;white-space:nowrap;transition:transform .35s var(--ease-spring),color .2s,background .2s}
+.fab button svg{width:21px;height:21px}
+.fab button:active{transform:scale(.92)}
+.fab button[aria-pressed="true"]{color:var(--accent);background:var(--accent-soft)}
+.fab button[hidden]{display:none}
+@media (max-width:359px){.fab button{min-width:58px}}
+@media (min-width:1000px){
+  .app{padding-left:max(16px,min(100px,calc(100px - (100vw - 1120px) / 2)))}
+  .fab{left:max(14px,calc((100vw - 1120px) / 2 - 84px));top:50%;flex-direction:column;gap:4px;padding:6px;border-radius:32px;translate:calc(-100% - 40px) -50%}
+  .fab.on{translate:0 -50%}
+  .fab button{width:70px;min-width:0;height:62px;border-radius:26px;font-size:11px}
+  .fab button:hover{background:var(--accent-soft)}
+}
 .scrim{position:fixed;inset:0;z-index:50;background:var(--scrim);opacity:0;pointer-events:none;transition:opacity .35s}
 .scrim.on{opacity:1;pointer-events:auto}
 .sheet{position:fixed;z-index:51;left:max(8px,env(safe-area-inset-left,0px));right:max(8px,env(safe-area-inset-right,0px));bottom:calc(8px + env(safe-area-inset-bottom,0px));
@@ -630,6 +654,7 @@ body.rv-ped #tools,body.rv-ped .sec-head,body.rv-ped #grid,body.rv-ped #empty{di
     <section class="notice" aria-label="Información de pedidos">
       <div class="n-row"><span class="n-ic" data-ic="moon"></span><div><strong>Productos nuevos 3 veces por semana</strong><span class="sub">Domingos, martes y jueves por la noche</span></div></div>
       <div class="n-row"><span class="n-ic" data-ic="cal"></span><div><strong id="deadline">Pedidos de esta semana hasta el viernes, 12:00 p. m.</strong><span class="sub" id="countdown">&nbsp;</span></div></div>
+      <button class="n-row n-btn" type="button" data-act="track" id="trackBtn"><span class="n-ic" data-ic="box"></span><div><strong>Checa tu pedido</strong><span class="sub">Escribe tu código y mira cómo va</span></div><span class="n-chev" data-ic="chevR"></span></button>
     </section>
 
     <section class="rv-bar" id="rvBar" aria-label="Revisión de productos" hidden></section>
@@ -675,6 +700,12 @@ body.rv-ped #tools,body.rv-ped .sec-head,body.rv-ped #grid,body.rv-ped #empty{di
 <div class="edge-top" aria-hidden="true"></div>
 <div class="edge-bottom" aria-hidden="true"></div>
 <button class="compact glass" id="compact" type="button" aria-hidden="true" tabindex="-1">Tienda Online</button>
+<nav class="fab glass" id="fab" aria-label="Accesos rápidos" aria-hidden="true">
+  <button type="button" data-act="fsearch" tabindex="-1"><span data-ic="search" style="display:contents"></span><span>Buscar</span></button>
+  <button type="button" data-act="cats" data-f="cat" tabindex="-1"><span data-ic="grid" style="display:contents"></span><span>Categorías</span></button>
+  <button type="button" data-act="sorts" data-f="sort" tabindex="-1"><span data-ic="sliders" style="display:contents"></span><span>Filtro</span></button>
+  <button type="button" data-act="track" class="fab-track" tabindex="-1"><span data-ic="box" style="display:contents"></span><span>Mi pedido</span></button>
+</nav>
 
 <nav class="dock" id="dock" aria-label="Navegación principal">
   <div class="tabs glass" id="tabs" role="tablist" data-sel="0">
@@ -922,6 +953,7 @@ function renderChips() {
   box.innerHTML = `<button class="tool" type="button" data-act="cats" aria-pressed="${catOn}" aria-haspopup="dialog">${ic('grid')}<span class="t-txt"><span class="t-lab">Categorías</span><span class="t-val">${catOn ? catLabel(state.cat) : 'Todas'}</span></span>${ic('chev')}</button>
     <button class="tool" type="button" data-act="sorts" aria-pressed="${sortOn}" aria-haspopup="dialog">${ic('sliders')}<span class="t-txt"><span class="t-lab">Filtro</span><span class="t-val">${sortOn ? sortOf(state.sort).short : 'Ordenar por'}</span></span>${ic('chev')}</button>`;
   $$('#tools .tool > svg:last-child').forEach(s => s.classList.add('t-chev'));
+  $$('#fab [data-f]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.f === 'cat' ? catOn : sortOn)));
 }
 function openCats() {
   const n = catCounts();
@@ -1387,6 +1419,8 @@ document.addEventListener('click', e => {
     }
     case 'gal': galTo(galIdx() + (+t.dataset.d)); break;
     case 'galto': galTo(+t.dataset.i); break;
+    case 'track': openTrack(); break;
+    case 'fsearch': closeSheet(); window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' }); setTimeout(() => { const q = $('#q'); if (q) q.focus({ preventScroll: true }); }, reduceMotion ? 0 : 420); break;
     case 'cats': openCats(); break;
     case 'sorts': openSorts(); break;
     case 'setcat': state.cat = t.dataset.v; closeSheet(); renderChips(); renderGrid(); toGrid(); break;
@@ -1431,6 +1465,7 @@ document.addEventListener('keydown', e => {
 document.addEventListener('submit', e => {
   if (e.target.id === 'coForm') { e.preventDefault(); submitCheckout(); }
   if (e.target.id === 'pinForm') { e.preventDefault(); submitPin(); }
+  if (e.target.id === 'trackSheet') { e.preventDefault(); submitTrackSheet(); }
   if (e.target.id === 'rvSearch') { e.preventDefault(); loadRvOrders((($('#rvQ') || {}).value || '').trim()); }
 });
 document.addEventListener('input', e => {
@@ -1438,7 +1473,7 @@ document.addEventListener('input', e => {
   if (el.id === 'q') {
     state.q = el.value; $('#qClear').hidden = !el.value; renderGrid(); return;
   }
-  if (el.id === 'cCedula' || el.id === 'cCel' || el.id === 'tPhone') el.value = el.value.replace(/\D/g, '');
+  if (el.id === 'cCedula' || el.id === 'cCel' || el.id === 'tPhone' || el.id === 'sPhone') el.value = el.value.replace(/\D/g, '');
   if (el.closest && el.closest('#coForm') && el.type !== 'file' && el.type !== 'checkbox') {
     const d = store.get('vt-draft', {}) || {}; d[el.id] = el.value; store.set('vt-draft', d);
     if (el.id === 'cCiudad') paintShip();
@@ -1463,31 +1498,49 @@ document.addEventListener('change', e => {
 $('#qClear').addEventListener('click', e => { e.preventDefault(); const q = $('#q'); q.value = ''; state.q = ''; $('#qClear').hidden = true; renderGrid(); q.focus(); });
 $('#q').addEventListener('keydown', e => { if (e.key === 'Enter') e.target.blur(); });
 
+/* Consulta de un pedido con su código y los últimos 4 del celular (en "Mis pedidos" y en "Checa tu pedido") */
+async function consultarPedido(raw, l4) {
+  const code = 'PED-' + String(raw || '').toUpperCase().replace(/[^A-Z0-9]/g, '').replace(/^(PED|VT)/, '');
+  l4 = String(l4 || '').trim();
+  if (code.length < 8 || !/^\d{4}$/.test(l4)) return { error: 'Escribe el código y los últimos 4 dígitos de tu celular.' };
+  const local = allOrders().find(x => x.code === code && String(x.phone).slice(-4) === l4);
+  const nada = 'No encontramos un pedido con esos datos. Revisa el código y el celular.';
+  if (!LIVE) return local ? { order: local } : { error: nada };
+  try {
+    const r = await api({ action: 'track', code, last4: l4 });
+    if (!r || !r.ok) return { error: nada };
+    if (local) { local.status = r.status; store.set('vt-orders', orders); renderOrders(); }
+    return { order: local ? { ...local, status: r.status } : r };
+  } catch (x) { return { error: 'No se pudo consultar. Revisa tu conexión e inténtalo de nuevo.' }; }
+}
 $('#trackForm').addEventListener('submit', async e => {
   e.preventDefault();
-  let code = $('#tCode').value.toUpperCase().replace(/[^A-Z0-9]/g, '');
-  code = code.replace(/^(PED|VT)/, '');
-  code = 'PED-' + code;
-  const l4 = $('#tPhone').value.trim();
-  const err = $('#trackErr');
-  if (code.length < 8 || l4.length !== 4) { err.textContent = 'Escribe el código y los últimos 4 dígitos de tu celular.'; err.hidden = false; return; }
-  const local = allOrders().find(x => x.code === code && x.phone.slice(-4) === l4);
-  if (LIVE) {
-    const btn = $('#trackForm .btn'); btn.disabled = true; btn.textContent = 'Buscando…';
-    try {
-      const r = await api({ action: 'track', code, last4: l4 });
-      if (r && r.ok) {
-        err.hidden = true;
-        if (local) { local.status = r.status; store.set('vt-orders', orders); renderOrders(); }
-        openOrderObj(local ? { ...local, status: r.status } : r);
-      } else { err.textContent = 'No encontramos un pedido con esos datos. Revisa el código y el celular.'; err.hidden = false; }
-    } catch (x) { err.textContent = 'No se pudo consultar. Revisa tu conexión e inténtalo de nuevo.'; err.hidden = false; }
-    btn.disabled = false; btn.textContent = 'Ver estado';
-    return;
-  }
-  if (!local) { err.textContent = 'No encontramos un pedido con esos datos. Revisa el código y el celular.'; err.hidden = false; return; }
-  err.hidden = true; openOrderObj(local);
+  const err = $('#trackErr'), btn = $('#trackForm .btn');
+  btn.disabled = true; btn.textContent = 'Buscando…';
+  const r = await consultarPedido($('#tCode').value, $('#tPhone').value);
+  btn.disabled = false; btn.textContent = 'Ver estado';
+  if (r.error) { err.textContent = r.error; err.hidden = false; return; }
+  err.hidden = true; openOrderObj(r.order);
 });
+function openTrack() {
+  const ult = orders[0];
+  openSheet('track', 'Checa tu pedido',
+    `<form id="trackSheet" class="rv-form" novalidate><p class="muted">Escribe el código que recibiste al hacer tu pedido y los últimos 4 dígitos del celular que pusiste.</p>
+      ${field('sCode', 'Código de pedido', { ph: 'PED-H4QX', val: ult ? ult.code : '' })}${field('sPhone', 'Últimos 4 dígitos del celular', { im: 'numeric', max: 4, ph: '1234', val: ult ? String(ult.phone).slice(-4) : '' })}
+      <p class="form-error" id="sErr" role="alert" hidden></p></form>`,
+    `<button class="btn primary" type="submit" form="trackSheet">Ver estado</button>`);
+  const c = $('#sCode'); c.setAttribute('autocapitalize', 'characters'); c.setAttribute('spellcheck', 'false');
+  if (!ult) setTimeout(() => c.focus({ preventScroll: true }), 320);
+}
+async function submitTrackSheet() {
+  const err = $('#sErr'), btn = $('#sheetFoot .btn'); if (!err || !btn) return;
+  btn.disabled = true; btn.textContent = 'Buscando…';
+  const r = await consultarPedido($('#sCode').value, $('#sPhone').value);
+  if (!$('#sErr')) return;
+  btn.disabled = false; btn.textContent = 'Ver estado';
+  if (r.error) { err.textContent = r.error; err.hidden = false; return; }
+  openOrderObj(r.order);
+}
 window.addEventListener('hashchange', () => setView(location.hash.slice(1), true));
 
 /* Brillo al presionar el vidrio */
@@ -1543,12 +1596,35 @@ function onScroll() {
     if (arriba !== toTop.classList.contains('on')) { toTop.classList.toggle('on', arriba); toTop.tabIndex = arriba ? 0 : -1; }
     if (y > lastY + 8 && y > 260) dock.classList.add('min');
     else if (y < lastY - 8 || y < 140) dock.classList.remove('min');
+    fabUpdate(y);
     lastY = y;
     const lx = (16 + (y / 14) % 64).toFixed(1) + '%';
     dock.style.setProperty('--lx', lx); compact.style.setProperty('--lx', lx);
   });
 }
 window.addEventListener('scroll', onScroll, { passive: true });
+
+/* Accesos rápidos: aparecen cuando la fila de Categorías y Filtro queda fuera de la pantalla.
+   En el celular se esconden mientras se baja y vuelven al subir o al dejar de mover; en PC quedan fijos a la izquierda. */
+const fab = $('#fab'), wideMQ = matchMedia('(min-width:1000px)');
+let fabOculto = false, fabT = null;
+function fabShow(on) {
+  if (on === fab.classList.contains('on')) return;
+  fab.classList.toggle('on', on); fab.setAttribute('aria-hidden', String(!on));
+  $$('#fab button').forEach(b => { b.tabIndex = on ? 0 : -1; });
+}
+function fabUpdate(y) {
+  const tools = $('#tools');
+  const usable = state.view === 'tienda' && tools && tools.innerHTML && !document.body.classList.contains('rv-ped');
+  const fuera = usable && tools.getBoundingClientRect().bottom < 0;
+  if (!fuera) { fabOculto = false; fabShow(false); return; }
+  if (wideMQ.matches) { fabShow(true); return; }
+  if (y > lastY + 4) fabOculto = true; else if (y < lastY - 4) fabOculto = false;
+  fabShow(!fabOculto);
+  clearTimeout(fabT);
+  if (fabOculto) fabT = setTimeout(() => { fabOculto = false; if ($('#tools').getBoundingClientRect().bottom < 0) fabShow(true); }, 900);
+}
+wideMQ.addEventListener && wideMQ.addEventListener('change', () => fabUpdate(window.scrollY));
 
 /* ---------- Refracción (vidrio líquido real en Chrome / Android) ---------- */
 const ua = navigator.userAgent;
@@ -1866,6 +1942,7 @@ function footNote() {
 
 /* ---------- Inicio ---------- */
 if (LIVE) { const pill = $('.preview-pill'); if (pill) pill.remove(); }
+if (REVIEW) { $('#trackBtn').hidden = true; $('.fab-track').hidden = true; }
 if (REVIEW) {
   const bar = $('#rvBar'); bar.hidden = false; bar.innerHTML = '<p class="muted">Cargando productos…</p>';
   if (rvLocked()) { renderReviewBar(); setTimeout(() => { if (rvLocked()) openPin(); }, 400); }

@@ -5,11 +5,12 @@
    "name": "Soporte de celular para carro, giratorio 360°",
    "cat": "herramientas",
    "price": 5,
-   "desc": "Soporte de celular para el tablero o el parabrisas del carro, con ventosa y brazo ajustable. Gira 360° para usarlo en vertical u horizontal y sujeta el celular sin que se caiga.",
+   "desc": "Soporte de celular para el carro con base de ventosa y brazo extensible de 9,5 a 15,5 cm. Su rótula gira 360 grados para ponerlo en vertical u horizontal, y tiene brazos laterales regulables con almohadillas de silicona que absorben los golpes y evitan vibraciones en caminos irregulares. Mantiene el celular firme y a la vista mientras manejas.",
    "feats": [
-    "Para tablero o parabrisas",
+    "Base de ventosa",
+    "Brazo extensible de 9,5 a 15,5 cm",
     "Gira 360°",
-    "Brazo ajustable"
+    "Brazos regulables con silicona"
    ],
    "imgs": [
     "img/p/p-174-0.jpg",
@@ -27,11 +28,11 @@
    "name": "Luces LED navideñas musicales multicolor",
    "cat": "navidad",
    "price": 3,
-   "desc": "Serie de luces LED multicolor con melodías navideñas. Ideal para el árbol, ventanas, balcones, coronas o cualquier rincón de la casa.",
+   "desc": "Serie de luces LED multicolor que tocan melodías navideñas. Llena de ambiente festivo el árbol, las ventanas, los balcones o cualquier rincón de la casa.",
    "feats": [
     "Luces LED multicolor",
     "Con música navideña",
-    "Para interiores"
+    "Para árbol, ventanas o cualquier espacio"
    ],
    "imgs": [
     "img/p/p-126-1.jpg",
@@ -48,11 +49,11 @@
    "name": "Luces navideñas tipo arrocito, 100 luces",
    "cat": "navidad",
    "price": 3,
-   "desc": "Serie de 100 luces pequeñas tipo arrocito para decorar el árbol, ventanas o cualquier espacio. El color se entrega según disponibilidad.",
+   "desc": "Serie de 100 luces pequeñas tipo arrocito para decorar el árbol, ventanas, paredes o cualquier espacio. Sus colores luminosos dan un acabado elegante y se pueden usar en Navidad o en cualquier ocasión especial. El color se entrega según disponibilidad.",
    "feats": [
-    "100 luces",
+    "100 luces tipo arrocito",
     "Color según disponibilidad",
-    "Para toda ocasión"
+    "Para Navidad o cualquier ocasión"
    ],
    "imgs": [
     "img/p/p-127-0.jpg",
@@ -69,11 +70,11 @@
    "name": "Árbol de Navidad nevado de 2,40 m",
    "cat": "navidad",
    "price": 135,
-   "desc": "Árbol de Navidad artificial con acabado nevado y 2,40 metros de alto. Elegante y frondoso, transforma tu sala, local u oficina con una Navidad blanca.",
+   "desc": "Árbol de Navidad artificial de 2,40 metros con acabado nevado, muy elegante. Crea una Navidad blanca en tu casa, local u oficina. Por su altura, es ideal para salas amplias y espacios grandes.",
    "feats": [
     "Altura: 2,40 m",
     "Acabado nevado",
-    "Ideal para salas amplias y locales"
+    "Para casa, local u oficina"
    ],
    "imgs": [
     "img/p/p-128-0.jpg",
@@ -91,11 +92,12 @@
    "name": "Árbol de Navidad pino nevado de 1,50 m",
    "cat": "navidad",
    "price": 51,
-   "desc": "Árbol de Navidad artificial tipo pino con ramas cubiertas de nieve artificial y 1,50 metros de alto. Incluye soporte de metal para que quede firme y estable.",
+   "desc": "Árbol de Navidad artificial tipo pino de 1,50 metros con ramas cubiertas de nieve artificial para un aspecto invernal. Incluye base de metal para que quede firme y estable. Una alternativa práctica al árbol natural que puedes usar todos los años.",
    "feats": [
     "Altura: 1,50 m",
     "Ramas nevadas",
-    "Base metálica"
+    "Base metálica estable",
+    "Reutilizable cada año"
    ],
    "imgs": [
     "img/p/p-129-0.jpg",
@@ -112,11 +114,11 @@
    "name": "Set de baño navideño con cortina",
    "cat": "navidad",
    "price": 16,
-   "desc": "Set de baño con diseños navideños que incluye cortina de baño. Decora tu baño para estas fiestas en un solo paso.",
+   "desc": "Set de baño con diseños navideños que incluye cortina de baño. Decora tu baño para estas fiestas en un solo paso y dale a tu casa un ambiente navideño completo. El diseño se entrega según disponibilidad.",
    "feats": [
     "Incluye cortina de baño",
     "Diseños navideños",
-    "Fácil de colocar"
+    "Diseño según disponibilidad"
    ],
    "imgs": [
     "img/p/p-130-0.jpg",
@@ -132,11 +134,12 @@
    "name": "Carruaje navideño musical con nieve",
    "cat": "navidad",
    "price": 42,
-   "desc": "Adorno de carruaje navideño con música y efecto de nieve. Funciona con cable o a pilas. Mide 22 cm de alto por 26 cm de ancho, perfecto para la sala, la mesa navideña o para regalar.",
+   "desc": "Carruaje navideño musical que simula nieve, con un sonido que llena todo de espíritu navideño. Funciona con cable o a pilas. Mide 22 cm de alto por 26 cm de ancho, perfecto para la sala, la mesa navideña o como regalo especial.",
    "feats": [
     "Medidas: 22 x 26 cm",
-    "Música y efecto de nieve",
-    "Funciona con cable o pilas"
+    "Musical con efecto de nieve",
+    "Funciona con cable o pilas",
+    "Ideal para regalar"
    ],
    "imgs": [
     "img/p/p-131-0.jpg",
@@ -154,11 +157,12 @@
    "name": "Mini corona navideña nevada",
    "cat": "navidad",
    "price": 4,
-   "desc": "Corona navideña pequeña con follaje verde, efecto nevado, bayas rojas y esferas doradas. Ideal para puertas, ventanas o paredes.",
+   "desc": "Mini corona navideña artificial con follaje verde, efecto nevado, pequeñas bayas rojas y esferas doradas. Queda hermosa en puertas, ventanas, paredes o como detalle en la mesa navideña.",
    "feats": [
     "Efecto nevado",
     "Bayas rojas y esferas doradas",
-    "Tamaño mini"
+    "Tamaño mini",
+    "Para puertas, ventanas o paredes"
    ],
    "imgs": [
     "img/p/p-132-0.jpg",
@@ -175,10 +179,11 @@
    "name": "Trineo navideño decorativo",
    "cat": "navidad",
    "price": 11,
-   "desc": "Trineo decorativo para crear rincones navideños en tu casa, negocio o vitrina.",
+   "desc": "Trineo navideño decorativo con Papá Noel para crear rincones mágicos en tu casa, negocio o vitrina. Luce muy bien junto al árbol, en la mesa navideña o en la entrada.",
    "feats": [
     "Adorno decorativo",
-    "Para hogar o negocio"
+    "Para casa, negocio o vitrina",
+    "Ideal junto al árbol"
    ],
    "imgs": [
     "img/p/p-133-0.jpg",
@@ -196,11 +201,12 @@
    "name": "Corona navideña de 30 cm",
    "cat": "navidad",
    "price": 8,
-   "desc": "Corona navideña de 30 cm con flores, esferas y detalles brillantes para tu puerta o pared. Viene en diseño rojo clásico o dorado elegante, según disponibilidad.",
+   "desc": "Corona navideña de 30 cm con flores, esferas y detalles brillantes para decorar la puerta o la pared. Tiene un acabado de excelente calidad y material resistente. Viene en diseño rojo clásico o dorado elegante, según disponibilidad.",
    "feats": [
     "Diámetro: 30 cm",
-    "Diseño rojo o dorado (según disponibilidad)",
-    "Material resistente"
+    "Diseño rojo o dorado, según disponibilidad",
+    "Material resistente",
+    "Para puerta o pared"
    ],
    "imgs": [
     "img/p/p-134-0.jpg",
@@ -218,11 +224,12 @@
    "name": "Adorno colgante navideño con campanita",
    "cat": "navidad",
    "price": 2,
-   "desc": "Adorno colgante hecho a mano con materiales suaves y campanita. Diseños de reno, muñeco de nieve o Papá Noel, según disponibilidad. Precio por unidad.",
+   "desc": "Adorno colgante navideño hecho a mano con materiales suaves y una campanita que suena. Viene en diseño de reno, muñeco de nieve o Papá Noel, según disponibilidad. Ideal para el árbol o para regalar. Precio por unidad.",
    "feats": [
     "Precio por unidad",
-    "Diseño según disponibilidad",
-    "Con campanita"
+    "Hecho a mano",
+    "Con campanita",
+    "Diseño según disponibilidad"
    ],
    "imgs": [
     "img/p/p-135-0.jpg",
@@ -240,10 +247,11 @@
    "name": "Arco inflable navideño de 2,40 m",
    "cat": "navidad",
    "price": 98,
-   "desc": "Arco inflable navideño de 2,40 m para decorar la entrada de tu casa o local. Llamativo y de excelente calidad.",
+   "desc": "Arco inflable navideño de 2,40 metros con Papá Noel y muñeco de nieve. Se coloca en la entrada de tu casa o local y llama la atención de todos. Excelente calidad para lucir toda la temporada.",
    "feats": [
     "Medida: 2,40 m",
-    "Para entradas de casa o local"
+    "Para entradas de casa o local",
+    "Muy llamativo"
    ],
    "imgs": [
     "img/p/p-136-0.jpg",
@@ -260,10 +268,11 @@
    "name": "Set de 6 esferas navideñas de 10 cm",
    "cat": "navidad",
    "price": 4,
-   "desc": "Set de 6 esferas grandes de 10 cm de diámetro con acabado brillante espejado. Colores vivos y surtidos para transformar tu árbol al instante.",
+   "desc": "Set de 6 esferas navideñas grandes de 10 cm de diámetro con acabado brillante espejado que refleja la luz. Colores vivos y surtidos para transformar tu árbol al instante. Vienen en un set completo listo para colgar.",
    "feats": [
     "6 esferas",
     "Diámetro: 10 cm",
+    "Acabado brillante espejado",
     "Colores surtidos"
    ],
    "imgs": [
@@ -282,11 +291,11 @@
    "name": "Guirnalda de esferas con luz cálida, 3 m",
    "cat": "navidad",
    "price": 9,
-   "desc": "Guirnalda luminosa de esferas de 3 metros en luz cálida. Para el árbol, ventanas, paredes y rincones especiales.",
+   "desc": "Guirnalda luminosa de esferas de 3 metros en luz cálida. Crea un ambiente acogedor en el árbol, ventanas, paredes, cortinas y rincones especiales de la casa.",
    "feats": [
     "Largo: 3 m",
     "Luz cálida",
-    "Para interiores"
+    "Para árbol, ventanas y paredes"
    ],
    "imgs": [
     "img/p/p-138-0.jpg",
@@ -302,11 +311,12 @@
    "name": "Muñeco navideño expandible de 45 cm",
    "cat": "navidad",
    "price": 11,
-   "desc": "Muñeco navideño que se recoge o se estira hasta 45 cm de alto. En tonos rosados, en Papá Noel o muñeco de nieve según disponibilidad. Precio por unidad.",
+   "desc": "Muñeco navideño que se recoge o se estira hasta 45 cm de alto gracias a sus piernas extensibles. Tiene diseño en tonos rosados, suave y adorable. Viene en Papá Noel o muñeco de nieve, según disponibilidad. Precio por unidad.",
    "feats": [
     "Se estira hasta 45 cm",
-    "Precio por unidad",
-    "Diseño según disponibilidad"
+    "Tonos rosados",
+    "Diseño según disponibilidad",
+    "Precio por unidad"
    ],
    "imgs": [
     "img/p/p-139-0.jpg",
@@ -322,10 +332,11 @@
    "name": "Cojín navideño",
    "cat": "navidad",
    "price": 7,
-   "desc": "Cojín decorativo con diseños navideños alegres y coloridos para la sala o el dormitorio. El diseño se entrega según disponibilidad.",
+   "desc": "Cojín decorativo con diseños navideños alegres y coloridos. Llena de espíritu navideño la sala, el sofá o el dormitorio. El diseño se entrega según disponibilidad.",
    "feats": [
-    "Diseño según disponibilidad",
-    "Decoración de sala o dormitorio"
+    "Diseños navideños",
+    "Para sofá o cama",
+    "Diseño según disponibilidad"
    ],
    "imgs": [
     "img/p/p-140-0.jpg",
@@ -341,10 +352,11 @@
    "name": "Tren navideño para el árbol",
    "cat": "navidad",
    "price": 23,
-   "desc": "Tren navideño para colocar alrededor de tu árbol y llenar la casa de espíritu navideño. Para grandes y pequeños.",
+   "desc": "Tren navideño para decorar tu árbol y llenar tu casa de espíritu navideño. Encanta a grandes y pequeños y hace que tu árbol luzca todavía más especial esta Navidad.",
    "feats": [
-    "Se coloca alrededor del árbol",
-    "Ideal para niños y adultos"
+    "Para decorar el árbol",
+    "Para niños y adultos",
+    "Decoración navideña"
    ],
    "imgs": [
     "img/p/p-141-0.jpg",
@@ -360,12 +372,12 @@
    "name": "Bandeja navideña de cerámica con 3 divisiones",
    "cat": "navidad",
    "price": 14,
-   "desc": "Bandeja de cerámica con tres compartimentos y Papá Noel en el centro. Perfecta para servir bocaditos y dulces en la cena navideña. Mide 32,5 x 14 cm.",
+   "desc": "Bandeja de cerámica con tres compartimentos, Papá Noel en el centro y alegres diseños festivos. Perfecta para servir bocaditos, dulces o frutas en la cena navideña. Mide 32,5 x 14 cm.",
    "feats": [
     "Cerámica",
     "3 compartimentos",
-    "Diseño de Papá Noel",
-    "Medidas: 32,5 x 14 cm"
+    "Medidas: 32,5 x 14 cm",
+    "Diseño de Papá Noel"
    ],
    "imgs": [
     "img/p/p-142-0.jpg",
@@ -382,11 +394,11 @@
    "name": "Papá Noel trepador musical",
    "cat": "navidad",
    "price": 13,
-   "desc": "Adorno eléctrico de Papá Noel que sube por una escalera, con música y movimiento.",
+   "desc": "Adorno eléctrico de Papá Noel que trepa por una escalera, con música y movimiento. Un detalle divertido que llena de alegría la decoración navideña de tu casa.",
    "feats": [
     "Con música",
     "Con movimiento",
-    "Adorno eléctrico"
+    "Eléctrico"
    ],
    "imgs": [
     "img/p/p-143-0.jpg",
@@ -404,7 +416,7 @@
    "name": "Bota navideña musical con luz",
    "cat": "navidad",
    "price": 18,
-   "desc": "Bota navideña con muñeco de nieve, brillitos que se mueven por dentro y luz LED cálida. Tiene melodías navideñas o modo silencioso y funciona a pilas o con cable. Mide 19 cm de largo por 16 cm de alto.",
+   "desc": "Bota navideña musical con muñeco de nieve y brillitos que bailan por dentro, iluminada con luz LED cálida. Tiene melodías navideñas o modo silencioso, y funciona a pilas o con cable. Mide 19 cm de largo por 16 cm de alto.",
    "feats": [
     "Luz LED cálida",
     "Música o modo silencioso",
@@ -427,9 +439,10 @@
    "name": "Plato navideño de cerámica",
    "cat": "navidad",
    "price": 7,
-   "desc": "Plato de cerámica con ilustraciones navideñas para darle un toque especial a tu mesa. El diseño se entrega según disponibilidad.",
+   "desc": "Plato de cerámica con ilustraciones navideñas de Papá Noel y árboles. Le da un toque especial a la mesa en la cena navideña y también se puede usar como adorno. El diseño se entrega según disponibilidad.",
    "feats": [
     "Cerámica",
+    "Ilustraciones navideñas",
     "Diseño según disponibilidad"
    ],
    "imgs": [
@@ -448,11 +461,12 @@
    "name": "Estrella dorada para el árbol, 20 cm",
    "cat": "navidad",
    "price": 1,
-   "desc": "Estrella dorada para la punta del árbol con cascabeles, ramitas y lazo. Mide 20 cm de alto.",
+   "desc": "Estrella dorada para la punta del árbol con cascabeles, ramitas y lazo rojo y blanco. Mide 20 cm de alto, un tamaño ideal ni muy grande ni muy pequeño. El toque final que tu árbol merece.",
    "feats": [
     "Altura: 20 cm",
     "Con cascabeles y lazo",
-    "Color dorado"
+    "Color dorado",
+    "Para la punta del árbol"
    ],
    "imgs": [
     "img/p/p-146-0.jpg",
@@ -469,7 +483,7 @@
    "name": "Forro navideño para puerta, 100 x 210 cm",
    "cat": "navidad",
    "price": 8,
-   "desc": "Forro decorativo para puerta en tela piel de durazno muy estirable. Mide 100 x 210 cm y se adapta a todas las puertas. Ideal para casa, aulas y eventos. El diseño se entrega según disponibilidad.",
+   "desc": "Forro decorativo para puerta con diseños navideños, hecho en tela piel de durazno muy estirable que se adapta a todas las puertas. Mide 100 x 210 cm. Ideal para la casa, aulas, oficinas o eventos navideños. El diseño se entrega según disponibilidad.",
    "feats": [
     "Medidas: 100 x 210 cm",
     "Tela piel de durazno estirable",
@@ -492,10 +506,11 @@
    "name": "Cajita de regalo navideña musical",
    "cat": "navidad",
    "price": 16,
-   "desc": "Adorno en forma de cajita de regalo con brillitos que flotan como nieve. Tiene modo con música y sin música. Para decorar o regalar. Viene en verde o rojo, según disponibilidad.",
+   "desc": "Adorno navideño en forma de cajita de regalo con escena navideña iluminada y brillitos que flotan como nieve. Tiene modo con música y sin música. Viene en verde o rojo, según disponibilidad. Para decorar o regalar.",
    "feats": [
     "Música o modo silencioso",
     "Brillitos flotantes",
+    "Con luz",
     "Color verde o rojo, según disponibilidad"
    ],
    "imgs": [
@@ -513,11 +528,12 @@
    "name": "Guitarra piano de juguete con luces",
    "cat": "juguetes",
    "price": 15,
-   "desc": "Juguete 2 en 1: guitarra y piano con luces y sonidos para que los niños exploren la música mientras juegan. Viene en rosado o azul, según disponibilidad.",
+   "desc": "Juguete 2 en 1: guitarra con teclado de piano, luces y sonidos. Los niños exploran la música y su talento mientras juegan a ser grandes músicos. Viene en rosado o azul, según disponibilidad.",
    "feats": [
     "2 en 1: guitarra y piano",
     "Luces y sonidos",
-    "Color rosado o azul, según disponibilidad"
+    "Color rosado o azul, según disponibilidad",
+    "Ideal para regalar"
    ],
    "imgs": [
     "img/p/p-149-0.jpg"
@@ -532,10 +548,11 @@
    "name": "Arco de juguete con flechas de ventosa",
    "cat": "juguetes",
    "price": 10,
-   "desc": "Set de arco y flechas con punta de ventosa para jugar dentro o fuera de casa sin riesgos. Estimula la puntería y la coordinación.",
+   "desc": "Set de arco de juguete con flechas de punta de ventosa para jugar dentro o fuera de casa sin riesgos. Estimula la puntería, la concentración y la coordinación mientras se divierten.",
    "feats": [
-    "Flechas con ventosa",
-    "Para jugar dentro o fuera de casa"
+    "Flechas con punta de ventosa",
+    "Para jugar dentro o fuera de casa",
+    "Estimula la puntería"
    ],
    "imgs": [
     "img/p/p-150-0.jpg",
@@ -552,10 +569,11 @@
    "name": "Set de 12 carritos deportivos",
    "cat": "juguetes",
    "price": 9,
-   "desc": "Pack de 12 carritos deportivos de colección en varios modelos y colores.",
+   "desc": "Pack de 12 carritos deportivos de colección en varios modelos y colores vibrantes. Horas de diversión para los más pequeños y un buen regalo para los amantes de los autos.",
    "feats": [
     "12 carritos",
-    "Varios modelos y colores"
+    "Varios modelos y colores",
+    "Coleccionables"
    ],
    "imgs": [
     "img/p/p-151-0.jpg",
@@ -572,10 +590,11 @@
    "name": "Bloques de construcción con contenedor",
    "cat": "juguetes",
    "price": 14,
-   "desc": "Bloques de construcción educativos de colores con contenedor para guardarlos. Estimulan la creatividad.",
+   "desc": "Bloques de construcción educativos de colores vibrantes y piezas fáciles de armar. Despiertan la creatividad de los niños para que aprendan jugando. Vienen en un contenedor práctico para guardarlos ordenados.",
    "feats": [
     "Incluye contenedor",
-    "Piezas fáciles de armar"
+    "Piezas fáciles de armar",
+    "Juguete educativo"
    ],
    "imgs": [
     "img/p/p-152-0.jpg",
@@ -593,10 +612,11 @@
    "name": "Futbolín de mesa",
    "cat": "juguetes",
    "price": 27,
-   "desc": "Futbolín de mesa compacto y resistente para jugar en familia o con amigos. Fácil de armar y guardar.",
+   "desc": "Futbolín de mesa compacto y resistente para partidos épicos en familia o con amigos. Cabe en la sala, el dormitorio o cualquier rincón, y es fácil de armar y guardar. Diversión para todas las edades.",
    "feats": [
     "Diseño compacto",
-    "Fácil de armar"
+    "Fácil de armar",
+    "Para todas las edades"
    ],
    "imgs": [
     "img/p/p-153-0.jpg",
@@ -614,10 +634,11 @@
    "name": "Mesa de juegos 5 en 1",
    "cat": "juguetes",
    "price": 16,
-   "desc": "Mesa de juegos con 5 juegos en uno: baloncesto, fútbol, hockey, billar y snooker. Para jugar solo o acompañado.",
+   "desc": "Mesa de juegos 5 en 1 con baloncesto, fútbol, hockey, billar y snooker en un solo juguete. Para jugar solo o acompañado. Un regalo perfecto para niños y grandes que asegura horas de entretenimiento en casa.",
    "feats": [
     "5 juegos en 1",
-    "Para niños y adultos"
+    "Para jugar solo o acompañado",
+    "Ideal para regalar"
    ],
    "imgs": [
     "img/p/p-154-0.jpg",
@@ -634,10 +655,12 @@
    "name": "Set de muñeca con más de 10 vestidos",
    "cat": "juguetes",
    "price": 9,
-   "desc": "Set con muñeca, más de 10 vestidos intercambiables, una mini compañera, bicicleta y accesorios.",
+   "desc": "Set de muñeca a la moda con más de 10 vestidos intercambiables, una mini compañera, bicicleta y accesorios. Permite crear mil historias de pasarela y despierta la creatividad e imaginación.",
    "feats": [
     "Más de 10 vestidos",
-    "Incluye bicicleta y accesorios"
+    "Incluye mini compañera y bicicleta",
+    "Con accesorios",
+    "Ideal para regalar"
    ],
    "imgs": [
     "img/p/p-155-0.jpg",
@@ -654,11 +677,10 @@
    "name": "Triciclo 3 en 1 para niños",
    "cat": "juguetes",
    "price": 27,
-   "desc": "Triciclo que se usa de tres formas: con ruedas de apoyo, sin pedales para deslizarse y con pedales. Ajustable, liviano y resistente. Mide aprox. 65 cm de largo y 52 cm de alto. Viene en rojo o amarillo, según disponibilidad.",
+   "desc": "Triciclo 3 en 1 que crece con tu peque: con ruedas de apoyo para empezar, sin pedales para deslizarse y con pedales para recorrer todos los caminos. Diseño ergonómico y ajustable, con estructura resistente y liviana. Mide aprox. 65 cm de largo y 52 cm de alto. Viene en rojo o amarillo, según disponibilidad.",
    "feats": [
     "3 formas de uso",
     "Ajustable",
-    "Estructura liviana",
     "Medidas aprox.: 65 x 52 cm",
     "Color rojo o amarillo, según disponibilidad"
    ],
@@ -678,10 +700,11 @@
    "name": "Cocinita de juguete con más de 60 accesorios",
    "cat": "juguetes",
    "price": 18,
-   "desc": "Cocinita con lavaplatos con grifo que funciona, sartenes, ollas, alimentos y utensilios. Más de 60 accesorios incluidos. El color se entrega según disponibilidad.",
+   "desc": "Cocinita de juguete muy completa con más de 60 accesorios: sartenes, ollas, alimentos, utensilios y hasta hamburguesitas. Tiene un lavaplatos con grifo que funciona. Los niños aprenden, imaginan y se divierten muchísimo. El color se entrega según disponibilidad.",
    "feats": [
     "Más de 60 accesorios",
     "Grifo que funciona",
+    "Diseño súper completo",
     "Color según disponibilidad"
    ],
    "imgs": [
@@ -700,10 +723,12 @@
    "name": "Mini cafetería de juguete",
    "cat": "juguetes",
    "price": 32,
-   "desc": "Set de cafetería con cafetera, refrigerador, caja registradora, alimentos y dinero de juguete para jugar a tener su propia tienda.",
+   "desc": "Mini cafetería de juguete con cafetera, refrigerador, caja registradora, dinero de juguete y muchísimos alimentos. Un juego súper realista para jugar a ser dueño de su propia tienda, solo o con amiguitos.",
    "feats": [
     "Incluye caja registradora y dinero",
-    "Muchos alimentos de juguete"
+    "Muchos alimentos de juguete",
+    "Juego realista",
+    "Ideal para regalar"
    ],
    "imgs": [
     "img/p/p-158-0.jpg",
@@ -721,10 +746,11 @@
    "name": "Pista plegable con 100 carritos",
    "cat": "juguetes",
    "price": 42,
-   "desc": "La caja se convierte en la pista. Hecha de cartón grueso y resistente, incluye 100 carritos de muchos diseños.",
+   "desc": "Pista para carritos en la que la misma caja se convierte en la pista. Está hecha de cartón grueso y resistente e incluye 100 carritos de muchos diseños. Estimula la imaginación y la coordinación, y es diversión para compartir en familia.",
    "feats": [
     "Incluye 100 carritos",
-    "Cartón grueso resistente"
+    "Cartón grueso resistente",
+    "La caja es la pista"
    ],
    "imgs": [
     "img/p/p-159-0.jpg"
@@ -739,7 +765,7 @@
    "name": "Carro loco a control remoto con luces",
    "cat": "juguetes",
    "price": 13,
-   "desc": "Carro a control remoto que gira 360 grados, con luces en ruedas y cabina y música. Es recargable y mide 18 x 17 cm. El color se entrega según disponibilidad.",
+   "desc": "Carro a control remoto que da giros de 360 grados, con luces brillantes en las ruedas y la cabina, y música. Es recargable y mide 18 x 17 cm. Un regalo muy divertido para los niños. El color se entrega según disponibilidad.",
    "feats": [
     "Control remoto",
     "Gira 360°",
@@ -764,7 +790,7 @@
    "name": "Lanzador de burbujas con guantes",
    "cat": "juguetes",
    "price": 12,
-   "desc": "Lanzador eléctrico de burbujas resistentes que se pueden tocar y rebotar con los guantes especiales incluidos. Fácil de usar y recargar. Mide 31 cm. Viene en rosado o celeste, según disponibilidad.",
+   "desc": "Lanzador eléctrico de burbujas resistentes que se pueden tocar y rebotar con los guantes especiales incluidos. Es fácil de usar y de recargar, y mide 31 cm. Viene en rosado o celeste, según disponibilidad.",
    "feats": [
     "Incluye guantes",
     "Burbujas que se pueden tocar",
@@ -788,11 +814,12 @@
    "name": "Mesa de billar infantil",
    "cat": "juguetes",
    "price": 39,
-   "desc": "Mesa de billar con acabado de madera, paño verde y bordes reforzados. Incluye 2 tacos, juego de bolas numeradas con bola blanca y triángulo.",
+   "desc": "Mesa de billar infantil con estructura de acabado de madera, paño verde y bordes reforzados para mayor seguridad. Incluye 2 tacos, juego de bolas numeradas con bola blanca y triángulo. Ideal para niños y espacios pequeños en casa, sala de juegos u oficina.",
    "feats": [
     "Incluye 2 tacos, bolas y triángulo",
     "Paño verde",
-    "Ideal para espacios pequeños"
+    "Bordes reforzados",
+    "Para espacios pequeños"
    ],
    "imgs": [
     "img/p/p-162-0.jpg",
@@ -809,7 +836,7 @@
    "name": "Móvil de cuna con proyector y control",
    "cat": "bebes",
    "price": 20,
-   "desc": "Móvil para cuna con melodías suaves, proyección de estrellitas y control remoto. Diseño con animalitos para que tu bebé duerma tranquilo. Mide 40 cm de ancho por 48 cm de alto. El color se entrega según disponibilidad.",
+   "desc": "Móvil para cuna con melodías suaves que calman y relajan, proyección de estrellitas en el techo y control remoto. Tiene animalitos colgantes de colores y mide 40 cm de ancho por 48 cm de alto. Ayuda a tu bebé a dormir tranquilo. El color se entrega según disponibilidad.",
    "feats": [
     "Proyecta estrellitas",
     "Melodías suaves",
@@ -832,12 +859,12 @@
    "name": "Báscula digital para bebés y mascotas, hasta 20 kg",
    "cat": "bebes",
    "price": 27,
-   "desc": "Báscula con pantalla digital para pesar bebés o mascotas de forma cómoda y precisa. Pesa hasta 20 kg. Mide 55 x 32 cm.",
+   "desc": "Báscula digital para pesar bebés o mascotas de forma cómoda y precisa. Tiene pantalla digital fácil de leer, base amplia y material resistente. Pesa hasta 20 kg y mide 55 x 32 cm. Ideal para el hogar o la veterinaria.",
    "feats": [
     "Capacidad: hasta 20 kg",
     "Pantalla digital",
-    "Base amplia",
-    "Medidas: 55 x 32 cm"
+    "Medidas: 55 x 32 cm",
+    "Para bebés y mascotas"
    ],
    "imgs": [
     "img/p/p-164-0.jpg",
@@ -854,7 +881,7 @@
    "name": "Extractor de leche materna eléctrico",
    "cat": "bebes",
    "price": 11,
-   "desc": "Extractor de leche eléctrico con 3 modos: masaje, lactancia y succión. Silencioso, cómodo y libre de BPA. El color se entrega según disponibilidad.",
+   "desc": "Extractor de leche materna eléctrico con 3 modos de uso: masaje, lactancia y succión. Es silencioso y cómodo, se adapta al pecho para una succión sin dolor y es libre de BPA. El color se entrega según disponibilidad.",
    "feats": [
     "3 modos de uso",
     "Silencioso",
@@ -875,11 +902,12 @@
    "name": "Olla arrocera HI-LUXE de 1,8 L",
    "cat": "cocina",
    "price": 41,
-   "desc": "Olla arrocera clásica HI-LUXE de 1,8 litros (unas 10 tazas de arroz). Cocina de forma automática. Potencia de 700 W a 120 V.",
+   "desc": "Olla arrocera clásica HI-LUXE de 1,8 litros, equivalente a unas 10 tazas de arroz. Cocina de forma automática el arroz y otros alimentos. Potencia de 700 W, 120 V y 60 Hz.",
    "feats": [
-    "Capacidad: 1,8 L",
+    "Capacidad: 1,8 L (10 tazas aprox.)",
     "Potencia: 700 W",
-    "Voltaje: 120 V"
+    "Voltaje: 120 V",
+    "Marca HI-LUXE"
    ],
    "imgs": [
     "img/p/p-166-0.jpg",
@@ -895,7 +923,7 @@
    "name": "Olla de vidrio con tapa, 16 cm",
    "cat": "cocina",
    "price": 10,
-   "desc": "Olla de vidrio de borosilicato, seguro y sin plomo, con tapa. Su vidrio transparente deja ver la cocción sin destapar y resiste el calor. Mide 16 cm de diámetro y 14 cm de alto con tapa.",
+   "desc": "Olla de vidrio de borosilicato, un material seguro, sin plomo y que no reacciona con los alimentos. Su vidrio transparente deja ver la cocción sin destapar y resiste el calor. Mide 16 cm de diámetro y 14 cm de alto con tapa.",
    "feats": [
     "Diámetro: 16 cm",
     "Altura con tapa: 14 cm",
@@ -917,11 +945,12 @@
    "name": "Licuadora Ultra HI-LUXE",
    "cat": "cocina",
    "price": 90,
-   "desc": "Licuadora Ultra HI-LUXE con 3 funciones, 4 cuchillas y control de velocidades. Potente y de excelente calidad.",
+   "desc": "Licuadora Ultra HI-LUXE con 3 funciones, 4 cuchillas y control de velocidades. Potente y de excelente calidad para batidos, jugos y salsas en casa o en tu negocio.",
    "feats": [
     "3 funciones",
     "4 cuchillas",
-    "Control de velocidades"
+    "Control de velocidades",
+    "Marca HI-LUXE"
    ],
    "imgs": [
     "img/p/p-168-0.jpg",
@@ -938,10 +967,11 @@
    "name": "Licuadora Supreme HI-LUXE",
    "cat": "cocina",
    "price": 48,
-   "desc": "Licuadora HI-LUXE con motor de alto rendimiento, cuchillas de acero inoxidable, vaso de gran capacidad y varias velocidades. Para hogar o negocio. El color se entrega según disponibilidad.",
+   "desc": "Licuadora Supreme HI-LUXE con motor de alto rendimiento, cuchillas de acero inoxidable, vaso de gran capacidad y varias velocidades. Ideal para el hogar o para negocios de jugos y batidos. El color se entrega según disponibilidad.",
    "feats": [
     "Cuchillas de acero inoxidable",
     "Varias velocidades",
+    "Vaso de gran capacidad",
     "Color según disponibilidad"
    ],
    "imgs": [
@@ -958,9 +988,10 @@
    "name": "Toalla de cocina grande 40 x 65 cm",
    "cat": "cocina",
    "price": 2,
-   "desc": "Toalla de cocina grande de 40 x 65 cm. El diseño se entrega según disponibilidad.",
+   "desc": "Toalla de cocina grande de 40 x 65 cm, de excelente calidad para el día a día en tu cocina. Viene en variedad de diseños, que se entregan según disponibilidad.",
    "feats": [
     "Medidas: 40 x 65 cm",
+    "Tamaño grande",
     "Diseño según disponibilidad"
    ],
    "imgs": [
@@ -979,7 +1010,7 @@
    "name": "Alfombra de cocina antideslizante 40 x 60 cm",
    "cat": "cocina",
    "price": 7,
-   "desc": "Alfombra de cocina absorbente y antimanchas que protege el piso de aceite, agua y comida. Base de goma antideslizante. Medida: 40 x 60 cm. El diseño se entrega según disponibilidad.",
+   "desc": "Alfombra de cocina absorbente y antimanchas que protege el piso de aceite, agua, salsas y restos de comida. Tiene base de goma texturizada antideslizante para mayor seguridad. Medida: 40 x 60 cm. El diseño se entrega según disponibilidad.",
    "feats": [
     "Medidas: 40 x 60 cm",
     "Base antideslizante",
@@ -1002,10 +1033,11 @@
    "name": "Limpiador arranca grasa",
    "cat": "cocina",
    "price": 4,
-   "desc": "Limpiador para quitar la grasa y la suciedad acumulada en las superficies de la cocina.",
+   "desc": "Limpiador arranca grasa en spray para una limpieza profunda de la cocina. Ayuda a quitar la grasa difícil y la suciedad acumulada en cocinas, campanas, mesones y superficies.",
    "feats": [
     "Para grasa difícil",
-    "Superficies de cocina"
+    "En spray",
+    "Para cocinas, campanas y mesones"
    ],
    "imgs": [
     "img/p/p-172-0.jpg",
@@ -1021,10 +1053,11 @@
    "name": "Perchero de pie tipo árbol",
    "cat": "hogar",
    "price": 10,
-   "desc": "Perchero de pie de estructura metálica para colgar ropa, abrigos, sombreros y carteras. Ideal para la entrada o el dormitorio. El color se entrega según disponibilidad.",
+   "desc": "Perchero de pie tipo árbol con estructura metálica para colgar ropa, abrigos, sombreros y carteras. Ocupa poco espacio y deja todo a la mano. Ideal para la entrada de la casa o el dormitorio. El color se entrega según disponibilidad.",
    "feats": [
     "Estructura metálica",
     "Para ropa, carteras y sombreros",
+    "Ocupa poco espacio",
     "Color según disponibilidad"
    ],
    "imgs": [
@@ -1042,10 +1075,11 @@
    "name": "Perchero hexagonal con ruedas",
    "cat": "hogar",
    "price": 14,
-   "desc": "Perchero de gran capacidad con diseño moderno y resistente. Tiene ruedas para moverlo con facilidad. Para casa, tienda o emprendimiento.",
+   "desc": "Perchero hexagonal de gran capacidad con diseño moderno y resistente. Tiene ruedas para moverlo con facilidad. Ideal para ordenar la ropa en casa, en una tienda o en tu emprendimiento.",
    "feats": [
     "Gran capacidad",
-    "Con ruedas"
+    "Con ruedas",
+    "Diseño moderno y resistente"
    ],
    "imgs": [
     "img/p/p-175-0.jpg"
@@ -1060,11 +1094,12 @@
    "name": "Tira LED de colores con control",
    "cat": "hogar",
    "price": 6,
-   "desc": "Tira de luces LED de varios colores con control remoto y diferentes modos de iluminación. Ideal para dormitorios, salas y televisores.",
+   "desc": "Tira de luces LED de varios colores con control remoto y diferentes modos de iluminación. Dale color y ambiente al dormitorio, la sala, el escritorio o detrás del televisor.",
    "feats": [
     "Varios colores",
     "Control remoto",
-    "Varios modos de luz"
+    "Varios modos de luz",
+    "Para dormitorio, sala o TV"
    ],
    "imgs": [
     "img/p/p-176-0.jpg",
@@ -1081,10 +1116,11 @@
    "name": "Zapatera tipo armario con bolsillos",
    "cat": "hogar",
    "price": 21,
-   "desc": "Zapatera tipo armario con ganchos y bolsillos laterales. Para zapatos, botas y sandalias, aprovecha mejor el espacio.",
+   "desc": "Zapatera tipo armario con diseño práctico y funcional, con ganchos y bolsillos laterales. Ideal para ordenar zapatos, botas, sandalias y más, y aprovechar mejor cada espacio de la casa.",
    "feats": [
     "Ganchos y bolsillos laterales",
-    "Para zapatos y botas"
+    "Para zapatos, botas y sandalias",
+    "Aprovecha el espacio"
    ],
    "imgs": [
     "img/p/p-177-0.jpg",
@@ -1100,11 +1136,12 @@
    "name": "Plancha a seco HI-LUXE de 1000 W",
    "cat": "hogar",
    "price": 16,
-   "desc": "Plancha a seco HI-LUXE de 1000 W a 110 V con suela antiadherente.",
+   "desc": "Plancha a seco HI-LUXE de 1000 W a 110 V con suela antiadherente que se desliza suave sobre la ropa. Liviana y práctica para el planchado de todos los días.",
    "feats": [
     "Potencia: 1000 W",
     "Voltaje: 110 V",
-    "Suela antiadherente"
+    "Suela antiadherente",
+    "Marca HI-LUXE"
    ],
    "imgs": [
     "img/p/p-178-0.jpg",
@@ -1120,10 +1157,11 @@
    "name": "Foco ventilador con control remoto",
    "cat": "hogar",
    "price": 11,
-   "desc": "Foco con ventilador de 6 aspas, 3 tonos de luz y velocidad ajustable con control remoto.",
+   "desc": "Foco con ventilador de 6 aspas, todo en uno, con control remoto. Tiene 3 tonos de luz y velocidad ajustable para refrescar e iluminar al mismo tiempo. Muy útil en el hogar.",
    "feats": [
     "3 tonos de luz",
     "Ventilador de 6 aspas",
+    "Velocidad ajustable",
     "Control remoto"
    ],
    "imgs": [
@@ -1139,11 +1177,12 @@
    "name": "Ventilador recargable con panel solar",
    "cat": "hogar",
    "price": 42,
-   "desc": "Ventilador portátil recargable que incluye panel solar y 2 focos LED. Botones de control en la base.",
+   "desc": "Ventilador portátil recargable que incluye panel solar para cargarlo y 2 focos LED para iluminar. Tiene botones de control en la base y diseño portátil para llevarlo de un espacio a otro de la casa. Práctico para mantener tus espacios frescos.",
    "feats": [
     "Incluye panel solar",
     "Incluye 2 focos LED",
-    "Recargable"
+    "Recargable",
+    "Portátil"
    ],
    "imgs": [
     "img/p/p-180-0.jpg",
@@ -1161,10 +1200,11 @@
    "name": "Zapatera de puerta para 36 pares",
    "cat": "hogar",
    "price": 17,
-   "desc": "Zapatera para la puerta hecha con tubos de acero. Acomoda hasta 36 pares y aprovecha al máximo el espacio.",
+   "desc": "Zapatera para colgar en la puerta, fabricada con tubos de acero. Acomoda hasta 36 pares de zapatos y aprovecha al máximo el espacio sin ocupar el piso.",
    "feats": [
     "Capacidad: 36 pares",
-    "Tubos de acero"
+    "Tubos de acero",
+    "Se cuelga en la puerta"
    ],
    "imgs": [
     "img/p/p-181-0.jpg",
@@ -1180,10 +1220,12 @@
    "name": "Mini máquina de coser portátil",
    "cat": "hogar",
    "price": 17,
-   "desc": "Máquina de coser compacta y liviana de 20 x 19 x 13 cm aprox. Sencilla de usar, ideal para arreglos en casa o para regalar.",
+   "desc": "Mini máquina de coser portátil, liviana y de diseño minimalista. Mide aprox. 20 x 19 x 13 cm y es muy sencilla de usar con el hilo correcto. Ideal para arreglos y costuras rápidas en casa o como regalo.",
    "feats": [
     "Medidas aprox.: 20 x 19 x 13 cm",
-    "Portátil y liviana"
+    "Portátil y liviana",
+    "Fácil de usar",
+    "Ideal para regalar"
    ],
    "imgs": [
     "img/p/p-182-0.jpg",
@@ -1199,7 +1241,7 @@
    "name": "Organizador de escritorio giratorio",
    "cat": "hogar",
    "price": 5,
-   "desc": "Organizador giratorio de plástico con compartimentos y cajones transparentes. Para papelería, lápices o maquillaje. Mide aprox. 11 x 11 x 11,5 cm.",
+   "desc": "Organizador de escritorio giratorio de plástico con compartimentos y cajones transparentes. Ideal para guardar papelería, lápices, cintas washi o maquillaje. Mide aprox. 11 x 11 x 11,5 cm.",
    "feats": [
     "Giratorio",
     "Cajones transparentes",
@@ -1221,11 +1263,12 @@
    "name": "Salida de baño de toalla 135 x 80 cm",
    "cat": "cuidado",
    "price": 4,
-   "desc": "Vestido de toalla suave, absorbente y de secado rápido. Medida aproximada: 135 x 80 cm. Disponible en celeste y amarillo, según disponibilidad.",
+   "desc": "Salida de baño tipo vestido de toalla, suave, cómoda y absorbente. Es de secado rápido y se puede lavar en lavadora. Medida aproximada: 135 x 80 cm. Disponible en celeste y amarillo, según disponibilidad.",
    "feats": [
     "Medidas aprox.: 135 x 80 cm",
-    "Disponible en celeste y amarillo (según disponibilidad)",
-    "Secado rápido"
+    "Secado rápido",
+    "Lavable en lavadora",
+    "Celeste o amarillo, según disponibilidad"
    ],
    "imgs": [
     "img/p/p-184-3.jpg"
@@ -1240,11 +1283,12 @@
    "name": "Antifaz para dormir con audífonos bluetooth",
    "cat": "cuidado",
    "price": 8,
-   "desc": "Antifaz de tela suave con audífonos inalámbricos integrados que se conectan a tu celular. Recargable. Ideal para viajes y descanso.",
+   "desc": "Antifaz para dormir con audífonos bluetooth integrados, de tela súper suave y cómoda. Se conecta fácil a tu celular para escuchar música o sonidos relajantes. Es recargable. Ideal para viajes, siestas y descanso.",
    "feats": [
-    "Audífonos inalámbricos",
+    "Audífonos bluetooth",
     "Recargable",
-    "Tela suave"
+    "Tela suave",
+    "Ideal para viajes"
    ],
    "imgs": [
     "img/p/p-185-0.jpg",
@@ -1262,10 +1306,11 @@
    "name": "Tapete de yoga",
    "cat": "cuidado",
    "price": 10,
-   "desc": "Tapete para yoga o ejercicios en casa con excelente acabado. Disponible en naranja y celeste, según disponibilidad.",
+   "desc": "Tapete para yoga o para hacer ejercicios en casa, con excelente acabado. Disponible en naranja y celeste, según disponibilidad.",
    "feats": [
-    "Disponible en naranja y celeste (según disponibilidad)",
-    "Para yoga y ejercicio"
+    "Para yoga y ejercicio en casa",
+    "Excelente acabado",
+    "Naranja o celeste, según disponibilidad"
    ],
    "imgs": [
     "img/p/p-186-1.jpg"
@@ -1280,10 +1325,11 @@
    "name": "Rueda abdominal doble",
    "cat": "cuidado",
    "price": 8,
-   "desc": "Rueda doble para ejercicios de abdomen, brazos y espalda. Empuñaduras ergonómicas y estable. Compacta para entrenar en casa. El color se entrega según disponibilidad.",
+   "desc": "Rueda abdominal doble para ejercitar abdomen, brazos y espalda desde casa. Tiene doble rueda estable para más seguridad y empuñaduras ergonómicas, cómodas y firmes. Compacta para entrenar cuando quieras. El color se entrega según disponibilidad.",
    "feats": [
-    "Doble rueda",
+    "Doble rueda estable",
     "Empuñaduras ergonómicas",
+    "Compacta",
     "Color según disponibilidad"
    ],
    "imgs": [
@@ -1302,7 +1348,7 @@
    "name": "Rodillera térmica recargable",
    "cat": "cuidado",
    "price": 10,
-   "desc": "Rodillera con calor y 3 niveles de temperatura. Es recargable y tiene un espacio para bolsa de hielo.",
+   "desc": "Rodillera térmica recargable con 3 niveles de temperatura. Brinda calor para aliviar las molestias musculares de la rodilla y tiene un espacio para colocar bolsa de hielo cuando necesites frío.",
    "feats": [
     "3 niveles de calor",
     "Recargable",
@@ -1323,10 +1369,11 @@
    "name": "Rodillo masajeador de pies",
    "cat": "cuidado",
    "price": 9,
-   "desc": "Masajeador de pies con rodillo para relajar talón, arco y aliviar el cansancio. El color es surtido, según disponibilidad. Mide aprox. 29 x 15 cm.",
+   "desc": "Rodillo masajeador de pies para relajar el talón y el arco, y aliviar el cansancio y el estrés después de un día largo. Mide aprox. 29 x 15 cm. El color es surtido, según disponibilidad.",
    "feats": [
-    "Color surtido, según disponibilidad",
-    "Para talón y arco del pie"
+    "Para talón y arco del pie",
+    "Medidas aprox.: 29 x 15 cm",
+    "Color surtido, según disponibilidad"
    ],
    "imgs": [
     "img/p/p-189-0.jpg",
@@ -1344,10 +1391,11 @@
    "name": "Rodillo masajeador muscular de 9 rodillos",
    "cat": "cuidado",
    "price": 7,
-   "desc": "Masajeador con 9 rodillos para piernas, brazos, espalda y cintura. Alivia tensión y cansancio.",
+   "desc": "Rodillo masajeador muscular con 9 rodillos que abrazan la pierna. Alivia la tensión, el cansancio y el dolor muscular en piernas, brazos, espalda y cintura. Fácil de usar en casa, en el trabajo o donde quieras.",
    "feats": [
     "9 rodillos",
-    "Para piernas, brazos y espalda"
+    "Para piernas, brazos y espalda",
+    "Fácil de usar"
    ],
    "imgs": [
     "img/p/p-190-0.jpg"
@@ -1362,12 +1410,12 @@
    "name": "Parlante bluetooth tipo megáfono con radio",
    "cat": "tecno",
    "price": 11,
-   "desc": "Parlante recargable tipo megáfono con micrófono de diadema, bluetooth, radio FM y entrada para pendrive. Fácil de llevar.",
+   "desc": "Parlante bluetooth tipo megáfono, recargable, con radio FM y entrada para pendrive. Es fácil de llevar a cualquier lugar para escuchar tu música donde quieras.",
    "feats": [
     "Bluetooth y radio FM",
     "Entrada para pendrive",
     "Recargable",
-    "Con micrófono de diadema"
+    "Portátil"
    ],
    "imgs": [
     "img/p/p-191-0.jpg",
@@ -1384,10 +1432,11 @@
    "name": "Barra de parlante con luces LED",
    "cat": "tecno",
    "price": 12,
-   "desc": "Barra de parlante compacta con luces LED para disfrutar música con ambiente.",
+   "desc": "Barra de parlante compacta con luces LED, música y luces en un solo producto. Llamativa y perfecta para darle ambiente a tu habitación, sala o escritorio mientras disfrutas tus canciones favoritas.",
    "feats": [
     "Luces LED",
-    "Diseño compacto"
+    "Diseño compacto",
+    "Para habitación, sala o escritorio"
    ],
    "imgs": [
     "img/p/p-192-0.jpg"
@@ -1402,10 +1451,11 @@
    "name": "Micrófono inalámbrico doble para celular",
    "cat": "tecno",
    "price": 14,
-   "desc": "Kit con dos micrófonos inalámbricos con clip magnético y receptor para celular con conexión tipo C. Reducción de ruido y 5 a 7 horas de batería.",
+   "desc": "Kit con dos micrófonos inalámbricos redondos con clip magnético y un receptor que se conecta directo al celular por el puerto tipo C. Tiene reducción de ruido inteligente para un audio claro y batería de 5 a 7 horas. Ideal para videos, entrevistas, clases y transmisiones en vivo.",
    "feats": [
-    "2 micrófonos",
+    "2 micrófonos inalámbricos",
     "Conexión tipo C",
+    "Reducción de ruido",
     "Batería de 5 a 7 horas"
    ],
    "imgs": [
@@ -1423,11 +1473,12 @@
    "name": "Cargador inalámbrico 3 en 1 plegable",
    "cat": "tecno",
    "price": 10,
-   "desc": "Carga al mismo tiempo celular, reloj inteligente y audífonos. Carga rápida de hasta 15 W con alineación magnética. Plegable, compatible con equipos MagSafe.",
+   "desc": "Cargador inalámbrico plegable 3 en 1 que carga al mismo tiempo celular, reloj inteligente y audífonos. Ofrece carga rápida de hasta 15 W con alineación magnética, compatible con equipos MagSafe. Mide 24 x 7,5 cm abierto y es ideal para viajes.",
    "feats": [
-    "Carga 3 equipos",
+    "Carga 3 equipos a la vez",
     "Hasta 15 W",
-    "Plegable"
+    "Compatible con MagSafe",
+    "Plegable: 24 x 7,5 cm"
    ],
    "imgs": [
     "img/p/p-194-0.jpg",
@@ -1445,11 +1496,12 @@
    "name": "Soporte plegable para laptop",
    "cat": "tecno",
    "price": 4,
-   "desc": "Soporte de plástico reforzado para laptops y tablets de hasta 15 pulgadas. Plegable, ventilado y con varias alturas.",
+   "desc": "Soporte plegable para laptops y tablets de hasta 15 pulgadas, de plástico reforzado con estructura en X. Tiene varios niveles de altura e inclinación, y un diseño ventilado que ayuda a enfriar el equipo. Portátil para llevarlo a donde vayas.",
    "feats": [
     "Hasta 15 pulgadas",
     "Varias alturas",
-    "Plegable"
+    "Ventilado",
+    "Plegable y portátil"
    ],
    "imgs": [
     "img/p/p-195-0.jpg",
@@ -1467,10 +1519,12 @@
    "name": "Parasol plegable tipo paraguas para carro",
    "cat": "herramientas",
    "price": 7,
-   "desc": "Parasol interior para el parabrisas con protección UV. Se abre como paraguas, cubre todo el frente y se guarda fácil.",
+   "desc": "Parasol interior para el parabrisas con protección UV que se abre como un paraguas y cubre todo el frente del carro. Ayuda a que el interior se mantenga más fresco y se guarda fácil cuando no lo usas.",
    "feats": [
     "Protección UV",
-    "Plegable tipo paraguas"
+    "Se abre como paraguas",
+    "Cubre todo el parabrisas",
+    "Fácil de guardar"
    ],
    "imgs": [
     "img/p/p-196-0.jpg"
@@ -1485,11 +1539,12 @@
    "name": "Hidrolavadora inalámbrica de 1 batería",
    "cat": "herramientas",
    "price": 19,
-   "desc": "Hidrolavadora a batería para lavar carros, el hogar y el jardín. Viene en kit completo con caja plástica dura y punta de cobre reforzada.",
+   "desc": "Hidrolavadora inalámbrica a batería para lavar vehículos y para la limpieza de la casa y el jardín. Viene en kit completo listo para trabajar, con caja plástica dura y punta de cobre reforzada.",
    "feats": [
-    "Inalámbrica",
+    "Inalámbrica a batería",
     "Kit completo con caja",
-    "Punta de cobre reforzada"
+    "Punta de cobre reforzada",
+    "Para vehículos, casa y jardín"
    ],
    "imgs": [
     "img/p/p-197-0.jpg"
@@ -1504,11 +1559,12 @@
    "name": "Mini amoladora recargable con discos",
    "cat": "herramientas",
    "price": 23,
-   "desc": "Mini amoladora inalámbrica con cargador, varios discos de corte y caja de herramientas. Para cortar y pulir metal, madera, piedra y azulejo.",
+   "desc": "Mini amoladora angular inalámbrica en kit con cargador, varios discos de corte y caja de herramientas portátil. Ideal para trabajos pequeños de corte y pulido en metal, madera, piedra y azulejo.",
    "feats": [
     "Inalámbrica",
     "Incluye discos y cargador",
-    "Con caja de herramientas"
+    "Con caja de herramientas",
+    "Corta y pule"
    ],
    "imgs": [
     "img/p/p-198-0.jpg"
@@ -1523,11 +1579,11 @@
    "name": "Mini sierra eléctrica de 24 V",
    "cat": "herramientas",
    "price": 18,
-   "desc": "Mini sierra eléctrica con batería recargable de 24 V para podar, carpintería y jardín.",
+   "desc": "Mini sierra eléctrica con batería recargable de 24 V para podar árboles, cortar ramas y trabajos de carpintería y jardín. Liviana y fácil de manejar con una mano.",
    "feats": [
-    "Batería de 24 V",
-    "Recargable",
-    "Para poda y carpintería"
+    "Batería recargable de 24 V",
+    "Para poda y carpintería",
+    "Liviana"
    ],
    "imgs": [
     "img/p/p-199-0.jpg",
@@ -1544,10 +1600,11 @@
    "name": "Cepillo telescópico para lavar carros",
    "cat": "herramientas",
    "price": 15,
-   "desc": "Cepillo de mango largo telescópico con paso de agua para lavar carros, camionetas y más.",
+   "desc": "Cepillo telescópico con paso de agua para lavar carros, camionetas y vehículos grandes. Su mango largo ayuda a llegar a las partes altas y difíciles sin esfuerzo.",
    "feats": [
     "Mango telescópico",
-    "Con paso de agua"
+    "Con paso de agua",
+    "Para carros y camionetas"
    ],
    "imgs": [
     "img/p/p-200-0.jpg",
@@ -1564,11 +1621,12 @@
    "name": "Set de 4 ollas de acero inoxidable",
    "cat": "cocina",
    "price": 27,
-   "desc": "Set de 4 ollas de acero inoxidable, resistentes y fáciles de limpiar. Un básico para cocinar todos los días.",
+   "desc": "Set de 4 ollas de acero inoxidable, resistentes, duraderas y bonitas, para preparar las comidas de todos los días. Un básico que no puede faltar en tu cocina y un buen regalo para quien está equipando su casa.",
    "feats": [
-    "4 piezas de acero inoxidable",
+    "4 ollas de acero inoxidable",
     "Resistentes y duraderas",
-    "Para el uso diario en tu cocina"
+    "Para el uso diario",
+    "Ideal para regalar"
    ],
    "imgs": [
     "img/p/p-101-0.jpg"
@@ -1583,11 +1641,12 @@
    "name": "Bandeja de vidrio redonda con tapa",
    "cat": "cocina",
    "price": 13,
-   "desc": "Recipiente de vidrio con tapa hermética para guardar, servir y conservar tus alimentos en la refrigeradora.",
+   "desc": "Bandeja redonda de vidrio de alta calidad con tapa hermética y segura. Sirve para guardar, servir y conservar tus alimentos en la refrigeradora sin que pierdan sabor. Es fácil de limpiar y se puede reutilizar todas las veces que quieras.",
    "feats": [
     "Vidrio de alta calidad",
     "Tapa hermética",
-    "Fácil de lavar y reutilizar"
+    "Para refrigeradora y mesa",
+    "Reutilizable y fácil de lavar"
    ],
    "imgs": [
     "img/p/p-102-0.jpg",
@@ -1603,11 +1662,12 @@
    "name": "Huevera plegable de 3 niveles",
    "cat": "cocina",
    "price": 6,
-   "desc": "Organizador de huevos de 3 niveles para la refrigeradora o el mesón. Los mantiene seguros, visibles y sin golpes.",
+   "desc": "Huevera plegable de plástico con 3 niveles para la refrigeradora o el mesón. Mantiene los huevos ordenados, a la vista y separados para que no choquen ni se rompan. Cuando no la usas, se pliega para ocupar menos espacio.",
    "feats": [
     "3 niveles",
-    "Plegable para ahorrar espacio",
-    "Evita que los huevos se rompan"
+    "Plegable",
+    "Evita que los huevos se rompan",
+    "Para refrigeradora o mesón"
    ],
    "imgs": [
     "img/p/p-103-0.jpg",
@@ -1625,11 +1685,12 @@
    "name": "Hervidor eléctrico plegable 600 ml",
    "cat": "cocina",
    "price": 12,
-   "desc": "Hervidor de silicona que se pliega para guardarlo en cualquier lugar. Ideal para té, café o infusiones.",
+   "desc": "Hervidor eléctrico con cuerpo de silicona de grado alimenticio que se pliega para guardarlo en maletas, mochilas o gabinetes. Tiene capacidad de 600 ml y base con placa calefactora de acero inoxidable. Perfecto para preparar té, café o aguas aromáticas en casa, en la oficina o de viaje.",
    "feats": [
-    "Capacidad de 600 ml",
-    "Se pliega para viajes o espacios pequeños",
-    "Base de acero inoxidable y silicona apta para alimentos"
+    "Capacidad: 600 ml",
+    "Plegable para viajes",
+    "Silicona de grado alimenticio",
+    "Placa de acero inoxidable"
    ],
    "imgs": [
     "img/p/p-104-0.jpg",
@@ -1646,11 +1707,12 @@
    "name": "Jarra de vidrio 2 L con 4 tazas, verde",
    "cat": "cocina",
    "price": 6,
-   "desc": "Juego de jarra de vidrio de 2 litros con 4 tazas, disponible solo en color verde. Perfecto para reuniones y para servir bebidas frías o calientes.",
+   "desc": "Juego de jarra tipo tetera de vidrio de 2 litros con 4 tazas de vidrio, de excelente calidad. Disponible solo en color verde. Ideal para servir en reuniones con amigas o en la mesa familiar, y bonito para regalar.",
    "feats": [
     "Disponible solo en color verde",
-    "Jarra de 2 litros",
-    "4 tazas de vidrio"
+    "Jarra de vidrio de 2 litros",
+    "Incluye 4 tazas de vidrio",
+    "Ideal para reuniones"
    ],
    "imgs": [
     "img/p/p-105-3.jpg"
@@ -1665,11 +1727,12 @@
    "name": "Platera de 2 pisos con puertas",
    "cat": "cocina",
    "price": 37,
-   "desc": "Mueble platero de 2 pisos con puertas tipo vitrina que protegen tu vajilla del polvo. Ordena platos y utensilios en poco espacio.",
+   "desc": "Platera de 2 pisos con estructura metálica resistente y puertas tipo vitrina que protegen tu vajilla del polvo. Tiene amplio espacio para platos, vasos y utensilios, y 2 escurridores para que la vajilla se seque ordenada. Ayuda a mantener la cocina limpia y aprovechar mejor el espacio.",
    "feats": [
-    "Estructura metálica resistente",
     "2 pisos y 2 escurridores",
-    "Puertas tipo vitrina"
+    "Puertas tipo vitrina",
+    "Estructura metálica resistente",
+    "Diseño moderno"
    ],
    "imgs": [
     "img/p/p-106-0.jpg"
@@ -1684,10 +1747,11 @@
    "name": "Soporte de pared para utensilios",
    "cat": "cocina",
    "price": 6,
-   "desc": "Organizador de pared con ranuras para cuchillos y ganchos deslizables para cucharones, tijeras o paños.",
+   "desc": "Organizador de pared para la cocina con ranuras para guardar cuchillos de forma segura y ganchos deslizables. En los ganchos puedes colgar batidores, tijeras, cucharones o paños. Libera espacio en el mesón y deja todo a la mano.",
    "feats": [
     "Ranuras para cuchillos",
     "Ganchos deslizables",
+    "Se instala en la pared",
     "Libera espacio en el mesón"
    ],
    "imgs": [
@@ -1706,10 +1770,11 @@
    "name": "Batidor eléctrico para espuma de café",
    "cat": "cocina",
    "price": 3,
-   "desc": "Mini batidor a pilas para hacer espuma de leche, capuchinos o batir huevos en segundos. El color es surtido, según disponibilidad.",
+   "desc": "Mini batidor eléctrico portátil que funciona a pilas. Hace espuma de leche para capuchinos en segundos y también sirve para batir leche, huevos o bebidas en polvo. El color es surtido, según disponibilidad.",
    "feats": [
+    "Funciona a pilas",
+    "Para café, leche y huevos",
     "Portátil y fácil de usar",
-    "Para café, leche o huevos",
     "Color surtido, según disponibilidad"
    ],
    "imgs": [
@@ -1725,11 +1790,12 @@
    "name": "Organizador de 5 niveles con ruedas",
    "cat": "hogar",
    "price": 14,
-   "desc": "Organizador de 5 niveles, resistente y con ruedas giratorias. Ideal para baño, dormitorio, cocina o lavandería.",
+   "desc": "Organizador de 5 niveles amplios, moderno y resistente, con ruedas giratorias para moverlo con facilidad. Ideal para el baño, dormitorio, cocina o lavandería. Perfecto para ordenar productos de limpieza, artículos de belleza, toallas o víveres.",
    "feats": [
     "5 niveles amplios",
     "Ruedas giratorias",
-    "Para productos de limpieza, belleza o toallas"
+    "Diseño moderno y resistente",
+    "Para baño, cocina, dormitorio o lavandería"
    ],
    "imgs": [
     "img/p/p-109-0.jpg",
@@ -1746,11 +1812,11 @@
    "name": "Perchero hexagonal con ruedas",
    "cat": "hogar",
    "price": 14,
-   "desc": "Perchero de gran capacidad para tener tu ropa ordenada y a la vista. Se mueve con facilidad.",
+   "desc": "Perchero hexagonal de gran capacidad para mantener tu ropa ordenada y a la vista. Tiene diseño moderno y resistente, y ruedas para moverlo de un lugar a otro. Ideal para el dormitorio, para una tienda de ropa o para tu emprendimiento.",
    "feats": [
     "Gran capacidad",
-    "Estructura resistente",
     "Con ruedas",
+    "Diseño moderno y resistente",
     "Para casa, tienda o emprendimiento"
    ],
    "imgs": [
@@ -1766,10 +1832,11 @@
    "name": "Zapatera de 4 niveles con cubierta",
    "cat": "hogar",
    "price": 16,
-   "desc": "Zapatera con cubierta enrollable que protege tu calzado del polvo. Moderna y fácil de armar.",
+   "desc": "Zapatera de 4 niveles con cubierta protectora enrollable que mantiene tu calzado libre de polvo. Tiene un diseño moderno y elegante, y es fácil de armar. Ideal para el dormitorio, el clóset o la entrada de la casa.",
    "feats": [
     "4 niveles",
-    "Cubierta enrollable",
+    "Cubierta enrollable contra el polvo",
+    "Diseño moderno",
     "Para dormitorio, clóset o entrada"
    ],
    "imgs": [
@@ -1786,10 +1853,10 @@
    "name": "Carrito rodante de 3 niveles",
    "cat": "hogar",
    "price": 15,
-   "desc": "Carrito de 3 niveles con ruedas que giran 360°. Estable y amplio para especias, frutas o cosméticos.",
+   "desc": "Carrito rodante de 3 niveles con cuatro ruedas que giran 360 grados. Es resistente, estable y de gran capacidad, ideal para organizar especias en la cocina o cosméticos en el baño o el dormitorio. Se mueve fácil de un lugar a otro. El color se entrega según disponibilidad.",
    "feats": [
+    "3 niveles",
     "Ruedas que giran 360°",
-    "3 canastas amplias",
     "Estable y resistente",
     "Color según disponibilidad"
    ],
@@ -1806,11 +1873,12 @@
    "name": "Zapatera de doble puerta",
    "cat": "hogar",
    "price": 18,
-   "desc": "Zapatera cerrada de dos puertas con manijas. Mantiene tus zapatos ordenados y fuera de la vista.",
+   "desc": "Zapatera cerrada de doble puerta con cómodas manijas. Tiene amplio espacio de almacenamiento y estructura firme y resistente. Mantiene tus zapatos ordenados y fuera de la vista en el dormitorio, la sala o cualquier rincón de la casa.",
    "feats": [
+    "Doble puerta con manijas",
     "Amplio espacio",
-    "Puertas con manijas",
-    "Estructura firme"
+    "Estructura firme",
+    "Diseño moderno"
    ],
    "imgs": [
     "img/p/p-113-0.jpg",
@@ -1827,11 +1895,12 @@
    "name": "Organizador de baño sobre inodoro",
    "cat": "hogar",
    "price": 11,
-   "desc": "Repisa de varios niveles que se coloca sobre el inodoro para ordenar toallas y productos de aseo.",
+   "desc": "Organizador de baño de varios niveles que se coloca sobre el inodoro para aprovechar un espacio que casi nunca se usa. Ideal para toallas, papel higiénico, productos de aseo y accesorios. Le da a tu baño un toque de orden y elegancia.",
    "feats": [
     "Varios niveles",
-    "Aprovecha el espacio sobre el inodoro",
-    "Para toallas y artículos de aseo"
+    "Se coloca sobre el inodoro",
+    "Para toallas y productos de aseo",
+    "Diseño moderno"
    ],
    "imgs": [
     "img/p/p-114-0.jpg",
@@ -1848,11 +1917,12 @@
    "name": "Organizador giratorio 360° de maquillaje",
    "cat": "cuidado",
    "price": 7,
-   "desc": "Organizador que gira 360° con tapa transparente que protege brochas y productos del polvo. Lindo en cualquier tocador.",
+   "desc": "Organizador de maquillaje que gira 360° para encontrar lo que buscas en un instante. Tiene tapa transparente que protege las brochas y productos del polvo, y varios compartimentos para brochas, labiales y más. Elegante, compacto y muy fácil de limpiar.",
    "feats": [
     "Gira 360°",
     "Tapa transparente",
-    "Compartimentos para brochas y labiales"
+    "Varios compartimentos",
+    "Fácil de limpiar"
    ],
    "imgs": [
     "img/p/p-115-0.jpg",
@@ -1870,12 +1940,12 @@
    "name": "Espejo de cuerpo entero con soporte, negro",
    "cat": "hogar",
    "price": 23,
-   "desc": "Espejo de cuerpo entero inclinable, disponible solo en color negro. Tiene marco metálico y ruedas para moverlo de un lugar a otro.",
+   "desc": "Espejo de cuerpo entero disponible solo en color negro, ideal para ver tu outfit completo. Tiene marco metálico resistente, soporte que permite inclinarlo y ruedas giratorias para moverlo de un lugar a otro. Un diseño moderno que complementa la decoración del dormitorio.",
    "feats": [
     "Disponible solo en color negro",
     "Marco metálico resistente",
     "Inclinable",
-    "Con ruedas"
+    "Ruedas giratorias"
    ],
    "imgs": [
     "img/p/p-116-1.jpg"
@@ -1890,11 +1960,12 @@
    "name": "Adorno navideño tetera musical",
    "cat": "navidad",
    "price": 18,
-   "desc": "Adorno de Navidad en forma de tetera con acabado dorado y brillitos que flotan como nieve. Con o sin música.",
+   "desc": "Adorno navideño en forma de tetera con acabado dorado envejecido, muy elegante. Por dentro tiene brillitos que flotan como nieve y puedes usarlo con música o en modo silencioso. Un detalle hermoso para decorar la sala o para regalar.",
    "feats": [
     "Modo con y sin música",
-    "Brillitos flotantes",
-    "Ideal para decorar o regalar"
+    "Brillitos que flotan como nieve",
+    "Acabado dorado envejecido",
+    "Ideal para regalar"
    ],
    "imgs": [
     "img/p/p-117-0.jpg",
@@ -1912,11 +1983,12 @@
    "name": "Adorno navideño tren musical",
    "cat": "navidad",
    "price": 16,
-   "desc": "Adorno de Navidad en forma de tren con acabado dorado y brillitos que flotan como nieve. Con o sin música.",
+   "desc": "Adorno navideño en forma de tren con acabado dorado envejecido, muy elegante. Por dentro tiene brillitos que flotan como nieve y puedes usarlo con música o en modo silencioso. Un detalle hermoso para decorar la sala o para regalar.",
    "feats": [
     "Modo con y sin música",
-    "Brillitos flotantes",
-    "Ideal para decorar o regalar"
+    "Brillitos que flotan como nieve",
+    "Acabado dorado envejecido",
+    "Ideal para regalar"
    ],
    "imgs": [
     "img/p/p-118-0.jpg",
@@ -1934,11 +2006,12 @@
    "name": "Alfombra navideña",
    "cat": "navidad",
    "price": 17,
-   "desc": "Alfombra con diseños navideños de colores vivos para darle calidez a tu sala o habitación esta temporada.",
+   "desc": "Alfombra navideña con diseños festivos y colores vibrantes. Le da un toque acogedor a la sala, la habitación o cualquier espacio de la casa durante toda la temporada. El diseño se entrega según disponibilidad.",
    "feats": [
     "Diseños navideños",
     "Colores vibrantes",
-    "Para sala o habitación"
+    "Para sala o habitación",
+    "Diseño según disponibilidad"
    ],
    "imgs": [
     "img/p/p-119-0.jpg"
@@ -1953,11 +2026,12 @@
    "name": "Combo secador y plancha de cabello Sonar",
    "cat": "cuidado",
    "price": 20,
-   "desc": "Set de secador y plancha para el cabello marca Sonar. Ayuda a reducir el frizz y a mantener el cabello hidratado.",
+   "desc": "Combo profesional de secador y plancha para el cabello de la marca Sonar. Te permite secar y alisar en casa con resultados de salón. Ayuda a reducir el encrespamiento y a mantener el cabello hidratado.",
    "feats": [
     "Secador + plancha",
     "Marca Sonar",
-    "Reduce el frizz"
+    "Reduce el frizz",
+    "Ideal para regalar"
    ],
    "imgs": [
     "img/p/p-120-0.jpg",
@@ -1974,10 +2048,11 @@
    "name": "Set de masajeadores corporales",
    "cat": "cuidado",
    "price": 10,
-   "desc": "Set con dos modelos de masajeador para relajar el cuerpo, más un pulidor de callos.",
+   "desc": "Set de masajeadores corporales que incluye 2 modelos de masajeador y un pulidor de callos. Ideal para relajar el cuerpo después de un día largo y cuidar tus pies en casa.",
    "feats": [
     "2 modelos de masajeador",
-    "Incluye pulidor de callos"
+    "Incluye pulidor de callos",
+    "Para uso en casa"
    ],
    "imgs": [
     "img/p/p-121-0.jpg",
@@ -1994,11 +2069,11 @@
    "name": "Pistola masajeadora inalámbrica",
    "cat": "cuidado",
    "price": 15,
-   "desc": "Masajeador eléctrico para relajar la tensión muscular de cuello, espalda y piernas.",
+   "desc": "Pistola masajeadora eléctrica e inalámbrica que ayuda a aliviar el dolor y la tensión muscular, incluida la zona cervical. Tiene 6 niveles de intensidad para ajustar el masaje a tu gusto e incluye cargador. El color se entrega según disponibilidad.",
    "feats": [
     "6 niveles de intensidad",
-    "Inalámbrica, incluye cargador",
-    "Para cuello, espalda y piernas",
+    "Inalámbrica",
+    "Incluye cargador",
     "Color según disponibilidad"
    ],
    "imgs": [
@@ -2016,11 +2091,12 @@
    "name": "Mini afeitadora recargable 3 en 1",
    "cat": "cuidado",
    "price": 12,
-   "desc": "Afeitadora recargable con accesorios para barba, cortes y vello de nariz. Marca Sonar.",
+   "desc": "Mini afeitadora recargable 3 en 1 de la marca Sonar, con acabado dorado. Incluye accesorios para perfilar la barba, hacer cortes modernos y retirar el vello de la nariz. Práctica para el día a día y para viajes.",
    "feats": [
-    "Recargable",
     "3 en 1 con accesorios",
-    "Marca Sonar"
+    "Recargable",
+    "Marca Sonar",
+    "Acabado dorado"
    ],
    "imgs": [
     "img/p/p-123-0.jpg",
@@ -2037,12 +2113,12 @@
    "name": "Bacinica sillita para bebé",
    "cat": "bebes",
    "price": 14,
-   "desc": "Bacinica con respaldo y apoyabrazos para que tu peque se sienta seguro. Disponible en rosado y azul, según disponibilidad. El recipiente se saca para limpiarlo fácil.",
+   "desc": "Bacinica tipo sillita con respaldo y apoyabrazos para que tu peque se sienta seguro y tranquilo. La tapa se abre fácil y el recipiente se saca para limpiarlo rápido. Recomendada desde los 18 meses hasta los 4 años aproximadamente. Disponible en rosado y azul, según disponibilidad.",
    "feats": [
     "Respaldo y apoyabrazos",
     "Recipiente desmontable",
     "De 18 meses a 4 años aprox.",
-    "Disponible en rosado y azul (según disponibilidad)"
+    "Rosado o azul, según disponibilidad"
    ],
    "imgs": [
     "img/p/p-124-0.jpg"
@@ -2057,7 +2133,7 @@
    "name": "Columpio para bebés",
    "cat": "bebes",
    "price": 21,
-   "desc": "Columpio portátil para bebés y niños pequeños, para usar dentro o fuera de casa.",
+   "desc": "Columpio portátil diseñado para bebés y niños pequeños. Se puede usar dentro o fuera de casa y llevarlo a donde vayas. Un regalo divertido para que los peques jueguen seguros.",
    "feats": [
     "Portátil",
     "Para interiores y exteriores",

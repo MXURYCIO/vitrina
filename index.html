@@ -795,6 +795,7 @@ $$('[data-ic]').forEach(el => { if (el.style.display === 'contents') el.outerHTM
 /* ---------- Tienda ---------- */
 const norm = s => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
 function renderChips() {
+  if (rvLocked()) { $('#chips').innerHTML = ''; return; }
   const counts = { todo: PRODUCTS.length };
   PRODUCTS.forEach(p => { counts[p.cat] = (counts[p.cat] || 0) + 1; });
   $('#chips').innerHTML = CATS.filter(c => counts[c.id]).map(c =>
@@ -804,6 +805,8 @@ function renderGrid() {
   const q = norm(state.q.trim());
   const list = PRODUCTS.filter(p => (state.cat === 'todo' || p.cat === state.cat) &&
     (!q || norm(`${p.name} ${p.desc} ${catLabel(p.cat)}`).includes(q)));
+  const locked = rvLocked();
+  if (locked) list.length = 0;
   $('#grid').classList.toggle('rv-list', REVIEW);
   $('#grid').innerHTML = REVIEW ? list.map(rvRow).join('') : list.map(p => `<article class="card">
       <div class="media${hasPhoto(p) ? ' photo' : ''}" style="${grad(p)}">
@@ -817,7 +820,8 @@ function renderGrid() {
   $('#count').textContent = `${list.length} ${list.length === 1 ? 'producto' : 'productos'}`;
   const empty = $('#empty');
   empty.hidden = list.length > 0;
-  if (!list.length) empty.textContent = state.loading ? 'Cargando productos…'
+  if (!list.length) empty.textContent = locked ? 'Ingresa tu PIN de dueño para ver y revisar los productos.'
+    : state.loading ? 'Cargando productos…'
     : state.loadFail ? 'No se pudieron cargar los productos. Revisa tu conexión y vuelve a abrir la página.'
     : state.q.trim() ? `No encontramos productos con “${state.q.trim()}”. Prueba con otra palabra.`
     : 'No hay productos en esta categoría por ahora.';
@@ -1217,6 +1221,7 @@ document.addEventListener('click', e => {
     case 'rvedit': openRvEdit(id); break;
     case 'rvsave': saveRvEdit(t); break;
     case 'rvall': openRvAll(); break;
+    case 'rvpin': openPin(); break;
     case 'rvallok': rvDecide(ALL.filter(p => eff(p) === 'pendiente').map(p => p.id), 'aprobado', '', t, true); break;
     case 'rvchip': { const ta = $('#rvCom'); if (ta) { ta.value = (ta.value.trim() ? ta.value.trim() + '\n' : '') + t.dataset.v; ta.focus(); } break; }
   }
@@ -1452,6 +1457,7 @@ const RV_LABEL = { pendiente: 'Por aprobar', editar: 'Por editar', aprobado: 'Ap
 const RV_ORDER = { pendiente: 0, editar: 1, aprobado: 2, rechazado: 3 };
 let rvPending = null;
 const getPin = () => store.get('vt-pin', '') || '';
+function rvLocked() { return REVIEW && LIVE && !getPin(); }
 const rvActs = (p, lg) => { const s = eff(p); return `<div class="rv-acts${lg ? ' lg' : ''}">
   <button class="rv-btn ok" type="button" data-act="rv" data-id="${p.id}" data-s="aprobado" aria-pressed="${s === 'aprobado'}">${ic('check')}<span>Aprobar</span></button>
   <button class="rv-btn no" type="button" data-act="rv" data-id="${p.id}" data-s="rechazado" aria-pressed="${s === 'rechazado'}">${ic('close')}<span>Rechazar</span></button>
@@ -1469,6 +1475,12 @@ function rvRow(p) {
 }
 function renderReviewBar() {
   const bar = $('#rvBar'); if (!bar) return;
+  if (rvLocked()) {
+    bar.hidden = false;
+    bar.innerHTML = `<div class="rv-head"><span class="rv-ic">${ic('shield')}</span><div><strong>Revisión de productos</strong><span>Solo para quien administra la tienda.</span></div></div>
+      <button class="btn primary rv-all" type="button" data-act="rvpin">${ic('shield')}Ingresar PIN</button>`;
+    return;
+  }
   const n = { pendiente: 0, editar: 0, aprobado: 0, rechazado: 0 };
   ALL.forEach(p => { const s = eff(p); n[s] = (n[s] || 0) + 1; });
   bar.hidden = false;
@@ -1482,7 +1494,7 @@ function setRevision(rev) {
 }
 function openPin(err) {
   openSheet('pin', 'PIN de dueño',
-    `<form id="pinForm" class="rv-form" novalidate><p class="muted">Escribe tu PIN para aprobar, rechazar o editar productos. Queda guardado en este celular.</p>
+    `<form id="pinForm" class="rv-form" novalidate><p class="muted">Escribe tu PIN para ver y revisar los productos. Queda guardado en este celular.</p>
       ${field('rvPin', 'PIN', { type: 'password', im: 'numeric', max: 12 })}</form>`,
     `<button class="btn primary" type="submit" form="pinForm">Entrar</button>`);
   if (err) pinErr(err);
@@ -1509,7 +1521,7 @@ async function rvDecide(ids, estado, comentario, btn, todos) {
   group.forEach(b => { b.disabled = true; });
   try {
     const r = await api({ action: 'admin', pin, op: 'decidir', ids, estado, comentario });
-    if (r && r.pin) { store.set('vt-pin', ''); rvPending = () => rvDecide(ids, estado, comentario, null, todos); openPin(r.error); return; }
+    if (r && r.pin) { store.set('vt-pin', ''); applyVisible(); rvPending = () => rvDecide(ids, estado, comentario, null, todos); openPin(r.error); return; }
     if (!r || !r.ok) throw new Error((r && r.error) || 'No se pudo guardar. Inténtalo de nuevo.');
     if (r.estados) EST = r.estados;
     ids.forEach(id => { if (estado === 'editar') REVC[id] = comentario; else delete REVC[id]; });
@@ -1551,9 +1563,10 @@ function footNote() {
 if (LIVE) { const pill = $('.preview-pill'); if (pill) pill.remove(); }
 if (REVIEW) {
   const bar = $('#rvBar'); bar.hidden = false; bar.innerHTML = '<p class="muted">Cargando productos…</p>';
+  if (rvLocked()) { renderReviewBar(); setTimeout(() => { if (rvLocked()) openPin(); }, 400); }
   // si este celular ya tiene el PIN, trae los comentarios de edición
   if (LIVE && getPin()) api({ action: 'admin', pin: getPin(), op: 'revision' })
-    .then(r => { if (r && r.ok) { setRevision(r.revision); renderGrid(); } else if (r && r.pin) store.set('vt-pin', ''); }, () => {});
+    .then(r => { if (r && r.ok) { setRevision(r.revision); renderGrid(); } else if (r && r.pin) { store.set('vt-pin', ''); applyVisible(); openPin(r.error); } }, () => {});
 }
 $('#trackHint').hidden = LIVE;
 renderChips(); renderGrid(); renderOrders(); updateBadge(); deadline(); footNote();

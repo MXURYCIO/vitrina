@@ -1,6 +1,1565 @@
 {
  "products": [
   {
+   "id": "P-174",
+   "name": "Soporte de celular para carro, giratorio 360°",
+   "cat": "herramientas",
+   "price": 5,
+   "desc": "Soporte de celular para el tablero o el parabrisas del carro, con ventosa y brazo ajustable. Gira 360° para usarlo en vertical u horizontal y sujeta el celular sin que se caiga.",
+   "feats": [
+    "Para tablero o parabrisas",
+    "Gira 360°",
+    "Brazo ajustable"
+   ],
+   "imgs": [
+    "img/p/p-174-0.jpg",
+    "img/p/p-174-1.jpg",
+    "img/p/p-174-2.jpg",
+    "img/p/p-174-3.jpg"
+   ],
+   "thumb": "img/p/p-174-s.jpg",
+   "src": "eb5234a349cc",
+   "added": "2026-11-15T04:40:08.999088+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-126",
+   "name": "Luces LED navideñas musicales multicolor",
+   "cat": "navidad",
+   "price": 3,
+   "desc": "Serie de luces LED multicolor con melodías navideñas. Ideal para el árbol, ventanas, balcones, coronas o cualquier rincón de la casa.",
+   "feats": [
+    "Luces LED multicolor",
+    "Con música navideña",
+    "Para interiores"
+   ],
+   "imgs": [
+    "img/p/p-126-1.jpg",
+    "img/p/p-126-2.jpg",
+    "img/p/p-126-3.jpg"
+   ],
+   "thumb": "img/p/p-126-s.jpg",
+   "src": "d5c5e8907ad1",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-127",
+   "name": "Luces navideñas tipo arrocito, 100 luces",
+   "cat": "navidad",
+   "price": 3,
+   "desc": "Serie de 100 luces pequeñas tipo arrocito para decorar el árbol, ventanas o cualquier espacio. El color se entrega según disponibilidad.",
+   "feats": [
+    "100 luces",
+    "Color según disponibilidad",
+    "Para toda ocasión"
+   ],
+   "imgs": [
+    "img/p/p-127-0.jpg",
+    "img/p/p-127-1.jpg",
+    "img/p/p-127-3.jpg"
+   ],
+   "thumb": "img/p/p-127-s.jpg",
+   "src": "be7bdccee41a",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-128",
+   "name": "Árbol de Navidad nevado de 2,40 m",
+   "cat": "navidad",
+   "price": 135,
+   "desc": "Árbol de Navidad artificial con acabado nevado y 2,40 metros de alto. Elegante y frondoso, transforma tu sala, local u oficina con una Navidad blanca.",
+   "feats": [
+    "Altura: 2,40 m",
+    "Acabado nevado",
+    "Ideal para salas amplias y locales"
+   ],
+   "imgs": [
+    "img/p/p-128-0.jpg",
+    "img/p/p-128-1.jpg",
+    "img/p/p-128-2.jpg",
+    "img/p/p-128-3.jpg"
+   ],
+   "thumb": "img/p/p-128-s.jpg",
+   "src": "5c29b89b624c",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-129",
+   "name": "Árbol de Navidad pino nevado de 1,50 m",
+   "cat": "navidad",
+   "price": 51,
+   "desc": "Árbol de Navidad artificial tipo pino con ramas cubiertas de nieve artificial y 1,50 metros de alto. Incluye soporte de metal para que quede firme y estable.",
+   "feats": [
+    "Altura: 1,50 m",
+    "Ramas nevadas",
+    "Base metálica"
+   ],
+   "imgs": [
+    "img/p/p-129-0.jpg",
+    "img/p/p-129-1.jpg",
+    "img/p/p-129-2.jpg"
+   ],
+   "thumb": "img/p/p-129-s.jpg",
+   "src": "ca7302e3a549",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-130",
+   "name": "Set de baño navideño con cortina",
+   "cat": "navidad",
+   "price": 16,
+   "desc": "Set de baño con diseños navideños que incluye cortina de baño. Decora tu baño para estas fiestas en un solo paso.",
+   "feats": [
+    "Incluye cortina de baño",
+    "Diseños navideños",
+    "Fácil de colocar"
+   ],
+   "imgs": [
+    "img/p/p-130-0.jpg",
+    "img/p/p-130-1.jpg"
+   ],
+   "thumb": "img/p/p-130-s.jpg",
+   "src": "9796a17a58a2",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-131",
+   "name": "Carruaje navideño musical con nieve",
+   "cat": "navidad",
+   "price": 42,
+   "desc": "Adorno de carruaje navideño con música y efecto de nieve. Funciona con cable o a pilas. Mide 22 cm de alto por 26 cm de ancho, perfecto para la sala, la mesa navideña o para regalar.",
+   "feats": [
+    "Medidas: 22 x 26 cm",
+    "Música y efecto de nieve",
+    "Funciona con cable o pilas"
+   ],
+   "imgs": [
+    "img/p/p-131-0.jpg",
+    "img/p/p-131-1.jpg",
+    "img/p/p-131-2.jpg",
+    "img/p/p-131-3.jpg"
+   ],
+   "thumb": "img/p/p-131-s.jpg",
+   "src": "3f61bd20a56d",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-132",
+   "name": "Mini corona navideña nevada",
+   "cat": "navidad",
+   "price": 4,
+   "desc": "Corona navideña pequeña con follaje verde, efecto nevado, bayas rojas y esferas doradas. Ideal para puertas, ventanas o paredes.",
+   "feats": [
+    "Efecto nevado",
+    "Bayas rojas y esferas doradas",
+    "Tamaño mini"
+   ],
+   "imgs": [
+    "img/p/p-132-0.jpg",
+    "img/p/p-132-1.jpg",
+    "img/p/p-132-2.jpg"
+   ],
+   "thumb": "img/p/p-132-s.jpg",
+   "src": "9bf7853da12b",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-133",
+   "name": "Trineo navideño decorativo",
+   "cat": "navidad",
+   "price": 11,
+   "desc": "Trineo decorativo para crear rincones navideños en tu casa, negocio o vitrina.",
+   "feats": [
+    "Adorno decorativo",
+    "Para hogar o negocio"
+   ],
+   "imgs": [
+    "img/p/p-133-0.jpg",
+    "img/p/p-133-1.jpg",
+    "img/p/p-133-2.jpg",
+    "img/p/p-133-3.jpg"
+   ],
+   "thumb": "img/p/p-133-s.jpg",
+   "src": "91231f3d1fb5",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-134",
+   "name": "Corona navideña de 30 cm",
+   "cat": "navidad",
+   "price": 8,
+   "desc": "Corona navideña de 30 cm con flores, esferas y detalles brillantes para tu puerta o pared. Viene en diseño rojo clásico o dorado elegante, según disponibilidad.",
+   "feats": [
+    "Diámetro: 30 cm",
+    "Diseño rojo o dorado (según disponibilidad)",
+    "Material resistente"
+   ],
+   "imgs": [
+    "img/p/p-134-0.jpg",
+    "img/p/p-134-1.jpg",
+    "img/p/p-134-2.jpg",
+    "img/p/p-134-3.jpg"
+   ],
+   "thumb": "img/p/p-134-s.jpg",
+   "src": "a51cb7bce082",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-135",
+   "name": "Adorno colgante navideño con campanita",
+   "cat": "navidad",
+   "price": 2,
+   "desc": "Adorno colgante hecho a mano con materiales suaves y campanita. Diseños de reno, muñeco de nieve o Papá Noel, según disponibilidad. Precio por unidad.",
+   "feats": [
+    "Precio por unidad",
+    "Diseño según disponibilidad",
+    "Con campanita"
+   ],
+   "imgs": [
+    "img/p/p-135-0.jpg",
+    "img/p/p-135-1.jpg",
+    "img/p/p-135-2.jpg",
+    "img/p/p-135-3.jpg"
+   ],
+   "thumb": "img/p/p-135-s.jpg",
+   "src": "202ef317cf63",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-136",
+   "name": "Arco inflable navideño de 2,40 m",
+   "cat": "navidad",
+   "price": 98,
+   "desc": "Arco inflable navideño de 2,40 m para decorar la entrada de tu casa o local. Llamativo y de excelente calidad.",
+   "feats": [
+    "Medida: 2,40 m",
+    "Para entradas de casa o local"
+   ],
+   "imgs": [
+    "img/p/p-136-0.jpg",
+    "img/p/p-136-1.jpg",
+    "img/p/p-136-2.jpg"
+   ],
+   "thumb": "img/p/p-136-s.jpg",
+   "src": "5952db606ac0",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-137",
+   "name": "Set de 6 esferas navideñas de 10 cm",
+   "cat": "navidad",
+   "price": 4,
+   "desc": "Set de 6 esferas grandes de 10 cm de diámetro con acabado brillante espejado. Colores vivos y surtidos para transformar tu árbol al instante.",
+   "feats": [
+    "6 esferas",
+    "Diámetro: 10 cm",
+    "Colores surtidos"
+   ],
+   "imgs": [
+    "img/p/p-137-0.jpg",
+    "img/p/p-137-1.jpg",
+    "img/p/p-137-2.jpg",
+    "img/p/p-137-3.jpg"
+   ],
+   "thumb": "img/p/p-137-s.jpg",
+   "src": "9e30d5b46cbd",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-138",
+   "name": "Guirnalda de esferas con luz cálida, 3 m",
+   "cat": "navidad",
+   "price": 9,
+   "desc": "Guirnalda luminosa de esferas de 3 metros en luz cálida. Para el árbol, ventanas, paredes y rincones especiales.",
+   "feats": [
+    "Largo: 3 m",
+    "Luz cálida",
+    "Para interiores"
+   ],
+   "imgs": [
+    "img/p/p-138-0.jpg",
+    "img/p/p-138-1.jpg"
+   ],
+   "thumb": "img/p/p-138-s.jpg",
+   "src": "fa6d88932fca",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-139",
+   "name": "Muñeco navideño expandible de 45 cm",
+   "cat": "navidad",
+   "price": 11,
+   "desc": "Muñeco navideño que se recoge o se estira hasta 45 cm de alto. En tonos rosados, en Papá Noel o muñeco de nieve según disponibilidad. Precio por unidad.",
+   "feats": [
+    "Se estira hasta 45 cm",
+    "Precio por unidad",
+    "Diseño según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-139-0.jpg",
+    "img/p/p-139-1.jpg"
+   ],
+   "thumb": "img/p/p-139-s.jpg",
+   "src": "36079dfb196a",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-140",
+   "name": "Cojín navideño",
+   "cat": "navidad",
+   "price": 7,
+   "desc": "Cojín decorativo con diseños navideños alegres y coloridos para la sala o el dormitorio. El diseño se entrega según disponibilidad.",
+   "feats": [
+    "Diseño según disponibilidad",
+    "Decoración de sala o dormitorio"
+   ],
+   "imgs": [
+    "img/p/p-140-0.jpg",
+    "img/p/p-140-1.jpg"
+   ],
+   "thumb": "img/p/p-140-s.jpg",
+   "src": "36465c292fc4",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-141",
+   "name": "Tren navideño para el árbol",
+   "cat": "navidad",
+   "price": 23,
+   "desc": "Tren navideño para colocar alrededor de tu árbol y llenar la casa de espíritu navideño. Para grandes y pequeños.",
+   "feats": [
+    "Se coloca alrededor del árbol",
+    "Ideal para niños y adultos"
+   ],
+   "imgs": [
+    "img/p/p-141-0.jpg",
+    "img/p/p-141-1.jpg"
+   ],
+   "thumb": "img/p/p-141-s.jpg",
+   "src": "41dbf4882a6c",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-142",
+   "name": "Bandeja navideña de cerámica con 3 divisiones",
+   "cat": "navidad",
+   "price": 14,
+   "desc": "Bandeja de cerámica con tres compartimentos y Papá Noel en el centro. Perfecta para servir bocaditos y dulces en la cena navideña. Mide 32,5 x 14 cm.",
+   "feats": [
+    "Cerámica",
+    "3 compartimentos",
+    "Diseño de Papá Noel",
+    "Medidas: 32,5 x 14 cm"
+   ],
+   "imgs": [
+    "img/p/p-142-0.jpg",
+    "img/p/p-142-1.jpg",
+    "img/p/p-142-2.jpg"
+   ],
+   "thumb": "img/p/p-142-s.jpg",
+   "src": "025e6f3e6040",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-143",
+   "name": "Papá Noel trepador musical",
+   "cat": "navidad",
+   "price": 13,
+   "desc": "Adorno eléctrico de Papá Noel que sube por una escalera, con música y movimiento.",
+   "feats": [
+    "Con música",
+    "Con movimiento",
+    "Adorno eléctrico"
+   ],
+   "imgs": [
+    "img/p/p-143-0.jpg",
+    "img/p/p-143-1.jpg",
+    "img/p/p-143-2.jpg",
+    "img/p/p-143-3.jpg"
+   ],
+   "thumb": "img/p/p-143-s.jpg",
+   "src": "4c9af4490cc6",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-144",
+   "name": "Bota navideña musical con luz",
+   "cat": "navidad",
+   "price": 18,
+   "desc": "Bota navideña con muñeco de nieve, brillitos que se mueven por dentro y luz LED cálida. Tiene melodías navideñas o modo silencioso y funciona a pilas o con cable. Mide 19 cm de largo por 16 cm de alto.",
+   "feats": [
+    "Luz LED cálida",
+    "Música o modo silencioso",
+    "Funciona a pilas o con cable",
+    "Medidas: 19 x 16 cm"
+   ],
+   "imgs": [
+    "img/p/p-144-0.jpg",
+    "img/p/p-144-1.jpg",
+    "img/p/p-144-2.jpg",
+    "img/p/p-144-3.jpg"
+   ],
+   "thumb": "img/p/p-144-s.jpg",
+   "src": "b28f8696f00d",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-145",
+   "name": "Plato navideño de cerámica",
+   "cat": "navidad",
+   "price": 7,
+   "desc": "Plato de cerámica con ilustraciones navideñas para darle un toque especial a tu mesa. El diseño se entrega según disponibilidad.",
+   "feats": [
+    "Cerámica",
+    "Diseño según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-145-0.jpg",
+    "img/p/p-145-1.jpg",
+    "img/p/p-145-2.jpg",
+    "img/p/p-145-3.jpg"
+   ],
+   "thumb": "img/p/p-145-s.jpg",
+   "src": "c3e9ceff479a",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-146",
+   "name": "Estrella dorada para el árbol, 20 cm",
+   "cat": "navidad",
+   "price": 1,
+   "desc": "Estrella dorada para la punta del árbol con cascabeles, ramitas y lazo. Mide 20 cm de alto.",
+   "feats": [
+    "Altura: 20 cm",
+    "Con cascabeles y lazo",
+    "Color dorado"
+   ],
+   "imgs": [
+    "img/p/p-146-0.jpg",
+    "img/p/p-146-1.jpg",
+    "img/p/p-146-2.jpg"
+   ],
+   "thumb": "img/p/p-146-s.jpg",
+   "src": "632a3bf1e170",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-147",
+   "name": "Forro navideño para puerta, 100 x 210 cm",
+   "cat": "navidad",
+   "price": 8,
+   "desc": "Forro decorativo para puerta en tela piel de durazno muy estirable. Mide 100 x 210 cm y se adapta a todas las puertas. Ideal para casa, aulas y eventos. El diseño se entrega según disponibilidad.",
+   "feats": [
+    "Medidas: 100 x 210 cm",
+    "Tela piel de durazno estirable",
+    "Fácil de colocar",
+    "Diseño según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-147-0.jpg",
+    "img/p/p-147-1.jpg",
+    "img/p/p-147-2.jpg",
+    "img/p/p-147-3.jpg"
+   ],
+   "thumb": "img/p/p-147-s.jpg",
+   "src": "619fac461d95",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-148",
+   "name": "Cajita de regalo navideña musical",
+   "cat": "navidad",
+   "price": 16,
+   "desc": "Adorno en forma de cajita de regalo con brillitos que flotan como nieve. Tiene modo con música y sin música. Para decorar o regalar. Viene en verde o rojo, según disponibilidad.",
+   "feats": [
+    "Música o modo silencioso",
+    "Brillitos flotantes",
+    "Color verde o rojo, según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-148-0.jpg",
+    "img/p/p-148-1.jpg",
+    "img/p/p-148-2.jpg"
+   ],
+   "thumb": "img/p/p-148-s.jpg",
+   "src": "a2af84493622",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-149",
+   "name": "Guitarra piano de juguete con luces",
+   "cat": "juguetes",
+   "price": 15,
+   "desc": "Juguete 2 en 1: guitarra y piano con luces y sonidos para que los niños exploren la música mientras juegan. Viene en rosado o azul, según disponibilidad.",
+   "feats": [
+    "2 en 1: guitarra y piano",
+    "Luces y sonidos",
+    "Color rosado o azul, según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-149-0.jpg"
+   ],
+   "thumb": "img/p/p-149-s.jpg",
+   "src": "3d69d02e97ed",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-150",
+   "name": "Arco de juguete con flechas de ventosa",
+   "cat": "juguetes",
+   "price": 10,
+   "desc": "Set de arco y flechas con punta de ventosa para jugar dentro o fuera de casa sin riesgos. Estimula la puntería y la coordinación.",
+   "feats": [
+    "Flechas con ventosa",
+    "Para jugar dentro o fuera de casa"
+   ],
+   "imgs": [
+    "img/p/p-150-0.jpg",
+    "img/p/p-150-1.jpg",
+    "img/p/p-150-2.jpg"
+   ],
+   "thumb": "img/p/p-150-s.jpg",
+   "src": "fbc8d573ab76",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-151",
+   "name": "Set de 12 carritos deportivos",
+   "cat": "juguetes",
+   "price": 9,
+   "desc": "Pack de 12 carritos deportivos de colección en varios modelos y colores.",
+   "feats": [
+    "12 carritos",
+    "Varios modelos y colores"
+   ],
+   "imgs": [
+    "img/p/p-151-0.jpg",
+    "img/p/p-151-1.jpg",
+    "img/p/p-151-2.jpg"
+   ],
+   "thumb": "img/p/p-151-s.jpg",
+   "src": "2ce276b3fec0",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-152",
+   "name": "Bloques de construcción con contenedor",
+   "cat": "juguetes",
+   "price": 14,
+   "desc": "Bloques de construcción educativos de colores con contenedor para guardarlos. Estimulan la creatividad.",
+   "feats": [
+    "Incluye contenedor",
+    "Piezas fáciles de armar"
+   ],
+   "imgs": [
+    "img/p/p-152-0.jpg",
+    "img/p/p-152-1.jpg",
+    "img/p/p-152-2.jpg",
+    "img/p/p-152-3.jpg"
+   ],
+   "thumb": "img/p/p-152-s.jpg",
+   "src": "ca197d50717c",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-153",
+   "name": "Futbolín de mesa",
+   "cat": "juguetes",
+   "price": 27,
+   "desc": "Futbolín de mesa compacto y resistente para jugar en familia o con amigos. Fácil de armar y guardar.",
+   "feats": [
+    "Diseño compacto",
+    "Fácil de armar"
+   ],
+   "imgs": [
+    "img/p/p-153-0.jpg",
+    "img/p/p-153-1.jpg",
+    "img/p/p-153-2.jpg",
+    "img/p/p-153-3.jpg"
+   ],
+   "thumb": "img/p/p-153-s.jpg",
+   "src": "5b2c7986d3aa",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-154",
+   "name": "Mesa de juegos 5 en 1",
+   "cat": "juguetes",
+   "price": 16,
+   "desc": "Mesa de juegos con 5 juegos en uno: baloncesto, fútbol, hockey, billar y snooker. Para jugar solo o acompañado.",
+   "feats": [
+    "5 juegos en 1",
+    "Para niños y adultos"
+   ],
+   "imgs": [
+    "img/p/p-154-0.jpg",
+    "img/p/p-154-1.jpg",
+    "img/p/p-154-2.jpg"
+   ],
+   "thumb": "img/p/p-154-s.jpg",
+   "src": "bc37ba0bf37f",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-155",
+   "name": "Set de muñeca con más de 10 vestidos",
+   "cat": "juguetes",
+   "price": 9,
+   "desc": "Set con muñeca, más de 10 vestidos intercambiables, una mini compañera, bicicleta y accesorios.",
+   "feats": [
+    "Más de 10 vestidos",
+    "Incluye bicicleta y accesorios"
+   ],
+   "imgs": [
+    "img/p/p-155-0.jpg",
+    "img/p/p-155-1.jpg",
+    "img/p/p-155-2.jpg"
+   ],
+   "thumb": "img/p/p-155-s.jpg",
+   "src": "e6f9599a571b",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-156",
+   "name": "Triciclo 3 en 1 para niños",
+   "cat": "juguetes",
+   "price": 27,
+   "desc": "Triciclo que se usa de tres formas: con ruedas de apoyo, sin pedales para deslizarse y con pedales. Ajustable, liviano y resistente. Mide aprox. 65 cm de largo y 52 cm de alto. Viene en rojo o amarillo, según disponibilidad.",
+   "feats": [
+    "3 formas de uso",
+    "Ajustable",
+    "Estructura liviana",
+    "Medidas aprox.: 65 x 52 cm",
+    "Color rojo o amarillo, según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-156-0.jpg",
+    "img/p/p-156-1.jpg",
+    "img/p/p-156-2.jpg",
+    "img/p/p-156-3.jpg"
+   ],
+   "thumb": "img/p/p-156-s.jpg",
+   "src": "626185617489",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-157",
+   "name": "Cocinita de juguete con más de 60 accesorios",
+   "cat": "juguetes",
+   "price": 18,
+   "desc": "Cocinita con lavaplatos con grifo que funciona, sartenes, ollas, alimentos y utensilios. Más de 60 accesorios incluidos. El color se entrega según disponibilidad.",
+   "feats": [
+    "Más de 60 accesorios",
+    "Grifo que funciona",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-157-0.jpg",
+    "img/p/p-157-1.jpg",
+    "img/p/p-157-2.jpg",
+    "img/p/p-157-3.jpg"
+   ],
+   "thumb": "img/p/p-157-s.jpg",
+   "src": "f04ec76cdb18",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-158",
+   "name": "Mini cafetería de juguete",
+   "cat": "juguetes",
+   "price": 32,
+   "desc": "Set de cafetería con cafetera, refrigerador, caja registradora, alimentos y dinero de juguete para jugar a tener su propia tienda.",
+   "feats": [
+    "Incluye caja registradora y dinero",
+    "Muchos alimentos de juguete"
+   ],
+   "imgs": [
+    "img/p/p-158-0.jpg",
+    "img/p/p-158-1.jpg",
+    "img/p/p-158-2.jpg",
+    "img/p/p-158-3.jpg"
+   ],
+   "thumb": "img/p/p-158-s.jpg",
+   "src": "d84a54c9961a",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-159",
+   "name": "Pista plegable con 100 carritos",
+   "cat": "juguetes",
+   "price": 42,
+   "desc": "La caja se convierte en la pista. Hecha de cartón grueso y resistente, incluye 100 carritos de muchos diseños.",
+   "feats": [
+    "Incluye 100 carritos",
+    "Cartón grueso resistente"
+   ],
+   "imgs": [
+    "img/p/p-159-0.jpg"
+   ],
+   "thumb": "img/p/p-159-s.jpg",
+   "src": "8ad7292db8dc",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-160",
+   "name": "Carro loco a control remoto con luces",
+   "cat": "juguetes",
+   "price": 13,
+   "desc": "Carro a control remoto que gira 360 grados, con luces en ruedas y cabina y música. Es recargable y mide 18 x 17 cm. El color se entrega según disponibilidad.",
+   "feats": [
+    "Control remoto",
+    "Gira 360°",
+    "Luces y música",
+    "Recargable",
+    "Medidas: 18 x 17 cm",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-160-0.jpg",
+    "img/p/p-160-1.jpg",
+    "img/p/p-160-2.jpg",
+    "img/p/p-160-3.jpg"
+   ],
+   "thumb": "img/p/p-160-s.jpg",
+   "src": "adbf5f6633ce",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-161",
+   "name": "Lanzador de burbujas con guantes",
+   "cat": "juguetes",
+   "price": 12,
+   "desc": "Lanzador eléctrico de burbujas resistentes que se pueden tocar y rebotar con los guantes especiales incluidos. Fácil de usar y recargar. Mide 31 cm. Viene en rosado o celeste, según disponibilidad.",
+   "feats": [
+    "Incluye guantes",
+    "Burbujas que se pueden tocar",
+    "Recargable",
+    "Largo: 31 cm",
+    "Color rosado o celeste, según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-161-0.jpg",
+    "img/p/p-161-1.jpg",
+    "img/p/p-161-2.jpg",
+    "img/p/p-161-3.jpg"
+   ],
+   "thumb": "img/p/p-161-s.jpg",
+   "src": "d939e63746c1",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-162",
+   "name": "Mesa de billar infantil",
+   "cat": "juguetes",
+   "price": 39,
+   "desc": "Mesa de billar con acabado de madera, paño verde y bordes reforzados. Incluye 2 tacos, juego de bolas numeradas con bola blanca y triángulo.",
+   "feats": [
+    "Incluye 2 tacos, bolas y triángulo",
+    "Paño verde",
+    "Ideal para espacios pequeños"
+   ],
+   "imgs": [
+    "img/p/p-162-0.jpg",
+    "img/p/p-162-1.jpg",
+    "img/p/p-162-2.jpg"
+   ],
+   "thumb": "img/p/p-162-s.jpg",
+   "src": "e952442fcba9",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-163",
+   "name": "Móvil de cuna con proyector y control",
+   "cat": "bebes",
+   "price": 20,
+   "desc": "Móvil para cuna con melodías suaves, proyección de estrellitas y control remoto. Diseño con animalitos para que tu bebé duerma tranquilo. Mide 40 cm de ancho por 48 cm de alto. El color se entrega según disponibilidad.",
+   "feats": [
+    "Proyecta estrellitas",
+    "Melodías suaves",
+    "Control remoto",
+    "Medidas: 40 x 48 cm",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-163-0.jpg",
+    "img/p/p-163-1.jpg",
+    "img/p/p-163-2.jpg"
+   ],
+   "thumb": "img/p/p-163-s.jpg",
+   "src": "ab4a3de056ac",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-164",
+   "name": "Báscula digital para bebés y mascotas, hasta 20 kg",
+   "cat": "bebes",
+   "price": 27,
+   "desc": "Báscula con pantalla digital para pesar bebés o mascotas de forma cómoda y precisa. Pesa hasta 20 kg. Mide 55 x 32 cm.",
+   "feats": [
+    "Capacidad: hasta 20 kg",
+    "Pantalla digital",
+    "Base amplia",
+    "Medidas: 55 x 32 cm"
+   ],
+   "imgs": [
+    "img/p/p-164-0.jpg",
+    "img/p/p-164-1.jpg",
+    "img/p/p-164-2.jpg"
+   ],
+   "thumb": "img/p/p-164-s.jpg",
+   "src": "d28d842f90d0",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-165",
+   "name": "Extractor de leche materna eléctrico",
+   "cat": "bebes",
+   "price": 11,
+   "desc": "Extractor de leche eléctrico con 3 modos: masaje, lactancia y succión. Silencioso, cómodo y libre de BPA. El color se entrega según disponibilidad.",
+   "feats": [
+    "3 modos de uso",
+    "Silencioso",
+    "Libre de BPA",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-165-0.jpg",
+    "img/p/p-165-1.jpg"
+   ],
+   "thumb": "img/p/p-165-s.jpg",
+   "src": "37990a16c2aa",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-166",
+   "name": "Olla arrocera HI-LUXE de 1,8 L",
+   "cat": "cocina",
+   "price": 41,
+   "desc": "Olla arrocera clásica HI-LUXE de 1,8 litros (unas 10 tazas de arroz). Cocina de forma automática. Potencia de 700 W a 120 V.",
+   "feats": [
+    "Capacidad: 1,8 L",
+    "Potencia: 700 W",
+    "Voltaje: 120 V"
+   ],
+   "imgs": [
+    "img/p/p-166-0.jpg",
+    "img/p/p-166-1.jpg"
+   ],
+   "thumb": "img/p/p-166-s.jpg",
+   "src": "8a3d648273e8",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-167",
+   "name": "Olla de vidrio con tapa, 16 cm",
+   "cat": "cocina",
+   "price": 10,
+   "desc": "Olla de vidrio de borosilicato, seguro y sin plomo, con tapa. Su vidrio transparente deja ver la cocción sin destapar y resiste el calor. Mide 16 cm de diámetro y 14 cm de alto con tapa.",
+   "feats": [
+    "Diámetro: 16 cm",
+    "Altura con tapa: 14 cm",
+    "Vidrio de borosilicato",
+    "Resistente al calor"
+   ],
+   "imgs": [
+    "img/p/p-167-0.jpg",
+    "img/p/p-167-1.jpg",
+    "img/p/p-167-3.jpg"
+   ],
+   "thumb": "img/p/p-167-s.jpg",
+   "src": "e90a3b1b2936",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-168",
+   "name": "Licuadora Ultra HI-LUXE",
+   "cat": "cocina",
+   "price": 90,
+   "desc": "Licuadora Ultra HI-LUXE con 3 funciones, 4 cuchillas y control de velocidades. Potente y de excelente calidad.",
+   "feats": [
+    "3 funciones",
+    "4 cuchillas",
+    "Control de velocidades"
+   ],
+   "imgs": [
+    "img/p/p-168-0.jpg",
+    "img/p/p-168-1.jpg",
+    "img/p/p-168-2.jpg"
+   ],
+   "thumb": "img/p/p-168-s.jpg",
+   "src": "cc832d30c54e",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-169",
+   "name": "Licuadora Supreme HI-LUXE",
+   "cat": "cocina",
+   "price": 48,
+   "desc": "Licuadora HI-LUXE con motor de alto rendimiento, cuchillas de acero inoxidable, vaso de gran capacidad y varias velocidades. Para hogar o negocio. El color se entrega según disponibilidad.",
+   "feats": [
+    "Cuchillas de acero inoxidable",
+    "Varias velocidades",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-169-0.jpg",
+    "img/p/p-169-1.jpg"
+   ],
+   "thumb": "img/p/p-169-s.jpg",
+   "src": "27555fde5998",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-170",
+   "name": "Toalla de cocina grande 40 x 65 cm",
+   "cat": "cocina",
+   "price": 2,
+   "desc": "Toalla de cocina grande de 40 x 65 cm. El diseño se entrega según disponibilidad.",
+   "feats": [
+    "Medidas: 40 x 65 cm",
+    "Diseño según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-170-0.jpg",
+    "img/p/p-170-1.jpg",
+    "img/p/p-170-2.jpg",
+    "img/p/p-170-3.jpg"
+   ],
+   "thumb": "img/p/p-170-s.jpg",
+   "src": "9b4bd172fa4c",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-171",
+   "name": "Alfombra de cocina antideslizante 40 x 60 cm",
+   "cat": "cocina",
+   "price": 7,
+   "desc": "Alfombra de cocina absorbente y antimanchas que protege el piso de aceite, agua y comida. Base de goma antideslizante. Medida: 40 x 60 cm. El diseño se entrega según disponibilidad.",
+   "feats": [
+    "Medidas: 40 x 60 cm",
+    "Base antideslizante",
+    "Absorbente y antimanchas",
+    "Diseño según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-171-0.jpg",
+    "img/p/p-171-1.jpg",
+    "img/p/p-171-2.jpg",
+    "img/p/p-171-3.jpg"
+   ],
+   "thumb": "img/p/p-171-s.jpg",
+   "src": "a9559f6a9b80",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-172",
+   "name": "Limpiador arranca grasa",
+   "cat": "cocina",
+   "price": 4,
+   "desc": "Limpiador para quitar la grasa y la suciedad acumulada en las superficies de la cocina.",
+   "feats": [
+    "Para grasa difícil",
+    "Superficies de cocina"
+   ],
+   "imgs": [
+    "img/p/p-172-0.jpg",
+    "img/p/p-172-1.jpg"
+   ],
+   "thumb": "img/p/p-172-s.jpg",
+   "src": "342378c0f8bb",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-173",
+   "name": "Perchero de pie tipo árbol",
+   "cat": "hogar",
+   "price": 10,
+   "desc": "Perchero de pie de estructura metálica para colgar ropa, abrigos, sombreros y carteras. Ideal para la entrada o el dormitorio. El color se entrega según disponibilidad.",
+   "feats": [
+    "Estructura metálica",
+    "Para ropa, carteras y sombreros",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-173-0.jpg",
+    "img/p/p-173-2.jpg",
+    "img/p/p-173-3.jpg"
+   ],
+   "thumb": "img/p/p-173-s.jpg",
+   "src": "0d0efc92091a",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-175",
+   "name": "Perchero hexagonal con ruedas",
+   "cat": "hogar",
+   "price": 14,
+   "desc": "Perchero de gran capacidad con diseño moderno y resistente. Tiene ruedas para moverlo con facilidad. Para casa, tienda o emprendimiento.",
+   "feats": [
+    "Gran capacidad",
+    "Con ruedas"
+   ],
+   "imgs": [
+    "img/p/p-175-0.jpg"
+   ],
+   "thumb": "img/p/p-175-s.jpg",
+   "src": "c387969f109c",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-176",
+   "name": "Tira LED de colores con control",
+   "cat": "hogar",
+   "price": 6,
+   "desc": "Tira de luces LED de varios colores con control remoto y diferentes modos de iluminación. Ideal para dormitorios, salas y televisores.",
+   "feats": [
+    "Varios colores",
+    "Control remoto",
+    "Varios modos de luz"
+   ],
+   "imgs": [
+    "img/p/p-176-0.jpg",
+    "img/p/p-176-1.jpg",
+    "img/p/p-176-3.jpg"
+   ],
+   "thumb": "img/p/p-176-s.jpg",
+   "src": "8493cd21844f",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-177",
+   "name": "Zapatera tipo armario con bolsillos",
+   "cat": "hogar",
+   "price": 21,
+   "desc": "Zapatera tipo armario con ganchos y bolsillos laterales. Para zapatos, botas y sandalias, aprovecha mejor el espacio.",
+   "feats": [
+    "Ganchos y bolsillos laterales",
+    "Para zapatos y botas"
+   ],
+   "imgs": [
+    "img/p/p-177-0.jpg",
+    "img/p/p-177-1.jpg"
+   ],
+   "thumb": "img/p/p-177-s.jpg",
+   "src": "2257872d19d3",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-178",
+   "name": "Plancha a seco HI-LUXE de 1000 W",
+   "cat": "hogar",
+   "price": 16,
+   "desc": "Plancha a seco HI-LUXE de 1000 W a 110 V con suela antiadherente.",
+   "feats": [
+    "Potencia: 1000 W",
+    "Voltaje: 110 V",
+    "Suela antiadherente"
+   ],
+   "imgs": [
+    "img/p/p-178-0.jpg",
+    "img/p/p-178-1.jpg"
+   ],
+   "thumb": "img/p/p-178-s.jpg",
+   "src": "882054f15fb9",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-179",
+   "name": "Foco ventilador con control remoto",
+   "cat": "hogar",
+   "price": 11,
+   "desc": "Foco con ventilador de 6 aspas, 3 tonos de luz y velocidad ajustable con control remoto.",
+   "feats": [
+    "3 tonos de luz",
+    "Ventilador de 6 aspas",
+    "Control remoto"
+   ],
+   "imgs": [
+    "img/p/p-179-1.jpg"
+   ],
+   "thumb": "img/p/p-179-s.jpg",
+   "src": "04b1efeb85bc",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-180",
+   "name": "Ventilador recargable con panel solar",
+   "cat": "hogar",
+   "price": 42,
+   "desc": "Ventilador portátil recargable que incluye panel solar y 2 focos LED. Botones de control en la base.",
+   "feats": [
+    "Incluye panel solar",
+    "Incluye 2 focos LED",
+    "Recargable"
+   ],
+   "imgs": [
+    "img/p/p-180-0.jpg",
+    "img/p/p-180-1.jpg",
+    "img/p/p-180-2.jpg",
+    "img/p/p-180-3.jpg"
+   ],
+   "thumb": "img/p/p-180-s.jpg",
+   "src": "28165b63cca9",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-181",
+   "name": "Zapatera de puerta para 36 pares",
+   "cat": "hogar",
+   "price": 17,
+   "desc": "Zapatera para la puerta hecha con tubos de acero. Acomoda hasta 36 pares y aprovecha al máximo el espacio.",
+   "feats": [
+    "Capacidad: 36 pares",
+    "Tubos de acero"
+   ],
+   "imgs": [
+    "img/p/p-181-0.jpg",
+    "img/p/p-181-1.jpg"
+   ],
+   "thumb": "img/p/p-181-s.jpg",
+   "src": "a7a92a54e498",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-182",
+   "name": "Mini máquina de coser portátil",
+   "cat": "hogar",
+   "price": 17,
+   "desc": "Máquina de coser compacta y liviana de 20 x 19 x 13 cm aprox. Sencilla de usar, ideal para arreglos en casa o para regalar.",
+   "feats": [
+    "Medidas aprox.: 20 x 19 x 13 cm",
+    "Portátil y liviana"
+   ],
+   "imgs": [
+    "img/p/p-182-0.jpg",
+    "img/p/p-182-1.jpg"
+   ],
+   "thumb": "img/p/p-182-s.jpg",
+   "src": "1075ba7e6b24",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-183",
+   "name": "Organizador de escritorio giratorio",
+   "cat": "hogar",
+   "price": 5,
+   "desc": "Organizador giratorio de plástico con compartimentos y cajones transparentes. Para papelería, lápices o maquillaje. Mide aprox. 11 x 11 x 11,5 cm.",
+   "feats": [
+    "Giratorio",
+    "Cajones transparentes",
+    "Medidas aprox.: 11 x 11 x 11,5 cm"
+   ],
+   "imgs": [
+    "img/p/p-183-0.jpg",
+    "img/p/p-183-1.jpg",
+    "img/p/p-183-2.jpg",
+    "img/p/p-183-3.jpg"
+   ],
+   "thumb": "img/p/p-183-s.jpg",
+   "src": "8eb1aa579bf6",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-184",
+   "name": "Salida de baño de toalla 135 x 80 cm",
+   "cat": "cuidado",
+   "price": 4,
+   "desc": "Vestido de toalla suave, absorbente y de secado rápido. Medida aproximada: 135 x 80 cm. Disponible en celeste y amarillo, según disponibilidad.",
+   "feats": [
+    "Medidas aprox.: 135 x 80 cm",
+    "Disponible en celeste y amarillo (según disponibilidad)",
+    "Secado rápido"
+   ],
+   "imgs": [
+    "img/p/p-184-3.jpg"
+   ],
+   "thumb": "img/p/p-184-s.jpg",
+   "src": "f789c31faafb",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-185",
+   "name": "Antifaz para dormir con audífonos bluetooth",
+   "cat": "cuidado",
+   "price": 8,
+   "desc": "Antifaz de tela suave con audífonos inalámbricos integrados que se conectan a tu celular. Recargable. Ideal para viajes y descanso.",
+   "feats": [
+    "Audífonos inalámbricos",
+    "Recargable",
+    "Tela suave"
+   ],
+   "imgs": [
+    "img/p/p-185-0.jpg",
+    "img/p/p-185-1.jpg",
+    "img/p/p-185-2.jpg",
+    "img/p/p-185-3.jpg"
+   ],
+   "thumb": "img/p/p-185-s.jpg",
+   "src": "4c9d9c1f8d5a",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-186",
+   "name": "Tapete de yoga",
+   "cat": "cuidado",
+   "price": 10,
+   "desc": "Tapete para yoga o ejercicios en casa con excelente acabado. Disponible en naranja y celeste, según disponibilidad.",
+   "feats": [
+    "Disponible en naranja y celeste (según disponibilidad)",
+    "Para yoga y ejercicio"
+   ],
+   "imgs": [
+    "img/p/p-186-1.jpg"
+   ],
+   "thumb": "img/p/p-186-s.jpg",
+   "src": "e69f86c3bcc4",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-187",
+   "name": "Rueda abdominal doble",
+   "cat": "cuidado",
+   "price": 8,
+   "desc": "Rueda doble para ejercicios de abdomen, brazos y espalda. Empuñaduras ergonómicas y estable. Compacta para entrenar en casa. El color se entrega según disponibilidad.",
+   "feats": [
+    "Doble rueda",
+    "Empuñaduras ergonómicas",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-187-0.jpg",
+    "img/p/p-187-1.jpg",
+    "img/p/p-187-2.jpg",
+    "img/p/p-187-3.jpg"
+   ],
+   "thumb": "img/p/p-187-s.jpg",
+   "src": "6c47525b7c3f",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-188",
+   "name": "Rodillera térmica recargable",
+   "cat": "cuidado",
+   "price": 10,
+   "desc": "Rodillera con calor y 3 niveles de temperatura. Es recargable y tiene un espacio para bolsa de hielo.",
+   "feats": [
+    "3 niveles de calor",
+    "Recargable",
+    "Espacio para bolsa de hielo"
+   ],
+   "imgs": [
+    "img/p/p-188-0.jpg",
+    "img/p/p-188-1.jpg",
+    "img/p/p-188-2.jpg"
+   ],
+   "thumb": "img/p/p-188-s.jpg",
+   "src": "2cb81cd072e1",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-189",
+   "name": "Rodillo masajeador de pies",
+   "cat": "cuidado",
+   "price": 9,
+   "desc": "Masajeador de pies con rodillo para relajar talón, arco y aliviar el cansancio. El color es surtido, según disponibilidad. Mide aprox. 29 x 15 cm.",
+   "feats": [
+    "Color surtido, según disponibilidad",
+    "Para talón y arco del pie"
+   ],
+   "imgs": [
+    "img/p/p-189-0.jpg",
+    "img/p/p-189-1.jpg",
+    "img/p/p-189-2.jpg",
+    "img/p/p-189-3.jpg"
+   ],
+   "thumb": "img/p/p-189-s.jpg",
+   "src": "a5c56317e7f7",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-190",
+   "name": "Rodillo masajeador muscular de 9 rodillos",
+   "cat": "cuidado",
+   "price": 7,
+   "desc": "Masajeador con 9 rodillos para piernas, brazos, espalda y cintura. Alivia tensión y cansancio.",
+   "feats": [
+    "9 rodillos",
+    "Para piernas, brazos y espalda"
+   ],
+   "imgs": [
+    "img/p/p-190-0.jpg"
+   ],
+   "thumb": "img/p/p-190-s.jpg",
+   "src": "22da89093105",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-191",
+   "name": "Parlante bluetooth tipo megáfono con radio",
+   "cat": "tecno",
+   "price": 11,
+   "desc": "Parlante recargable tipo megáfono con micrófono de diadema, bluetooth, radio FM y entrada para pendrive. Fácil de llevar.",
+   "feats": [
+    "Bluetooth y radio FM",
+    "Entrada para pendrive",
+    "Recargable",
+    "Con micrófono de diadema"
+   ],
+   "imgs": [
+    "img/p/p-191-0.jpg",
+    "img/p/p-191-1.jpg",
+    "img/p/p-191-2.jpg"
+   ],
+   "thumb": "img/p/p-191-s.jpg",
+   "src": "9fa0806847f4",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-192",
+   "name": "Barra de parlante con luces LED",
+   "cat": "tecno",
+   "price": 12,
+   "desc": "Barra de parlante compacta con luces LED para disfrutar música con ambiente.",
+   "feats": [
+    "Luces LED",
+    "Diseño compacto"
+   ],
+   "imgs": [
+    "img/p/p-192-0.jpg"
+   ],
+   "thumb": "img/p/p-192-s.jpg",
+   "src": "60693223e607",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-193",
+   "name": "Micrófono inalámbrico doble para celular",
+   "cat": "tecno",
+   "price": 14,
+   "desc": "Kit con dos micrófonos inalámbricos con clip magnético y receptor para celular con conexión tipo C. Reducción de ruido y 5 a 7 horas de batería.",
+   "feats": [
+    "2 micrófonos",
+    "Conexión tipo C",
+    "Batería de 5 a 7 horas"
+   ],
+   "imgs": [
+    "img/p/p-193-0.jpg",
+    "img/p/p-193-1.jpg",
+    "img/p/p-193-2.jpg"
+   ],
+   "thumb": "img/p/p-193-s.jpg",
+   "src": "5f48c32d36d4",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-194",
+   "name": "Cargador inalámbrico 3 en 1 plegable",
+   "cat": "tecno",
+   "price": 10,
+   "desc": "Carga al mismo tiempo celular, reloj inteligente y audífonos. Carga rápida de hasta 15 W con alineación magnética. Plegable, compatible con equipos MagSafe.",
+   "feats": [
+    "Carga 3 equipos",
+    "Hasta 15 W",
+    "Plegable"
+   ],
+   "imgs": [
+    "img/p/p-194-0.jpg",
+    "img/p/p-194-1.jpg",
+    "img/p/p-194-2.jpg",
+    "img/p/p-194-3.jpg"
+   ],
+   "thumb": "img/p/p-194-s.jpg",
+   "src": "63042d8c31ba",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-195",
+   "name": "Soporte plegable para laptop",
+   "cat": "tecno",
+   "price": 4,
+   "desc": "Soporte de plástico reforzado para laptops y tablets de hasta 15 pulgadas. Plegable, ventilado y con varias alturas.",
+   "feats": [
+    "Hasta 15 pulgadas",
+    "Varias alturas",
+    "Plegable"
+   ],
+   "imgs": [
+    "img/p/p-195-0.jpg",
+    "img/p/p-195-1.jpg",
+    "img/p/p-195-2.jpg",
+    "img/p/p-195-3.jpg"
+   ],
+   "thumb": "img/p/p-195-s.jpg",
+   "src": "99bea75b5323",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-196",
+   "name": "Parasol plegable tipo paraguas para carro",
+   "cat": "herramientas",
+   "price": 7,
+   "desc": "Parasol interior para el parabrisas con protección UV. Se abre como paraguas, cubre todo el frente y se guarda fácil.",
+   "feats": [
+    "Protección UV",
+    "Plegable tipo paraguas"
+   ],
+   "imgs": [
+    "img/p/p-196-0.jpg"
+   ],
+   "thumb": "img/p/p-196-s.jpg",
+   "src": "8ca2ec667bc5",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-197",
+   "name": "Hidrolavadora inalámbrica de 1 batería",
+   "cat": "herramientas",
+   "price": 19,
+   "desc": "Hidrolavadora a batería para lavar carros, el hogar y el jardín. Viene en kit completo con caja plástica dura y punta de cobre reforzada.",
+   "feats": [
+    "Inalámbrica",
+    "Kit completo con caja",
+    "Punta de cobre reforzada"
+   ],
+   "imgs": [
+    "img/p/p-197-0.jpg"
+   ],
+   "thumb": "img/p/p-197-s.jpg",
+   "src": "6bd9dbd24387",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-198",
+   "name": "Mini amoladora recargable con discos",
+   "cat": "herramientas",
+   "price": 23,
+   "desc": "Mini amoladora inalámbrica con cargador, varios discos de corte y caja de herramientas. Para cortar y pulir metal, madera, piedra y azulejo.",
+   "feats": [
+    "Inalámbrica",
+    "Incluye discos y cargador",
+    "Con caja de herramientas"
+   ],
+   "imgs": [
+    "img/p/p-198-0.jpg"
+   ],
+   "thumb": "img/p/p-198-s.jpg",
+   "src": "a16cdf1b9153",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-199",
+   "name": "Mini sierra eléctrica de 24 V",
+   "cat": "herramientas",
+   "price": 18,
+   "desc": "Mini sierra eléctrica con batería recargable de 24 V para podar, carpintería y jardín.",
+   "feats": [
+    "Batería de 24 V",
+    "Recargable",
+    "Para poda y carpintería"
+   ],
+   "imgs": [
+    "img/p/p-199-0.jpg",
+    "img/p/p-199-1.jpg",
+    "img/p/p-199-2.jpg"
+   ],
+   "thumb": "img/p/p-199-s.jpg",
+   "src": "0f5d8c767e04",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-200",
+   "name": "Cepillo telescópico para lavar carros",
+   "cat": "herramientas",
+   "price": 15,
+   "desc": "Cepillo de mango largo telescópico con paso de agua para lavar carros, camionetas y más.",
+   "feats": [
+    "Mango telescópico",
+    "Con paso de agua"
+   ],
+   "imgs": [
+    "img/p/p-200-0.jpg",
+    "img/p/p-200-1.jpg",
+    "img/p/p-200-2.jpg"
+   ],
+   "thumb": "img/p/p-200-s.jpg",
+   "src": "1fffd86ecbed",
+   "added": "2026-11-15T04:36:58.665191+00:00",
+   "status": "pendiente"
+  },
+  {
    "id": "P-101",
    "name": "Set de 4 ollas de acero inoxidable",
    "cat": "cocina",
@@ -516,5 +2075,5 @@
    "status": "pendiente"
   }
  ],
- "updated": "2026-11-14T23:18:16.903581+00:00"
+ "updated": "2026-11-15T04:40:09.347398+00:00"
 }

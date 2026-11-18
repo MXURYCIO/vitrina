@@ -1,6 +1,337 @@
 {
  "products": [
   {
+   "id": "P-201",
+   "name": "Forro de cojín navideño con Santa Claus",
+   "cat": "navidad",
+   "price": 5,
+   "desc": "Funda decorativa para cojín con motivo navideño: Santa Claus, un reloj de pared y adornos festivos. Es de tejido tipo gobelino, mezcla de algodón y poliéster. Mide aproximadamente 45 x 45 cm. Se vende solo el forro, sin relleno.",
+   "feats": [
+    "Motivo navideño de Santa Claus",
+    "Medida: 45 x 45 cm",
+    "Tejido gobelino de algodón y poliéster",
+    "Solo el forro, sin relleno"
+   ],
+   "imgs": [
+    "img/p/p-201-0.jpg"
+   ],
+   "thumb": "img/p/p-201-s.jpg",
+   "src": "cccd7689c4aa",
+   "added": "2026-11-18T04:55:54.701123+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-202",
+   "name": "Alfombra antideslizante absorbente",
+   "cat": "hogar",
+   "price": 4,
+   "desc": "Alfombra de piso con base de caucho (PVC) antideslizante y superficie súper absorbente, ideal para el baño o la entrada en estos días de lluvia. Es impermeable y fácil de limpiar. Mide 56 cm de largo por 37 cm de ancho. Diseño según disponibilidad.",
+   "feats": [
+    "Medida: 56 x 37 cm",
+    "Base de caucho antideslizante",
+    "Súper absorbente e impermeable",
+    "Para baño, entrada o cocina",
+    "Diseño según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-202-0.jpg",
+    "img/p/p-202-1.jpg",
+    "img/p/p-202-2.jpg",
+    "img/p/p-202-3.jpg"
+   ],
+   "thumb": "img/p/p-202-s.jpg",
+   "src": "f2902de7b0e2",
+   "added": "2026-11-18T04:55:54.701123+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-203",
+   "name": "Lámpara linterna LED recargable con asa",
+   "cat": "herramientas",
+   "price": 11,
+   "desc": "Lámpara LED de mano recargable con asa para colgar o transportar, con linterna frontal y luz de ambiente de alto brillo. Sirve dentro o fuera de casa, para cortes de luz, acampar, caminar o pasear al perro. Es compacta: mide aproximadamente 14.7 cm de alto por 10.7 cm de ancho y cabe en la mochila. Color azul con blanco.",
+   "feats": [
+    "Recargable",
+    "Linterna frontal y luz de ambiente",
+    "Asa para colgar o llevar",
+    "Medida: 14.7 x 10.7 cm",
+    "Ideal para cortes de luz y campamentos"
+   ],
+   "imgs": [
+    "img/p/p-203-0.jpg",
+    "img/p/p-203-1.jpg",
+    "img/p/p-203-2.jpg"
+   ],
+   "thumb": "img/p/p-203-s.jpg",
+   "src": "5f8d5a8f7f12",
+   "added": "2026-11-18T04:55:54.701123+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-204",
+   "name": "Hervidor de huevos eléctrico para 6 huevos",
+   "cat": "cocina",
+   "price": 18,
+   "desc": "Cocedor eléctrico que cocina hasta 6 huevos al mismo tiempo. Permite elegir el punto: suaves, medianos o duros, y los deja listos en poco tiempo. Tiene tapa transparente, formato compacto y es fácil de limpiar. Acabado plateado con negro.",
+   "feats": [
+    "Cocina hasta 6 huevos a la vez",
+    "Punto suave, medio o duro",
+    "Tapa transparente",
+    "Compacto y fácil de limpiar"
+   ],
+   "imgs": [
+    "img/p/p-204-0.jpg",
+    "img/p/p-204-1.jpg",
+    "img/p/p-204-2.jpg"
+   ],
+   "thumb": "img/p/p-204-s.jpg",
+   "src": "5c0ca37a5da3",
+   "added": "2026-11-18T04:55:54.701123+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-205",
+   "name": "Set de 17 recipientes para alimentos",
+   "cat": "cocina",
+   "price": 14,
+   "desc": "Juego de 17 reposteros de plástico libre de BPA con tapa para organizar y guardar alimentos. Sirven para la refrigeradora y el microondas. Incluye 4 mini cuadrados de 9.2 x 4 cm, 3 mini rectangulares de 11.5 x 7.5 x 4 cm, 2 cuadrados medianos de 11.6 x 4 cm, 2 cuadrados grandes de 13.5 x 5.3 cm, 2 verticales de 12 x 14 cm, 2 verticales de 13.5 x 16 cm y 2 rectangulares grandes de 23.5 x 15.5 x 8 cm. Color de tapa según disponibilidad.",
+   "feats": [
+    "17 recipientes con tapa",
+    "Plástico libre de BPA",
+    "Aptos para refrigeradora y microondas",
+    "Desde 9.2 cm hasta 23.5 x 15.5 x 8 cm",
+    "Color de tapa según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-205-0.jpg",
+    "img/p/p-205-1.jpg"
+   ],
+   "thumb": "img/p/p-205-s.jpg",
+   "src": "7fa0c2c80176",
+   "added": "2026-11-18T04:55:54.701123+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-206",
+   "name": "Molinillo eléctrico de especias, negro",
+   "cat": "cocina",
+   "price": 7,
+   "desc": "Molinillo eléctrico para sal, pimienta y todo tipo de especias, que muele con un solo toque. Tiene 4 niveles de molido, desde extra fino hasta grueso. Funciona con 4 pilas AAA (no incluidas). Color negro.",
+   "feats": [
+    "Molienda con un solo toque",
+    "4 niveles: de extra fino a grueso",
+    "Funciona con 4 pilas AAA (no incluidas)",
+    "Para sal, pimienta y especias",
+    "Color negro"
+   ],
+   "imgs": [
+    "img/p/p-206-0.jpg",
+    "img/p/p-206-1.jpg"
+   ],
+   "thumb": "img/p/p-206-s.jpg",
+   "src": "3f3267b8bf96",
+   "added": "2026-11-18T04:55:54.701123+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-207",
+   "name": "Zapatera de 5 niveles, blanca",
+   "cat": "hogar",
+   "price": 13,
+   "desc": "Organizador de zapatos de 5 niveles con estructura metálica de acero inoxidable. Mantiene el calzado ordenado en la entrada o el dormitorio y la repisa de arriba sirve para bolsos y cajas. Mide aproximadamente 80 cm de ancho, 21 cm de fondo y 78.5 cm de alto. Color blanco.",
+   "feats": [
+    "5 niveles",
+    "Estructura de acero inoxidable",
+    "Medida: 80 x 21 x 78.5 cm",
+    "Repisa superior para bolsos o cajas",
+    "Color blanco"
+   ],
+   "imgs": [
+    "img/p/p-207-0.jpg",
+    "img/p/p-207-1.jpg"
+   ],
+   "thumb": "img/p/p-207-s.jpg",
+   "src": "4699daa7160b",
+   "added": "2026-11-18T04:55:54.701123+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-208",
+   "name": "Organizador de baño de pared 5 piezas, negro",
+   "cat": "hogar",
+   "price": 18,
+   "desc": "Set de organizadores de pared para el baño que aprovecha el espacio de las paredes. Incluye 2 canastas, 2 jaboneras y 1 portacepillos, ideales para frascos y productos de aseo. Disponible solo en color negro.",
+   "feats": [
+    "Disponible solo en color negro",
+    "5 piezas: 2 canastas, 2 jaboneras y 1 portacepillos",
+    "Se instala en la pared",
+    "Para frascos y productos de aseo"
+   ],
+   "imgs": [
+    "img/p/p-208-0.jpg",
+    "img/p/p-208-1.jpg",
+    "img/p/p-208-2.jpg"
+   ],
+   "thumb": "img/p/p-208-s.jpg",
+   "src": "24890cb21bff",
+   "added": "2026-11-18T04:55:54.701123+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-209",
+   "name": "Estante organizador esquinero de 3 niveles, blanco",
+   "cat": "hogar",
+   "price": 10,
+   "desc": "Estante esquinero de 3 niveles que aprovecha cada rincón del baño o la cocina. Sirve para frascos, especias, cremas y productos de aseo, y los mantiene ordenados y al alcance. Color blanco.",
+   "feats": [
+    "3 niveles",
+    "Diseño esquinero",
+    "Para baño o cocina",
+    "Color blanco"
+   ],
+   "imgs": [
+    "img/p/p-209-0.jpg",
+    "img/p/p-209-1.jpg"
+   ],
+   "thumb": "img/p/p-209-s.jpg",
+   "src": "e78cc075c25b",
+   "added": "2026-11-18T04:55:54.701123+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-210",
+   "name": "Aceitero y condimenteros de vidrio, juego de 3 piezas",
+   "cat": "cocina",
+   "price": 9,
+   "desc": "Juego de 3 piezas de vidrio con tapa y asa: un aceitero de 550 ml y dos condimenteros de 350 ml. El aceitero mide aproximadamente 18.5 cm de alto. Resiste temperaturas de 0 °C a 60 °C. Tapa color azul.",
+   "feats": [
+    "3 piezas de vidrio",
+    "Aceitero de 550 ml",
+    "2 condimenteros de 350 ml",
+    "Resiste de 0 °C a 60 °C",
+    "Tapa color azul"
+   ],
+   "imgs": [
+    "img/p/p-210-0.jpg"
+   ],
+   "thumb": "img/p/p-210-s.jpg",
+   "src": "fcdf39b563d9",
+   "added": "2026-11-18T04:55:54.701123+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-211",
+   "name": "Cambiador portátil para bebé",
+   "cat": "bebes",
+   "price": 14,
+   "desc": "Cambiador plegable y fácil de transportar, con zona acolchada e impermeable donde se recuesta al bebé, que se limpia con una toallita húmeda. Tiene bolsillos de malla y tela para pañales, toallitas, cremas y bolsas, con acceso a las toallitas desde un bolsillo. Incluye asa multiusos con correas para llevarlo en la mano, en la mochila o colgado del coche. Color gris.",
+   "feats": [
+    "Acolchado e impermeable",
+    "Bolsillos para pañales y toallitas",
+    "Plegable",
+    "Asa con correas para el coche",
+    "Color gris"
+   ],
+   "imgs": [
+    "img/p/p-211-0.jpg",
+    "img/p/p-211-1.jpg",
+    "img/p/p-211-2.jpg",
+    "img/p/p-211-3.jpg"
+   ],
+   "thumb": "img/p/p-211-s.jpg",
+   "src": "0aaa2d66c4b7",
+   "added": "2026-11-18T04:55:54.701123+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-212",
+   "name": "Juego de ollas de acero inoxidable 12 piezas, mango dorado",
+   "cat": "cocina",
+   "price": 33,
+   "desc": "Juego de 12 piezas de acero inoxidable con revestimiento antiadherente, tapas de vidrio y manijas doradas. Trae ollas de 24, 20, 18 y 16 cm y sartén de 24 cm, con sus tapas. Sirve para hervir, freír y saltear.",
+   "feats": [
+    "12 piezas",
+    "Acero inoxidable con antiadherente",
+    "Ollas de 24, 20, 18 y 16 cm y sartén de 24 cm",
+    "Tapas de vidrio",
+    "Mango dorado"
+   ],
+   "imgs": [
+    "img/p/p-212-0.jpg"
+   ],
+   "thumb": "img/p/p-212-s.jpg",
+   "src": "1e90c34638ae",
+   "added": "2026-11-18T04:55:54.701123+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-213",
+   "name": "Colchón inflable para carro con inflador",
+   "cat": "otros",
+   "price": 21,
+   "desc": "Colchón inflable para el asiento de atrás del carro, para descansar con comodidad en viajes largos. También sirve en camioneta, carpa o piscina. Mide 130 x 80 x 40 cm. Incluye inflador. Color según disponibilidad.",
+   "feats": [
+    "Medida: 130 x 80 x 40 cm",
+    "Incluye inflador",
+    "Para el asiento de atrás del carro",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-213-0.jpg",
+    "img/p/p-213-1.jpg"
+   ],
+   "thumb": "img/p/p-213-s.jpg",
+   "src": "fa8fe15161ef",
+   "added": "2026-11-18T04:55:54.701123+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-214",
+   "name": "Foco ventilador de techo 2 en 1 con control",
+   "cat": "hogar",
+   "price": 18,
+   "desc": "Foco con ventilador de techo integrado, 2 en 1: ilumina y refresca al mismo tiempo. Se enrosca en un socket normal E27 y el ventilador es de 30 W. Incluye control remoto. Color blanco.",
+   "feats": [
+    "Luz y ventilador en uno",
+    "Ventilador de 30 W",
+    "Se instala en socket E27",
+    "Incluye control remoto",
+    "Color blanco"
+   ],
+   "imgs": [
+    "img/p/p-214-0.jpg",
+    "img/p/p-214-1.jpg"
+   ],
+   "thumb": "img/p/p-214-s.jpg",
+   "src": "09edb14f621d",
+   "added": "2026-11-18T04:55:54.701123+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-215",
+   "name": "Juego de sábanas de 2 plazas, piel de durazno",
+   "cat": "hogar",
+   "price": 10,
+   "desc": "Juego de sábanas de 2 plazas de piel de durazno, ultra suave. Es antialérgico, antibacteriano y antifúngico; no destiñe, no encoge y no hace motas. Incluye sábana, colcha y 2 forros de almohada. Diseño según disponibilidad.",
+   "feats": [
+    "Tamaño 2 plazas",
+    "Tela piel de durazno ultra suave",
+    "Incluye sábana, colcha y 2 forros de almohada",
+    "No destiñe ni encoge",
+    "Diseño según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-215-0.jpg",
+    "img/p/p-215-1.jpg",
+    "img/p/p-215-2.jpg",
+    "img/p/p-215-3.jpg"
+   ],
+   "thumb": "img/p/p-215-s.jpg",
+   "src": "4b09fe5e9813",
+   "added": "2026-11-18T04:55:54.701123+00:00",
+   "status": "pendiente"
+  },
+  {
    "id": "P-174",
    "name": "Soporte de celular para carro, giratorio 360°",
    "cat": "herramientas",
@@ -2149,5 +2480,5 @@
    "status": "pendiente"
   }
  ],
- "updated": "2026-11-15T04:40:09.347398+00:00"
+ "updated": "2026-11-18T04:55:54.701123+00:00"
 }

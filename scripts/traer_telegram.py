@@ -23,7 +23,7 @@ from PIL import Image
 
 SALIDA = sys.argv[1] if len(sys.argv) > 1 else 'salida'
 HORAS = float(sys.argv[2]) if len(sys.argv) > 2 else 26
-MAX_PAGINAS = 25
+MAX_PAGINAS = int(os.environ.get("MAX_PAGINAS") or 25)
 MAX_FOTOS = 4
 UA = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36'}
 RE_PRECIO = re.compile(r'(?:precio[^$\d\n]{0,25})?\$\s*(\d{1,4}(?:[.,]\d{1,2})?)', re.I)

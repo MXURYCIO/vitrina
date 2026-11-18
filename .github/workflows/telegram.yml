@@ -8,6 +8,9 @@ on:
       horas:
         description: 'Horas hacia atrás a revisar'
         default: '74'
+      paginas:
+        description: 'Páginas por canal (más páginas = más historial)'
+        default: '25'
 
 permissions:
   contents: write
@@ -15,14 +18,16 @@ permissions:
 jobs:
   traer:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
       - run: pip install requests beautifulsoup4 pillow
-      - run: python scripts/traer_telegram.py salida "${{ github.event.inputs.horas || '74' }}"
+      - env:
+          MAX_PAGINAS: ${{ github.event.inputs.paginas || '25' }}
+        run: python scripts/traer_telegram.py salida "${{ github.event.inputs.horas || '74' }}"
       - name: Guardar en la rama "entrada"
         env:
           TOKEN: ${{ secrets.GITHUB_TOKEN }}

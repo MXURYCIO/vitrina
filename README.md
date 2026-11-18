@@ -16,7 +16,7 @@ Se cambian en la columna **Estado** de la hoja: Pendiente, Aprobado, En camino, 
 
 ## Carga de productos nuevos (domingos, martes y jueves)
 
-1. La acción de GitHub "Traer productos de Telegram" corre esos días a las 18:07 (Ecuador), con margen porque GitHub suele retrasar las acciones programadas, y deja en la rama `entrada` lo publicado en las últimas 74 horas (`items.json` y `img/`).
+1. La acción de GitHub "Traer productos de Telegram" (se puede lanzar a mano con más "horas" y "páginas" para traer más historial) corre esos días a las 18:07 (Ecuador), con margen porque GitHub suele retrasar las acciones programadas, y deja en la rama `entrada` lo publicado en las últimas 74 horas (`items.json` y `img/`).
 2. A las 22:05 una tarea programada de Claude (si la entrada tiene más de 12 horas, primero lanza la acción a mano y espera a que termine):
    - toma de `entrada` los productos que no están en `products.json` (se comparan por `src`, que son los 12 primeros caracteres del SHA-1 de `clave`);
    - elige los que más se pueden vender según `CRITERIOS.md` (máximo 15 por vez) y escribe nombre, categoría, precio con margen, descripción completa y características;

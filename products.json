@@ -1,6 +1,2284 @@
 {
  "products": [
   {
+   "id": "P-290",
+   "name": "Mochila impermeable escolar",
+   "cat": "otros",
+   "price": 15,
+   "desc": "Mochila o morral impermeable unisex, ideal para el colegio, la universidad o el trabajo en temporada de lluvias. Tiene varios bolsillos y compartimentos para organizar las cosas. Color según disponibilidad.",
+   "feats": [
+    "Impermeable",
+    "Varios bolsillos",
+    "Unisex",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-290-0.jpg",
+    "img/p/p-290-1.jpg",
+    "img/p/p-290-2.jpg"
+   ],
+   "thumb": "img/p/p-290-s.jpg",
+   "src": "a9e73605af70",
+   "added": "2026-11-18T05:44:05.120318+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-291",
+   "name": "Paraguas plegable con protección antisolar",
+   "cat": "otros",
+   "price": 6,
+   "desc": "Paraguas portátil y plegable con revestimiento interior gris que protege del sol. Sirve para días de lluvia y de sol, y cabe en la cartera o la mochila. Color según disponibilidad.",
+   "feats": [
+    "Para lluvia y sol",
+    "Revestimiento antisolar gris",
+    "Plegable",
+    "Cabe en la cartera",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-291-0.jpg",
+    "img/p/p-291-1.jpg"
+   ],
+   "thumb": "img/p/p-291-s.jpg",
+   "src": "7270575f0f95",
+   "added": "2026-11-18T05:44:05.120318+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-292",
+   "name": "Poncho impermeable para niños con capucha",
+   "cat": "otros",
+   "price": 7,
+   "desc": "Poncho para proteger a los niños de la lluvia, en colores llamativos. Tiene capucha, mangas largas y broches al frente para ponerlo fácil. Es liviano y se lleva en la mochila, ideal para la escuela y los paseos. Color según disponibilidad.",
+   "feats": [
+    "Con capucha",
+    "Mangas largas",
+    "Broches frontales",
+    "Liviano",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-292-0.jpg",
+    "img/p/p-292-1.jpg",
+    "img/p/p-292-2.jpg"
+   ],
+   "thumb": "img/p/p-292-s.jpg",
+   "src": "71ab1781a1b6",
+   "added": "2026-11-18T05:44:05.120318+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-293",
+   "name": "Soporte impermeable de celular para moto y bicicleta",
+   "cat": "tecno",
+   "price": 5,
+   "desc": "Soporte con funda resistente al agua para llevar el celular en la moto o la bicicleta, con giro de 360°. La abrazadera se ajusta a manubrios de 22 a 28 mm.",
+   "feats": [
+    "Resistente al agua",
+    "Giro de 360°",
+    "Para moto y bicicleta",
+    "Ajusta de 22 a 28 mm"
+   ],
+   "imgs": [
+    "img/p/p-293-0.jpg"
+   ],
+   "thumb": "img/p/p-293-s.jpg",
+   "src": "56f938c88421",
+   "added": "2026-11-18T05:44:05.120318+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-294",
+   "name": "Cesta de ropa colgante plegable",
+   "cat": "hogar",
+   "price": 9,
+   "desc": "Cesto colgante de gran capacidad para ropa sucia, toallas o prendas limpias, ideal para el cuarto, el baño o la lavandería. Tiene ventana de malla para ver lo que hay dentro y se pliega para guardarlo. Color gris.",
+   "feats": [
+    "Colgante",
+    "Gran capacidad",
+    "Ventana de malla",
+    "Plegable",
+    "Color gris"
+   ],
+   "imgs": [
+    "img/p/p-294-0.jpg",
+    "img/p/p-294-1.jpg"
+   ],
+   "thumb": "img/p/p-294-s.jpg",
+   "src": "3af8f2829a49",
+   "added": "2026-11-18T05:44:05.120318+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-295",
+   "name": "Malla de luces navideñas de 120 luces, blanca",
+   "cat": "navidad",
+   "price": 6,
+   "desc": "Malla de luces navideñas de 120 luces en color blanco, para decorar ventanas, paredes, arbustos y espacios amplios.",
+   "feats": [
+    "120 luces",
+    "Luz blanca",
+    "Para ventanas y espacios amplios"
+   ],
+   "imgs": [
+    "img/p/p-295-0.jpg",
+    "img/p/p-295-1.jpg",
+    "img/p/p-295-2.jpg"
+   ],
+   "thumb": "img/p/p-295-s.jpg",
+   "src": "7f9bead2bfd2",
+   "added": "2026-11-18T05:44:05.120318+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-296",
+   "name": "Luces navideñas cálidas de 360 luces",
+   "cat": "navidad",
+   "price": 8,
+   "desc": "Serie de 360 luces navideñas de luz cálida para el árbol, la casa o cualquier ocasión.",
+   "feats": [
+    "360 luces",
+    "Luz cálida",
+    "Para árbol y decoración"
+   ],
+   "imgs": [
+    "img/p/p-296-0.jpg",
+    "img/p/p-296-1.jpg",
+    "img/p/p-296-2.jpg",
+    "img/p/p-296-3.jpg"
+   ],
+   "thumb": "img/p/p-296-s.jpg",
+   "src": "d5316bfcdb54",
+   "added": "2026-11-18T05:44:05.120318+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-297",
+   "name": "Luces navideñas blancas de 300 luces",
+   "cat": "navidad",
+   "price": 8,
+   "desc": "Serie de 300 luces navideñas de luz blanca para decorar el árbol, ventanas o eventos.",
+   "feats": [
+    "300 luces",
+    "Luz blanca",
+    "Para árbol, ventanas o eventos"
+   ],
+   "imgs": [
+    "img/p/p-297-0.jpg",
+    "img/p/p-297-1.jpg",
+    "img/p/p-297-2.jpg"
+   ],
+   "thumb": "img/p/p-297-s.jpg",
+   "src": "f56530fe911c",
+   "added": "2026-11-18T05:44:05.120318+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-298",
+   "name": "Rollo de luces LED navideñas de 50 m, luz cálida",
+   "cat": "navidad",
+   "price": 14,
+   "desc": "Luces LED de luz cálida en rollo de 50 metros, para decoraciones navideñas grandes, bodas o iluminación de interiores y exteriores. Vienen en un carrete que evita que el cable se enrede al guardarlas o instalarlas.",
+   "feats": [
+    "50 metros",
+    "Luz cálida LED",
+    "En carrete, no se enredan",
+    "Para interior y exterior"
+   ],
+   "imgs": [
+    "img/p/p-298-0.jpg",
+    "img/p/p-298-1.jpg",
+    "img/p/p-298-2.jpg",
+    "img/p/p-298-3.jpg"
+   ],
+   "thumb": "img/p/p-298-s.jpg",
+   "src": "2abb2e38b930",
+   "added": "2026-11-18T05:44:05.120318+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-299",
+   "name": "Forro navideño elástico para silla",
+   "cat": "navidad",
+   "price": 4,
+   "desc": "Forro de tela elástica con diseños navideños para vestir las sillas del comedor en estas fiestas. Diseño según disponibilidad.",
+   "feats": [
+    "Tela elástica",
+    "Diseños navideños",
+    "Para sillas de comedor",
+    "Diseño según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-299-0.jpg",
+    "img/p/p-299-1.jpg",
+    "img/p/p-299-2.jpg",
+    "img/p/p-299-3.jpg"
+   ],
+   "thumb": "img/p/p-299-s.jpg",
+   "src": "c0466b56c7f6",
+   "added": "2026-11-18T05:44:05.120318+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-300",
+   "name": "Telón navideño de 180 x 250 cm",
+   "cat": "navidad",
+   "price": 11,
+   "desc": "Telón decorativo navideño para transformar cualquier pared o espacio en un rincón de Navidad, ideal para fotos y reuniones. Mide 180 x 250 cm. Diseño según disponibilidad.",
+   "feats": [
+    "Medida: 180 x 250 cm",
+    "Para pared o fondo de fotos",
+    "Diseños navideños",
+    "Diseño según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-300-0.jpg",
+    "img/p/p-300-1.jpg",
+    "img/p/p-300-2.jpg",
+    "img/p/p-300-3.jpg"
+   ],
+   "thumb": "img/p/p-300-s.jpg",
+   "src": "3c1221d1761f",
+   "added": "2026-11-18T05:44:05.120318+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-301",
+   "name": "Mantel navideño de 140 x 160 cm",
+   "cat": "navidad",
+   "price": 5,
+   "desc": "Mantel con diseños navideños para la mesa del comedor en diciembre. Mide 140 x 160 cm. Diseño según disponibilidad.",
+   "feats": [
+    "Medida: 140 x 160 cm",
+    "Diseños navideños",
+    "Diseño según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-301-0.jpg",
+    "img/p/p-301-1.jpg"
+   ],
+   "thumb": "img/p/p-301-s.jpg",
+   "src": "33e40d742c0c",
+   "added": "2026-11-18T05:44:05.120318+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-302",
+   "name": "Forro elástico navideño para mueble",
+   "cat": "navidad",
+   "price": 32,
+   "desc": "Forro de tela elástica con diseños navideños que renueva y protege los muebles de la sala. Es fácil de colocar. Diseño según disponibilidad.",
+   "feats": [
+    "Tela elástica",
+    "Renueva y protege el mueble",
+    "Fácil de colocar",
+    "Diseño según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-302-0.jpg",
+    "img/p/p-302-1.jpg",
+    "img/p/p-302-2.jpg"
+   ],
+   "thumb": "img/p/p-302-s.jpg",
+   "src": "36f0d38ffb98",
+   "added": "2026-11-18T05:44:05.120318+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-303",
+   "name": "Corona navideña nevada con frutos rojos",
+   "cat": "navidad",
+   "price": 6,
+   "desc": "Corona navideña con efecto nevado, frutos rojos y esferas, para decorar la puerta o la pared.",
+   "feats": [
+    "Efecto nevado",
+    "Frutos rojos y esferas",
+    "Para puerta o pared"
+   ],
+   "imgs": [
+    "img/p/p-303-0.jpg",
+    "img/p/p-303-1.jpg",
+    "img/p/p-303-2.jpg"
+   ],
+   "thumb": "img/p/p-303-s.jpg",
+   "src": "174b0e50b147",
+   "added": "2026-11-18T05:44:05.120318+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-304",
+   "name": "Golondrinas navideñas con brillo, caja de 4",
+   "cat": "navidad",
+   "price": 4,
+   "desc": "Pajaritos decorativos con brillo para adornar el árbol de Navidad o las guirnaldas. Cada caja trae 4 golondrinas.",
+   "feats": [
+    "Caja de 4",
+    "Con brillo",
+    "Para árbol o guirnalda"
+   ],
+   "imgs": [
+    "img/p/p-304-0.jpg",
+    "img/p/p-304-1.jpg",
+    "img/p/p-304-2.jpg",
+    "img/p/p-304-3.jpg"
+   ],
+   "thumb": "img/p/p-304-s.jpg",
+   "src": "1f9eb8df83e0",
+   "added": "2026-11-18T05:44:05.120318+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-305",
+   "name": "Guirnalda navideña verde para árbol",
+   "cat": "navidad",
+   "price": 2,
+   "desc": "Guirnalda verde frondosa con detalles brillantes para adornar el árbol de Navidad, puertas y espacios del hogar. Combina con luces y esferas.",
+   "feats": [
+    "Color verde",
+    "Detalles brillantes",
+    "Para árbol o puerta"
+   ],
+   "imgs": [
+    "img/p/p-305-0.jpg",
+    "img/p/p-305-1.jpg",
+    "img/p/p-305-2.jpg",
+    "img/p/p-305-3.jpg"
+   ],
+   "thumb": "img/p/p-305-s.jpg",
+   "src": "e336986b878d",
+   "added": "2026-11-18T05:44:05.120318+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-306",
+   "name": "Lazo navideño rojo con brillo",
+   "cat": "navidad",
+   "price": 3,
+   "desc": "Lazo rojo con brillo y etiqueta de Navidad para el árbol, las puertas o los regalos.",
+   "feats": [
+    "Color rojo con brillo",
+    "Con etiqueta",
+    "Para árbol, puerta o regalo"
+   ],
+   "imgs": [
+    "img/p/p-306-0.jpg",
+    "img/p/p-306-1.jpg",
+    "img/p/p-306-2.jpg"
+   ],
+   "thumb": "img/p/p-306-s.jpg",
+   "src": "5cbfda02a0f6",
+   "added": "2026-11-18T05:44:05.120318+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-307",
+   "name": "Árbol de Navidad nevado de 1,80 m",
+   "cat": "navidad",
+   "price": 41,
+   "desc": "Árbol de Navidad artificial de 1,80 metros con efecto nevado en las ramas, frondoso y elegante. Ideal para hogares y negocios, y para combinar con luces y adornos.",
+   "feats": [
+    "Altura: 1,80 m",
+    "Efecto nevado",
+    "Frondoso",
+    "Para casa o negocio"
+   ],
+   "imgs": [
+    "img/p/p-307-0.jpg",
+    "img/p/p-307-1.jpg",
+    "img/p/p-307-2.jpg"
+   ],
+   "thumb": "img/p/p-307-s.jpg",
+   "src": "c5e3931fbb8f",
+   "added": "2026-11-18T05:44:05.120318+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-308",
+   "name": "Árbol de Navidad de 1,80 m con luces y adornos",
+   "cat": "navidad",
+   "price": 75,
+   "desc": "Árbol de Navidad de 180 cm con puntas nevadas, luces LED cálidas y adornos incorporados: estrella, copos, piñas, cerecitas y farolito. Tiene base resistente y es fácil de armar.",
+   "feats": [
+    "Altura: 180 cm",
+    "Luces LED cálidas incluidas",
+    "Adornos incluidos",
+    "Base resistente"
+   ],
+   "imgs": [
+    "img/p/p-308-0.jpg",
+    "img/p/p-308-1.jpg",
+    "img/p/p-308-2.jpg",
+    "img/p/p-308-3.jpg"
+   ],
+   "thumb": "img/p/p-308-s.jpg",
+   "src": "7e176ce9ac39",
+   "added": "2026-11-18T05:44:05.120318+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-309",
+   "name": "Árbol decorativo de 1,80 m con luces LED",
+   "cat": "navidad",
+   "price": 27,
+   "desc": "Árbol decorativo de 180 cm con hojas y luces LED de luz cálida y bajo consumo, para un rincón acogedor o para regalar. Hay 2 diseños: hojas blancas u hojas amarillas, según disponibilidad.",
+   "feats": [
+    "Altura: 180 cm",
+    "Luces LED de bajo consumo",
+    "Hojas blancas o amarillas",
+    "Luz cálida"
+   ],
+   "imgs": [
+    "img/p/p-309-0.jpg",
+    "img/p/p-309-1.jpg",
+    "img/p/p-309-2.jpg",
+    "img/p/p-309-3.jpg"
+   ],
+   "thumb": "img/p/p-309-s.jpg",
+   "src": "729ff06d4ac4",
+   "added": "2026-11-18T05:44:05.120318+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-310",
+   "name": "Set de cubiertos navideños 2 piezas",
+   "cat": "navidad",
+   "price": 3,
+   "desc": "Tenedor y cuchara dorados con figuras navideñas en 3D, en caja de regalo. Ideal para regalar o decorar la mesa. Diseño según disponibilidad.",
+   "feats": [
+    "Tenedor y cuchara",
+    "Figuras navideñas 3D",
+    "Acabado dorado",
+    "En caja de regalo"
+   ],
+   "imgs": [
+    "img/p/p-310-0.jpg",
+    "img/p/p-310-1.jpg",
+    "img/p/p-310-2.jpg"
+   ],
+   "thumb": "img/p/p-310-s.jpg",
+   "src": "c0fba8d29c51",
+   "added": "2026-11-18T05:44:05.120318+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-311",
+   "name": "Set de 6 esferas navideñas de 6 cm",
+   "cat": "navidad",
+   "price": 2,
+   "desc": "Juego de 6 esferas navideñas de 6 cm de diámetro con acabado brillante espejado, en colores vivos y surtidos.",
+   "feats": [
+    "6 esferas",
+    "Diámetro: 6 cm",
+    "Acabado espejado",
+    "Colores surtidos"
+   ],
+   "imgs": [
+    "img/p/p-311-0.jpg"
+   ],
+   "thumb": "img/p/p-311-s.jpg",
+   "src": "477ac048063a",
+   "added": "2026-11-18T05:44:05.120318+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-312",
+   "name": "Juego de mesa ¡Basta! mini",
+   "cat": "juguetes",
+   "price": 8,
+   "desc": "Juego de mesa para pensar rápido y contestar, ideal para jugar en familia o con amigos en las tardes de lluvia.",
+   "feats": [
+    "Para toda la familia",
+    "Piensa rápido y contesta",
+    "Tamaño mini"
+   ],
+   "imgs": [
+    "img/p/p-312-0.jpg",
+    "img/p/p-312-1.jpg",
+    "img/p/p-312-2.jpg"
+   ],
+   "thumb": "img/p/p-312-s.jpg",
+   "src": "f36b96acb803",
+   "added": "2026-11-18T05:44:05.120318+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-313",
+   "name": "Canguro portabebé de 4 posiciones",
+   "cat": "bebes",
+   "price": 14,
+   "desc": "Canguro convertible con 4 posiciones de uso: mirando hacia adentro, hacia afuera, en la espalda y más. Es de tela suave y transpirable con malla, con correas acolchadas y hebillas de seguridad. Soporta desde recién nacidos hasta unos 14 kg. Color según disponibilidad.",
+   "feats": [
+    "4 posiciones",
+    "Tela transpirable",
+    "Hasta 14 kg",
+    "Correas acolchadas",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-313-0.jpg"
+   ],
+   "thumb": "img/p/p-313-s.jpg",
+   "src": "0f448171af8c",
+   "added": "2026-11-18T05:44:05.120318+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-314",
+   "name": "Babero plástico con recolector",
+   "cat": "bebes",
+   "price": 3,
+   "desc": "Babero impermeable con recolector que atrapa la comida para que no caiga al piso. Se limpia con un paño, es suave y tiene broches ajustables. Diseños de ballena, osito o monito, según disponibilidad.",
+   "feats": [
+    "Recolector de comida",
+    "Impermeable",
+    "Broches ajustables",
+    "Diseño según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-314-0.jpg",
+    "img/p/p-314-1.jpg",
+    "img/p/p-314-2.jpg"
+   ],
+   "thumb": "img/p/p-314-s.jpg",
+   "src": "bec0363548e7",
+   "added": "2026-11-18T05:44:05.120318+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-315",
+   "name": "Joyero organizador de 3 niveles",
+   "cat": "hogar",
+   "price": 20,
+   "desc": "Joyero de 3 niveles con ganchos para collares, ranuras para anillos, panel para aretes, soporte para reloj y dos cajones deslizables. Color según disponibilidad.",
+   "feats": [
+    "3 niveles",
+    "2 cajones",
+    "Para anillos, aretes y collares",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-315-0.jpg",
+    "img/p/p-315-1.jpg",
+    "img/p/p-315-2.jpg"
+   ],
+   "thumb": "img/p/p-315-s.jpg",
+   "src": "c472a175d0f9",
+   "added": "2026-11-18T05:44:05.120318+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-316",
+   "name": "Zapatera con perchero de 4 niveles",
+   "cat": "hogar",
+   "price": 10,
+   "desc": "Organizador de 4 niveles para zapatos con perchero superior y ganchos para bolsos, sombreros o paraguas. Es liviano, resistente y fácil de armar. Mide aproximadamente 158 x 60 x 25 cm.",
+   "feats": [
+    "4 niveles",
+    "Perchero con ganchos",
+    "Medida: 158 x 60 x 25 cm",
+    "Fácil de armar"
+   ],
+   "imgs": [
+    "img/p/p-316-0.jpg",
+    "img/p/p-316-1.jpg",
+    "img/p/p-316-2.jpg",
+    "img/p/p-316-3.jpg"
+   ],
+   "thumb": "img/p/p-316-s.jpg",
+   "src": "b45ad9cb9903",
+   "added": "2026-11-18T05:44:05.120318+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-317",
+   "name": "Tetera de vidrio de 1.5 L con filtro",
+   "cat": "cocina",
+   "price": 8,
+   "desc": "Tetera de vidrio resistente al calor de unos 1500 ml, transparente para ver la infusión. Incluye filtro para que no pasen las hojas de té al servir. Tapa de madera.",
+   "feats": [
+    "Capacidad: 1.5 L",
+    "Vidrio resistente al calor",
+    "Con filtro",
+    "Tapa de madera"
+   ],
+   "imgs": [
+    "img/p/p-317-0.jpg",
+    "img/p/p-317-1.jpg"
+   ],
+   "thumb": "img/p/p-317-s.jpg",
+   "src": "949f6c149fc6",
+   "added": "2026-11-18T05:44:05.120318+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-318",
+   "name": "Picadora eléctrica de acero de 3 L",
+   "cat": "cocina",
+   "price": 18,
+   "desc": "Picadora o triturador de 3 litros con vaso de acero inoxidable y 1000 W de potencia. Pica, muele y mezcla carne, verduras y más, y tiene sistema de seguridad.",
+   "feats": [
+    "Capacidad: 3 L",
+    "1000 W",
+    "Acero inoxidable",
+    "Sistema de seguridad"
+   ],
+   "imgs": [
+    "img/p/p-318-0.jpg",
+    "img/p/p-318-1.jpg"
+   ],
+   "thumb": "img/p/p-318-s.jpg",
+   "src": "bde4c718fea3",
+   "added": "2026-11-18T05:44:05.120318+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-319",
+   "name": "Colchón inflable de 1 plaza",
+   "cat": "hogar",
+   "price": 21,
+   "desc": "Colchón inflable portátil para acampar o recibir visitas. Soporta hasta 150 kg y mide aproximadamente 191 x 76 x 22 cm.",
+   "feats": [
+    "Medida: 191 x 76 x 22 cm",
+    "Soporta hasta 150 kg",
+    "Portátil"
+   ],
+   "imgs": [
+    "img/p/p-319-0.jpg",
+    "img/p/p-319-1.jpg"
+   ],
+   "thumb": "img/p/p-319-s.jpg",
+   "src": "0c98925f3931",
+   "added": "2026-11-18T05:44:05.120318+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-320",
+   "name": "Power bank de 20.000 mAh",
+   "cat": "tecno",
+   "price": 14,
+   "desc": "Batería portátil de 20.000 mAh con indicador de carga, para cargar el celular donde estés. Color blanco o negro, según disponibilidad.",
+   "feats": [
+    "20.000 mAh",
+    "Indicador de carga",
+    "Portátil",
+    "Blanco o negro según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-320-0.jpg"
+   ],
+   "thumb": "img/p/p-320-s.jpg",
+   "src": "4f402dbbd0f6",
+   "added": "2026-11-18T05:44:05.120318+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-321",
+   "name": "Proyector de galaxias astronauta con parlante",
+   "cat": "tecno",
+   "price": 12,
+   "desc": "Lámpara en forma de astronauta que proyecta nebulosas, galaxias y estrellas en el techo y las paredes. Trae parlante bluetooth y control remoto para cambiar los efectos. No mirar directo a la luz.",
+   "feats": [
+    "Proyecta galaxias y estrellas",
+    "Parlante bluetooth",
+    "Control remoto",
+    "Varios efectos de luz"
+   ],
+   "imgs": [
+    "img/p/p-321-0.jpg",
+    "img/p/p-321-1.jpg",
+    "img/p/p-321-2.jpg",
+    "img/p/p-321-3.jpg"
+   ],
+   "thumb": "img/p/p-321-s.jpg",
+   "src": "17c5456e39b2",
+   "added": "2026-11-18T05:44:05.120318+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-216",
+   "name": "Porta cubiertos de metal, dorado",
+   "cat": "cocina",
+   "price": 5,
+   "desc": "Organizador de cubiertos de metal en forma de espiral, para tener cucharas, tenedores y cuchillos a la mano en la mesa o la cocina. Mide aproximadamente 16 cm de alto y 10 cm de diámetro. Disponible solo en color dorado.",
+   "feats": [
+    "Disponible solo en color dorado",
+    "Medida: 16 x 10 cm",
+    "Estructura de metal",
+    "Para mesa o cocina"
+   ],
+   "imgs": [
+    "img/p/p-216-0.jpg",
+    "img/p/p-216-1.jpg",
+    "img/p/p-216-2.jpg",
+    "img/p/p-216-3.jpg"
+   ],
+   "thumb": "img/p/p-216-s.jpg",
+   "src": "354b5634231b",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-217",
+   "name": "Cevichera de vidrio con textura",
+   "cat": "cocina",
+   "price": 7,
+   "desc": "Cevichera de vidrio color té o ahumado, con textura de puntitos en relieve que evita que se resbale de las manos. Sirve para postres, ensaladas de fruta, ceviches, salsas o bocaditos. Mide aproximadamente 12.5 cm de diámetro y 5.5 cm de alto.",
+   "feats": [
+    "Vidrio color té o ahumado",
+    "Textura antideslizante",
+    "Medida: 12.5 x 5.5 cm",
+    "Para ceviche, postres y bocaditos"
+   ],
+   "imgs": [
+    "img/p/p-217-0.jpg",
+    "img/p/p-217-1.jpg"
+   ],
+   "thumb": "img/p/p-217-s.jpg",
+   "src": "c76cd24aedac",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-218",
+   "name": "Condimentero giratorio de 8 frascos",
+   "cat": "cocina",
+   "price": 11,
+   "desc": "Organizador de cocina con soporte circular giratorio y 8 frascos para condimentos. Permite tomar cada frasco con facilidad, ahorra espacio en el mesón y mantiene los condimentos ordenados. Color negro.",
+   "feats": [
+    "8 frascos con tapa",
+    "Base giratoria",
+    "Ahorra espacio",
+    "Color negro"
+   ],
+   "imgs": [
+    "img/p/p-218-0.jpg"
+   ],
+   "thumb": "img/p/p-218-s.jpg",
+   "src": "a1d1caed8eff",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-219",
+   "name": "Carrito de colección a escala",
+   "cat": "juguetes",
+   "price": 7,
+   "desc": "Carrito de colección a escala con puertas que se abren, para niños y grandes. Mide aproximadamente 12.2 cm de largo. Modelo y color según disponibilidad.",
+   "feats": [
+    "Para coleccionar",
+    "Puertas que se abren",
+    "Largo: 12.2 cm",
+    "Modelo según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-219-0.jpg",
+    "img/p/p-219-1.jpg"
+   ],
+   "thumb": "img/p/p-219-s.jpg",
+   "src": "cccd986075ae",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-220",
+   "name": "Parlante bluetooth con luces LED tipo cúpula",
+   "cat": "tecno",
+   "price": 14,
+   "desc": "Parlante bluetooth con carcasa transparente tipo cúpula y luces LED de ambiente con efectos. Tiene una potencia aproximada de 5 W y batería recargable por USB. Ideal para la sala, el cuarto o el escritorio.",
+   "feats": [
+    "Conexión bluetooth",
+    "Luces LED de colores",
+    "Potencia aprox. 5 W",
+    "Batería recargable por USB"
+   ],
+   "imgs": [
+    "img/p/p-220-0.jpg",
+    "img/p/p-220-1.jpg"
+   ],
+   "thumb": "img/p/p-220-s.jpg",
+   "src": "69ea9912326c",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-221",
+   "name": "Set de 3 recipientes herméticos de vidrio",
+   "cat": "cocina",
+   "price": 13,
+   "desc": "Juego de 3 recipientes de vidrio templado resistente al calor, en 3 tamaños, con tapa hermética. La tapa trae válvula para liberar el vapor en el microondas y sellos que se pueden sacar para lavar. Aptos para microondas, refrigeradora y lavavajillas.",
+   "feats": [
+    "3 tamaños",
+    "Vidrio templado",
+    "Tapa hermética con válvula",
+    "Aptos para microondas y refrigeradora"
+   ],
+   "imgs": [
+    "img/p/p-221-0.jpg",
+    "img/p/p-221-1.jpg",
+    "img/p/p-221-2.jpg"
+   ],
+   "thumb": "img/p/p-221-s.jpg",
+   "src": "392394563ee4",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-222",
+   "name": "Silla comedor para bebé 2 en 1",
+   "cat": "bebes",
+   "price": 35,
+   "desc": "Silla alta para que el bebé coma, que crece con el niño: se le quitan las patas inferiores y queda como silla baja para jugar o comer. Trae bandeja plástica que se saca y es liviana y fácil de limpiar. Color según disponibilidad.",
+   "feats": [
+    "Se convierte en silla baja",
+    "Bandeja extraíble",
+    "Liviana y fácil de limpiar",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-222-0.jpg",
+    "img/p/p-222-1.jpg",
+    "img/p/p-222-2.jpg"
+   ],
+   "thumb": "img/p/p-222-s.jpg",
+   "src": "7d16c628116a",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-223",
+   "name": "Licuadora 2 en 1 de 2.5 L con molino",
+   "cat": "cocina",
+   "price": 30,
+   "desc": "Licuadora eléctrica 2 en 1 con vaso de 2.5 litros y molino para granos o café. Tiene 6 cuchillas de acero inoxidable, regulación de velocidad e inicio rápido, y es fácil de limpiar. Color negro con rojo.",
+   "feats": [
+    "Vaso de 2.5 L",
+    "Incluye vaso molino",
+    "6 cuchillas de acero inoxidable",
+    "Velocidad regulable"
+   ],
+   "imgs": [
+    "img/p/p-223-0.jpg",
+    "img/p/p-223-1.jpg"
+   ],
+   "thumb": "img/p/p-223-s.jpg",
+   "src": "ca5b6097ba86",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-224",
+   "name": "Licuadora de 1.5 L, 4 velocidades, con molino",
+   "cat": "cocina",
+   "price": 20,
+   "desc": "Licuadora con jarra plástica de 1.5 litros con tapa, motor de 500 W a 110 V, 4 velocidades y función pulso. Las cuchillas de acero inoxidable se desenroscan para lavarlas. Incluye vaso molino multiusos. Color blanco con celeste.",
+   "feats": [
+    "Jarra de 1.5 L",
+    "500 W, 4 velocidades y pulso",
+    "Cuchillas desmontables",
+    "Incluye vaso molino"
+   ],
+   "imgs": [
+    "img/p/p-224-0.jpg",
+    "img/p/p-224-1.jpg"
+   ],
+   "thumb": "img/p/p-224-s.jpg",
+   "src": "d9ebc3046621",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-225",
+   "name": "Tetera de acero con silbato, plateada",
+   "cat": "cocina",
+   "price": 7,
+   "desc": "Tetera o cantina de acero en color plateado para hervir agua de forma práctica. Tiene tapa, asa y silbato que avisa cuando el agua hierve. Ideal para café, té y otras bebidas calientes.",
+   "feats": [
+    "Silbato que avisa al hervir",
+    "Asa y tapa",
+    "Color plateado",
+    "Para café y té"
+   ],
+   "imgs": [
+    "img/p/p-225-0.jpg",
+    "img/p/p-225-1.jpg",
+    "img/p/p-225-2.jpg",
+    "img/p/p-225-3.jpg"
+   ],
+   "thumb": "img/p/p-225-s.jpg",
+   "src": "800e01ceba97",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-226",
+   "name": "Vela aromática decorativa en forma de concha",
+   "cat": "hogar",
+   "price": 3,
+   "desc": "Vela decorativa con aroma agradable, en un recipiente en forma de concha marina con detalles de estrellas y caracoles. Da un toque elegante y relajante a cualquier rincón de la casa. Color según disponibilidad.",
+   "feats": [
+    "Forma de concha marina",
+    "Aroma relajante",
+    "Decorativa",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-226-0.jpg",
+    "img/p/p-226-1.jpg",
+    "img/p/p-226-2.jpg",
+    "img/p/p-226-3.jpg"
+   ],
+   "thumb": "img/p/p-226-s.jpg",
+   "src": "1b92d35d4130",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-227",
+   "name": "Aspersor de riego giratorio 360°",
+   "cat": "herramientas",
+   "price": 4,
+   "desc": "Aspersor para jardín con rotación automática de 360° para regar toda el área. Tiene varios modos de rociado ajustables y se conecta fácil a la manguera. Ideal para jardines, césped y huertos. Modelo según disponibilidad.",
+   "feats": [
+    "Giro automático de 360°",
+    "Varios modos de rociado",
+    "Conexión rápida a la manguera",
+    "Para jardín, césped y huerto"
+   ],
+   "imgs": [
+    "img/p/p-227-0.jpg",
+    "img/p/p-227-1.jpg"
+   ],
+   "thumb": "img/p/p-227-s.jpg",
+   "src": "5bf797d44cdf",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-228",
+   "name": "Manguera expandible de 15 m con pistola",
+   "cat": "herramientas",
+   "price": 6,
+   "desc": "Manguera que se expande al pasar el agua y se encoge al vaciarla, para guardarla fácil. Llega hasta 15 metros e incluye pistola con varias formas de salida del agua. Sirve para regar, lavar el carro o limpiar el patio.",
+   "feats": [
+    "Llega a 15 m",
+    "Pistola con varios chorros",
+    "Se encoge para guardar",
+    "Para riego y limpieza"
+   ],
+   "imgs": [
+    "img/p/p-228-0.jpg",
+    "img/p/p-228-1.jpg",
+    "img/p/p-228-2.jpg"
+   ],
+   "thumb": "img/p/p-228-s.jpg",
+   "src": "bd63825689b6",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-229",
+   "name": "Cámara wifi con pantalla para videollamadas",
+   "cat": "tecno",
+   "price": 19,
+   "desc": "Cámara de vigilancia wifi con pantalla de unos 7 cm que permite hablar y escuchar en tiempo real desde una aplicación del celular. Tiene resolución Full HD 1080p y visión nocturna. Ideal para vigilar al bebé, a los adultos mayores o la casa.",
+   "feats": [
+    "Pantalla para videollamadas",
+    "Full HD 1080p",
+    "Visión nocturna",
+    "Audio en los dos sentidos",
+    "Conexión wifi"
+   ],
+   "imgs": [
+    "img/p/p-229-0.jpg"
+   ],
+   "thumb": "img/p/p-229-s.jpg",
+   "src": "7cd6cd21a738",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-230",
+   "name": "Papel desechable para freidora de aire",
+   "cat": "cocina",
+   "price": 2,
+   "desc": "Moldes redondos de papel desechable para la freidora de aire, con bordes altos que recogen las migas y la grasa. Dejan menos residuos en la canasta y facilitan la limpieza.",
+   "feats": [
+    "Molde redondo con bordes altos",
+    "Recoge grasa y migas",
+    "Limpieza más fácil",
+    "Desechable"
+   ],
+   "imgs": [
+    "img/p/p-230-0.jpg",
+    "img/p/p-230-1.jpg",
+    "img/p/p-230-2.jpg",
+    "img/p/p-230-3.jpg"
+   ],
+   "thumb": "img/p/p-230-s.jpg",
+   "src": "58d0bd829421",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-231",
+   "name": "Cargador de carro 5 en 1 con ambientador y luz de estrellas",
+   "cat": "tecno",
+   "price": 19,
+   "desc": "Accesorio para el encendedor del carro que combina carga rápida para varios dispositivos con ambientador y luz de cielo estrellado. Trae cables retráctiles tipo C y para iPhone, puertos USB-A y USB-C, y un depósito para aromas.",
+   "feats": [
+    "5 en 1",
+    "Cables retráctiles tipo C e iPhone",
+    "Puertos USB-A y USB-C",
+    "Luz de cielo estrellado",
+    "Ambientador incluido"
+   ],
+   "imgs": [
+    "img/p/p-231-0.jpg",
+    "img/p/p-231-1.jpg",
+    "img/p/p-231-2.jpg"
+   ],
+   "thumb": "img/p/p-231-s.jpg",
+   "src": "d61a8de5a782",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-232",
+   "name": "Ambientador para carro en forma de OVNI",
+   "cat": "otros",
+   "price": 8,
+   "desc": "Adorno aromático en forma de platillo volador, con cúpula que tiene efecto de arena o líquido estelar. Perfuma el carro por largo tiempo y decora el tablero. Color según disponibilidad.",
+   "feats": [
+    "Forma de OVNI",
+    "Aroma de larga duración",
+    "Para el tablero del carro",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-232-0.jpg",
+    "img/p/p-232-1.jpg"
+   ],
+   "thumb": "img/p/p-232-s.jpg",
+   "src": "b38b7827010f",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-233",
+   "name": "Ambientador solar para carro con hélice",
+   "cat": "otros",
+   "price": 6,
+   "desc": "Ambientador para el carro que funciona con energía solar: la luz hace girar la hélice y esparce la fragancia. No necesita pilas. Diseño de osito.",
+   "feats": [
+    "Funciona con energía solar",
+    "No necesita pilas",
+    "Hélice giratoria",
+    "Fragancia duradera"
+   ],
+   "imgs": [
+    "img/p/p-233-0.jpg",
+    "img/p/p-233-1.jpg"
+   ],
+   "thumb": "img/p/p-233-s.jpg",
+   "src": "8c01061b5b55",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-234",
+   "name": "Cargador de carro 5 en 1 con cables retráctiles",
+   "cat": "tecno",
+   "price": 14,
+   "desc": "Cargador para el encendedor del carro, diseño 5 en 1 con cables retráctiles y puertos USB. Mantiene cargados los celulares y otros dispositivos en el camino. Color gris.",
+   "feats": [
+    "5 en 1",
+    "Cables retráctiles",
+    "Puertos USB",
+    "Para el encendedor del carro"
+   ],
+   "imgs": [
+    "img/p/p-234-0.jpg"
+   ],
+   "thumb": "img/p/p-234-s.jpg",
+   "src": "48665c6a68cb",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-235",
+   "name": "Cargador de carro 5 en 1 con bluetooth y luces RGB",
+   "cat": "tecno",
+   "price": 14,
+   "desc": "Cargador para el encendedor del carro con cables integrados, pantalla digital e iluminación RGB. Tiene controles para música y llamadas por bluetooth.",
+   "feats": [
+    "5 en 1",
+    "Pantalla digital",
+    "Luces RGB",
+    "Controles de música y llamadas"
+   ],
+   "imgs": [
+    "img/p/p-235-0.jpg"
+   ],
+   "thumb": "img/p/p-235-s.jpg",
+   "src": "a6496fc90331",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-236",
+   "name": "Porta papel higiénico adhesivo",
+   "cat": "hogar",
+   "price": 2,
+   "desc": "Soporte para papel higiénico de plástico que se pega a la pared, sin clavos ni huecos. Es durable y práctico. Color según disponibilidad.",
+   "feats": [
+    "Se pega sin perforar",
+    "Plástico durable",
+    "Fácil de instalar",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-236-0.jpg"
+   ],
+   "thumb": "img/p/p-236-s.jpg",
+   "src": "0d60bf23d93b",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-237",
+   "name": "Gel ambientador para inodoro",
+   "cat": "hogar",
+   "price": 2,
+   "desc": "Limpiador en gel para el inodoro que se aplica en forma de flor dentro de la taza. Ayuda a mantener el baño limpio y elimina los malos olores con un aroma duradero.",
+   "feats": [
+    "Limpia y perfuma",
+    "Elimina malos olores",
+    "Aplicador fácil de usar",
+    "Aroma duradero"
+   ],
+   "imgs": [
+    "img/p/p-237-0.jpg",
+    "img/p/p-237-1.jpg"
+   ],
+   "thumb": "img/p/p-237-s.jpg",
+   "src": "2622e9f9a5f5",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-238",
+   "name": "Limpiador de inodoro en forma de osito",
+   "cat": "hogar",
+   "price": 2,
+   "desc": "Limpiador para el tanque del inodoro con diseño de osito. Cada vez que se jala la cadena ayuda a limpiar la taza. Mide aproximadamente 11 cm de alto y 5.5 cm de ancho.",
+   "feats": [
+    "Diseño de osito",
+    "Limpia en cada descarga",
+    "Medida: 11 x 5.5 cm",
+    "Compacto"
+   ],
+   "imgs": [
+    "img/p/p-238-0.jpg",
+    "img/p/p-238-1.jpg",
+    "img/p/p-238-2.jpg"
+   ],
+   "thumb": "img/p/p-238-s.jpg",
+   "src": "276a14bd94e7",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-239",
+   "name": "Estante organizador de 2 niveles sobre inodoro, blanco",
+   "cat": "hogar",
+   "price": 8,
+   "desc": "Estante de 2 niveles para organizar frascos y productos de aseo en el baño. Mantiene los accesorios al alcance y aprovecha el espacio. Color blanco.",
+   "feats": [
+    "2 niveles",
+    "Para baño",
+    "Aprovecha el espacio",
+    "Color blanco"
+   ],
+   "imgs": [
+    "img/p/p-239-0.jpg",
+    "img/p/p-239-1.jpg"
+   ],
+   "thumb": "img/p/p-239-s.jpg",
+   "src": "345294d15cd1",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-240",
+   "name": "Set de vinchas, ligas y moños para niñas",
+   "cat": "cuidado",
+   "price": 2,
+   "desc": "Juego de accesorios para el cabello con vinchas de estrellas, ligas para recoger el cabello y mini pinzas en modelos variados. Colores surtidos, según disponibilidad.",
+   "feats": [
+    "Vinchas de estrellas",
+    "Ligas para el cabello",
+    "Mini pinzas",
+    "Colores surtidos"
+   ],
+   "imgs": [
+    "img/p/p-240-0.jpg",
+    "img/p/p-240-1.jpg",
+    "img/p/p-240-2.jpg",
+    "img/p/p-240-3.jpg"
+   ],
+   "thumb": "img/p/p-240-s.jpg",
+   "src": "85891d1197ee",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-241",
+   "name": "Set de rallador y tijera de cocina, naranja",
+   "cat": "cocina",
+   "price": 3,
+   "desc": "Juego de rallador y tijera de cocina con diseño ergonómico, práctico para preparar alimentos todos los días. Disponible solo en color naranja.",
+   "feats": [
+    "Disponible solo en color naranja",
+    "Rallador y tijera",
+    "Diseño ergonómico",
+    "Para la cocina diaria"
+   ],
+   "imgs": [
+    "img/p/p-241-0.jpg"
+   ],
+   "thumb": "img/p/p-241-s.jpg",
+   "src": "93315d527bd7",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-242",
+   "name": "Set de 4 cevicheras y 4 tazas de colores",
+   "cat": "cocina",
+   "price": 10,
+   "desc": "Juego de vidrio de 8 piezas: 4 cevicheras y 4 tazas en colores con textura. Ideal para servir ceviche, postres, jugos o café. Colores surtidos.",
+   "feats": [
+    "8 piezas: 4 cevicheras y 4 tazas",
+    "Vidrio de colores",
+    "Con textura",
+    "Colores surtidos"
+   ],
+   "imgs": [
+    "img/p/p-242-0.jpg"
+   ],
+   "thumb": "img/p/p-242-s.jpg",
+   "src": "d14343c8969f",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-243",
+   "name": "Afilador de cuchillos de acero",
+   "cat": "cocina",
+   "price": 3,
+   "desc": "Afilador manual de acero inoxidable con base de goma y mango ergonómico para un manejo firme. Afila cuchillos de forma rápida y tiene ranuras para distintos tipos de afilado. Compacto y fácil de guardar.",
+   "feats": [
+    "Acero inoxidable",
+    "Base de goma antideslizante",
+    "Mango ergonómico",
+    "Varias ranuras de afilado"
+   ],
+   "imgs": [
+    "img/p/p-243-0.jpg",
+    "img/p/p-243-1.jpg",
+    "img/p/p-243-2.jpg"
+   ],
+   "thumb": "img/p/p-243-s.jpg",
+   "src": "0aa2672e0fdc",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-244",
+   "name": "Dispensador de arroz de 10 kg con taza medidora",
+   "cat": "cocina",
+   "price": 19,
+   "desc": "Dispensador automático para guardar hasta 10 kg de arroz, cereales o granos secos. Es sellado contra la humedad y los insectos, entrega la porción con un botón frontal y tiene una ventana para ver cuánto queda. Mide aproximadamente 38.5 cm de alto, 24 cm de ancho y 32 cm de fondo e incluye taza medidora.",
+   "feats": [
+    "Capacidad: 10 kg",
+    "Botón dosificador",
+    "Sellado contra humedad e insectos",
+    "Medida: 38.5 x 24 x 32 cm",
+    "Incluye taza medidora"
+   ],
+   "imgs": [
+    "img/p/p-244-0.jpg",
+    "img/p/p-244-1.jpg",
+    "img/p/p-244-2.jpg"
+   ],
+   "thumb": "img/p/p-244-s.jpg",
+   "src": "c554b86bef94",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-245",
+   "name": "Set de 5 recipientes con tapas de colores",
+   "cat": "cocina",
+   "price": 6,
+   "desc": "Juego de 5 recipientes plásticos de distintos tamaños con tapas de colores para identificarlos fácil. Son apilables y fáciles de limpiar, para guardar alimentos en la refrigeradora o la alacena.",
+   "feats": [
+    "5 tamaños",
+    "Tapas de colores",
+    "Apilables",
+    "Fáciles de limpiar"
+   ],
+   "imgs": [
+    "img/p/p-245-0.jpg",
+    "img/p/p-245-1.jpg",
+    "img/p/p-245-2.jpg",
+    "img/p/p-245-3.jpg"
+   ],
+   "thumb": "img/p/p-245-s.jpg",
+   "src": "40e7a551b495",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-246",
+   "name": "Set de 7 recipientes herméticos para alacena",
+   "cat": "cocina",
+   "price": 17,
+   "desc": "Juego de 7 contenedores herméticos de plástico libre de BPA, con cierre de silicona que mantiene los alimentos frescos. Ideales para harina, azúcar, cereales, pasta y snacks. Vienen en diferentes tamaños.",
+   "feats": [
+    "7 piezas",
+    "Cierre hermético",
+    "Libres de BPA",
+    "Para harina, cereales y pasta"
+   ],
+   "imgs": [
+    "img/p/p-246-0.jpg",
+    "img/p/p-246-1.jpg"
+   ],
+   "thumb": "img/p/p-246-s.jpg",
+   "src": "240426d1c984",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-247",
+   "name": "Kit de cocina de 4 piezas en colores pastel",
+   "cat": "cocina",
+   "price": 6,
+   "desc": "Kit de utensilios de plástico y acero en colores pastel: exprimidor, destapador, cuchillo y tabla de picar pequeña. Colores surtidos, según disponibilidad.",
+   "feats": [
+    "4 piezas",
+    "Exprimidor, destapador, cuchillo y tabla",
+    "Colores pastel",
+    "Colores surtidos"
+   ],
+   "imgs": [
+    "img/p/p-247-0.jpg",
+    "img/p/p-247-1.jpg"
+   ],
+   "thumb": "img/p/p-247-s.jpg",
+   "src": "ecb6486a645c",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-248",
+   "name": "Rollo de papel aluminio adhesivo para cocina",
+   "cat": "cocina",
+   "price": 3,
+   "desc": "Papel adhesivo de aluminio texturizado para proteger la pared, el mesón o los cajones de la cocina. Repele grasa, aceite y agua, y se limpia con un paño húmedo. Color plateado o dorado, según disponibilidad.",
+   "feats": [
+    "Adhesivo",
+    "Repele grasa y agua",
+    "Se limpia con un paño",
+    "Plateado o dorado según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-248-0.jpg",
+    "img/p/p-248-1.jpg",
+    "img/p/p-248-2.jpg",
+    "img/p/p-248-3.jpg"
+   ],
+   "thumb": "img/p/p-248-s.jpg",
+   "src": "96c58fd20f25",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-249",
+   "name": "Estante organizador de cocina de 2 niveles con ganchos",
+   "cat": "cocina",
+   "price": 7,
+   "desc": "Estante de plástico durable de 2 niveles con ganchos laterales para colgar utensilios. Ideal para organizar especias, botellas y herramientas de cocina o de limpieza en espacios pequeños. Color blanco.",
+   "feats": [
+    "2 niveles",
+    "Ganchos laterales",
+    "Plástico durable",
+    "Color blanco"
+   ],
+   "imgs": [
+    "img/p/p-249-0.jpg",
+    "img/p/p-249-1.jpg",
+    "img/p/p-249-2.jpg"
+   ],
+   "thumb": "img/p/p-249-s.jpg",
+   "src": "81e09011e25d",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-250",
+   "name": "Aceitero en spray de vidrio",
+   "cat": "cocina",
+   "price": 3,
+   "desc": "Botella de vidrio con rociador para aceite, vinagre o jugos, que suelta solo lo necesario. Ayuda a controlar la grasa en ensaladas, asados y frituras. Mide aproximadamente 16.8 cm de alto y 6.3 cm de ancho. Tapa rosada o celeste, según disponibilidad.",
+   "feats": [
+    "Rociador de aceite",
+    "Vidrio",
+    "Medida: 16.8 x 6.3 cm",
+    "Tapa rosada o celeste según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-250-0.jpg",
+    "img/p/p-250-1.jpg"
+   ],
+   "thumb": "img/p/p-250-s.jpg",
+   "src": "79253a75cc6e",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-251",
+   "name": "Set de 5 bowls de acero con tapa",
+   "cat": "cocina",
+   "price": 8,
+   "desc": "Juego de 5 recipientes de metal con tapa para guardar o servir alimentos. Miden aproximadamente 10, 12, 14, 16 y 18 cm de diámetro.",
+   "feats": [
+    "5 piezas con tapa",
+    "De metal",
+    "Medidas: 10, 12, 14, 16 y 18 cm",
+    "Para guardar o servir"
+   ],
+   "imgs": [
+    "img/p/p-251-0.jpg"
+   ],
+   "thumb": "img/p/p-251-s.jpg",
+   "src": "0d47ca923d09",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-252",
+   "name": "Soporte magnético plegable para celular",
+   "cat": "tecno",
+   "price": 4,
+   "desc": "Soporte para celular con fijación magnética potente, giro de 360° y diseño plegable. Se instala con base adhesiva en el escritorio, la casa, la oficina o el carro. Compatible con celulares y fundas magnéticas.",
+   "feats": [
+    "Fijación magnética",
+    "Giro de 360°",
+    "Plegable",
+    "Base adhesiva"
+   ],
+   "imgs": [
+    "img/p/p-252-0.jpg",
+    "img/p/p-252-1.jpg"
+   ],
+   "thumb": "img/p/p-252-s.jpg",
+   "src": "677d4845e08e",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-253",
+   "name": "Set de 10 armadores de colores",
+   "cat": "hogar",
+   "price": 4,
+   "desc": "Juego de 10 armadores de ropa prácticos y coloridos. Colores surtidos.",
+   "feats": [
+    "10 unidades",
+    "Colores surtidos",
+    "Prácticos para el clóset"
+   ],
+   "imgs": [
+    "img/p/p-253-0.jpg",
+    "img/p/p-253-1.jpg",
+    "img/p/p-253-2.jpg"
+   ],
+   "thumb": "img/p/p-253-s.jpg",
+   "src": "f69c8bc17a42",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-254",
+   "name": "Licuadora portátil recargable de doble cuchilla",
+   "cat": "cocina",
+   "price": 18,
+   "desc": "Licuadora inalámbrica recargable con doble cuchilla que pica rápido, panel digital fácil de usar y asa para llevarla. Es fácil de limpiar. Colores al azar, según disponibilidad.",
+   "feats": [
+    "Inalámbrica y recargable",
+    "Doble cuchilla",
+    "Panel digital",
+    "Asa para transportar",
+    "Color surtido, según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-254-0.jpg",
+    "img/p/p-254-1.jpg"
+   ],
+   "thumb": "img/p/p-254-s.jpg",
+   "src": "4b477b109a0b",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-255",
+   "name": "Humidificador difusor de aromas tipo florero con luz",
+   "cat": "hogar",
+   "price": 5,
+   "desc": "Humidificador y difusor de aromas en forma de florero que emite una neblina suave. Tiene luz que crea un ambiente acogedor y es compacto, ideal para la oficina, el cuarto o el escritorio. Color al azar, según disponibilidad.",
+   "feats": [
+    "Neblina aromática",
+    "Luz de ambiente",
+    "Compacto y portátil",
+    "Color surtido, según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-255-0.jpg",
+    "img/p/p-255-1.jpg",
+    "img/p/p-255-2.jpg"
+   ],
+   "thumb": "img/p/p-255-s.jpg",
+   "src": "806ec95dfe55",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-256",
+   "name": "Guantes de silicona para lavar",
+   "cat": "hogar",
+   "price": 4,
+   "desc": "Guantes de silicona reutilizables con cerdas en la palma para lavar platos, limpiar el baño o la cocina. Colores al azar.",
+   "feats": [
+    "Reutilizables",
+    "Cerdas para fregar",
+    "Para cocina y baño",
+    "Color surtido, según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-256-0.jpg",
+    "img/p/p-256-1.jpg",
+    "img/p/p-256-2.jpg"
+   ],
+   "thumb": "img/p/p-256-s.jpg",
+   "src": "085303dbde3a",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-257",
+   "name": "Rizador de pestañas eléctrico recargable",
+   "cat": "cuidado",
+   "price": 3,
+   "desc": "Rizador de pestañas con calor y dos niveles de temperatura: verde a 65° para pestañas suaves y azul a 85° para pestañas duras. Se carga por USB e incluye cable. Mide aproximadamente 15.6 cm de largo.",
+   "feats": [
+    "2 niveles de temperatura",
+    "Recargable por USB",
+    "Incluye cable",
+    "Rizo de larga duración"
+   ],
+   "imgs": [
+    "img/p/p-257-0.jpg",
+    "img/p/p-257-1.jpg"
+   ],
+   "thumb": "img/p/p-257-s.jpg",
+   "src": "7fddc92c7982",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-258",
+   "name": "Vaso de vidrio con tapa y sorbete",
+   "cat": "cocina",
+   "price": 3,
+   "desc": "Vaso de vidrio con textura, tapa y sorbete incluidos. Ideal para jugos, café helado o bebidas frías. Color según disponibilidad.",
+   "feats": [
+    "Vidrio con textura",
+    "Incluye tapa y sorbete",
+    "Para bebidas frías",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-258-0.jpg"
+   ],
+   "thumb": "img/p/p-258-s.jpg",
+   "src": "3859679b9544",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-259",
+   "name": "Regleta de 8 tomas con 2 USB, rosada",
+   "cat": "tecno",
+   "price": 6,
+   "desc": "Regleta con 8 tomas universales, 2 puertos USB para cargar dispositivos e interruptor de encendido. Ideal para la casa o la oficina. Color rosado con blanco.",
+   "feats": [
+    "8 tomas universales",
+    "2 puertos USB",
+    "Interruptor",
+    "Color rosado con blanco"
+   ],
+   "imgs": [
+    "img/p/p-259-0.jpg",
+    "img/p/p-259-1.jpg",
+    "img/p/p-259-2.jpg"
+   ],
+   "thumb": "img/p/p-259-s.jpg",
+   "src": "605ee899c93a",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-260",
+   "name": "Reloj de pared infantil",
+   "cat": "hogar",
+   "price": 10,
+   "desc": "Reloj de pared con números grandes y fáciles de leer, en diseños de colores vivos y tiernos. Ideal para decorar el cuarto de los niños. Diseño según disponibilidad.",
+   "feats": [
+    "Números grandes",
+    "Diseños tiernos",
+    "Para decorar",
+    "Diseño según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-260-0.jpg",
+    "img/p/p-260-1.jpg",
+    "img/p/p-260-2.jpg",
+    "img/p/p-260-3.jpg"
+   ],
+   "thumb": "img/p/p-260-s.jpg",
+   "src": "1dc026845a03",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-261",
+   "name": "Reloj de pared con diseño de balón de fútbol",
+   "cat": "hogar",
+   "price": 13,
+   "desc": "Reloj de pared con esfera en forma de balón de fútbol y gráficos de jugadores, perfecto para los fanáticos del fútbol. Mide aproximadamente 30 cm.",
+   "feats": [
+    "Diseño de fútbol",
+    "Medida: 30 cm",
+    "Ideal para el cuarto",
+    "Péndulo de balón"
+   ],
+   "imgs": [
+    "img/p/p-261-0.jpg",
+    "img/p/p-261-1.jpg"
+   ],
+   "thumb": "img/p/p-261-s.jpg",
+   "src": "bd41d45c94b2",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-262",
+   "name": "Cojín de gel para silla",
+   "cat": "hogar",
+   "price": 8,
+   "desc": "Cojín de gel con forro de algodón que alivia la presión en la espalda y la cadera al estar sentado mucho tiempo. Sirve para la oficina, el carro, la silla de estudio o la silla de ruedas. Mide 40 x 37 x 4 cm e incluye caja.",
+   "feats": [
+    "Medida: 40 x 37 x 4 cm",
+    "Gel con forro de algodón",
+    "Para oficina, carro o estudio",
+    "Incluye caja"
+   ],
+   "imgs": [
+    "img/p/p-262-0.jpg"
+   ],
+   "thumb": "img/p/p-262-s.jpg",
+   "src": "fad04c03b812",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-263",
+   "name": "Organizador de ropa interior con tapa",
+   "cat": "hogar",
+   "price": 7,
+   "desc": "Organizador plegable para guardar hasta 20 pares de ropa interior o calcetines. Tiene tapa transparente que protege del polvo y deja ver todo sin abrir. Disponible en 2 tonos, según disponibilidad.",
+   "feats": [
+    "Hasta 20 pares",
+    "Tapa transparente",
+    "Plegable",
+    "2 tonos según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-263-0.jpg",
+    "img/p/p-263-1.jpg",
+    "img/p/p-263-2.jpg"
+   ],
+   "thumb": "img/p/p-263-s.jpg",
+   "src": "093e0788e2bb",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-264",
+   "name": "Sanduchera parrilla de 850 W",
+   "cat": "cocina",
+   "price": 18,
+   "desc": "Sanduchera compacta con placas tipo parrilla antiadherentes y 850 W de potencia. Sirve para hacer sánduches y también como parrilla para tostar. Color negro.",
+   "feats": [
+    "850 W",
+    "Placas antiadherentes tipo parrilla",
+    "Compacta",
+    "Color negro"
+   ],
+   "imgs": [
+    "img/p/p-264-0.jpg",
+    "img/p/p-264-1.jpg",
+    "img/p/p-264-2.jpg",
+    "img/p/p-264-3.jpg"
+   ],
+   "thumb": "img/p/p-264-s.jpg",
+   "src": "2fb1cb3a9e8e",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-265",
+   "name": "Picadora eléctrica de 2 L con vaso de vidrio",
+   "cat": "cocina",
+   "price": 22,
+   "desc": "Picadora o triturador eléctrico con vaso de vidrio resistente de 2 litros y 300 W de potencia. Pica carne, verduras, cebolla y más, y se desarma fácil para lavarla. Mide aproximadamente 28 cm de alto.",
+   "feats": [
+    "Vaso de vidrio de 2 L",
+    "300 W",
+    "Pica carne y verduras",
+    "Fácil de desarmar"
+   ],
+   "imgs": [
+    "img/p/p-265-0.jpg",
+    "img/p/p-265-1.jpg"
+   ],
+   "thumb": "img/p/p-265-s.jpg",
+   "src": "9d4078b250df",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-266",
+   "name": "Condimentero giratorio de 6 frascos de vidrio",
+   "cat": "cocina",
+   "price": 11,
+   "desc": "Organizador giratorio con 6 frascos de vidrio grueso de 100 ml para especias. Mide aproximadamente 18 cm de alto y 14 cm de base; cada frasco mide 9.5 x 5 cm.",
+   "feats": [
+    "6 frascos de 100 ml",
+    "Base giratoria",
+    "Vidrio grueso",
+    "Medida: 18 x 14 cm"
+   ],
+   "imgs": [
+    "img/p/p-266-0.jpg",
+    "img/p/p-266-1.jpg",
+    "img/p/p-266-2.jpg"
+   ],
+   "thumb": "img/p/p-266-s.jpg",
+   "src": "9abdb30d77c1",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-267",
+   "name": "Gramera digital de cocina hasta 10 kg",
+   "cat": "cocina",
+   "price": 6,
+   "desc": "Balanza digital de cocina con pantalla fácil de leer, que pesa de 1 g hasta 10 kg. Funciona con 2 pilas AAA. Color blanco.",
+   "feats": [
+    "Pesa hasta 10 kg",
+    "Pantalla digital",
+    "Funciona con 2 pilas AAA",
+    "Color blanco"
+   ],
+   "imgs": [
+    "img/p/p-267-0.jpg",
+    "img/p/p-267-1.jpg"
+   ],
+   "thumb": "img/p/p-267-s.jpg",
+   "src": "ccb7bbb5c4a0",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-268",
+   "name": "Majador de papa de acero inoxidable",
+   "cat": "cocina",
+   "price": 2,
+   "desc": "Machacador manual de acero inoxidable para hacer puré de papa y otras preparaciones. Mango negro cómodo.",
+   "feats": [
+    "Acero inoxidable",
+    "Para puré",
+    "Mango cómodo"
+   ],
+   "imgs": [
+    "img/p/p-268-0.jpg",
+    "img/p/p-268-1.jpg"
+   ],
+   "thumb": "img/p/p-268-s.jpg",
+   "src": "02ace965f583",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-269",
+   "name": "Huevera dispensadora de 3 niveles",
+   "cat": "cocina",
+   "price": 4,
+   "desc": "Organizador de huevos de 3 niveles con rampa: los huevos ruedan solos hacia adelante. Ahorra espacio en la refrigeradora. Mide aproximadamente 30 cm de fondo, 19.5 cm de alto y 7 cm de ancho. Se entrega sin caja; color según disponibilidad.",
+   "feats": [
+    "3 niveles",
+    "Los huevos ruedan solos",
+    "Medida: 30 x 19.5 x 7 cm",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-269-0.jpg",
+    "img/p/p-269-1.jpg",
+    "img/p/p-269-2.jpg",
+    "img/p/p-269-3.jpg"
+   ],
+   "thumb": "img/p/p-269-s.jpg",
+   "src": "89353473bda7",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-270",
+   "name": "Caja fuerte en forma de libro",
+   "cat": "hogar",
+   "price": 11,
+   "desc": "Caja con llave en forma de libro para guardar dinero o cosas pequeñas sin que se note. Es de plástico forrado. Color según disponibilidad.",
+   "feats": [
+    "Parece un libro",
+    "Con llave",
+    "Forrada",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-270-0.jpg",
+    "img/p/p-270-1.jpg",
+    "img/p/p-270-2.jpg"
+   ],
+   "thumb": "img/p/p-270-s.jpg",
+   "src": "f412eb783ad0",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-271",
+   "name": "Platera escurridor sobre lavaplatos, negra",
+   "cat": "cocina",
+   "price": 26,
+   "desc": "Platera de un piso que va sobre el lavaplatos, con espacio para platos, vasos, utensilios, especias y tablas. Estructura firme, fácil de armar y de limpiar. Color negro.",
+   "feats": [
+    "Va sobre el lavaplatos",
+    "Para platos, vasos y utensilios",
+    "Fácil de armar",
+    "Color negro"
+   ],
+   "imgs": [
+    "img/p/p-271-0.jpg",
+    "img/p/p-271-1.jpg"
+   ],
+   "thumb": "img/p/p-271-s.jpg",
+   "src": "26aa54838f21",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-272",
+   "name": "Estante de cocina con vitrina y ruedas",
+   "cat": "cocina",
+   "price": 38,
+   "desc": "Estante organizador de cocina de metal con puertas de vidrio estriado y ruedas para moverlo fácil. Perfecto para legumbres, verduras, ollas y botellas. Modelo según disponibilidad.",
+   "feats": [
+    "Metal con puertas de vidrio",
+    "Con ruedas",
+    "Varios niveles",
+    "Modelo según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-272-0.jpg",
+    "img/p/p-272-1.jpg",
+    "img/p/p-272-2.jpg"
+   ],
+   "thumb": "img/p/p-272-s.jpg",
+   "src": "3e1432b4fb30",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-273",
+   "name": "Dispensador de aceite de vidrio de 630 ml",
+   "cat": "cocina",
+   "price": 5,
+   "desc": "Aceitero de vidrio de 630 ml con apertura y cierre automático al inclinarlo y boquilla de acero inoxidable. No gotea ni se derrama y ayuda a controlar el aceite al cocinar.",
+   "feats": [
+    "Capacidad: 630 ml",
+    "Apertura automática",
+    "Boquilla de acero",
+    "No gotea"
+   ],
+   "imgs": [
+    "img/p/p-273-0.jpg",
+    "img/p/p-273-1.jpg",
+    "img/p/p-273-2.jpg",
+    "img/p/p-273-3.jpg"
+   ],
+   "thumb": "img/p/p-273-s.jpg",
+   "src": "cfb7a2133af4",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-274",
+   "name": "Hielera con moldes y cuchara",
+   "cat": "cocina",
+   "price": 9,
+   "desc": "Hielera con moldes para preparar hielo solo o con frutas y mecanismo fácil para soltar los cubitos. Cierra bien e incluye cuchara para servir. Ideal para bebidas y refrescos.",
+   "feats": [
+    "Moldes para hielo",
+    "Suelta fácil los cubitos",
+    "Incluye cuchara",
+    "Cierra bien"
+   ],
+   "imgs": [
+    "img/p/p-274-0.jpg",
+    "img/p/p-274-1.jpg",
+    "img/p/p-274-2.jpg"
+   ],
+   "thumb": "img/p/p-274-s.jpg",
+   "src": "66ea91f5c591",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-275",
+   "name": "Set de 19 utensilios de cocina de silicona con organizador",
+   "cat": "cocina",
+   "price": 17,
+   "desc": "Juego de 19 piezas con cuchillos y utensilios de silicona que no rayan ollas ni sartenes, con su organizador. Son resistentes y fáciles de lavar. Color gris, rosado o verde, según disponibilidad.",
+   "feats": [
+    "19 piezas",
+    "Silicona que no raya",
+    "Incluye organizador",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-275-0.jpg",
+    "img/p/p-275-1.jpg",
+    "img/p/p-275-2.jpg",
+    "img/p/p-275-3.jpg"
+   ],
+   "thumb": "img/p/p-275-s.jpg",
+   "src": "ef245f46192c",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-276",
+   "name": "Estantería multiuso con ganchos y ruedas",
+   "cat": "hogar",
+   "price": 12,
+   "desc": "Estante de metal de varios niveles con 4 ganchos dobles y 4 ruedas de 360° con freno. Sirve para guardar utensilios y aparatos en la cocina, la sala o el cuarto. Color según disponibilidad.",
+   "feats": [
+    "Varios niveles",
+    "4 ganchos dobles",
+    "Ruedas con freno",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-276-0.jpg",
+    "img/p/p-276-1.jpg",
+    "img/p/p-276-2.jpg"
+   ],
+   "thumb": "img/p/p-276-s.jpg",
+   "src": "cd0670d72315",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-277",
+   "name": "Set de baño de 3 piezas afelpado",
+   "cat": "hogar",
+   "price": 10,
+   "desc": "Juego de baño suave y afelpado de 3 piezas: forro de tapa, alfombra de contorno y alfombra rectangular. Absorbente y con diseño colorido.",
+   "feats": [
+    "3 piezas",
+    "Suave y absorbente",
+    "Forro de tapa y 2 alfombras",
+    "Diseño colorido"
+   ],
+   "imgs": [
+    "img/p/p-277-0.jpg",
+    "img/p/p-277-1.jpg"
+   ],
+   "thumb": "img/p/p-277-s.jpg",
+   "src": "48bd122ce3d8",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-278",
+   "name": "Regleta de 3 tomas con USB y cable de 2 m",
+   "cat": "tecno",
+   "price": 6,
+   "desc": "Regleta con 3 tomas universales, puertos USB e interruptor de encendido. Tiene cable de 2 metros. Color negro con amarillo.",
+   "feats": [
+    "3 tomas universales",
+    "Puertos USB",
+    "Cable de 2 m",
+    "Interruptor"
+   ],
+   "imgs": [
+    "img/p/p-278-0.jpg",
+    "img/p/p-278-1.jpg"
+   ],
+   "thumb": "img/p/p-278-s.jpg",
+   "src": "a75fbb4d9062",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-279",
+   "name": "Soporte metálico giratorio para celular",
+   "cat": "tecno",
+   "price": 3,
+   "desc": "Soporte de metal para celular con ángulo ajustable, base giratoria y antideslizante. Ideal para ver videos y hacer videollamadas.",
+   "feats": [
+    "Metálico",
+    "Ángulo ajustable",
+    "Base antideslizante",
+    "Para videos y videollamadas"
+   ],
+   "imgs": [
+    "img/p/p-279-0.jpg"
+   ],
+   "thumb": "img/p/p-279-s.jpg",
+   "src": "239ca5712a97",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-280",
+   "name": "Soporte de celular para tablero del carro",
+   "cat": "tecno",
+   "price": 5,
+   "desc": "Soporte para el tablero del carro con giro de 360° para ver el celular en vertical u horizontal. Es de plástico ABS resistente con almohadillas de silicona que protegen el celular y el tablero. Compatible con la mayoría de celulares.",
+   "feats": [
+    "Giro de 360°",
+    "Almohadillas de silicona",
+    "Universal",
+    "Para el tablero"
+   ],
+   "imgs": [
+    "img/p/p-280-0.jpg"
+   ],
+   "thumb": "img/p/p-280-s.jpg",
+   "src": "9215849a7f56",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-281",
+   "name": "Parlante bluetooth redondo con luces LED",
+   "cat": "tecno",
+   "price": 12,
+   "desc": "Parlante bluetooth redondo con luces LED y sonido estéreo. La batería dura hasta 15 horas de reproducción continua. Color según disponibilidad.",
+   "feats": [
+    "Hasta 15 horas de batería",
+    "Bluetooth",
+    "Luces LED",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-281-0.jpg"
+   ],
+   "thumb": "img/p/p-281-s.jpg",
+   "src": "b9e0216e1b5e",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-282",
+   "name": "Ejercitador de pedal con bandas elásticas",
+   "cat": "otros",
+   "price": 6,
+   "desc": "Ejercitador para brazos y piernas con bandas elásticas, pedales para los pies y mango para las dos manos. Es compacto y fácil de guardar. Mide 43.2 x 25.4 cm. Color según disponibilidad.",
+   "feats": [
+    "Para brazos y piernas",
+    "Bandas elásticas",
+    "Medida: 43.2 x 25.4 cm",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-282-0.jpg",
+    "img/p/p-282-1.jpg",
+    "img/p/p-282-2.jpg",
+    "img/p/p-282-3.jpg"
+   ],
+   "thumb": "img/p/p-282-s.jpg",
+   "src": "74a1065d1653",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-283",
+   "name": "Lámpara solar LED portátil recargable",
+   "cat": "herramientas",
+   "price": 11,
+   "desc": "Luz de trabajo LED recargable con panel solar integrado y soporte ajustable de 180°. Se cuelga, se lleva en la mano o se pega con imán. Ideal para cortes de luz, campamentos, talleres o emergencias.",
+   "feats": [
+    "Panel solar integrado",
+    "Recargable",
+    "Soporte de 180°",
+    "Para cortes de luz y emergencias"
+   ],
+   "imgs": [
+    "img/p/p-283-0.jpg",
+    "img/p/p-283-1.jpg",
+    "img/p/p-283-2.jpg"
+   ],
+   "thumb": "img/p/p-283-s.jpg",
+   "src": "467eaa36da43",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-284",
+   "name": "Soplador turbo portátil con linterna",
+   "cat": "herramientas",
+   "price": 13,
+   "desc": "Mini soplador o ventilador turbo recargable que mueve mucho aire a alta velocidad para limpiar teclados, computadoras y equipos. Incluye linterna. Color negro.",
+   "feats": [
+    "Aire a alta velocidad",
+    "Incluye linterna",
+    "Para limpiar equipos",
+    "Color negro"
+   ],
+   "imgs": [
+    "img/p/p-284-0.jpg",
+    "img/p/p-284-1.jpg"
+   ],
+   "thumb": "img/p/p-284-s.jpg",
+   "src": "b15fadf330d7",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-285",
+   "name": "Forro impermeable para moto, talla L",
+   "cat": "otros",
+   "price": 4,
+   "desc": "Funda para proteger la moto de la lluvia, la humedad, el sol y el polvo cuando no se usa. Tiene borde elástico que la mantiene ajustada y es liviana y plegable. Talla L, color plateado.",
+   "feats": [
+    "Protege de la lluvia y el sol",
+    "Borde elástico",
+    "Plegable",
+    "Talla L",
+    "Color plateado"
+   ],
+   "imgs": [
+    "img/p/p-285-0.jpg"
+   ],
+   "thumb": "img/p/p-285-s.jpg",
+   "src": "609a04705187",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-286",
+   "name": "Escritorio plegable con silla para niños",
+   "cat": "juguetes",
+   "price": 26,
+   "desc": "Escritorio y silla plegables para niños, con estructura de metal y superficie de madera con diseños educativos. Se guarda y se lleva fácil. Ideal para tareas, juegos y manualidades. Diseño según disponibilidad.",
+   "feats": [
+    "Escritorio y silla",
+    "Plegables",
+    "Estructura de metal",
+    "Diseño según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-286-0.jpg"
+   ],
+   "thumb": "img/p/p-286-s.jpg",
+   "src": "f6988f198579",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-287",
+   "name": "Martillo multifuncional",
+   "cat": "herramientas",
+   "price": 8,
+   "desc": "Martillo con varias herramientas plegables en el mango, práctico y resistente. Ideal para el hogar, reparaciones y trabajos diarios.",
+   "feats": [
+    "Varias herramientas en una",
+    "Plegable",
+    "Resistente",
+    "Para el hogar"
+   ],
+   "imgs": [
+    "img/p/p-287-0.jpg"
+   ],
+   "thumb": "img/p/p-287-s.jpg",
+   "src": "53ad3a48dc1e",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-288",
+   "name": "Muñequera térmica con vibración recargable",
+   "cat": "cuidado",
+   "price": 12,
+   "desc": "Muñequera masajeadora con calor y vibración, recargable por USB y con pantalla digital. Se adapta a la mano izquierda o derecha y ayuda a relajar la muñeca.",
+   "feats": [
+    "Calor y vibración",
+    "Recargable por USB",
+    "Para mano izquierda o derecha",
+    "Pantalla digital"
+   ],
+   "imgs": [
+    "img/p/p-288-0.jpg",
+    "img/p/p-288-1.jpg"
+   ],
+   "thumb": "img/p/p-288-s.jpg",
+   "src": "083911edf13b",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-289",
+   "name": "Rodillera deportiva de compresión ajustable",
+   "cat": "cuidado",
+   "price": 3,
+   "desc": "Rodillera de compresión deportiva con correa ajustable. Ideal para hacer deporte o caminar.",
+   "feats": [
+    "Compresión",
+    "Ajustable",
+    "Para deporte"
+   ],
+   "imgs": [
+    "img/p/p-289-0.jpg"
+   ],
+   "thumb": "img/p/p-289-s.jpg",
+   "src": "92d3e0186b73",
+   "added": "2026-11-18T05:31:24.726044+00:00",
+   "status": "pendiente"
+  },
+  {
    "id": "P-201",
    "name": "Forro de cojín navideño con Santa Claus",
    "cat": "navidad",
@@ -2480,5 +4758,5 @@
    "status": "pendiente"
   }
  ],
- "updated": "2026-11-18T04:55:54.701123+00:00"
+ "updated": "2026-11-18T05:44:05.120318+00:00"
 }

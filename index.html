@@ -446,6 +446,10 @@ body.rv-ped #tools,body.rv-ped .sec-head,body.rv-ped #grid,body.rv-ped #empty{di
 .form-error{padding:10px 12px;border-radius:12px;background:var(--bad-soft);color:var(--bad);font-size:14px}
 .sec-title{margin:26px 2px 12px;font-size:20px;font-family:var(--font-display);letter-spacing:-.02em}
 .order-list{display:grid;gap:10px}
+.ord-rm{display:grid;gap:10px}
+.ord-rm-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.ord-rm .btn svg{width:20px;height:20px}
+.btn.danger{background:var(--bad);color:#fff;box-shadow:0 10px 22px -12px var(--bad)}
 .order-card{display:flex;justify-content:space-between;align-items:center;gap:12px;width:100%;padding:14px 16px;border:0;border-radius:20px;color:var(--fg);text-align:left;transition:transform .4s var(--ease-spring)}
 .order-card:active{transform:scale(.98)}
 .oc-main{min-width:0}
@@ -749,7 +753,7 @@ body.rv-ped #tools,body.rv-ped .sec-head,body.rv-ped #grid,body.rv-ped #empty{di
       <button class="btn primary" type="submit">Ver estado</button>
       <p class="hint" id="trackHint">Prueba con el pedido de ejemplo: PED-H4QX y 1234.</p>
     </form>
-    <h2 class="sec-title">En este celular</h2>
+    <h2 class="sec-title" id="ordersHead">En este celular</h2>
     <div class="order-list" id="orderList"></div>
   </main>
 </div>
@@ -1433,6 +1437,7 @@ function openSuccess(o) {
 
 /* ---------- Pedidos ---------- */
 function renderOrders() {
+  $('#ordersHead').hidden = !allOrders().length;
   $('#orderList').innerHTML = allOrders().map(o => {
     const n = o.items.reduce((s, i) => s + i.qty, 0);
     return `<button class="order-card" type="button" data-act="order" data-code="${o.code}">
@@ -1458,7 +1463,8 @@ function openOrderObj(o) {
      <ul class="lines">${rows}</ul>
      ${o.city ? `<h3 class="od-sub">Entrega</h3><p class="ship-note">${ic(esLocal(o.city) ? 'pin' : 'truck')}<span>${esc(o.address)}, ${esc(o.city)}${esLocal(o.city) ? '' : '<br>Envío por servicio de entrega, con costo aparte.'}</span></p>` : ''}
      <dl class="sum"><div><dt>Total</dt><dd>${money(o.total)}</dd></div><div><dt>Abono</dt><dd>${money(o.abono)}</dd></div><div class="hl"><dt>Saldo a pagar al recibir</dt><dd>${money(o.total - o.abono)}</dd></div></dl>
-     <p class="ship-mini">${ic('cash')}<span>Entregamos el pedido completo, no por partes. El saldo se paga al recibirlo.</span></p>`, '');
+     <p class="ship-mini">${ic('cash')}<span>Entregamos el pedido completo, no por partes. El saldo se paga al recibirlo.</span></p>`,
+    orders.some(x => x.code === o.code) ? `<div class="ord-rm" id="ordRm"><button class="btn secondary" type="button" data-act="ordrm" data-code="${o.code}">${ic('trash')}Quitar de Mis pedidos</button></div>` : '');
 }
 
 let refreshing = false;
@@ -1546,6 +1552,10 @@ document.addEventListener('click', e => {
     case 'browse': closeSheet(); setView('tienda'); break;
     case 'copy': copyText(t.dataset.v); break;
     case 'order': openOrder(t.dataset.code); break;
+    case 'ordrm': $('#ordRm').innerHTML = `<p class="muted sm">Solo se quita de la lista de este celular. Si el pedido ya se envió a la tienda, no se cancela.</p>
+      <div class="ord-rm-row"><button class="btn secondary" type="button" data-act="ordrmno">Cancelar</button><button class="btn danger" type="button" data-act="ordrmyes" data-code="${t.dataset.code}">${ic('trash')}Sí, quitar</button></div>`; break;
+    case 'ordrmno': closeSheet(); break;
+    case 'ordrmyes': orders = orders.filter(x => x.code !== t.dataset.code); store.set('vt-orders', orders); renderOrders(); closeSheet(); toast('Pedido quitado de la lista'); break;
     case 'welcome': store.set('vt-welcome', 1); closeSheet(); break;
     case 'rv': rvDecide([id], t.dataset.s, '', t); break;
     case 'rvedit': openRvEdit(id); break;

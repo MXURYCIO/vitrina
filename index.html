@@ -539,7 +539,7 @@ body.rv-ped #tools,body.rv-ped .sec-head,body.rv-ped #grid,body.rv-ped #empty{di
 @media (max-width:359px){.fab button{min-width:58px}}
 @media (min-width:1000px){
   .app{padding-left:max(16px,min(100px,calc(100px - (100vw - 1120px) / 2)))}
-  .fab{left:max(14px,calc((100vw - 1120px) / 2 - 84px));top:50%;flex-direction:column;gap:4px;padding:6px;border-radius:32px;translate:calc(-100% - 40px) -50%}
+  .fab{left:max(14px,calc((100vw - 1120px) / 2 - 132px));top:50%;flex-direction:column;gap:4px;padding:6px;border-radius:32px;translate:calc(-100% - 40px) -50%}
   .fab.on{translate:0 -50%}
   .fab button{width:70px;min-width:0;height:62px;border-radius:26px;font-size:11px}
   .fab button:hover{background:var(--accent-soft)}
@@ -1796,7 +1796,8 @@ function applyLens(el, i) {
   el.style.backdropFilter = `url(#${id}) saturate(2) brightness(1.06)`;
   el.classList.add('lensed');
 }
-const lensEls = [$('#tabs'), $('#cartBtn'), $('#compact')];
+// la barra de abajo (Tienda, Mis pedidos y carrito) usa el mismo vidrio esmerilado que la barra de Buscar, Categorías y Filtro
+const lensEls = [$('#compact')];
 function relens() { if (canLens) lensEls.forEach(applyLens); }
 let relensT;
 function relensSoon(ms = 120) { clearTimeout(relensT); relensT = setTimeout(relens, ms); }

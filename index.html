@@ -2051,44 +2051,57 @@ async function loadOrigen(key) {
 const origenDe = id => { const m = String(ORIGEN[id] || '').match(/^([^|]+)\|([A-Za-z0-9_]+)\/(\d+)$/); return m ? { tienda: m[1], canal: m[2], num: m[3], url: `https://t.me/${m[2]}/${m[3]}` } : null; };
 const origenBox = id => { const o = origenDe(id);
   return `<p class="pd-origen" id="pdOrigen">${ic('store')}<span>${o ? `Se pide en <b>${esc(o.tienda)}</b> · publicación ${esc(o.num)}` : (costoListo ? 'Proveedor sin dato' : 'Cargando proveedor…')}</span>${o ? `<a href="${esc(o.url)}" target="_blank" rel="noopener">${ic('link')}Abrir</a>` : ''}</p>`; };
-/* Imagen vertical para estados de WhatsApp: foto, nombre, precio de la tienda y abono (solo dueño) */
+/* Imagen vertical para estados de WhatsApp (solo dueño): estilo de publicidad, con el precio en una etiqueta.
+   Abajo, en pequeño, "Ref. 216-1": número del producto y, tras el guion, el número de la tienda de Telegram
+   (orden de canales.json). Las clientas no saben qué tienda es; quien vende sí. */
+let CANALES = null;
 async function imagenEstado(id, btn) {
   const p = byId[id]; if (!p || !hasPhoto(p)) { toast('Este producto no tiene foto'); return; }
   const old = btn.innerHTML; btn.disabled = true; btn.textContent = 'Preparando imagen…';
   try {
-    const W = 1080, H = 1920, AZ = '#1E66F5', F = '"Inter",-apple-system,"Segoe UI",Roboto,Arial,sans-serif';
+    const W = 1080, H = 1920, AM = '#FFD60A', F = '"Inter",-apple-system,"Segoe UI",Roboto,Arial,sans-serif';
+    if (!CANALES) { try { CANALES = (await (await fetch('canales.json', { cache: 'no-cache' })).json()).canales || []; } catch (e) { CANALES = []; } }
+    const o = origenDe(id), n = o ? CANALES.indexOf(o.canal) + 1 : 0;
+    const ref = `${id.slice(2)}${n ? '-' + n : ''}`;
     const img = await new Promise((ok, no) => { const i = new Image(); i.onload = () => ok(i); i.onerror = no; i.src = p.imgs[0]; });
-    if (document.fonts && document.fonts.load) { try { await Promise.all([document.fonts.load(`800 60px Inter`), document.fonts.load(`600 40px Inter`)]); } catch (e) {} }
+    if (document.fonts && document.fonts.load) { try { await Promise.all([document.fonts.load('800 60px Inter'), document.fonts.load('600 40px Inter')]); } catch (e) {} }
     const c = document.createElement('canvas'); c.width = W; c.height = H; const x = c.getContext('2d');
     const rr = (a, b, w, h, r) => { x.beginPath(); x.roundRect ? x.roundRect(a, b, w, h, r) : x.rect(a, b, w, h); };
-    const g = x.createLinearGradient(0, 0, W, H); g.addColorStop(0, '#D4E2FB'); g.addColorStop(.5, '#EEF3FB'); g.addColorStop(1, '#D8ECF6');
+    const iw0 = img.naturalWidth, ih0 = img.naturalHeight;
+    // fondo: la misma foto llenando todo, desenfocada y oscurecida
+    x.save(); x.filter = 'blur(60px) saturate(1.3) brightness(.55)';
+    const kb = Math.max(W / iw0, H / ih0) * 1.15; x.drawImage(img, (W - iw0 * kb) / 2, (H - ih0 * kb) / 2, iw0 * kb, ih0 * kb); x.restore();
+    if (x.filter === undefined || x.filter === 'none') { x.fillStyle = 'rgba(10,12,18,.45)'; x.fillRect(0, 0, W, H); }
+    const g = x.createLinearGradient(0, H * .5, 0, H); g.addColorStop(0, 'rgba(8,10,16,0)'); g.addColorStop(1, 'rgba(8,10,16,.92)');
     x.fillStyle = g; x.fillRect(0, 0, W, H);
-    const pill = (t, px, font, bg, fg) => { x.font = font; const w = x.measureText(t).width + 44; x.fillStyle = bg; rr(px, 70, w, 64, 32); x.fill(); x.fillStyle = fg; x.textBaseline = 'middle'; x.fillText(t, px + 22, 102); return px + w; };
-    const px = pill(TIENDA.nombre, 60, `700 38px ${F}`, '#fff', '#111827');
-    pill(catLabel(p.cat), px + 16, `600 34px ${F}`, 'rgba(255,255,255,.7)', AZ);
-    const cx = 60, cy = 190, cw = W - 120, ch = 960;
-    x.save(); x.shadowColor = 'rgba(80,100,140,.35)'; x.shadowBlur = 50; x.shadowOffsetY = 24; x.fillStyle = '#fff'; rr(cx, cy, cw, ch, 56); x.fill(); x.restore();
-    x.save(); rr(cx, cy, cw, ch, 56); x.clip();
-    const ar = img.naturalWidth / img.naturalHeight, llena = Math.abs(ar - cw / ch) <= .18;
-    const k = llena ? Math.max(cw / img.naturalWidth, ch / img.naturalHeight) : Math.min(cw / img.naturalWidth, ch / img.naturalHeight);
-    const iw = img.naturalWidth * k, ih = img.naturalHeight * k;
-    x.drawImage(img, cx + (cw - iw) / 2, cy + (ch - ih) / 2, iw, ih); x.restore();
+    // de abajo hacia arriba: pie, precio, nombre; la foto usa el espacio de arriba
     const pr = money(p.price).replace('.00', '');
-    x.font = `800 150px ${F}`; const pw = x.measureText(pr).width;
-    x.fillStyle = AZ; rr(cx + cw - 30 - pw - 80, cy + ch - 230, pw + 80, 200, 60); x.fill();
-    x.fillStyle = '#fff'; x.textAlign = 'right'; x.fillText(pr, cx + cw - 70, cy + ch - 128); x.textAlign = 'left';
-    const wrap = (t, max, font) => { x.font = font; const out = []; let l = ''; t.split(' ').forEach(w => { const n = l ? l + ' ' + w : w; if (x.measureText(n).width > max && l) { out.push(l); l = w; } else l = n; }); if (l) out.push(l); return out; };
-    let y = cy + ch + 100; x.textBaseline = 'alphabetic';
-    const lineas = wrap(p.name, W - 140, `700 66px ${F}`).slice(0, 3);
-    x.fillStyle = '#111827'; lineas.forEach(l => { x.fillText(l, 70, y); y += 80; });
-    y += 10; x.font = `500 38px ${F}`;
-    (p.feats || []).slice(0, lineas.length < 3 ? 3 : 2).forEach(f => { let t = f; while (x.measureText(t).width > W - 200 && t.length > 4) t = t.slice(0, -2); if (t !== f) t = t.trimEnd() + '…';
-      x.fillStyle = AZ; x.beginPath(); x.arc(82, y - 13, 8, 0, 7); x.fill(); x.fillStyle = '#5A6373'; x.fillText(t, 110, y); y += 56; });
-    const pie = H - 250; x.fillStyle = '#fff'; rr(60, pie, W - 120, 180, 44); x.fill();
-    const t1 = `Resérvalo con ${money(p.price * ABONO).replace('.00', '')} y paga el resto al recibir`;
-    let tam = 40; x.font = `700 ${tam}px ${F}`; while (tam > 28 && x.measureText(t1).width > W - 200) { tam -= 2; x.font = `700 ${tam}px ${F}`; }
-    x.fillStyle = '#111827'; x.fillText(t1, 100, pie + 76);
-    x.font = `500 32px ${F}`; x.fillStyle = '#5A6373'; x.fillText(`Responde este estado para pedirlo · Código ${p.id}`, 100, pie + 136);
+    x.font = `900 170px ${F}`; const pw = x.measureText(pr).width, ew = pw + 120, eh = 250;
+    const ey = H - 200 - eh - 20;
+    const wrap = (t, max, font) => { x.font = font; const out = []; let l = ''; t.split(' ').forEach(w => { const s = l ? l + ' ' + w : w; if (x.measureText(s).width > max && l) { out.push(l); l = w; } else l = s; }); if (l) out.push(l); return out; };
+    let tam = 70, lineas = wrap(p.name, W - 120, `800 70px ${F}`);
+    if (lineas.length > 2) { tam = 58; lineas = wrap(p.name, W - 120, `800 58px ${F}`).slice(0, 3); }
+    const al = Math.round(tam * 1.2), ny = ey - 30 - al * lineas.length;
+    const top = 160, maxw = W - 100, maxh = ny - 60 - top, k = Math.min(maxw / iw0, maxh / ih0);
+    const fw = iw0 * k, fh = ih0 * k, x0 = (W - fw) / 2, y0 = top + (maxh - fh) / 2;
+    x.save(); x.shadowColor = 'rgba(0,0,0,.6)'; x.shadowBlur = 60; x.shadowOffsetY = 24; x.fillStyle = '#000'; rr(x0, y0, fw, fh, 44); x.fill(); x.restore();
+    x.save(); rr(x0, y0, fw, fh, 44); x.clip(); x.drawImage(img, x0, y0, fw, fh); x.restore();
+    x.font = `800 34px ${F}`; const tw = x.measureText('DISPONIBLE').width;
+    x.fillStyle = '#fff'; rr(50, 60, tw + 52, 66, 33); x.fill();
+    x.fillStyle = '#141418'; x.textBaseline = 'middle'; x.fillText('DISPONIBLE', 76, 94);
+    x.textBaseline = 'top'; x.font = `800 ${tam}px ${F}`; x.fillStyle = '#fff';
+    lineas.forEach((l, i) => x.fillText(l, 60, ny + i * al));
+    x.save(); x.translate(52 + ew / 2, ey + eh / 2 + 10); x.rotate(-5 * Math.PI / 180);
+    x.fillStyle = AM; rr(-ew / 2, -eh / 2, ew, eh, 48); x.fill();
+    x.fillStyle = '#141418'; x.textAlign = 'center'; x.textBaseline = 'middle'; x.font = `900 170px ${F}`; x.fillText(pr, 0, 6); x.restore();
+    const cx = 52 + ew + 50, anc = W - cx - 50;
+    const fit = (t, peso, t0, min) => { let z = t0; x.font = `${peso} ${z}px ${F}`; while (z > min && x.measureText(t).width > anc) { z -= 2; x.font = `${peso} ${z}px ${F}`; } };
+    x.textAlign = 'left'; x.textBaseline = 'top';
+    fit('Sepáralo con', 600, 40, 26); x.fillStyle = '#E1E4EB'; x.fillText('Sepáralo con', cx, ey + 50);
+    const ab = money(p.price * ABONO).replace('.00', ''); fit(ab, 800, 76, 40); x.fillStyle = AM; x.fillText(ab, cx, ey + 100);
+    fit('y el resto al recibir', 600, 36, 24); x.fillStyle = '#E1E4EB'; x.fillText('y el resto al recibir', cx, ey + 190);
+    x.textAlign = 'center'; x.textBaseline = 'middle'; x.font = `700 40px ${F}`; x.fillStyle = '#fff'; x.fillText('Escríbeme para pedirlo', W / 2, H - 120);
+    x.textAlign = 'right'; x.textBaseline = 'alphabetic'; x.font = `500 28px ${F}`; x.fillStyle = '#AAB0BE'; x.fillText(`Ref. ${ref}`, W - 50, H - 46);
     const blob = await new Promise(ok => c.toBlob(ok, 'image/jpeg', .88));
     const nombre = `${p.id} ${p.name.replace(/[^\w áéíóúñÁÉÍÓÚÑ-]/g, '').slice(0, 40)} ${pr}.jpg`;
     const file = new File([blob], nombre, { type: 'image/jpeg' });
@@ -2097,7 +2110,7 @@ async function imagenEstado(id, btn) {
     }
     const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = nombre; document.body.append(a); a.click(); a.remove();
     setTimeout(() => URL.revokeObjectURL(a.href), 4000);
-    toast('Imagen descargada');
+    toast(n ? `Imagen lista · Ref. ${ref}: tienda ${n}` : 'Imagen descargada');
   } catch (e) { toast('No se pudo preparar la imagen'); }
   finally { if (document.contains(btn)) { btn.disabled = false; btn.innerHTML = old; } }
 }

@@ -1,4 +1,8 @@
 {
-  "canales": ["Kaydeecuador", "importadorapandita"],
+  "canales": [
+    "Kaydeecuador",
+    "importadorapandita",
+    "tuhogartextiles"
+  ],
   "lista_negra": []
 }

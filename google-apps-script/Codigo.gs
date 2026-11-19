@@ -25,7 +25,7 @@ const CONFIG = {
 
 const COLS = ['Fecha', 'Código', 'Estado', 'Nombre', 'Apellido', 'Cédula', 'Celular', 'Ciudad/cantón', 'Dirección', 'Envío', 'Productos', 'Códigos',
   'Total', 'Abono', 'Saldo', 'N.º comprobante', 'Monto depositado', 'Comprobante', 'Alertas',
-  'Aceptó condiciones', 'Huella foto', 'Comprobante leído'];
+  'Aceptó condiciones', 'Huella foto', 'Comprobante leído', 'Proveedor'];
 const C = Object.fromEntries(COLS.map((c, i) => [c, i]));
 const ESTADOS = ['Pendiente', 'Aprobado', 'En camino', 'Entregado', 'Rechazado'];
 const ESTADO_KEY = { 'Pendiente': 'pendiente', 'Aprobado': 'aprobado', 'En camino': 'camino', 'Entregado': 'entregado', 'Rechazado': 'rechazado' };
@@ -36,6 +36,7 @@ function doPost(e) {
   try { d = JSON.parse(e.postData.contents); } catch (err) { return out_({ ok: false, error: 'Solicitud inválida.' }); }
   try {
     if (d.action === 'order') return out_(crearPedido_(d));
+    if (d.action === 'visita') return out_(visita_(d));
     if (d.action === 'estados') return out_({ ok: true, estados: estados_() });
     if (d.action === 'admin') return out_(admin_(d));
     if (d.action === 'track') return out_(consultar_(d.code, d.last4));
@@ -155,10 +156,12 @@ function crearPedido_(d) {
     lectura.alertas.forEach(a => alertas.push(a));
 
     const ahora = new Date();
+    const proveedor = proveedorTexto_(items);
     const fila = [ahora, code, 'Pendiente', texto_(nombre), texto_(apellido), "'" + cedula, "'" + cel,
       texto_(ciudad), texto_(direccion), envio,
       items.map(i => `${i.qty} x ${i.name}`).join('\n'), items.map(i => `${i.id} x${i.qty}`).join(', '),
-      total, abono, r2_(total - abono), "'" + num, monto > 0 ? monto : '', 'Ver foto', alertas.join(' · '), ahora, huella, lectura.resumen];
+      total, abono, r2_(total - abono), "'" + num, monto > 0 ? monto : '', 'Ver foto', alertas.join(' · '), ahora, huella, lectura.resumen,
+      proveedor];
     sh.appendRow(fila);
     const r = sh.getLastRow();
     sh.getRange(r, C['Comprobante'] + 1).setRichTextValue(
@@ -167,7 +170,7 @@ function crearPedido_(d) {
 
     cache.put(kCel, String(usados + 1), 3600);
     cache.put(kHora, String(Number(cache.get(kHora) || 0) + 1), 3600);
-    avisar_({ code, nombre, apellido, cel, ciudad, direccion, envio, items, total, abono, num, monto, archivo, alertas, lectura: lectura.resumen });
+    avisar_({ code, nombre, apellido, cel, ciudad, direccion, envio, items, total, abono, num, monto, archivo, alertas, lectura: lectura.resumen, proveedor });
     return { ok: true, code, total, abono, status: 'pendiente', date: ahora.toISOString() };
   } finally {
     lock.releaseLock();
@@ -263,7 +266,200 @@ function admin_(d) {
     return { ok: true, resumen: l.resumen, alertas: l.alertas, texto: l.texto.slice(0, 600) };
   }
   if (d.op === 'decidir') return decidir_(d);
+  if (d.op === 'visitas') return resumenVisitas_(Number(d.dias) || 1);
+  if (d.op === 'origen') return guardarOrigen_(d.mapa);
   return { ok: false, error: 'Acción desconocida.' };
+}
+
+/* ---------- Proveedor de cada producto (solo dueño) ----------
+ * El canal de Telegram y el número de publicación de cada producto van cifrados en origen.json
+ * (el repositorio es público). La página de revisión los descifra con el PIN y los manda aquí;
+ * se guardan en la hoja "Proveedores" para anotar en cada pedido dónde pedir cada producto. */
+const PROV_COLS = ['ID', 'Producto', 'Tienda', 'Canal', 'Publicación', 'Enlace', 'Actualizado'];
+
+function guardarOrigen_(mapa) {
+  if (!mapa || typeof mapa !== 'object') return { ok: false, error: 'Sin datos.' };
+  const cat = catalogo_() || {};
+  const filas = [];
+  Object.keys(mapa).slice(0, 3000).forEach(id => {
+    if (!/^[A-Z]{1,4}-\d{1,6}$/.test(id)) return;
+    const m = String(mapa[id] || '').match(/^([^|]{1,60})\|([A-Za-z0-9_]{3,40})\/(\d{1,9})$/);
+    if (!m) return;
+    filas.push([id, texto_(cat[id] ? String(cat[id].name) : ''), texto_(m[1]), m[2], m[3], `https://t.me/${m[2]}/${m[3]}`, new Date()]);
+  });
+  if (!filas.length) return { ok: false, error: 'Sin datos válidos.' };
+  filas.sort((a, b) => Number(a[0].split('-')[1]) - Number(b[0].split('-')[1]));
+  const lock = LockService.getScriptLock();
+  lock.waitLock(20000);
+  try {
+    const sh = hojaProv_();
+    if (sh.getLastRow() > 1) sh.getRange(2, 1, sh.getLastRow() - 1, PROV_COLS.length).clearContent();
+    sh.getRange(2, 1, filas.length, PROV_COLS.length).setValues(filas);
+    CacheService.getScriptCache().remove('origen');
+    return { ok: true, n: filas.length };
+  } finally {
+    lock.releaseLock();
+  }
+}
+
+function hojaProv_() {
+  const ss = libro_();
+  let sh = ss.getSheetByName('Proveedores');
+  if (!sh) {
+    sh = ss.insertSheet('Proveedores');
+    sh.getRange(1, 1, 1, PROV_COLS.length).setValues([PROV_COLS]).setFontWeight('bold').setBackground('#1E66F5').setFontColor('#FFFFFF');
+    sh.setFrozenRows(1);
+    sh.setColumnWidth(2, 280);
+    sh.setColumnWidth(6, 260);
+    sh.getRange(2, 7, Math.max(1, sh.getMaxRows() - 1), 1).setNumberFormat('dd/mm/yyyy hh:mm');
+  }
+  return sh;
+}
+
+// { 'P-216': { tienda, canal, num, url } }
+function origenMapa_() {
+  const cache = CacheService.getScriptCache();
+  const c = cache.get('origen');
+  if (c) { try { return JSON.parse(c); } catch (e) {} }
+  const sh = hojaProv_();
+  const out = {};
+  if (sh.getLastRow() > 1) {
+    sh.getRange(2, 1, sh.getLastRow() - 1, 6).getValues().forEach(r => {
+      if (r[0]) out[String(r[0])] = { tienda: String(r[2]), canal: String(r[3]), num: String(r[4]), url: String(r[5]) };
+    });
+  }
+  const txt = JSON.stringify(out);
+  if (txt.length < 95000) cache.put('origen', txt, 21600);
+  return out;
+}
+
+function proveedorTexto_(items) {
+  let mapa = {};
+  try { mapa = origenMapa_(); } catch (e) { console.error(e); }
+  return items.map(i => {
+    const o = mapa[i.id];
+    return o ? `${i.id} x${i.qty}: ${o.tienda} · publicación ${o.num} · ${o.url}` : `${i.id} x${i.qty}: sin dato`;
+  }).join('\n');
+}
+
+/* ---------- Visitas de la tienda ----------
+ * La tienda manda un aviso al entrar y uno cada minuto mientras la página está abierta.
+ * Solo se guardan números anónimos: sin nombres, celulares ni direcciones IP. Una fila por visita. */
+const VIS_COLS = ['Visita', 'Visitante', 'Inicio', 'Última actividad', 'Segundos', 'Productos vistos', 'Dispositivo', 'Llegó desde', 'Nueva', 'Carrito'];
+const VIS_DEV = ['Celular', 'Computadora', 'Tablet'];
+const VIS_REF = ['WhatsApp', 'Facebook', 'Instagram', 'TikTok', 'Google', 'Directo', 'Otro'];
+
+function visita_(d) {
+  const sid = String(d.sid || ''), vid = String(d.vid || '');
+  if (!/^[a-z0-9]{8,32}$/i.test(sid) || !/^[a-z0-9]{8,32}$/i.test(vid)) return { ok: false };
+  const cache = CacheService.getScriptCache();
+  const nHora = Number(cache.get('vis_hora') || 0);
+  if (nHora > 8000) return { ok: false };
+  cache.put('vis_hora', String(nHora + 1), 3600);
+  const seg = Math.max(0, Math.min(6 * 3600, Math.round(Number(d.seg) || 0)));
+  const ids = (Array.isArray(d.ver) ? d.ver : []).map(String).filter(x => /^[A-Z]{1,4}-\d{1,6}$/.test(x)).slice(0, 40);
+  const carrito = Math.max(0, Math.min(999, Math.round(Number(d.carrito) || 0)));
+  const lock = LockService.getScriptLock();
+  if (!lock.tryLock(8000)) return { ok: false };
+  try {
+    const sh = hojaVis_();
+    const ahora = new Date();
+    const k = 'vs_' + sid;
+    let fila = Number(cache.get(k) || 0);
+    if (fila && sh.getRange(fila, 1).getValue() !== sid) fila = 0;
+    if (!fila) {
+      const last = sh.getLastRow();
+      if (last > 1) {
+        const n = Math.min(400, last - 1);
+        const vals = sh.getRange(last - n + 1, 1, n, 1).getValues();
+        for (let i = n - 1; i >= 0; i--) if (vals[i][0] === sid) { fila = last - n + 1 + i; break; }
+      }
+    }
+    if (!fila) {
+      const dev = VIS_DEV.includes(d.dev) ? d.dev : 'Celular';
+      const ref = VIS_REF.includes(d.ref) ? d.ref : 'Otro';
+      sh.appendRow([sid, vid, ahora, ahora, seg, ids.join(' '), dev, ref, d.nueva ? 'Sí' : 'No', carrito]);
+      fila = sh.getLastRow();
+    } else {
+      const r = sh.getRange(fila, 4, 1, 3).getValues()[0];
+      const vistos = [...new Set(String(r[2] || '').split(' ').filter(Boolean).concat(ids))].slice(0, 80);
+      sh.getRange(fila, 4, 1, 3).setValues([[ahora, Math.max(Number(r[1]) || 0, seg), vistos.join(' ')]]);
+      if (carrito) sh.getRange(fila, 10).setValue(carrito);
+    }
+    cache.put(k, String(fila), 21600);
+    return { ok: true };
+  } finally {
+    lock.releaseLock();
+  }
+}
+
+function hojaVis_() {
+  const ss = libro_();
+  let sh = ss.getSheetByName('Visitas');
+  if (!sh) {
+    sh = ss.insertSheet('Visitas');
+    sh.getRange(1, 1, 1, VIS_COLS.length).setValues([VIS_COLS]).setFontWeight('bold').setBackground('#1E66F5').setFontColor('#FFFFFF');
+    sh.setFrozenRows(1);
+    sh.getRange(2, 3, Math.max(1, sh.getMaxRows() - 1), 2).setNumberFormat('dd/mm/yyyy hh:mm:ss');
+    sh.setColumnWidth(6, 260);
+  }
+  return sh;
+}
+
+// Resumen para la página de revisión: en línea ahora, totales del período, por día u hora, productos más vistos, etc.
+function resumenVisitas_(dias) {
+  dias = [1, 7, 30].includes(dias) ? dias : 1;
+  const sh = hojaVis_();
+  const last = sh.getLastRow();
+  const ahora = Date.now();
+  const OFF = 5 * 3600 * 1000; // Ecuador: UTC-5 todo el año
+  const dia = t => new Date(t - OFF).toISOString().slice(0, 10);
+  const hoy = dia(ahora);
+  const keys = [];
+  for (let i = dias - 1; i >= 0; i--) keys.push(dia(ahora - i * 86400000));
+  const desde = keys[0];
+  const filas = last > 1 ? sh.getRange(Math.max(2, last - 40000 + 1), 1, Math.min(40000, last - 1), VIS_COLS.length).getValues() : [];
+  const porDia = Object.fromEntries(keys.map(k => [k, { visitantes: new Set(), visitas: 0, seg: 0 }]));
+  const porHora = Array(24).fill(0);
+  const visitantes = new Set(), nuevos = new Set(), dev = {}, ref = {}, vistos = {};
+  let visitas = 0, seg = 0, conProd = 0, conCarrito = 0, cortas = 0, online = 0;
+  const recientes = [];
+  filas.forEach(r => {
+    const ini = r[2] instanceof Date ? r[2].getTime() : new Date(r[2]).getTime();
+    const ult = r[3] instanceof Date ? r[3].getTime() : new Date(r[3]).getTime();
+    if (!ini) return;
+    if (ahora - ult < 3 * 60000) online++;
+    const k = dia(ini);
+    if (k < desde) return;
+    const s = Number(r[4]) || 0, vid = String(r[1]);
+    const prods = String(r[5] || '').split(' ').filter(Boolean);
+    visitas++; seg += s; visitantes.add(vid);
+    if (r[8] === 'Sí') nuevos.add(vid);
+    if (prods.length) conProd++;
+    if (Number(r[9]) > 0) conCarrito++;
+    if (s < 10) cortas++;
+    dev[r[6]] = (dev[r[6]] || 0) + 1;
+    ref[r[7]] = (ref[r[7]] || 0) + 1;
+    prods.forEach(id => { vistos[id] = (vistos[id] || 0) + 1; });
+    if (porDia[k]) { porDia[k].visitantes.add(vid); porDia[k].visitas++; porDia[k].seg += s; }
+    if (k === hoy) porHora[new Date(ini - OFF).getUTCHours()]++;
+    recientes.push({ ini, ult, s, n: prods.length, dev: r[6], ref: r[7], nueva: r[8] === 'Sí', carrito: Number(r[9]) || 0 });
+  });
+  const hm = t => new Date(t - OFF).toISOString().slice(11, 16);
+  const orden = o => Object.entries(o).sort((a, b) => b[1] - a[1]).map(([k, n]) => ({ k, n }));
+  return {
+    ok: true, dias, hoy, online,
+    visitantes: visitantes.size, visitas, nuevos: nuevos.size,
+    promedio: visitas ? Math.round(seg / visitas) : 0, total: seg,
+    conProductos: conProd, conCarrito, cortas,
+    porDia: keys.map(k => ({ d: k, visitantes: porDia[k].visitantes.size, visitas: porDia[k].visitas, promedio: porDia[k].visitas ? Math.round(porDia[k].seg / porDia[k].visitas) : 0 })),
+    porHora: dias === 1 ? porHora : null,
+    dispositivos: orden(dev), origen: orden(ref),
+    top: orden(vistos).slice(0, 12).map(x => ({ id: x.k, n: x.n })),
+    recientes: recientes.slice(-25).reverse().map(x => ({
+      dia: dia(x.ini), hora: hm(x.ini), s: x.s, n: x.n, dev: x.dev, ref: x.ref, nueva: x.nueva, carrito: x.carrito, activa: ahora - x.ult < 3 * 60000
+    }))
+  };
 }
 
 function decidir_(d) {
@@ -398,7 +594,8 @@ function filaPedido_(r, rich) {
     total: Number(r[C['Total']]) || 0, abono: Number(r[C['Abono']]) || 0, saldo: Number(r[C['Saldo']]) || 0,
     num: String(r[C['N.º comprobante']] || ''), monto: Number(r[C['Monto depositado']]) || 0,
     foto: rich && rich.getLinkUrl() ? rich.getLinkUrl() : '',
-    alertas: String(r[C['Alertas']] || ''), lectura: String(r[C['Comprobante leído']] || '')
+    alertas: String(r[C['Alertas']] || ''), lectura: String(r[C['Comprobante leído']] || ''),
+    codigos: String(r[C['Códigos']] || ''), proveedor: String(r[C['Proveedor']] || '')
   };
 }
 
@@ -440,6 +637,9 @@ function avisar_(p) {
     `Comprobante N.º ${p.num} por ${fmt_(p.monto || 0)}`,
     `Lectura automática de la foto: ${p.lectura}`,
     p.alertas.length ? `Alertas: ${p.alertas.join(' · ')}` : 'Sin alertas.',
+    '',
+    'Dónde pedir cada producto:',
+    p.proveedor || 'Sin dato (abre la página de revisión con tu PIN para actualizar la lista de proveedores).',
     '',
     `Hoja de pedidos: ${libro_().getUrl()}`
   ].join('\n');

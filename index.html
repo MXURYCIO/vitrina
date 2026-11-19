@@ -253,7 +253,7 @@ p{margin:0}
 .review-bar{margin-top:14px;padding:10px 14px;border-radius:16px;background:var(--warn-soft);color:var(--warn);font-size:14px;font-weight:600}
 /* Pedidos para la dueña */
 body.rv-ped #tools,body.rv-ped .sec-head,body.rv-ped #grid,body.rv-ped #empty{display:none!important}
-.rv-seg{display:grid;grid-template-columns:1fr 1fr;gap:4px;padding:4px;border-radius:16px;background:var(--panel-in);box-shadow:0 0 0 .5px var(--hair)}
+.rv-seg{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px;padding:4px;border-radius:16px;background:var(--panel-in);box-shadow:0 0 0 .5px var(--hair)}
 .rv-seg button{height:40px;border:0;border-radius:12px;background:none;color:var(--fg);font-size:15px;font-weight:700}
 .rv-seg button[aria-selected="true"]{background:var(--accent);color:var(--accent-ink);box-shadow:0 6px 14px -8px var(--accent)}
 .rv-orders{margin-top:14px;display:grid;gap:12px}
@@ -293,9 +293,60 @@ body.rv-ped #tools,body.rv-ped .sec-head,body.rv-ped #grid,body.rv-ped #empty{di
 .rv-est[aria-pressed="true"][data-s="rechazado"]{background:var(--bad);color:var(--surface);box-shadow:none}
 .rv-dl dd{text-align:right;overflow-wrap:anywhere;min-width:0}
 .rv-dl a{color:var(--accent);font-weight:700;text-decoration:none}
-.rv-plist{margin:0;padding:0 0 0 18px;display:grid;gap:4px;font-size:15px}
+.rv-plist{margin:0;padding:0;list-style:none;display:grid;gap:10px;font-size:15px}
 .rv-links{display:grid;gap:8px;margin-top:14px}
 .rv-links .btn svg{width:20px;height:20px}
+/* Visitas (solo dueño) */
+.rv-visits{margin-top:14px;display:grid;gap:14px}
+.vz-top{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.vz-top .chips{margin:0}
+.vz-ref{width:auto;height:42px;padding:0 14px;font-size:14px;gap:6px}
+.vz-ref svg{width:18px;height:18px}
+.vz-kpis{margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+@media (min-width:760px){.vz-kpis{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.vz-kpi{min-width:0;padding:12px 14px;border-radius:18px;background:var(--panel-in);box-shadow:0 0 0 .5px var(--hair),inset 0 1px 0 var(--rim-lo)}
+.vz-kpi dt{font-size:12px;font-weight:600;color:var(--muted)}
+.vz-kpi dd{margin:2px 0 0;font-size:24px;font-weight:800;font-variant-numeric:tabular-nums;display:flex;align-items:center;gap:8px}
+.vz-kpi span{font-size:12px;color:var(--muted)}
+.vz-kpi.live{box-shadow:0 0 0 1px var(--ok),inset 0 1px 0 var(--rim-lo)}
+.vz-live{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--muted);flex:none}
+.vz-live.on{background:var(--ok);box-shadow:0 0 0 4px var(--ok-soft);animation:vzpulse 1.6s infinite}
+@keyframes vzpulse{50%{box-shadow:0 0 0 7px transparent}}
+@media (prefers-reduced-motion:reduce){.vz-live.on{animation:none}}
+.vz-cols{display:grid;gap:12px}
+@media (min-width:760px){.vz-cols{grid-template-columns:repeat(2,minmax(0,1fr))}.vz-wide{grid-column:1/-1}}
+.vz-card{min-width:0;padding:14px 16px;border-radius:20px;background:var(--panel-in);box-shadow:0 0 0 .5px var(--hair),inset 0 1px 0 var(--rim-lo)}
+.vz-card h3{margin:0 0 10px;font-size:15px}
+.vz-bars{margin:0;padding:0;list-style:none;display:grid;gap:7px}
+.vz-bars li{display:grid;grid-template-columns:minmax(64px,auto) minmax(0,1fr) auto;align-items:center;gap:10px;font-size:13px}
+.vz-k{color:var(--muted);white-space:nowrap}
+.vz-track{height:10px;border-radius:6px;background:var(--field);overflow:hidden}
+.vz-track span{display:block;height:100%;border-radius:6px;background:var(--accent)}
+.vz-n{font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap}
+.vz-n small{font-weight:500;color:var(--muted)}
+.vz-top-list{margin:0;padding:0;list-style:none;display:grid;gap:6px}
+.vz-prod{width:100%;display:grid;grid-template-columns:40px minmax(0,1fr) auto;align-items:center;gap:10px;padding:4px;border:0;border-radius:12px;background:none;color:var(--fg);text-align:left;font-size:14px}
+.vz-prod .thumb{width:40px;height:40px;border-radius:10px}
+.vz-pn{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.vz-rec{margin:0;padding:0;list-style:none;display:grid;gap:6px}
+.vz-rec li{display:grid;grid-template-columns:minmax(90px,auto) auto minmax(0,1fr);gap:4px 12px;align-items:center;padding:8px 10px;border-radius:12px;background:var(--field);font-size:13px;font-variant-numeric:tabular-nums}
+.vz-rec li.on{box-shadow:inset 0 0 0 1px var(--ok)}
+.vz-rec li .muted{grid-column:1/-1}
+@media (min-width:760px){.vz-rec li{grid-template-columns:140px 110px 160px minmax(0,1fr)}.vz-rec li .muted{grid-column:auto}}
+.vz-rec svg{width:14px;height:14px;vertical-align:-2px}
+.vz-when{display:flex;align-items:center;gap:6px;font-weight:700}
+.vz-note{margin:8px 0 0;font-size:12px}
+/* Proveedor (solo dueño) */
+.pd-origen{margin:10px 0 0;display:flex;align-items:center;gap:8px;padding:10px 12px;border-radius:14px;background:var(--panel-in);box-shadow:0 0 0 .5px var(--hair);font-size:14px}
+.pd-origen svg{flex:none;width:18px;height:18px;color:var(--accent)}
+.pd-origen span{flex:1;min-width:0}
+.pd-origen a{display:inline-flex;align-items:center;gap:4px;color:var(--accent);font-weight:700;text-decoration:none}
+.rv-plist li{display:grid;gap:4px}
+.rv-prov{display:inline-flex;align-items:center;gap:6px;width:fit-content;max-width:100%;padding:6px 10px;border-radius:10px;background:var(--accent-soft);color:var(--accent);font-size:13px;text-decoration:none}
+.rv-prov svg{flex:none;width:15px;height:15px}
+.rv-prov.off{background:var(--field);color:var(--muted)}
+.rv-o-prov{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--accent);font-weight:600}
+.rv-o-prov svg{width:15px;height:15px}
 /* Revisión de productos (solo dueño) */
 .rv-bar{margin-top:16px;padding:16px;border-radius:24px;background:var(--panel);-webkit-backdrop-filter:blur(18px) saturate(1.8);backdrop-filter:blur(18px) saturate(1.8);box-shadow:0 0 0 .5px var(--hair),inset 0 1px 0 var(--rim-hi);display:grid;gap:14px}
 .rv-head{display:flex;gap:12px;align-items:center}
@@ -663,6 +714,7 @@ body.rv-ped #tools,body.rv-ped .sec-head,body.rv-ped #grid,body.rv-ped #empty{di
 
     <section class="rv-bar" id="rvBar" aria-label="Revisión de productos" hidden></section>
     <section class="rv-orders" id="rvOrders" aria-label="Pedidos de clientas" hidden></section>
+    <section class="rv-visits" id="rvVisits" aria-label="Visitas de la tienda" hidden></section>
 
     <nav class="tools" id="tools" aria-label="Categorías y orden"></nav>
 
@@ -770,6 +822,9 @@ const P = {
   grid:'<rect x="4" y="4" width="6.5" height="6.5" rx="1.6"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.6"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.6"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.6"/>',
   sliders:'<path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2.2"/><circle cx="9" cy="17" r="2.2"/>',
   chev:'<path d="m7 10 5 5 5-5"/>',
+  eye:'<path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z"/><circle cx="12" cy="12" r="3"/>',
+  link:'<path d="M10 14a4.5 4.5 0 0 0 6.4 0l3-3a4.5 4.5 0 0 0-6.4-6.4l-1.2 1.2"/><path d="M14 10a4.5 4.5 0 0 0-6.4 0l-3 3a4.5 4.5 0 0 0 6.4 6.4l1.2-1.2"/>',
+  refresh:'<path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 4.5V11h-6.5"/>',
   cash:'<rect x="3" y="6.5" width="18" height="11" rx="2.5"/><circle cx="12" cy="12" r="2.4"/><path d="M6.5 9.5v5M17.5 9.5v5"/>',
   chevL:'<path d="m14.5 6-6 6 6 6"/>',
   chevR:'<path d="m9.5 6 6 6-6 6"/>',
@@ -861,13 +916,18 @@ const ABONO = TIENDA.abono;
 const CATS = [
   { id:'todo', label:'Todo' },
   { id:'navidad', label:'Navidad' },
-  { id:'juguetes', label:'Juguetes' },
   { id:'hogar', label:'Hogar y organización' },
   { id:'cocina', label:'Cocina' },
+  { id:'belleza', label:'Belleza y cabello' },
   { id:'cuidado', label:'Cuidado personal' },
   { id:'bebes', label:'Bebés y salud' },
+  { id:'juguetes', label:'Juguetes' },
   { id:'tecno', label:'Tecnología' },
-  { id:'herramientas', label:'Carro y herramientas' },
+  { id:'deporte', label:'Deporte y ejercicio' },
+  { id:'herramientas', label:'Carro, moto y herramientas' },
+  { id:'escolar', label:'Escolar y oficina' },
+  { id:'moda', label:'Moda y accesorios' },
+  { id:'mascotas', label:'Mascotas' },
   { id:'otros', label:'Otros' }
 ];
 let PRODUCTS = [
@@ -1032,6 +1092,7 @@ function updateBadge(bump) {
   c.classList.toggle('has', n > 0);
   c.setAttribute('aria-label', n ? `Abrir carrito, ${n} ${n === 1 ? 'producto' : 'productos'}` : 'Abrir carrito');
   if (bump && !reduceMotion) { c.classList.remove('bump'); void c.offsetWidth; c.classList.add('bump'); }
+  if (bump) visCarrito(n);
 }
 function fly(from) {
   const to = $('#cartBtn');
@@ -1090,11 +1151,12 @@ function closeSheet() {
 function openProduct(id) {
   const p = byId[id]; if (!p) return;
   sheet.dataset.pid = id; sheet.dataset.qty = '1';
+  visVer(id);
   openSheet('product', p.name,
     `${hasPhoto(p) && p.imgs.length > 1
         ? `<div class="gallery" style="${grad(p)}"><div class="g-track" id="gTrack">${p.imgs.map((src, i) => `<img src="${esc(src)}" alt="${esc(p.name)}, foto ${i + 1}" loading="${i ? 'lazy' : 'eager'}" decoding="async">`).join('')}</div><button class="g-nav prev" type="button" data-act="gal" data-d="-1" aria-label="Foto anterior" disabled>${ic('chevL', 2.2)}</button><button class="g-nav next" type="button" data-act="gal" data-d="1" aria-label="Foto siguiente">${ic('chevR', 2.2)}</button><div class="g-dots">${p.imgs.map((_, i) => `<button type="button" class="${i ? '' : 'on'}" data-act="galto" data-i="${i}" aria-label="Ver foto ${i + 1} de ${p.imgs.length}"></button>`).join('')}</div></div>`
         : `<div class="pd-media${hasPhoto(p) ? ' photo' : ''}" style="${grad(p)}">${visual(p)}</div>`}
-     ${REVIEW ? `<p><span class="rv-pill" data-s="${eff(p)}">${RV_LABEL[eff(p)] || eff(p)}</span></p>${REVC[p.id] && eff(p) === 'editar' ? `<p class="rv-note">${ic('pencil')}<span>${esc(REVC[p.id])}</span></p>` : ''}${costoBox(p)}` : ''}
+     ${REVIEW ? `<p><span class="rv-pill" data-s="${eff(p)}">${RV_LABEL[eff(p)] || eff(p)}</span></p>${REVC[p.id] && eff(p) === 'editar' ? `<p class="rv-note">${ic('pencil')}<span>${esc(REVC[p.id])}</span></p>` : ''}${costoBox(p)}${origenBox(p.id)}` : ''}
      <div class="pd-row"><div><p class="pd-cat">${catLabel(p.cat)} · ${p.id}</p><p class="pd-price">${money(p.price)}</p></div>
        <p class="pd-abono">${ic('shield')}Lo reservas con ${money(p.price * ABONO)}</p></div>
      <p class="pd-desc">${esc(p.desc)}</p>
@@ -1236,6 +1298,46 @@ async function api(payload) {
   if (!res.ok) throw new Error('red');
   return res.json();
 }
+
+/* ---------- Visitas (solo números anónimos: sin nombres, celulares ni IP) ----------
+   Un aviso al entrar y uno por minuto mientras la página está a la vista. La página de revisión no se cuenta. */
+const vis = { on: false, ver: new Set(), seg: 0, carrito: 0, enviado: -1 };
+function visInit() {
+  if (!LIVE || REVIEW) return;
+  const rid = () => { try { return Array.from(crypto.getRandomValues(new Uint8Array(8)), b => b.toString(16).padStart(2, '0')).join(''); } catch (e) { return (Math.random().toString(36) + Math.random().toString(36)).replace(/[^a-z0-9]/g, '').slice(0, 16); } };
+  let vid = store.get('vt-vid', ''); vis.nueva = !vid;
+  if (!vid) { vid = rid(); store.set('vt-vid', vid); }
+  let sid = '';
+  try { sid = sessionStorage.getItem('vt-sid') || ''; vis.seg = Number(sessionStorage.getItem('vt-seg')) || 0; if (!sid) { sid = rid(); sessionStorage.setItem('vt-sid', sid); } } catch (e) { sid = rid(); }
+  const ua = navigator.userAgent || '';
+  vis.dev = /iPad|Tablet/i.test(ua) || (/Android/i.test(ua) && !/Mobile/i.test(ua)) ? 'Tablet' : /Mobi|Android|iPhone/i.test(ua) ? 'Celular' : 'Computadora';
+  let src = '';
+  try { src = (new URLSearchParams(location.search).get('utm_source') || document.referrer || '').toLowerCase(); } catch (e) {}
+  vis.ref = !src ? 'Directo' : /whatsapp|wa\.me/.test(src) ? 'WhatsApp' : /facebook|fb\.|messenger/.test(src) ? 'Facebook' : /instagram/.test(src) ? 'Instagram'
+    : /tiktok/.test(src) ? 'TikTok' : /google/.test(src) ? 'Google' : src.includes(location.hostname) ? 'Directo' : 'Otro';
+  Object.assign(vis, { on: true, vid, sid });
+  setInterval(() => {
+    if (document.visibilityState !== 'visible') return;
+    vis.seg += 5; try { sessionStorage.setItem('vt-seg', String(vis.seg)); } catch (e) {}
+    if (vis.seg % 60 === 0) visSend();
+  }, 5000);
+  document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'hidden') visSend(true); });
+  window.addEventListener('pagehide', () => visSend(true));
+  visSend();
+}
+function visSend(beacon) {
+  if (!vis.on) return;
+  const firma = `${vis.seg}|${vis.ver.size}|${vis.carrito}`;
+  if (firma === vis.enviado) return;
+  vis.enviado = firma;
+  const body = JSON.stringify({ action: 'visita', sid: vis.sid, vid: vis.vid, seg: vis.seg, ver: [...vis.ver], carrito: vis.carrito, dev: vis.dev, ref: vis.ref, nueva: vis.nueva });
+  try {
+    if (beacon && navigator.sendBeacon) navigator.sendBeacon(TIENDA.api, new Blob([body], { type: 'text/plain;charset=utf-8' }));
+    else fetch(TIENDA.api, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body, keepalive: true }).catch(() => {});
+  } catch (e) {}
+}
+const visVer = id => { if (vis.on && id && !vis.ver.has(id)) { vis.ver.add(id); if (vis.ver.size <= 40) setTimeout(visSend, 1500); } };
+const visCarrito = n => { if (vis.on && n > vis.carrito) { vis.carrito = n; visSend(); } };
 function compressImage(file, max = 1400, q = .8) {
   return new Promise((resolve, reject) => {
     const url = URL.createObjectURL(file); const img = new Image();
@@ -1453,6 +1555,8 @@ document.addEventListener('click', e => {
     case 'rvtab': setRvTab(t.dataset.t); break;
     case 'rvof': rvFilter = t.dataset.f; renderOrdersPanel(); break;
     case 'rvorder': openRvOrder(t.dataset.code); break;
+    case 'rvvp': rvVisDias = Number(t.dataset.d) || 1; renderVisits(); loadVisits(); break;
+    case 'rvvr': loadVisits(); break;
     case 'rvest': if (t.getAttribute('aria-pressed') !== 'true') rvSetEstado(t.dataset.code, t.dataset.s); break;
     case 'rvallok': rvDecide(ALL.filter(p => eff(p) === 'pendiente').map(p => p.id), 'aprobado', '', t, true); break;
     case 'rvchip': { const ta = $('#rvCom'); if (ta) { ta.value = (ta.value.trim() ? ta.value.trim() + '\n' : '') + t.dataset.v; ta.focus(); } break; }
@@ -1769,9 +1873,10 @@ function renderReviewBar() {
   const n = { pendiente: 0, editar: 0, aprobado: 0, rechazado: 0 };
   ALL.forEach(p => { const s = eff(p); n[s] = (n[s] || 0) + 1; });
   bar.hidden = false;
-  bar.innerHTML = `<div class="rv-head"><span class="rv-ic">${ic('shield')}</span><div><strong>${rvTab === 'pedidos' ? 'Pedidos de clientas' : 'Revisión de productos'}</strong><span>${rvTab === 'pedidos' ? 'Busca un pedido y cambia su estado.' : 'Las clientas solo ven los aprobados.'}</span></div></div>
-    <div class="rv-seg" role="tablist"><button type="button" role="tab" data-act="rvtab" data-t="productos" aria-selected="${rvTab === 'productos'}">Productos</button><button type="button" role="tab" data-act="rvtab" data-t="pedidos" aria-selected="${rvTab === 'pedidos'}">Pedidos</button></div>
-    ${rvTab === 'pedidos' ? '' : `<dl class="rv-counts"><div><dt>Por aprobar</dt><dd>${n.pendiente}</dd></div><div><dt>Por editar</dt><dd>${n.editar}</dd></div><div><dt>Aprobados</dt><dd>${n.aprobado}</dd></div><div><dt>Rechazados</dt><dd>${n.rechazado}</dd></div></dl>
+  const HEAD = { productos: ['Revisión de productos', 'Las clientas solo ven los aprobados.'], pedidos: ['Pedidos de clientas', 'Busca un pedido y cambia su estado.'], visitas: ['Visitas de la tienda', 'Cuántas personas entran y cuánto se quedan.'] }[rvTab];
+  bar.innerHTML = `<div class="rv-head"><span class="rv-ic">${ic(rvTab === 'visitas' ? 'eye' : 'shield')}</span><div><strong>${HEAD[0]}</strong><span>${HEAD[1]}</span></div></div>
+    <div class="rv-seg" role="tablist">${[['productos', 'Productos'], ['pedidos', 'Pedidos'], ['visitas', 'Visitas']].map(([k, l]) => `<button type="button" role="tab" data-act="rvtab" data-t="${k}" aria-selected="${rvTab === k}">${l}</button>`).join('')}</div>
+    ${rvTab !== 'productos' ? '' : `<dl class="rv-counts"><div><dt>Por aprobar</dt><dd>${n.pendiente}</dd></div><div><dt>Por editar</dt><dd>${n.editar}</dd></div><div><dt>Aprobados</dt><dd>${n.aprobado}</dd></div><div><dt>Rechazados</dt><dd>${n.rechazado}</dd></div></dl>
     <button class="btn primary rv-all" type="button" data-act="rvall"${n.pendiente ? '' : ' disabled'}>${ic('check')}${n.pendiente ? `Aprobar todos (${n.pendiente})` : 'No hay productos por aprobar'}</button>`}`;
 }
 /* ---------- Pedidos (solo dueño) ---------- */
@@ -1787,10 +1892,12 @@ async function rvApi(body) {
 }
 function setRvTab(t) {
   rvTab = t;
-  document.body.classList.toggle('rv-ped', t === 'pedidos');
+  document.body.classList.toggle('rv-ped', t !== 'productos');
   $('#rvOrders').hidden = t !== 'pedidos';
+  $('#rvVisits').hidden = t !== 'visitas';
   renderReviewBar();
   if (t === 'pedidos') { renderOrdersPanel(); if (!rvOrdersOk) loadRvOrders(''); }
+  if (t === 'visitas') { renderVisits(); loadVisits(); }
   window.scrollTo({ top: 0, behavior: 'auto' });
 }
 function renderOrdersPanel() {
@@ -1808,6 +1915,7 @@ function renderOrderList() {
       <span class="rv-o-top"><strong>${esc(o.code)}</strong><span class="op-pill" data-s="${o.estado}">${OP_LABEL[o.estado]}</span></span>
       <span class="rv-o-name">${esc(o.nombre)} ${esc(o.apellido)}</span>
       <span class="rv-meta">${esc(o.fecha)} · Total ${money(o.total)} · Abono ${money(o.abono)}</span>
+      ${(() => { const t = [...new Set(String(o.codigos || '').split(',').map(x => origenDe(x.trim().split(/\s+/)[0])).filter(Boolean).map(x => x.tienda))]; return t.length ? `<span class="rv-o-prov">${ic('store')}${t.map(esc).join(' · ')}</span>` : ''; })()}
       ${o.alertas ? `<span class="rv-o-alert">${ic('warn')}Revisar comprobante</span>` : ''}</button>`).join('');
 }
 async function loadRvOrders(q) {
@@ -1826,7 +1934,9 @@ function openRvOrder(code) {
     <h3 class="od-sub">Cambiar estado</h3>
     <div class="rv-estados">${Object.keys(OP_LABEL).map(k => `<button class="rv-est" type="button" data-act="rvest" data-code="${esc(o.code)}" data-s="${k}" aria-pressed="${o.estado === k}">${OP_LABEL[k]}</button>`).join('')}</div>
     <h3 class="od-sub">Productos</h3>
-    <ul class="rv-plist">${o.productos.map(l => `<li>${esc(l)}</li>`).join('')}</ul>
+    <ul class="rv-plist">${o.productos.map((l, i) => { const id = (String(o.codigos || '').split(',')[i] || '').trim().split(/\s+/)[0]; const pr = origenDe(id);
+      return `<li><span>${esc(l)}${id ? ` <small class="muted">${esc(id)}</small>` : ''}</span>${pr ? `<a class="rv-prov" href="${esc(pr.url)}" target="_blank" rel="noopener">${ic('store')}<span>Pedir en <b>${esc(pr.tienda)}</b> · publicación ${esc(pr.num)}</span>${ic('link')}</a>` : (o.proveedor ? '' : `<span class="rv-prov off">Proveedor sin dato</span>`)}</li>`; }).join('')}</ul>
+    ${!Object.keys(ORIGEN).length && o.proveedor ? `<p class="rv-note">${ic('store')}<span>${esc(o.proveedor)}</span></p>` : ''}
     <dl class="sum"><div><dt>Total</dt><dd>${money(o.total)}</dd></div><div class="hl"><dt>Abono</dt><dd>${money(o.abono)}</dd></div><div><dt>Saldo por cobrar</dt><dd>${money(o.saldo)}</dd></div></dl>
     <h3 class="od-sub">Comprobante</h3>
     <dl class="sum rv-dl"><div><dt>N.º</dt><dd>${esc(o.num) || '-'}</dd></div><div><dt>Monto depositado</dt><dd>${money(o.monto)}</dd></div>${o.lectura ? `<div><dt>Lectura de la foto</dt><dd>${esc(o.lectura)}</dd></div>` : ''}</dl>
@@ -1848,6 +1958,85 @@ async function rvSetEstado(code, estado) {
   } catch (e) { if (e.message !== 'pin') toast(e.name === 'TypeError' || e.message === 'red' ? 'Sin conexión. Inténtalo de nuevo.' : e.message); }
   finally { $$('.rv-est').forEach(b => { b.disabled = false; }); }
 }
+/* ---------- Visitas (solo dueño) ---------- */
+let rvVis = null, rvVisDias = 1, rvVisBusy = false, rvVisErr = '', rvVisT = 0;
+const durTxt = s => { s = Math.round(s || 0); if (s < 60) return `${s} s`; const m = Math.floor(s / 60), r = s % 60; return m < 60 ? `${m} min${r ? ` ${r} s` : ''}` : `${Math.floor(m / 60)} h ${m % 60} min`; };
+const diaTxt = k => { const [y, m, d] = k.split('-').map(Number); return new Date(y, m - 1, d).toLocaleDateString('es-EC', { weekday: 'short', day: 'numeric', month: 'short' }); };
+async function loadVisits() {
+  if (rvVisBusy) return;
+  rvVisBusy = true; rvVisErr = ''; renderVisits();
+  try { rvVis = await rvApi({ op: 'visitas', dias: rvVisDias }); }
+  catch (e) { if (e.message !== 'pin') rvVisErr = e.name === 'TypeError' || e.message === 'red' ? 'Sin conexión. Inténtalo de nuevo.' : e.message; }
+  finally { rvVisBusy = false; renderVisits(); }
+  clearTimeout(rvVisT);
+  rvVisT = setTimeout(() => { if (rvTab === 'visitas' && document.visibilityState === 'visible') loadVisits(); }, 60000);
+}
+function barList(rows, fmt) {
+  const max = Math.max(1, ...rows.map(r => r.n));
+  return `<ul class="vz-bars">${rows.map(r => `<li><span class="vz-k">${r.k}</span><span class="vz-track"><span style="width:${Math.max(2, Math.round(r.n / max * 100))}%"></span></span><span class="vz-n">${fmt ? fmt(r) : r.n}</span></li>`).join('')}</ul>`;
+}
+function renderVisits() {
+  const box = $('#rvVisits'); if (!box) return;
+  const v = rvVis && rvVis.dias === rvVisDias ? rvVis : null;
+  const per = { 1: 'Hoy', 7: '7 días', 30: '30 días' };
+  const head = `<div class="vz-top"><nav class="chips" aria-label="Período">${[1, 7, 30].map(d => `<button class="chip" type="button" data-act="rvvp" data-d="${d}" aria-pressed="${rvVisDias === d}">${per[d]}</button>`).join('')}</nav>
+    <button class="btn secondary vz-ref" type="button" data-act="rvvr"${rvVisBusy ? ' disabled' : ''}>${ic('refresh')}<span>${rvVisBusy ? 'Cargando…' : 'Actualizar'}</span></button></div>`;
+  if (!v) { box.innerHTML = head + `<p class="empty">${rvVisErr || (rvVisBusy ? 'Cargando visitas…' : '')}</p>`; return; }
+  const pct = n => v.visitas ? `${Math.round(n / v.visitas * 100)}%` : '0%';
+  const kpi = (t, n, sub, cls) => `<div class="vz-kpi${cls ? ' ' + cls : ''}"><dt>${t}</dt><dd>${n}</dd>${sub ? `<span>${sub}</span>` : ''}</div>`;
+  const serie = v.porHora
+    ? barList(v.porHora.map((n, h) => ({ k: `${String(h).padStart(2, '0')}:00`, n })).filter((r, h) => r.n || (h >= 7 && h <= 22)))
+    : barList(v.porDia.slice().reverse().map(d => ({ k: diaTxt(d.d), n: d.visitantes, d })), r => `${r.n} <small>· ${durTxt(r.d.promedio)}</small>`);
+  const top = v.top.length ? `<ol class="vz-top-list">${v.top.map(t => { const p = ALL.find(x => x.id === t.id);
+      return `<li><button type="button" data-open="${t.id}" class="vz-prod"><span class="thumb${p && hasPhoto(p) ? ' photo' : ''}" style="${p ? grad(p) : ''}">${p ? visual(p, 0, true) : ''}</span><span class="vz-pn">${esc(p ? p.name : t.id)}</span><span class="vz-n">${t.n}</span></button></li>`; }).join('')}</ol>`
+    : '<p class="muted">Todavía nadie abrió un producto en este período.</p>';
+  box.innerHTML = head + `
+    <dl class="vz-kpis">
+      ${kpi('En línea ahora', `<span class="vz-live${v.online ? ' on' : ''}"></span>${v.online}`, 'en los últimos 3 minutos', 'live')}
+      ${kpi(v.dias === 1 ? 'Visitantes hoy' : 'Visitantes', v.visitantes, `${v.nuevos} por primera vez`)}
+      ${kpi('Visitas', v.visitas, 'veces que abrieron la tienda')}
+      ${kpi('Tiempo promedio', durTxt(v.promedio), `en total ${durTxt(v.total)}`)}
+      ${kpi('Vieron un producto', pct(v.conProductos), `${v.conProductos} visitas`)}
+      ${kpi('Agregaron al carrito', pct(v.conCarrito), `${v.conCarrito} visitas`)}
+    </dl>
+    <div class="vz-cols">
+      <section class="vz-card"><h3>${v.porHora ? 'Visitas por hora (hoy)' : 'Visitantes por día'}</h3>${serie}</section>
+      <section class="vz-card"><h3>Productos más vistos</h3>${top}</section>
+      <section class="vz-card"><h3>De dónde llegan</h3>${v.origen.length ? barList(v.origen) : '<p class="muted">Sin datos.</p>'}</section>
+      <section class="vz-card"><h3>Dispositivo</h3>${v.dispositivos.length ? barList(v.dispositivos) : '<p class="muted">Sin datos.</p>'}<p class="muted vz-note">Se fueron en menos de 10 segundos: ${pct(v.cortas)}</p></section>
+      <section class="vz-card vz-wide"><h3>Visitas recientes</h3>${v.recientes.length ? `<ul class="vz-rec">${v.recientes.map(r => `<li${r.activa ? ' class="on"' : ''}>
+        <span class="vz-when">${r.activa ? '<span class="vz-live on"></span>' : ''}${r.dia === v.hoy ? '' : diaTxt(r.dia) + ' · '}${r.hora}</span>
+        <span>${durTxt(r.s)}</span><span>${r.n} ${r.n === 1 ? 'producto' : 'productos'}${r.carrito ? ` · ${ic('bag')}${r.carrito}` : ''}</span>
+        <span class="muted">${esc(r.dev)} · ${esc(r.ref)}${r.nueva ? ' · nueva' : ''}</span></li>`).join('')}</ul>` : '<p class="muted">Todavía no hay visitas en este período.</p>'}</section>
+    </div>
+    <p class="muted vz-note">No se guardan nombres, celulares ni direcciones IP; solo números anónimos. Tus propias visitas a esta página de revisión no se cuentan.</p>`;
+}
+
+/* ---------- Proveedor de cada producto (solo dueño) ----------
+   origen.json guarda, cifrado, la tienda de Telegram y el número de publicación de cada producto.
+   Se descifra aquí con la misma llave del precio de Telegram y se manda a Google para anotar cada pedido. */
+let ORIGEN = {};
+async function loadOrigen(key) {
+  try {
+    const res = await fetch('origen.json', { cache: 'no-cache' });
+    if (!res.ok) return;
+    const { origen = {} } = await res.json();
+    const dec = new TextDecoder(), out = {};
+    await Promise.all(Object.entries(origen).map(async ([id, b64]) => {
+      try { out[id] = dec.decode(await crypto.subtle.decrypt({ name: 'RSA-OAEP' }, key, Uint8Array.from(atob(b64), c => c.charCodeAt(0)))); } catch (e) {}
+    }));
+    ORIGEN = out;
+    const firma = Object.keys(out).length + ':' + Object.keys(out).sort().slice(-1)[0];
+    if (firma !== store.get('vt-origen', '') && Object.keys(out).length) {
+      rvApi({ op: 'origen', mapa: out }).then(() => store.set('vt-origen', firma), () => {});
+    }
+    const pid = sheet.dataset.pid;
+    if (sheet.classList.contains('open') && sheet.dataset.kind === 'product' && pid) { const b = $('#pdOrigen'); if (b) b.outerHTML = origenBox(pid); }
+  } catch (e) {}
+}
+const origenDe = id => { const m = String(ORIGEN[id] || '').match(/^([^|]+)\|([A-Za-z0-9_]+)\/(\d+)$/); return m ? { tienda: m[1], canal: m[2], num: m[3], url: `https://t.me/${m[2]}/${m[3]}` } : null; };
+const origenBox = id => { const o = origenDe(id);
+  return `<p class="pd-origen" id="pdOrigen">${ic('store')}<span>${o ? `Se pide en <b>${esc(o.tienda)}</b> · publicación ${esc(o.num)}` : (costoListo ? 'Proveedor sin dato' : 'Cargando proveedor…')}</span>${o ? `<a href="${esc(o.url)}" target="_blank" rel="noopener">${ic('link')}Abrir</a>` : ''}</p>`; };
 function setRevision(rev) {
   if (!rev) return;
   REVC = {}; Object.entries(rev).forEach(([id, v]) => { if (v && v.c) REVC[id] = v.c; });
@@ -1860,6 +2049,7 @@ async function loadCostos(llave) {
   try {
     const der = Uint8Array.from(atob(llave), c => c.charCodeAt(0));
     const key = await crypto.subtle.importKey('pkcs8', der, { name: 'RSA-OAEP', hash: 'SHA-256' }, false, ['decrypt']);
+    loadOrigen(key);
     const res = await fetch('costos.json', { cache: 'no-cache' });
     if (!res.ok) return;
     const { costos = {} } = await res.json();
@@ -1962,6 +2152,7 @@ if (REVIEW) {
 $('#trackHint').hidden = LIVE;
 renderChips(); renderGrid(); renderOrders(); updateBadge(); deadline(); footNote();
 loadCatalog();
+visInit();
 if (!REVIEW && !store.get('vt-welcome', 0)) {
   openSheet('welcome', `Bienvenida a ${TIENDA.nombre}`,
     `<div class="welcome"><p class="welcome-intro">Productos para tu hogar, tu cocina y tu cuidado personal. Así funciona:</p>

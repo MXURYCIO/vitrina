@@ -1,9 +1,4044 @@
 {
  "products": [
   {
+   "id": "P-490",
+   "name": "Traje impermeable de 2 piezas con reflectivo",
+   "cat": "otros",
+   "price": 14,
+   "desc": "Conjunto impermeable de chaqueta con capucha y pantalón para protegerse de la lluvia en el trabajo, la moto o al aire libre. Es negro con franjas reflectivas verde neón y es fácil de guardar y llevar.",
+   "feats": [
+    "Chaqueta con capucha y pantalón",
+    "Franjas reflectivas",
+    "Color negro",
+    "Para moto y trabajo"
+   ],
+   "imgs": [
+    "img/p/p-490-0.jpg",
+    "img/p/p-490-1.jpg",
+    "img/p/p-490-2.jpg"
+   ],
+   "thumb": "img/p/p-490-s.jpg",
+   "src": "09d6af2df887",
+   "added": "2026-11-19T01:15:29.907623+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-491",
+   "name": "Poncho transparente para lluvia de niños",
+   "cat": "otros",
+   "price": 8,
+   "desc": "Poncho de PVC transparente para niños, con capucha y mangas, liviano y práctico para la escuela en días de lluvia. Detalles en color rosado o celeste, según disponibilidad.",
+   "feats": [
+    "PVC transparente",
+    "Con capucha y mangas",
+    "Liviano",
+    "Rosado o celeste según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-491-0.jpg",
+    "img/p/p-491-1.jpg",
+    "img/p/p-491-2.jpg",
+    "img/p/p-491-3.jpg"
+   ],
+   "thumb": "img/p/p-491-s.jpg",
+   "src": "7eed209d83cd",
+   "added": "2026-11-19T01:15:29.907623+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-492",
+   "name": "Poncho impermeable largo con reflectivo, negro",
+   "cat": "otros",
+   "price": 8,
+   "desc": "Poncho impermeable largo de color negro, con capucha, mangas largas y franjas reflectantes en el pecho y la espalda. Ideal para motociclistas y actividades al aire libre en días lluviosos.",
+   "feats": [
+    "Diseño largo",
+    "Capucha y mangas largas",
+    "Franjas reflectantes",
+    "Color negro"
+   ],
+   "imgs": [
+    "img/p/p-492-0.jpg",
+    "img/p/p-492-1.jpg",
+    "img/p/p-492-2.jpg"
+   ],
+   "thumb": "img/p/p-492-s.jpg",
+   "src": "a684c826c45a",
+   "added": "2026-11-19T01:15:29.907623+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-493",
+   "name": "Mini paraguas de cartera, negro",
+   "cat": "otros",
+   "price": 5,
+   "desc": "Paraguas mini y plegable de color negro, compacto para llevar en la cartera o la mochila. Práctico para el uso diario en días de lluvia.",
+   "feats": [
+    "Tamaño mini",
+    "Plegable",
+    "Cabe en la cartera",
+    "Color negro"
+   ],
+   "imgs": [
+    "img/p/p-493-0.jpg",
+    "img/p/p-493-1.jpg",
+    "img/p/p-493-2.jpg"
+   ],
+   "thumb": "img/p/p-493-s.jpg",
+   "src": "be3f47e17a1d",
+   "added": "2026-11-19T01:15:29.907623+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-494",
+   "name": "Paraguas de cartera mediano de 8 varillas con funda",
+   "cat": "otros",
+   "price": 8,
+   "desc": "Paraguas portátil de tamaño mediano con 8 varillas, compacto para tenerlo siempre a mano en la cartera o la mochila. Incluye funda para guardarlo. Color según disponibilidad.",
+   "feats": [
+    "Tamaño mediano",
+    "8 varillas",
+    "Incluye funda",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-494-0.jpg",
+    "img/p/p-494-1.jpg",
+    "img/p/p-494-2.jpg"
+   ],
+   "thumb": "img/p/p-494-s.jpg",
+   "src": "176ed392f5bb",
+   "added": "2026-11-19T01:15:29.907623+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-495",
+   "name": "Impermeable fino desechable con capucha",
+   "cat": "otros",
+   "price": 2,
+   "desc": "Poncho impermeable fino y súper liviano, con capucha, que se dobla y se guarda en el bolso o la mochila. Talla única. Colores al azar, según disponibilidad.",
+   "feats": [
+    "Talla única",
+    "Con capucha",
+    "Súper liviano",
+    "Color surtido, según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-495-0.jpg",
+    "img/p/p-495-1.jpg"
+   ],
+   "thumb": "img/p/p-495-s.jpg",
+   "src": "db529d43d59d",
+   "added": "2026-11-19T01:15:29.907623+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-496",
+   "name": "Secador de ropa portátil plegable",
+   "cat": "hogar",
+   "price": 19,
+   "desc": "Secador eléctrico portátil que se pliega como un cuaderno para guardarlo y llevarlo fácil. Sirve para secar ropa interior, medias, ropa de bebé y prendas delicadas, ideal en temporada de lluvias.",
+   "feats": [
+    "Plegable",
+    "Portátil",
+    "Para ropa interior y de bebé",
+    "Ideal en días de lluvia"
+   ],
+   "imgs": [
+    "img/p/p-496-0.jpg",
+    "img/p/p-496-1.jpg"
+   ],
+   "thumb": "img/p/p-496-s.jpg",
+   "src": "c19450fcddbc",
+   "added": "2026-11-19T01:15:29.907623+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-497",
+   "name": "Gorra bordada Smile para niños",
+   "cat": "moda",
+   "price": 4,
+   "desc": "Gorra ajustable para niños y niñas, de tela vaquera 100 % algodón con bordado de carita feliz. Color según disponibilidad.",
+   "feats": [
+    "Ajustable",
+    "Tela vaquera de algodón",
+    "Bordado de carita feliz",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-497-0.jpg",
+    "img/p/p-497-1.jpg",
+    "img/p/p-497-2.jpg",
+    "img/p/p-497-3.jpg"
+   ],
+   "thumb": "img/p/p-497-s.jpg",
+   "src": "d105e4c90c74",
+   "added": "2026-11-19T01:15:29.907623+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-498",
+   "name": "Canguro antirrobo con puerto USB",
+   "cat": "moda",
+   "price": 11,
+   "desc": "Bolso cruzado tipo canguro antirrobo, impermeable y cómodo, con cierre de seguridad y puerto de carga USB. Color según disponibilidad.",
+   "feats": [
+    "Antirrobo",
+    "Impermeable",
+    "Puerto USB",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-498-0.jpg",
+    "img/p/p-498-1.jpg",
+    "img/p/p-498-2.jpg",
+    "img/p/p-498-3.jpg"
+   ],
+   "thumb": "img/p/p-498-s.jpg",
+   "src": "bf1b80bc864f",
+   "added": "2026-11-19T01:15:29.907623+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-499",
+   "name": "Bolso bandolera para hombre",
+   "cat": "moda",
+   "price": 9,
+   "desc": "Bolso cruzado para hombre de material resistente, con varios compartimentos y correa ajustable. Ideal para el trabajo, paseos o viajes. Disponible en verde oliva, azul marino, gris y negro, según disponibilidad.",
+   "feats": [
+    "Correa ajustable",
+    "Varios compartimentos",
+    "Material resistente",
+    "4 colores según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-499-0.jpg",
+    "img/p/p-499-1.jpg",
+    "img/p/p-499-2.jpg"
+   ],
+   "thumb": "img/p/p-499-s.jpg",
+   "src": "d109c92bb1fb",
+   "added": "2026-11-19T01:15:29.907623+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-500",
+   "name": "Reloj deportivo digital tipo pulsera",
+   "cat": "moda",
+   "price": 4,
+   "desc": "Reloj deportivo digital tipo pulsera, de diseño moderno, ideal para el día a día y el ejercicio. Perfecto para uso personal o para regalar. Color según disponibilidad.",
+   "feats": [
+    "Pantalla digital",
+    "Diseño deportivo",
+    "Para uso diario",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-500-0.jpg"
+   ],
+   "thumb": "img/p/p-500-s.jpg",
+   "src": "68b8cfe8f6b7",
+   "added": "2026-11-19T01:15:29.907623+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-501",
+   "name": "Smartwatch GT4 Pro redondo",
+   "cat": "tecno",
+   "price": 13,
+   "desc": "Reloj inteligente de pantalla redonda, de diseño moderno y elegante, compatible con la aplicación RDFit. Ideal para acompañarte en tus actividades diarias.",
+   "feats": [
+    "Pantalla redonda",
+    "App RDFit",
+    "Diseño moderno",
+    "Para uso diario"
+   ],
+   "imgs": [
+    "img/p/p-501-0.jpg"
+   ],
+   "thumb": "img/p/p-501-s.jpg",
+   "src": "5a9cf3c6acb3",
+   "added": "2026-11-19T01:15:29.907623+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-502",
+   "name": "Cepillo con vapor 3 en 1 para mascotas",
+   "cat": "mascotas",
+   "price": 4,
+   "desc": "Cepillo para perros y gatos con rocío de vapor que ayuda a quitar el pelo suelto y masajea mientras cepilla. Color según disponibilidad.",
+   "feats": [
+    "Con vapor",
+    "Quita el pelo suelto",
+    "Para perros y gatos",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-502-0.jpg",
+    "img/p/p-502-1.jpg"
+   ],
+   "thumb": "img/p/p-502-s.jpg",
+   "src": "819629da13a8",
+   "added": "2026-11-19T01:15:29.907623+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-503",
+   "name": "Guante cepillo para mascotas",
+   "cat": "mascotas",
+   "price": 3,
+   "desc": "Guante de silicona para cepillar y masajear a perros y gatos de pelo largo o corto, que recoge el pelo suelto. Mide aproximadamente 22.8 x 16.5 cm.",
+   "feats": [
+    "Recoge el pelo suelto",
+    "Silicona suave",
+    "Medida: 22.8 x 16.5 cm",
+    "Para perros y gatos"
+   ],
+   "imgs": [
+    "img/p/p-503-0.jpg",
+    "img/p/p-503-1.jpg",
+    "img/p/p-503-2.jpg"
+   ],
+   "thumb": "img/p/p-503-s.jpg",
+   "src": "37a3472e09c6",
+   "added": "2026-11-19T01:15:29.907623+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-504",
+   "name": "Transportador para mascotas",
+   "cat": "mascotas",
+   "price": 16,
+   "desc": "Jaula transportadora portátil de plástico resistente, con base, cubierta superior y asa. Ideal para perros pequeños o gatos.",
+   "feats": [
+    "Plástico resistente",
+    "Con asa",
+    "Para perros pequeños y gatos",
+    "Puerta de rejilla"
+   ],
+   "imgs": [
+    "img/p/p-504-0.jpg"
+   ],
+   "thumb": "img/p/p-504-s.jpg",
+   "src": "288666822868",
+   "added": "2026-11-19T01:15:29.907623+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-505",
+   "name": "Plato doble para mascota en forma de hueso",
+   "cat": "mascotas",
+   "price": 2,
+   "desc": "Comedero y bebedero integrado en forma de hueso, ideal para mascotas pequeñas o cachorros. Mide aproximadamente 24.5 x 12.5 x 3 cm. Color según disponibilidad.",
+   "feats": [
+    "Comedero y bebedero",
+    "Forma de hueso",
+    "Medida: 24.5 x 12.5 x 3 cm",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-505-0.jpg"
+   ],
+   "thumb": "img/p/p-505-s.jpg",
+   "src": "2b64e78a055c",
+   "added": "2026-11-19T01:15:29.907623+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-506",
+   "name": "Máquina cortapelo recargable para mascotas",
+   "cat": "mascotas",
+   "price": 12,
+   "desc": "Cortapelo inalámbrico y recargable para mascotas, con cuchillas de acero inoxidable y 4 peines guía para elegir el largo. Funciona suave y sin asustar. Incluye cepillito, aceite y cable USB.",
+   "feats": [
+    "Recargable por USB",
+    "4 peines guía",
+    "Cuchillas de acero inoxidable",
+    "Incluye cepillo y aceite"
+   ],
+   "imgs": [
+    "img/p/p-506-0.jpg",
+    "img/p/p-506-1.jpg",
+    "img/p/p-506-2.jpg"
+   ],
+   "thumb": "img/p/p-506-s.jpg",
+   "src": "0c79757cb2fe",
+   "added": "2026-11-19T01:15:29.907623+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-507",
+   "name": "Cortina magnética mosquitero para puerta",
+   "cat": "hogar",
+   "price": 6,
+   "desc": "Malla mosquitero para puerta con cierre magnético automático, que deja pasar a personas y mascotas y mantiene los insectos fuera de la casa.",
+   "feats": [
+    "Cierre magnético automático",
+    "Mantiene fuera los insectos",
+    "Paso libre para mascotas",
+    "Fácil de instalar"
+   ],
+   "imgs": [
+    "img/p/p-507-0.jpg"
+   ],
+   "thumb": "img/p/p-507-s.jpg",
+   "src": "edda30f61218",
+   "added": "2026-11-19T01:15:29.907623+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-508",
+   "name": "Funda de gel de silicona para asiento de bicicleta",
+   "cat": "herramientas",
+   "price": 7,
+   "desc": "Funda ajustable de gel de silicona para el asiento de la bicicleta o de la bicicleta estática, que se amolda al asiento y da más comodidad. Mide aproximadamente 27 x 16 cm.",
+   "feats": [
+    "Gel de silicona",
+    "Ajustable",
+    "Medida: 27 x 16 cm",
+    "Para bicicleta y bici estática"
+   ],
+   "imgs": [
+    "img/p/p-508-0.jpg",
+    "img/p/p-508-1.jpg",
+    "img/p/p-508-2.jpg"
+   ],
+   "thumb": "img/p/p-508-s.jpg",
+   "src": "571f3a54128a",
+   "added": "2026-11-19T01:15:29.907623+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-509",
+   "name": "Soporte de celular giratorio 360° para moto y bicicleta",
+   "cat": "herramientas",
+   "price": 9,
+   "desc": "Soporte para llevar el celular en la moto o la bicicleta, con giro de 360°. Se ajusta con una perilla lateral para celulares de 6 a 9 cm de ancho.",
+   "feats": [
+    "Giro de 360°",
+    "Para moto y bicicleta",
+    "Ajusta de 6 a 9 cm",
+    "Perilla de ajuste"
+   ],
+   "imgs": [
+    "img/p/p-509-0.jpg",
+    "img/p/p-509-1.jpg",
+    "img/p/p-509-2.jpg"
+   ],
+   "thumb": "img/p/p-509-s.jpg",
+   "src": "3e8aaeea4c6e",
+   "added": "2026-11-19T01:15:29.907623+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-510",
+   "name": "Casco acolchado protector para bebé",
+   "cat": "bebes",
+   "price": 14,
+   "desc": "Casco suave de espuma acolchada y poliéster respirable que protege la cabeza del bebé de golpes leves al gatear o aprender a caminar. Tiene correas ajustables con cierre de velcro. Diseño según disponibilidad.",
+   "feats": [
+    "Espuma acolchada",
+    "Respirable",
+    "Correas ajustables",
+    "Diseño según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-510-0.jpg",
+    "img/p/p-510-1.jpg",
+    "img/p/p-510-2.jpg"
+   ],
+   "thumb": "img/p/p-510-s.jpg",
+   "src": "d339d5fc5342",
+   "added": "2026-11-19T01:15:29.907623+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-511",
+   "name": "Lonchera térmica impermeable",
+   "cat": "escolar",
+   "price": 6,
+   "desc": "Bolsa térmica para el almuerzo, impermeable y de gran capacidad, de tela Oxford gruesa. Mide aproximadamente 25 x 20 x 13 cm. Color según disponibilidad.",
+   "feats": [
+    "Térmica",
+    "Impermeable",
+    "Medida: 25 x 20 x 13 cm",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-511-0.jpg",
+    "img/p/p-511-1.jpg",
+    "img/p/p-511-2.jpg"
+   ],
+   "thumb": "img/p/p-511-s.jpg",
+   "src": "2e39b0ddca3f",
+   "added": "2026-11-19T01:15:29.907623+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-322",
+   "name": "Batidor manual semiautomático de acero",
+   "cat": "cocina",
+   "price": 3,
+   "desc": "Batidor de acero inoxidable con sistema giratorio: se presiona el mango y gira solo. Sirve para batir huevos, cremas, masas y salsas sin electricidad.",
+   "feats": [
+    "Acero inoxidable",
+    "Gira al presionar el mango",
+    "No necesita electricidad",
+    "Para huevos, cremas y masas"
+   ],
+   "imgs": [
+    "img/p/p-322-0.jpg",
+    "img/p/p-322-1.jpg",
+    "img/p/p-322-2.jpg"
+   ],
+   "thumb": "img/p/p-322-s.jpg",
+   "src": "fb06b25f7e6c",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-323",
+   "name": "Taza azucarera de vidrio con osito y cucharita",
+   "cat": "cocina",
+   "price": 3,
+   "desc": "Taza de vidrio texturizado con tapa decorada con un osito, asa y cucharita, ideal como azucarera o para té. Tiene capacidad de unos 400 ml y mide aproximadamente 11.5 cm de alto y 12 cm de ancho.",
+   "feats": [
+    "Vidrio texturizado",
+    "Tapa con osito",
+    "Incluye cucharita",
+    "Capacidad: 400 ml"
+   ],
+   "imgs": [
+    "img/p/p-323-0.jpg",
+    "img/p/p-323-1.jpg",
+    "img/p/p-323-2.jpg"
+   ],
+   "thumb": "img/p/p-323-s.jpg",
+   "src": "84c413276d50",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-324",
+   "name": "Tacho de basura colgante con tapa",
+   "cat": "cocina",
+   "price": 8,
+   "desc": "Tacho de basura compacto con tapa para controlar los olores, que se puede colgar en la puerta del mueble o fijar a la pared. Es de plástico resistente y fácil de limpiar. Color según disponibilidad.",
+   "feats": [
+    "Con tapa",
+    "Se cuelga o se fija a la pared",
+    "Plástico resistente",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-324-0.jpg",
+    "img/p/p-324-1.jpg"
+   ],
+   "thumb": "img/p/p-324-s.jpg",
+   "src": "1a114d410f3b",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-325",
+   "name": "Organizador de tapas y tablas para pared",
+   "cat": "cocina",
+   "price": 10,
+   "desc": "Organizador que se fija a la pared sin taladro para guardar tapas de ollas y tablas de picar. Tiene bandeja recolectora de agua que mantiene todo seco. Disponible en blanco o gris, según disponibilidad.",
+   "feats": [
+    "Se instala sin taladro",
+    "Para tapas y tablas de picar",
+    "Bandeja recolectora de agua",
+    "Blanco o gris según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-325-0.jpg",
+    "img/p/p-325-1.jpg",
+    "img/p/p-325-2.jpg"
+   ],
+   "thumb": "img/p/p-325-s.jpg",
+   "src": "734a65fa6a77",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-326",
+   "name": "Sartén eléctrico RAF de 5 L",
+   "cat": "cocina",
+   "price": 33,
+   "desc": "Sartén eléctrico de 5 litros con 1100 W de potencia, recubrimiento antiadherente y perilla para regular la temperatura. Ideal para cocinar para toda la familia y fácil de limpiar. Mide aproximadamente 43 x 30 x 13 cm.",
+   "feats": [
+    "Capacidad: 5 L",
+    "1100 W",
+    "Antiadherente",
+    "Temperatura regulable"
+   ],
+   "imgs": [
+    "img/p/p-326-0.jpg",
+    "img/p/p-326-1.jpg"
+   ],
+   "thumb": "img/p/p-326-s.jpg",
+   "src": "f600c31be478",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-327",
+   "name": "Freidora eléctrica RAF de 3 L",
+   "cat": "cocina",
+   "price": 48,
+   "desc": "Freidora eléctrica de 3 litros con 1300 W de potencia para una cocción rápida y pareja. Trae canastilla reforzada y es fácil de limpiar. Ideal para papas, pollo y más.",
+   "feats": [
+    "Capacidad: 3 L",
+    "1300 W",
+    "Canastilla reforzada",
+    "Acero inoxidable"
+   ],
+   "imgs": [
+    "img/p/p-327-0.jpg",
+    "img/p/p-327-1.jpg",
+    "img/p/p-327-2.jpg"
+   ],
+   "thumb": "img/p/p-327-s.jpg",
+   "src": "81e3ea8c9599",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-328",
+   "name": "Batidora de mano RAF de 7 velocidades",
+   "cat": "cocina",
+   "price": 11,
+   "desc": "Batidora eléctrica de mano de 160 W con 7 velocidades, ideal para repostería. Incluye batidores y ganchos para masa. Mide aproximadamente 18 x 25 cm. Color según disponibilidad.",
+   "feats": [
+    "160 W",
+    "7 velocidades",
+    "Batidores y ganchos incluidos",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-328-0.jpg",
+    "img/p/p-328-1.jpg",
+    "img/p/p-328-2.jpg"
+   ],
+   "thumb": "img/p/p-328-s.jpg",
+   "src": "4992c737c6e5",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-329",
+   "name": "Limpiador a vapor portátil",
+   "cat": "hogar",
+   "price": 36,
+   "desc": "Limpiador a vapor de alta temperatura que limpia y desinfecta sin químicos; se calienta en unos 15 segundos. El vapor entra en rincones difíciles y quita grasa, suciedad y manchas en cocina, baño, cortinas, pisos y carro. Incluye manguera y varias boquillas y cepillos.",
+   "feats": [
+    "Listo en 15 segundos",
+    "Limpia sin químicos",
+    "Varias boquillas y cepillos",
+    "Para cocina, baño y carro"
+   ],
+   "imgs": [
+    "img/p/p-329-0.jpg",
+    "img/p/p-329-1.jpg"
+   ],
+   "thumb": "img/p/p-329-s.jpg",
+   "src": "b85fbd1e282c",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-330",
+   "name": "Lavadora portátil plegable",
+   "cat": "hogar",
+   "price": 21,
+   "desc": "Mini lavadora plegable que se encoge para guardarla o llevarla de viaje, con botones táctiles para elegir el ciclo. Es para cargas livianas y delicadas, no para ropa pesada. Color según disponibilidad.",
+   "feats": [
+    "Plegable",
+    "Botones táctiles",
+    "Para ropa liviana",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-330-0.jpg",
+    "img/p/p-330-1.jpg"
+   ],
+   "thumb": "img/p/p-330-s.jpg",
+   "src": "c728c74e06c7",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-331",
+   "name": "Mesa carrito de 3 niveles con ruedas",
+   "cat": "hogar",
+   "price": 19,
+   "desc": "Carrito de metal negro con tapa de madera y 3 niveles de canastas para organizar. Tiene ruedas giratorias para moverlo fácil. Ideal para la cocina, una estación de café o mini bar.",
+   "feats": [
+    "3 niveles",
+    "Tapa de madera",
+    "Ruedas giratorias",
+    "Metal negro"
+   ],
+   "imgs": [
+    "img/p/p-331-0.jpg",
+    "img/p/p-331-1.jpg",
+    "img/p/p-331-2.jpg"
+   ],
+   "thumb": "img/p/p-331-s.jpg",
+   "src": "9a35e0d618c9",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-332",
+   "name": "Dispensador de pasta dental con porta cepillos",
+   "cat": "hogar",
+   "price": 6,
+   "desc": "Dispensador de pasta dental para pared con porta cepillos. Se coloca la pasta, se gira para fijarla y sale la cantidad justa.",
+   "feats": [
+    "Dispensa la pasta",
+    "Porta cepillos",
+    "Para la pared del baño"
+   ],
+   "imgs": [
+    "img/p/p-332-0.jpg"
+   ],
+   "thumb": "img/p/p-332-s.jpg",
+   "src": "4ff9d510dcad",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-333",
+   "name": "Silla hamaca colgante",
+   "cat": "hogar",
+   "price": 21,
+   "desc": "Silla colgante tejida para descansar en la casa, el patio o el balcón. Mide aproximadamente 82 cm de diámetro. Color según disponibilidad.",
+   "feats": [
+    "Tejida",
+    "Diámetro: 82 cm",
+    "Para interior o exterior",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-333-0.jpg",
+    "img/p/p-333-1.jpg",
+    "img/p/p-333-2.jpg",
+    "img/p/p-333-3.jpg"
+   ],
+   "thumb": "img/p/p-333-s.jpg",
+   "src": "a9dec4d488bf",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-334",
+   "name": "Esquinero de baño de 4 repisas a presión",
+   "cat": "hogar",
+   "price": 13,
+   "desc": "Organizador esquinero que se sostiene por tensión entre el piso y el techo, sin perforar. Tiene cuatro repisas ajustables para champús, esponjas y otros artículos de la ducha.",
+   "feats": [
+    "Se instala a presión",
+    "4 repisas ajustables",
+    "Para baño y ducha",
+    "Color blanco"
+   ],
+   "imgs": [
+    "img/p/p-334-0.jpg",
+    "img/p/p-334-1.jpg",
+    "img/p/p-334-2.jpg"
+   ],
+   "thumb": "img/p/p-334-s.jpg",
+   "src": "819e0e3e1f69",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-335",
+   "name": "Perchero doble con zapatera y cubierta",
+   "cat": "hogar",
+   "price": 18,
+   "desc": "Perchero organizador con doble barra para colgar ropa y compartimentos inferiores con cubierta para zapatos y cosas. Mide aproximadamente 83 cm de ancho, 28 cm de fondo y 175 cm de alto.",
+   "feats": [
+    "Doble barra para ropa",
+    "Compartimentos para zapatos",
+    "Medida: 83 x 28 x 175 cm",
+    "Con cubierta"
+   ],
+   "imgs": [
+    "img/p/p-335-0.jpg",
+    "img/p/p-335-1.jpg"
+   ],
+   "thumb": "img/p/p-335-s.jpg",
+   "src": "f6ee3ce31c4b",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-336",
+   "name": "Aspiradora inalámbrica recargable",
+   "cat": "hogar",
+   "price": 11,
+   "desc": "Aspiradora sin cables recargable, liviana y con buena succión para polvo, migas y suciedad. Viene con boquillas para rincones, sofás, carros y escaleras, y su filtro es lavable.",
+   "feats": [
+    "Inalámbrica y recargable",
+    "Varias boquillas",
+    "Filtro lavable",
+    "Liviana"
+   ],
+   "imgs": [
+    "img/p/p-336-0.jpg",
+    "img/p/p-336-1.jpg",
+    "img/p/p-336-2.jpg"
+   ],
+   "thumb": "img/p/p-336-s.jpg",
+   "src": "efbb1c0592fc",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-337",
+   "name": "Juego de pesca con caña telescópica",
+   "cat": "juguetes",
+   "price": 12,
+   "desc": "Caña de pescar telescópica con carrete, ideal para niños y principiantes por lo fácil de llevar y usar. Incluye flotadores, anzuelos y accesorios básicos.",
+   "feats": [
+    "Caña telescópica",
+    "Incluye carrete",
+    "Flotadores y anzuelos",
+    "Para principiantes"
+   ],
+   "imgs": [
+    "img/p/p-337-0.jpg"
+   ],
+   "thumb": "img/p/p-337-s.jpg",
+   "src": "294ae757a13c",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-338",
+   "name": "Tanque a control remoto con bolitas de hidrogel",
+   "cat": "juguetes",
+   "price": 30,
+   "desc": "Tanque a control remoto que lanza bolitas de hidrogel, con luces y sonidos al disparar. Gira sobre su propio eje y se mueve en varias direcciones, incluso de lado.",
+   "feats": [
+    "Control remoto",
+    "Lanza bolitas de hidrogel",
+    "Luces y sonidos",
+    "Se mueve de lado"
+   ],
+   "imgs": [
+    "img/p/p-338-0.jpg",
+    "img/p/p-338-1.jpg"
+   ],
+   "thumb": "img/p/p-338-s.jpg",
+   "src": "ea16018f9eb3",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-339",
+   "name": "Pista militar de 124 piezas con soldaditos",
+   "cat": "juguetes",
+   "price": 10,
+   "desc": "Pista para armar de 124 piezas con un vehículo de camuflaje y figuras de soldados. Se puede armar en varios diseños.",
+   "feats": [
+    "124 piezas",
+    "Incluye vehículo",
+    "Figuras de soldados",
+    "Varios diseños"
+   ],
+   "imgs": [
+    "img/p/p-339-0.jpg",
+    "img/p/p-339-1.jpg"
+   ],
+   "thumb": "img/p/p-339-s.jpg",
+   "src": "4107d400a2ef",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-340",
+   "name": "Dron esfera L39 con protección",
+   "cat": "juguetes",
+   "price": 25,
+   "desc": "Dron con carcasa en forma de esfera que protege las hélices de golpes y caídas. Se controla con control remoto de 2.4 GHz y tiene funciones de un botón para subir, aterrizar y volver.",
+   "feats": [
+    "Carcasa protectora",
+    "Control 2.4 GHz",
+    "Funciones de un botón",
+    "Para niños"
+   ],
+   "imgs": [
+    "img/p/p-340-0.jpg",
+    "img/p/p-340-1.jpg",
+    "img/p/p-340-2.jpg",
+    "img/p/p-340-3.jpg"
+   ],
+   "thumb": "img/p/p-340-s.jpg",
+   "src": "2703c6270c96",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-341",
+   "name": "Juego de encaje geométrico de madera",
+   "cat": "juguetes",
+   "price": 4,
+   "desc": "Juego didáctico de madera para encajar piezas según su forma y color. Ayuda a los niños a diferenciar figuras y colores, con bordes redondeados.",
+   "feats": [
+    "Madera",
+    "Formas y colores",
+    "Bordes redondeados",
+    "Didáctico"
+   ],
+   "imgs": [
+    "img/p/p-341-0.jpg",
+    "img/p/p-341-1.jpg",
+    "img/p/p-341-3.jpg"
+   ],
+   "thumb": "img/p/p-341-s.jpg",
+   "src": "306b5a6d1dd1",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-342",
+   "name": "Mini patineta para niños",
+   "cat": "juguetes",
+   "price": 8,
+   "desc": "Patineta pequeña y liviana para niños de 3 a 8 años, con ruedas firmes y resistentes. Diseño según disponibilidad.",
+   "feats": [
+    "De 3 a 8 años",
+    "Liviana",
+    "Ruedas resistentes",
+    "Diseño según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-342-0.jpg",
+    "img/p/p-342-1.jpg"
+   ],
+   "thumb": "img/p/p-342-s.jpg",
+   "src": "0a7e622119d7",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-343",
+   "name": "Máquina de burbujas con luz LED",
+   "cat": "juguetes",
+   "price": 8,
+   "desc": "Máquina portátil que hace muchísimas burbujas con solo presionar un botón, con luz LED. Ideal para fiestas, cumpleaños y juegos al aire libre.",
+   "feats": [
+    "Un botón",
+    "Luz LED",
+    "Portátil",
+    "Para fiestas"
+   ],
+   "imgs": [
+    "img/p/p-343-0.jpg"
+   ],
+   "thumb": "img/p/p-343-s.jpg",
+   "src": "e88764690cc3",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-344",
+   "name": "Asiento elevador portátil con arnés para niños",
+   "cat": "bebes",
+   "price": 27,
+   "desc": "Asiento elevador acolchado y portátil con arnés de correas ajustables y broches de seguridad, que mantiene estable al niño en la silla. Diseño con osito, color gris.",
+   "feats": [
+    "Arnés ajustable",
+    "Acolchado",
+    "Portátil",
+    "Color gris"
+   ],
+   "imgs": [
+    "img/p/p-344-0.jpg",
+    "img/p/p-344-1.jpg",
+    "img/p/p-344-2.jpg"
+   ],
+   "thumb": "img/p/p-344-s.jpg",
+   "src": "53d210cf3570",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-345",
+   "name": "Secadora de cabello 2 en 1 Sonar SN-6170",
+   "cat": "belleza",
+   "price": 9,
+   "desc": "Secadora de cabello con accesorio tipo peine para acomodar el cabello mientras se seca y boquilla concentradora para dirigir el aire. Incluye dos accesorios intercambiables. Color negro con detalles naranjas.",
+   "feats": [
+    "2 accesorios",
+    "Peine y boquilla",
+    "Color negro con naranja"
+   ],
+   "imgs": [
+    "img/p/p-345-0.jpg"
+   ],
+   "thumb": "img/p/p-345-s.jpg",
+   "src": "1499d229164e",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-346",
+   "name": "Set de brochas de maquillaje en estuche",
+   "cat": "belleza",
+   "price": 6,
+   "desc": "Juego de brochas de diferentes tamaños y formas para aplicar maquillaje, con mangos en colores pastel. Viene en estuche transparente. Color según disponibilidad.",
+   "feats": [
+    "Varios tamaños",
+    "Mangos pastel",
+    "Estuche transparente",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-346-0.jpg",
+    "img/p/p-346-1.jpg"
+   ],
+   "thumb": "img/p/p-346-s.jpg",
+   "src": "8955dcbd5104",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-347",
+   "name": "Cera capilar en barra contra el frizz",
+   "cat": "belleza",
+   "price": 4,
+   "desc": "Cera en barra sin aroma para controlar el frizz, para cualquier tipo de cabello. No deja residuos.",
+   "feats": [
+    "Controla el frizz",
+    "Sin aroma",
+    "No deja residuos",
+    "Para todo tipo de cabello"
+   ],
+   "imgs": [
+    "img/p/p-347-0.jpg"
+   ],
+   "thumb": "img/p/p-347-s.jpg",
+   "src": "a100a46de55b",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-348",
+   "name": "Limpiador eléctrico de brochas",
+   "cat": "belleza",
+   "price": 8,
+   "desc": "Aparato que limpia las brochas de maquillaje en segundos girándolas, y quita la suciedad y los residuos. Funciona con un solo botón y se alimenta por USB.",
+   "feats": [
+    "Limpieza en segundos",
+    "Un solo botón",
+    "Alimentación USB"
+   ],
+   "imgs": [
+    "img/p/p-348-0.jpg",
+    "img/p/p-348-1.jpg"
+   ],
+   "thumb": "img/p/p-348-s.jpg",
+   "src": "0ae6f4983dda",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-349",
+   "name": "Plancha de cabello con cepillo Sonar SN-758",
+   "cat": "belleza",
+   "price": 14,
+   "desc": "Set de plancha alisadora con placas de cerámica y cepillo a juego. Tiene 4 niveles de temperatura, diseño contra quemaduras y funciona a 110 V o 220 V. Color lila.",
+   "feats": [
+    "Placas de cerámica",
+    "4 niveles de temperatura",
+    "Incluye cepillo",
+    "Color lila"
+   ],
+   "imgs": [
+    "img/p/p-349-0.jpg",
+    "img/p/p-349-1.jpg",
+    "img/p/p-349-2.jpg"
+   ],
+   "thumb": "img/p/p-349-s.jpg",
+   "src": "b55ebc734688",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-350",
+   "name": "Ondulador de cabello en espiral",
+   "cat": "belleza",
+   "price": 6,
+   "desc": "Rizador con guías en espiral para hacer rizos fácilmente sin que se pegue el cabello. Color según disponibilidad.",
+   "feats": [
+    "Guías en espiral",
+    "No se pega el cabello",
+    "Rizos rápidos",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-350-0.jpg",
+    "img/p/p-350-1.jpg",
+    "img/p/p-350-2.jpg"
+   ],
+   "thumb": "img/p/p-350-s.jpg",
+   "src": "8a00b5a7cef6",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-351",
+   "name": "Cepillo de cabello con atomizador",
+   "cat": "belleza",
+   "price": 6,
+   "desc": "Cepillo que peina y aplica agua o productos al mismo tiempo con su depósito atomizador. Es práctico para el bolso o los viajes. Color según disponibilidad.",
+   "feats": [
+    "Cepilla y rocía a la vez",
+    "Depósito recargable",
+    "Para el bolso o viajes",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-351-0.jpg",
+    "img/p/p-351-1.jpg",
+    "img/p/p-351-2.jpg"
+   ],
+   "thumb": "img/p/p-351-s.jpg",
+   "src": "7374763b14af",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-352",
+   "name": "Mini masajeador eléctrico de tres puntas",
+   "cat": "cuidado",
+   "price": 4,
+   "desc": "Masajeador pequeño de tres patas con cabezales de silicona suave, inalámbrico y recargable por USB. Ideal para cuello, hombros, espalda, cintura y piernas. Color según disponibilidad.",
+   "feats": [
+    "Inalámbrico",
+    "Recargable por USB",
+    "Cabezales de silicona",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-352-0.jpg",
+    "img/p/p-352-1.jpg",
+    "img/p/p-352-2.jpg"
+   ],
+   "thumb": "img/p/p-352-s.jpg",
+   "src": "2e24f0ad017b",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-353",
+   "name": "Masajeador abdominal eléctrico",
+   "cat": "cuidado",
+   "price": 10,
+   "desc": "Masajeador portátil con vibración para abdomen, brazos, glúteos, cintura y piernas. Se carga por USB y su batería es de larga duración. Color blanco.",
+   "feats": [
+    "Vibración",
+    "Carga USB",
+    "Para abdomen y piernas",
+    "Color blanco"
+   ],
+   "imgs": [
+    "img/p/p-353-0.jpg"
+   ],
+   "thumb": "img/p/p-353-s.jpg",
+   "src": "a0b447b12ef6",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-354",
+   "name": "Banda de resistencia con anclaje de puerta",
+   "cat": "deporte",
+   "price": 7,
+   "desc": "Bandas de resistencia de látex natural que no se secan, no se rompen ni se deforman. Se anclan a la puerta para entrenar brazos, piernas y espalda en casa.",
+   "feats": [
+    "Látex natural",
+    "Anclaje de puerta",
+    "Entrena en casa",
+    "Alta elasticidad"
+   ],
+   "imgs": [
+    "img/p/p-354-0.jpg",
+    "img/p/p-354-1.jpg",
+    "img/p/p-354-2.jpg"
+   ],
+   "thumb": "img/p/p-354-s.jpg",
+   "src": "e974232b0410",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-355",
+   "name": "Short faja con broche frontal",
+   "cat": "deporte",
+   "price": 9,
+   "desc": "Short faja de tela elástica con broche frontal de varios niveles para ajustarla. Ayuda a moldear la cintura y da soporte abdominal. Color según disponibilidad.",
+   "feats": [
+    "Broche de varios niveles",
+    "Moldea la cintura",
+    "Tela elástica",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-355-0.jpg",
+    "img/p/p-355-1.jpg",
+    "img/p/p-355-2.jpg"
+   ],
+   "thumb": "img/p/p-355-s.jpg",
+   "src": "59995212e250",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-356",
+   "name": "Peine para mascotas con botón de limpieza",
+   "cat": "mascotas",
+   "price": 3,
+   "desc": "Peine que quita el pelo suelto, nudos y enredos de perros y gatos. Tiene botón para desprender el pelo acumulado y dientes de acero redondeados que cuidan la piel. Color amarillo.",
+   "feats": [
+    "Botón de autolimpieza",
+    "Dientes de acero redondeados",
+    "Quita pelo suelto y nudos",
+    "Color amarillo"
+   ],
+   "imgs": [
+    "img/p/p-356-0.jpg",
+    "img/p/p-356-1.jpg",
+    "img/p/p-356-2.jpg",
+    "img/p/p-356-3.jpg"
+   ],
+   "thumb": "img/p/p-356-s.jpg",
+   "src": "493b40271768",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-357",
+   "name": "Power bank de 10.000 mAh con soporte",
+   "cat": "tecno",
+   "price": 14,
+   "desc": "Batería portátil de 10.000 mAh con pantalla digital que indica la carga y soporte para el celular. Es compacta y fácil de llevar. Color blanco o negro, según disponibilidad.",
+   "feats": [
+    "10.000 mAh",
+    "Pantalla digital",
+    "Soporte para celular",
+    "Blanco o negro"
+   ],
+   "imgs": [
+    "img/p/p-357-0.jpg"
+   ],
+   "thumb": "img/p/p-357-s.jpg",
+   "src": "14f35500f6c0",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-358",
+   "name": "Palo selfie y trípode 3 en 1 con control",
+   "cat": "tecno",
+   "price": 10,
+   "desc": "Palo selfie y mini trípode con control remoto bluetooth, de plástico y aluminio. Se extiende de unos 15 cm hasta 42 cm.",
+   "feats": [
+    "3 en 1",
+    "Control bluetooth",
+    "De 15 a 42 cm",
+    "Aluminio y plástico"
+   ],
+   "imgs": [
+    "img/p/p-358-0.jpg",
+    "img/p/p-358-1.jpg"
+   ],
+   "thumb": "img/p/p-358-s.jpg",
+   "src": "b4940d5993a3",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-359",
+   "name": "Cámara de vigilancia wifi Q17 de 4 lentes",
+   "cat": "tecno",
+   "price": 42,
+   "desc": "Cámara de vigilancia con 4 lentes y 3 vistas, que gira 355° horizontal y 90° vertical. Se mira en vivo desde el celular, tiene audio de dos vías, visión nocturna a color, alerta de movimiento y resiste el agua (IP66).",
+   "feats": [
+    "4 lentes",
+    "Gira 355°",
+    "Visión nocturna a color",
+    "Resistente al agua IP66"
+   ],
+   "imgs": [
+    "img/p/p-359-0.jpg",
+    "img/p/p-359-1.jpg"
+   ],
+   "thumb": "img/p/p-359-s.jpg",
+   "src": "72f9d2e3826a",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-360",
+   "name": "Radio de comunicación UHF/VHF",
+   "cat": "tecno",
+   "price": 22,
+   "desc": "Radio de comunicación en bandas UHF/VHF con 16 canales, alcance de unos 3 a 6 km en campo abierto. Trae batería recargable de 1500 mAh que dura cerca de 8 horas.",
+   "feats": [
+    "16 canales",
+    "Alcance de 3 a 6 km",
+    "Batería de 1500 mAh",
+    "Hasta 8 horas"
+   ],
+   "imgs": [
+    "img/p/p-360-0.jpg"
+   ],
+   "thumb": "img/p/p-360-s.jpg",
+   "src": "674dbdf9b64c",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-361",
+   "name": "Juego de dados y rachas de 46 piezas",
+   "cat": "herramientas",
+   "price": 9,
+   "desc": "Juego de 46 piezas de material inoxidable con rachas, dados y puntas, en estuche. Ideal para el carro, la moto y el hogar.",
+   "feats": [
+    "46 piezas",
+    "Material inoxidable",
+    "Con estuche",
+    "Para carro y hogar"
+   ],
+   "imgs": [
+    "img/p/p-361-0.jpg",
+    "img/p/p-361-1.jpg",
+    "img/p/p-361-2.jpg"
+   ],
+   "thumb": "img/p/p-361-s.jpg",
+   "src": "ac572df7a05e",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-362",
+   "name": "Set de herramientas de 5 piezas",
+   "cat": "herramientas",
+   "price": 5,
+   "desc": "Kit de 5 herramientas manuales: 3 destornilladores (plano y estrella), 1 cúter y 1 flexómetro de 2 metros. Color amarillo con negro.",
+   "feats": [
+    "5 piezas",
+    "3 destornilladores",
+    "Cúter y flexómetro de 2 m",
+    "Amarillo con negro"
+   ],
+   "imgs": [
+    "img/p/p-362-0.jpg",
+    "img/p/p-362-1.jpg",
+    "img/p/p-362-2.jpg"
+   ],
+   "thumb": "img/p/p-362-s.jpg",
+   "src": "fe030f8762c1",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-363",
+   "name": "Plumas borrables de gel",
+   "cat": "escolar",
+   "price": 4,
+   "desc": "Plumas de tinta borrable para escribir, corregir y volver a escribir. Ideales para estudiar, trabajar y tomar apuntes. Disponibles en azul y negro.",
+   "feats": [
+    "Tinta borrable",
+    "Azul o negro",
+    "Para estudio y trabajo"
+   ],
+   "imgs": [
+    "img/p/p-363-0.jpg",
+    "img/p/p-363-1.jpg"
+   ],
+   "thumb": "img/p/p-363-s.jpg",
+   "src": "2d96f6fd4132",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-364",
+   "name": "Set de condimenteros de 5 piezas, negro marmoleado",
+   "cat": "cocina",
+   "price": 12,
+   "desc": "Juego de 5 piezas para tener aderezos y condimentos a la mano al cocinar o servir: 2 botellas con dosificador para aceite y vinagre, 2 recipientes para condimentos y base organizadora con asa. Diseño negro marmoleado con vetas doradas.",
+   "feats": [
+    "5 piezas",
+    "2 botellas con dosificador",
+    "Base con asa para llevar a la mesa",
+    "Negro marmoleado con dorado"
+   ],
+   "imgs": [
+    "img/p/p-364-0.jpg",
+    "img/p/p-364-1.jpg"
+   ],
+   "thumb": "img/p/p-364-s.jpg",
+   "src": "d8b8947275e0",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-365",
+   "name": "Set de cubiertos dorados con estuche en forma de huevo",
+   "cat": "cocina",
+   "price": 33,
+   "desc": "Juego de cubiertos en color dorado brillante que se guarda en un estuche con forma de huevo, un detalle elegante para la mesa o para regalar. Es resistente y fácil de limpiar.",
+   "feats": [
+    "Cubiertos dorados",
+    "Estuche en forma de huevo",
+    "Fácil de limpiar",
+    "Ideal para regalar"
+   ],
+   "imgs": [
+    "img/p/p-365-0.jpg",
+    "img/p/p-365-1.jpg",
+    "img/p/p-365-2.jpg"
+   ],
+   "thumb": "img/p/p-365-s.jpg",
+   "src": "e94ee2d63383",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-366",
+   "name": "Frasco de vidrio de 5 L con tapa",
+   "cat": "cocina",
+   "price": 11,
+   "desc": "Frasco de vidrio de 5 litros con tapa y asa, ideal para macerar licores, fermentar o guardar granos y alimentos.",
+   "feats": [
+    "Capacidad: 5 L",
+    "Vidrio",
+    "Tapa con asa",
+    "Para granos, fermentos o licores"
+   ],
+   "imgs": [
+    "img/p/p-366-0.jpg"
+   ],
+   "thumb": "img/p/p-366-s.jpg",
+   "src": "09799a0e144f",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-367",
+   "name": "Arrocera multifunción de 5 L",
+   "cat": "cocina",
+   "price": 42,
+   "desc": "Arrocera de 5 litros y 900 W con panel táctil y programas para distintos tipos de comida. Tiene función de mantener caliente y recipiente antiadherente que se limpia fácil. Color negro.",
+   "feats": [
+    "Capacidad: 5 L",
+    "900 W",
+    "Panel táctil con programas",
+    "Mantiene caliente",
+    "Recipiente antiadherente"
+   ],
+   "imgs": [
+    "img/p/p-367-0.jpg",
+    "img/p/p-367-1.jpg",
+    "img/p/p-367-2.jpg"
+   ],
+   "thumb": "img/p/p-367-s.jpg",
+   "src": "6d6f1c4e49dd",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-368",
+   "name": "Hervidor eléctrico Luma Bella de 2.5 L",
+   "cat": "cocina",
+   "price": 17,
+   "desc": "Hervidor eléctrico de 2.5 litros y 1500 W que hierve el agua muy rápido, con luz indicadora y base giratoria de 360°. Ideal para café, té e infusiones. Color negro con acero.",
+   "feats": [
+    "Capacidad: 2.5 L",
+    "1500 W",
+    "Base giratoria 360°",
+    "Luz indicadora"
+   ],
+   "imgs": [
+    "img/p/p-368-0.jpg"
+   ],
+   "thumb": "img/p/p-368-s.jpg",
+   "src": "82107f24caca",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-369",
+   "name": "Mini waflera eléctrica redonda",
+   "cat": "cocina",
+   "price": 10,
+   "desc": "Waflera eléctrica pequeña y portátil con placas antiadherentes, que calienta rápido y es fácil de limpiar. Solo se conecta y está lista. Color según disponibilidad.",
+   "feats": [
+    "Placas antiadherentes",
+    "Calienta rápido",
+    "Compacta",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-369-0.jpg",
+    "img/p/p-369-1.jpg",
+    "img/p/p-369-2.jpg",
+    "img/p/p-369-3.jpg"
+   ],
+   "thumb": "img/p/p-369-s.jpg",
+   "src": "b3b84303de1c",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-370",
+   "name": "Alfombra afelpada antideslizante de 200 x 150 cm",
+   "cat": "hogar",
+   "price": 17,
+   "desc": "Alfombra afelpada y suave, antideslizante, para la sala o el dormitorio. Mide 200 x 150 cm. Color según disponibilidad.",
+   "feats": [
+    "Medida: 200 x 150 cm",
+    "Afelpada",
+    "Antideslizante",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-370-0.jpg"
+   ],
+   "thumb": "img/p/p-370-s.jpg",
+   "src": "bb43a8da197a",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-371",
+   "name": "Láminas de espejo hexagonal adhesivas, 6 unidades",
+   "cat": "hogar",
+   "price": 4,
+   "desc": "Paquete de 6 láminas de espejo en forma de hexágono con adhesivo resistente, para decorar la sala, el baño o el dormitorio.",
+   "feats": [
+    "6 unidades",
+    "Forma hexagonal",
+    "Adhesivas",
+    "Para sala, baño o dormitorio"
+   ],
+   "imgs": [
+    "img/p/p-371-0.jpg",
+    "img/p/p-371-1.jpg",
+    "img/p/p-371-2.jpg"
+   ],
+   "thumb": "img/p/p-371-s.jpg",
+   "src": "0ecdd4719950",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-372",
+   "name": "Trapeador giratorio con balde",
+   "cat": "hogar",
+   "price": 13,
+   "desc": "Trapeador con almohadillas giratorias de microfibra fáciles de cambiar y balde con centrifugado para enjuagar y escurrir. Estructura de acero inoxidable y secado rápido.",
+   "feats": [
+    "Mopas de microfibra giratorias",
+    "Balde para enjuagar y escurrir",
+    "Acero inoxidable",
+    "Secado rápido"
+   ],
+   "imgs": [
+    "img/p/p-372-0.jpg",
+    "img/p/p-372-1.jpg"
+   ],
+   "thumb": "img/p/p-372-s.jpg",
+   "src": "3379270f9994",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-373",
+   "name": "Estante de baño sobre inodoro de 3 niveles, negro",
+   "cat": "hogar",
+   "price": 11,
+   "desc": "Estante de 3 niveles que aprovecha el espacio sobre el inodoro para toallas, jabones y productos de limpieza. Estructura firme, fácil de armar y sin taladrar. Color negro.",
+   "feats": [
+    "3 niveles",
+    "Va sobre el inodoro",
+    "Sin taladrar",
+    "Color negro"
+   ],
+   "imgs": [
+    "img/p/p-373-0.jpg",
+    "img/p/p-373-1.jpg",
+    "img/p/p-373-2.jpg"
+   ],
+   "thumb": "img/p/p-373-s.jpg",
+   "src": "447b4d832e3c",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-374",
+   "name": "Humidificador redondo con luna y estrellas",
+   "cat": "hogar",
+   "price": 7,
+   "desc": "Humidificador y difusor de aromas que hidrata el ambiente con una neblina suave. Tiene diseño de luna y estrellas que brillan con luz de colores y acabado tipo madera. Se enciende con un solo toque. Color según disponibilidad.",
+   "feats": [
+    "Neblina aromática",
+    "Luz de colores",
+    "Acabado tipo madera",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-374-0.jpg",
+    "img/p/p-374-1.jpg",
+    "img/p/p-374-2.jpg"
+   ],
+   "thumb": "img/p/p-374-s.jpg",
+   "src": "d358546d8608",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-375",
+   "name": "Armario zapatero de 4 niveles con puertas",
+   "cat": "hogar",
+   "price": 18,
+   "desc": "Zapatero tipo armario con 4 amplios niveles y puertas, de estructura firme y resistente. Mantiene los zapatos ordenados y protegidos del polvo.",
+   "feats": [
+    "4 niveles",
+    "Con puertas",
+    "Estructura firme",
+    "Diseño moderno"
+   ],
+   "imgs": [
+    "img/p/p-375-0.jpg"
+   ],
+   "thumb": "img/p/p-375-s.jpg",
+   "src": "a5e49afd4964",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-376",
+   "name": "Set de juguete tienda con muñeca",
+   "cat": "juguetes",
+   "price": 10,
+   "desc": "Set de juguete para niñas con muñeca, estantes y varias piezas para jugar a la tienda y crear historias. La caja mide aproximadamente 35 x 25 cm.",
+   "feats": [
+    "Incluye muñeca",
+    "Varias piezas",
+    "Caja de 35 x 25 cm",
+    "Estimula la imaginación"
+   ],
+   "imgs": [
+    "img/p/p-376-0.jpg",
+    "img/p/p-376-1.jpg"
+   ],
+   "thumb": "img/p/p-376-s.jpg",
+   "src": "37f50adb5102",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-377",
+   "name": "Set de 2 monster trucks con remolque",
+   "cat": "juguetes",
+   "price": 14,
+   "desc": "Dos camionetas de juguete estilo monster truck con alerón trasero y llantas grandes, con remolque de plataforma para llevar uno de los carros.",
+   "feats": [
+    "2 camionetas",
+    "Incluye remolque",
+    "Llantas grandes",
+    "Para jugar en casa"
+   ],
+   "imgs": [
+    "img/p/p-377-0.jpg",
+    "img/p/p-377-1.jpg",
+    "img/p/p-377-2.jpg"
+   ],
+   "thumb": "img/p/p-377-s.jpg",
+   "src": "cab64058941f",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-378",
+   "name": "Pista de carros de policía",
+   "cat": "juguetes",
+   "price": 11,
+   "desc": "Pista para armar con carro de policía, puente y elementos decorativos. Perfecta para que los niños jueguen y construyan su propia ruta.",
+   "feats": [
+    "Se arma por piezas",
+    "Carro de policía",
+    "Puente y figuras",
+    "Para niños"
+   ],
+   "imgs": [
+    "img/p/p-378-0.jpg",
+    "img/p/p-378-1.jpg"
+   ],
+   "thumb": "img/p/p-378-s.jpg",
+   "src": "0d14f307b10e",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-379",
+   "name": "Bicicleta de equilibrio para niños",
+   "cat": "juguetes",
+   "price": 18,
+   "desc": "Bicicleta sin pedales que ayuda a los niños a desarrollar equilibrio y coordinación. El asiento y el manubrio se ajustan para crecer con el niño. Color según disponibilidad.",
+   "feats": [
+    "Sin pedales",
+    "Asiento y manubrio ajustables",
+    "Desarrolla el equilibrio",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-379-0.jpg",
+    "img/p/p-379-1.jpg"
+   ],
+   "thumb": "img/p/p-379-s.jpg",
+   "src": "7b56c17dbb4e",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-380",
+   "name": "Peluche de Jesús con luz",
+   "cat": "juguetes",
+   "price": 14,
+   "desc": "Peluche suave y tierno de Jesús que se ilumina con una luz cálida en la oscuridad, ideal para acompañar en las noches o para regalar. Mide aproximadamente 38 cm de alto. Manto rojo o azul, según disponibilidad.",
+   "feats": [
+    "Luz suave y cálida",
+    "Medida: 38 cm",
+    "Muy suave",
+    "Manto rojo o azul"
+   ],
+   "imgs": [
+    "img/p/p-380-0.jpg",
+    "img/p/p-380-1.jpg",
+    "img/p/p-380-2.jpg",
+    "img/p/p-380-3.jpg"
+   ],
+   "thumb": "img/p/p-380-s.jpg",
+   "src": "7ac0a4d82da2",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-381",
+   "name": "Piano musical de 31 teclas con micrófono",
+   "cat": "juguetes",
+   "price": 11,
+   "desc": "Teclado musical para niños con 31 teclas, diferentes ritmos y sonidos, e incluye micrófono. Es resistente y fácil de usar. Color negro.",
+   "feats": [
+    "31 teclas",
+    "Incluye micrófono",
+    "Ritmos y sonidos",
+    "Fácil de usar"
+   ],
+   "imgs": [
+    "img/p/p-381-0.jpg",
+    "img/p/p-381-1.jpg"
+   ],
+   "thumb": "img/p/p-381-s.jpg",
+   "src": "f259962ac7b1",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-382",
+   "name": "Lector de tarjetas educativo bilingüe",
+   "cat": "juguetes",
+   "price": 8,
+   "desc": "Juguete con tarjetas didácticas en español e inglés: el niño mete una tarjeta y escucha la palabra. Ayuda a desarrollar vocabulario desde temprana edad. Color celeste.",
+   "feats": [
+    "Español e inglés",
+    "Incluye tarjetas",
+    "Desarrolla el vocabulario",
+    "Color celeste"
+   ],
+   "imgs": [
+    "img/p/p-382-0.jpg",
+    "img/p/p-382-1.jpg"
+   ],
+   "thumb": "img/p/p-382-s.jpg",
+   "src": "ac3ed3217c67",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-383",
+   "name": "Set de 3 cosmetiqueras con espejo",
+   "cat": "belleza",
+   "price": 18,
+   "desc": "Juego de 3 cosmetiqueras en 3 tamaños con asa y cierre, para guardar maquillaje y accesorios. Incluye espejito. Color según disponibilidad.",
+   "feats": [
+    "3 tamaños",
+    "Incluye espejo",
+    "Con asa y cierre",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-383-0.jpg",
+    "img/p/p-383-1.jpg",
+    "img/p/p-383-2.jpg",
+    "img/p/p-383-3.jpg"
+   ],
+   "thumb": "img/p/p-383-s.jpg",
+   "src": "67ad496372ba",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-384",
+   "name": "Espejo de maquillaje con luz LED",
+   "cat": "belleza",
+   "price": 8,
+   "desc": "Espejo de mesa con luz LED en 3 tonos y control táctil, liviano y elegante. Ideal para maquillarse con buena luz. Color rosado.",
+   "feats": [
+    "Luz LED de 3 tonos",
+    "Control táctil",
+    "De mesa",
+    "Liviano"
+   ],
+   "imgs": [
+    "img/p/p-384-0.jpg",
+    "img/p/p-384-1.jpg"
+   ],
+   "thumb": "img/p/p-384-s.jpg",
+   "src": "8b8897221979",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-385",
+   "name": "Bálsamo labial de fresa",
+   "cat": "belleza",
+   "price": 1,
+   "desc": "Bálsamo para labios en presentación de fresita que ayuda a mantenerlos hidratados y suaves. Práctico para llevar en la cartera.",
+   "feats": [
+    "Hidrata los labios",
+    "Forma de fresa",
+    "Para llevar en la cartera"
+   ],
+   "imgs": [
+    "img/p/p-385-0.jpg",
+    "img/p/p-385-1.jpg",
+    "img/p/p-385-2.jpg"
+   ],
+   "thumb": "img/p/p-385-s.jpg",
+   "src": "b8ac41ef4340",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-386",
+   "name": "Kit de extensión de pestañas JDM",
+   "cat": "belleza",
+   "price": 6,
+   "desc": "Kit para poner extensiones de pestañas en casa por grupos, con pestañas de diferentes largos, pinza y adhesivo sellador.",
+   "feats": [
+    "Pestañas de varios largos",
+    "Incluye pinza",
+    "Incluye adhesivo",
+    "Para uso en casa"
+   ],
+   "imgs": [
+    "img/p/p-386-0.jpg",
+    "img/p/p-386-1.jpg",
+    "img/p/p-386-2.jpg"
+   ],
+   "thumb": "img/p/p-386-s.jpg",
+   "src": "7987f13388fc",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-387",
+   "name": "Pestañas postizas ojo de gato, 5 pares",
+   "cat": "belleza",
+   "price": 3,
+   "desc": "Paquete de 5 pares de pestañas postizas estilo ojo de gato, fáciles y prácticas de poner.",
+   "feats": [
+    "5 pares",
+    "Estilo ojo de gato",
+    "Fáciles de usar"
+   ],
+   "imgs": [
+    "img/p/p-387-0.jpg",
+    "img/p/p-387-1.jpg"
+   ],
+   "thumb": "img/p/p-387-s.jpg",
+   "src": "457de0afaaa5",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-388",
+   "name": "Plancha onduladora de 3 tubos para ondas",
+   "cat": "belleza",
+   "price": 10,
+   "desc": "Onduladora con 3 tubos que hace ondas en forma de S al mismo tiempo, con soporte práctico. Color según disponibilidad.",
+   "feats": [
+    "3 tubos",
+    "Ondas en S",
+    "Con soporte",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-388-0.jpg",
+    "img/p/p-388-1.jpg",
+    "img/p/p-388-2.jpg",
+    "img/p/p-388-3.jpg"
+   ],
+   "thumb": "img/p/p-388-s.jpg",
+   "src": "2e64eff7d18e",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-389",
+   "name": "Cepillo alisador eléctrico",
+   "cat": "belleza",
+   "price": 6,
+   "desc": "Cepillo que plancha y alisa el cabello mientras peina, con botón de encendido, calentamiento rápido y protección contra sobrecalentamiento. Funciona a 110 V. Color al azar.",
+   "feats": [
+    "Alisa mientras peina",
+    "Calentamiento rápido",
+    "110 V",
+    "Color surtido, según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-389-0.jpg",
+    "img/p/p-389-1.jpg"
+   ],
+   "thumb": "img/p/p-389-s.jpg",
+   "src": "623a965d5d68",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-390",
+   "name": "Rodillo masajeador muscular recargable",
+   "cat": "cuidado",
+   "price": 23,
+   "desc": "Masajeador con rodillos y vibración ajustable desde su panel, para piernas, brazos y cuello. Batería recargable con carga rápida USB-C. Es compacto, mide unos 20 x 16 cm.",
+   "feats": [
+    "Vibración ajustable",
+    "Recargable USB-C",
+    "Medida: 20 x 16 cm",
+    "Portátil"
+   ],
+   "imgs": [
+    "img/p/p-390-0.jpg",
+    "img/p/p-390-1.jpg",
+    "img/p/p-390-2.jpg"
+   ],
+   "thumb": "img/p/p-390-s.jpg",
+   "src": "b228cbc88802",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-391",
+   "name": "Masajeador eléctrico de ventosa",
+   "cat": "cuidado",
+   "price": 13,
+   "desc": "Masajeador con succión tipo ventosa, varios niveles de intensidad y pantalla digital. Verde, gris o blanco, según disponibilidad.",
+   "feats": [
+    "Succión tipo ventosa",
+    "Varios niveles",
+    "Pantalla digital",
+    "Verde, gris o blanco"
+   ],
+   "imgs": [
+    "img/p/p-391-0.jpg",
+    "img/p/p-391-1.jpg"
+   ],
+   "thumb": "img/p/p-391-s.jpg",
+   "src": "f0ae8ee8ebf9",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-392",
+   "name": "Dispensador de hilo dental portátil",
+   "cat": "cuidado",
+   "price": 2,
+   "desc": "Dispensador compacto de palillos de hilo dental con apertura automática, para sacar uno sin tocar los demás. Ideal para la casa o los viajes. Color según disponibilidad.",
+   "feats": [
+    "Apertura automática",
+    "Higiénico",
+    "Portátil",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-392-0.jpg",
+    "img/p/p-392-1.jpg",
+    "img/p/p-392-2.jpg",
+    "img/p/p-392-3.jpg"
+   ],
+   "thumb": "img/p/p-392-s.jpg",
+   "src": "e4a4fe402743",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-393",
+   "name": "Cepillo de dientes eléctrico recargable",
+   "cat": "cuidado",
+   "price": 5,
+   "desc": "Cepillo de dientes eléctrico recargable por USB con 3 modos de limpieza. Incluye 3 cabezales de repuesto y cable USB. Mide aproximadamente 22 cm. Color según disponibilidad.",
+   "feats": [
+    "Recargable por USB",
+    "3 modos",
+    "Incluye 3 repuestos",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-393-0.jpg",
+    "img/p/p-393-1.jpg",
+    "img/p/p-393-2.jpg"
+   ],
+   "thumb": "img/p/p-393-s.jpg",
+   "src": "9f9dc87e60e1",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-394",
+   "name": "Ligas de ejercicio de látex, 5 unidades",
+   "cat": "deporte",
+   "price": 3,
+   "desc": "Kit de 5 bandas elásticas planas de látex con niveles de resistencia por color, para piernas, glúteos y brazos. Cada una mide 25 x 5 cm.",
+   "feats": [
+    "5 bandas",
+    "Resistencia por colores",
+    "Medida: 25 x 5 cm",
+    "Látex"
+   ],
+   "imgs": [
+    "img/p/p-394-0.jpg",
+    "img/p/p-394-1.jpg",
+    "img/p/p-394-2.jpg"
+   ],
+   "thumb": "img/p/p-394-s.jpg",
+   "src": "bbe7889e40f5",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-395",
+   "name": "Conjunto deportivo de short y top",
+   "cat": "deporte",
+   "price": 6,
+   "desc": "Conjunto de short y top súper suave y cómodo, ideal para el gimnasio o hacer ejercicio en casa. Color según disponibilidad.",
+   "feats": [
+    "Short y top",
+    "Tela suave",
+    "Para el gimnasio",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-395-0.jpg",
+    "img/p/p-395-1.jpg"
+   ],
+   "thumb": "img/p/p-395-s.jpg",
+   "src": "ea84a6548084",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-396",
+   "name": "Cepillo secador para mascotas",
+   "cat": "mascotas",
+   "price": 12,
+   "desc": "Cepillo eléctrico 2 en 1 con forma de patita que seca y peina el pelo de perros y gatos al mismo tiempo, con una sola mano. Tiene puntas redondeadas que cuidan la piel y dos velocidades. Color celeste.",
+   "feats": [
+    "Seca y peina a la vez",
+    "Puntas redondeadas",
+    "2 velocidades",
+    "Para perros y gatos"
+   ],
+   "imgs": [
+    "img/p/p-396-0.jpg",
+    "img/p/p-396-1.jpg",
+    "img/p/p-396-2.jpg",
+    "img/p/p-396-3.jpg"
+   ],
+   "thumb": "img/p/p-396-s.jpg",
+   "src": "cb2588f9b099",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-397",
+   "name": "Radio recargable con panel solar y linterna",
+   "cat": "tecno",
+   "price": 20,
+   "desc": "Radio FM, AM y SW con panel solar, batería recargable, linterna y reproductor MP3. También sirve como power bank para cargar el celular. Ideal para la casa, el campo, los viajes y los cortes de luz.",
+   "feats": [
+    "Radio FM, AM y SW",
+    "Panel solar y recargable",
+    "Linterna incluida",
+    "Carga el celular"
+   ],
+   "imgs": [
+    "img/p/p-397-0.jpg",
+    "img/p/p-397-1.jpg",
+    "img/p/p-397-2.jpg"
+   ],
+   "thumb": "img/p/p-397-s.jpg",
+   "src": "863e185424f6",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-398",
+   "name": "Ventilador de escritorio USB con luz",
+   "cat": "tecno",
+   "price": 10,
+   "desc": "Ventilador compacto y silencioso que se conecta por USB, con 3 velocidades y luz de ambiente de colores. Mide aproximadamente 23.5 x 23.5 x 5 cm. Ideal para escritorio o mesa de noche.",
+   "feats": [
+    "3 velocidades",
+    "Conexión USB",
+    "Luz de colores",
+    "Medida: 23.5 x 23.5 cm"
+   ],
+   "imgs": [
+    "img/p/p-398-0.jpg"
+   ],
+   "thumb": "img/p/p-398-s.jpg",
+   "src": "54e5f3b43223",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-399",
+   "name": "Mini consola portátil con 400 juegos",
+   "cat": "tecno",
+   "price": 11,
+   "desc": "Consola portátil recargable con 400 juegos clásicos instalados y pantalla de unos 7.5 cm. Incluye cable AV para jugar en la televisión. Color al azar.",
+   "feats": [
+    "400 juegos",
+    "Recargable",
+    "Cable para TV",
+    "Color surtido, según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-399-0.jpg"
+   ],
+   "thumb": "img/p/p-399-s.jpg",
+   "src": "b3da73b30cec",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-400",
+   "name": "Difusor de aromas recargable para carro",
+   "cat": "herramientas",
+   "price": 17,
+   "desc": "Difusor de esencias recargable para el carro con 3 niveles de intensidad y sensor que lo enciende y apaga solo al detectar el movimiento del vehículo. Incluye 3 frascos de fragancia y cable USB.",
+   "feats": [
+    "3 niveles",
+    "Encendido automático",
+    "Incluye 3 fragancias",
+    "Recargable USB"
+   ],
+   "imgs": [
+    "img/p/p-400-0.jpg"
+   ],
+   "thumb": "img/p/p-400-s.jpg",
+   "src": "79a216c4ad15",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-401",
+   "name": "Taladro inalámbrico con maletín de herramientas",
+   "cat": "herramientas",
+   "price": 38,
+   "desc": "Kit completo con taladro atornillador inalámbrico, dos baterías de litio y cargador, en maletín. Incluye martillo, alicates, pinza de punta, llave ajustable, segueta, cúter, cinta métrica, destornilladores, buscapolos, puntas y brocas.",
+   "feats": [
+    "Taladro inalámbrico",
+    "2 baterías y cargador",
+    "Herramientas manuales incluidas",
+    "En maletín"
+   ],
+   "imgs": [
+    "img/p/p-401-0.jpg",
+    "img/p/p-401-1.jpg",
+    "img/p/p-401-2.jpg"
+   ],
+   "thumb": "img/p/p-401-s.jpg",
+   "src": "7dd899e55ae0",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-402",
+   "name": "Juego de destornillador de precisión 24 en 1",
+   "cat": "herramientas",
+   "price": 5,
+   "desc": "Destornillador de precisión con 24 puntas intercambiables en estuche, ideal para celulares, lentes y aparatos pequeños. El estuche mide 16 x 7 cm.",
+   "feats": [
+    "24 puntas",
+    "Estuche de 16 x 7 cm",
+    "Para aparatos pequeños"
+   ],
+   "imgs": [
+    "img/p/p-402-0.jpg",
+    "img/p/p-402-1.jpg"
+   ],
+   "thumb": "img/p/p-402-s.jpg",
+   "src": "f638d108ffa3",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-403",
+   "name": "Luces LED navideñas de 10 m, luz blanca",
+   "cat": "navidad",
+   "price": 8,
+   "desc": "Guirnalda lineal de luces LED de 10 metros con 100 focos de luz blanca y cable negro, para el árbol, ventanas o exteriores.",
+   "feats": [
+    "10 metros",
+    "100 focos LED",
+    "Luz blanca",
+    "Cable negro"
+   ],
+   "imgs": [
+    "img/p/p-403-0.jpg",
+    "img/p/p-403-1.jpg"
+   ],
+   "thumb": "img/p/p-403-s.jpg",
+   "src": "7a73408d1a72",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-404",
+   "name": "Platera vitrina de 3 niveles con puertas, negra",
+   "cat": "cocina",
+   "price": 38,
+   "desc": "Mueble organizador de cocina de 3 niveles con puertas de vidrio, para guardar platos, vasos y utensilios ordenados y protegidos del polvo. Mide aproximadamente 52.5 cm de ancho, 28 cm de fondo y 59 cm de alto. Color negro.",
+   "feats": [
+    "3 niveles",
+    "Puertas de vidrio",
+    "Medida aprox.: 52.5 x 28 x 59 cm",
+    "Color negro"
+   ],
+   "imgs": [
+    "img/p/p-404-0.jpg",
+    "img/p/p-404-1.jpg",
+    "img/p/p-404-2.jpg"
+   ],
+   "thumb": "img/p/p-404-s.jpg",
+   "src": "7e55e457211b",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-405",
+   "name": "Lavadora de frutas y verduras con cepillo giratorio",
+   "cat": "cocina",
+   "price": 11,
+   "desc": "Lavador portátil de frutas y verduras con cepillo giratorio que las limpia mientras giran en el agua. Práctico para lavar uvas, fresas, tomates y más. Color según disponibilidad.",
+   "feats": [
+    "Cepillo giratorio",
+    "Para frutas y verduras",
+    "Portátil",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-405-0.jpg",
+    "img/p/p-405-1.jpg",
+    "img/p/p-405-2.jpg"
+   ],
+   "thumb": "img/p/p-405-s.jpg",
+   "src": "048fe03589cf",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-406",
+   "name": "Taza térmica mezcladora automática",
+   "cat": "cocina",
+   "price": 10,
+   "desc": "Taza de acero inoxidable que revuelve sola con solo presionar un botón. Funciona a pilas y es ideal para café, chocolate, leche o batidos. Es resistente y fácil de lavar. Color según disponibilidad.",
+   "feats": [
+    "Se revuelve sola",
+    "Funciona a pilas",
+    "Acero inoxidable",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-406-0.jpg",
+    "img/p/p-406-1.jpg",
+    "img/p/p-406-2.jpg"
+   ],
+   "thumb": "img/p/p-406-s.jpg",
+   "src": "02cce836d4a2",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-407",
+   "name": "Set de cubiertos dorados de 24 piezas con estuche",
+   "cat": "cocina",
+   "price": 21,
+   "desc": "Juego de 24 cubiertos de acero inoxidable con acabado dorado que no se pelan, en estuche de regalo. Ideal para eventos especiales o para regalar. El estuche mide aproximadamente 39.7 x 25.6 cm.",
+   "feats": [
+    "24 piezas",
+    "Acero inoxidable",
+    "Acabado dorado",
+    "Con estuche"
+   ],
+   "imgs": [
+    "img/p/p-407-0.jpg",
+    "img/p/p-407-1.jpg"
+   ],
+   "thumb": "img/p/p-407-s.jpg",
+   "src": "b5fe51e4a083",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-408",
+   "name": "Exprimidor de jugos eléctrico recargable",
+   "cat": "cocina",
+   "price": 10,
+   "desc": "Exprimidor eléctrico compacto y recargable, fácil de llevar, para jugo de naranja y otras frutas. Tiene luz que indica cuando la carga está lista. Se debe desconectar el cable antes de usarlo.",
+   "feats": [
+    "Recargable",
+    "Compacto y portátil",
+    "Luz indicadora de carga",
+    "Fácil de limpiar"
+   ],
+   "imgs": [
+    "img/p/p-408-0.jpg",
+    "img/p/p-408-1.jpg",
+    "img/p/p-408-2.jpg"
+   ],
+   "thumb": "img/p/p-408-s.jpg",
+   "src": "f76d476516bb",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-409",
+   "name": "Set de 5 bandejas de cerámica con borde negro",
+   "cat": "cocina",
+   "price": 12,
+   "desc": "Juego de 5 bandejas de cerámica blanca con borde negro, para servir snacks, ensaladas o postres. Viene en caja, ideal para regalar. Diseño corazón o rectangular, según disponibilidad.",
+   "feats": [
+    "5 piezas",
+    "Cerámica con borde negro",
+    "Viene en caja",
+    "Diseño corazón o rectangular"
+   ],
+   "imgs": [
+    "img/p/p-409-0.jpg",
+    "img/p/p-409-1.jpg",
+    "img/p/p-409-2.jpg"
+   ],
+   "thumb": "img/p/p-409-s.jpg",
+   "src": "7baf51e269a5",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-410",
+   "name": "Repisa flotante esquinera zigzag de 5 niveles, blanca",
+   "cat": "hogar",
+   "price": 14,
+   "desc": "Repisa de pared esquinera tipo zigzag con 5 niveles, moderna y decorativa, para aprovechar las esquinas. Ideal para libros, plantas, fotos y adornos en la sala, el cuarto o la oficina. Color blanco.",
+   "feats": [
+    "5 niveles",
+    "Esquinera",
+    "Se instala en la pared",
+    "Color blanco"
+   ],
+   "imgs": [
+    "img/p/p-410-0.jpg",
+    "img/p/p-410-1.jpg"
+   ],
+   "thumb": "img/p/p-410-s.jpg",
+   "src": "1a635133541b",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-411",
+   "name": "Raqueta eléctrica matamosquitos",
+   "cat": "hogar",
+   "price": 10,
+   "desc": "Raqueta eléctrica que elimina mosquitos con una pequeña descarga al contacto. Es fácil de manejar y se puede usar en la mano o de pie. Ideal para cualquier espacio de la casa.",
+   "feats": [
+    "Descarga eléctrica",
+    "Uso en la mano o de pie",
+    "Fácil de manejar"
+   ],
+   "imgs": [
+    "img/p/p-411-0.jpg"
+   ],
+   "thumb": "img/p/p-411-s.jpg",
+   "src": "62154b472fc2",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-412",
+   "name": "Plancha de vapor portátil plegable",
+   "cat": "hogar",
+   "price": 23,
+   "desc": "Plancha de vapor pequeña y liviana que quita las arrugas al instante, para la casa o los viajes. Tiene mango plegable para guardarla fácil y sirve para planchar en horizontal o colgada.",
+   "feats": [
+    "Vapor",
+    "Mango plegable",
+    "Liviana para viajar",
+    "Plancha horizontal o colgada"
+   ],
+   "imgs": [
+    "img/p/p-412-0.jpg"
+   ],
+   "thumb": "img/p/p-412-s.jpg",
+   "src": "b3c371cc9646",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-413",
+   "name": "Lámpara atrapa mosquitos con luz UV",
+   "cat": "hogar",
+   "price": 8,
+   "desc": "Lámpara eléctrica con luz UV que atrae y elimina mosquitos y otros insectos voladores sin químicos. Es silenciosa y se usa en el cuarto o la sala.",
+   "feats": [
+    "Luz UV",
+    "Sin químicos",
+    "Silenciosa",
+    "Para cuarto o sala"
+   ],
+   "imgs": [
+    "img/p/p-413-0.jpg"
+   ],
+   "thumb": "img/p/p-413-s.jpg",
+   "src": "20196fd6953e",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-414",
+   "name": "Colcha de 2 plazas que brilla en la oscuridad",
+   "cat": "hogar",
+   "price": 10,
+   "desc": "Colcha súper suave de 2 plazas con diseños que brillan en la oscuridad. Lindos colores para el cuarto. Diseño según disponibilidad.",
+   "feats": [
+    "2 plazas",
+    "Brilla en la oscuridad",
+    "Súper suave",
+    "Diseño según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-414-0.jpg",
+    "img/p/p-414-1.jpg",
+    "img/p/p-414-2.jpg",
+    "img/p/p-414-3.jpg"
+   ],
+   "thumb": "img/p/p-414-s.jpg",
+   "src": "6c52a79d8e83",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-415",
+   "name": "Kit levantador para mover muebles",
+   "cat": "herramientas",
+   "price": 8,
+   "desc": "Herramienta de metal con palanca y bases con ruedas para levantar y mover muebles y objetos pesados sin esfuerzo y sin dañar el piso. Permite deslizar en cualquier dirección. Color rojo.",
+   "feats": [
+    "Palanca de metal",
+    "Bases con ruedas",
+    "Mueve objetos pesados",
+    "Color rojo"
+   ],
+   "imgs": [
+    "img/p/p-415-0.jpg"
+   ],
+   "thumb": "img/p/p-415-s.jpg",
+   "src": "d5c50c7f4e23",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-416",
+   "name": "Set de doctor dentista de juguete",
+   "cat": "juguetes",
+   "price": 9,
+   "desc": "Mini juego de dentista y doctor con varias piezas para que los niños jueguen con imaginación y desarrollen la motricidad. Color rosado.",
+   "feats": [
+    "Varias piezas",
+    "Juego de roles",
+    "Desarrolla la motricidad",
+    "Color rosado"
+   ],
+   "imgs": [
+    "img/p/p-416-0.jpg",
+    "img/p/p-416-1.jpg"
+   ],
+   "thumb": "img/p/p-416-s.jpg",
+   "src": "e731d95ee397",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-417",
+   "name": "Set de tractores de granja de juguete",
+   "cat": "juguetes",
+   "price": 14,
+   "desc": "Set de vehículos de granja: tractor verde con pala cargadora, tractor rojo con enganche, volqueta verde con caja que se mueve y excavadora amarilla con brazo móvil.",
+   "feats": [
+    "4 vehículos de granja",
+    "Piezas móviles",
+    "Pala y brazo de excavadora",
+    "Para niños"
+   ],
+   "imgs": [
+    "img/p/p-417-0.jpg",
+    "img/p/p-417-1.jpg"
+   ],
+   "thumb": "img/p/p-417-s.jpg",
+   "src": "903e5d85aa53",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-418",
+   "name": "Pista de carros con dinosaurio",
+   "cat": "juguetes",
+   "price": 15,
+   "desc": "Pista de carreras armable con temática de dinosaurios: trae piezas de pista flexibles, carrito y un T-Rex que atrapa el carro. Ayuda a desarrollar la imaginación de los niños.",
+   "feats": [
+    "Pista armable",
+    "Incluye carrito",
+    "Dinosaurio T-Rex",
+    "Piezas flexibles"
+   ],
+   "imgs": [
+    "img/p/p-418-0.jpg"
+   ],
+   "thumb": "img/p/p-418-s.jpg",
+   "src": "11184023f450",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-419",
+   "name": "Piano de cola de juguete con banquito",
+   "cat": "juguetes",
+   "price": 29,
+   "desc": "Piano de cola de juguete de plástico resistente con teclado de 8 notas de colores y funciones musicales básicas, para estimular el aprendizaje de los niños. Color según disponibilidad.",
+   "feats": [
+    "8 notas de colores",
+    "Plástico resistente",
+    "Funciones musicales",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-419-0.jpg"
+   ],
+   "thumb": "img/p/p-419-s.jpg",
+   "src": "d5c19e4b4a3e",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-420",
+   "name": "Peluche estrella enojada",
+   "cat": "juguetes",
+   "price": 2,
+   "desc": "Peluche suave en forma de estrella con carita de enojada, gracioso y tierno para abrazar o regalar. Varios colores para escoger, según disponibilidad.",
+   "feats": [
+    "Súper suave",
+    "Carita graciosa",
+    "Ideal para regalar",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-420-0.jpg"
+   ],
+   "thumb": "img/p/p-420-s.jpg",
+   "src": "2d95a2f00177",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-421",
+   "name": "Scooter 2 en 1 para niños con asiento",
+   "cat": "juguetes",
+   "price": 21,
+   "desc": "Scooter estable con asiento que se quita, para niños de 2 a 6 años aproximadamente. Tiene estructura firme y manubrio fácil de agarrar. Color rosado, verde o azul, según disponibilidad.",
+   "feats": [
+    "2 en 1 con asiento removible",
+    "De 2 a 6 años aprox.",
+    "Estructura firme",
+    "Rosado, verde o azul"
+   ],
+   "imgs": [
+    "img/p/p-421-0.jpg"
+   ],
+   "thumb": "img/p/p-421-s.jpg",
+   "src": "b0f8aecb339a",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-422",
+   "name": "Set de té y pastel de juguete",
+   "cat": "juguetes",
+   "price": 9,
+   "desc": "Set de juguete para jugar a la hora del té: incluye pastel desarmable, tetera, tazas, cubiertos y dulces. Color según disponibilidad.",
+   "feats": [
+    "Pastel desarmable",
+    "Tetera y tazas",
+    "Cubiertos y dulces",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-422-0.jpg"
+   ],
+   "thumb": "img/p/p-422-s.jpg",
+   "src": "f9e826376898",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-423",
+   "name": "Colcha suave para bebé",
+   "cat": "bebes",
+   "price": 11,
+   "desc": "Colcha de felpa suave de doble vista, hipoalergénica y térmica, para la cuna, el coche o para abrigar al recién nacido. Estampados infantiles de ovejas, globos y estrellas. Diseño según disponibilidad.",
+   "feats": [
+    "Felpa suave de doble vista",
+    "Hipoalergénica y térmica",
+    "Para cuna o coche",
+    "Diseño según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-423-0.jpg",
+    "img/p/p-423-1.jpg",
+    "img/p/p-423-2.jpg"
+   ],
+   "thumb": "img/p/p-423-s.jpg",
+   "src": "3635f8907742",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-424",
+   "name": "Gimnasio de bebé con piano y sonajeros",
+   "cat": "bebes",
+   "price": 16,
+   "desc": "Alfombra de actividades para bebés con arco de sonajeros de colores que se quitan y piano musical que el bebé toca al patear. Estimula la coordinación y la curiosidad. Color rosado o celeste, según disponibilidad.",
+   "feats": [
+    "Piano para patear",
+    "Sonajeros desmontables",
+    "Estimula la coordinación",
+    "Rosado o celeste"
+   ],
+   "imgs": [
+    "img/p/p-424-0.jpg",
+    "img/p/p-424-1.jpg",
+    "img/p/p-424-2.jpg"
+   ],
+   "thumb": "img/p/p-424-s.jpg",
+   "src": "553665947c33",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-425",
+   "name": "Cosmetiquera con espejo y luz LED, rosada",
+   "cat": "belleza",
+   "price": 18,
+   "desc": "Neceser de maquillaje portátil con espejo con luz LED, compartimentos para organizar y organizador para brochas. Ideal para el tocador o los viajes. Color rosado.",
+   "feats": [
+    "Espejo con luz LED",
+    "Compartimentos",
+    "Organizador de brochas",
+    "Color rosado"
+   ],
+   "imgs": [
+    "img/p/p-425-0.jpg",
+    "img/p/p-425-1.jpg",
+    "img/p/p-425-2.jpg"
+   ],
+   "thumb": "img/p/p-425-s.jpg",
+   "src": "8597988db31a",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-426",
+   "name": "Focos LED para espejo, 10 unidades",
+   "cat": "belleza",
+   "price": 7,
+   "desc": "Juego de 10 focos LED con adhesivos para convertir cualquier espejo en espejo de tocador. Tiene 3 intensidades de luz para elegir la que prefieras.",
+   "feats": [
+    "10 focos con adhesivo",
+    "3 intensidades",
+    "Para espejo de tocador"
+   ],
+   "imgs": [
+    "img/p/p-426-0.jpg",
+    "img/p/p-426-1.jpg"
+   ],
+   "thumb": "img/p/p-426-s.jpg",
+   "src": "354365c03c99",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-427",
+   "name": "Gloss de labios con llavero de conejito",
+   "cat": "belleza",
+   "price": 5,
+   "desc": "Brillo de labios en presentación de llavero de peluche en forma de conejito. Práctico para llevar en la cartera y lindo para regalar.",
+   "feats": [
+    "Llavero de peluche",
+    "Brillo de labios",
+    "Ideal para regalar"
+   ],
+   "imgs": [
+    "img/p/p-427-0.jpg",
+    "img/p/p-427-1.jpg"
+   ],
+   "thumb": "img/p/p-427-s.jpg",
+   "src": "c7dd588fdf06",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-428",
+   "name": "Pegamento para extensiones de pestañas Salon Pro",
+   "cat": "belleza",
+   "price": 2,
+   "desc": "Pegamento de alta resistencia para aplicar extensiones de pestañas.",
+   "feats": [
+    "Alta resistencia",
+    "Para extensiones de pestañas"
+   ],
+   "imgs": [
+    "img/p/p-428-0.jpg",
+    "img/p/p-428-1.jpg"
+   ],
+   "thumb": "img/p/p-428-s.jpg",
+   "src": "6d34de4ef87e",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-429",
+   "name": "Plancha de cabello Sonar, roja",
+   "cat": "belleza",
+   "price": 14,
+   "desc": "Plancha alisadora Sonar súper potente que deja el cabello liso en una pasada. Color rojo.",
+   "feats": [
+    "Súper potente",
+    "Lisos en una pasada",
+    "Color rojo"
+   ],
+   "imgs": [
+    "img/p/p-429-0.jpg"
+   ],
+   "thumb": "img/p/p-429-s.jpg",
+   "src": "bc5ee023c0cf",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-430",
+   "name": "Caja de pestañas por racimos Snow Shirley",
+   "cat": "belleza",
+   "price": 10,
+   "desc": "Caja de pestañas por racimos para extensión en casa, con estilos de volumen natural y efecto ojo de gato. Son suaves, cómodas y de larga duración.",
+   "feats": [
+    "Pestañas por racimos",
+    "Volumen natural y ojo de gato",
+    "Suaves y cómodas"
+   ],
+   "imgs": [
+    "img/p/p-430-0.jpg",
+    "img/p/p-430-1.jpg",
+    "img/p/p-430-2.jpg"
+   ],
+   "thumb": "img/p/p-430-s.jpg",
+   "src": "294df3265ee4",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-431",
+   "name": "Set Sonar plancha alisadora y rizador 2 en 1",
+   "cat": "belleza",
+   "price": 19,
+   "desc": "Set Sonar con plancha alisadora y rizador de barril, para looks lisos o rizos con volumen. Tiene placas de cerámica que protegen el cabello y calienta rápido. Color negro con rosado.",
+   "feats": [
+    "Plancha y rizador",
+    "Placas de cerámica",
+    "Calentamiento rápido",
+    "Negro con rosado"
+   ],
+   "imgs": [
+    "img/p/p-431-0.jpg",
+    "img/p/p-431-1.jpg",
+    "img/p/p-431-2.jpg"
+   ],
+   "thumb": "img/p/p-431-s.jpg",
+   "src": "f700798b04a3",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-432",
+   "name": "Antifaz para dormir",
+   "cat": "cuidado",
+   "price": 3,
+   "desc": "Antifaz suave y liviano con banda ajustable que bloquea la luz para descansar mejor, en casa o de viaje. Color según disponibilidad.",
+   "feats": [
+    "Suave al tacto",
+    "Banda ajustable",
+    "Bloquea la luz",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-432-0.jpg",
+    "img/p/p-432-1.jpg"
+   ],
+   "thumb": "img/p/p-432-s.jpg",
+   "src": "893f045953ca",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-433",
+   "name": "Almohada ergonómica multifuncional",
+   "cat": "cuidado",
+   "price": 19,
+   "desc": "Almohada de espuma viscoelástica con diseño curvo y reposacabezas desmontable, que da soporte a la espalda, las piernas o el cuello. Sirve para leer en la cama o descansar. Color según disponibilidad.",
+   "feats": [
+    "Espuma viscoelástica",
+    "Reposacabezas desmontable",
+    "Espalda, piernas o cuello",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-433-0.jpg",
+    "img/p/p-433-1.jpg",
+    "img/p/p-433-2.jpg"
+   ],
+   "thumb": "img/p/p-433-s.jpg",
+   "src": "216296e4c1e4",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-434",
+   "name": "Rodillo facial de hielo con estuche",
+   "cat": "cuidado",
+   "price": 4,
+   "desc": "Rodillo de frío para masaje facial y de ojos, con estuche para mantenerlo limpio. Se congela antes de usar y ayuda a desinflamar la piel.",
+   "feats": [
+    "Terapia de frío",
+    "Incluye estuche",
+    "Para rostro y ojos"
+   ],
+   "imgs": [
+    "img/p/p-434-0.jpg"
+   ],
+   "thumb": "img/p/p-434-s.jpg",
+   "src": "467bbeba4545",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-435",
+   "name": "Guantes de ejercicio",
+   "cat": "deporte",
+   "price": 4,
+   "desc": "Guantes deportivos transpirables y cómodos que protegen las manos y mejoran el agarre al entrenar. Tallas S, M y L. Varios colores, según disponibilidad.",
+   "feats": [
+    "Mejor agarre",
+    "Transpirables",
+    "Tallas S, M y L",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-435-0.jpg",
+    "img/p/p-435-1.jpg",
+    "img/p/p-435-2.jpg"
+   ],
+   "thumb": "img/p/p-435-s.jpg",
+   "src": "0bcdd4b7524f",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-436",
+   "name": "Set de 3 tomatodos deportivos",
+   "cat": "deporte",
+   "price": 9,
+   "desc": "Juego de 3 tomatodos de distintos tamaños, libres de BPA, con tapa segura y boquilla rebatible. Para el gimnasio, el colegio o el día a día. Color según disponibilidad.",
+   "feats": [
+    "3 tamaños",
+    "Libres de BPA",
+    "Tapa segura",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-436-0.jpg",
+    "img/p/p-436-1.jpg",
+    "img/p/p-436-2.jpg",
+    "img/p/p-436-3.jpg"
+   ],
+   "thumb": "img/p/p-436-s.jpg",
+   "src": "1cc485e564c6",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-437",
+   "name": "Cama cojín afelpado para mascotas",
+   "cat": "mascotas",
+   "price": 12,
+   "desc": "Cama redonda de felpa suave para perro o gato, con base antideslizante. Mide aproximadamente 30 a 35 cm. Color según disponibilidad.",
+   "feats": [
+    "Felpa suave",
+    "Base antideslizante",
+    "Medida aprox.: 30 a 35 cm",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-437-0.jpg",
+    "img/p/p-437-1.jpg",
+    "img/p/p-437-2.jpg",
+    "img/p/p-437-3.jpg"
+   ],
+   "thumb": "img/p/p-437-s.jpg",
+   "src": "05be7d6a4a5f",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-438",
+   "name": "Combo smartwatch IT-20 con audífonos y parlante",
+   "cat": "tecno",
+   "price": 18,
+   "desc": "Kit con reloj inteligente, audífonos inalámbricos bluetooth con estuche de carga y mini parlante bluetooth triangular con luz. Incluye 4 correas para el reloj.",
+   "feats": [
+    "Reloj inteligente",
+    "Audífonos inalámbricos",
+    "Mini parlante con luz",
+    "4 correas"
+   ],
+   "imgs": [
+    "img/p/p-438-0.jpg",
+    "img/p/p-438-1.jpg",
+    "img/p/p-438-2.jpg"
+   ],
+   "thumb": "img/p/p-438-s.jpg",
+   "src": "68e94da61e59",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-439",
+   "name": "Regleta circular de 5 tomas con USB y tipo C",
+   "cat": "tecno",
+   "price": 6,
+   "desc": "Regleta redonda con 5 enchufes universales, 2 puertos USB y 1 puerto tipo C, con interruptor. Soporta hasta 2000 W, cable de 1 metro aprox. y mide 15 x 15 cm.",
+   "feats": [
+    "5 tomas universales",
+    "2 USB y 1 tipo C",
+    "Hasta 2000 W",
+    "Interruptor"
+   ],
+   "imgs": [
+    "img/p/p-439-0.jpg",
+    "img/p/p-439-1.jpg",
+    "img/p/p-439-2.jpg"
+   ],
+   "thumb": "img/p/p-439-s.jpg",
+   "src": "6d9078f4eee3",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-440",
+   "name": "Cámara wifi exterior IP66 con visión nocturna",
+   "cat": "tecno",
+   "price": 21,
+   "desc": "Cámara robótica para exteriores Full HD, resistente al agua IP66, con monitoreo en tiempo real desde la aplicación del celular. Detecta y sigue el movimiento, tiene alarma y visión nocturna con LED infrarrojos.",
+   "feats": [
+    "Full HD",
+    "Resistente al agua IP66",
+    "Sigue el movimiento",
+    "Visión nocturna"
+   ],
+   "imgs": [
+    "img/p/p-440-0.jpg"
+   ],
+   "thumb": "img/p/p-440-s.jpg",
+   "src": "4a43df2d0c68",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-441",
+   "name": "Spray cerámico 3 en 1 para carro, 236 ml",
+   "cat": "herramientas",
+   "price": 8,
+   "desc": "Spray de revestimiento cerámico que limpia sin agua, da brillo y protege la pintura del carro. Repele el agua, la suciedad y los rayos UV. Botella de 236 ml.",
+   "feats": [
+    "Limpia sin agua",
+    "Brillo y protección",
+    "Repele agua y suciedad",
+    "236 ml"
+   ],
+   "imgs": [
+    "img/p/p-441-0.jpg"
+   ],
+   "thumb": "img/p/p-441-s.jpg",
+   "src": "a97a66f94c57",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-442",
+   "name": "Kit de taladro y amoladora inalámbricos",
+   "cat": "herramientas",
+   "price": 39,
+   "desc": "Kit con taladro atornillador percutor y mini amoladora inalámbricos con baterías recargables de litio. Incluye brocas, puntas, discos de corte y lijado, barra flexible y adaptadores, en maletín.",
+   "feats": [
+    "Taladro y amoladora",
+    "Baterías de litio",
+    "Brocas, puntas y discos",
+    "En maletín"
+   ],
+   "imgs": [
+    "img/p/p-442-0.jpg",
+    "img/p/p-442-1.jpg",
+    "img/p/p-442-2.jpg"
+   ],
+   "thumb": "img/p/p-442-s.jpg",
+   "src": "41b85e17014c",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-443",
+   "name": "Pistola eléctrica para pintar",
+   "cat": "herramientas",
+   "price": 23,
+   "desc": "Pistola de pintura eléctrica con boquilla de 360° y recipiente inferior para pintura, para una cobertura uniforme en proyectos de renovación.",
+   "feats": [
+    "Eléctrica",
+    "Boquilla de 360°",
+    "Recipiente para pintura",
+    "Cobertura uniforme"
+   ],
+   "imgs": [
+    "img/p/p-443-0.jpg",
+    "img/p/p-443-1.jpg",
+    "img/p/p-443-2.jpg"
+   ],
+   "thumb": "img/p/p-443-s.jpg",
+   "src": "179d28545e9a",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-444",
+   "name": "Maletín de herramientas de más de 100 piezas",
+   "cat": "herramientas",
+   "price": 38,
+   "desc": "Maletín con más de 100 herramientas: destornilladores, alicates, martillo, llaves, cinta métrica y más, ordenadas en su estuche. Para la casa, el taller o regalar.",
+   "feats": [
+    "Más de 100 piezas",
+    "Estuche ordenado",
+    "Para casa o taller"
+   ],
+   "imgs": [
+    "img/p/p-444-0.jpg",
+    "img/p/p-444-1.jpg",
+    "img/p/p-444-2.jpg"
+   ],
+   "thumb": "img/p/p-444-s.jpg",
+   "src": "556043928c4d",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-445",
+   "name": "Lápices de colores Mazh, 15 colores",
+   "cat": "escolar",
+   "price": 3,
+   "desc": "Caja de lápices de colores escolares con tonos intensos y puntas gruesas, con sacapuntas. Ideales para colorear y dibujar.",
+   "feats": [
+    "15 colores",
+    "Puntas gruesas",
+    "Incluye sacapuntas"
+   ],
+   "imgs": [
+    "img/p/p-445-0.jpg",
+    "img/p/p-445-1.jpg"
+   ],
+   "thumb": "img/p/p-445-s.jpg",
+   "src": "d187cdca9af4",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-446",
+   "name": "Extensión para focos de 10 m",
+   "cat": "hogar",
+   "price": 12,
+   "desc": "Extensión de 10 metros con portafocos para decorar patios, terrazas y espacios. Los focos no vienen incluidos.",
+   "feats": [
+    "10 metros",
+    "Para decorar exteriores",
+    "Focos no incluidos"
+   ],
+   "imgs": [
+    "img/p/p-446-0.jpg",
+    "img/p/p-446-1.jpg",
+    "img/p/p-446-2.jpg"
+   ],
+   "thumb": "img/p/p-446-s.jpg",
+   "src": "8ef25c8aaa46",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-447",
+   "name": "Canguilera eléctrica de aire caliente",
+   "cat": "cocina",
+   "price": 14,
+   "desc": "Máquina para preparar canguil en pocos minutos con aire caliente, sin necesidad de aceite. Tiene botón de encendido y cubierta transparente para ver la preparación. Color rojo.",
+   "feats": [
+    "Funciona con aire caliente",
+    "No necesita aceite",
+    "Cubierta transparente",
+    "Compacta"
+   ],
+   "imgs": [
+    "img/p/p-447-0.jpg",
+    "img/p/p-447-1.jpg",
+    "img/p/p-447-2.jpg"
+   ],
+   "thumb": "img/p/p-447-s.jpg",
+   "src": "3988a12cf26b",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-448",
+   "name": "Sacacorchos eléctrico",
+   "cat": "cocina",
+   "price": 10,
+   "desc": "Abridor eléctrico que quita el corcho de las botellas de vino con solo presionar un botón. Funciona con 4 pilas AA (no incluidas). Mide aproximadamente 22.5 cm de alto y 4.5 cm de ancho.",
+   "feats": [
+    "Abre con un botón",
+    "Funciona con 4 pilas AA (no incluidas)",
+    "Medida: 22.5 x 4.5 cm",
+    "Color negro"
+   ],
+   "imgs": [
+    "img/p/p-448-0.jpg"
+   ],
+   "thumb": "img/p/p-448-s.jpg",
+   "src": "af45b4fb6b4b",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-449",
+   "name": "Pinza de cocina con punta de silicona",
+   "cat": "cocina",
+   "price": 3,
+   "desc": "Pinza de acero inoxidable con puntas de silicona que agarran firme sin lastimar los alimentos ni rayar ollas y sartenes. Sirve para servir, mezclar y cocinar.",
+   "feats": [
+    "Acero inoxidable",
+    "Punta de silicona",
+    "No raya ollas ni sartenes",
+    "Para cocinar y servir"
+   ],
+   "imgs": [
+    "img/p/p-449-0.jpg",
+    "img/p/p-449-1.jpg"
+   ],
+   "thumb": "img/p/p-449-s.jpg",
+   "src": "2ebc579f0d10",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-450",
+   "name": "Horno eléctrico tostador RAF de 7 L",
+   "cat": "cocina",
+   "price": 34,
+   "desc": "Horno tostador eléctrico de 7 litros con control de temperatura, temporizador y puerta de vidrio para ver la comida. Calienta de forma pareja y sirve para hornear, tostar o calentar. Color según disponibilidad.",
+   "feats": [
+    "Capacidad: 7 L",
+    "Control de temperatura",
+    "Temporizador",
+    "Puerta de vidrio",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-450-0.jpg"
+   ],
+   "thumb": "img/p/p-450-s.jpg",
+   "src": "58bd482bb26f",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-451",
+   "name": "Selladora al vacío para alimentos",
+   "cat": "cocina",
+   "price": 10,
+   "desc": "Selladora para el hogar que saca el aire de las bolsas y las sella, para conservar los alimentos frescos por más tiempo. Color negro.",
+   "feats": [
+    "Saca el aire y sella",
+    "Conserva alimentos por más tiempo",
+    "Fácil de usar",
+    "Color negro"
+   ],
+   "imgs": [
+    "img/p/p-451-0.jpg",
+    "img/p/p-451-1.jpg"
+   ],
+   "thumb": "img/p/p-451-s.jpg",
+   "src": "6384f081bc34",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-452",
+   "name": "Set de cuchillos de 8 piezas con tijera",
+   "cat": "cocina",
+   "price": 8,
+   "desc": "Juego de 8 piezas de acero inoxidable con mangos negros ergonómicos para un agarre seguro. Incluye varios tipos de cuchillos y una tijera.",
+   "feats": [
+    "8 piezas",
+    "Acero inoxidable",
+    "Incluye tijera",
+    "Mangos ergonómicos negros"
+   ],
+   "imgs": [
+    "img/p/p-452-0.jpg"
+   ],
+   "thumb": "img/p/p-452-s.jpg",
+   "src": "291d32f087e3",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-453",
+   "name": "Trapeador exprimible de mopa",
+   "cat": "hogar",
+   "price": 6,
+   "desc": "Trapeador tipo mopa que se escurre girando el palo, sin ensuciarse las manos. La mopa mide unos 40 cm de diámetro. Color según disponibilidad.",
+   "feats": [
+    "Se escurre sin tocarlo",
+    "Mopa de unos 40 cm",
+    "Fácil de usar",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-453-0.jpg",
+    "img/p/p-453-1.jpg",
+    "img/p/p-453-2.jpg"
+   ],
+   "thumb": "img/p/p-453-s.jpg",
+   "src": "a4401ec59ec5",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-454",
+   "name": "Rodillo quita pelusa reutilizable, 2 piezas",
+   "cat": "hogar",
+   "price": 2,
+   "desc": "Mini rodillos de goma que quitan pelusa, pelo y polvo de la ropa y los muebles. Se lavan con agua y se vuelven a usar. Incluye 2 piezas.",
+   "feats": [
+    "2 piezas",
+    "Reutilizables y lavables",
+    "Quitan pelusa y pelo",
+    "Portátiles"
+   ],
+   "imgs": [
+    "img/p/p-454-0.jpg",
+    "img/p/p-454-1.jpg",
+    "img/p/p-454-2.jpg"
+   ],
+   "thumb": "img/p/p-454-s.jpg",
+   "src": "eae99a65760d",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-455",
+   "name": "Taburete rodante con altura ajustable",
+   "cat": "hogar",
+   "price": 22,
+   "desc": "Banco con asiento acolchado redondo de 33 cm, tapizado en cuero sintético negro, con estructura cromada y base de 5 ruedas giratorias. La altura se regula con una palanca. Ideal para la casa, el salón de belleza, el consultorio o el taller.",
+   "feats": [
+    "Asiento acolchado de 33 cm",
+    "Altura regulable",
+    "5 ruedas giratorias",
+    "Color negro"
+   ],
+   "imgs": [
+    "img/p/p-455-0.jpg",
+    "img/p/p-455-1.jpg",
+    "img/p/p-455-2.jpg"
+   ],
+   "thumb": "img/p/p-455-s.jpg",
+   "src": "ed94add8596a",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-456",
+   "name": "Exprimidor de pasta dental en forma de ballena",
+   "cat": "hogar",
+   "price": 2,
+   "desc": "Rodillo que exprime la pasta de dientes hasta el final para aprovecharla toda. Tiene diseño de ballenita y es fácil de usar.",
+   "feats": [
+    "Aprovecha toda la pasta",
+    "Diseño de ballena",
+    "Fácil de usar"
+   ],
+   "imgs": [
+    "img/p/p-456-0.jpg",
+    "img/p/p-456-1.jpg",
+    "img/p/p-456-2.jpg"
+   ],
+   "thumb": "img/p/p-456-s.jpg",
+   "src": "3e521fe51af0",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-457",
+   "name": "Ropero plegable de plástico con puertas",
+   "cat": "hogar",
+   "price": 69,
+   "desc": "Armario de plástico apilable y plegable con puertas de cierre magnético, para ropa y artículos varios. Ahorra espacio y se mueve fácil. Mide aproximadamente 146 cm de alto, 55 cm de ancho y 34 cm de fondo.",
+   "feats": [
+    "Plegable y apilable",
+    "Puertas con cierre magnético",
+    "Medida: 146 x 55 x 34 cm",
+    "Color blanco"
+   ],
+   "imgs": [
+    "img/p/p-457-0.jpg",
+    "img/p/p-457-1.jpg",
+    "img/p/p-457-2.jpg"
+   ],
+   "thumb": "img/p/p-457-s.jpg",
+   "src": "a4dc20bbbab6",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-458",
+   "name": "Set de 3 organizadores acrílicos con tapa",
+   "cat": "hogar",
+   "price": 7,
+   "desc": "Juego de 3 frascos transparentes con tapa para guardar algodones, cotonetes, palillos y más en el tocador o el baño. Se lavan fácil.",
+   "feats": [
+    "3 piezas",
+    "Transparentes con tapa",
+    "Para tocador o baño",
+    "Fáciles de lavar"
+   ],
+   "imgs": [
+    "img/p/p-458-0.jpg",
+    "img/p/p-458-1.jpg",
+    "img/p/p-458-2.jpg"
+   ],
+   "thumb": "img/p/p-458-s.jpg",
+   "src": "e0cd8789c717",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-459",
+   "name": "Secador de zapatos eléctrico con luz UV",
+   "cat": "hogar",
+   "price": 14,
+   "desc": "Secador eléctrico para zapatos con temporizador y luz ultravioleta que ayuda a eliminar gérmenes y malos olores. Ideal para la temporada de lluvias. Color blanco.",
+   "feats": [
+    "Seca zapatos mojados",
+    "Luz ultravioleta",
+    "Temporizador",
+    "Ideal en temporada de lluvias"
+   ],
+   "imgs": [
+    "img/p/p-459-0.jpg",
+    "img/p/p-459-1.jpg",
+    "img/p/p-459-2.jpg"
+   ],
+   "thumb": "img/p/p-459-s.jpg",
+   "src": "c605f195eec5",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-460",
+   "name": "Forros elásticos para sillas, set de 6",
+   "cat": "hogar",
+   "price": 21,
+   "desc": "Juego de 6 forros de tela elástica (95% poliéster y 5% spandex) que renuevan las sillas del comedor. Se ponen y se quitan fácil. Respaldo de 45 a 65 cm y asiento de 40 a 50 cm. Color según disponibilidad.",
+   "feats": [
+    "6 forros",
+    "Tela elástica",
+    "Fáciles de poner y quitar",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-460-0.jpg",
+    "img/p/p-460-1.jpg",
+    "img/p/p-460-2.jpg"
+   ],
+   "thumb": "img/p/p-460-s.jpg",
+   "src": "efa56ee90dfa",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-461",
+   "name": "Mini laptop educativa para niños",
+   "cat": "juguetes",
+   "price": 10,
+   "desc": "Computadora de juguete en español e inglés para aprender letras, números del 1 al 10 y a sumar, restar, multiplicar y dividir, con sonidos. Mide 13 x 11 x 2 cm y funciona con 3 pilas AA (no incluidas). Color según disponibilidad.",
+   "feats": [
+    "Español e inglés",
+    "Letras, números y operaciones",
+    "Funciona con 3 pilas AA (no incluidas)",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-461-0.jpg",
+    "img/p/p-461-1.jpg"
+   ],
+   "thumb": "img/p/p-461-s.jpg",
+   "src": "db3f4ccd9888",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-462",
+   "name": "Carro a control remoto todoterreno con ruedas omnidireccionales",
+   "cat": "juguetes",
+   "price": 26,
+   "desc": "Carro a control remoto con ruedas especiales que permiten avanzar de lado, derrapar y girar 360°. Se maneja con control inalámbrico. Color según disponibilidad.",
+   "feats": [
+    "Ruedas omnidireccionales",
+    "Gira 360°",
+    "Control inalámbrico",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-462-0.jpg"
+   ],
+   "thumb": "img/p/p-462-s.jpg",
+   "src": "006503eacff3",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-463",
+   "name": "Drone E88 con cámara y estuche",
+   "cat": "juguetes",
+   "price": 18,
+   "desc": "Drone plegable con cámara para tomar fotos y videos desde el aire, con control remoto 2.4G de unos 100 m de alcance. Vuela hasta 30 minutos y carga en 120 minutos. Incluye estuche.",
+   "feats": [
+    "Con cámara",
+    "Alcance de unos 100 m",
+    "Hasta 30 min de vuelo",
+    "Incluye estuche"
+   ],
+   "imgs": [
+    "img/p/p-463-0.jpg",
+    "img/p/p-463-1.jpg",
+    "img/p/p-463-2.jpg"
+   ],
+   "thumb": "img/p/p-463-s.jpg",
+   "src": "7865926448b5",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-464",
+   "name": "Bloques de construcción de 120 piezas",
+   "cat": "juguetes",
+   "price": 15,
+   "desc": "Juego educativo de 120 bloques de plástico de colores para armar animales, vehículos y figuras. Estimula la creatividad y la coordinación. Desde los 3 años.",
+   "feats": [
+    "120 piezas",
+    "Desde 3 años",
+    "Estimula la creatividad"
+   ],
+   "imgs": [
+    "img/p/p-464-0.jpg"
+   ],
+   "thumb": "img/p/p-464-s.jpg",
+   "src": "fee712c0d21b",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-465",
+   "name": "Lápiz mágico 3D para niños",
+   "cat": "juguetes",
+   "price": 12,
+   "desc": "Lápiz de impresión 3D para crear figuras tridimensionales de forma fácil y divertida. Diseño ergonómico y liviano para manos pequeñas, ideal para niños de 5 a 7 años.",
+   "feats": [
+    "Crea figuras en 3D",
+    "Liviano y ergonómico",
+    "De 5 a 7 años"
+   ],
+   "imgs": [
+    "img/p/p-465-0.jpg"
+   ],
+   "thumb": "img/p/p-465-s.jpg",
+   "src": "f9b941a84c60",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-466",
+   "name": "Set de repostería de juguete",
+   "cat": "juguetes",
+   "price": 8,
+   "desc": "Kit de juguete para jugar a ser repostero, con pasteles, helados y accesorios de colores. Desarrolla la imaginación.",
+   "feats": [
+    "Pasteles y helados de juguete",
+    "Accesorios de colores",
+    "Desarrolla la imaginación"
+   ],
+   "imgs": [
+    "img/p/p-466-0.jpg"
+   ],
+   "thumb": "img/p/p-466-s.jpg",
+   "src": "f74c2dfc011f",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-467",
+   "name": "Almohada de soporte de cabeza para bebé",
+   "cat": "bebes",
+   "price": 11,
+   "desc": "Almohada que envuelve el cuello y apoya la cabeza del bebé de forma cómoda en la silla del carro o el coche. Ideal para viajes. Color gris.",
+   "feats": [
+    "Apoya cabeza y cuello",
+    "Para silla de carro o coche",
+    "Color gris"
+   ],
+   "imgs": [
+    "img/p/p-467-0.jpg"
+   ],
+   "thumb": "img/p/p-467-s.jpg",
+   "src": "393e0e955318",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-468",
+   "name": "Alfombra de gateo gruesa de 175 x 115 cm",
+   "cat": "bebes",
+   "price": 17,
+   "desc": "Alfombra de gateo gruesa y plegable para que los más pequeños jueguen seguros en el piso. Mide 175 x 115 cm e incluye funda para transportarla. Diseño según disponibilidad.",
+   "feats": [
+    "Medida: 175 x 115 cm",
+    "Gruesa y plegable",
+    "Incluye funda",
+    "Diseño según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-468-0.jpg",
+    "img/p/p-468-1.jpg",
+    "img/p/p-468-2.jpg",
+    "img/p/p-468-3.jpg"
+   ],
+   "thumb": "img/p/p-468-s.jpg",
+   "src": "6dcfadfe6bd1",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-469",
+   "name": "Secadora de cabello Nova NV-986 de 3000 W",
+   "cat": "belleza",
+   "price": 9,
+   "desc": "Secadora de cabello profesional marca Nova, modelo NV-986, con 3000 W de potencia para un secado rápido. Color negro.",
+   "feats": [
+    "3000 W",
+    "Secado rápido",
+    "Uso profesional",
+    "Color negro"
+   ],
+   "imgs": [
+    "img/p/p-469-0.jpg",
+    "img/p/p-469-1.jpg"
+   ],
+   "thumb": "img/p/p-469-s.jpg",
+   "src": "3d1e669a303e",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-470",
+   "name": "Patillera vintage recargable",
+   "cat": "belleza",
+   "price": 6,
+   "desc": "Patillera de uso profesional con cuchilla de acero inoxidable y batería recargable. Diseño ergonómico, ideal para barbería y peluquería.",
+   "feats": [
+    "Recargable",
+    "Cuchilla de acero inoxidable",
+    "Diseño vintage",
+    "Para barbería"
+   ],
+   "imgs": [
+    "img/p/p-470-0.jpg"
+   ],
+   "thumb": "img/p/p-470-s.jpg",
+   "src": "2f93dfb31676",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-471",
+   "name": "Splash para el cabello",
+   "cat": "belleza",
+   "price": 3,
+   "desc": "Splash perfumado para el cabello con aromas dulces y cítricos. Aroma y modelo según disponibilidad.",
+   "feats": [
+    "Aromas dulces y cítricos",
+    "Varios modelos",
+    "Aroma según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-471-0.jpg",
+    "img/p/p-471-1.jpg",
+    "img/p/p-471-2.jpg"
+   ],
+   "thumb": "img/p/p-471-s.jpg",
+   "src": "af88d613dfbf",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-472",
+   "name": "Cepillo secador y moldeador de 2000 W",
+   "cat": "belleza",
+   "price": 9,
+   "desc": "Cepillo que seca y moldea el cabello al mismo tiempo, con 2000 W de potencia. Mide aproximadamente 32 cm de largo. Hay 2 modelos, según disponibilidad.",
+   "feats": [
+    "Seca y moldea",
+    "2000 W",
+    "Largo: 32 cm",
+    "Modelo según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-472-0.jpg",
+    "img/p/p-472-1.jpg"
+   ],
+   "thumb": "img/p/p-472-s.jpg",
+   "src": "6d597bc88a11",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-473",
+   "name": "Cepillo secador de cabello 5 en 1",
+   "cat": "belleza",
+   "price": 12,
+   "desc": "Set para secar y peinar con 5 accesorios: rizador, cepillo duro y suave, cepillo medio redondo y 2 boquillas rizadoras de rotación izquierda y derecha. Color gris con fucsia.",
+   "feats": [
+    "5 accesorios",
+    "Seca, alisa y riza",
+    "Rizadores izquierda y derecha",
+    "Color gris con fucsia"
+   ],
+   "imgs": [
+    "img/p/p-473-0.jpg",
+    "img/p/p-473-1.jpg"
+   ],
+   "thumb": "img/p/p-473-s.jpg",
+   "src": "44b921461f48",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-474",
+   "name": "Pulidor de uñas profesional",
+   "cat": "belleza",
+   "price": 17,
+   "desc": "Torno para manicura y pedicura que da forma y brillo a las uñas y quita durezas en manos y pies. Incluye 6 puntas intercambiables y 6 cilindros de lija, con velocidad ajustable y poco ruido. Color rosado.",
+   "feats": [
+    "6 puntas y 6 lijas",
+    "Velocidad ajustable",
+    "Para manicura y pedicura",
+    "Color rosado"
+   ],
+   "imgs": [
+    "img/p/p-474-0.jpg",
+    "img/p/p-474-1.jpg",
+    "img/p/p-474-2.jpg"
+   ],
+   "thumb": "img/p/p-474-s.jpg",
+   "src": "04618eeb8a7d",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-475",
+   "name": "Rizadora automática Sonar SN-797",
+   "cat": "belleza",
+   "price": 14,
+   "desc": "Rizadora automática con rotación en los dos sentidos y temperatura controlada para crear rizos en segundos. Protege el cabello de la estática. Color blanco.",
+   "feats": [
+    "Rizos automáticos",
+    "Rotación en 2 sentidos",
+    "Temperatura controlada",
+    "Color blanco"
+   ],
+   "imgs": [
+    "img/p/p-475-0.jpg",
+    "img/p/p-475-1.jpg"
+   ],
+   "thumb": "img/p/p-475-s.jpg",
+   "src": "430419af4a72",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-476",
+   "name": "Almohada de viaje para el cuello",
+   "cat": "cuidado",
+   "price": 10,
+   "desc": "Almohada ergonómica en forma de U que sostiene el cuello y evita que la cabeza se incline. Tiene cordón con ajuste al frente. Ideal para viajes en bus, carro o avión. Color según disponibilidad.",
+   "feats": [
+    "Forma ergonómica",
+    "Cordón ajustable",
+    "Para viajes",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-476-0.jpg",
+    "img/p/p-476-1.jpg",
+    "img/p/p-476-2.jpg",
+    "img/p/p-476-3.jpg"
+   ],
+   "thumb": "img/p/p-476-s.jpg",
+   "src": "9e405e21c5e3",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-477",
+   "name": "Piedra de alumbre natural de 30 g",
+   "cat": "cuidado",
+   "price": 2,
+   "desc": "Piedra de alumbre natural de 30 g, sin alcohol, fragancias ni parabenos. Se usa como desodorante en todo el cuerpo y dura mucho tiempo.",
+   "feats": [
+    "Natural",
+    "Sin alcohol ni fragancias",
+    "Peso: 30 g",
+    "Larga duración"
+   ],
+   "imgs": [
+    "img/p/p-477-0.jpg",
+    "img/p/p-477-1.jpg",
+    "img/p/p-477-2.jpg"
+   ],
+   "thumb": "img/p/p-477-s.jpg",
+   "src": "773adc7fdef0",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-478",
+   "name": "Compresa de gel frío y caliente con banda",
+   "cat": "cuidado",
+   "price": 8,
+   "desc": "Compresa de gel reutilizable que se usa fría o caliente, con banda ajustable para sujetarla. Ayuda a aliviar dolores musculares y de articulaciones.",
+   "feats": [
+    "Uso frío o caliente",
+    "Banda ajustable",
+    "Reutilizable"
+   ],
+   "imgs": [
+    "img/p/p-478-0.jpg",
+    "img/p/p-478-1.jpg"
+   ],
+   "thumb": "img/p/p-478-s.jpg",
+   "src": "0584ec18417e",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-479",
+   "name": "Molde para hieloterapia facial",
+   "cat": "cuidado",
+   "price": 4,
+   "desc": "Molde de silicona para preparar hielo y hacer masajes faciales que desinflaman y refrescan la piel. Colores al azar.",
+   "feats": [
+    "Masaje facial con hielo",
+    "Silicona",
+    "Reutilizable",
+    "Color surtido, según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-479-0.jpg",
+    "img/p/p-479-1.jpg",
+    "img/p/p-479-2.jpg"
+   ],
+   "thumb": "img/p/p-479-s.jpg",
+   "src": "a88540cf2c2a",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-480",
+   "name": "Ejercitador de mano y muñeca ajustable",
+   "cat": "deporte",
+   "price": 3,
+   "desc": "Pinza de entrenamiento con resorte de resistencia ajustable para fortalecer dedos, muñeca y brazos. Es práctica y cabe en el bolsillo. Color según disponibilidad.",
+   "feats": [
+    "Resistencia ajustable",
+    "Para dedos, muñeca y brazos",
+    "Portátil",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-480-0.jpg",
+    "img/p/p-480-1.jpg",
+    "img/p/p-480-2.jpg"
+   ],
+   "thumb": "img/p/p-480-s.jpg",
+   "src": "9ae956dae31a",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-481",
+   "name": "Faja cinturilla reloj de arena",
+   "cat": "deporte",
+   "price": 15,
+   "desc": "Faja de compresión firme que moldea cintura y abdomen, con 3 velcros de ajuste. Es discreta debajo de la ropa. Tallas XXL y XXXL. Color negro.",
+   "feats": [
+    "Compresión firme",
+    "3 velcros de ajuste",
+    "Tallas XXL y XXXL",
+    "Color negro"
+   ],
+   "imgs": [
+    "img/p/p-481-0.jpg",
+    "img/p/p-481-1.jpg",
+    "img/p/p-481-2.jpg",
+    "img/p/p-481-3.jpg"
+   ],
+   "thumb": "img/p/p-481-s.jpg",
+   "src": "18188bb6f35e",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-482",
+   "name": "Cinturón tonificador abdominal EMS",
+   "cat": "deporte",
+   "price": 10,
+   "desc": "Cinturón con tecnología EMS que estimula los músculos del abdomen, con varios modos e intensidades. Es cómodo y portátil, para complementar la rutina de ejercicios.",
+   "feats": [
+    "Tecnología EMS",
+    "Varios modos e intensidades",
+    "Portátil"
+   ],
+   "imgs": [
+    "img/p/p-482-0.jpg",
+    "img/p/p-482-1.jpg"
+   ],
+   "thumb": "img/p/p-482-s.jpg",
+   "src": "a74c7f541aaf",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-483",
+   "name": "Foco parlante bluetooth con luces de colores",
+   "cat": "tecno",
+   "price": 11,
+   "desc": "Foco LED con parlante bluetooth y luces RGB de colores, con aspas plegables. Se controla con el control remoto incluido para cambiar colores y modos.",
+   "feats": [
+    "Parlante bluetooth",
+    "Luces RGB",
+    "Control remoto incluido",
+    "Aspas plegables"
+   ],
+   "imgs": [
+    "img/p/p-483-0.jpg",
+    "img/p/p-483-1.jpg"
+   ],
+   "thumb": "img/p/p-483-s.jpg",
+   "src": "c1b459800cdf",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-484",
+   "name": "Smartwatch R500 con correas",
+   "cat": "tecno",
+   "price": 14,
+   "desc": "Reloj inteligente compatible con Android e iOS: recibe notificaciones, hace y recibe llamadas y controla la música. Tiene funciones deportivas como contador de pasos y cronómetro. Incluye varias correas de colores.",
+   "feats": [
+    "Android e iOS",
+    "Llamadas y notificaciones",
+    "Contador de pasos",
+    "Varias correas"
+   ],
+   "imgs": [
+    "img/p/p-484-0.jpg",
+    "img/p/p-484-1.jpg"
+   ],
+   "thumb": "img/p/p-484-s.jpg",
+   "src": "e3bfd2c6e3a6",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-485",
+   "name": "Mini impresora térmica portátil",
+   "cat": "tecno",
+   "price": 18,
+   "desc": "Mini impresora que imprime sin tinta, con papel térmico, para notas, fotos y etiquetas. Incluye 1 rollo de papel, cable USB y manual. Color según disponibilidad.",
+   "feats": [
+    "Sin tinta",
+    "Incluye 1 rollo de papel",
+    "Cable USB",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-485-0.jpg",
+    "img/p/p-485-1.jpg"
+   ],
+   "thumb": "img/p/p-485-s.jpg",
+   "src": "b1e6988c8786",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-486",
+   "name": "Taladro inalámbrico recargable con 2 baterías",
+   "cat": "herramientas",
+   "price": 30,
+   "desc": "Taladro atornillador inalámbrico y recargable que incluye 2 baterías. Color amarillo con negro.",
+   "feats": [
+    "Inalámbrico y recargable",
+    "Incluye 2 baterías",
+    "Color amarillo con negro"
+   ],
+   "imgs": [
+    "img/p/p-486-0.jpg",
+    "img/p/p-486-1.jpg",
+    "img/p/p-486-2.jpg"
+   ],
+   "thumb": "img/p/p-486-s.jpg",
+   "src": "2f47c85fb7a2",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-487",
+   "name": "Set de destornilladores de precisión 16 en 1",
+   "cat": "herramientas",
+   "price": 6,
+   "desc": "Kit de 16 herramientas de precisión para reparar celulares y aparatos electrónicos, con destornilladores de varias puntas y herramientas de apertura. Diseño antideslizante.",
+   "feats": [
+    "16 piezas",
+    "Para celulares y electrónica",
+    "Herramientas de apertura",
+    "Antideslizante"
+   ],
+   "imgs": [
+    "img/p/p-487-0.jpg",
+    "img/p/p-487-1.jpg",
+    "img/p/p-487-2.jpg"
+   ],
+   "thumb": "img/p/p-487-s.jpg",
+   "src": "f2d91770a9c1",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-488",
+   "name": "Marcadores punta gruesa, 12 colores",
+   "cat": "escolar",
+   "price": 3,
+   "desc": "Caja de 12 marcadores de colores de punta gruesa, ideales para dibujar y decorar.",
+   "feats": [
+    "12 colores",
+    "Punta gruesa",
+    "Para dibujar y decorar"
+   ],
+   "imgs": [
+    "img/p/p-488-0.jpg",
+    "img/p/p-488-1.jpg"
+   ],
+   "thumb": "img/p/p-488-s.jpg",
+   "src": "52027171df43",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-489",
+   "name": "Inflador eléctrico de globos",
+   "cat": "otros",
+   "price": 14,
+   "desc": "Inflador eléctrico con dos boquillas para inflar globos rápido, ideal para decorar fiestas y fechas especiales. Color rosado con azul.",
+   "feats": [
+    "2 boquillas",
+    "Infla rápido",
+    "Para fiestas",
+    "Color rosado con azul"
+   ],
+   "imgs": [
+    "img/p/p-489-0.jpg",
+    "img/p/p-489-1.jpg"
+   ],
+   "thumb": "img/p/p-489-s.jpg",
+   "src": "f18aa6ce09ca",
+   "added": "2026-11-19T00:48:01.430099+00:00",
+   "status": "pendiente"
+  },
+  {
    "id": "P-290",
    "name": "Mochila impermeable escolar",
-   "cat": "otros",
+   "cat": "escolar",
    "price": 15,
    "desc": "Mochila o morral impermeable unisex, ideal para el colegio, la universidad o el trabajo en temporada de lluvias. Tiene varios bolsillos y compartimentos para organizar las cosas. Color según disponibilidad.",
    "feats": [
@@ -1578,7 +5613,7 @@
   {
    "id": "P-257",
    "name": "Rizador de pestañas eléctrico recargable",
-   "cat": "cuidado",
+   "cat": "belleza",
    "price": 3,
    "desc": "Rizador de pestañas con calor y dos niveles de temperatura: verde a 65° para pestañas suaves y azul a 85° para pestañas duras. Se carga por USB e incluye cable. Mide aproximadamente 15.6 cm de largo.",
    "feats": [
@@ -2114,7 +6149,7 @@
   {
    "id": "P-282",
    "name": "Ejercitador de pedal con bandas elásticas",
-   "cat": "otros",
+   "cat": "deporte",
    "price": 6,
    "desc": "Ejercitador para brazos y piernas con bandas elásticas, pedales para los pies y mango para las dos manos. Es compacto y fácil de guardar. Mide 43.2 x 25.4 cm. Color según disponibilidad.",
    "feats": [
@@ -2201,7 +6236,7 @@
   {
    "id": "P-286",
    "name": "Escritorio plegable con silla para niños",
-   "cat": "juguetes",
+   "cat": "escolar",
    "price": 26,
    "desc": "Escritorio y silla plegables para niños, con estructura de metal y superficie de madera con diseños educativos. Se guarda y se lleva fácil. Ideal para tareas, juegos y manualidades. Diseño según disponibilidad.",
    "feats": [
@@ -2262,7 +6297,7 @@
   {
    "id": "P-289",
    "name": "Rodillera deportiva de compresión ajustable",
-   "cat": "cuidado",
+   "cat": "deporte",
    "price": 3,
    "desc": "Rodillera de compresión deportiva con correa ajustable. Ideal para hacer deporte o caminar.",
    "feats": [
@@ -3847,7 +7882,7 @@
   {
    "id": "P-183",
    "name": "Organizador de escritorio giratorio",
-   "cat": "hogar",
+   "cat": "escolar",
    "price": 5,
    "desc": "Organizador de escritorio giratorio de plástico con compartimentos y cajones transparentes. Ideal para guardar papelería, lápices, cintas washi o maquillaje. Mide aprox. 11 x 11 x 11,5 cm.",
    "feats": [
@@ -3912,7 +7947,7 @@
   {
    "id": "P-186",
    "name": "Tapete de yoga",
-   "cat": "cuidado",
+   "cat": "deporte",
    "price": 10,
    "desc": "Tapete para yoga o para hacer ejercicios en casa, con excelente acabado. Disponible en naranja y celeste, según disponibilidad.",
    "feats": [
@@ -3931,7 +7966,7 @@
   {
    "id": "P-187",
    "name": "Rueda abdominal doble",
-   "cat": "cuidado",
+   "cat": "deporte",
    "price": 8,
    "desc": "Rueda abdominal doble para ejercitar abdomen, brazos y espalda desde casa. Tiene doble rueda estable para más seguridad y empuñaduras ergonómicas, cómodas y firmes. Compacta para entrenar cuando quieras. El color se entrega según disponibilidad.",
    "feats": [
@@ -4524,7 +8559,7 @@
   {
    "id": "P-115",
    "name": "Organizador giratorio 360° de maquillaje",
-   "cat": "cuidado",
+   "cat": "belleza",
    "price": 7,
    "desc": "Organizador de maquillaje que gira 360° para encontrar lo que buscas en un instante. Tiene cubierta de plástico ABS muy transparente que protege las brochas del polvo y la humedad, compartimentos separados, placa divisoria estable al girar y pies antideslizantes. Mide aprox. 24 cm de alto con la cubierta y 12 cm de diámetro.",
    "feats": [
@@ -4633,7 +8668,7 @@
   {
    "id": "P-120",
    "name": "Combo secador y plancha de cabello Sonar",
-   "cat": "cuidado",
+   "cat": "belleza",
    "price": 20,
    "desc": "Combo profesional 2 en 1 de secador y plancha para el cabello, marca Sonar, modelo SN-012. Te permite secar y alisar en casa con resultados de salón. Ayuda a reducir el encrespamiento y a mantener el cabello hidratado.",
    "feats": [
@@ -4693,7 +8728,7 @@
   {
    "id": "P-123",
    "name": "Mini afeitadora recargable 3 en 1",
-   "cat": "cuidado",
+   "cat": "belleza",
    "price": 12,
    "desc": "Mini afeitadora recargable 3 en 1 de la marca Sonar, con acabado dorado. Incluye peines guía de 1, 2 y 3 mm, cabezal para vello de nariz, cable USB de carga, cepillo de limpieza y aceite. Sirve para perfilar la barba, hacer cortes modernos y retirar el vello de la nariz.",
    "feats": [
@@ -4758,5 +8793,5 @@
    "status": "pendiente"
   }
  ],
- "updated": "2026-11-18T05:44:05.120318+00:00"
+ "updated": "2026-11-19T01:15:29.907623+00:00"
 }

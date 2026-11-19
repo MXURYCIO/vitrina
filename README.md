@@ -21,6 +21,20 @@ Se cambian en la columna **Estado** de la hoja: Pendiente, Aprobado, En camino, 
    - toma de `entrada` los productos que no están en `products.json` (se comparan por `src`, que son los 12 primeros caracteres del SHA-1 de `clave`);
    - elige los que más se pueden vender según `CRITERIOS.md` (máximo 15 por vez) y escribe nombre, categoría, precio con margen, descripción completa y características;
    - prepara las fotos con `python3 scripts/procesar_fotos.py decisiones.json carpeta_entrada` (borra precios y textos del proveedor y mejora con súper resolución solo las fotos pequeñas o borrosas);
-   - guarda el precio de Telegram cifrado con `python3 scripts/costos.py P-201=3.50 ...`;
+   - guarda el precio de Telegram cifrado con `python3 scripts/costos.py P-201=3.50 ...` y la tienda de origen cifrada con `python3 scripts/origen.py P-201=canal/numero ...`;
    - revisa las fotos a ojo (sin precios, sin otros idiomas, sin marcas de agua) y sube los cambios.
 3. Los productos nuevos quedan "Por aprobar" hasta que el dueño los apruebe en `#revisar`.
+
+## Página de revisión (`#revisar`, con PIN)
+
+- **Productos:** aprobar, rechazar o pedir cambios. Cada producto muestra el precio de Telegram, la ganancia y de qué tienda de Telegram sale (con el número de publicación y un botón para abrirla).
+- **Pedidos:** buscar pedidos y cambiar su estado. Cada producto del pedido dice en qué tienda pedirlo y el número de publicación.
+- **Visitas:** personas en línea ahora, visitantes y visitas de hoy, 7 o 30 días, tiempo promedio, productos más vistos, de dónde llegan (WhatsApp, Facebook, directo...), dispositivo y visitas recientes. Se actualiza solo cada minuto. Solo se guardan números anónimos en la hoja "Visitas".
+
+`origen.json` guarda cifrada la tienda y la publicación de cada producto (el repositorio es público). Al abrir la página de revisión con el PIN, la lista se copia a la hoja "Proveedores", y desde ahí cada pedido nuevo anota en la columna "Proveedor" y en el correo dónde pedir cada producto.
+
+### Actualizar el programa de Google (cuando cambia `google-apps-script/Codigo.gs`)
+
+1. Abre el proyecto de Apps Script de la tienda y reemplaza todo el contenido de `Codigo.gs` por el del repositorio.
+2. Guarda, luego **Implementar → Administrar implementaciones → editar (lápiz) → Versión: Nueva versión → Implementar**. Así se mantiene la misma dirección que usa la tienda.
+3. Abre `https://tiendaonline-ec.github.io/#revisar` con tu PIN para que se llene la hoja "Proveedores".

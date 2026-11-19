@@ -49,6 +49,15 @@ Margen sobre el precio del proveedor, redondeado hacia arriba al dólar:
 
 El precio de Telegram de cada producto nuevo se guarda cifrado en `costos.json` con `python3 scripts/costos.py P-201=3.50`. Nunca va en `products.json` ni en ningún otro archivo público. Solo la página de revisión lo muestra (precio de Telegram, precio de la tienda y ganancia), después de ingresar el PIN.
 
-## 6. Aprobación
+## 6. Categorías y equilibrio
+
+Categorías de la tienda: navidad, hogar, cocina, belleza (cabello, maquillaje, pestañas, uñas), cuidado (masajeadores, cuidado personal), bebes, juguetes, tecno, deporte, herramientas (carro, moto, bicicleta y herramientas), escolar (útiles, oficina, mochilas), moda (gorras, bolsos, canguros, relojes, accesorios), mascotas y otros.
+
+- Buscar variedad: que ninguna categoría crezca mucho más que las demás. Si cocina u hogar ya tienen muchos, dar prioridad a las categorías con menos productos.
+- Si aparecen productos de un tipo nuevo que tiene salida (gorras, ropa, repuestos de moto, artículos de anime sin personajes con licencia, etc.), se pueden agregar en la categoría más cercana o en "otros".
+- Nunca personajes con licencia (Disney, Marvel, Hello Kitty, Labubu, Snoopy, Grinch), marcas falsas ni medicinas o suplementos.
+- Nunca repetir un producto que ya está en el catálogo, aunque venga de otra publicación o de la otra tienda.
+
+## 7. Aprobación
 
 Todo producto nuevo entra como "Por aprobar". Solo se publica cuando el dueño lo aprueba en la página de revisión.

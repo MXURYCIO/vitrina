@@ -337,6 +337,8 @@ body.rv-ped #tools,body.rv-ped .sec-head,body.rv-ped #grid,body.rv-ped #empty{di
 .vz-when{display:flex;align-items:center;gap:6px;font-weight:700}
 .vz-note{margin:8px 0 0;font-size:12px}
 /* Proveedor (solo dueño) */
+.pd-estado{margin-top:10px;height:48px;font-size:15px}
+.pd-estado svg{width:20px;height:20px}
 .pd-origen{margin:10px 0 0;display:flex;align-items:center;gap:8px;padding:10px 12px;border-radius:14px;background:var(--panel-in);box-shadow:0 0 0 .5px var(--hair);font-size:14px}
 .pd-origen svg{flex:none;width:18px;height:18px;color:var(--accent)}
 .pd-origen span{flex:1;min-width:0}
@@ -1160,7 +1162,7 @@ function openProduct(id) {
     `${hasPhoto(p) && p.imgs.length > 1
         ? `<div class="gallery" style="${grad(p)}"><div class="g-track" id="gTrack">${p.imgs.map((src, i) => `<img src="${esc(src)}" alt="${esc(p.name)}, foto ${i + 1}" loading="${i ? 'lazy' : 'eager'}" decoding="async">`).join('')}</div><button class="g-nav prev" type="button" data-act="gal" data-d="-1" aria-label="Foto anterior" disabled>${ic('chevL', 2.2)}</button><button class="g-nav next" type="button" data-act="gal" data-d="1" aria-label="Foto siguiente">${ic('chevR', 2.2)}</button><div class="g-dots">${p.imgs.map((_, i) => `<button type="button" class="${i ? '' : 'on'}" data-act="galto" data-i="${i}" aria-label="Ver foto ${i + 1} de ${p.imgs.length}"></button>`).join('')}</div></div>`
         : `<div class="pd-media${hasPhoto(p) ? ' photo' : ''}" style="${grad(p)}">${visual(p)}</div>`}
-     ${REVIEW ? `<p><span class="rv-pill" data-s="${eff(p)}">${RV_LABEL[eff(p)] || eff(p)}</span></p>${REVC[p.id] && eff(p) === 'editar' ? `<p class="rv-note">${ic('pencil')}<span>${esc(REVC[p.id])}</span></p>` : ''}${costoBox(p)}${origenBox(p.id)}` : ''}
+     ${REVIEW ? `<p><span class="rv-pill" data-s="${eff(p)}">${RV_LABEL[eff(p)] || eff(p)}</span></p>${REVC[p.id] && eff(p) === 'editar' ? `<p class="rv-note">${ic('pencil')}<span>${esc(REVC[p.id])}</span></p>` : ''}${costoBox(p)}${origenBox(p.id)}<button class="btn secondary pd-estado" type="button" data-act="estado" data-id="${p.id}">${ic('image')}Imagen para estados de WhatsApp</button>` : ''}
      <div class="pd-row"><div><p class="pd-cat">${catLabel(p.cat)} · ${p.id}</p><p class="pd-price">${money(p.price)}</p></div>
        <p class="pd-abono">${ic('shield')}Lo reservas con ${money(p.price * ABONO)}</p></div>
      <p class="pd-desc">${esc(p.desc)}</p>
@@ -1542,6 +1544,7 @@ document.addEventListener('click', e => {
     case 'sorts': openSorts(); break;
     case 'setcat': state.cat = t.dataset.v; closeSheet(); renderChips(); renderGrid(); toGrid(); break;
     case 'setsort': state.sort = t.dataset.v; store.set('vt-sort', state.sort); closeSheet(); renderChips(); renderGrid(); toGrid(); break;
+    case 'estado': imagenEstado(t.dataset.id, t); break;
     case 'pdadd': addToCart(sheet.dataset.pid, +sheet.dataset.qty || 1, t); closeSheet(); break;
     case 'q': setQty(id, (cart[id] || 0) + (+t.dataset.d)); openCart(); break;
     case 'rm': { const p = byId[id]; setQty(id, 0); openCart(); if (p) toast(`Quitado: ${p.name}`); break; }
@@ -2048,6 +2051,56 @@ async function loadOrigen(key) {
 const origenDe = id => { const m = String(ORIGEN[id] || '').match(/^([^|]+)\|([A-Za-z0-9_]+)\/(\d+)$/); return m ? { tienda: m[1], canal: m[2], num: m[3], url: `https://t.me/${m[2]}/${m[3]}` } : null; };
 const origenBox = id => { const o = origenDe(id);
   return `<p class="pd-origen" id="pdOrigen">${ic('store')}<span>${o ? `Se pide en <b>${esc(o.tienda)}</b> · publicación ${esc(o.num)}` : (costoListo ? 'Proveedor sin dato' : 'Cargando proveedor…')}</span>${o ? `<a href="${esc(o.url)}" target="_blank" rel="noopener">${ic('link')}Abrir</a>` : ''}</p>`; };
+/* Imagen vertical para estados de WhatsApp: foto, nombre, precio de la tienda y abono (solo dueño) */
+async function imagenEstado(id, btn) {
+  const p = byId[id]; if (!p || !hasPhoto(p)) { toast('Este producto no tiene foto'); return; }
+  const old = btn.innerHTML; btn.disabled = true; btn.textContent = 'Preparando imagen…';
+  try {
+    const W = 1080, H = 1920, AZ = '#1E66F5', F = '"Inter",-apple-system,"Segoe UI",Roboto,Arial,sans-serif';
+    const img = await new Promise((ok, no) => { const i = new Image(); i.onload = () => ok(i); i.onerror = no; i.src = p.imgs[0]; });
+    if (document.fonts && document.fonts.load) { try { await Promise.all([document.fonts.load(`800 60px Inter`), document.fonts.load(`600 40px Inter`)]); } catch (e) {} }
+    const c = document.createElement('canvas'); c.width = W; c.height = H; const x = c.getContext('2d');
+    const rr = (a, b, w, h, r) => { x.beginPath(); x.roundRect ? x.roundRect(a, b, w, h, r) : x.rect(a, b, w, h); };
+    const g = x.createLinearGradient(0, 0, W, H); g.addColorStop(0, '#D4E2FB'); g.addColorStop(.5, '#EEF3FB'); g.addColorStop(1, '#D8ECF6');
+    x.fillStyle = g; x.fillRect(0, 0, W, H);
+    const pill = (t, px, font, bg, fg) => { x.font = font; const w = x.measureText(t).width + 44; x.fillStyle = bg; rr(px, 70, w, 64, 32); x.fill(); x.fillStyle = fg; x.textBaseline = 'middle'; x.fillText(t, px + 22, 102); return px + w; };
+    const px = pill(TIENDA.nombre, 60, `700 38px ${F}`, '#fff', '#111827');
+    pill(catLabel(p.cat), px + 16, `600 34px ${F}`, 'rgba(255,255,255,.7)', AZ);
+    const cx = 60, cy = 190, cw = W - 120, ch = 960;
+    x.save(); x.shadowColor = 'rgba(80,100,140,.35)'; x.shadowBlur = 50; x.shadowOffsetY = 24; x.fillStyle = '#fff'; rr(cx, cy, cw, ch, 56); x.fill(); x.restore();
+    x.save(); rr(cx, cy, cw, ch, 56); x.clip();
+    const ar = img.naturalWidth / img.naturalHeight, llena = Math.abs(ar - cw / ch) <= .18;
+    const k = llena ? Math.max(cw / img.naturalWidth, ch / img.naturalHeight) : Math.min(cw / img.naturalWidth, ch / img.naturalHeight);
+    const iw = img.naturalWidth * k, ih = img.naturalHeight * k;
+    x.drawImage(img, cx + (cw - iw) / 2, cy + (ch - ih) / 2, iw, ih); x.restore();
+    const pr = money(p.price).replace('.00', '');
+    x.font = `800 150px ${F}`; const pw = x.measureText(pr).width;
+    x.fillStyle = AZ; rr(cx + cw - 30 - pw - 80, cy + ch - 230, pw + 80, 200, 60); x.fill();
+    x.fillStyle = '#fff'; x.textAlign = 'right'; x.fillText(pr, cx + cw - 70, cy + ch - 128); x.textAlign = 'left';
+    const wrap = (t, max, font) => { x.font = font; const out = []; let l = ''; t.split(' ').forEach(w => { const n = l ? l + ' ' + w : w; if (x.measureText(n).width > max && l) { out.push(l); l = w; } else l = n; }); if (l) out.push(l); return out; };
+    let y = cy + ch + 100; x.textBaseline = 'alphabetic';
+    const lineas = wrap(p.name, W - 140, `700 66px ${F}`).slice(0, 3);
+    x.fillStyle = '#111827'; lineas.forEach(l => { x.fillText(l, 70, y); y += 80; });
+    y += 10; x.font = `500 38px ${F}`;
+    (p.feats || []).slice(0, lineas.length < 3 ? 3 : 2).forEach(f => { let t = f; while (x.measureText(t).width > W - 200 && t.length > 4) t = t.slice(0, -2); if (t !== f) t = t.trimEnd() + '…';
+      x.fillStyle = AZ; x.beginPath(); x.arc(82, y - 13, 8, 0, 7); x.fill(); x.fillStyle = '#5A6373'; x.fillText(t, 110, y); y += 56; });
+    const pie = H - 250; x.fillStyle = '#fff'; rr(60, pie, W - 120, 180, 44); x.fill();
+    const t1 = `Resérvalo con ${money(p.price * ABONO).replace('.00', '')} y paga el resto al recibir`;
+    let tam = 40; x.font = `700 ${tam}px ${F}`; while (tam > 28 && x.measureText(t1).width > W - 200) { tam -= 2; x.font = `700 ${tam}px ${F}`; }
+    x.fillStyle = '#111827'; x.fillText(t1, 100, pie + 76);
+    x.font = `500 32px ${F}`; x.fillStyle = '#5A6373'; x.fillText(`Responde este estado para pedirlo · Código ${p.id}`, 100, pie + 136);
+    const blob = await new Promise(ok => c.toBlob(ok, 'image/jpeg', .88));
+    const nombre = `${p.id} ${p.name.replace(/[^\w áéíóúñÁÉÍÓÚÑ-]/g, '').slice(0, 40)} ${pr}.jpg`;
+    const file = new File([blob], nombre, { type: 'image/jpeg' });
+    if (navigator.canShare && navigator.canShare({ files: [file] })) {
+      try { await navigator.share({ files: [file] }); return; } catch (e) { if (e.name === 'AbortError') return; }
+    }
+    const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = nombre; document.body.append(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+    toast('Imagen descargada');
+  } catch (e) { toast('No se pudo preparar la imagen'); }
+  finally { if (document.contains(btn)) { btn.disabled = false; btn.innerHTML = old; } }
+}
 function setRevision(rev) {
   if (!rev) return;
   REVC = {}; Object.entries(rev).forEach(([id, v]) => { if (v && v.c) REVC[id] = v.c; });

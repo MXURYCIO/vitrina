@@ -9,7 +9,7 @@
  */
 
 // Versión de este programa. La página de revisión avisa si en Google quedó una versión anterior.
-const VERSION = '2026-11-20b';
+const VERSION = '2026-11-20c';
 
 const CONFIG = {
   HOJA: 'Pedidos',
@@ -109,19 +109,26 @@ function crearPedido_(d) {
   const catalogo = catalogo_();
   if (!catalogo) return { ok: false, error: 'No pudimos verificar los precios. Intenta de nuevo en un momento.' };
   const est = estados_();
+  // una línea por producto y opción elegida (el mismo adorno en rojo y en azul son dos líneas)
   const pedidos = {};
   d.items.slice(0, 30).forEach(it => {
     const id = t(it.id);
     if (!id) return;
-    pedidos[id] = Math.min(20, (pedidos[id] || 0) + Math.max(1, Math.floor(Number(it.qty) || 1)));
+    const opcion = t(it.opcion).slice(0, 120);
+    const k = id + '|' + opcion;
+    if (!pedidos[k]) pedidos[k] = { id, opcion, qty: 0 };
+    pedidos[k].qty = Math.min(20, pedidos[k].qty + Math.max(1, Math.floor(Number(it.qty) || 1)));
   });
-  const items = [], faltan = [];
-  Object.keys(pedidos).forEach(id => {
+  const items = [], faltan = [], sinElegir = [];
+  Object.values(pedidos).forEach(({ id, opcion, qty }) => {
     const p = catalogo[id];
     if (!p || !(Number(p.price) > 0) || (est[id] || p.status || 'aprobado') !== 'aprobado') { faltan.push(p ? p.name : id); return; }
-    items.push({ id, qty: pedidos[id], name: p.name, price: Number(p.price), foto: fotoUrl_(p) });
+    const op = opcionValida_(p, opcion);
+    if (op === null) { sinElegir.push(`${p.name} (${gruposOpcion_(p).map(g => String(g.nombre).toLowerCase()).join(' y ')})`); return; }
+    items.push({ id, qty, name: p.name, opcion: op, price: Number(p.price), foto: fotoUrl_(p, op) });
   });
-  if (faltan.length) return { ok: false, code: 'catalogo', error: `Ya no está disponible: ${faltan.join(', ')}. Quítalo del carrito para continuar.` };
+  if (faltan.length) return { ok: false, code: 'catalogo', error: `Ya no está disponible: ${[...new Set(faltan)].join(', ')}. Quítalo del carrito para continuar.` };
+  if (sinElegir.length) return { ok: false, code: 'catalogo', error: `Falta elegir: ${[...new Set(sinElegir)].join(', ')}. Elígelo en el carrito para continuar.` };
   if (!items.length) return { ok: false, error: 'El carrito está vacío.' };
   const total = r2_(items.reduce((s, i) => s + i.price * i.qty, 0));
   const abono = r2_(total * CONFIG.ABONO);
@@ -165,8 +172,8 @@ function crearPedido_(d) {
     const v = {
       'Fecha': ahora, 'Código': code, 'Estado': 'Pendiente', 'Nombre': texto_(nombre), 'Apellido': texto_(apellido),
       'Cédula': "'" + cedula, 'Celular': "'" + cel, 'Ciudad/cantón': texto_(ciudad), 'Dirección': texto_(direccion), 'Envío': envio,
-      'Productos': items.map(i => `${i.qty} x ${i.name}`).join('\n'), 'Foto artículo': '', 'Tienda': '',
-      'Códigos': items.map(i => `${i.id} x${i.qty}`).join(', '),
+      'Productos': items.map(i => `${i.qty} x ${nombreItem_(i)}`).join('\n'), 'Foto artículo': '', 'Tienda': '',
+      'Códigos': items.map(codigoItem_).join(', '),
       'Total': total, 'Abono': abono, 'Saldo': r2_(total - abono), 'N.º comprobante': "'" + num, 'Monto depositado': monto > 0 ? monto : '',
       'Comprobante': 'Ver foto', 'Alertas': alertas.join(' · '), 'Aceptó condiciones': ahora, 'Huella foto': huella,
       'Comprobante leído': lectura.resumen, 'Proveedor': proveedor
@@ -408,17 +415,70 @@ function proveedorTexto_(items) {
   let mapa = {};
   try { mapa = origenMapa_(); } catch (e) { console.error(e); }
   return items.map(i => {
-    const o = mapa[i.id];
-    return o ? `${i.id} x${i.qty}: ${o.tienda} · publicación ${o.num} · ${o.url}` : `${i.id} x${i.qty}: sin dato`;
+    const o = mapa[i.id], ini = `${i.id} x${i.qty}${i.opcion ? ` (${i.opcion})` : ''}`;
+    return o ? `${ini}: ${o.tienda} · publicación ${o.num} · ${o.url}` : `${ini}: sin dato`;
   }).join('\n');
+}
+
+/* ---------- Opciones a elegir (color, modelo, diseño...) ----------
+ * En products.json un producto puede traer "opciones": [{"nombre": "Color", "valores": ["Rojo", "Azul"], "fotos": [0, 2]}]
+ * ("fotos" es opcional: qué foto del producto muestra cada valor). La clienta debe elegir un valor de cada grupo.
+ * La elección viaja como texto "Color: Rojo · Modelo: Caballos". */
+function gruposOpcion_(p) {
+  return (p && Array.isArray(p.opciones) ? p.opciones : []).filter(g => g && g.nombre && Array.isArray(g.valores) && g.valores.length > 1);
+}
+
+// Devuelve la elección escrita como en el catálogo, '' si el producto no tiene opciones, o null si falta elegir o no vale.
+function opcionValida_(p, raw) {
+  const grupos = gruposOpcion_(p);
+  if (!grupos.length) return '';
+  const elegido = {};
+  String(raw || '').split('·').forEach(par => {
+    const k = par.indexOf(':');
+    if (k > 0) elegido[sinTildes_(par.slice(0, k))] = sinTildes_(par.slice(k + 1));
+  });
+  const partes = [];
+  for (const g of grupos) {
+    const v = g.valores.find(x => sinTildes_(x) === elegido[sinTildes_(g.nombre)]);
+    if (!v) return null;
+    partes.push(`${g.nombre}: ${v}`);
+  }
+  return partes.join(' · ');
+}
+
+// Foto del valor elegido (si el catálogo indica cuál es), para que en la hoja y el correo se vea el color o modelo pedido.
+function fotoOpcion_(p, opcion) {
+  if (!opcion || !p || !Array.isArray(p.imgs)) return '';
+  const partes = String(opcion).split('·').map(s => s.trim());
+  for (const g of gruposOpcion_(p)) {
+    if (!Array.isArray(g.fotos)) continue;
+    const par = partes.find(s => sinTildes_(s.slice(0, s.indexOf(':'))) === sinTildes_(g.nombre));
+    if (!par) continue;
+    const i = g.valores.findIndex(v => sinTildes_(v) === sinTildes_(par.slice(par.indexOf(':') + 1)));
+    const k = i >= 0 ? g.fotos[i] : null;
+    if (k != null && p.imgs[k]) return p.imgs[k];
+  }
+  return '';
+}
+
+const nombreItem_ = i => i.opcion ? `${i.name} (${i.opcion})` : i.name;
+const codigoItem_ = i => `${i.id} x${i.qty}${i.opcion ? ` [${i.opcion}]` : ''}`;
+// "P-216 x2 [Color: Rojo]" → { id, qty, opcion }
+function leerCodigo_(s) {
+  const m = String(s).trim().match(/^(\S+)\s+x(\d+)(?:\s*\[([^\]]*)\])?$/);
+  return m ? { id: m[1], qty: Number(m[2]), opcion: m[3] || '' } : null;
+}
+function codigosDeFila_(r) {
+  // la opción va entre corchetes y nunca lleva comas, así que se puede separar por comas
+  return String(r[C['Códigos']] || '').split(',').map(leerCodigo_).filter(Boolean);
 }
 
 /* ---------- Foto y tienda de cada artículo en la hoja de pedidos ----------
  * "Foto artículo" muestra la foto del producto pedido (la del primero si son varios).
  * "Tienda" dice en qué tienda de Telegram pedir cada artículo, con enlace a la publicación y a la foto. */
 const BASE_TIENDA_ = CONFIG.PRODUCTOS_URL.replace(/products\.json$/, '');
-function fotoUrl_(p) {
-  const rel = p && (p.thumb || (Array.isArray(p.imgs) && p.imgs[0]));
+function fotoUrl_(p, opcion) {
+  const rel = fotoOpcion_(p, opcion) || (p && (p.thumb || (Array.isArray(p.imgs) && p.imgs[0])));
   return rel ? (/^https?:/.test(rel) ? rel : BASE_TIENDA_ + rel) : '';
 }
 
@@ -432,7 +492,7 @@ function escribirArticulos_(sh, fila, items, mapa) {
   const enlaces = [];
   items.forEach((i, k) => {
     if (k) texto += '\n';
-    texto += `${i.qty} x ${i.name} (${i.id}): `;
+    texto += `${i.qty} x ${nombreItem_(i)} (${i.id}): `;
     const o = mapa[i.id];
     if (o && o.tienda) {
       const a = texto.length; texto += o.tienda; enlaces.push([a, texto.length, o.url]);
@@ -450,13 +510,11 @@ function escribirArticulos_(sh, fila, items, mapa) {
 
 function itemsDeFila_(r, cat) {
   const lineas = String(r[C['Productos']] || '').split('\n');
-  return String(r[C['Códigos']] || '').split(',').map(x => x.trim()).filter(Boolean).map((x, k) => {
-    const m = x.match(/^(\S+)\s+x(\d+)$/);
-    if (!m) return null;
-    const p = cat[m[1]];
-    const nombre = p ? String(p.name) : String(lineas[k] || '').replace(/^\d+\s*x\s*/, '') || m[1];
-    return { id: m[1], qty: Number(m[2]), name: nombre, foto: fotoUrl_(p) };
-  }).filter(Boolean);
+  return codigosDeFila_(r).map((x, k) => {
+    const p = cat[x.id];
+    const nombre = p ? String(p.name) : String(lineas[k] || '').replace(/^\d+\s*x\s*/, '').replace(/\s*\([^()]*:[^()]*\)$/, '') || x.id;
+    return { id: x.id, qty: x.qty, opcion: x.opcion, name: nombre, foto: fotoUrl_(p, x.opcion) };
+  });
 }
 
 /* Completa "Foto artículo", "Tienda" y "Proveedor" en los pedidos que no los tienen (también los anteriores a este cambio).
@@ -722,8 +780,7 @@ function consultar_(code, last4) {
   if (!celda) return { ok: false, error: 'No encontrado.' };
   const r = sh.getRange(celda.getRow(), 1, 1, COLS.length).getValues()[0];
   if (String(r[C['Celular']]).slice(-4) !== last4) return { ok: false, error: 'No encontrado.' };
-  const items = String(r[C['Códigos']]).split(',').map(s => s.trim()).filter(Boolean)
-    .map(s => { const m = s.match(/^(\S+)\s+x(\d+)$/); return m ? { id: m[1], qty: Number(m[2]) } : null; }).filter(Boolean);
+  const items = codigosDeFila_(r);
   return {
     ok: true, code, status: ESTADO_KEY[r[C['Estado']]] || 'pendiente',
     date: new Date(r[C['Fecha']]).toISOString(), total: Number(r[C['Total']]), abono: Number(r[C['Abono']]),
@@ -803,7 +860,7 @@ function avisar_(p) {
     `Entrega: ${p.direccion}, ${p.ciudad}`,
     `Envío: ${p.envio}`,
     '',
-    ...p.items.map(i => `${i.qty} x ${i.name}   ${fmt_(i.price * i.qty)}`),
+    ...p.items.map(i => `${i.qty} x ${nombreItem_(i)}   ${fmt_(i.price * i.qty)}`),
     '',
     `Total: ${fmt_(p.total)}`,
     `Abono a verificar: ${fmt_(p.abono)}`,
@@ -825,7 +882,8 @@ function avisar_(p) {
       const o = mapa[i.id];
       const tienda = o && o.tienda ? `<a href="${h(o.url)}">${h(o.tienda)}</a> · publicación ${h(o.num)}` : 'tienda sin dato';
       return `<tr><td style="padding:6px 10px 6px 0">${i.foto ? `<img src="${h(i.foto)}" width="90" height="90" style="object-fit:cover;border-radius:8px" alt="">` : ''}</td>` +
-        `<td style="padding:6px 0;font:14px Arial,sans-serif"><b>${i.qty} x ${h(i.name)}</b> (${h(i.id)})<br>${fmt_(i.price * i.qty)}<br>Pedir en: ${tienda}</td></tr>`;
+        `<td style="padding:6px 0;font:14px Arial,sans-serif"><b>${i.qty} x ${h(i.name)}</b> (${h(i.id)})` +
+        `${i.opcion ? `<br><b style="color:#1E66F5">${h(i.opcion)}</b>` : ''}<br>${fmt_(i.price * i.qty)}<br>Pedir en: ${tienda}</td></tr>`;
     }).join('');
     const html = `<div style="font:14px Arial,sans-serif">${h(cuerpo).replace(/\n/g, '<br>')}</div>` +
       `<h3 style="font:bold 15px Arial,sans-serif;margin:18px 0 6px">Artículos pedidos</h3><table style="border-collapse:collapse">${filasHtml}</table>`;

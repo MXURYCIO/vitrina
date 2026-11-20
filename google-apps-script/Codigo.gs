@@ -9,7 +9,7 @@
  */
 
 // Versión de este programa. La página de revisión avisa si en Google quedó una versión anterior.
-const VERSION = '2026-11-20d';
+const VERSION = '2026-11-20e';
 
 const CONFIG = {
   HOJA: 'Pedidos',
@@ -21,11 +21,13 @@ const CONFIG = {
   PRODUCTOS_URL: 'https://tiendaonline-ec.github.io/products.json', // catálogo publicado, para verificar precios
   MAX_PEDIDOS_POR_CELULAR_HORA: 5,
   MAX_PEDIDOS_POR_HORA: 40,
+  MAX_CARRITOS_POR_HORA: 60,
   ZONA_LOCAL: ['La Maná', 'Guasaganda', 'Pucayacu'], // donde se entrega directamente; lo demás va por servicio de entrega
   CUENTA_DESTINO: '2216883431',                       // cuenta donde depositan (la misma que muestra la tienda)
   TITULAR_CLAVES: ['Yomaira', 'Moreira Litardo']      // partes del nombre del titular que pueden salir en el comprobante
 };
 
+const ENVIO_WA = 'Por WhatsApp';
 const COLS = ['Fecha', 'Código', 'Estado', 'Nombre', 'Apellido', 'Cédula', 'Celular', 'Ciudad/cantón', 'Dirección', 'Envío', 'Productos', 'Foto artículo', 'Tienda', 'Códigos',
   'Total', 'Abono', 'Saldo', 'N.º comprobante', 'Monto depositado', 'Comprobante', 'Alertas',
   'Aceptó condiciones', 'Huella foto', 'Comprobante leído', 'Proveedor'];
@@ -39,6 +41,7 @@ function doPost(e) {
   try { d = JSON.parse(e.postData.contents); } catch (err) { return out_({ ok: false, error: 'Solicitud inválida.' }); }
   try {
     if (d.action === 'order') return out_(crearPedido_(d));
+    if (d.action === 'carrito') return out_(carritoWhatsapp_(d));
     if (d.action === 'visita') return out_(visita_(d));
     if (d.action === 'estados') return out_({ ok: true, estados: estados_() });
     if (d.action === 'admin') return out_(admin_(d));
@@ -76,36 +79,9 @@ function configurar() {
   return ss.getUrl();
 }
 
-/* ---------- Pedidos ---------- */
-function crearPedido_(d) {
+/* Artículos del carrito con los precios del catálogo publicado, nunca los que manda el navegador (que se pueden manipular). */
+function armarItems_(d) {
   const t = s => String(s == null ? '' : s).trim();
-  const nombre = t(d.name).slice(0, 60), apellido = t(d.last).slice(0, 60), cedula = t(d.cedula), cel = t(d.phone);
-  const ciudad = t(d.city).replace(/\s+/g, ' ').slice(0, 60), direccion = t(d.address).replace(/\s+/g, ' ').slice(0, 200);
-  const num = t(d.receipt && d.receipt.num).slice(0, 40);
-  const monto = Number(d.receipt && d.receipt.amount);
-
-  if (nombre.length < 2 || apellido.length < 2) return { ok: false, error: 'Faltan el nombre o el apellido.' };
-  if (!cedulaOk_(cedula)) return { ok: false, error: 'La cédula no es válida.' };
-  if (!/^09\d{8}$/.test(cel)) return { ok: false, error: 'El celular no es válido.' };
-  if (ciudad.length < 3) return { ok: false, error: 'Falta la ciudad o cantón de entrega.' };
-  if (direccion.length < 5) return { ok: false, error: 'Falta la dirección de entrega.' };
-  const envio = esLocal_(ciudad) ? 'Local' : 'Servicio de entrega (costo aparte)';
-  if (!Array.isArray(d.items) || !d.items.length) return { ok: false, error: 'El carrito está vacío.' };
-  if (num.length < 4) return { ok: false, error: 'Falta el número de comprobante.' };
-  if (!d.photo || !/^data:image\/(jpeg|png|webp);base64,/.test(d.photo)) return { ok: false, error: 'Falta la foto del comprobante.' };
-  if (!d.terms) return { ok: false, error: 'Debes aceptar las condiciones.' };
-
-  const cache = CacheService.getScriptCache();
-  const kCel = 'cel_' + cel;
-  const usados = Number(cache.get(kCel) || 0);
-  if (usados >= CONFIG.MAX_PEDIDOS_POR_CELULAR_HORA) return { ok: false, error: 'Demasiados pedidos seguidos con este celular. Intenta más tarde.' };
-
-  // Límite general por hora: evita que alguien llene la hoja (y el cupo de correos) con pedidos falsos.
-  const kHora = 'pedidos_hora';
-  const enHora = Number(cache.get(kHora) || 0);
-  if (enHora >= CONFIG.MAX_PEDIDOS_POR_HORA) return { ok: false, error: 'Estamos recibiendo muchos pedidos. Intenta de nuevo en unos minutos.' };
-
-  // Precios: siempre los del catálogo publicado, nunca los que manda el navegador (que se pueden manipular).
   const catalogo = catalogo_();
   if (!catalogo) return { ok: false, error: 'No pudimos verificar los precios. Intenta de nuevo en un momento.' };
   const est = estados_();
@@ -136,6 +112,107 @@ function crearPedido_(d) {
   if (d.total != null && Math.abs(Number(d.total) - total) > 0.009) {
     return { ok: false, code: 'catalogo', error: `Los precios se actualizaron. El total correcto es ${fmt_(total)} y el abono ${fmt_(abono)}. Revisa tu carrito.` };
   }
+
+  return { ok: true, items, total, abono };
+}
+
+/* ---------- Carrito enviado por WhatsApp ----------
+ * La clienta arma su carrito y lo envía por WhatsApp; el abono se coordina por chat. Aquí solo se registra el carrito
+ * con un código en la hoja "Pedidos" (sin datos personales), con la foto y la tienda de cada artículo, para tener el resumen. */
+function carritoWhatsapp_(d) {
+  if (!Array.isArray(d.items) || !d.items.length) return { ok: false, error: 'El carrito está vacío.' };
+  const cache = CacheService.getScriptCache();
+  const kHora = 'carritos_hora';
+  const enHora = Number(cache.get(kHora) || 0);
+  if (enHora >= CONFIG.MAX_CARRITOS_POR_HORA) return { ok: false, error: 'Estamos recibiendo muchos pedidos. Intenta de nuevo en unos minutos.' };
+  const v = armarItems_(d);
+  if (!v.ok) return v;
+  const { items, total, abono } = v;
+  const lock = LockService.getScriptLock();
+  lock.waitLock(20000);
+  try {
+    const sh = hoja_();
+    const n = sh.getLastRow() - 1;
+    const filas = n > 0 ? sh.getRange(2, 1, n, COLS.length).getValues() : [];
+    const codigos = new Set(filas.map(r => r[C['Código']]));
+    // el código lo propone la página (va en el mensaje de WhatsApp); si ya existe como carrito, no se repite la fila
+    let code = String(d.code || '').toUpperCase().trim();
+    const previo = filas.find(r => r[C['Código']] === code);
+    if (previo && previo[C['Envío']] === ENVIO_WA) return { ok: true, code, total: Number(previo[C['Total']]), abono: Number(previo[C['Abono']]), status: 'pendiente', repetido: true };
+    if (!/^PED-[A-Z0-9]{4}$/.test(code) || codigos.has(code)) { do { code = 'PED-' + aleatorio_(4); } while (codigos.has(code)); }
+    const ahora = new Date();
+    const proveedor = proveedorTexto_(items);
+    const val = {
+      'Fecha': ahora, 'Código': code, 'Estado': 'Pendiente', 'Envío': ENVIO_WA,
+      'Productos': items.map(i => `${i.qty} x ${nombreItem_(i)}`).join('\n'), 'Foto artículo': '', 'Tienda': '',
+      'Códigos': items.map(codigoItem_).join(', '), 'Total': total, 'Abono': abono, 'Saldo': r2_(total - abono),
+      'Comprobante leído': 'Pedido por WhatsApp: el abono y los datos de entrega se coordinan por chat', 'Proveedor': proveedor
+    };
+    sh.appendRow(COLS.map(c => val[c] != null ? val[c] : ''));
+    const r = sh.getLastRow();
+    try { escribirArticulos_(sh, r, items); } catch (err) { console.error(err); }
+    sh.getRange(r, 1, 1, COLS.length).setBackground('#E7F6EE');
+    cache.put(kHora, String(enHora + 1), 3600);
+    avisarCarrito_({ code, items, total, abono, proveedor });
+    return { ok: true, code, total, abono, status: 'pendiente', date: ahora.toISOString() };
+  } finally {
+    lock.releaseLock();
+  }
+}
+
+function avisarCarrito_(p) {
+  const para = CONFIG.CORREO_AVISOS || Session.getEffectiveUser().getEmail();
+  if (!para) return;
+  try {
+    const h = x => String(x == null ? '' : x).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    let mapa = {};
+    try { mapa = origenMapa_(); } catch (e) {}
+    const filas = p.items.map(i => {
+      const o = origenItem_(mapa, i);
+      const tienda = o ? `${o.url ? `<a href="${h(o.url)}">${h(o.tienda)}</a>` : h(o.tienda)}${o.ref ? ' · ' + h(o.ref) : ''}${o.contacto ? '<br>Contacto: ' + h(o.contacto) : ''}` : 'tienda sin dato';
+      return `<tr><td style="padding:6px 10px 6px 0">${i.foto ? `<img src="${h(i.foto)}" width="90" height="90" style="object-fit:cover;border-radius:8px" alt="">` : ''}</td>` +
+        `<td style="padding:6px 0;font:14px Arial,sans-serif"><b>${i.qty} x ${h(i.name)}</b> (${h(i.id)})${i.opcion ? `<br><b style="color:#1E66F5">${h(i.opcion)}</b>` : ''}` +
+        `<br>${fmt_(i.price * i.qty)}<br>Pedir en: ${tienda}</td></tr>`;
+    }).join('');
+    const cuerpo = [`Carrito enviado por WhatsApp ${p.code}`, '', ...p.items.map(i => `${i.qty} x ${nombreItem_(i)}   ${fmt_(i.price * i.qty)}`), '',
+      `Total: ${fmt_(p.total)}`, `Abono (50%): ${fmt_(p.abono)}`, '', 'Dónde pedir cada producto:', p.proveedor, '', `Hoja de pedidos: ${libro_().getUrl()}`].join('\n');
+    MailApp.sendEmail({ to: para, subject: `Pedido por WhatsApp ${p.code} · ${fmt_(p.total)}`, body: cuerpo,
+      htmlBody: `<div style="font:14px Arial,sans-serif">${h(cuerpo).replace(/\n/g, '<br>')}</div><h3 style="font:bold 15px Arial,sans-serif;margin:18px 0 6px">Artículos</h3><table style="border-collapse:collapse">${filas}</table>` });
+  } catch (err) { console.error(err); }
+}
+
+/* ---------- Pedidos ---------- */
+function crearPedido_(d) {
+  const t = s => String(s == null ? '' : s).trim();
+  const nombre = t(d.name).slice(0, 60), apellido = t(d.last).slice(0, 60), cedula = t(d.cedula), cel = t(d.phone);
+  const ciudad = t(d.city).replace(/\s+/g, ' ').slice(0, 60), direccion = t(d.address).replace(/\s+/g, ' ').slice(0, 200);
+  const num = t(d.receipt && d.receipt.num).slice(0, 40);
+  const monto = Number(d.receipt && d.receipt.amount);
+
+  if (nombre.length < 2 || apellido.length < 2) return { ok: false, error: 'Faltan el nombre o el apellido.' };
+  if (!cedulaOk_(cedula)) return { ok: false, error: 'La cédula no es válida.' };
+  if (!/^09\d{8}$/.test(cel)) return { ok: false, error: 'El celular no es válido.' };
+  if (ciudad.length < 3) return { ok: false, error: 'Falta la ciudad o cantón de entrega.' };
+  if (direccion.length < 5) return { ok: false, error: 'Falta la dirección de entrega.' };
+  const envio = esLocal_(ciudad) ? 'Local' : 'Servicio de entrega (costo aparte)';
+  if (!Array.isArray(d.items) || !d.items.length) return { ok: false, error: 'El carrito está vacío.' };
+  if (num.length < 4) return { ok: false, error: 'Falta el número de comprobante.' };
+  if (!d.photo || !/^data:image\/(jpeg|png|webp);base64,/.test(d.photo)) return { ok: false, error: 'Falta la foto del comprobante.' };
+  if (!d.terms) return { ok: false, error: 'Debes aceptar las condiciones.' };
+
+  const cache = CacheService.getScriptCache();
+  const kCel = 'cel_' + cel;
+  const usados = Number(cache.get(kCel) || 0);
+  if (usados >= CONFIG.MAX_PEDIDOS_POR_CELULAR_HORA) return { ok: false, error: 'Demasiados pedidos seguidos con este celular. Intenta más tarde.' };
+
+  // Límite general por hora: evita que alguien llene la hoja (y el cupo de correos) con pedidos falsos.
+  const kHora = 'pedidos_hora';
+  const enHora = Number(cache.get(kHora) || 0);
+  if (enHora >= CONFIG.MAX_PEDIDOS_POR_HORA) return { ok: false, error: 'Estamos recibiendo muchos pedidos. Intenta de nuevo en unos minutos.' };
+
+  const v = armarItems_(d);
+  if (!v.ok) return v;
+  const { items, total, abono } = v;
 
   const b64 = d.photo.slice(d.photo.indexOf(',') + 1);
   const mime = d.photo.slice(5, d.photo.indexOf(';'));
@@ -416,7 +493,7 @@ function proveedorTexto_(items) {
   try { mapa = origenMapa_(); } catch (e) { console.error(e); }
   return items.map(i => {
     const o = origenItem_(mapa, i), ini = `${i.id} x${i.qty}${i.opcion ? ` (${i.opcion})` : ''}`;
-    return o ? `${ini}: ${o.tienda}${o.ref ? ' · ' + o.ref : ''}${o.url ? ' · ' + o.url : ''}` : `${ini}: sin dato`;
+    return o ? `${ini}: ${o.tienda}${o.ref ? ' · ' + o.ref : ''}${o.contacto ? ' · tel. ' + o.contacto : ''}${o.url ? ' · ' + o.url : ''}` : `${ini}: sin dato`;
   }).join('\n');
 }
 
@@ -497,6 +574,7 @@ function escribirArticulos_(sh, fila, items, mapa) {
     if (o) {
       const a = texto.length; texto += o.tienda; if (o.url) enlaces.push([a, texto.length, o.url]);
       if (o.ref) texto += ` · ${o.ref}`;
+      if (o.contacto) texto += ` · tel. ${o.contacto}`;
     } else {
       texto += 'tienda sin dato';
     }
@@ -773,18 +851,20 @@ function hojaRev_() {
 function consultar_(code, last4) {
   code = String(code || '').toUpperCase().trim();
   last4 = String(last4 || '').trim();
-  if (!/^PED-[A-Z0-9]{4}$/.test(code) || !/^\d{4}$/.test(last4)) return { ok: false, error: 'Datos incompletos.' };
+  if (!/^PED-[A-Z0-9]{4}$/.test(code) || !(/^\d{4}$/.test(last4) || last4 === '')) return { ok: false, error: 'Datos incompletos.' };
   const sh = hoja_();
   if (sh.getLastRow() < 2) return { ok: false, error: 'No encontrado.' };
   const celda = sh.getRange(2, C['Código'] + 1, sh.getLastRow() - 1, 1).createTextFinder(code).matchEntireCell(true).findNext();
   if (!celda) return { ok: false, error: 'No encontrado.' };
   const r = sh.getRange(celda.getRow(), 1, 1, COLS.length).getValues()[0];
-  if (String(r[C['Celular']]).slice(-4) !== last4) return { ok: false, error: 'No encontrado.' };
+  // pedidos con celular: se piden sus últimos 4 dígitos; los enviados por WhatsApp (sin celular) se consultan solo con el código
+  const cel = String(r[C['Celular']] || '').replace(/\D/g, '');
+  if (cel ? cel.slice(-4) !== last4 : r[C['Envío']] !== ENVIO_WA) return { ok: false, error: 'No encontrado.' };
   const items = codigosDeFila_(r);
   return {
     ok: true, code, status: ESTADO_KEY[r[C['Estado']]] || 'pendiente',
     date: new Date(r[C['Fecha']]).toISOString(), total: Number(r[C['Total']]), abono: Number(r[C['Abono']]),
-    items, lines: String(r[C['Productos']]).split('\n').filter(Boolean)
+    items, lines: String(r[C['Productos']]).split('\n').filter(Boolean), via: r[C['Envío']] === ENVIO_WA ? 'whatsapp' : ''
   };
 }
 
@@ -880,7 +960,7 @@ function avisar_(p) {
     try { mapa = origenMapa_(); } catch (e) {}
     const filasHtml = p.items.map(i => {
       const o = origenItem_(mapa, i);
-      const tienda = o ? `${o.url ? `<a href="${h(o.url)}">${h(o.tienda)}</a>` : h(o.tienda)}${o.ref ? ' · ' + h(o.ref) : ''}` : 'tienda sin dato';
+      const tienda = o ? `${o.url ? `<a href="${h(o.url)}">${h(o.tienda)}</a>` : h(o.tienda)}${o.ref ? ' · ' + h(o.ref) : ''}${o.contacto ? '<br>Contacto: ' + h(o.contacto) : ''}` : 'tienda sin dato';
       return `<tr><td style="padding:6px 10px 6px 0">${i.foto ? `<img src="${h(i.foto)}" width="90" height="90" style="object-fit:cover;border-radius:8px" alt="">` : ''}</td>` +
         `<td style="padding:6px 0;font:14px Arial,sans-serif"><b>${i.qty} x ${h(i.name)}</b> (${h(i.id)})` +
         `${i.opcion ? `<br><b style="color:#1E66F5">${h(i.opcion)}</b>` : ''}<br>${fmt_(i.price * i.qty)}<br>Pedir en: ${tienda}</td></tr>`;
@@ -1066,9 +1146,26 @@ function precioVigente_(p) {
 // Dónde pedir un artículo: tienda de Telegram (hoja "Proveedores") o, para los productos de catálogo, el campo "pedir" de products.json.
 function origenItem_(mapa, i) {
   const o = mapa && mapa[i.id];
-  if (o && o.tienda) return { tienda: o.tienda, ref: `publicación ${o.num}`, url: o.url };
+  if (o && o.tienda) return { tienda: o.tienda, ref: `publicación ${o.num}`, url: o.url, contacto: contactos_()[o.canal] || '' };
   const q = i.pedir;
   return q && q.tienda ? { tienda: String(q.tienda), ref: String(q.ref || ''), url: String(q.url || '') } : null;
+}
+
+// Teléfonos de pedidos de cada tienda de Telegram (canales.json, "contactos").
+function contactos_() {
+  if (contactos_.c) return contactos_.c;
+  const cache = CacheService.getScriptCache();
+  let txt = cache.get('contactos');
+  if (!txt) {
+    txt = '{}';
+    try {
+      const r = UrlFetchApp.fetch(BASE_TIENDA_ + 'canales.json', { muteHttpExceptions: true });
+      if (r.getResponseCode() === 200) txt = JSON.stringify(JSON.parse(r.getContentText()).contactos || {});
+    } catch (e) {}
+    cache.put('contactos', txt, 21600);
+  }
+  contactos_.c = JSON.parse(txt);
+  return contactos_.c;
 }
 
 function catalogo_() {

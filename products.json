@@ -1,6 +1,339 @@
 {
  "products": [
   {
+   "id": "P-512",
+   "name": "Tendedero de ropa de 3 niveles con ruedas",
+   "cat": "hogar",
+   "price": 24,
+   "desc": "Tendedero para secar la ropa dentro de casa, ideal para los días de lluvia. Tiene 3 niveles con barras para tender, ganchos laterales para colgar prendas en perchas y una repisa abajo para canastas o zapatos. Es de tubos de acero con uniones de plástico y trae ruedas para moverlo con facilidad.",
+   "feats": [
+    "Para secar ropa dentro de casa",
+    "3 niveles para tender",
+    "Ganchos laterales para perchas",
+    "Repisa inferior",
+    "Con ruedas"
+   ],
+   "imgs": [
+    "img/p/p-512-0.jpg"
+   ],
+   "thumb": "img/p/p-512-s.jpg",
+   "src": "df890a0e4fd0",
+   "added": "2026-11-20T03:14:56.532980+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-513",
+   "name": "Protector de colchón impermeable de 3 plazas",
+   "cat": "hogar",
+   "price": 30,
+   "desc": "Protector de colchón impermeable de 3 plazas, acolchado y grueso, con costura por ultrasonido. Es de tela bramante, antiácaros y trae elástico alrededor para que se ajuste bien al colchón. Protege el colchón de líquidos y manchas y alarga su vida. Color según disponibilidad.",
+   "feats": [
+    "Tamaño: 3 plazas",
+    "Impermeable y antiácaros",
+    "Acolchado y súper grueso",
+    "Con elástico ajustable",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-513-0.jpg",
+    "img/p/p-513-1.jpg",
+    "img/p/p-513-2.jpg",
+    "img/p/p-513-3.jpg"
+   ],
+   "thumb": "img/p/p-513-s.jpg",
+   "src": "148b5c84b32a",
+   "added": "2026-11-20T03:14:56.532980+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-514",
+   "name": "Árbol de Navidad pino con puntas blancas de 2,10 m",
+   "cat": "navidad",
+   "price": 42,
+   "desc": "Pino navideño artificial verde de 2,10 m (210 cm) de alto, con ramas tupidas y puntas blancas que dan un delicado efecto nevado. Incluye base negra plegable de metal. Ideal para la sala o la entrada de la casa.",
+   "feats": [
+    "Altura: 2,10 m (210 cm)",
+    "Ramas tupidas con puntas blancas",
+    "Efecto nevado",
+    "Base negra plegable incluida"
+   ],
+   "imgs": [
+    "img/p/p-514-0.jpg",
+    "img/p/p-514-1.jpg",
+    "img/p/p-514-2.jpg"
+   ],
+   "thumb": "img/p/p-514-s.jpg",
+   "src": "799084a6e028",
+   "added": "2026-11-20T03:14:56.532980+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-515",
+   "name": "Nacimiento navideño con casita de madera, 30 x 20 cm",
+   "cat": "navidad",
+   "price": 24,
+   "desc": "Nacimiento navideño completo con casita rústica de madera y techo con musgo. Incluye la Sagrada Familia, los Reyes Magos y animalitos, con figuras de colores vivos y bien detalladas. Mide aprox. 30 cm de ancho y 20 cm de alto, ideal para una mesa o repisa.",
+   "feats": [
+    "Medidas: 30 cm de ancho x 20 cm de alto",
+    "Casita rústica de madera",
+    "Sagrada Familia y Reyes Magos",
+    "Incluye animalitos"
+   ],
+   "imgs": [
+    "img/p/p-515-0.jpg",
+    "img/p/p-515-1.jpg",
+    "img/p/p-515-2.jpg",
+    "img/p/p-515-3.jpg"
+   ],
+   "thumb": "img/p/p-515-s.jpg",
+   "src": "1a4d39a0a745",
+   "added": "2026-11-20T03:14:56.532980+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-516",
+   "name": "Pesebre navideño de figuras con ángel y pastor",
+   "cat": "navidad",
+   "price": 38,
+   "desc": "Juego de figuras para armar el pesebre: Sagrada Familia, Reyes Magos, ángel, pastorcito y animalitos como ovejas, buey y burro. Figuras con detalles cuidados y colores vivos que dan calidez a la decoración navideña. Perfecto para armar tu pesebre o para regalar.",
+   "feats": [
+    "Sagrada Familia y Reyes Magos",
+    "Incluye ángel y pastorcito",
+    "Ovejas, buey y burro",
+    "Ideal para regalar"
+   ],
+   "imgs": [
+    "img/p/p-516-0.jpg",
+    "img/p/p-516-1.jpg",
+    "img/p/p-516-2.jpg"
+   ],
+   "thumb": "img/p/p-516-s.jpg",
+   "src": "756d18b6fee6",
+   "added": "2026-11-20T03:14:56.532980+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-517",
+   "name": "Luces navideñas tipo lluvia de meteoritos",
+   "cat": "navidad",
+   "price": 8,
+   "desc": "Juego de tubos de luces LED que simulan la caída de meteoritos o lluvia de luz. Se cuelgan en árboles, techos, balcones o fachadas y crean un efecto decorativo muy vistoso en Navidad o cualquier celebración. Se conectan al enchufe.",
+   "feats": [
+    "Efecto de lluvia de meteoritos",
+    "Tubos de luces LED",
+    "Para árboles, techos y fachadas",
+    "Se conecta al enchufe"
+   ],
+   "imgs": [
+    "img/p/p-517-0.jpg",
+    "img/p/p-517-1.jpg",
+    "img/p/p-517-2.jpg"
+   ],
+   "thumb": "img/p/p-517-s.jpg",
+   "src": "bd4ee180a44b",
+   "added": "2026-11-20T03:14:56.532980+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-518",
+   "name": "Luces navideñas solares de 10 m, 100 LED",
+   "cat": "navidad",
+   "price": 5,
+   "desc": "Serie de 100 luces LED de 10 metros de largo que se carga con panel solar, sin cables al enchufe. Resistente al agua, ideal para decorar jardines, balcones, rejas y fachadas en Navidad. Disponible en luz roja y luz amarilla (según disponibilidad).",
+   "feats": [
+    "100 luces LED",
+    "10 metros de largo",
+    "Carga con panel solar",
+    "Resistente al agua",
+    "Luz roja o amarilla (según disponibilidad)"
+   ],
+   "imgs": [
+    "img/p/p-518-0.jpg",
+    "img/p/p-518-1.jpg"
+   ],
+   "thumb": "img/p/p-518-s.jpg",
+   "src": "2c41ed2d654b",
+   "added": "2026-11-20T03:14:56.532980+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-519",
+   "name": "Cortina de luces navideñas con 10 figuras, 3 m",
+   "cat": "navidad",
+   "price": 9,
+   "desc": "Cortina de luces de luz cálida de 3 metros de largo con 10 figuras colgantes iluminadas: arbolitos, estrellas, copos de nieve, botitas y muñecos de nieve. Ideal para decorar ventanas, paredes y la sala en Navidad.",
+   "feats": [
+    "3 metros de largo",
+    "10 figuras navideñas colgantes",
+    "Luz cálida",
+    "Para ventanas y paredes"
+   ],
+   "imgs": [
+    "img/p/p-519-0.jpg",
+    "img/p/p-519-1.jpg",
+    "img/p/p-519-2.jpg"
+   ],
+   "thumb": "img/p/p-519-s.jpg",
+   "src": "98803758b23c",
+   "added": "2026-11-20T03:14:56.532980+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-520",
+   "name": "Papá Noel decorativo con campanas y saco",
+   "cat": "navidad",
+   "price": 22,
+   "desc": "Figura decorativa de Papá Noel con traje rojo largo con estrellas doradas, gorro, saco de yute, ramita navideña y campanas doradas. Queda muy bonito en la puerta de entrada, junto al árbol o en una mesa, en la casa o el negocio.",
+   "feats": [
+    "Traje rojo con estrellas doradas",
+    "Con campanas y saco de yute",
+    "Para la puerta, el árbol o una mesa",
+    "Ideal para hogar o negocio"
+   ],
+   "imgs": [
+    "img/p/p-520-0.jpg",
+    "img/p/p-520-1.jpg",
+    "img/p/p-520-2.jpg",
+    "img/p/p-520-3.jpg"
+   ],
+   "thumb": "img/p/p-520-s.jpg",
+   "src": "6013c47bdadb",
+   "added": "2026-11-20T03:14:56.532980+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-521",
+   "name": "Lámpara navideña muñeco de nieve con luz LED, 32 cm",
+   "cat": "navidad",
+   "price": 21,
+   "desc": "Lámpara decorativa con forma de muñeco de nieve con gorrito rojo y una esfera transparente con figuras navideñas por dentro. Tiene luz LED y base decorativa con detalles en relieve. Mide aprox. 32 cm de alto, ideal para mesas, repisas y rincones especiales. Color de la base según disponibilidad.",
+   "feats": [
+    "Altura: 32 cm",
+    "Luz LED",
+    "Esfera con figuras navideñas",
+    "Base decorativa en relieve",
+    "Color de base según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-521-0.jpg",
+    "img/p/p-521-1.jpg"
+   ],
+   "thumb": "img/p/p-521-s.jpg",
+   "src": "41536ba07f4f",
+   "added": "2026-11-20T03:14:56.532980+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-522",
+   "name": "Juego de mantel navideño con 6 forros para silla",
+   "cat": "navidad",
+   "price": 24,
+   "desc": "Juego navideño de 7 piezas: 1 mantel y 6 forros para sillas. Es de material suave y elástico, fácil de poner y quitar. Transforma el comedor para la cena de Navidad. Diseño según disponibilidad.",
+   "feats": [
+    "7 piezas: mantel + 6 forros de silla",
+    "Material suave y elástico",
+    "Fácil de poner",
+    "Diseño según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-522-0.jpg",
+    "img/p/p-522-1.jpg"
+   ],
+   "thumb": "img/p/p-522-s.jpg",
+   "src": "349f3f6d5525",
+   "added": "2026-11-20T03:14:56.532980+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-523",
+   "name": "Set de 24 esferas navideñas pequeñas",
+   "cat": "navidad",
+   "price": 5,
+   "desc": "Set de 24 esferas navideñas pequeñas en diferentes acabados: brillantes, mate y con purpurina. Vienen en tubo transparente y listas para colgar en el árbol, guirnaldas o centros de mesa. Color según disponibilidad.",
+   "feats": [
+    "24 esferas pequeñas",
+    "Acabados brillante, mate y con purpurina",
+    "Listas para colgar",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-523-0.jpg",
+    "img/p/p-523-1.jpg",
+    "img/p/p-523-2.jpg",
+    "img/p/p-523-3.jpg"
+   ],
+   "thumb": "img/p/p-523-s.jpg",
+   "src": "0e5485505904",
+   "added": "2026-11-20T03:14:56.532980+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-524",
+   "name": "Pista de tren navideño de 30 piezas con Papá Noel",
+   "cat": "navidad",
+   "price": 14,
+   "desc": "Pista de juguete con temática navideña de 30 piezas, con vías curvas, un puente rojo y un trencito que recorre todo el camino junto a la figura de Papá Noel. Armada mide aprox. 60 x 52 cm y 13 cm de alto. Para niños desde 3 años, un regalo ideal para esta Navidad.",
+   "feats": [
+    "30 piezas",
+    "Tren con figura de Papá Noel",
+    "Vías curvas y puente",
+    "Armada: 60 x 52 x 13 cm",
+    "Desde 3 años"
+   ],
+   "imgs": [
+    "img/p/p-524-0.jpg",
+    "img/p/p-524-1.jpg",
+    "img/p/p-524-2.jpg"
+   ],
+   "thumb": "img/p/p-524-s.jpg",
+   "src": "ffaf85726aba",
+   "added": "2026-11-20T03:14:56.532980+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-525",
+   "name": "Farol navideño musical con nieve",
+   "cat": "navidad",
+   "price": 14,
+   "desc": "Adorno navideño en forma de farol con acabado dorado envejecido y una esfera con escena navideña y brillitos que flotan como nieve. Tiene modo con música y modo sin música. Un detalle muy bonito para decorar o regalar. Diseño según disponibilidad (Papá Noel, trineo con renos o muñeco de nieve).",
+   "feats": [
+    "Modo con música y sin música",
+    "Brillitos que flotan como nieve",
+    "Acabado dorado envejecido",
+    "Diseño según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/p-525-0.jpg",
+    "img/p/p-525-1.jpg",
+    "img/p/p-525-2.jpg",
+    "img/p/p-525-3.jpg"
+   ],
+   "thumb": "img/p/p-525-s.jpg",
+   "src": "901bbc516a7b",
+   "added": "2026-11-20T03:14:56.532980+00:00",
+   "status": "pendiente"
+  },
+  {
+   "id": "P-526",
+   "name": "Proyector de luces navideñas",
+   "cat": "navidad",
+   "price": 8,
+   "desc": "Reflector que proyecta figuras navideñas de colores en paredes y techos: copos de nieve, Papá Noel, renos y más. Crea un ambiente lleno de luz y alegría en la sala, el cuarto o la fachada.",
+   "feats": [
+    "Proyecta figuras navideñas",
+    "Luces de colores",
+    "Para paredes y techos",
+    "Ideal para sala o cuarto"
+   ],
+   "imgs": [
+    "img/p/p-526-0.jpg"
+   ],
+   "thumb": "img/p/p-526-s.jpg",
+   "src": "1b83933d04ca",
+   "added": "2026-11-20T03:14:56.532980+00:00",
+   "status": "pendiente"
+  },
+  {
    "id": "P-490",
    "name": "Traje impermeable de 2 piezas con reflectivo",
    "cat": "otros",
@@ -8793,5 +9126,5 @@
    "status": "pendiente"
   }
  ],
- "updated": "2026-11-19T01:15:29.907623+00:00"
+ "updated": "2026-11-20T03:14:56.532980+00:00"
 }

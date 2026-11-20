@@ -241,12 +241,12 @@
    "name": "Juego de mantel navideño con 6 forros para silla",
    "cat": "navidad",
    "price": 24,
-   "desc": "Juego navideño de 7 piezas: 1 mantel y 6 forros para sillas. Es de material suave y elástico, fácil de poner y quitar. Transforma el comedor para la cena de Navidad. Elige el diseño al agregarlo al carrito.",
+   "desc": "Juego navideño de 7 piezas: 1 mantel y 6 forros para sillas. Es de material suave y elástico, fácil de poner y quitar. Transforma el comedor para la cena de Navidad. Diseño según disponibilidad.",
    "feats": [
     "7 piezas: mantel + 6 forros de silla",
     "Material suave y elástico",
     "Fácil de poner",
-    "2 diseños a elegir"
+    "Diseño según disponibilidad"
    ],
    "imgs": [
     "img/p/p-522-0.jpg",
@@ -255,20 +255,7 @@
    "thumb": "img/p/p-522-s.jpg",
    "src": "349f3f6d5525",
    "added": "2026-11-20T03:14:56.532980+00:00",
-   "status": "pendiente",
-   "opciones": [
-    {
-     "nombre": "Diseño",
-     "valores": [
-      "Árbol navideño",
-      "Feliz Navidad"
-     ],
-     "fotos": [
-      0,
-      1
-     ]
-    }
-   ]
+   "status": "pendiente"
   },
   {
    "id": "P-523",
@@ -6245,12 +6232,12 @@
    "name": "Reloj de pared infantil",
    "cat": "hogar",
    "price": 10,
-   "desc": "Reloj de pared con números grandes y fáciles de leer, en diseños de colores vivos y tiernos. Ideal para decorar el cuarto de los niños. Elige el diseño al agregarlo al carrito.",
+   "desc": "Reloj de pared con números grandes y fáciles de leer, en diseños de colores vivos y tiernos. Ideal para decorar el cuarto de los niños. Diseño según disponibilidad.",
    "feats": [
     "Números grandes",
     "Diseños tiernos",
     "Para decorar",
-    "4 diseños a elegir"
+    "Diseño según disponibilidad"
    ],
    "imgs": [
     "img/p/p-260-0.jpg",
@@ -6261,24 +6248,7 @@
    "thumb": "img/p/p-260-s.jpg",
    "src": "1dc026845a03",
    "added": "2026-11-18T05:31:24.726044+00:00",
-   "status": "pendiente",
-   "opciones": [
-    {
-     "nombre": "Diseño",
-     "valores": [
-      "Unicornio azul",
-      "Unicornio rosado",
-      "Búhos",
-      "Números de colores"
-     ],
-     "fotos": [
-      0,
-      1,
-      2,
-      3
-     ]
-    }
-   ]
+   "status": "pendiente"
   },
   {
    "id": "P-261",
@@ -6534,12 +6504,12 @@
    "name": "Estante de cocina con vitrina y ruedas",
    "cat": "cocina",
    "price": 38,
-   "desc": "Estante organizador de cocina de metal con puertas de vidrio estriado y ruedas para moverlo fácil. Perfecto para legumbres, verduras, ollas y botellas. Hay 2 modelos, ancho y angosto: elige el que necesitas al agregarlo al carrito.",
+   "desc": "Estante organizador de cocina de metal con puertas de vidrio estriado y ruedas para moverlo fácil. Perfecto para legumbres, verduras, ollas y botellas. Modelo según disponibilidad.",
    "feats": [
     "Metal con puertas de vidrio",
     "Con ruedas",
     "Varios niveles",
-    "Modelo ancho o angosto, a elegir"
+    "Modelo según disponibilidad"
    ],
    "imgs": [
     "img/p/p-272-0.jpg",
@@ -6549,20 +6519,7 @@
    "thumb": "img/p/p-272-s.jpg",
    "src": "3e1432b4fb30",
    "added": "2026-11-18T05:31:24.726044+00:00",
-   "status": "pendiente",
-   "opciones": [
-    {
-     "nombre": "Modelo",
-     "valores": [
-      "Ancho",
-      "Angosto"
-     ],
-     "fotos": [
-      0,
-      null
-     ]
-    }
-   ]
+   "status": "pendiente"
   },
   {
    "id": "P-273",
@@ -7235,13 +7192,13 @@
    "name": "Juego de sábanas de 2 plazas, piel de durazno",
    "cat": "hogar",
    "price": 10,
-   "desc": "Juego de sábanas de 2 plazas de piel de durazno, ultra suave. Es antialérgico, antibacteriano y antifúngico; no destiñe, no encoge y no hace motas. Incluye sábana, colcha y 2 forros de almohada. Elige el diseño al agregarlo al carrito.",
+   "desc": "Juego de sábanas de 2 plazas de piel de durazno, ultra suave. Es antialérgico, antibacteriano y antifúngico; no destiñe, no encoge y no hace motas. Incluye sábana, colcha y 2 forros de almohada. Diseño según disponibilidad.",
    "feats": [
     "Tamaño 2 plazas",
     "Tela piel de durazno ultra suave",
     "Incluye sábana, colcha y 2 forros de almohada",
     "No destiñe ni encoge",
-    "4 diseños a elegir"
+    "Diseño según disponibilidad"
    ],
    "imgs": [
     "img/p/p-215-0.jpg",
@@ -7252,24 +7209,7 @@
    "thumb": "img/p/p-215-s.jpg",
    "src": "4b09fe5e9813",
    "added": "2026-11-18T04:55:54.701123+00:00",
-   "status": "pendiente",
-   "opciones": [
-    {
-     "nombre": "Diseño",
-     "valores": [
-      "Verde con círculos",
-      "Azul marino con huellitas",
-      "Fucsia con flores",
-      "Café con rombos"
-     ],
-     "fotos": [
-      0,
-      1,
-      2,
-      3
-     ]
-    }
-   ]
+   "status": "pendiente"
   },
   {
    "id": "P-174",
@@ -7645,11 +7585,11 @@
    "name": "Cojín navideño",
    "cat": "navidad",
    "price": 7,
-   "desc": "Cojín decorativo con diseños navideños alegres y coloridos. Llena de espíritu navideño la sala, el sofá o el dormitorio. Elige el diseño al agregarlo al carrito.",
+   "desc": "Cojín decorativo con diseños navideños alegres y coloridos. Llena de espíritu navideño la sala, el sofá o el dormitorio. El diseño se entrega según disponibilidad.",
    "feats": [
     "Diseños navideños",
     "Para sofá o cama",
-    "2 diseños a elegir"
+    "Diseño según disponibilidad"
    ],
    "imgs": [
     "img/p/p-140-0.jpg",
@@ -7658,20 +7598,7 @@
    "thumb": "img/p/p-140-s.jpg",
    "src": "36465c292fc4",
    "added": "2026-11-15T04:36:58.665191+00:00",
-   "status": "pendiente",
-   "opciones": [
-    {
-     "nombre": "Diseño",
-     "valores": [
-      "Papá Noel y reno",
-      "Corona con Papá Noel"
-     ],
-     "fotos": [
-      0,
-      1
-     ]
-    }
-   ]
+   "status": "pendiente"
   },
   {
    "id": "P-141",
@@ -8088,14 +8015,14 @@
    "name": "Carro loco a control remoto con luces",
    "cat": "juguetes",
    "price": 13,
-   "desc": "Carro a control remoto que da giros de 360 grados, con luces brillantes en las ruedas y la cabina, y música. Es recargable y mide 18 x 17 cm. Un regalo muy divertido para los niños. Viene en rojo, verde o amarillo: elige el color al agregarlo al carrito.",
+   "desc": "Carro a control remoto que da giros de 360 grados, con luces brillantes en las ruedas y la cabina, y música. Es recargable y mide 18 x 17 cm. Un regalo muy divertido para los niños. El color se entrega según disponibilidad.",
    "feats": [
     "Control remoto",
     "Gira 360°",
     "Luces y música",
     "Recargable",
     "Medidas: 18 x 17 cm",
-    "Rojo, verde o amarillo, a elegir"
+    "Color según disponibilidad"
    ],
    "imgs": [
     "img/p/p-160-1.jpg",
@@ -8105,22 +8032,7 @@
    "thumb": "img/p/p-160-s.jpg",
    "src": "adbf5f6633ce",
    "added": "2026-11-15T04:36:58.665191+00:00",
-   "status": "pendiente",
-   "opciones": [
-    {
-     "nombre": "Color",
-     "valores": [
-      "Rojo",
-      "Verde",
-      "Amarillo"
-     ],
-     "fotos": [
-      0,
-      1,
-      2
-     ]
-    }
-   ]
+   "status": "pendiente"
   },
   {
    "id": "P-161",

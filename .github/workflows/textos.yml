@@ -1,0 +1,32 @@
+name: Textos de Telegram del catálogo
+
+# Baja el texto original de los productos ya publicados, para revisar colores y modelos.
+# El resultado queda como artefacto por un día; no se sube al repositorio.
+on:
+  workflow_dispatch:
+    inputs:
+      ids:
+        description: 'IDs separados por espacio (vacío = todos)'
+        default: ''
+
+permissions:
+  contents: read
+
+jobs:
+  textos:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -q requests beautifulsoup4
+      - env:
+          IDS: ${{ github.event.inputs.ids }}
+        run: python scripts/textos_telegram.py textos.json $IDS
+      - uses: actions/upload-artifact@v4
+        with:
+          name: textos
+          path: textos.json
+          retention-days: 1

@@ -34,7 +34,7 @@
   --ok:#14834A; --ok-soft:rgba(20,131,74,.12);
   --info:#0B87A8; --info-soft:rgba(11,135,168,.12);
   --warn:#9A5B07; --warn-soft:rgba(214,138,20,.14);
-  --bad:#C42B2B; --bad-soft:rgba(196,43,43,.10);
+  --bad:#C42B2B; --bad-soft:rgba(196,43,43,.10); --boom-ink:#075C33;
   --glass-tint:rgba(255,255,255,.10); --glass-tint-lens:rgba(255,255,255,.03);
   --glass-strong:rgba(255,255,255,.38); --glass-sheet:rgba(243,246,250,.56); --glass-sel:rgba(255,255,255,.34);
   --rim-hi:rgba(255,255,255,1); --rim-lo:rgba(255,255,255,.50);
@@ -61,7 +61,7 @@
     --ok:#3BCB7F; --ok-soft:rgba(59,203,127,.16);
     --info:#38BDF8; --info-soft:rgba(56,189,248,.16);
     --warn:#FFB547; --warn-soft:rgba(255,181,71,.15);
-    --bad:#FF6B6B; --bad-soft:rgba(255,107,107,.15);
+    --bad:#FF6B6B; --bad-soft:rgba(255,107,107,.15); --boom-ink:#8BE3B4;
     --glass-tint:rgba(40,48,62,.14); --glass-tint-lens:rgba(30,38,52,.06);
     --glass-strong:rgba(36,44,58,.40); --glass-sheet:rgba(16,21,30,.60); --glass-sel:rgba(255,255,255,.12);
     --rim-hi:rgba(255,255,255,.48); --rim-lo:rgba(255,255,255,.14);
@@ -79,7 +79,7 @@
     --ok:#3BCB7F; --ok-soft:rgba(59,203,127,.16);
     --info:#38BDF8; --info-soft:rgba(56,189,248,.16);
     --warn:#FFB547; --warn-soft:rgba(255,181,71,.15);
-    --bad:#FF6B6B; --bad-soft:rgba(255,107,107,.15);
+    --bad:#FF6B6B; --bad-soft:rgba(255,107,107,.15); --boom-ink:#8BE3B4;
     --glass-tint:rgba(40,48,62,.14); --glass-tint-lens:rgba(30,38,52,.06);
     --glass-strong:rgba(36,44,58,.40); --glass-sheet:rgba(16,21,30,.60); --glass-sel:rgba(255,255,255,.12);
     --rim-hi:rgba(255,255,255,.48); --rim-lo:rgba(255,255,255,.14);
@@ -586,6 +586,24 @@ body.rv-ped #tools,body.rv-ped .sec-head,body.rv-ped #grid,body.rv-ped #empty{di
 .feats svg{flex:none;width:18px;height:18px;margin-top:2px;color:var(--ok)}
 .buy-row{display:flex;gap:10px;align-items:center}
 .buy-row .btn{flex:1;min-width:0}
+/* productos Boom: botón de otro color, precio tachado y etiqueta de oferta */
+.tool.boom{flex:1.25 1 0;background:linear-gradient(135deg,#0B8F4D,#22B573);color:#FFFFFF;box-shadow:0 0 0 .5px rgba(0,0,0,.08),inset 0 1px 0 rgba(255,255,255,.45),0 8px 18px -10px #0B8F4D}
+.tool.boom .t-val{color:rgba(255,255,255,.88)}
+.tool.boom[aria-pressed="true"]{background:linear-gradient(135deg,#06683A,#0B8F4D);color:#FFFFFF;box-shadow:inset 0 0 0 2px rgba(255,255,255,.75),0 8px 18px -10px #06683A}
+.tool.boom svg{color:#FFE27A}
+@media (max-width:560px){
+  .tools{flex-wrap:wrap}
+  .tool.boom{order:-1;flex:1 1 100%}
+}
+.fab .fab-boom{color:#0B8F4D}
+.fab .fab-boom[aria-pressed="true"]{color:#FFFFFF;background:#0B8F4D}
+.boom-note{display:flex;gap:8px;align-items:flex-start;margin:-4px 0 14px;padding:10px 14px;border-radius:16px;background:rgba(11,143,77,.10);color:var(--boom-ink);font-size:14px;line-height:1.4}
+.boom-note svg{flex:none;width:18px;height:18px;margin-top:1px;color:#0B8F4D}
+.price-pill s{margin-right:6px;font-size:12px;font-weight:600;opacity:.6}
+.oferta-pill{position:absolute;z-index:1;left:8px;top:8px;padding:4px 9px;border-radius:10px;background:#D93025;color:#FFFFFF;font-size:11px;font-weight:700;letter-spacing:.02em;pointer-events:none}
+.pd-antes{margin-left:10px;font-size:18px;font-weight:600;color:var(--muted)}
+.pd-oferta{margin-top:4px;font-size:13px;font-weight:700;color:#D93025}
+.line-price s{opacity:.7}
 /* opciones a elegir: color, modelo, diseño */
 .vr{margin-top:18px;padding:14px;border-radius:18px;background:var(--panel-in);box-shadow:0 0 0 .5px var(--hair),inset 0 1px 0 var(--rim-lo)}
 .vr + .vr{margin-top:10px}
@@ -753,6 +771,7 @@ body.rv-ped #tools,body.rv-ped .sec-head,body.rv-ped #grid,body.rv-ped #empty{di
     <nav class="tools" id="tools" aria-label="Categorías y orden"></nav>
 
     <div class="sec-head"><h2 id="secTitle">Llegaron hoy</h2><span class="count" id="count"></span></div>
+    <p class="boom-note" id="boomNote" hidden></p>
     <div class="grid" id="grid"></div>
     <p class="empty" id="empty" hidden></p>
 
@@ -795,6 +814,7 @@ body.rv-ped #tools,body.rv-ped .sec-head,body.rv-ped #grid,body.rv-ped #empty{di
   <button type="button" data-act="fsearch" tabindex="-1"><span data-ic="search" style="display:contents"></span><span>Buscar</span></button>
   <button type="button" data-act="cats" data-f="cat" tabindex="-1"><span data-ic="grid" style="display:contents"></span><span>Categorías</span></button>
   <button type="button" data-act="sorts" data-f="sort" tabindex="-1"><span data-ic="sliders" style="display:contents"></span><span>Filtro</span></button>
+  <button type="button" data-act="boom" data-f="boom" class="fab-boom" tabindex="-1" hidden><span data-ic="spark" style="display:contents"></span><span>Boom</span></button>
   <button type="button" data-act="track" class="fab-track" tabindex="-1"><span data-ic="box" style="display:contents"></span><span>Mi pedido</span></button>
 </nav>
 
@@ -862,6 +882,7 @@ const P = {
   cash:'<rect x="3" y="6.5" width="18" height="11" rx="2.5"/><circle cx="12" cy="12" r="2.4"/><path d="M6.5 9.5v5M17.5 9.5v5"/>',
   chevL:'<path d="m14.5 6-6 6 6 6"/>',
   chevR:'<path d="m9.5 6 6 6-6 6"/>',
+  spark:'<path d="M12 3.5l1.9 4.6 4.6 1.9-4.6 1.9L12 16.5l-1.9-4.6L5.5 10l4.6-1.9z"/><path d="M18.5 15l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"/>',
   truck:'<path d="M3.5 16.5V7a1 1 0 0 1 1-1H14v10.5"/><path d="M14 9.5h3.5l3 3.3v3.7h-1.4"/><path d="M9.1 16.5h5.8"/><circle cx="7" cy="17" r="1.9"/><circle cx="17" cy="17" r="1.9"/>'
 };
 const ic = (n, sw) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="${sw || (n === 'plus' || n === 'minus' || n === 'check' ? 2.3 : 1.8)}" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${P[n]}</svg>`;
@@ -1029,7 +1050,7 @@ const SORTS = [
   { id: 'pdesc', label: 'Precio: de mayor a menor', short: 'Mayor precio' },
   { id: 'pasc', label: 'Precio: de menor a mayor', short: 'Menor precio' }
 ];
-const state = { cat:'todo', q:'', view:'tienda', loading: LIVE, loadFail: false, sort: 'rec' };
+const state = { cat:'todo', q:'', view:'tienda', loading: LIVE, loadFail: false, sort: 'rec', boom: location.hash === '#boom' };
 { const s0 = store.get('vt-sort', 'rec'); if (SORTS.some(o => o.id === s0)) state.sort = s0; }
 let cart = store.get('vt-cart', {});
 if (typeof cart !== 'object' || !cart) cart = {};
@@ -1051,9 +1072,11 @@ function renderChips() {
   if (rvLocked()) { box.innerHTML = ''; return; }
   const catOn = state.cat !== 'todo', sortOn = state.sort !== 'rec';
   box.innerHTML = `<button class="tool" type="button" data-act="cats" aria-pressed="${catOn}" aria-haspopup="dialog">${ic('grid')}<span class="t-txt"><span class="t-lab">Categorías</span><span class="t-val">${catOn ? catLabel(state.cat) : 'Todas'}</span></span>${ic('chev')}</button>
-    <button class="tool" type="button" data-act="sorts" aria-pressed="${sortOn}" aria-haspopup="dialog">${ic('sliders')}<span class="t-txt"><span class="t-lab">Filtro</span><span class="t-val">${sortOn ? sortOf(state.sort).short : 'Ordenar por'}</span></span>${ic('chev')}</button>`;
+    <button class="tool" type="button" data-act="sorts" aria-pressed="${sortOn}" aria-haspopup="dialog">${ic('sliders')}<span class="t-txt"><span class="t-lab">Filtro</span><span class="t-val">${sortOn ? sortOf(state.sort).short : 'Ordenar por'}</span></span>${ic('chev')}</button>
+    ${PRODUCTS.some(esBoom) ? `<button class="tool boom" type="button" data-act="boom" aria-pressed="${state.boom}">${ic('spark')}<span class="t-txt"><span class="t-lab"><span class="t-largo">Productos </span>Boom</span><span class="t-val">${state.boom ? 'Volver a toda la tienda' : 'WIP WIP · TesQui · Ameli'}</span></span></button>` : ''}`;
   $$('#tools .tool > svg:last-child').forEach(s => s.classList.add('t-chev'));
-  $$('#fab [data-f]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.f === 'cat' ? catOn : sortOn)));
+  $$('#fab [data-f]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.f === 'cat' ? catOn : b.dataset.f === 'boom' ? state.boom : sortOn)));
+  const fb = $('#fab .fab-boom'); if (fb) fb.hidden = !PRODUCTS.some(esBoom);
 }
 function openCats() {
   const n = catCounts();
@@ -1081,7 +1104,7 @@ function sortList(list) {
 }
 function renderGrid() {
   const q = norm(state.q.trim());
-  const list = sortList(PRODUCTS.filter(p => (state.cat === 'todo' || p.cat === state.cat) &&
+  const list = sortList(PRODUCTS.filter(p => (state.cat === 'todo' || p.cat === state.cat) && (!state.boom || esBoom(p)) &&
     (!q || norm(`${p.name} ${p.desc} ${catLabel(p.cat)}`).includes(q))));
   const locked = rvLocked();
   if (locked) list.length = 0;
@@ -1089,13 +1112,15 @@ function renderGrid() {
   $('#grid').innerHTML = REVIEW ? list.map(rvRow).join('') : list.map(p => `<article class="card">
       <div class="media${hasPhoto(p) ? ' photo' : ''}" style="${grad(p)}">
         <button class="media-btn" type="button" data-open="${p.id}" aria-label="Ver ${esc(p.name)}">${visual(p, 0, true)}</button>
-        <span class="price-pill">${money(p.price)}</span>
+        <span class="price-pill">${p.antes ? `<s>${money(p.antes)}</s>` : ''}${money(p.price)}</span>${p.antes && !REVIEW ? '<span class="oferta-pill">Oferta</span>' : ''}
         ${grupos(p).length ? `<button class="add" type="button" data-open="${p.id}" aria-label="Elegir ${esc(faltaElegir(p))} de ${esc(p.name)}">${ic('plus')}</button>`
           : `<button class="add" type="button" data-add="${p.id}" aria-label="Agregar ${esc(p.name)} al carrito">${ic('plus')}</button>`}
       </div>
       <button class="card-text" type="button" data-open="${p.id}"><span class="name">${esc(p.name)}</span><span class="cat">${grupos(p).length ? `<span class="cat-opt">${esc(optResumen(p))}</span>` : catLabel(p.cat)}</span></button>
     </article>`).join('');
-  $('#secTitle').textContent = state.q.trim() ? 'Resultados' : state.cat === 'todo' ? (REVIEW ? 'Productos' : state.sort !== 'rec' ? 'Todos los productos' : 'Llegaron hoy') : catLabel(state.cat);
+  $('#secTitle').textContent = state.q.trim() ? 'Resultados' : state.boom ? (state.cat === 'todo' ? 'Productos Boom' : `Boom · ${catLabel(state.cat)}`) : state.cat === 'todo' ? (REVIEW ? 'Productos' : state.sort !== 'rec' ? 'Todos los productos' : 'Llegaron hoy') : catLabel(state.cat);
+  const nota = $('#boomNote');
+  if (nota) { nota.hidden = !state.boom || REVIEW; if (state.boom) { const h = PRODUCTS.find(p => esBoom(p) && p.hasta); nota.innerHTML = `${ic('spark')}<span>Productos de limpieza, hogar y cuidado personal de las marcas WIP WIP, TesQui y Ameli, con los precios del catálogo Boom.${h ? ` Ofertas hasta el ${fechaCorta(h.hasta)}.` : ''}</span>`; } }
   $('#count').textContent = `${list.length} ${list.length === 1 ? 'producto' : 'productos'}`;
   const empty = $('#empty');
   empty.hidden = list.length > 0;
@@ -1138,6 +1163,16 @@ const keyId = k => String(k).split('|')[0];
 const optCorto = o => String(o || '').split(' · ').map(s => s.replace(/^[^:]+:\s*/, '')).join(', ');
 const plural = w => { const s = String(w).toLowerCase(); return /[aeiouáéíóú]$/.test(s) ? s + 's' : /z$/.test(s) ? s.slice(0, -1) + 'ces' : s + 'es'; };
 const articulo = w => { const s = sinTildes(w); return /a$/.test(s) && !/(aroma|tema|sistema|clima|mapa)$/.test(s) ? 'la' : 'el'; };
+// Productos del catálogo Boom (botón aparte). "antes" es el precio normal tachado; "hasta", el último día de la oferta.
+const esBoom = p => !!p && p.linea === 'boom';
+const fechaCorta = iso => { const [y, m, d] = String(iso).split('-').map(Number); return d && m ? `${d} de ${MONTHS[m - 1]}` : ''; };
+const hoyEc = () => new Date(Date.now() - 5 * 36e5).toISOString().slice(0, 10);   // fecha en Ecuador (UTC-5)
+function ofertaVigente(p) {
+  const antes = Number(p.antes);
+  if (!(antes > p.price)) { const { antes: _a, hasta: _h, ...q } = p; return q; }
+  if (p.hasta && hoyEc() > p.hasta) { const { antes: _a, hasta: _h, ...q } = p; return { ...q, price: antes }; }   // terminó la oferta: vuelve al precio normal
+  return { ...p, antes };
+}
 const optResumen = p => grupos(p).map(g => `${g.valores.length} ${plural(g.nombre)}`).join(' · ');
 const faltaElegir = p => grupos(p).map(g => `${articulo(g.nombre)} ${g.nombre.toLowerCase()}`).join(' y ');
 // foto del valor elegido, si el catálogo la indica
@@ -1260,7 +1295,7 @@ function openProduct(id, rep) {
         ? `<div class="gallery" style="${grad(p)}"><div class="g-track" id="gTrack">${p.imgs.map((src, i) => `<img src="${esc(src)}" alt="${esc(p.name)}, foto ${i + 1}" loading="${i ? 'lazy' : 'eager'}" decoding="async">`).join('')}</div><button class="g-nav prev" type="button" data-act="gal" data-d="-1" aria-label="Foto anterior" disabled>${ic('chevL', 2.2)}</button><button class="g-nav next" type="button" data-act="gal" data-d="1" aria-label="Foto siguiente">${ic('chevR', 2.2)}</button><div class="g-dots">${p.imgs.map((_, i) => `<button type="button" class="${i ? '' : 'on'}" data-act="galto" data-i="${i}" aria-label="Ver foto ${i + 1} de ${p.imgs.length}"></button>`).join('')}</div></div>`
         : `<div class="pd-media${hasPhoto(p) ? ' photo' : ''}" style="${grad(p)}">${visual(p)}</div>`}
      ${REVIEW ? `<p><span class="rv-pill" data-s="${eff(p)}">${RV_LABEL[eff(p)] || eff(p)}</span></p>${REVC[p.id] && eff(p) === 'editar' ? `<p class="rv-note">${ic('pencil')}<span>${esc(REVC[p.id])}</span></p>` : ''}${costoBox(p)}${origenBox(p.id)}<button class="btn secondary pd-estado" type="button" data-act="estado" data-id="${p.id}">${ic('image')}Imagen para estados de WhatsApp</button>` : ''}
-     <div class="pd-row"><div><p class="pd-cat">${catLabel(p.cat)} · ${p.id}</p><p class="pd-price">${money(p.price)}</p></div>
+     <div class="pd-row"><div><p class="pd-cat">${catLabel(p.cat)} · ${p.id}</p><p class="pd-price">${money(p.price)}${p.antes ? `<s class="pd-antes">${money(p.antes)}</s>` : ''}</p>${p.antes ? `<p class="pd-oferta">Precio de oferta${p.hasta ? ` hasta el ${fechaCorta(p.hasta)}` : ''}</p>` : ''}</div>
        <p class="pd-abono">${ic('shield')}Lo reservas con ${money(p.price * ABONO)}</p></div>
      ${optsHtml(p)}
      <p class="pd-desc">${esc(p.desc)}</p>
@@ -1349,7 +1384,7 @@ function openCart() {
     `<ul class="lines">${lines.map(({ k, p, q, o }) => { const op = optNorm(p, o); return `<li class="line${op === null ? ' need' : ''}">
         <div class="thumb${hasPhoto(p) ? ' photo' : ''}" style="${grad(p)}">${visual(p, fotoIdx(p, op))}</div>
         <div class="line-main"><p class="line-name">${esc(p.name)}</p>${op ? `<button class="line-opt" type="button" data-act="pick" data-id="${esc(k)}" aria-label="Cambiar: ${esc(op)}">${esc(op)}${ic('pencil')}</button>` : ''}
-          ${op === null ? `<button class="line-pick" type="button" data-act="pick" data-id="${esc(k)}">${ic('warn')}Elige ${esc(faltaElegir(p))}</button>` : ''}<p class="line-price">${money(p.price)} c/u</p>
+          ${op === null ? `<button class="line-pick" type="button" data-act="pick" data-id="${esc(k)}">${ic('warn')}Elige ${esc(faltaElegir(p))}</button>` : ''}<p class="line-price">${p.antes ? `<s>${money(p.antes)}</s> ` : ''}${money(p.price)} c/u</p>
           <div class="line-ctl"><div class="stepper sm"><button type="button" data-act="q" data-id="${esc(k)}" data-d="-1" aria-label="Quitar uno"${q === 1 ? ' disabled' : ''}>${ic('minus')}</button><output>${q}</output><button type="button" data-act="q" data-id="${esc(k)}" data-d="1" aria-label="Agregar uno"${q >= 20 ? ' disabled' : ''}>${ic('plus')}</button></div>
             <button class="line-rm" type="button" data-act="rm" data-id="${esc(k)}" aria-label="Quitar ${esc(p.name)} del carrito">${ic('trash')}Quitar</button></div></div>
         <p class="line-total">${money(p.price * q)}</p></li>`; }).join('')}</ul>
@@ -1627,7 +1662,7 @@ function setView(v, fromHash) {
   $('#compact').textContent = v === 'pedidos' ? 'Mis pedidos' : TIENDA.nombre;
   if (changed) { window.scrollTo(0, 0); relensSoon(); }
   if (v === 'pedidos') refreshOrders();
-  if (!fromHash && !REVIEW && location.hash !== '#' + v) { try { location.hash = v; } catch (e) {} }
+  if (!fromHash && !REVIEW && location.hash !== '#' + v && !(v === 'tienda' && state.boom)) { try { location.hash = v; } catch (e) {} }
   onScroll();
 }
 
@@ -1672,6 +1707,12 @@ document.addEventListener('click', e => {
     case 'track': openTrack(); break;
     case 'fsearch': closeSheet(); window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' }); setTimeout(() => { const q = $('#q'); if (q) q.focus({ preventScroll: true }); }, reduceMotion ? 0 : 420); break;
     case 'cats': openCats(); break;
+    case 'boom': {
+      state.boom = !state.boom; if (state.boom) state.cat = 'todo';
+      try { history.replaceState(null, '', state.boom ? '#boom' : '#tienda'); } catch (e) {}
+      if (t.closest('#fab')) window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+      renderChips(); renderGrid(); if (state.boom) toGrid(); break;
+    }
     case 'sorts': openSorts(); break;
     case 'setcat': state.cat = t.dataset.v; closeSheet(); renderChips(); renderGrid(); toGrid(); break;
     case 'setsort': state.sort = t.dataset.v; store.set('vt-sort', state.sort); closeSheet(); renderChips(); renderGrid(); toGrid(); break;
@@ -1801,7 +1842,11 @@ async function submitTrackSheet() {
   if (r.error) { err.textContent = r.error; err.hidden = false; return; }
   openOrderObj(r.order);
 }
-window.addEventListener('hashchange', () => setView(location.hash.slice(1), true));
+window.addEventListener('hashchange', () => {
+  const b = location.hash === '#boom';
+  if (b !== state.boom && !REVIEW) { state.boom = b; if (b) state.cat = 'todo'; renderChips(); renderGrid(); }
+  setView(location.hash.slice(1), true);
+});
 
 /* Brillo al presionar el vidrio */
 let pressed = null;
@@ -1964,7 +2009,8 @@ async function loadCatalog() {
     const list = Array.isArray(data) ? data : data && data.products;
     if (!Array.isArray(list)) return;
     const clean = list.filter(p => p && p.id && p.name && Number(p.price) > 0)
-      .map(p => ({ ...p, price: Number(p.price), cat: CATS.some(c => c.id === p.cat) ? p.cat : 'otros', feats: Array.isArray(p.feats) ? p.feats : [], desc: p.desc || '' }));
+      .map(p => ({ ...p, price: Number(p.price), cat: CATS.some(c => c.id === p.cat) ? p.cat : 'otros', feats: Array.isArray(p.feats) ? p.feats : [], desc: p.desc || '' }))
+      .map(ofertaVigente);
     ok = true;
     if (!clean.length && !LIVE) return;
     est0 = await Promise.race([estP, espera]);
@@ -2032,7 +2078,7 @@ function renderReviewBar() {
 const OP_LABEL = { pendiente: 'Pendiente', aprobado: 'Aprobado', camino: 'En camino', entregado: 'Entregado', rechazado: 'Rechazado' };
 let rvTab = 'productos', rvOrders = [], rvOrdersOk = false, rvFilter = 'todos', rvQuery = '', rvBusy = false;
 // versión del programa de Google (google-apps-script/Codigo.gs) que necesita esta página
-const GAS_VERSION = '2026-11-20c';
+const GAS_VERSION = '2026-11-20d';
 var gasVieja = false;
 const GAS_MSG = 'El programa de Google de la tienda está desactualizado. Copia otra vez Codigo.gs en Apps Script e implementa una nueva versión (Implementar → Administrar implementaciones → editar → Nueva versión).';
 function verGas(r) {
@@ -2098,7 +2144,7 @@ function openRvOrder(code) {
       const opc = (cod.match(/\[([^\]]*)\]/) || [])[1] || '';
       const ft = ALL.find(p => p.id === id); const fi = ft ? fotoIdx(ft, opc) : 0; const th = ft && (fi ? ft.imgs[fi] : (ft.thumb || (ft.imgs || [])[0]));
       const sinOpc = opc ? l.replace(` (${opc})`, '') : l;
-      return `<li${th ? ' class="rv-pi"' : ''}>${th ? `<img class="rv-pimg" src="${esc(th)}" alt="" loading="lazy">` : ''}<span>${esc(sinOpc)}${id ? ` <small class="muted">${esc(id)}</small>` : ''}${opc ? `<span class="rv-opt">${esc(opc)}</span>` : ''}</span>${pr ? `<a class="rv-prov" href="${esc(pr.url)}" target="_blank" rel="noopener">${ic('store')}<span>Pedir en <b>${esc(pr.tienda)}</b> · publicación ${esc(pr.num)}</span>${ic('link')}</a>` : (o.proveedor ? '' : `<span class="rv-prov off">Proveedor sin dato</span>`)}</li>`; }).join('')}</ul>
+      return `<li${th ? ' class="rv-pi"' : ''}>${th ? `<img class="rv-pimg" src="${esc(th)}" alt="" loading="lazy">` : ''}<span>${esc(sinOpc)}${id ? ` <small class="muted">${esc(id)}</small>` : ''}${opc ? `<span class="rv-opt">${esc(opc)}</span>` : ''}</span>${pr ? `<a class="rv-prov" href="${esc(pr.url || '#')}" target="_blank" rel="noopener">${ic('store')}<span>Pedir en <b>${esc(pr.tienda)}</b> · ${esc(pr.ref)}</span>${ic('link')}</a>` : (o.proveedor ? '' : `<span class="rv-prov off">Proveedor sin dato</span>`)}</li>`; }).join('')}</ul>
     ${!Object.keys(ORIGEN).length && o.proveedor ? `<p class="rv-note">${ic('store')}<span>${esc(o.proveedor)}</span></p>` : ''}
     <dl class="sum"><div><dt>Total</dt><dd>${money(o.total)}</dd></div><div class="hl"><dt>Abono</dt><dd>${money(o.abono)}</dd></div><div><dt>Saldo por cobrar</dt><dd>${money(o.saldo)}</dd></div></dl>
     <h3 class="od-sub">Comprobante</h3>
@@ -2212,9 +2258,14 @@ async function loadOrigen(key) {
     if (sheet.classList.contains('open') && sheet.dataset.kind === 'product' && pid) { const b = $('#pdOrigen'); if (b) b.outerHTML = origenBox(pid); }
   } catch (e) {}
 }
-const origenDe = id => { const m = String(ORIGEN[id] || '').match(/^([^|]+)\|([A-Za-z0-9_]+)\/(\d+)$/); return m ? { tienda: m[1], canal: m[2], num: m[3], url: `https://t.me/${m[2]}/${m[3]}` } : null; };
+const origenDe = id => {
+  const m = String(ORIGEN[id] || '').match(/^([^|]+)\|([A-Za-z0-9_]+)\/(\d+)$/);
+  if (m) return { tienda: m[1], canal: m[2], num: m[3], ref: `publicación ${m[3]}`, url: `https://t.me/${m[2]}/${m[3]}` };
+  const p = ALL.find(x => x.id === id);   // productos de catálogo (Boom): dónde pedirlos viene en products.json
+  return p && p.pedir ? { tienda: p.pedir.tienda, canal: '', num: '', ref: p.pedir.ref || '', url: p.pedir.url || '' } : null;
+};
 const origenBox = id => { const o = origenDe(id);
-  return `<p class="pd-origen" id="pdOrigen">${ic('store')}<span>${o ? `Se pide en <b>${esc(o.tienda)}</b> · publicación ${esc(o.num)}` : (costoListo ? 'Proveedor sin dato' : 'Cargando proveedor…')}</span>${o ? `<a href="${esc(o.url)}" target="_blank" rel="noopener">${ic('link')}Abrir</a>` : ''}</p>`; };
+  return `<p class="pd-origen" id="pdOrigen">${ic('store')}<span>${o ? `Se pide en <b>${esc(o.tienda)}</b> · ${esc(o.ref)}` : (costoListo ? 'Proveedor sin dato' : 'Cargando proveedor…')}</span>${o && o.url ? `<a href="${esc(o.url)}" target="_blank" rel="noopener">${ic('link')}Abrir</a>` : ''}</p>`; };
 /* Imagen vertical para estados de WhatsApp (solo dueño): estilo de publicidad, con el precio en una etiqueta.
    Abajo, en pequeño, "Ref. 216-1": número del producto y, tras el guion, el número de la tienda de Telegram
    (orden de canales.json). Las clientas no saben qué tienda es; quien vende sí. */

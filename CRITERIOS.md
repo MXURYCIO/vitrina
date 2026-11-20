@@ -83,3 +83,7 @@ Categorías de la tienda: navidad, hogar, cocina, belleza (cabello, maquillaje, 
 ## 7. Aprobación
 
 Todo producto nuevo entra como "Por aprobar". Solo se publica cuando el dueño lo aprueba en la página de revisión.
+
+## 7. Productos del catálogo Boom
+
+No siguen las secciones 1 y 5: se publican todos los del catálogo, con el precio del catálogo tal cual (la ganancia ya viene incluida) y aprobados de una vez. Las ofertas llevan el precio normal tachado y su fecha de fin. La marca del envase se deja en el nombre y en la foto. Ver "Productos Boom" en README.md.

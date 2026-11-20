@@ -9438,6 +9438,3049 @@
    "src": "a4ec6390de27",
    "added": "2026-11-14T23:18:16.903581+00:00",
    "status": "pendiente"
+  },
+  {
+   "id": "B-101",
+   "name": "Ambiental aroma Navidad WIP WIP, 250 ml",
+   "cat": "hogar",
+   "price": 7.3,
+   "antes": 8.11,
+   "hasta": "2026-12-03",
+   "desc": "Ambiental en spray con una fragancia cálida y festiva, ideal para crear un ambiente acogedor y disfrutar de la magia de la Navidad en cada rincón. Contenido: 250 ml.",
+   "feats": [
+    "Contenido: 250 ml",
+    "Aroma navideño",
+    "En spray",
+    "Precio de lanzamiento"
+   ],
+   "imgs": [
+    "img/p/b-101-0.jpg"
+   ],
+   "thumb": "img/p/b-101-s.jpg",
+   "src": "boom-c12-b-101",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 2",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2023/10/BROCHURE-AMBIENTAL-NAVIDAD-1.pdf"
+   }
+  },
+  {
+   "id": "B-102",
+   "name": "Desinfectante portátil de inodoros WIP WIP, 120 ml",
+   "cat": "hogar",
+   "price": 4.49,
+   "antes": 4.99,
+   "hasta": "2026-12-03",
+   "desc": "Desinfectante en spray para higienizar el asiento del inodoro de forma práctica y rápida antes de usarlo, con componentes amigables con la piel. Ideal para llevarlo en la cartera y usarlo en baños públicos, oficinas, restaurantes o viajes. Limpia, desinfecta y aromatiza. Contenido: 120 ml.",
+   "feats": [
+    "Contenido: 120 ml",
+    "Limpia, desinfecta y aromatiza",
+    "Para llevar a baños públicos o viajes"
+   ],
+   "imgs": [
+    "img/p/b-102-0.jpg"
+   ],
+   "thumb": "img/p/b-102-s.jpg",
+   "src": "boom-c12-b-102",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 2",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2026/09/BROCHURE-DESINFECTANTE-PORTATIL-DE-INODOROS.pdf"
+   }
+  },
+  {
+   "id": "B-103",
+   "name": "Gel de baño Ameli Fressia para ella, 385 ml",
+   "cat": "cuidado",
+   "price": 7.18,
+   "desc": "Gel de baño de la línea Ameli, fragancia Fressia para ella (aroma floral amaderado): bergamota y melocotón en la salida; jazmín, muguet y lirio en el corazón; almizcle, ámbar, sándalo y cedro en el fondo. Contenido: 385 ml.",
+   "feats": [
+    "Contenido: 385 ml",
+    "Aroma floral amaderado",
+    "Fragancia Fressia para ella"
+   ],
+   "imgs": [
+    "img/p/b-103-0.jpg"
+   ],
+   "thumb": "img/p/b-103-s.jpg",
+   "src": "boom-c12-b-103",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 3",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2026/01/Brochure-FRESSIA-2.pdf"
+   }
+  },
+  {
+   "id": "B-104",
+   "name": "Jabón líquido Ameli Fressia para ella, 500 ml",
+   "cat": "cuidado",
+   "price": 5.75,
+   "desc": "Jabón líquido para manos y cuerpo de la línea Ameli, fragancia Fressia para ella (aroma floral amaderado): bergamota y melocotón en la salida; jazmín, muguet y lirio en el corazón; almizcle, ámbar, sándalo y cedro en el fondo. Contenido: 500 ml.",
+   "feats": [
+    "Contenido: 500 ml",
+    "Aroma floral amaderado",
+    "Fragancia Fressia para ella"
+   ],
+   "imgs": [
+    "img/p/b-104-0.jpg"
+   ],
+   "thumb": "img/p/b-104-s.jpg",
+   "src": "boom-c12-b-104",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 3",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2026/01/Brochure-FRESSIA-2.pdf"
+   }
+  },
+  {
+   "id": "B-105",
+   "name": "Loción corporal Ameli Fressia para ella, 250 ml",
+   "cat": "cuidado",
+   "price": 10.16,
+   "antes": 11.29,
+   "hasta": "2026-12-03",
+   "desc": "Loción corporal de la línea Ameli, fragancia Fressia para ella (aroma floral amaderado): bergamota y melocotón en la salida; jazmín, muguet y lirio en el corazón; almizcle, ámbar, sándalo y cedro en el fondo. Contenido: 250 ml.",
+   "feats": [
+    "Contenido: 250 ml",
+    "Aroma floral amaderado",
+    "Fragancia Fressia para ella"
+   ],
+   "imgs": [
+    "img/p/b-105-0.jpg"
+   ],
+   "thumb": "img/p/b-105-s.jpg",
+   "src": "boom-c12-b-105",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 3",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2026/01/Brochure-FRESSIA-2.pdf"
+   }
+  },
+  {
+   "id": "B-106",
+   "name": "Loción corporal Ameli Aura Frutal para ella, 250 ml",
+   "cat": "cuidado",
+   "price": 9.25,
+   "desc": "Loción corporal de la línea Ameli, fragancia Aura Frutal para ella (aroma cítrico floral): limón, naranja, mandarina, toronja y piña en la salida; corazón floral; almizcle blanco y ámbar en el fondo. Contenido: 250 ml.",
+   "feats": [
+    "Contenido: 250 ml",
+    "Aroma cítrico floral",
+    "Fragancia Aura Frutal para ella"
+   ],
+   "imgs": [
+    "img/p/b-106-0.jpg"
+   ],
+   "thumb": "img/p/b-106-s.jpg",
+   "src": "boom-c12-b-106",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 3",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2026/01/Brochure-FRESSIA-2.pdf"
+   }
+  },
+  {
+   "id": "B-107",
+   "name": "Jabón líquido Ameli Aura Frutal para ella, 500 ml",
+   "cat": "cuidado",
+   "price": 5.75,
+   "desc": "Jabón líquido para manos y cuerpo de la línea Ameli, fragancia Aura Frutal para ella (aroma cítrico floral): limón, naranja, mandarina, toronja y piña en la salida; corazón floral; almizcle blanco y ámbar en el fondo. Contenido: 500 ml.",
+   "feats": [
+    "Contenido: 500 ml",
+    "Aroma cítrico floral",
+    "Fragancia Aura Frutal para ella"
+   ],
+   "imgs": [
+    "img/p/b-107-0.jpg"
+   ],
+   "thumb": "img/p/b-107-s.jpg",
+   "src": "boom-c12-b-107",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 3",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2025/10/Brochure-Aura-Frutal-AMELI-1.pdf"
+   }
+  },
+  {
+   "id": "B-108",
+   "name": "Gel de baño Ameli Aura Frutal para ella, 385 ml",
+   "cat": "cuidado",
+   "price": 6.46,
+   "antes": 7.18,
+   "hasta": "2026-12-03",
+   "desc": "Gel de baño de la línea Ameli, fragancia Aura Frutal para ella (aroma cítrico floral): limón, naranja, mandarina, toronja y piña en la salida; corazón floral; almizcle blanco y ámbar en el fondo. Contenido: 385 ml.",
+   "feats": [
+    "Contenido: 385 ml",
+    "Aroma cítrico floral",
+    "Fragancia Aura Frutal para ella"
+   ],
+   "imgs": [
+    "img/p/b-108-0.jpg"
+   ],
+   "thumb": "img/p/b-108-s.jpg",
+   "src": "boom-c12-b-108",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 3",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2026/01/Brochure-FRESSIA-2.pdf"
+   }
+  },
+  {
+   "id": "B-109",
+   "name": "Body splash Ameli Felicidad, 250 ml",
+   "cat": "cuidado",
+   "price": 8.5,
+   "desc": "Body splash con fragancia romántica y envolvente (aroma floral dulce): manzana y ciruela en la salida; jazmín, muguete, iris y violeta en el corazón; vainilla, almizcle, ámbar y tonka en el fondo. Contenido: 250 ml.",
+   "feats": [
+    "Contenido: 250 ml",
+    "Aroma floral dulce",
+    "En spray"
+   ],
+   "imgs": [
+    "img/p/b-109-0.jpg"
+   ],
+   "thumb": "img/p/b-109-s.jpg",
+   "src": "boom-c12-b-109",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 3",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2025/10/Brochure-Aura-Frutal-AMELI-1.pdf"
+   }
+  },
+  {
+   "id": "B-110",
+   "name": "Jabón líquido Ameli Brío para él, 500 ml",
+   "cat": "cuidado",
+   "price": 4.88,
+   "desc": "Jabón líquido para manos y cuerpo de la línea Ameli, fragancia Brío para él (aroma marino amaderado): notas acuáticas, lima y bergamota en la salida; corazón aromático; cedro, ámbar, almizcle, sándalo y pachulí en el fondo. Contenido: 500 ml.",
+   "feats": [
+    "Contenido: 500 ml",
+    "Aroma marino amaderado",
+    "Fragancia Brío para él"
+   ],
+   "imgs": [
+    "img/p/b-110-0.jpg"
+   ],
+   "thumb": "img/p/b-110-s.jpg",
+   "src": "boom-c12-b-110",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 3",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2024/10/LOCION-AROMA-BRIO-_compressed.pdf"
+   }
+  },
+  {
+   "id": "B-111",
+   "name": "Gel de baño Ameli Brío para él, 385 ml",
+   "cat": "cuidado",
+   "price": 7.18,
+   "desc": "Gel de baño de la línea Ameli, fragancia Brío para él (aroma marino amaderado): notas acuáticas, lima y bergamota en la salida; corazón aromático; cedro, ámbar, almizcle, sándalo y pachulí en el fondo. Contenido: 385 ml.",
+   "feats": [
+    "Contenido: 385 ml",
+    "Aroma marino amaderado",
+    "Fragancia Brío para él"
+   ],
+   "imgs": [
+    "img/p/b-111-0.jpg"
+   ],
+   "thumb": "img/p/b-111-s.jpg",
+   "src": "boom-c12-b-111",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 3",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2024/10/LOCION-AROMA-BRIO-_compressed.pdf"
+   }
+  },
+  {
+   "id": "B-112",
+   "name": "Loción corporal Ameli Brío para él, 250 ml",
+   "cat": "cuidado",
+   "price": 11.29,
+   "desc": "Loción corporal de la línea Ameli, fragancia Brío para él (aroma marino amaderado): notas acuáticas, lima y bergamota en la salida; corazón aromático; cedro, ámbar, almizcle, sándalo y pachulí en el fondo. Contenido: 250 ml.",
+   "feats": [
+    "Contenido: 250 ml",
+    "Aroma marino amaderado",
+    "Fragancia Brío para él"
+   ],
+   "imgs": [
+    "img/p/b-112-0.jpg"
+   ],
+   "thumb": "img/p/b-112-s.jpg",
+   "src": "boom-c12-b-112",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 3",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2024/10/LOCION-AROMA-BRIO-_compressed.pdf"
+   }
+  },
+  {
+   "id": "B-113",
+   "name": "Jabón líquido Ameli Magnus para él, 500 ml",
+   "cat": "cuidado",
+   "price": 5.75,
+   "desc": "Jabón líquido para manos y cuerpo de la línea Ameli, fragancia Magnus para él (aroma amaderado ámbar): notas marinas y bergamota en la salida; corazón floral; ámbar, almizcle, tonka, cedro, sándalo y cachemira en el fondo. Contenido: 500 ml.",
+   "feats": [
+    "Contenido: 500 ml",
+    "Aroma amaderado ámbar",
+    "Fragancia Magnus para él"
+   ],
+   "imgs": [
+    "img/p/b-113-0.jpg"
+   ],
+   "thumb": "img/p/b-113-s.jpg",
+   "src": "boom-c12-b-113",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 3",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2026/01/Brochure-MAGNUS-2.pdf"
+   }
+  },
+  {
+   "id": "B-114",
+   "name": "Gel de baño Ameli Magnus para él, 385 ml",
+   "cat": "cuidado",
+   "price": 7.18,
+   "desc": "Gel de baño de la línea Ameli, fragancia Magnus para él (aroma amaderado ámbar): notas marinas y bergamota en la salida; corazón floral; ámbar, almizcle, tonka, cedro, sándalo y cachemira en el fondo. Contenido: 385 ml.",
+   "feats": [
+    "Contenido: 385 ml",
+    "Aroma amaderado ámbar",
+    "Fragancia Magnus para él"
+   ],
+   "imgs": [
+    "img/p/b-114-0.jpg"
+   ],
+   "thumb": "img/p/b-114-s.jpg",
+   "src": "boom-c12-b-114",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 3",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2026/01/Brochure-MAGNUS-2.pdf"
+   }
+  },
+  {
+   "id": "B-115",
+   "name": "Loción corporal Ameli Magnus para él, 250 ml",
+   "cat": "cuidado",
+   "price": 10.16,
+   "antes": 11.29,
+   "hasta": "2026-12-03",
+   "desc": "Loción corporal de la línea Ameli, fragancia Magnus para él (aroma amaderado ámbar): notas marinas y bergamota en la salida; corazón floral; ámbar, almizcle, tonka, cedro, sándalo y cachemira en el fondo. Contenido: 250 ml.",
+   "feats": [
+    "Contenido: 250 ml",
+    "Aroma amaderado ámbar",
+    "Fragancia Magnus para él"
+   ],
+   "imgs": [
+    "img/p/b-115-0.jpg"
+   ],
+   "thumb": "img/p/b-115-s.jpg",
+   "src": "boom-c12-b-115",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 3",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2026/01/Brochure-MAGNUS-2.pdf"
+   }
+  },
+  {
+   "id": "B-116",
+   "name": "Loción corporal Ameli Indominus para él, 250 ml",
+   "cat": "cuidado",
+   "price": 11.29,
+   "desc": "Loción corporal de la línea Ameli, fragancia Indominus para él (aroma cítrico amaderado): lima, limón, naranja, bergamota y lavanda en la salida; corazón floral; notas amaderadas y almizcladas en el fondo. Contenido: 250 ml.",
+   "feats": [
+    "Contenido: 250 ml",
+    "Aroma cítrico amaderado",
+    "Fragancia Indominus para él"
+   ],
+   "imgs": [
+    "img/p/b-116-0.jpg"
+   ],
+   "thumb": "img/p/b-116-s.jpg",
+   "src": "boom-c12-b-116",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 3",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2025/10/Brochure-Indominus-AMELI-1.pdf"
+   }
+  },
+  {
+   "id": "B-117",
+   "name": "Jabón líquido Ameli Indominus para él, 500 ml",
+   "cat": "cuidado",
+   "price": 5.75,
+   "desc": "Jabón líquido para manos y cuerpo de la línea Ameli, fragancia Indominus para él (aroma cítrico amaderado): lima, limón, naranja, bergamota y lavanda en la salida; corazón floral; notas amaderadas y almizcladas en el fondo. Contenido: 500 ml.",
+   "feats": [
+    "Contenido: 500 ml",
+    "Aroma cítrico amaderado",
+    "Fragancia Indominus para él"
+   ],
+   "imgs": [
+    "img/p/b-117-0.jpg"
+   ],
+   "thumb": "img/p/b-117-s.jpg",
+   "src": "boom-c12-b-117",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 3",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2025/10/Brochure-Indominus-AMELI-1.pdf"
+   }
+  },
+  {
+   "id": "B-118",
+   "name": "Gel de baño Ameli Indominus para él, 385 ml",
+   "cat": "cuidado",
+   "price": 6.46,
+   "antes": 7.18,
+   "hasta": "2026-12-03",
+   "desc": "Gel de baño de la línea Ameli, fragancia Indominus para él (aroma cítrico amaderado): lima, limón, naranja, bergamota y lavanda en la salida; corazón floral; notas amaderadas y almizcladas en el fondo. Contenido: 385 ml.",
+   "feats": [
+    "Contenido: 385 ml",
+    "Aroma cítrico amaderado",
+    "Fragancia Indominus para él"
+   ],
+   "imgs": [
+    "img/p/b-118-0.jpg"
+   ],
+   "thumb": "img/p/b-118-s.jpg",
+   "src": "boom-c12-b-118",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 3",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2025/10/Brochure-Indominus-AMELI-1.pdf"
+   }
+  },
+  {
+   "id": "B-119",
+   "name": "Alcohol gel Ameli manzanilla, 500 ml",
+   "cat": "cuidado",
+   "price": 4.23,
+   "antes": 4.98,
+   "hasta": "2026-12-03",
+   "desc": "Alcohol gel con aroma a manzanilla, especializado para una acción sanitizante sobre las manos. Contenido: 500 ml.",
+   "feats": [
+    "Contenido: 500 ml",
+    "Aroma manzanilla",
+    "Sanitiza las manos"
+   ],
+   "imgs": [
+    "img/p/b-119-0.jpg"
+   ],
+   "thumb": "img/p/b-119-s.jpg",
+   "src": "boom-c12-b-119",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 4",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2023/06/brochure-sanitizante-manos-ameli.pdf"
+   }
+  },
+  {
+   "id": "B-120",
+   "name": "Sanitizante de manos Ameli explosión floral, 500 ml",
+   "cat": "cuidado",
+   "price": 3.85,
+   "desc": "Sanitizante de manos suave con la piel que elimina el 99,9 % de virus y bacterias. Tiene acción cicatrizante, efecto blanqueador sobre la piel y es biodegradable. Aroma explosión floral. Contenido: 500 ml.",
+   "feats": [
+    "Contenido: 500 ml",
+    "Elimina el 99,9 % de virus y bacterias",
+    "Suave con la piel",
+    "Biodegradable"
+   ],
+   "imgs": [
+    "img/p/b-120-0.jpg"
+   ],
+   "thumb": "img/p/b-120-s.jpg",
+   "src": "boom-c12-b-120",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 4",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2023/06/brochure-sanitizante-manos-ameli.pdf"
+   }
+  },
+  {
+   "id": "B-121",
+   "name": "Jabón líquido de manos Ameli floral, 500 ml",
+   "cat": "cuidado",
+   "price": 4.26,
+   "desc": "Jabón líquido especialmente diseñado para el lavado de manos, con aroma floral y dosificador. Contenido: 500 ml.",
+   "feats": [
+    "Contenido: 500 ml",
+    "Aroma floral",
+    "Con dosificador"
+   ],
+   "imgs": [
+    "img/p/b-121-0.jpg"
+   ],
+   "thumb": "img/p/b-121-s.jpg",
+   "src": "boom-c12-b-121",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 4",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2023/05/Brochure-Jabon-Espumoso.pdf"
+   }
+  },
+  {
+   "id": "B-122",
+   "name": "Jabón espumoso Ameli hierba luisa y limón, 280 ml",
+   "cat": "cuidado",
+   "price": 9.23,
+   "desc": "Jabón espumoso para el lavado de manos y rostro, con una agradable combinación de hierba luisa y limón. Su formato espumoso brinda una limpieza práctica y una sensación fresca después de cada uso. Contenido: 280 ml.",
+   "feats": [
+    "Contenido: 280 ml",
+    "Para manos y rostro",
+    "Sale en espuma",
+    "Aroma hierba luisa y limón"
+   ],
+   "imgs": [
+    "img/p/b-122-0.jpg"
+   ],
+   "thumb": "img/p/b-122-s.jpg",
+   "src": "boom-c12-b-122",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 4",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2023/05/Brochure-Jabon-Espumoso.pdf"
+   }
+  },
+  {
+   "id": "B-123",
+   "name": "Jabón de baño para bebés y niños Ameli manzanilla, 1000 ml",
+   "cat": "bebes",
+   "price": 9.24,
+   "antes": 11.55,
+   "hasta": "2026-12-03",
+   "desc": "Jabón de baño para limpiar suavemente la piel, el cuero cabelludo y el cabello de bebés y niños. Es hipoalergénico, de pH neutro, no genera lágrimas, no tiene sal ni parabenos, contiene acondicionador y es biodegradable. Aroma manzanilla. Contenido: 1000 ml.",
+   "feats": [
+    "Contenido: 1000 ml",
+    "No genera lágrimas",
+    "Hipoalergénico, pH neutro",
+    "Sin sal ni parabenos, con acondicionador"
+   ],
+   "imgs": [
+    "img/p/b-123-0.jpg"
+   ],
+   "thumb": "img/p/b-123-s.jpg",
+   "src": "boom-c12-b-123",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 4",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2023/07/BROCHURE-DE-JABON-DE-BEBES-Y-NINOS.pdf"
+   }
+  },
+  {
+   "id": "B-124",
+   "name": "Jabón de baño para bebés y niños Ameli Ángel, 1000 ml",
+   "cat": "bebes",
+   "price": 11.55,
+   "desc": "Jabón de baño para limpiar suavemente la piel, el cuero cabelludo y el cabello de bebés y niños. Es hipoalergénico, de pH neutro, no genera lágrimas, no tiene sal ni parabenos, contiene acondicionador y es biodegradable. Aroma Ángel. Contenido: 1000 ml.",
+   "feats": [
+    "Contenido: 1000 ml",
+    "No genera lágrimas",
+    "Hipoalergénico, pH neutro",
+    "Sin sal ni parabenos, con acondicionador"
+   ],
+   "imgs": [
+    "img/p/b-124-0.jpg"
+   ],
+   "thumb": "img/p/b-124-s.jpg",
+   "src": "boom-c12-b-124",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 4",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2023/02/brochure-jabon-de-bebes-y-ninos-aroma-angel.pdf"
+   }
+  },
+  {
+   "id": "B-125",
+   "name": "Limpiador para biberones WIP WIP sin aroma, 1000 ml",
+   "cat": "bebes",
+   "price": 4.88,
+   "desc": "Limpiador formulado para remover la grasa y las proteínas de la leche, ideal para lavar biberones, termos y juguetes de bebé. De pH neutro, sin aroma ni colorantes, con alto poder espumante y biodegradable. Contenido: 1000 ml.",
+   "feats": [
+    "Contenido: 1000 ml",
+    "Para biberones, termos y juguetes",
+    "Sin aroma ni colorantes",
+    "pH neutro"
+   ],
+   "imgs": [
+    "img/p/b-125-0.jpg"
+   ],
+   "thumb": "img/p/b-125-s.jpg",
+   "src": "boom-c12-b-125",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 4",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2023/06/brochure-limpiador-biberones-wip-wip.pdf"
+   }
+  },
+  {
+   "id": "B-126",
+   "name": "Jabón líquido de manos Ameli chicle, 500 ml",
+   "cat": "cuidado",
+   "price": 4.75,
+   "desc": "Jabón líquido para manos con aroma a chicle, suave con las manos y que no genera alergias. Ideal para que lavarse las manos sea divertido para los niños. Contenido: 500 ml.",
+   "feats": [
+    "Contenido: 500 ml",
+    "Aroma chicle",
+    "Suave con las manos",
+    "No genera alergias"
+   ],
+   "imgs": [
+    "img/p/b-126-0.jpg"
+   ],
+   "thumb": "img/p/b-126-s.jpg",
+   "src": "boom-c12-b-126",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 4",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2025/08/JABON-LIQUIDO-AMELI-NUEVO-6_compressed.pdf"
+   }
+  },
+  {
+   "id": "B-127",
+   "name": "Detergente para ropa de bebé TesQui, galón",
+   "cat": "bebes",
+   "price": 16.99,
+   "desc": "Detergente líquido hipoalergénico y muy concentrado, formulado para lavar y cuidar la ropa delicada del bebé. Limpia bien distintos tipos de prendas y es biodegradable. Presentación: galón (3785 ml).",
+   "feats": [
+    "Presentación: galón (3785 ml)",
+    "Hipoalergénico",
+    "Para ropa delicada de bebé",
+    "Biodegradable"
+   ],
+   "imgs": [
+    "img/p/b-127-0.jpg"
+   ],
+   "thumb": "img/p/b-127-s.jpg",
+   "src": "boom-c12-b-127",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 4",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2025/08/JABON-LIQUIDO-AMELI-NUEVO-6_compressed.pdf"
+   }
+  },
+  {
+   "id": "B-128",
+   "name": "Detergente para ropa de bebé TesQui, 1000 ml",
+   "cat": "bebes",
+   "price": 5.5,
+   "desc": "Detergente líquido hipoalergénico y muy concentrado, formulado para lavar y cuidar la ropa delicada del bebé. Limpia bien distintos tipos de prendas y es biodegradable. Contenido: 1000 ml.",
+   "feats": [
+    "Contenido: 1000 ml",
+    "Hipoalergénico",
+    "Para ropa delicada de bebé",
+    "Biodegradable"
+   ],
+   "imgs": [
+    "img/p/b-128-0.jpg"
+   ],
+   "thumb": "img/p/b-128-s.jpg",
+   "src": "boom-c12-b-128",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 4",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2025/08/JABON-LIQUIDO-AMELI-NUEVO-6_compressed.pdf"
+   }
+  },
+  {
+   "id": "B-129",
+   "name": "Desinfectante de frutas y verduras WIP WIP, 500 ml",
+   "cat": "cocina",
+   "price": 3.59,
+   "desc": "Desinfectante formulado para frutas y verduras que elimina el 99,9 % de gérmenes y patógenos sin alterar el sabor ni el olor de los alimentos. Sin aroma, biodegradable y con registro FDA. Contenido: 500 ml.",
+   "feats": [
+    "Contenido: 500 ml",
+    "Elimina el 99,9 % de gérmenes",
+    "No altera sabor ni olor",
+    "Sin aroma"
+   ],
+   "imgs": [
+    "img/p/b-129-0.jpg"
+   ],
+   "thumb": "img/p/b-129-s.jpg",
+   "src": "boom-c12-b-129",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 5",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2023/06/brochure-desinfectante-frutas-verduras-wip-wip.pdf"
+   }
+  },
+  {
+   "id": "B-130",
+   "name": "Colágeno hidrolizado con vitamina C Aku, sabor naranja",
+   "cat": "cuidado",
+   "price": 39.99,
+   "desc": "Suplemento en polvo que combina colágeno hidrolizado y vitamina C para fortalecer piel, cabello, articulaciones y músculos, con sabor a naranja. Ayuda a mejorar la elasticidad, reducir arrugas y reforzar el sistema inmunológico.",
+   "feats": [
+    "Suplemento nutricional en polvo",
+    "Colágeno hidrolizado + vitamina C",
+    "Sabor naranja"
+   ],
+   "imgs": [
+    "img/p/b-130-0.jpg"
+   ],
+   "thumb": "img/p/b-130-s.jpg",
+   "src": "boom-c12-b-130",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 5",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2025/02/Brochure-Colageno.pdf"
+   }
+  },
+  {
+   "id": "B-131",
+   "name": "Citrato de magnesio Aku, 150 g",
+   "cat": "cuidado",
+   "price": 21.99,
+   "desc": "Suplemento de magnesio de alta absorción para complementar el bienestar diario. Contribuye al correcto funcionamiento muscular y nervioso, ayuda a disminuir la sensación de cansancio y favorece una mejor función digestiva. Contenido: 150 g.",
+   "feats": [
+    "Contenido: 150 g",
+    "Magnesio de alta absorción",
+    "Suplemento nutricional"
+   ],
+   "imgs": [
+    "img/p/b-131-0.jpg"
+   ],
+   "thumb": "img/p/b-131-s.jpg",
+   "src": "boom-c12-b-131",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 5",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2025/12/Brochure-Citrato-de-Magnesio-1.pdf"
+   }
+  },
+  {
+   "id": "B-132",
+   "name": "Proteína vegetal Aku sabor vainilla, 450 g",
+   "cat": "cuidado",
+   "price": 44.99,
+   "desc": "Proteína 100 % vegetal y vegana para complementar la alimentación y apoyar el aumento y mantenimiento de la masa muscular, con sabor a vainilla. Contenido: 450 g.",
+   "feats": [
+    "Contenido: 450 g",
+    "100 % vegetal y vegana",
+    "Sabor vainilla"
+   ],
+   "imgs": [
+    "img/p/b-132-0.jpg"
+   ],
+   "thumb": "img/p/b-132-s.jpg",
+   "src": "boom-c12-b-132",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 5",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2025/07/Brochure-Proteina-Vainilla-1.pdf"
+   }
+  },
+  {
+   "id": "B-133",
+   "name": "Bebida multicereal instantánea Aku chocolate, 500 g",
+   "cat": "cuidado",
+   "price": 11.99,
+   "desc": "Bebida instantánea multicereal sabor chocolate que combina calidad, sabor y nutrición, con minerales, vitaminas y fibra en una sola bebida. Contenido: 500 g.",
+   "feats": [
+    "Contenido: 500 g",
+    "Sabor chocolate",
+    "Con vitaminas, minerales y fibra"
+   ],
+   "imgs": [
+    "img/p/b-133-0.jpg"
+   ],
+   "thumb": "img/p/b-133-s.jpg",
+   "src": "boom-c12-b-133",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 5",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2023/08/Brochure-Bebida-Multicereal.pdf.pdf"
+   }
+  },
+  {
+   "id": "B-134",
+   "name": "Descarbonizante WIP WIP, galón",
+   "cat": "cocina",
+   "price": 15.99,
+   "desc": "Descarbonizante que elimina la grasa quemada y los residuos carbonizados en parrillas, hornos y sartenes. Su fórmula de acción rápida penetra a fondo, facilita la limpieza y da resultados desde la primera aplicación. Presentación: galón (3785 ml).",
+   "feats": [
+    "Presentación: galón (3785 ml)",
+    "Para parrillas, hornos y sartenes",
+    "Acción rápida"
+   ],
+   "imgs": [
+    "img/p/b-134-0.jpg"
+   ],
+   "thumb": "img/p/b-134-s.jpg",
+   "src": "boom-c12-b-134",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 6",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2026/06/BROCHURE-DESCARBONIZANTE-1.pdf"
+   }
+  },
+  {
+   "id": "B-135",
+   "name": "Descarbonizante WIP WIP en spray, 600 ml",
+   "cat": "cocina",
+   "price": 4.75,
+   "desc": "Descarbonizante que elimina la grasa quemada y los residuos carbonizados en parrillas, hornos y sartenes. Su fórmula de acción rápida penetra a fondo, facilita la limpieza y da resultados desde la primera aplicación. Contenido: 600 ml, con atomizador.",
+   "feats": [
+    "Contenido: 600 ml",
+    "Con atomizador",
+    "Para parrillas, hornos y sartenes"
+   ],
+   "imgs": [
+    "img/p/b-135-0.jpg"
+   ],
+   "thumb": "img/p/b-135-s.jpg",
+   "src": "boom-c12-b-135",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 6",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2026/06/BROCHURE-DESCARBONIZANTE-1.pdf"
+   }
+  },
+  {
+   "id": "B-136",
+   "name": "Lavavajillas WIP WIP, 1000 ml",
+   "cat": "cocina",
+   "price": 5.25,
+   "desc": "Lavavajillas líquido concentrado para lavar vajilla, cristalería y utensilios de cocina. Disuelve fácilmente la grasa y la suciedad, no daña las manos, facilita el enjuague y es biodegradable. Contenido: 1000 ml. Viene en limón o maracuyá: elige el aroma al agregarlo al carrito.",
+   "feats": [
+    "Contenido: 1000 ml",
+    "Limón o maracuyá, a elegir",
+    "No daña las manos",
+    "Biodegradable"
+   ],
+   "imgs": [
+    "img/p/b-136-0.jpg",
+    "img/p/b-136-1.jpg"
+   ],
+   "thumb": "img/p/b-136-s.jpg",
+   "src": "boom-c12-b-136",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 6",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2023/06/lavavajillas-wip-wip.pdf"
+   },
+   "opciones": [
+    {
+     "nombre": "Aroma",
+     "valores": [
+      "Limón",
+      "Maracuyá"
+     ],
+     "fotos": [
+      0,
+      1
+     ]
+    }
+   ]
+  },
+  {
+   "id": "B-137",
+   "name": "Lavavajillas WIP WIP limón, galón",
+   "cat": "cocina",
+   "price": 14.99,
+   "desc": "Lavavajillas líquido concentrado para lavar vajilla, cristalería y utensilios de cocina. Disuelve fácilmente la grasa y la suciedad, no daña las manos, facilita el enjuague y es biodegradable. Aroma limón. Presentación: galón.",
+   "feats": [
+    "Presentación: galón",
+    "Aroma limón",
+    "No daña las manos",
+    "Biodegradable"
+   ],
+   "imgs": [
+    "img/p/b-137-0.jpg"
+   ],
+   "thumb": "img/p/b-137-s.jpg",
+   "src": "boom-c12-b-137",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 6",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2023/06/lavavajillas-wip-wip.pdf"
+   }
+  },
+  {
+   "id": "B-138",
+   "name": "Lavavajillas WIP WIP maracuyá, galón",
+   "cat": "cocina",
+   "price": 15.99,
+   "desc": "Lavavajillas líquido concentrado para lavar vajilla, cristalería y utensilios de cocina. Disuelve fácilmente la grasa y la suciedad, no daña las manos, facilita el enjuague y es biodegradable. Aroma maracuyá. Presentación: galón.",
+   "feats": [
+    "Presentación: galón",
+    "Aroma maracuyá",
+    "No daña las manos",
+    "Biodegradable"
+   ],
+   "imgs": [
+    "img/p/b-138-0.jpg"
+   ],
+   "thumb": "img/p/b-138-s.jpg",
+   "src": "boom-c12-b-138",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 6",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2023/06/lavavajillas-wip-wip.pdf"
+   }
+  },
+  {
+   "id": "B-139",
+   "name": "Multiusos WIP WIP neutro, 1000 ml",
+   "cat": "hogar",
+   "price": 4.5,
+   "desc": "Limpiador líquido muy concentrado que actúa como detergente y desengrasante, ideal para múltiples tareas de limpieza en diferentes superficies. Sin aroma, versátil y biodegradable. Contenido: 1000 ml.",
+   "feats": [
+    "Contenido: 1000 ml",
+    "Detergente y desengrasante",
+    "Sin aroma",
+    "Biodegradable"
+   ],
+   "imgs": [
+    "img/p/b-139-0.jpg"
+   ],
+   "thumb": "img/p/b-139-s.jpg",
+   "src": "boom-c12-b-139",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 6",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2023/06/brochure-multiusos-wip-wip.pdf"
+   }
+  },
+  {
+   "id": "B-140",
+   "name": "Multiusos WIP WIP neutro, galón",
+   "cat": "hogar",
+   "price": 16.42,
+   "desc": "Limpiador líquido muy concentrado que actúa como detergente y desengrasante, ideal para múltiples tareas de limpieza en diferentes superficies. Sin aroma, versátil y biodegradable. Presentación: galón (3785 ml).",
+   "feats": [
+    "Presentación: galón (3785 ml)",
+    "Detergente y desengrasante",
+    "Sin aroma",
+    "Biodegradable"
+   ],
+   "imgs": [
+    "img/p/b-140-0.jpg"
+   ],
+   "thumb": "img/p/b-140-s.jpg",
+   "src": "boom-c12-b-140",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 6",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2023/06/brochure-multiusos-wip-wip.pdf"
+   }
+  },
+  {
+   "id": "B-141",
+   "name": "Arranca grasa WIP WIP en spray, 600 ml",
+   "cat": "cocina",
+   "price": 4.62,
+   "desc": "Fórmula especializada para eliminar fácilmente la grasa concentrada y difícil, ideal para una limpieza profunda. No daña las superficies metálicas, no es tóxico y es biodegradable. Contenido: 600 ml, con atomizador.",
+   "feats": [
+    "Contenido: 600 ml",
+    "Con atomizador",
+    "Para grasa difícil",
+    "No daña superficies metálicas"
+   ],
+   "imgs": [
+    "img/p/b-141-0.jpg"
+   ],
+   "thumb": "img/p/b-141-s.jpg",
+   "src": "boom-c12-b-141",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 6",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2023/01/Brochure-Arranca-grasa.pdf"
+   }
+  },
+  {
+   "id": "B-142",
+   "name": "Arranca grasa WIP WIP, galón",
+   "cat": "cocina",
+   "price": 15.4,
+   "desc": "Fórmula especializada para eliminar fácilmente la grasa concentrada y difícil, ideal para una limpieza profunda. No daña las superficies metálicas, no es tóxico y es biodegradable. Presentación: galón.",
+   "feats": [
+    "Presentación: galón",
+    "Para grasa difícil",
+    "No daña superficies metálicas",
+    "Biodegradable"
+   ],
+   "imgs": [
+    "img/p/b-142-0.jpg"
+   ],
+   "thumb": "img/p/b-142-s.jpg",
+   "src": "boom-c12-b-142",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 6",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2023/01/Brochure-Arranca-grasa.pdf"
+   }
+  },
+  {
+   "id": "B-143",
+   "name": "Desinfectante WIP WIP fórmula mejorada, 1000 ml",
+   "cat": "hogar",
+   "price": 4.62,
+   "desc": "Desinfectante de fórmula concentrada y mejorada para limpiar, desinfectar y aromatizar diferentes espacios. Elimina el 99,9 % de virus y bacterias, deja un agradable aroma y es biodegradable. Contenido: 1000 ml. Viene en brisa, maracuyá, pino o manzana canela: elige el aroma al agregarlo al carrito.",
+   "feats": [
+    "Contenido: 1000 ml",
+    "Elimina el 99,9 % de virus y bacterias",
+    "4 aromas a elegir",
+    "Biodegradable"
+   ],
+   "imgs": [
+    "img/p/b-143-0.jpg",
+    "img/p/b-143-1.jpg",
+    "img/p/b-143-2.jpg",
+    "img/p/b-143-3.jpg",
+    "img/p/b-143-4.jpg"
+   ],
+   "thumb": "img/p/b-143-s.jpg",
+   "src": "boom-c12-b-143",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 7",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2023/01/Brochure-desinfectante-pino.pdf"
+   },
+   "opciones": [
+    {
+     "nombre": "Aroma",
+     "valores": [
+      "Brisa",
+      "Maracuyá",
+      "Pino",
+      "Manzana canela"
+     ],
+     "fotos": [
+      1,
+      2,
+      3,
+      4
+     ]
+    }
+   ]
+  },
+  {
+   "id": "B-144",
+   "name": "Desinfectante WIP WIP maracuyá, galón",
+   "cat": "hogar",
+   "price": 13.13,
+   "antes": 17.45,
+   "hasta": "2026-12-03",
+   "desc": "Desinfectante de fórmula concentrada y mejorada para limpiar, desinfectar y aromatizar diferentes espacios. Elimina el 99,9 % de virus y bacterias, deja un agradable aroma y es biodegradable. Aroma maracuyá. Presentación: galón.",
+   "feats": [
+    "Presentación: galón",
+    "Aroma maracuyá",
+    "Elimina el 99,9 % de virus y bacterias"
+   ],
+   "imgs": [
+    "img/p/b-144-0.jpg"
+   ],
+   "thumb": "img/p/b-144-s.jpg",
+   "src": "boom-c12-b-144",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 7",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2023/01/Brochure-desinfectante-pino.pdf"
+   }
+  },
+  {
+   "id": "B-145",
+   "name": "Desinfectante WIP WIP brisa, galón",
+   "cat": "hogar",
+   "price": 17.45,
+   "desc": "Desinfectante de fórmula concentrada y mejorada para limpiar, desinfectar y aromatizar diferentes espacios. Elimina el 99,9 % de virus y bacterias, deja un agradable aroma y es biodegradable. Aroma brisa. Presentación: galón.",
+   "feats": [
+    "Presentación: galón",
+    "Aroma brisa",
+    "Elimina el 99,9 % de virus y bacterias"
+   ],
+   "imgs": [
+    "img/p/b-145-0.jpg"
+   ],
+   "thumb": "img/p/b-145-s.jpg",
+   "src": "boom-c12-b-145",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 7",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2023/01/Brochure-desinfectante-pino.pdf"
+   }
+  },
+  {
+   "id": "B-146",
+   "name": "Cloro líquido WIP WIP, galón",
+   "cat": "hogar",
+   "price": 6.15,
+   "desc": "Cloro líquido con poder blanqueador y desinfectante para mantener limpios y libres de gérmenes los espacios del hogar. Elimina el 99,9 % de gérmenes y bacterias, sin aroma y biodegradable. Presentación: galón (3785 ml).",
+   "feats": [
+    "Presentación: galón (3785 ml)",
+    "Blanquea y desinfecta",
+    "Sin aroma"
+   ],
+   "imgs": [
+    "img/p/b-146-0.jpg"
+   ],
+   "thumb": "img/p/b-146-s.jpg",
+   "src": "boom-c12-b-146",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 7",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2023/01/brochure-cloro-liquido.pdf"
+   }
+  },
+  {
+   "id": "B-147",
+   "name": "Cloro líquido WIP WIP, 1000 ml",
+   "cat": "hogar",
+   "price": 2.16,
+   "desc": "Cloro líquido con poder blanqueador y desinfectante para mantener limpios y libres de gérmenes los espacios del hogar. Elimina el 99,9 % de gérmenes y bacterias, sin aroma y biodegradable. Contenido: 1000 ml.",
+   "feats": [
+    "Contenido: 1000 ml",
+    "Blanquea y desinfecta",
+    "Sin aroma"
+   ],
+   "imgs": [
+    "img/p/b-147-0.jpg"
+   ],
+   "thumb": "img/p/b-147-s.jpg",
+   "src": "boom-c12-b-147",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 7",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2023/06/brochure-desinfectante-manzana-y-canela.pdf"
+   }
+  },
+  {
+   "id": "B-148",
+   "name": "Desinfectante de superficies WIP WIP lavanda, 600 ml",
+   "cat": "hogar",
+   "price": 4.05,
+   "antes": 4.5,
+   "hasta": "2026-12-03",
+   "desc": "Desinfectante en spray que mantiene tus espacios limpios, desinfectados y con una agradable sensación de frescura. Elimina el 99,9 % de virus y bacterias, elimina hongos y deja un delicado aroma a lavanda. Contenido: 600 ml.",
+   "feats": [
+    "Contenido: 600 ml",
+    "Con atomizador",
+    "Elimina el 99,9 % de virus y bacterias",
+    "Aroma lavanda"
+   ],
+   "imgs": [
+    "img/p/b-148-0.jpg"
+   ],
+   "thumb": "img/p/b-148-s.jpg",
+   "src": "boom-c12-b-148",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 7",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2026/08/Brochure-Desinfectante-de-Superficies.pdf"
+   }
+  },
+  {
+   "id": "B-149",
+   "name": "Ambiental WIP WIP vainilla oriental, 250 ml",
+   "cat": "hogar",
+   "price": 8.11,
+   "desc": "Ambiental en spray con una calidez dulce y reconfortante (aroma floral oriental): bergamota, almendra y cereza en la salida; corazón floral; vainilla, tonka, caramelo, almizcle y ámbar en el fondo. Contenido: 250 ml.",
+   "feats": [
+    "Contenido: 250 ml",
+    "Aroma vainilla oriental",
+    "En spray"
+   ],
+   "imgs": [
+    "img/p/b-149-0.jpg"
+   ],
+   "thumb": "img/p/b-149-s.jpg",
+   "src": "boom-c12-b-149",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 8",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2023/10/Brochure-Ambientales-WIPWIP-1_compressed.pdf"
+   }
+  },
+  {
+   "id": "B-150",
+   "name": "Limpiador y desinfectante de residuos de mascotas WIP WIP, 600 ml",
+   "cat": "mascotas",
+   "price": 5.12,
+   "desc": "Limpiador especializado para limpiar y desinfectar los residuos de las mascotas. Ayuda a eliminar malos olores, tiene alto poder limpiador, elimina el 99,9 % de virus y bacterias y es biodegradable. Contenido: 600 ml.",
+   "feats": [
+    "Contenido: 600 ml",
+    "Con atomizador",
+    "Elimina malos olores",
+    "Elimina el 99,9 % de virus y bacterias"
+   ],
+   "imgs": [
+    "img/p/b-150-0.jpg"
+   ],
+   "thumb": "img/p/b-150-s.jpg",
+   "src": "boom-c12-b-150",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 8",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2023/09/brochure-limpiador-desinfectante-de-residuos-de-mascotas.pdf"
+   }
+  },
+  {
+   "id": "B-151",
+   "name": "Shampoo cosmético para mascotas WIP WIP con acondicionador y aloe vera, 250 ml",
+   "cat": "mascotas",
+   "price": 7.65,
+   "antes": 8.99,
+   "hasta": "2026-12-03",
+   "desc": "Shampoo y acondicionador 2 en 1 para mascotas, con aloe vera. Sus ingredientes ayudan a evitar alergias e irritaciones en la piel y dejan el pelaje suave, brillante y perfumado. Contenido: 250 ml.",
+   "feats": [
+    "Contenido: 250 ml",
+    "Shampoo y acondicionador 2 en 1",
+    "Con aloe vera"
+   ],
+   "imgs": [
+    "img/p/b-151-0.jpg"
+   ],
+   "thumb": "img/p/b-151-s.jpg",
+   "src": "boom-c12-b-151",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 8",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2024/12/Brochure-Shampoo-Mascotas.pdf"
+   }
+  },
+  {
+   "id": "B-152",
+   "name": "Limpiador antibacterial para neveras WIP WIP, 600 ml",
+   "cat": "cocina",
+   "price": 3.4,
+   "antes": 4.25,
+   "hasta": "2026-12-03",
+   "desc": "Limpiador líquido que limpia y desinfecta el interior de la nevera o refrigeradora sin dejar residuos que afecten los alimentos. Previene la formación de hongos que causan malos olores y remueve manchas. Sin aroma. Contenido: 600 ml.",
+   "feats": [
+    "Contenido: 600 ml",
+    "Con atomizador",
+    "Previene hongos y malos olores",
+    "Sin aroma"
+   ],
+   "imgs": [
+    "img/p/b-152-0.jpg"
+   ],
+   "thumb": "img/p/b-152-s.jpg",
+   "src": "boom-c12-b-152",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 9",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2023/01/brochure-virusbacter.pdf"
+   }
+  },
+  {
+   "id": "B-153",
+   "name": "Cloro gel WIP WIP pino, 1000 ml",
+   "cat": "hogar",
+   "price": 3.7,
+   "desc": "Cloro en gel que se adhiere con facilidad y actúa como limpiador, con alto poder espumante y un agradable y duradero aroma a pino. Biodegradable. Contenido: 1000 ml.",
+   "feats": [
+    "Contenido: 1000 ml",
+    "Textura gel",
+    "Aroma pino",
+    "Alto poder espumante"
+   ],
+   "imgs": [
+    "img/p/b-153-0.jpg"
+   ],
+   "thumb": "img/p/b-153-s.jpg",
+   "src": "boom-c12-b-153",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 9",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2024/08/BROCHURE-LIMPIADOR-ANTIBACTERIAL-DE-NEVERAS.pdf"
+   }
+  },
+  {
+   "id": "B-154",
+   "name": "Cloro gel WIP WIP pino, galón",
+   "cat": "hogar",
+   "price": 12.32,
+   "desc": "Cloro en gel que se adhiere con facilidad y actúa como limpiador, con alto poder espumante y un agradable y duradero aroma a pino. Biodegradable. Presentación: galón (3785 ml).",
+   "feats": [
+    "Presentación: galón (3785 ml)",
+    "Textura gel",
+    "Aroma pino",
+    "Alto poder espumante"
+   ],
+   "imgs": [
+    "img/p/b-154-0.jpg"
+   ],
+   "thumb": "img/p/b-154-s.jpg",
+   "src": "boom-c12-b-154",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 9",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2023/01/Brochure-Cloro-Gel.pdf"
+   }
+  },
+  {
+   "id": "B-155",
+   "name": "Virusbacter WIP WIP, 600 ml",
+   "cat": "hogar",
+   "price": 5.65,
+   "desc": "Solución lista para usar sobre superficies inanimadas, con agentes que aseguran la desinfección. Elimina el 99,9 % de virus y bacterias, tiene diversidad de usos y es biodegradable. Sin aroma. Contenido: 600 ml.",
+   "feats": [
+    "Contenido: 600 ml",
+    "Elimina el 99,9 % de virus y bacterias",
+    "Listo para usar",
+    "Sin aroma"
+   ],
+   "imgs": [
+    "img/p/b-155-0.jpg"
+   ],
+   "thumb": "img/p/b-155-s.jpg",
+   "src": "boom-c12-b-155",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 9",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2023/01/brochure-virusbacter.pdf"
+   }
+  },
+  {
+   "id": "B-156",
+   "name": "Desinfectante de colchones WIP WIP pino, 600 ml",
+   "cat": "hogar",
+   "price": 9.23,
+   "desc": "Desinfectante que ayuda a eliminar microorganismos como Escherichia coli, Salmonella, Staphylococcus aureus, Bacillus cereus, Pseudomonas aeruginosa y ácaros, fuente de infecciones y alergias. Elimina el 99,9 % de microorganismos, contiene elementos naturales y es biodegradable. No se debe usar en mascotas. Contenido: 600 ml.",
+   "feats": [
+    "Contenido: 600 ml",
+    "Contra ácaros y bacterias",
+    "Aroma pino",
+    "No usar en mascotas"
+   ],
+   "imgs": [
+    "img/p/b-156-0.jpg"
+   ],
+   "thumb": "img/p/b-156-s.jpg",
+   "src": "boom-c12-b-156",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 9",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2023/05/BROCHURE-DESINFECTANTE-DE-COLCHONES.pdf"
+   }
+  },
+  {
+   "id": "B-157",
+   "name": "Shampoo para alfombras y tapices WIP WIP fresa, 2 litros",
+   "cat": "hogar",
+   "price": 8.99,
+   "desc": "Detergente muy concentrado para remover grasas, aceites, manchas de comida y suciedad de alfombras, felpas, tapices, muebles y enseres. Aroma fresa. Contenido: 2 litros.",
+   "feats": [
+    "Contenido: 2 litros",
+    "Para alfombras, tapices y muebles",
+    "Aroma fresa"
+   ],
+   "imgs": [
+    "img/p/b-157-0.jpg"
+   ],
+   "thumb": "img/p/b-157-s.jpg",
+   "src": "boom-c12-b-157",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 9",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2023/01/Brochure-Shampoo-de-Alfombras.pdf"
+   }
+  },
+  {
+   "id": "B-158",
+   "name": "Desoxidante de superficies WIP WIP, 600 ml",
+   "cat": "herramientas",
+   "price": 5.99,
+   "desc": "Líquido especializado para eliminar el óxido de superficies metálicas, que ayuda a recuperar su apariencia y deja una capa protectora. Sin aroma y biodegradable. Contenido: 600 ml.",
+   "feats": [
+    "Contenido: 600 ml",
+    "Elimina el óxido",
+    "Deja capa protectora",
+    "Sin aroma"
+   ],
+   "imgs": [
+    "img/p/b-158-0.jpg"
+   ],
+   "thumb": "img/p/b-158-s.jpg",
+   "src": "boom-c12-b-158",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 9",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2023/01/Brochure-Desoxidante-de-Superficies.pdf"
+   }
+  },
+  {
+   "id": "B-159",
+   "name": "Limpia muebles WIP WIP vainilla, 500 ml",
+   "cat": "hogar",
+   "price": 4.75,
+   "desc": "Producto para limpiar, abrillantar y proteger muebles de madera, MDF, vinil y fórmica. Ayuda a proteger contra rayos UV y manchas de agua y mejora la apariencia de los rayones. Biodegradable. Aroma vainilla. Contenido: 500 ml.",
+   "feats": [
+    "Contenido: 500 ml",
+    "Limpia, abrillanta y protege",
+    "Para madera, MDF, vinil y fórmica",
+    "Aroma vainilla"
+   ],
+   "imgs": [
+    "img/p/b-159-0.jpg"
+   ],
+   "thumb": "img/p/b-159-s.jpg",
+   "src": "boom-c12-b-159",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 9",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2023/01/Brochure-Limpia-Vidrios.pdf"
+   }
+  },
+  {
+   "id": "B-160",
+   "name": "Limpia vidrios WIP WIP, 600 ml",
+   "cat": "hogar",
+   "price": 4.0,
+   "desc": "Limpiador para vidrios, espejos, vitrinas y mesas de vidrio que ayuda a remover manchas, sarro, óxido y depósitos calcáreos. Tiene acción antibacterial, no daña las superficies y es biodegradable. Neutro. Contenido: 600 ml.",
+   "feats": [
+    "Contenido: 600 ml",
+    "Con atomizador",
+    "Acción antibacterial",
+    "Para vidrios y espejos"
+   ],
+   "imgs": [
+    "img/p/b-160-0.jpg"
+   ],
+   "thumb": "img/p/b-160-s.jpg",
+   "src": "boom-c12-b-160",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 9",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2023/01/Brochure-Limpia-Vidrios.pdf"
+   }
+  },
+  {
+   "id": "B-161",
+   "name": "Crema limpiadora de manos Bio WIP WIP naranja, 500 ml",
+   "cat": "herramientas",
+   "price": 8.25,
+   "desc": "Crema para limpiar las manos sin necesidad de agua, ideal para remover grasas, aceites, pintura, brea y suciedad difícil. Biodegradable. Aroma naranja. Contenido: 500 ml.",
+   "feats": [
+    "Contenido: 500 ml",
+    "No necesita agua",
+    "Quita grasa, aceite y pintura",
+    "Aroma naranja"
+   ],
+   "imgs": [
+    "img/p/b-161-0.jpg"
+   ],
+   "thumb": "img/p/b-161-s.jpg",
+   "src": "boom-c12-b-161",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 9",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2023/01/brochure-crema-limpiadora-de-manos.pdf"
+   }
+  },
+  {
+   "id": "B-162",
+   "name": "Quita manchas TesQui, 900 ml",
+   "cat": "hogar",
+   "price": 4.62,
+   "desc": "Quita manchas especializado, sin cloro, por lo que se puede usar en ropa blanca y de color. Neutro. Contenido: 900 ml.",
+   "feats": [
+    "Contenido: 900 ml",
+    "Sin cloro",
+    "Para ropa blanca y de color"
+   ],
+   "imgs": [
+    "img/p/b-162-0.jpg"
+   ],
+   "thumb": "img/p/b-162-s.jpg",
+   "src": "boom-c12-b-162",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 10",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2023/01/Brochure-Quita-Manchas.pdf"
+   }
+  },
+  {
+   "id": "B-163",
+   "name": "Quita manchas de esferográfico TesQui, 120 ml",
+   "cat": "hogar",
+   "price": 6.5,
+   "desc": "Formulado para actuar directamente sobre la tinta de esfero y ayudar a removerla de telas y prendas de forma rápida y efectiva. Contenido: 120 ml.",
+   "feats": [
+    "Contenido: 120 ml",
+    "Para manchas de esfero",
+    "En spray"
+   ],
+   "imgs": [
+    "img/p/b-163-0.jpg"
+   ],
+   "thumb": "img/p/b-163-s.jpg",
+   "src": "boom-c12-b-163",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 10",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2026/05/Brochure-Quita-Manchas-Esferografico.pdf"
+   }
+  },
+  {
+   "id": "B-164",
+   "name": "Suavizante TesQui, 1000 ml",
+   "cat": "hogar",
+   "price": 4.15,
+   "desc": "Suavizante que mantiene la ropa con la máxima suavidad, frescura y un exquisito aroma. Contenido: 1000 ml. Viene en vainilla o flores del campo: elige el aroma al agregarlo al carrito.",
+   "feats": [
+    "Contenido: 1000 ml",
+    "Vainilla o flores del campo, a elegir",
+    "Suavidad y frescura"
+   ],
+   "imgs": [
+    "img/p/b-164-0.jpg",
+    "img/p/b-164-1.jpg"
+   ],
+   "thumb": "img/p/b-164-s.jpg",
+   "src": "boom-c12-b-164",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 10",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2023/01/BROCHURE-SUAVIZANTE-VAINILLA.pdf"
+   },
+   "opciones": [
+    {
+     "nombre": "Aroma",
+     "valores": [
+      "Vainilla",
+      "Flores del campo"
+     ],
+     "fotos": [
+      0,
+      1
+     ]
+    }
+   ]
+  },
+  {
+   "id": "B-165",
+   "name": "Suavizante TesQui, galón",
+   "cat": "hogar",
+   "price": 13.99,
+   "desc": "Suavizante que mantiene la ropa con la máxima suavidad, frescura y un exquisito aroma. Presentación: galón (3785 ml). Viene en vainilla o flores del campo: elige el aroma al agregarlo al carrito.",
+   "feats": [
+    "Presentación: galón (3785 ml)",
+    "Vainilla o flores del campo, a elegir",
+    "Suavidad y frescura"
+   ],
+   "imgs": [
+    "img/p/b-165-0.jpg",
+    "img/p/b-165-1.jpg"
+   ],
+   "thumb": "img/p/b-165-s.jpg",
+   "src": "boom-c12-b-165",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 10",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2023/01/BROCHURE-SUAVIZANTE-VAINILLA.pdf"
+   },
+   "opciones": [
+    {
+     "nombre": "Aroma",
+     "valores": [
+      "Vainilla",
+      "Flores del campo"
+     ],
+     "fotos": [
+      0,
+      1
+     ]
+    }
+   ]
+  },
+  {
+   "id": "B-166",
+   "name": "Detergente restaurador de ropa TesQui vainilla, 1000 ml",
+   "cat": "hogar",
+   "price": 5.39,
+   "desc": "Detergente líquido concentrado con abrillantadores ópticos que mejora la apariencia de las prendas. Aroma vainilla. Contenido: 1000 ml.",
+   "feats": [
+    "Contenido: 1000 ml",
+    "Con abrillantadores ópticos",
+    "Aroma vainilla"
+   ],
+   "imgs": [
+    "img/p/b-166-0.jpg"
+   ],
+   "thumb": "img/p/b-166-s.jpg",
+   "src": "boom-c12-b-166",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 11",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2023/01/BROCHURE-DETERGENTE-RESTAURADOR-DE-ROPA.pdf"
+   }
+  },
+  {
+   "id": "B-167",
+   "name": "Detergente para ropa íntima TesQui floral, 2 litros",
+   "cat": "hogar",
+   "price": 11.75,
+   "desc": "Detergente líquido muy concentrado, formulado especialmente para el lavado de ropa íntima. Aroma floral. Contenido: 2 litros.",
+   "feats": [
+    "Contenido: 2 litros",
+    "Para ropa íntima",
+    "Aroma floral"
+   ],
+   "imgs": [
+    "img/p/b-167-0.jpg"
+   ],
+   "thumb": "img/p/b-167-s.jpg",
+   "src": "boom-c12-b-167",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 11",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2024/04/Brochure-Detergente-Ropa-Intima.pdf"
+   }
+  },
+  {
+   "id": "B-168",
+   "name": "Detergente líquido TesQui floral, galón",
+   "cat": "hogar",
+   "price": 15.99,
+   "desc": "Detergente líquido que da una limpieza profunda a los tejidos en el lavado de prendas. Aroma floral. Presentación: galón.",
+   "feats": [
+    "Presentación: galón",
+    "Limpieza profunda",
+    "Aroma floral"
+   ],
+   "imgs": [
+    "img/p/b-168-0.jpg"
+   ],
+   "thumb": "img/p/b-168-s.jpg",
+   "src": "boom-c12-b-168",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 11",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2023/01/Brochure-Detergente-Liquido-1.pdf"
+   }
+  },
+  {
+   "id": "B-169",
+   "name": "Detergente líquido TesQui floral, 1000 ml",
+   "cat": "hogar",
+   "price": 4.75,
+   "desc": "Detergente líquido que da una limpieza profunda a los tejidos en el lavado de prendas. Aroma floral. Contenido: 1000 ml.",
+   "feats": [
+    "Contenido: 1000 ml",
+    "Limpieza profunda",
+    "Aroma floral"
+   ],
+   "imgs": [
+    "img/p/b-169-0.jpg"
+   ],
+   "thumb": "img/p/b-169-s.jpg",
+   "src": "boom-c12-b-169",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 11",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2023/01/Brochure-Detergente-Liquido-1.pdf"
+   }
+  },
+  {
+   "id": "B-170",
+   "name": "Detergente con suavizante TesQui frutos rojos, 2 litros",
+   "cat": "hogar",
+   "price": 13.14,
+   "desc": "Detergente líquido concentrado con suavizante de eficacia probada, para lavar ropa blanca y de color. Aroma frutos rojos. Contenido: 2 litros.",
+   "feats": [
+    "Contenido: 2 litros",
+    "Con suavizante",
+    "Para ropa blanca y de color",
+    "Aroma frutos rojos"
+   ],
+   "imgs": [
+    "img/p/b-170-0.jpg"
+   ],
+   "thumb": "img/p/b-170-s.jpg",
+   "src": "boom-c12-b-170",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 11",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2023/06/brochure-detergente-suavizante-frutos-rojos-2000ml-tesqui.pdf"
+   }
+  },
+  {
+   "id": "B-171",
+   "name": "Detergente para ropa oscura TesQui manzana verde, galón",
+   "cat": "hogar",
+   "price": 17.71,
+   "desc": "Detergente líquido especializado para el cuidado de la ropa oscura. Aroma manzana verde. Presentación: galón.",
+   "feats": [
+    "Presentación: galón",
+    "Para ropa oscura",
+    "Aroma manzana verde"
+   ],
+   "imgs": [
+    "img/p/b-171-0.jpg"
+   ],
+   "thumb": "img/p/b-171-s.jpg",
+   "src": "boom-c12-b-171",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 11",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2023/01/BROCHURE-DETERGENTE-ROPA-OSCURA.pdf"
+   }
+  },
+  {
+   "id": "B-172",
+   "name": "Detergente para ropa oscura TesQui manzana verde, 1000 ml",
+   "cat": "hogar",
+   "price": 5.03,
+   "desc": "Detergente líquido especializado para el cuidado de la ropa oscura. Aroma manzana verde. Contenido: 1000 ml.",
+   "feats": [
+    "Contenido: 1000 ml",
+    "Para ropa oscura",
+    "Aroma manzana verde"
+   ],
+   "imgs": [
+    "img/p/b-172-0.jpg"
+   ],
+   "thumb": "img/p/b-172-s.jpg",
+   "src": "boom-c12-b-172",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 11",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2023/01/BROCHURE-DETERGENTE-ROPA-OSCURA.pdf"
+   }
+  },
+  {
+   "id": "B-173",
+   "name": "Desinfectante de ropa TesQui, 1000 ml",
+   "cat": "hogar",
+   "price": 5.25,
+   "desc": "Limpia, desinfecta y refresca tus prendas en cada lavado. Además, ayuda a mantener el interior de la lavadora libre de residuos y malos olores. Contenido: 1000 ml.",
+   "feats": [
+    "Contenido: 1000 ml",
+    "Desinfecta y refresca la ropa",
+    "Cuida la lavadora"
+   ],
+   "imgs": [
+    "img/p/b-173-0.jpg"
+   ],
+   "thumb": "img/p/b-173-s.jpg",
+   "src": "boom-c12-b-173",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 11",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2026/04/Brochure-Desinfectante-de-Ropa-1.pdf"
+   }
+  },
+  {
+   "id": "B-174",
+   "name": "Detergente en polvo TesQui floral, 1 kg",
+   "cat": "hogar",
+   "price": 4.96,
+   "antes": 6.2,
+   "hasta": "2026-12-03",
+   "desc": "Detergente en polvo químicamente balanceado, muy eficaz para eliminar suciedad extrema y malos olores. Limpia ropa blanca y de color. Aroma floral. Contenido: 1 kg.",
+   "feats": [
+    "Contenido: 1 kg",
+    "Para ropa blanca y de color",
+    "Aroma floral"
+   ],
+   "imgs": [
+    "img/p/b-174-0.jpg"
+   ],
+   "thumb": "img/p/b-174-s.jpg",
+   "src": "boom-c12-b-174",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 11",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2024/09/Brochure-Detergente-en-polvo-TESQUI-1_compressed.pdf"
+   }
+  },
+  {
+   "id": "B-175",
+   "name": "Espuma limpiadora multiusos Magic Clean WIP WIP, 280 ml",
+   "cat": "hogar",
+   "price": 8.3,
+   "desc": "Espuma limpiadora que quita la suciedad al instante de zapatos, carteras, asientos de auto y más. Sin aroma. Contenido: 280 ml.",
+   "feats": [
+    "Contenido: 280 ml",
+    "Para zapatos, carteras y asientos",
+    "Sin aroma"
+   ],
+   "imgs": [
+    "img/p/b-175-0.jpg"
+   ],
+   "thumb": "img/p/b-175-s.jpg",
+   "src": "boom-c12-b-175",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 11",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2025/06/Brochure-Producto-Espuma-Limpiadora-Magic-Clean-2.pdf"
+   }
+  },
+  {
+   "id": "B-176",
+   "name": "Aromatizante de prendas TesQui lavanda, 120 ml",
+   "cat": "hogar",
+   "price": 4.75,
+   "desc": "Aromatizante de prendas con una agradable fragancia a lavanda que deja la ropa fresca, perfumada y con una sensación de limpieza prolongada. Contenido: 120 ml.",
+   "feats": [
+    "Contenido: 120 ml",
+    "Aroma lavanda",
+    "En spray"
+   ],
+   "imgs": [
+    "img/p/b-176-0.jpg"
+   ],
+   "thumb": "img/p/b-176-s.jpg",
+   "src": "boom-c12-b-176",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 11",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2026/03/Brochure-Aromatizante-de-Ropa.pdf"
+   }
+  },
+  {
+   "id": "B-177",
+   "name": "Plancha fácil TesQui floral, 600 ml",
+   "cat": "hogar",
+   "price": 3.34,
+   "desc": "Producto líquido que facilita el planchado. Aroma floral. Contenido: 600 ml.",
+   "feats": [
+    "Contenido: 600 ml",
+    "Facilita el planchado",
+    "Con atomizador",
+    "Aroma floral"
+   ],
+   "imgs": [
+    "img/p/b-177-0.jpg"
+   ],
+   "thumb": "img/p/b-177-s.jpg",
+   "src": "boom-c12-b-177",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 11",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2023/06/brochure-plancha-facil-tesqui.pdf"
+   }
+  },
+  {
+   "id": "B-178",
+   "name": "Limpiador desinfectante de inodoros WIP WIP brisa marina, 1000 ml",
+   "cat": "hogar",
+   "price": 4.75,
+   "desc": "Limpiador desinfectante de inodoros que elimina gérmenes y malos olores para mantener el baño impecable. Aroma brisa marina. Contenido: 1000 ml.",
+   "feats": [
+    "Contenido: 1000 ml",
+    "Elimina gérmenes y malos olores",
+    "Aroma brisa marina"
+   ],
+   "imgs": [
+    "img/p/b-178-0.jpg"
+   ],
+   "thumb": "img/p/b-178-s.jpg",
+   "src": "boom-c12-b-178",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 12",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2025/08/Brochure-Producto-Limpiador-de-Inodoros-1.pdf"
+   }
+  },
+  {
+   "id": "B-179",
+   "name": "Limpiador desinfectante de juntas de cerámica WIP WIP, 600 ml",
+   "cat": "hogar",
+   "price": 4.05,
+   "antes": 4.5,
+   "hasta": "2026-12-03",
+   "desc": "Devuelve el aspecto limpio y renovado a pisos y paredes. Su fórmula ayuda a remover la suciedad acumulada y las manchas en las juntas mientras desinfecta, para una limpieza profunda. Contenido: 600 ml.",
+   "feats": [
+    "Contenido: 600 ml",
+    "Con atomizador",
+    "Limpia y desinfecta juntas"
+   ],
+   "imgs": [
+    "img/p/b-179-0.jpg"
+   ],
+   "thumb": "img/p/b-179-s.jpg",
+   "src": "boom-c12-b-179",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 12",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2026/09/brochure-limpiador-de-juntas-de-ceramica.pdf"
+   }
+  },
+  {
+   "id": "B-180",
+   "name": "Destapador de cañerías WIP WIP, 1000 ml",
+   "cat": "hogar",
+   "price": 5.03,
+   "desc": "Producto potente para destapar y limpiar cañerías que ayuda a desintegrar acumulaciones de grasa, cabello, fango y otros residuos, sin dañar las tuberías. Contenido: 1000 ml.",
+   "feats": [
+    "Contenido: 1000 ml",
+    "Disuelve grasa, cabello y residuos",
+    "No daña las tuberías"
+   ],
+   "imgs": [
+    "img/p/b-180-0.jpg"
+   ],
+   "thumb": "img/p/b-180-s.jpg",
+   "src": "boom-c12-b-180",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 12",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2023/01/Brochure-Ultrasarro-1.pdf"
+   }
+  },
+  {
+   "id": "B-181",
+   "name": "Ultrasarro WIP WIP, galón",
+   "cat": "hogar",
+   "price": 13.75,
+   "desc": "Limpiador especializado para el baño que ayuda a remover sarro, residuos de jabón, manchas y suciedad. Limpia, desinfecta, elimina hongos y bacterias y deja las superficies renovadas. Neutro y biodegradable. Presentación: galón.",
+   "feats": [
+    "Presentación: galón",
+    "Quita sarro y manchas",
+    "Elimina hongos y bacterias"
+   ],
+   "imgs": [
+    "img/p/b-181-0.jpg"
+   ],
+   "thumb": "img/p/b-181-s.jpg",
+   "src": "boom-c12-b-181",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 12",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2023/06/brochure-destapador-de-canerias-wip-wip.pdf"
+   }
+  },
+  {
+   "id": "B-182",
+   "name": "Ultrasarro WIP WIP en spray, 600 ml",
+   "cat": "hogar",
+   "price": 3.99,
+   "desc": "Limpiador especializado para el baño que ayuda a remover sarro, residuos de jabón, manchas y suciedad. Limpia, desinfecta, elimina hongos y bacterias y deja las superficies renovadas. Neutro y biodegradable. Contenido: 600 ml, con atomizador.",
+   "feats": [
+    "Contenido: 600 ml",
+    "Con atomizador",
+    "Quita sarro y manchas",
+    "Elimina hongos y bacterias"
+   ],
+   "imgs": [
+    "img/p/b-182-0.jpg"
+   ],
+   "thumb": "img/p/b-182-s.jpg",
+   "src": "boom-c12-b-182",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 12",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2023/06/brochure-destapador-de-canerias-wip-wip.pdf"
+   }
+  },
+  {
+   "id": "B-183",
+   "name": "Mejorador de combustible Fuel Power by Boom, 6 onzas",
+   "cat": "herramientas",
+   "price": 7.96,
+   "desc": "Producto especializado que combina resinas sintéticas para potenciar el rendimiento del combustible. Contenido: 6 onzas.",
+   "feats": [
+    "Contenido: 6 onzas",
+    "Mejora el rendimiento del combustible"
+   ],
+   "imgs": [
+    "img/p/b-183-0.jpg"
+   ],
+   "thumb": "img/p/b-183-s.jpg",
+   "src": "boom-c12-b-183",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 12",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2023/06/brochure-mejorador-combustible.pdf"
+   }
+  },
+  {
+   "id": "B-184",
+   "name": "Silicona abrillantadora de superficies WIP WIP vainilla, 500 ml",
+   "cat": "herramientas",
+   "price": 6.67,
+   "desc": "Emulsión que limpia y protege superficies de cuero y plástico. Aroma vainilla. Contenido: 500 ml.",
+   "feats": [
+    "Contenido: 500 ml",
+    "Para cuero y plástico",
+    "Aroma vainilla"
+   ],
+   "imgs": [
+    "img/p/b-184-0.jpg"
+   ],
+   "thumb": "img/p/b-184-s.jpg",
+   "src": "boom-c12-b-184",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 12",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2023/06/brochure-silicona-abrillantadora-wip-wip.pdf"
+   }
+  },
+  {
+   "id": "B-185",
+   "name": "Ambiental para auto RunRun carro nuevo, 120 ml",
+   "cat": "herramientas",
+   "price": 5.5,
+   "desc": "Ambiental con una frescura limpia y sofisticada: lima, bergamota, lavanda, limón y pimienta negra; jazmín, violeta y rosa; y un fondo de almizcle, musgo, cedro y notas balsámicas. Contenido: 120 ml.",
+   "feats": [
+    "Contenido: 120 ml",
+    "Aroma carro nuevo",
+    "En spray"
+   ],
+   "imgs": [
+    "img/p/b-185-0.jpg"
+   ],
+   "thumb": "img/p/b-185-s.jpg",
+   "src": "boom-c12-b-185",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 12",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2025/05/Brochure-Producto-Ambiental-Auto-Nuevo.pdf"
+   }
+  },
+  {
+   "id": "B-186",
+   "name": "Limpiador de aros de vehículo RunRun, 600 ml",
+   "cat": "herramientas",
+   "price": 4.99,
+   "desc": "Limpiador que devuelve el brillo a los aros: elimina fácilmente grasa, polvo de frenos y suciedad difícil, y deja los aros limpios y protegidos. Contenido: 600 ml.",
+   "feats": [
+    "Contenido: 600 ml",
+    "Con atomizador",
+    "Quita grasa y polvo de frenos"
+   ],
+   "imgs": [
+    "img/p/b-186-0.jpg"
+   ],
+   "thumb": "img/p/b-186-s.jpg",
+   "src": "boom-c12-b-186",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 12",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2025/12/Brochure-Limpiador-de-Aros-1.pdf"
+   }
+  },
+  {
+   "id": "B-187",
+   "name": "Esponja microfibra para auto",
+   "cat": "herramientas",
+   "price": 3.9,
+   "desc": "Esponja de microfibra para lavar el auto: protege la pintura, no deja pelusa y tiene mejor agarre.",
+   "feats": [
+    "Protege la pintura",
+    "No deja pelusa",
+    "Buen agarre"
+   ],
+   "imgs": [
+    "img/p/b-187-0.jpg"
+   ],
+   "thumb": "img/p/b-187-s.jpg",
+   "src": "boom-c12-b-187",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 12",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2025/05/Brochure-Producto-Ambiental-Auto-Nuevo.pdf"
+   }
+  },
+  {
+   "id": "B-188",
+   "name": "Shampoo para autos con cera RunRun fresa, 1000 ml",
+   "cat": "herramientas",
+   "price": 5.39,
+   "desc": "Detergente líquido con cera, formulado para una mejor limpieza del motor y de la carrocería. Aroma fresa. Contenido: 1000 ml.",
+   "feats": [
+    "Contenido: 1000 ml",
+    "Con cera",
+    "Para carrocería y motor"
+   ],
+   "imgs": [
+    "img/p/b-188-0.jpg"
+   ],
+   "thumb": "img/p/b-188-s.jpg",
+   "src": "boom-c12-b-188",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 12",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2023/02/brochure-shampoo-autos-con-cera-run-run-compressed_1_compressed.pdf"
+   }
+  },
+  {
+   "id": "B-189",
+   "name": "Limpiador de parabrisas RunRun, 125 ml",
+   "cat": "herramientas",
+   "price": 3.49,
+   "desc": "Limpiador de parabrisas para una visión clara en cada viaje: elimina suciedad, polvo, grasa e insectos y deja un acabado cristalino sin marcas. Contenido: 125 ml.",
+   "feats": [
+    "Contenido: 125 ml",
+    "Acabado sin marcas",
+    "Quita grasa e insectos"
+   ],
+   "imgs": [
+    "img/p/b-189-0.jpg"
+   ],
+   "thumb": "img/p/b-189-s.jpg",
+   "src": "boom-c12-b-189",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 12",
+    "url": "https://www.boom.com.ec/wp-content/uploads/2026/02/Brochure-Limpia-Parabrisas.pdf"
+   }
+  },
+  {
+   "id": "B-190",
+   "name": "Triple pack de paños de microfibra",
+   "cat": "hogar",
+   "price": 2.4,
+   "desc": "Pack de 3 paños de microfibra para limpiar y secar superficies. Color según disponibilidad.",
+   "feats": [
+    "Artículo de limpieza Boom",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/b-190-0.jpg"
+   ],
+   "thumb": "img/p/b-190-s.jpg",
+   "src": "boom-c12-b-190",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 13",
+    "url": ""
+   }
+  },
+  {
+   "id": "B-191",
+   "name": "Paños bamboo, pack de 3",
+   "cat": "cocina",
+   "price": 2.6,
+   "desc": "Pack de 3 paños de bambú para la limpieza de la cocina y el hogar. Color según disponibilidad.",
+   "feats": [
+    "Artículo de limpieza Boom",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/b-191-0.jpg"
+   ],
+   "thumb": "img/p/b-191-s.jpg",
+   "src": "boom-c12-b-191",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 13",
+    "url": ""
+   }
+  },
+  {
+   "id": "B-192",
+   "name": "Paño de microfibra",
+   "cat": "hogar",
+   "price": 1.5,
+   "desc": "Paño de microfibra para limpiar, secar y sacar brillo. Color según disponibilidad.",
+   "feats": [
+    "Artículo de limpieza Boom",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/b-192-0.jpg"
+   ],
+   "thumb": "img/p/b-192-s.jpg",
+   "src": "boom-c12-b-192",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 13",
+    "url": ""
+   }
+  },
+  {
+   "id": "B-193",
+   "name": "Funda de lavado para ropa delicada",
+   "cat": "hogar",
+   "price": 4.85,
+   "desc": "Funda de malla para lavar prendas delicadas en la lavadora y protegerlas. Color según disponibilidad.",
+   "feats": [
+    "Artículo de limpieza Boom",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/b-193-0.jpg"
+   ],
+   "thumb": "img/p/b-193-s.jpg",
+   "src": "boom-c12-b-193",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 13",
+    "url": ""
+   }
+  },
+  {
+   "id": "B-194",
+   "name": "Guante de microfibra con texturas",
+   "cat": "herramientas",
+   "price": 4.5,
+   "desc": "Guante de microfibra con texturas, práctico para lavar y limpiar. Color según disponibilidad.",
+   "feats": [
+    "Artículo de limpieza Boom",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/b-194-0.jpg"
+   ],
+   "thumb": "img/p/b-194-s.jpg",
+   "src": "boom-c12-b-194",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 13",
+    "url": ""
+   }
+  },
+  {
+   "id": "B-195",
+   "name": "Trapeador de microfibra",
+   "cat": "hogar",
+   "price": 2.75,
+   "desc": "Trapeador (paño de piso) de microfibra para limpiar y secar pisos. Color según disponibilidad.",
+   "feats": [
+    "Artículo de limpieza Boom",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/b-195-0.jpg"
+   ],
+   "thumb": "img/p/b-195-s.jpg",
+   "src": "boom-c12-b-195",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 13",
+    "url": ""
+   }
+  },
+  {
+   "id": "B-196",
+   "name": "Toalla de microfibra para cabello",
+   "cat": "belleza",
+   "price": 4.25,
+   "desc": "Toalla turbante de microfibra para secar el cabello. Color según disponibilidad.",
+   "feats": [
+    "Artículo de limpieza Boom",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/b-196-0.jpg"
+   ],
+   "thumb": "img/p/b-196-s.jpg",
+   "src": "boom-c12-b-196",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 13",
+    "url": ""
+   }
+  },
+  {
+   "id": "B-197",
+   "name": "Escurridor de vajillas",
+   "cat": "cocina",
+   "price": 4.25,
+   "desc": "Tapete escurridor para secar la vajilla. Color según disponibilidad.",
+   "feats": [
+    "Artículo de limpieza Boom",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/b-197-0.jpg"
+   ],
+   "thumb": "img/p/b-197-s.jpg",
+   "src": "boom-c12-b-197",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 13",
+    "url": ""
+   }
+  },
+  {
+   "id": "B-198",
+   "name": "Toalla de cocina",
+   "cat": "cocina",
+   "price": 2.95,
+   "desc": "Toalla de cocina estampada. Color según disponibilidad.",
+   "feats": [
+    "Artículo de limpieza Boom",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/b-198-0.jpg"
+   ],
+   "thumb": "img/p/b-198-s.jpg",
+   "src": "boom-c12-b-198",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 13",
+    "url": ""
+   }
+  },
+  {
+   "id": "B-199",
+   "name": "Alfombra de microfibra",
+   "cat": "hogar",
+   "price": 6.5,
+   "desc": "Alfombra de microfibra absorbente. Color según disponibilidad.",
+   "feats": [
+    "Artículo de limpieza Boom",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/b-199-0.jpg"
+   ],
+   "thumb": "img/p/b-199-s.jpg",
+   "src": "boom-c12-b-199",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 13",
+    "url": ""
+   }
+  },
+  {
+   "id": "B-200",
+   "name": "Guante de microfibra",
+   "cat": "hogar",
+   "price": 2.3,
+   "desc": "Guante de microfibra para limpiar y quitar el polvo. Color según disponibilidad.",
+   "feats": [
+    "Artículo de limpieza Boom",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/b-200-0.jpg"
+   ],
+   "thumb": "img/p/b-200-s.jpg",
+   "src": "boom-c12-b-200",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 13",
+    "url": ""
+   }
+  },
+  {
+   "id": "B-201",
+   "name": "Esponja salva uñas",
+   "cat": "cocina",
+   "price": 1.9,
+   "desc": "Esponja para lavar platos que protege las uñas. Color según disponibilidad.",
+   "feats": [
+    "Artículo de limpieza Boom",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/b-201-0.jpg"
+   ],
+   "thumb": "img/p/b-201-s.jpg",
+   "src": "boom-c12-b-201",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 13",
+    "url": ""
+   }
+  },
+  {
+   "id": "B-202",
+   "name": "Fibra verde multiusos",
+   "cat": "cocina",
+   "price": 1.3,
+   "desc": "Fibra verde multiusos para lavar y restregar. Color según disponibilidad.",
+   "feats": [
+    "Artículo de limpieza Boom",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/b-202-0.jpg"
+   ],
+   "thumb": "img/p/b-202-s.jpg",
+   "src": "boom-c12-b-202",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 13",
+    "url": ""
+   }
+  },
+  {
+   "id": "B-203",
+   "name": "Guantes de látex, talla estándar",
+   "cat": "hogar",
+   "price": 2.15,
+   "desc": "Guantes de látex para la limpieza del hogar, talla estándar. Color según disponibilidad.",
+   "feats": [
+    "Artículo de limpieza Boom",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/b-203-0.jpg"
+   ],
+   "thumb": "img/p/b-203-s.jpg",
+   "src": "boom-c12-b-203",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 13",
+    "url": ""
+   }
+  },
+  {
+   "id": "B-204",
+   "name": "Set de esponjas con diamantes e iones de plata, pack de 2",
+   "cat": "cocina",
+   "price": 2.3,
+   "desc": "Pack de 2 esponjas antivirales con diamantes e iones de plata. Color según disponibilidad.",
+   "feats": [
+    "Artículo de limpieza Boom",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/b-204-0.jpg"
+   ],
+   "thumb": "img/p/b-204-s.jpg",
+   "src": "boom-c12-b-204",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 14",
+    "url": ""
+   }
+  },
+  {
+   "id": "B-205",
+   "name": "Guantes de látex con manga, talla estándar",
+   "cat": "hogar",
+   "price": 2.99,
+   "desc": "Guantes de látex con manga para la limpieza del hogar, talla estándar. Color según disponibilidad.",
+   "feats": [
+    "Artículo de limpieza Boom",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/b-205-0.jpg"
+   ],
+   "thumb": "img/p/b-205-s.jpg",
+   "src": "boom-c12-b-205",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 14",
+    "url": ""
+   }
+  },
+  {
+   "id": "B-206",
+   "name": "Esponja mágica",
+   "cat": "hogar",
+   "price": 1.5,
+   "desc": "Esponja mágica para quitar manchas de paredes y superficies. Color según disponibilidad.",
+   "feats": [
+    "Artículo de limpieza Boom",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/b-206-0.jpg"
+   ],
+   "thumb": "img/p/b-206-s.jpg",
+   "src": "boom-c12-b-206",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 14",
+    "url": ""
+   }
+  },
+  {
+   "id": "B-207",
+   "name": "Cepillo para inodoro con pedestal",
+   "cat": "hogar",
+   "price": 5.2,
+   "desc": "Cepillo para inodoro con su pedestal. Color según disponibilidad.",
+   "feats": [
+    "Artículo de limpieza Boom",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/b-207-0.jpg"
+   ],
+   "thumb": "img/p/b-207-s.jpg",
+   "src": "boom-c12-b-207",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 14",
+    "url": ""
+   }
+  },
+  {
+   "id": "B-208",
+   "name": "Cepillo 360",
+   "cat": "hogar",
+   "price": 2.25,
+   "desc": "Cepillo de limpieza 360. Color según disponibilidad.",
+   "feats": [
+    "Artículo de limpieza Boom",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/b-208-0.jpg"
+   ],
+   "thumb": "img/p/b-208-s.jpg",
+   "src": "boom-c12-b-208",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 14",
+    "url": ""
+   }
+  },
+  {
+   "id": "B-209",
+   "name": "Multitoalla de 10 capas",
+   "cat": "cocina",
+   "price": 3.25,
+   "desc": "Multitoalla de 10 capas para la cocina y el hogar. Color según disponibilidad.",
+   "feats": [
+    "Artículo de limpieza Boom",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/b-209-0.jpg"
+   ],
+   "thumb": "img/p/b-209-s.jpg",
+   "src": "boom-c12-b-209",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 14",
+    "url": ""
+   }
+  },
+  {
+   "id": "B-210",
+   "name": "Paño multiuso en rollo",
+   "cat": "cocina",
+   "price": 7.15,
+   "desc": "Rollo de paños multiuso para la limpieza. Color según disponibilidad.",
+   "feats": [
+    "Artículo de limpieza Boom",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/b-210-0.jpg"
+   ],
+   "thumb": "img/p/b-210-s.jpg",
+   "src": "boom-c12-b-210",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 14",
+    "url": ""
+   }
+  },
+  {
+   "id": "B-211",
+   "name": "Toalla fría",
+   "cat": "deporte",
+   "price": 3.9,
+   "desc": "Toalla fría para refrescarse al hacer ejercicio o en días de calor. Color según disponibilidad.",
+   "feats": [
+    "Artículo de limpieza Boom",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/b-211-0.jpg"
+   ],
+   "thumb": "img/p/b-211-s.jpg",
+   "src": "boom-c12-b-211",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 14",
+    "url": ""
+   }
+  },
+  {
+   "id": "B-212",
+   "name": "Esponja de ducha",
+   "cat": "cuidado",
+   "price": 2.6,
+   "desc": "Esponja de ducha. Color según disponibilidad.",
+   "feats": [
+    "Artículo de limpieza Boom",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/b-212-0.jpg"
+   ],
+   "thumb": "img/p/b-212-s.jpg",
+   "src": "boom-c12-b-212",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 14",
+    "url": ""
+   }
+  },
+  {
+   "id": "B-213",
+   "name": "Mopa multiusos",
+   "cat": "hogar",
+   "price": 6.85,
+   "desc": "Mopa multiusos para limpiar y quitar el polvo. Color según disponibilidad.",
+   "feats": [
+    "Artículo de limpieza Boom",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/b-213-0.jpg"
+   ],
+   "thumb": "img/p/b-213-s.jpg",
+   "src": "boom-c12-b-213",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 14",
+    "url": ""
+   }
+  },
+  {
+   "id": "B-214",
+   "name": "Toalla de microfibra para cabello de niña",
+   "cat": "belleza",
+   "price": 4.15,
+   "desc": "Toalla turbante de microfibra para secar el cabello de las niñas. Color según disponibilidad.",
+   "feats": [
+    "Artículo de limpieza Boom",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/b-214-0.jpg"
+   ],
+   "thumb": "img/p/b-214-s.jpg",
+   "src": "boom-c12-b-214",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 14",
+    "url": ""
+   }
+  },
+  {
+   "id": "B-215",
+   "name": "Cepillo bamboo sencillo",
+   "cat": "hogar",
+   "price": 2.6,
+   "desc": "Cepillo de limpieza sencillo. Color según disponibilidad.",
+   "feats": [
+    "Artículo de limpieza Boom",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/b-215-0.jpg"
+   ],
+   "thumb": "img/p/b-215-s.jpg",
+   "src": "boom-c12-b-215",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 14",
+    "url": ""
+   }
+  },
+  {
+   "id": "B-216",
+   "name": "Repuesto de trapeador extensible",
+   "cat": "hogar",
+   "price": 4.25,
+   "desc": "Repuesto de microfibra para el trapeador extensible. Color según disponibilidad.",
+   "feats": [
+    "Artículo de limpieza Boom",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/b-216-0.jpg"
+   ],
+   "thumb": "img/p/b-216-s.jpg",
+   "src": "boom-c12-b-216",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 14",
+    "url": ""
+   }
+  },
+  {
+   "id": "B-217",
+   "name": "Bolso para lavar zapatos",
+   "cat": "hogar",
+   "price": 6.2,
+   "desc": "Bolso para lavar zapatos en la lavadora. Color según disponibilidad.",
+   "feats": [
+    "Artículo de limpieza Boom",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/b-217-0.jpg"
+   ],
+   "thumb": "img/p/b-217-s.jpg",
+   "src": "boom-c12-b-217",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 14",
+    "url": ""
+   }
+  },
+  {
+   "id": "B-218",
+   "name": "Toalla absorbente en rollo",
+   "cat": "cocina",
+   "price": 4.5,
+   "desc": "Rollo de toalla absorbente. Color según disponibilidad.",
+   "feats": [
+    "Artículo de limpieza Boom",
+    "Color según disponibilidad"
+   ],
+   "imgs": [
+    "img/p/b-218-0.jpg"
+   ],
+   "thumb": "img/p/b-218-s.jpg",
+   "src": "boom-c12-b-218",
+   "added": "2026-11-06T12:00:00+00:00",
+   "status": "aprobado",
+   "linea": "boom",
+   "pedir": {
+    "tienda": "Catálogo Boom C12",
+    "ref": "página 14",
+    "url": ""
+   }
   }
  ],
  "updated": "2026-11-20T03:14:56.532980+00:00"

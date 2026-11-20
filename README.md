@@ -16,6 +16,17 @@ Cada pedido trae, junto a "Productos", la columna **Foto artículo** (la foto de
 
 La lectura automática del comprobante acepta el monto que escribió la clienta, el abono o el total, aunque el lector de la foto separe los decimales ("10 , 00"), no traiga centavos ("$20") o confunda la O con el cero. Si un pedido quedó con una alerta que no corresponde, en `#revisar` → Pedidos → el pedido, toca **Volver a leer el comprobante**.
 
+## Productos Boom (catálogo por campaña)
+
+Además de lo que llega de Telegram, la tienda vende los productos del catálogo Boom (marcas WIP WIP, TesQui, Ameli, Aku y RunRun) con los precios del catálogo, tal cual. Se ven con el botón verde **Productos Boom**, junto a Categorías y Filtro (y en la barra flotante). La dirección `https://tiendaonline-ec.github.io/#boom` abre directo esa sección, para compartirla.
+
+- En `products.json` llevan `"linea": "boom"`, ids `B-101` en adelante y `"status": "aprobado"`.
+- Si el catálogo tiene oferta, `price` es el precio de oferta, `antes` el precio normal (sale tachado) y `hasta` el último día de la oferta. Desde el día siguiente la tienda y el programa de Google cobran solos el precio normal.
+- `pedir` dice dónde pedirlo: "Catálogo Boom C12 · página N" y el enlace al folleto del producto. Sale en la página de revisión, en la hoja de pedidos y en el correo.
+- Los aromas al mismo precio van en un solo producto con botones (por ejemplo, el desinfectante de 1000 ml); si cambia el tamaño o el precio, son productos aparte.
+- Las fotos se recortan de las páginas del PDF (sin textos ni precios) y se mejoran con súper resolución.
+- **Cada campaña nueva** (la C12 va del 6 de noviembre al 3 de diciembre de 2026): pasar el PDF nuevo para actualizar precios, ofertas y productos.
+
 ## Color o modelo elegido
 
 Cuando un producto tiene botones para elegir, la clienta no puede agregarlo sin elegir, y cada elección es una línea aparte del carrito (el mismo adorno en rojo y en azul son dos líneas). En la hoja, "Productos" dice por ejemplo "1 x Adorno navideño (Color: Rojo)", "Códigos" dice "P-216 x1 [Color: Rojo]" y la foto del artículo es la del color elegido si se sabe cuál es. El correo y la página de revisión también muestran la elección.

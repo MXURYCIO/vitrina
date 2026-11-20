@@ -586,6 +586,30 @@ body.rv-ped #tools,body.rv-ped .sec-head,body.rv-ped #grid,body.rv-ped #empty{di
 .feats svg{flex:none;width:18px;height:18px;margin-top:2px;color:var(--ok)}
 .buy-row{display:flex;gap:10px;align-items:center}
 .buy-row .btn{flex:1;min-width:0}
+/* opciones a elegir: color, modelo, diseño */
+.vr{margin-top:18px;padding:14px;border-radius:18px;background:var(--panel-in);box-shadow:0 0 0 .5px var(--hair),inset 0 1px 0 var(--rim-lo)}
+.vr + .vr{margin-top:10px}
+.vr-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 8px;margin:0 2px 12px;font-size:15px;font-weight:700}
+.vr-sel{font-weight:600;color:var(--accent)}
+.vr-opts{display:flex;flex-wrap:wrap;gap:8px}
+.vr-opt{display:inline-flex;align-items:center;gap:8px;min-height:44px;max-width:100%;padding:0 16px;border:0;border-radius:22px;background:var(--surface);color:var(--fg);font-size:15px;font-weight:600;text-align:left;
+  box-shadow:0 0 0 1px var(--hair),0 2px 6px -4px var(--shadow);transition:transform .3s var(--ease-spring),background .2s,color .2s,box-shadow .2s}
+.vr-opt:active{transform:scale(.95)}
+.vr-opt[aria-checked="true"]{background:var(--accent-soft);color:var(--accent);box-shadow:0 0 0 2px var(--accent)}
+.vr-dot{flex:none;width:18px;height:18px;border-radius:50%;background:var(--c);box-shadow:inset 0 0 0 1px rgba(0,0,0,.16),0 0 0 1px var(--hair)}
+.vr-dot.clear{background:repeating-linear-gradient(45deg,var(--hair) 0 3px,transparent 3px 6px)}
+.vr-msg{display:flex;align-items:center;gap:6px;margin:12px 2px 0;font-size:14px;font-weight:600;color:var(--bad)}
+.vr-msg svg{flex:none;width:16px;height:16px}
+.vr.err{box-shadow:0 0 0 1.5px var(--bad)}
+.vr.shake{animation:shake .4s}
+@keyframes shake{20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}}
+.line-opt{display:inline-flex;align-items:center;gap:5px;max-width:100%;margin-top:4px;padding:3px 9px;border:0;border-radius:10px;background:var(--accent-soft);color:var(--accent);font-size:13px;font-weight:600;text-align:left}
+.line-opt svg{flex:none;width:13px;height:13px}
+.line-opt.static{display:inline-block}
+.line-pick{display:inline-flex;align-items:center;gap:6px;margin-top:6px;padding:7px 11px;border:0;border-radius:12px;background:var(--warn-soft);color:var(--warn);font-size:13px;font-weight:700;text-align:left}
+.line-pick svg{flex:none;width:15px;height:15px}
+.cat-opt{color:var(--accent);font-weight:600}
+.rv-opt{display:inline-block;margin-left:6px;padding:2px 8px;border-radius:9px;background:var(--accent-soft);color:var(--accent);font-size:13px;font-weight:700}
 .stepper{flex:none;display:flex;align-items:center;height:54px;padding:4px;border-radius:27px;background:var(--glass-strong);box-shadow:0 0 0 .5px var(--edge),inset 0 1px 0 var(--rim-hi)}
 .stepper button{width:46px;height:46px;border:0;border-radius:23px;background:none;display:grid;place-items:center;color:var(--fg);transition:background .2s}
 .stepper button:active{background:var(--hair)}
@@ -1066,9 +1090,10 @@ function renderGrid() {
       <div class="media${hasPhoto(p) ? ' photo' : ''}" style="${grad(p)}">
         <button class="media-btn" type="button" data-open="${p.id}" aria-label="Ver ${esc(p.name)}">${visual(p, 0, true)}</button>
         <span class="price-pill">${money(p.price)}</span>
-        <button class="add" type="button" data-add="${p.id}" aria-label="Agregar ${esc(p.name)} al carrito">${ic('plus')}</button>
+        ${grupos(p).length ? `<button class="add" type="button" data-open="${p.id}" aria-label="Elegir ${esc(faltaElegir(p))} de ${esc(p.name)}">${ic('plus')}</button>`
+          : `<button class="add" type="button" data-add="${p.id}" aria-label="Agregar ${esc(p.name)} al carrito">${ic('plus')}</button>`}
       </div>
-      <button class="card-text" type="button" data-open="${p.id}"><span class="name">${esc(p.name)}</span><span class="cat">${catLabel(p.cat)}</span></button>
+      <button class="card-text" type="button" data-open="${p.id}"><span class="name">${esc(p.name)}</span><span class="cat">${grupos(p).length ? `<span class="cat-opt">${esc(optResumen(p))}</span>` : catLabel(p.cat)}</span></button>
     </article>`).join('');
   $('#secTitle').textContent = state.q.trim() ? 'Resultados' : state.cat === 'todo' ? (REVIEW ? 'Productos' : state.sort !== 'rec' ? 'Todos los productos' : 'Llegaron hoy') : catLabel(state.cat);
   $('#count').textContent = `${list.length} ${list.length === 1 ? 'producto' : 'productos'}`;
@@ -1091,9 +1116,68 @@ function deadline() {
   $('#countdown').textContent = h >= 36 ? `Cierra en ${Math.round(h / 24)} días` : h >= 1 ? `Cierra en ${h} ${h === 1 ? 'hora' : 'horas'}` : 'Cierra en menos de una hora';
 }
 
+/* ---------- Opciones a elegir (color, modelo, diseño...) ----------
+   En products.json: "opciones": [{"nombre": "Color", "valores": ["Rojo", "Azul"], "fotos": [0, 2]}] ("fotos" es opcional:
+   qué foto muestra cada valor). Solo se ponen cuando el proveedor ofrece elegir; si vende surtido, va en la descripción.
+   En el carrito cada elección es una línea aparte: "P-216|Color: Rojo". */
+const grupos = p => (p && Array.isArray(p.opciones) ? p.opciones : []).filter(g => g && g.nombre && Array.isArray(g.valores) && g.valores.length > 1);
+const optParse = o => { const m = {}; String(o || '').split('·').forEach(par => { const k = par.indexOf(':'); if (k > 0) m[sinTildes(par.slice(0, k))] = par.slice(k + 1).trim(); }); return m; };
+// la elección escrita como en el catálogo, '' si el producto no tiene opciones, o null si falta elegir
+function optNorm(p, o) {
+  const gs = grupos(p); if (!gs.length) return '';
+  const m = optParse(o), partes = [];
+  for (const g of gs) {
+    const v = g.valores.find(x => sinTildes(x) === sinTildes(m[sinTildes(g.nombre)]));
+    if (!v) return null;
+    partes.push(`${g.nombre}: ${v}`);
+  }
+  return partes.join(' · ');
+}
+const lineKey = (id, o) => o ? `${id}|${o}` : id;
+const keyId = k => String(k).split('|')[0];
+const optCorto = o => String(o || '').split(' · ').map(s => s.replace(/^[^:]+:\s*/, '')).join(', ');
+const plural = w => { const s = String(w).toLowerCase(); return /[aeiouáéíóú]$/.test(s) ? s + 's' : /z$/.test(s) ? s.slice(0, -1) + 'ces' : s + 'es'; };
+const articulo = w => { const s = sinTildes(w); return /a$/.test(s) && !/(aroma|tema|sistema|clima|mapa)$/.test(s) ? 'la' : 'el'; };
+const optResumen = p => grupos(p).map(g => `${g.valores.length} ${plural(g.nombre)}`).join(' · ');
+const faltaElegir = p => grupos(p).map(g => `${articulo(g.nombre)} ${g.nombre.toLowerCase()}`).join(' y ');
+// foto del valor elegido, si el catálogo la indica
+function fotoIdx(p, o) {
+  if (!o || !hasPhoto(p)) return 0;
+  const m = optParse(o);
+  for (const g of grupos(p)) {
+    if (!Array.isArray(g.fotos)) continue;
+    const i = g.valores.findIndex(v => sinTildes(v) === sinTildes(m[sinTildes(g.nombre)]));
+    const k = i >= 0 ? g.fotos[i] : null;
+    if (k != null && p.imgs[k]) return k;
+  }
+  return 0;
+}
+const COLORES = { rojo:'#D93025', azul:'#1E66F5', azulmarino:'#1F2A55', amarillo:'#F6C026', verde:'#2E9E4F', verdeagua:'#76D7C4', negro:'#1B1B1F', blanco:'#FFFFFF',
+  rosado:'#F48FB1', rosa:'#F48FB1', fucsia:'#E0218A', morado:'#7B3FB5', lila:'#B39DDB', violeta:'#7E57C2', gris:'#8E9399', plateado:'#C7CCD1', plata:'#C7CCD1',
+  dorado:'#D4AF37', cafe:'#7B4A2A', marron:'#7B4A2A', beige:'#E3D3B5', crema:'#F3E7C9', celeste:'#7CC4F2', turquesa:'#20B2AA', naranja:'#F57C00',
+  anaranjado:'#F57C00', vino:'#7B1E3A', menta:'#98D9C2', coral:'#FF7F66', mostaza:'#D4A017', verdeoliva:'#6B7A3A', transparente:'transparent' };
+// "Roja", "Luz amarilla", "Azul marino" también tienen su punto de color
+function colorDe(v) {
+  const s = sinTildes(v).replace(/^luz/, ''), claves = Object.keys(COLORES).sort((a, b) => b.length - a.length);
+  for (const x of [s, s.replace(/a$/, 'o')]) { if (COLORES[x]) return COLORES[x]; const k = claves.find(c => x.startsWith(c)); if (k) return COLORES[k]; }
+  return '';
+}
+let pdSel = {};
+function optsHtml(p) {
+  return grupos(p).map((g, gi) => {
+    const esColor = sinTildes(g.nombre).startsWith('color'), nom = esc(g.nombre.toLowerCase());
+    return `<div class="vr" id="vr${gi}" role="radiogroup" aria-labelledby="vrL${gi}">
+      <p class="vr-head" id="vrL${gi}">Elige ${articulo(g.nombre)} ${nom}<span class="vr-sel" id="vrS${gi}">${pdSel[gi] ? esc(pdSel[gi]) : ''}</span></p>
+      <div class="vr-opts">${g.valores.map((v, vi) => { const c = esColor ? colorDe(v) : '';
+        return `<button class="vr-opt" type="button" role="radio" aria-checked="${pdSel[gi] === v}" data-act="vr" data-g="${gi}" data-i="${vi}">${c ? `<span class="vr-dot${c === 'transparent' ? ' clear' : ''}" style="--c:${c}"></span>` : ''}<span>${esc(v)}</span></button>`; }).join('')}</div>
+      <p class="vr-msg" id="vrM${gi}" hidden>${ic('warn')}Elige ${articulo(g.nombre)} ${nom} que quieres para agregarlo al carrito.</p></div>`;
+  }).join('');
+}
+
 /* ---------- Carrito ---------- */
 const saveCart = () => store.set('vt-cart', cart);
-const cartLines = () => Object.entries(cart).filter(([id, q]) => byId[id] && q > 0).map(([id, q]) => ({ p: byId[id], q }));
+const cartLines = () => Object.entries(cart).map(([k, q]) => ({ k, p: byId[keyId(k)], q, o: k.includes('|') ? k.slice(k.indexOf('|') + 1) : '' })).filter(l => l.p && l.q > 0);
+const lineMal = () => cartLines().find(l => optNorm(l.p, l.o) === null);
 const totals = () => { const t = r2(cartLines().reduce((s, l) => s + l.p.price * l.q, 0)); const a = r2(t * ABONO); return { t, a, s: r2(t - a) }; };
 function updateBadge(bump) {
   const n = Object.values(cart).reduce((s, q) => s + q, 0);
@@ -1120,11 +1204,13 @@ function fly(from) {
   ], { duration: 640, easing: 'cubic-bezier(.45,0,.4,1)' });
   anim.onfinish = () => { dot.remove(); updateBadge(true); };
 }
-function addToCart(id, qty, from) {
-  const p = byId[id]; if (!p) return;
-  cart[id] = Math.min(20, (cart[id] || 0) + qty); saveCart();
+function addToCart(k, qty, from) {
+  const p = byId[keyId(k)]; if (!p) return;
+  if (grupos(p).length && !k.includes('|')) { openProduct(p.id); return; }   // primero hay que elegir color o modelo
+  cart[k] = Math.min(20, (cart[k] || 0) + qty); saveCart();
   fly(from);
-  toast(`Agregado: ${p.name}`);
+  const o = k.includes('|') ? k.slice(k.indexOf('|') + 1) : '';
+  toast(`Agregado: ${p.name}${o ? ` (${optCorto(o)})` : ''}`);
 }
 function setQty(id, q) {
   if (q <= 0) delete cart[id]; else cart[id] = Math.min(20, q);
@@ -1158,9 +1244,16 @@ function closeSheet() {
   if (lastFocus && lastFocus.focus && document.contains(lastFocus)) lastFocus.focus({ preventScroll: true });
 }
 
-function openProduct(id) {
+function openProduct(id, rep) {
   const p = byId[id]; if (!p) return;
-  sheet.dataset.pid = id; sheet.dataset.qty = '1';
+  // rep: línea del carrito a la que le falta elegir (o se cambia) el color o modelo
+  const q0 = rep && cart[rep] ? Math.min(20, cart[rep]) : 1;
+  sheet.dataset.pid = id; sheet.dataset.qty = String(q0); sheet.dataset.rep = rep || '';
+  pdSel = {};
+  if (rep && rep.includes('|')) {
+    const m = optParse(rep.slice(rep.indexOf('|') + 1));
+    grupos(p).forEach((g, i) => { const v = g.valores.find(x => sinTildes(x) === sinTildes(m[sinTildes(g.nombre)])); if (v) pdSel[i] = v; });
+  }
   visVer(id);
   openSheet('product', p.name,
     `${hasPhoto(p) && p.imgs.length > 1
@@ -1169,10 +1262,11 @@ function openProduct(id) {
      ${REVIEW ? `<p><span class="rv-pill" data-s="${eff(p)}">${RV_LABEL[eff(p)] || eff(p)}</span></p>${REVC[p.id] && eff(p) === 'editar' ? `<p class="rv-note">${ic('pencil')}<span>${esc(REVC[p.id])}</span></p>` : ''}${costoBox(p)}${origenBox(p.id)}<button class="btn secondary pd-estado" type="button" data-act="estado" data-id="${p.id}">${ic('image')}Imagen para estados de WhatsApp</button>` : ''}
      <div class="pd-row"><div><p class="pd-cat">${catLabel(p.cat)} · ${p.id}</p><p class="pd-price">${money(p.price)}</p></div>
        <p class="pd-abono">${ic('shield')}Lo reservas con ${money(p.price * ABONO)}</p></div>
+     ${optsHtml(p)}
      <p class="pd-desc">${esc(p.desc)}</p>
      <ul class="feats">${p.feats.map(f => `<li>${ic('check')}<span>${esc(f)}</span></li>`).join('')}</ul>`,
-    REVIEW ? rvActs(p, true) : `<div class="buy-row"><div class="stepper"><button type="button" data-act="pdq" data-d="-1" aria-label="Quitar uno">${ic('minus')}</button><output id="pdQty" aria-live="polite">1</output><button type="button" data-act="pdq" data-d="1" aria-label="Agregar uno">${ic('plus')}</button></div>
-     <button class="btn primary" type="button" data-act="pdadd">Agregar · <span id="pdTotal">${money(p.price)}</span></button></div>`);
+    REVIEW ? rvActs(p, true) : `<div class="buy-row"><div class="stepper"><button type="button" data-act="pdq" data-d="-1" aria-label="Quitar uno">${ic('minus')}</button><output id="pdQty" aria-live="polite">${q0}</output><button type="button" data-act="pdq" data-d="1" aria-label="Agregar uno">${ic('plus')}</button></div>
+     <button class="btn primary" type="button" data-act="pdadd">${rep ? 'Listo' : 'Agregar'} · <span id="pdTotal">${money(p.price * q0)}</span></button></div>`);
   const tr = $('#gTrack');
   if (tr) {
     tr.addEventListener('scroll', galSync, { passive: true });
@@ -1196,7 +1290,35 @@ function openProduct(id) {
     };
     tr.addEventListener('pointerup', end); tr.addEventListener('pointercancel', end);
     tr.addEventListener('click', e => { if (moved) { e.preventDefault(); e.stopPropagation(); moved = false; } }, true);
+    const f0 = rep ? fotoIdx(p, rep.slice(rep.indexOf('|') + 1)) : 0;
+    if (f0) requestAnimationFrame(() => { tr.scrollLeft = f0 * tr.clientWidth; galSync(); });
   }
+}
+function pickOpt(t) {
+  const p = byId[sheet.dataset.pid], gi = +t.dataset.g, g = grupos(p)[gi]; if (!g) return;
+  const v = g.valores[+t.dataset.i]; pdSel[gi] = v;
+  $$(`#vr${gi} .vr-opt`).forEach(b => b.setAttribute('aria-checked', String(b === t)));
+  $('#vrS' + gi).textContent = v;
+  $('#vr' + gi).classList.remove('err'); $('#vrM' + gi).hidden = true;
+  const f = Array.isArray(g.fotos) ? g.fotos[+t.dataset.i] : null;
+  if (f != null && $('#gTrack')) galTo(+f);
+}
+function pdAdd(t) {
+  const p = byId[sheet.dataset.pid]; if (!p) return;
+  const gs = grupos(p), faltan = gs.map((g, i) => i).filter(i => !pdSel[i]);
+  if (faltan.length) {
+    faltan.forEach(i => {
+      const box = $('#vr' + i); box.classList.add('err'); $('#vrM' + i).hidden = false;
+      if (!reduceMotion) { box.classList.remove('shake'); void box.offsetWidth; box.classList.add('shake'); }
+    });
+    $('#vr' + faltan[0]).scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'center' });
+    return;
+  }
+  const k = lineKey(p.id, gs.map((g, i) => `${g.nombre}: ${pdSel[i]}`).join(' · '));
+  const rep = sheet.dataset.rep;
+  if (rep) { delete cart[rep]; saveCart(); }
+  addToCart(k, +sheet.dataset.qty || 1, t);
+  if (rep) openCart(); else closeSheet();
 }
 const galIdx = () => { const tr = $('#gTrack'); return tr ? Math.round(tr.scrollLeft / Math.max(1, tr.clientWidth)) : 0; };
 function galSync() {
@@ -1224,12 +1346,13 @@ function openCart() {
   }
   const { t, a, s } = totals();
   openSheet('cart', 'Carrito',
-    `<ul class="lines">${lines.map(({ p, q }) => `<li class="line">
-        <div class="thumb${hasPhoto(p) ? ' photo' : ''}" style="${grad(p)}">${visual(p)}</div>
-        <div class="line-main"><p class="line-name">${esc(p.name)}</p><p class="line-price">${money(p.price)} c/u</p>
-          <div class="line-ctl"><div class="stepper sm"><button type="button" data-act="q" data-id="${p.id}" data-d="-1" aria-label="Quitar uno"${q === 1 ? ' disabled' : ''}>${ic('minus')}</button><output>${q}</output><button type="button" data-act="q" data-id="${p.id}" data-d="1" aria-label="Agregar uno"${q >= 20 ? ' disabled' : ''}>${ic('plus')}</button></div>
-            <button class="line-rm" type="button" data-act="rm" data-id="${p.id}" aria-label="Quitar ${esc(p.name)} del carrito">${ic('trash')}Quitar</button></div></div>
-        <p class="line-total">${money(p.price * q)}</p></li>`).join('')}</ul>
+    `<ul class="lines">${lines.map(({ k, p, q, o }) => { const op = optNorm(p, o); return `<li class="line${op === null ? ' need' : ''}">
+        <div class="thumb${hasPhoto(p) ? ' photo' : ''}" style="${grad(p)}">${visual(p, fotoIdx(p, op))}</div>
+        <div class="line-main"><p class="line-name">${esc(p.name)}</p>${op ? `<button class="line-opt" type="button" data-act="pick" data-id="${esc(k)}" aria-label="Cambiar: ${esc(op)}">${esc(op)}${ic('pencil')}</button>` : ''}
+          ${op === null ? `<button class="line-pick" type="button" data-act="pick" data-id="${esc(k)}">${ic('warn')}Elige ${esc(faltaElegir(p))}</button>` : ''}<p class="line-price">${money(p.price)} c/u</p>
+          <div class="line-ctl"><div class="stepper sm"><button type="button" data-act="q" data-id="${esc(k)}" data-d="-1" aria-label="Quitar uno"${q === 1 ? ' disabled' : ''}>${ic('minus')}</button><output>${q}</output><button type="button" data-act="q" data-id="${esc(k)}" data-d="1" aria-label="Agregar uno"${q >= 20 ? ' disabled' : ''}>${ic('plus')}</button></div>
+            <button class="line-rm" type="button" data-act="rm" data-id="${esc(k)}" aria-label="Quitar ${esc(p.name)} del carrito">${ic('trash')}Quitar</button></div></div>
+        <p class="line-total">${money(p.price * q)}</p></li>`; }).join('')}</ul>
      <div class="cart-clear" id="cartClear">${clearBtn()}</div>
      <dl class="sum"><div><dt>Total del pedido</dt><dd>${money(t)}</dd></div><div class="hl"><dt>Abono para reservar (50%)</dt><dd>${money(a)}</dd></div><div><dt>Saldo a pagar al recibir</dt><dd>${money(s)}</dd></div></dl>
      <p class="ship-mini">${ic('cash')}<span>Entregamos el pedido completo, no por partes. El saldo lo pagas al recibirlo.</span></p>
@@ -1256,6 +1379,8 @@ const bankRow = (k, v) => `<div class="bank-row"><span class="k">${k}</span><spa
 function openCheckout() {
   const { t, a } = totals();
   if (!t) { openCart(); return; }
+  const mal = lineMal();
+  if (mal) { openProduct(mal.p.id, mal.k); toast(`Elige ${faltaElegir(mal.p)} de ${mal.p.name}`, 3500); return; }
   const d = store.get('vt-draft', {}) || {};
   openSheet('checkout', 'Reservar pedido',
     `${LIVE ? '' : '<p class="demo-note">Versión de prueba: el pedido se guarda solo en este celular.</p>'}
@@ -1394,8 +1519,10 @@ async function submitCheckout() {
     if (el.type !== 'file' && el.type !== 'checkbox') el.focus({ preventScroll: true });
     return;
   }
+  const mal = lineMal();
+  if (mal) { openProduct(mal.p.id, mal.k); toast(`Elige ${faltaElegir(mal.p)} de ${mal.p.name}`, 3500); return; }
   const now = new Date().toISOString();
-  const items = cartLines().map(({ p, q }) => ({ id: p.id, name: p.name, price: p.price, qty: q }));
+  const items = cartLines().map(({ p, q, o }) => ({ id: p.id, name: p.name, price: p.price, qty: q, opcion: optNorm(p, o) || '' }));
   const order = { code: '', date: now, name: v('cNombre'), last: v('cApellido'), phone: v('cCel'),
     city: v('cCiudad'), address: v('cDir').replace(/\s+/g, ' '),
     items, total: t, abono: a, status: 'pendiente', receipt: { num: v('cNum'), amount: monto }, termsAt: now };
@@ -1459,7 +1586,7 @@ function openOrderObj(o) {
   const rows = (o.items || []).map(it => {
     const p = byId[it.id]; const name = it.name || (p && p.name); const price = it.price != null ? it.price : (p && p.price);
     if (!name || price == null) return '';
-    return `<li class="line">${p ? `<div class="thumb${hasPhoto(p) ? ' photo' : ''}" style="${grad(p)}">${visual(p)}</div>` : ''}<div class="line-main"><p class="line-name">${esc(name)}</p><p class="line-price">${it.qty} × ${money(price)}</p></div><p class="line-total">${money(price * it.qty)}</p></li>`;
+    return `<li class="line">${p ? `<div class="thumb${hasPhoto(p) ? ' photo' : ''}" style="${grad(p)}">${visual(p, fotoIdx(p, it.opcion))}</div>` : ''}<div class="line-main"><p class="line-name">${esc(name)}</p>${it.opcion ? `<p class="line-opt static">${esc(it.opcion)}</p>` : ''}<p class="line-price">${it.qty} × ${money(price)}</p></div><p class="line-total">${money(price * it.qty)}</p></li>`;
   }).join('') || (o.lines || []).map(l => `<li class="line"><div class="line-main"><p class="line-name">${esc(l)}</p></div></li>`).join('');
   openSheet('order', 'Mi pedido',
     `${o.example ? '<p class="demo-note">Pedido de ejemplo para mostrar el seguimiento.</p>' : ''}
@@ -1549,9 +1676,11 @@ document.addEventListener('click', e => {
     case 'setcat': state.cat = t.dataset.v; closeSheet(); renderChips(); renderGrid(); toGrid(); break;
     case 'setsort': state.sort = t.dataset.v; store.set('vt-sort', state.sort); closeSheet(); renderChips(); renderGrid(); toGrid(); break;
     case 'estado': imagenEstado(t.dataset.id, t); break;
-    case 'pdadd': addToCart(sheet.dataset.pid, +sheet.dataset.qty || 1, t); closeSheet(); break;
+    case 'vr': pickOpt(t); break;
+    case 'pdadd': pdAdd(t); break;
+    case 'pick': openProduct(keyId(id), id); break;
     case 'q': setQty(id, (cart[id] || 0) + (+t.dataset.d)); openCart(); break;
-    case 'rm': { const p = byId[id]; setQty(id, 0); openCart(); if (p) toast(`Quitado: ${p.name}`); break; }
+    case 'rm': { const p = byId[keyId(id)]; setQty(id, 0); openCart(); if (p) toast(`Quitado: ${p.name}`); break; }
     case 'clearask': $('#cartClear').innerHTML = `<span>¿Quitar todos los productos?</span><button class="link-btn plain" type="button" data-act="clearno">Cancelar</button><button class="link-btn solid" type="button" data-act="clearyes">Sí, vaciar</button>`; break;
     case 'clearno': $('#cartClear').innerHTML = clearBtn(); break;
     case 'clearyes': cart = {}; saveCart(); updateBadge(); openCart(); toast('Carrito vacío'); break;
@@ -1852,7 +1981,7 @@ async function loadCatalog() {
 function applyVisible() {
   PRODUCTS = REVIEW ? ALL : ALL.filter(p => eff(p) === 'aprobado');
   byId = Object.fromEntries(PRODUCTS.map(p => [p.id, p]));
-  if (estDone && !REVIEW) { Object.keys(cart).forEach(k => { if (!byId[k]) delete cart[k]; }); saveCart(); }
+  if (estDone && !REVIEW) { Object.keys(cart).forEach(k => { if (!byId[keyId(k)]) delete cart[k]; }); saveCart(); }
   updateBadge();
   if (state.cat !== 'todo' && !PRODUCTS.some(p => p.cat === state.cat)) state.cat = 'todo';
   renderChips(); renderGrid(); renderOrders(); footNote();
@@ -1876,7 +2005,7 @@ function rvRow(p) {
     <div class="rv-main">
       <div class="rv-top"><button class="rv-name" type="button" data-open="${p.id}">${esc(p.name)}</button><span class="rv-pill" data-s="${s}">${RV_LABEL[s] || s}</span></div>
       ${rvPrices(p)}
-      <p class="rv-meta">${catLabel(p.cat)} · ${p.id}</p>
+      <p class="rv-meta">${catLabel(p.cat)} · ${p.id}${grupos(p).length ? ` · <span class="cat-opt">${esc(optResumen(p))}</span>` : ''}</p>
       ${REVC[p.id] && s === 'editar' ? `<p class="rv-note">${ic('pencil')}<span>${esc(REVC[p.id])}</span></p>` : ''}
     </div>
     ${rvActs(p)}</article>`;
@@ -1903,7 +2032,7 @@ function renderReviewBar() {
 const OP_LABEL = { pendiente: 'Pendiente', aprobado: 'Aprobado', camino: 'En camino', entregado: 'Entregado', rechazado: 'Rechazado' };
 let rvTab = 'productos', rvOrders = [], rvOrdersOk = false, rvFilter = 'todos', rvQuery = '', rvBusy = false;
 // versión del programa de Google (google-apps-script/Codigo.gs) que necesita esta página
-const GAS_VERSION = '2026-11-20';
+const GAS_VERSION = '2026-11-20c';
 var gasVieja = false;
 const GAS_MSG = 'El programa de Google de la tienda está desactualizado. Copia otra vez Codigo.gs en Apps Script e implementa una nueva versión (Implementar → Administrar implementaciones → editar → Nueva versión).';
 function verGas(r) {
@@ -1965,9 +2094,11 @@ function openRvOrder(code) {
     <h3 class="od-sub">Cambiar estado</h3>
     <div class="rv-estados">${Object.keys(OP_LABEL).map(k => `<button class="rv-est" type="button" data-act="rvest" data-code="${esc(o.code)}" data-s="${k}" aria-pressed="${o.estado === k}">${OP_LABEL[k]}</button>`).join('')}</div>
     <h3 class="od-sub">Productos</h3>
-    <ul class="rv-plist">${o.productos.map((l, i) => { const id = (String(o.codigos || '').split(',')[i] || '').trim().split(/\s+/)[0]; const pr = origenDe(id);
-      const ft = ALL.find(p => p.id === id); const th = ft && (ft.thumb || (ft.imgs || [])[0]);
-      return `<li${th ? ' class="rv-pi"' : ''}>${th ? `<img class="rv-pimg" src="${esc(th)}" alt="" loading="lazy">` : ''}<span>${esc(l)}${id ? ` <small class="muted">${esc(id)}</small>` : ''}</span>${pr ? `<a class="rv-prov" href="${esc(pr.url)}" target="_blank" rel="noopener">${ic('store')}<span>Pedir en <b>${esc(pr.tienda)}</b> · publicación ${esc(pr.num)}</span>${ic('link')}</a>` : (o.proveedor ? '' : `<span class="rv-prov off">Proveedor sin dato</span>`)}</li>`; }).join('')}</ul>
+    <ul class="rv-plist">${o.productos.map((l, i) => { const cod = (String(o.codigos || '').split(',')[i] || '').trim(); const id = cod.split(/\s+/)[0]; const pr = origenDe(id);
+      const opc = (cod.match(/\[([^\]]*)\]/) || [])[1] || '';
+      const ft = ALL.find(p => p.id === id); const fi = ft ? fotoIdx(ft, opc) : 0; const th = ft && (fi ? ft.imgs[fi] : (ft.thumb || (ft.imgs || [])[0]));
+      const sinOpc = opc ? l.replace(` (${opc})`, '') : l;
+      return `<li${th ? ' class="rv-pi"' : ''}>${th ? `<img class="rv-pimg" src="${esc(th)}" alt="" loading="lazy">` : ''}<span>${esc(sinOpc)}${id ? ` <small class="muted">${esc(id)}</small>` : ''}${opc ? `<span class="rv-opt">${esc(opc)}</span>` : ''}</span>${pr ? `<a class="rv-prov" href="${esc(pr.url)}" target="_blank" rel="noopener">${ic('store')}<span>Pedir en <b>${esc(pr.tienda)}</b> · publicación ${esc(pr.num)}</span>${ic('link')}</a>` : (o.proveedor ? '' : `<span class="rv-prov off">Proveedor sin dato</span>`)}</li>`; }).join('')}</ul>
     ${!Object.keys(ORIGEN).length && o.proveedor ? `<p class="rv-note">${ic('store')}<span>${esc(o.proveedor)}</span></p>` : ''}
     <dl class="sum"><div><dt>Total</dt><dd>${money(o.total)}</dd></div><div class="hl"><dt>Abono</dt><dd>${money(o.abono)}</dd></div><div><dt>Saldo por cobrar</dt><dd>${money(o.saldo)}</dd></div></dl>
     <h3 class="od-sub">Comprobante</h3>

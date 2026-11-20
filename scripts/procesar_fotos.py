@@ -9,6 +9,7 @@ Si la foto traía precio, escribe en ese lugar el precio nuevo de la tienda.
 Uso: python scripts/procesar_fotos.py decisiones.json carpeta_entrada
   decisiones.json: {"items": [{"id": "VT-101", "price": 14, "fotos": ["img/x.jpg", ...], ...}]}
 Escribe las fotos en img/p/ y agrega o actualiza los productos en products.json.
+Si un item trae "opciones" (colores o modelos para elegir), se copian y sus "fotos" se ajustan a las fotos que quedan.
 """
 import json
 import os
@@ -100,6 +101,24 @@ def limpiar(ruta, precio):
     return pil, borrado, bool(cajas_precio), nota
 
 
+def opciones_ok(opciones, nueva):
+    """Opciones para elegir (CRITERIOS.md, sección 3). "fotos" se da con la posición en la lista "fotos" de decisiones.json
+    y aquí se pasa a la posición final en imgs."""
+    salida = []
+    for g in opciones or []:
+        valores = [' '.join(str(v).replace(',', ' ').replace('[', '').replace(']', '').replace('|', ' ').split()) for v in g.get('valores', [])]
+        valores = [v for v in valores if v]
+        if not g.get('nombre') or len(valores) < 2:
+            continue
+        grupo = {'nombre': str(g['nombre']).strip(), 'valores': valores}
+        if isinstance(g.get('fotos'), list) and len(g['fotos']) == len(valores):
+            fotos = [nueva[i] if isinstance(i, int) and 0 <= i < len(nueva) else None for i in g['fotos']]
+            if any(f is not None for f in fotos):
+                grupo['fotos'] = fotos
+        salida.append(grupo)
+    return salida
+
+
 def main():
     decisiones, entrada = sys.argv[1], sys.argv[2]
     with open(decisiones, encoding='utf-8') as f:
@@ -119,6 +138,11 @@ def main():
                 print(f"{it['id']} foto {i}: texto borrado{', precio nuevo' if con_precio else ''}{' (afiche del proveedor)' if nota == 2 else ' (otro idioma)' if nota == 1 else ''}")
         mejor = min(n for _, n in fotos)
         limpias = [p for p, n in fotos if n == mejor]  # solo las fotos más limpias disponibles
+        # posición nueva de cada foto de la entrada (None si se descartó), para las fotos de cada opción
+        nueva, k = [], 0
+        for _, n in fotos:
+            nueva.append(k if n == mejor else None)
+            k += n == mejor
         imgs = []
         for i, pil in enumerate(limpias):
             if necesita(pil):  # foto pequeña o borrosa: súper resolución en el mismo paso
@@ -135,6 +159,9 @@ def main():
             'feats': it.get('feats', []), 'imgs': imgs, 'thumb': f"img/p/{it['id'].lower()}-s.jpg",
             'src': it.get('src', ''), 'added': it.get('added', hoy), 'status': it.get('status', 'pendiente')
         }
+        opciones = opciones_ok(it.get('opciones'), nueva)
+        if opciones:
+            actuales[it['id']]['opciones'] = opciones
     catalogo['products'] = sorted(actuales.values(), key=lambda p: p.get('added', ''), reverse=True)
     catalogo['updated'] = hoy
     with open(ruta_cat, 'w', encoding='utf-8') as f:

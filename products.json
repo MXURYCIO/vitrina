@@ -139,13 +139,13 @@
    "name": "Luces navideñas solares de 10 m, 100 LED",
    "cat": "navidad",
    "price": 5,
-   "desc": "Serie de 100 luces LED de 10 metros de largo que se carga con panel solar, sin cables al enchufe. Resistente al agua, ideal para decorar jardines, balcones, rejas y fachadas en Navidad. Disponible en luz roja y luz amarilla (según disponibilidad).",
+   "desc": "Serie de 100 luces LED de 10 metros de largo que se carga con panel solar, sin cables al enchufe. Resistente al agua, ideal para decorar jardines, balcones, rejas y fachadas en Navidad. Disponible en luz amarilla o luz roja: elige el color al agregarlas al carrito.",
    "feats": [
     "100 luces LED",
     "10 metros de largo",
     "Carga con panel solar",
     "Resistente al agua",
-    "Luz roja o amarilla (según disponibilidad)"
+    "Luz amarilla o roja, a elegir"
    ],
    "imgs": [
     "img/p/p-518-0.jpg",
@@ -154,7 +154,20 @@
    "thumb": "img/p/p-518-s.jpg",
    "src": "2c41ed2d654b",
    "added": "2026-11-20T03:14:56.532980+00:00",
-   "status": "pendiente"
+   "status": "pendiente",
+   "opciones": [
+    {
+     "nombre": "Color",
+     "valores": [
+      "Amarilla",
+      "Roja"
+     ],
+     "fotos": [
+      0,
+      1
+     ]
+    }
+   ]
   },
   {
    "id": "P-519",
@@ -228,12 +241,12 @@
    "name": "Juego de mantel navideño con 6 forros para silla",
    "cat": "navidad",
    "price": 24,
-   "desc": "Juego navideño de 7 piezas: 1 mantel y 6 forros para sillas. Es de material suave y elástico, fácil de poner y quitar. Transforma el comedor para la cena de Navidad. Diseño según disponibilidad.",
+   "desc": "Juego navideño de 7 piezas: 1 mantel y 6 forros para sillas. Es de material suave y elástico, fácil de poner y quitar. Transforma el comedor para la cena de Navidad. Elige el diseño al agregarlo al carrito.",
    "feats": [
     "7 piezas: mantel + 6 forros de silla",
     "Material suave y elástico",
     "Fácil de poner",
-    "Diseño según disponibilidad"
+    "2 diseños a elegir"
    ],
    "imgs": [
     "img/p/p-522-0.jpg",
@@ -242,7 +255,20 @@
    "thumb": "img/p/p-522-s.jpg",
    "src": "349f3f6d5525",
    "added": "2026-11-20T03:14:56.532980+00:00",
-   "status": "pendiente"
+   "status": "pendiente",
+   "opciones": [
+    {
+     "nombre": "Diseño",
+     "valores": [
+      "Árbol navideño",
+      "Feliz Navidad"
+     ],
+     "fotos": [
+      0,
+      1
+     ]
+    }
+   ]
   },
   {
    "id": "P-523",
@@ -360,12 +386,12 @@
    "name": "Poncho transparente para lluvia de niños",
    "cat": "otros",
    "price": 8,
-   "desc": "Poncho de PVC transparente para niños, con capucha y mangas, liviano y práctico para la escuela en días de lluvia. Detalles en color rosado o celeste, según disponibilidad.",
+   "desc": "Poncho de PVC transparente para niños, con capucha y mangas, liviano y práctico para la escuela en días de lluvia. Detalles en color rosado o celeste: elige el color al agregarlo al carrito.",
    "feats": [
     "PVC transparente",
     "Con capucha y mangas",
     "Liviano",
-    "Rosado o celeste según disponibilidad"
+    "Rosado o celeste, a elegir"
    ],
    "imgs": [
     "img/p/p-491-0.jpg",
@@ -376,7 +402,20 @@
    "thumb": "img/p/p-491-s.jpg",
    "src": "7eed209d83cd",
    "added": "2026-11-19T01:15:29.907623+00:00",
-   "status": "pendiente"
+   "status": "pendiente",
+   "opciones": [
+    {
+     "nombre": "Color",
+     "valores": [
+      "Rosado",
+      "Celeste"
+     ],
+     "fotos": [
+      0,
+      null
+     ]
+    }
+   ]
   },
   {
    "id": "P-492",
@@ -537,12 +576,12 @@
    "name": "Bolso bandolera para hombre",
    "cat": "moda",
    "price": 9,
-   "desc": "Bolso cruzado para hombre de material resistente, con varios compartimentos y correa ajustable. Ideal para el trabajo, paseos o viajes. Disponible en verde oliva, azul marino, gris y negro, según disponibilidad.",
+   "desc": "Bolso cruzado para hombre de material resistente, con varios compartimentos y correa ajustable. Ideal para el trabajo, paseos o viajes. Disponible en verde oliva, azul marino, gris y negro: elige el color al agregarlo al carrito.",
    "feats": [
     "Correa ajustable",
     "Varios compartimentos",
     "Material resistente",
-    "4 colores según disponibilidad"
+    "4 colores a elegir"
    ],
    "imgs": [
     "img/p/p-499-0.jpg",
@@ -552,7 +591,24 @@
    "thumb": "img/p/p-499-s.jpg",
    "src": "d109c92bb1fb",
    "added": "2026-11-19T01:15:29.907623+00:00",
-   "status": "pendiente"
+   "status": "pendiente",
+   "opciones": [
+    {
+     "nombre": "Color",
+     "valores": [
+      "Verde oliva",
+      "Azul marino",
+      "Gris",
+      "Negro"
+     ],
+     "fotos": [
+      1,
+      2,
+      null,
+      null
+     ]
+    }
+   ]
   },
   {
    "id": "P-500",
@@ -877,12 +933,12 @@
    "name": "Organizador de tapas y tablas para pared",
    "cat": "cocina",
    "price": 10,
-   "desc": "Organizador que se fija a la pared sin taladro para guardar tapas de ollas y tablas de picar. Tiene bandeja recolectora de agua que mantiene todo seco. Disponible en blanco o gris, según disponibilidad.",
+   "desc": "Organizador que se fija a la pared sin taladro para guardar tapas de ollas y tablas de picar. Tiene bandeja recolectora de agua que mantiene todo seco. Disponible en blanco o gris: elige el color al agregarlo al carrito.",
    "feats": [
     "Se instala sin taladro",
     "Para tapas y tablas de picar",
     "Bandeja recolectora de agua",
-    "Blanco o gris según disponibilidad"
+    "Blanco o gris, a elegir"
    ],
    "imgs": [
     "img/p/p-325-0.jpg",
@@ -892,7 +948,20 @@
    "thumb": "img/p/p-325-s.jpg",
    "src": "734a65fa6a77",
    "added": "2026-11-19T00:48:01.430099+00:00",
-   "status": "pendiente"
+   "status": "pendiente",
+   "opciones": [
+    {
+     "nombre": "Color",
+     "valores": [
+      "Blanco",
+      "Gris"
+     ],
+     "fotos": [
+      0,
+      1
+     ]
+    }
+   ]
   },
   {
    "id": "P-326",
@@ -1560,12 +1629,12 @@
    "name": "Power bank de 10.000 mAh con soporte",
    "cat": "tecno",
    "price": 14,
-   "desc": "Batería portátil de 10.000 mAh con pantalla digital que indica la carga y soporte para el celular. Es compacta y fácil de llevar. Color blanco o negro, según disponibilidad.",
+   "desc": "Batería portátil de 10.000 mAh con pantalla digital que indica la carga y soporte para el celular. Es compacta y fácil de llevar. Viene en blanco o negro: elige el color al agregarla al carrito.",
    "feats": [
     "10.000 mAh",
     "Pantalla digital",
     "Soporte para celular",
-    "Blanco o negro"
+    "Blanco o negro, a elegir"
    ],
    "imgs": [
     "img/p/p-357-0.jpg"
@@ -1573,7 +1642,20 @@
    "thumb": "img/p/p-357-s.jpg",
    "src": "14f35500f6c0",
    "added": "2026-11-19T00:48:01.430099+00:00",
-   "status": "pendiente"
+   "status": "pendiente",
+   "opciones": [
+    {
+     "nombre": "Color",
+     "valores": [
+      "Blanco",
+      "Negro"
+     ],
+     "fotos": [
+      null,
+      0
+     ]
+    }
+   ]
   },
   {
    "id": "P-358",
@@ -1686,10 +1768,10 @@
    "name": "Plumas borrables de gel",
    "cat": "escolar",
    "price": 4,
-   "desc": "Plumas de tinta borrable para escribir, corregir y volver a escribir. Ideales para estudiar, trabajar y tomar apuntes. Disponibles en azul y negro.",
+   "desc": "Plumas de tinta borrable para escribir, corregir y volver a escribir. Ideales para estudiar, trabajar y tomar apuntes. Disponibles en azul y negro: elige el color al agregarlas al carrito.",
    "feats": [
     "Tinta borrable",
-    "Azul o negro",
+    "Azul o negro, a elegir",
     "Para estudio y trabajo"
    ],
    "imgs": [
@@ -1699,7 +1781,20 @@
    "thumb": "img/p/p-363-s.jpg",
    "src": "2d96f6fd4132",
    "added": "2026-11-19T00:48:01.430099+00:00",
-   "status": "pendiente"
+   "status": "pendiente",
+   "opciones": [
+    {
+     "nombre": "Color",
+     "valores": [
+      "Azul",
+      "Negro"
+     ],
+     "fotos": [
+      0,
+      1
+     ]
+    }
+   ]
   },
   {
    "id": "P-364",
@@ -2047,12 +2142,12 @@
    "name": "Peluche de Jesús con luz",
    "cat": "juguetes",
    "price": 14,
-   "desc": "Peluche suave y tierno de Jesús que se ilumina con una luz cálida en la oscuridad, ideal para acompañar en las noches o para regalar. Mide aproximadamente 38 cm de alto. Manto rojo o azul, según disponibilidad.",
+   "desc": "Peluche suave y tierno de Jesús que se ilumina con una luz cálida en la oscuridad, ideal para acompañar en las noches o para regalar. Mide aproximadamente 38 cm de alto. Manto rojo o azul: elige el color al agregarlo al carrito.",
    "feats": [
     "Luz suave y cálida",
     "Medida: 38 cm",
     "Muy suave",
-    "Manto rojo o azul"
+    "Manto rojo o azul, a elegir"
    ],
    "imgs": [
     "img/p/p-380-0.jpg",
@@ -2063,7 +2158,20 @@
    "thumb": "img/p/p-380-s.jpg",
    "src": "7ac0a4d82da2",
    "added": "2026-11-19T00:48:01.430099+00:00",
-   "status": "pendiente"
+   "status": "pendiente",
+   "opciones": [
+    {
+     "nombre": "Color",
+     "valores": [
+      "Rojo",
+      "Azul"
+     ],
+     "fotos": [
+      0,
+      1
+     ]
+    }
+   ]
   },
   {
    "id": "P-381",
@@ -2285,12 +2393,12 @@
    "name": "Masajeador eléctrico de ventosa",
    "cat": "cuidado",
    "price": 13,
-   "desc": "Masajeador con succión tipo ventosa, varios niveles de intensidad y pantalla digital. Verde, gris o blanco, según disponibilidad.",
+   "desc": "Masajeador con succión tipo ventosa, varios niveles de intensidad y pantalla digital. Disponible en verde, gris o blanco: elige el color al agregarlo al carrito.",
    "feats": [
     "Succión tipo ventosa",
     "Varios niveles",
     "Pantalla digital",
-    "Verde, gris o blanco"
+    "Verde, gris o blanco, a elegir"
    ],
    "imgs": [
     "img/p/p-391-0.jpg",
@@ -2299,7 +2407,22 @@
    "thumb": "img/p/p-391-s.jpg",
    "src": "f0ae8ee8ebf9",
    "added": "2026-11-19T00:48:01.430099+00:00",
-   "status": "pendiente"
+   "status": "pendiente",
+   "opciones": [
+    {
+     "nombre": "Color",
+     "valores": [
+      "Verde",
+      "Gris",
+      "Blanco"
+     ],
+     "fotos": [
+      1,
+      0,
+      null
+     ]
+    }
+   ]
   },
   {
    "id": "P-392",
@@ -2329,12 +2452,12 @@
    "name": "Cepillo de dientes eléctrico recargable",
    "cat": "cuidado",
    "price": 5,
-   "desc": "Cepillo de dientes eléctrico recargable por USB con 3 modos de limpieza. Incluye 3 cabezales de repuesto y cable USB. Mide aproximadamente 22 cm. Color según disponibilidad.",
+   "desc": "Cepillo de dientes eléctrico recargable por USB con 3 modos de limpieza. Incluye 3 cabezales de repuesto y cable USB. Mide aproximadamente 22 cm. Disponible en blanco, rosado o negro: elige el color al agregarlo al carrito.",
    "feats": [
     "Recargable por USB",
     "3 modos",
     "Incluye 3 repuestos",
-    "Color según disponibilidad"
+    "Blanco, rosado o negro, a elegir"
    ],
    "imgs": [
     "img/p/p-393-0.jpg",
@@ -2344,7 +2467,22 @@
    "thumb": "img/p/p-393-s.jpg",
    "src": "9f9dc87e60e1",
    "added": "2026-11-19T00:48:01.430099+00:00",
-   "status": "pendiente"
+   "status": "pendiente",
+   "opciones": [
+    {
+     "nombre": "Color",
+     "valores": [
+      "Blanco",
+      "Rosado",
+      "Negro"
+     ],
+     "fotos": [
+      1,
+      null,
+      null
+     ]
+    }
+   ]
   },
   {
    "id": "P-394",
@@ -2671,12 +2809,12 @@
    "name": "Set de 5 bandejas de cerámica con borde negro",
    "cat": "cocina",
    "price": 12,
-   "desc": "Juego de 5 bandejas de cerámica blanca con borde negro, para servir snacks, ensaladas o postres. Viene en caja, ideal para regalar. Diseño corazón o rectangular, según disponibilidad.",
+   "desc": "Juego de 5 bandejas de cerámica blanca con borde negro, para servir snacks, ensaladas o postres. Viene en caja, ideal para regalar. La bandeja central viene en forma de corazón o rectangular: elige la que prefieras al agregarlo al carrito.",
    "feats": [
     "5 piezas",
     "Cerámica con borde negro",
     "Viene en caja",
-    "Diseño corazón o rectangular"
+    "Corazón o rectangular, a elegir"
    ],
    "imgs": [
     "img/p/p-409-0.jpg",
@@ -2686,7 +2824,20 @@
    "thumb": "img/p/p-409-s.jpg",
    "src": "7baf51e269a5",
    "added": "2026-11-19T00:48:01.430099+00:00",
-   "status": "pendiente"
+   "status": "pendiente",
+   "opciones": [
+    {
+     "nombre": "Forma",
+     "valores": [
+      "Corazón",
+      "Rectangular"
+     ],
+     "fotos": [
+      0,
+      2
+     ]
+    }
+   ]
   },
   {
    "id": "P-410",
@@ -2918,12 +3069,12 @@
    "name": "Scooter 2 en 1 para niños con asiento",
    "cat": "juguetes",
    "price": 21,
-   "desc": "Scooter estable con asiento que se quita, para niños de 2 a 6 años aproximadamente. Tiene estructura firme y manubrio fácil de agarrar. Color rosado, verde o azul, según disponibilidad.",
+   "desc": "Scooter estable con asiento que se quita, para niños de 2 a 6 años aproximadamente. Tiene estructura firme y manubrio fácil de agarrar. Disponible en rosado, verde o azul: elige el color al agregarlo al carrito.",
    "feats": [
     "2 en 1 con asiento removible",
     "De 2 a 6 años aprox.",
     "Estructura firme",
-    "Rosado, verde o azul"
+    "Rosado, verde o azul, a elegir"
    ],
    "imgs": [
     "img/p/p-421-0.jpg"
@@ -2931,7 +3082,17 @@
    "thumb": "img/p/p-421-s.jpg",
    "src": "b0f8aecb339a",
    "added": "2026-11-19T00:48:01.430099+00:00",
-   "status": "pendiente"
+   "status": "pendiente",
+   "opciones": [
+    {
+     "nombre": "Color",
+     "valores": [
+      "Rosado",
+      "Verde",
+      "Azul"
+     ]
+    }
+   ]
   },
   {
    "id": "P-422",
@@ -3207,11 +3368,11 @@
    "name": "Guantes de ejercicio",
    "cat": "deporte",
    "price": 4,
-   "desc": "Guantes deportivos transpirables y cómodos que protegen las manos y mejoran el agarre al entrenar. Tallas S, M y L. Varios colores, según disponibilidad.",
+   "desc": "Guantes deportivos transpirables y cómodos que protegen las manos y mejoran el agarre al entrenar. Tallas S, M y L: elige la tuya al agregarlos al carrito. Varios colores, según disponibilidad.",
    "feats": [
     "Mejor agarre",
     "Transpirables",
-    "Tallas S, M y L",
+    "Tallas S, M y L, a elegir",
     "Color según disponibilidad"
    ],
    "imgs": [
@@ -3222,7 +3383,17 @@
    "thumb": "img/p/p-435-s.jpg",
    "src": "0bcdd4b7524f",
    "added": "2026-11-19T00:48:01.430099+00:00",
-   "status": "pendiente"
+   "status": "pendiente",
+   "opciones": [
+    {
+     "nombre": "Talla",
+     "valores": [
+      "S",
+      "M",
+      "L"
+     ]
+    }
+   ]
   },
   {
    "id": "P-436",
@@ -4183,11 +4354,11 @@
    "name": "Faja cinturilla reloj de arena",
    "cat": "deporte",
    "price": 15,
-   "desc": "Faja de compresión firme que moldea cintura y abdomen, con 3 velcros de ajuste. Es discreta debajo de la ropa. Tallas XXL y XXXL. Color negro.",
+   "desc": "Faja de compresión firme que moldea cintura y abdomen, con 3 velcros de ajuste. Es discreta debajo de la ropa. Tallas XXL y XXXL: elige la tuya al agregarla al carrito. Color negro.",
    "feats": [
     "Compresión firme",
     "3 velcros de ajuste",
-    "Tallas XXL y XXXL",
+    "Tallas XXL y XXXL, a elegir",
     "Color negro"
    ],
    "imgs": [
@@ -4199,7 +4370,16 @@
    "thumb": "img/p/p-481-s.jpg",
    "src": "18188bb6f35e",
    "added": "2026-11-19T00:48:01.430099+00:00",
-   "status": "pendiente"
+   "status": "pendiente",
+   "opciones": [
+    {
+     "nombre": "Talla",
+     "valores": [
+      "XXL",
+      "XXXL"
+     ]
+    }
+   ]
   },
   {
    "id": "P-482",
@@ -4788,11 +4968,11 @@
    "name": "Árbol decorativo de 1,80 m con luces LED",
    "cat": "navidad",
    "price": 27,
-   "desc": "Árbol decorativo de 180 cm con hojas y luces LED de luz cálida y bajo consumo, para un rincón acogedor o para regalar. Hay 2 diseños: hojas blancas u hojas amarillas, según disponibilidad.",
+   "desc": "Árbol decorativo de 180 cm con hojas y luces LED de luz cálida y bajo consumo, para un rincón acogedor o para regalar. Hay 2 diseños, hojas blancas u hojas amarillas: elige el que prefieras al agregarlo al carrito.",
    "feats": [
     "Altura: 180 cm",
     "Luces LED de bajo consumo",
-    "Hojas blancas o amarillas",
+    "Hojas blancas o amarillas, a elegir",
     "Luz cálida"
    ],
    "imgs": [
@@ -4804,7 +4984,20 @@
    "thumb": "img/p/p-309-s.jpg",
    "src": "729ff06d4ac4",
    "added": "2026-11-18T05:44:05.120318+00:00",
-   "status": "pendiente"
+   "status": "pendiente",
+   "opciones": [
+    {
+     "nombre": "Diseño",
+     "valores": [
+      "Hojas blancas",
+      "Hojas amarillas"
+     ],
+     "fotos": [
+      3,
+      0
+     ]
+    }
+   ]
   },
   {
    "id": "P-310",
@@ -4895,12 +5088,12 @@
    "name": "Babero plástico con recolector",
    "cat": "bebes",
    "price": 3,
-   "desc": "Babero impermeable con recolector que atrapa la comida para que no caiga al piso. Se limpia con un paño, es suave y tiene broches ajustables. Diseños de ballena, osito o monito, según disponibilidad.",
+   "desc": "Babero impermeable con recolector que atrapa la comida para que no caiga al piso. Se limpia con un paño, es suave y tiene broches ajustables. Diseños de ballena, osito o monito: elige el que quieras al agregarlo al carrito.",
    "feats": [
     "Recolector de comida",
     "Impermeable",
     "Broches ajustables",
-    "Diseño según disponibilidad"
+    "3 diseños a elegir"
    ],
    "imgs": [
     "img/p/p-314-0.jpg",
@@ -4910,7 +5103,22 @@
    "thumb": "img/p/p-314-s.jpg",
    "src": "bec0363548e7",
    "added": "2026-11-18T05:44:05.120318+00:00",
-   "status": "pendiente"
+   "status": "pendiente",
+   "opciones": [
+    {
+     "nombre": "Diseño",
+     "valores": [
+      "Ballena",
+      "Osito",
+      "Monito"
+     ],
+     "fotos": [
+      0,
+      1,
+      2
+     ]
+    }
+   ]
   },
   {
    "id": "P-315",
@@ -5024,12 +5232,12 @@
    "name": "Power bank de 20.000 mAh",
    "cat": "tecno",
    "price": 14,
-   "desc": "Batería portátil de 20.000 mAh con indicador de carga, para cargar el celular donde estés. Color blanco o negro, según disponibilidad.",
+   "desc": "Batería portátil de 20.000 mAh con indicador de carga, para cargar el celular donde estés. Viene en blanco o negro: elige el color al agregarla al carrito.",
    "feats": [
     "20.000 mAh",
     "Indicador de carga",
     "Portátil",
-    "Blanco o negro según disponibilidad"
+    "Blanco o negro, a elegir"
    ],
    "imgs": [
     "img/p/p-320-0.jpg"
@@ -5037,7 +5245,20 @@
    "thumb": "img/p/p-320-s.jpg",
    "src": "4f402dbbd0f6",
    "added": "2026-11-18T05:44:05.120318+00:00",
-   "status": "pendiente"
+   "status": "pendiente",
+   "opciones": [
+    {
+     "nombre": "Color",
+     "valores": [
+      "Blanco",
+      "Negro"
+     ],
+     "fotos": [
+      0,
+      null
+     ]
+    }
+   ]
   },
   {
    "id": "P-321",
@@ -5969,9 +6190,9 @@
    "name": "Vaso de vidrio con tapa y sorbete",
    "cat": "cocina",
    "price": 3,
-   "desc": "Vaso de vidrio con textura, tapa y sorbete incluidos. Ideal para jugos, café helado o bebidas frías. Color según disponibilidad.",
+   "desc": "Vaso de vidrio con tapa y sorbete incluidos. Ideal para jugos, café helado o bebidas frías. Hay 2 modelos: con tira protectora antideslizante o con textura; elige el que prefieras al agregarlo al carrito. Color según disponibilidad.",
    "feats": [
-    "Vidrio con textura",
+    "2 modelos: con tira protectora o con textura",
     "Incluye tapa y sorbete",
     "Para bebidas frías",
     "Color según disponibilidad"
@@ -5982,7 +6203,20 @@
    "thumb": "img/p/p-258-s.jpg",
    "src": "3859679b9544",
    "added": "2026-11-18T05:31:24.726044+00:00",
-   "status": "pendiente"
+   "status": "pendiente",
+   "opciones": [
+    {
+     "nombre": "Modelo",
+     "valores": [
+      "Con tira protectora",
+      "Con textura"
+     ],
+     "fotos": [
+      null,
+      0
+     ]
+    }
+   ]
   },
   {
    "id": "P-259",
@@ -6011,12 +6245,12 @@
    "name": "Reloj de pared infantil",
    "cat": "hogar",
    "price": 10,
-   "desc": "Reloj de pared con números grandes y fáciles de leer, en diseños de colores vivos y tiernos. Ideal para decorar el cuarto de los niños. Diseño según disponibilidad.",
+   "desc": "Reloj de pared con números grandes y fáciles de leer, en diseños de colores vivos y tiernos. Ideal para decorar el cuarto de los niños. Elige el diseño al agregarlo al carrito.",
    "feats": [
     "Números grandes",
     "Diseños tiernos",
     "Para decorar",
-    "Diseño según disponibilidad"
+    "4 diseños a elegir"
    ],
    "imgs": [
     "img/p/p-260-0.jpg",
@@ -6027,7 +6261,24 @@
    "thumb": "img/p/p-260-s.jpg",
    "src": "1dc026845a03",
    "added": "2026-11-18T05:31:24.726044+00:00",
-   "status": "pendiente"
+   "status": "pendiente",
+   "opciones": [
+    {
+     "nombre": "Diseño",
+     "valores": [
+      "Unicornio azul",
+      "Unicornio rosado",
+      "Búhos",
+      "Números de colores"
+     ],
+     "fotos": [
+      0,
+      1,
+      2,
+      3
+     ]
+    }
+   ]
   },
   {
    "id": "P-261",
@@ -6075,12 +6326,12 @@
    "name": "Organizador de ropa interior con tapa",
    "cat": "hogar",
    "price": 7,
-   "desc": "Organizador plegable para guardar hasta 20 pares de ropa interior o calcetines. Tiene tapa transparente que protege del polvo y deja ver todo sin abrir. Disponible en 2 tonos, según disponibilidad.",
+   "desc": "Organizador plegable para guardar hasta 20 pares de ropa interior o calcetines. Tiene tapa transparente que protege del polvo y deja ver todo sin abrir. Disponible en blanco y gris: elige el color al agregarlo al carrito.",
    "feats": [
     "Hasta 20 pares",
     "Tapa transparente",
     "Plegable",
-    "2 tonos según disponibilidad"
+    "Blanco o gris, a elegir"
    ],
    "imgs": [
     "img/p/p-263-0.jpg",
@@ -6090,7 +6341,20 @@
    "thumb": "img/p/p-263-s.jpg",
    "src": "093e0788e2bb",
    "added": "2026-11-18T05:31:24.726044+00:00",
-   "status": "pendiente"
+   "status": "pendiente",
+   "opciones": [
+    {
+     "nombre": "Color",
+     "valores": [
+      "Blanco",
+      "Gris"
+     ],
+     "fotos": [
+      0,
+      2
+     ]
+    }
+   ]
   },
   {
    "id": "P-264",
@@ -6270,12 +6534,12 @@
    "name": "Estante de cocina con vitrina y ruedas",
    "cat": "cocina",
    "price": 38,
-   "desc": "Estante organizador de cocina de metal con puertas de vidrio estriado y ruedas para moverlo fácil. Perfecto para legumbres, verduras, ollas y botellas. Modelo según disponibilidad.",
+   "desc": "Estante organizador de cocina de metal con puertas de vidrio estriado y ruedas para moverlo fácil. Perfecto para legumbres, verduras, ollas y botellas. Hay 2 modelos, ancho y angosto: elige el que necesitas al agregarlo al carrito.",
    "feats": [
     "Metal con puertas de vidrio",
     "Con ruedas",
     "Varios niveles",
-    "Modelo según disponibilidad"
+    "Modelo ancho o angosto, a elegir"
    ],
    "imgs": [
     "img/p/p-272-0.jpg",
@@ -6285,7 +6549,20 @@
    "thumb": "img/p/p-272-s.jpg",
    "src": "3e1432b4fb30",
    "added": "2026-11-18T05:31:24.726044+00:00",
-   "status": "pendiente"
+   "status": "pendiente",
+   "opciones": [
+    {
+     "nombre": "Modelo",
+     "valores": [
+      "Ancho",
+      "Angosto"
+     ],
+     "fotos": [
+      0,
+      null
+     ]
+    }
+   ]
   },
   {
    "id": "P-273",
@@ -6958,13 +7235,13 @@
    "name": "Juego de sábanas de 2 plazas, piel de durazno",
    "cat": "hogar",
    "price": 10,
-   "desc": "Juego de sábanas de 2 plazas de piel de durazno, ultra suave. Es antialérgico, antibacteriano y antifúngico; no destiñe, no encoge y no hace motas. Incluye sábana, colcha y 2 forros de almohada. Diseño según disponibilidad.",
+   "desc": "Juego de sábanas de 2 plazas de piel de durazno, ultra suave. Es antialérgico, antibacteriano y antifúngico; no destiñe, no encoge y no hace motas. Incluye sábana, colcha y 2 forros de almohada. Elige el diseño al agregarlo al carrito.",
    "feats": [
     "Tamaño 2 plazas",
     "Tela piel de durazno ultra suave",
     "Incluye sábana, colcha y 2 forros de almohada",
     "No destiñe ni encoge",
-    "Diseño según disponibilidad"
+    "4 diseños a elegir"
    ],
    "imgs": [
     "img/p/p-215-0.jpg",
@@ -6975,7 +7252,24 @@
    "thumb": "img/p/p-215-s.jpg",
    "src": "4b09fe5e9813",
    "added": "2026-11-18T04:55:54.701123+00:00",
-   "status": "pendiente"
+   "status": "pendiente",
+   "opciones": [
+    {
+     "nombre": "Diseño",
+     "valores": [
+      "Verde con círculos",
+      "Azul marino con huellitas",
+      "Fucsia con flores",
+      "Café con rombos"
+     ],
+     "fotos": [
+      0,
+      1,
+      2,
+      3
+     ]
+    }
+   ]
   },
   {
    "id": "P-174",
@@ -7179,10 +7473,10 @@
    "name": "Corona navideña de 30 cm",
    "cat": "navidad",
    "price": 8,
-   "desc": "Corona navideña de 30 cm con flores, esferas y detalles brillantes para decorar la puerta o la pared. Tiene un acabado de excelente calidad y material resistente. Viene en diseño rojo clásico o dorado elegante, según disponibilidad.",
+   "desc": "Corona navideña de 30 cm con flores, esferas y detalles brillantes para decorar la puerta o la pared. Tiene un acabado de excelente calidad y material resistente. Viene en diseño rojo clásico o dorado elegante: elige el que prefieras al agregarla al carrito.",
    "feats": [
     "Diámetro: 30 cm",
-    "Diseño rojo o dorado, según disponibilidad",
+    "Diseño rojo o dorado, a elegir",
     "Material resistente",
     "Para puerta o pared"
    ],
@@ -7195,19 +7489,32 @@
    "thumb": "img/p/p-134-s.jpg",
    "src": "a51cb7bce082",
    "added": "2026-11-15T04:36:58.665191+00:00",
-   "status": "pendiente"
+   "status": "pendiente",
+   "opciones": [
+    {
+     "nombre": "Diseño",
+     "valores": [
+      "Rojo clásico",
+      "Dorado elegante"
+     ],
+     "fotos": [
+      3,
+      1
+     ]
+    }
+   ]
   },
   {
    "id": "P-135",
    "name": "Adorno colgante navideño con campanita",
    "cat": "navidad",
    "price": 2,
-   "desc": "Adorno colgante navideño hecho a mano con materiales suaves y una campanita que suena. Viene en diseño de reno, muñeco de nieve o Papá Noel, según disponibilidad. Ideal para el árbol o para regalar. Precio por unidad.",
+   "desc": "Adorno colgante navideño hecho a mano con materiales suaves y una campanita que suena. Viene en diseño de reno, muñeco de nieve o Papá Noel: elige el que quieras al agregarlo al carrito. Ideal para el árbol o para regalar. Precio por unidad.",
    "feats": [
     "Precio por unidad",
     "Hecho a mano",
     "Con campanita",
-    "Diseño según disponibilidad"
+    "3 diseños a elegir"
    ],
    "imgs": [
     "img/p/p-135-0.jpg",
@@ -7218,7 +7525,22 @@
    "thumb": "img/p/p-135-s.jpg",
    "src": "202ef317cf63",
    "added": "2026-11-15T04:36:58.665191+00:00",
-   "status": "pendiente"
+   "status": "pendiente",
+   "opciones": [
+    {
+     "nombre": "Diseño",
+     "valores": [
+      "Reno",
+      "Muñeco de nieve",
+      "Papá Noel"
+     ],
+     "fotos": [
+      3,
+      1,
+      2
+     ]
+    }
+   ]
   },
   {
    "id": "P-136",
@@ -7289,11 +7611,11 @@
    "name": "Muñeco navideño expandible de 45 cm",
    "cat": "navidad",
    "price": 11,
-   "desc": "Muñeco navideño que se recoge o se estira hasta 45 cm de alto gracias a sus piernas extensibles. Tiene diseño en tonos rosados, suave y adorable. Viene en Papá Noel o muñeco de nieve, según disponibilidad. Precio por unidad.",
+   "desc": "Muñeco navideño que se recoge o se estira hasta 45 cm de alto gracias a sus piernas extensibles. Tiene diseño en tonos rosados, suave y adorable. Viene en Papá Noel o muñeco de nieve: elige el que quieras al agregarlo al carrito. Precio por unidad.",
    "feats": [
     "Se estira hasta 45 cm",
     "Tonos rosados",
-    "Diseño según disponibilidad",
+    "Papá Noel o muñeco de nieve, a elegir",
     "Precio por unidad"
    ],
    "imgs": [
@@ -7303,18 +7625,31 @@
    "thumb": "img/p/p-139-s.jpg",
    "src": "36079dfb196a",
    "added": "2026-11-15T04:36:58.665191+00:00",
-   "status": "pendiente"
+   "status": "pendiente",
+   "opciones": [
+    {
+     "nombre": "Modelo",
+     "valores": [
+      "Papá Noel",
+      "Muñeco de nieve"
+     ],
+     "fotos": [
+      0,
+      null
+     ]
+    }
+   ]
   },
   {
    "id": "P-140",
    "name": "Cojín navideño",
    "cat": "navidad",
    "price": 7,
-   "desc": "Cojín decorativo con diseños navideños alegres y coloridos. Llena de espíritu navideño la sala, el sofá o el dormitorio. El diseño se entrega según disponibilidad.",
+   "desc": "Cojín decorativo con diseños navideños alegres y coloridos. Llena de espíritu navideño la sala, el sofá o el dormitorio. Elige el diseño al agregarlo al carrito.",
    "feats": [
     "Diseños navideños",
     "Para sofá o cama",
-    "Diseño según disponibilidad"
+    "2 diseños a elegir"
    ],
    "imgs": [
     "img/p/p-140-0.jpg",
@@ -7323,7 +7658,20 @@
    "thumb": "img/p/p-140-s.jpg",
    "src": "36465c292fc4",
    "added": "2026-11-15T04:36:58.665191+00:00",
-   "status": "pendiente"
+   "status": "pendiente",
+   "opciones": [
+    {
+     "nombre": "Diseño",
+     "valores": [
+      "Papá Noel y reno",
+      "Corona con Papá Noel"
+     ],
+     "fotos": [
+      0,
+      1
+     ]
+    }
+   ]
   },
   {
    "id": "P-141",
@@ -7740,14 +8088,14 @@
    "name": "Carro loco a control remoto con luces",
    "cat": "juguetes",
    "price": 13,
-   "desc": "Carro a control remoto que da giros de 360 grados, con luces brillantes en las ruedas y la cabina, y música. Es recargable y mide 18 x 17 cm. Un regalo muy divertido para los niños. El color se entrega según disponibilidad.",
+   "desc": "Carro a control remoto que da giros de 360 grados, con luces brillantes en las ruedas y la cabina, y música. Es recargable y mide 18 x 17 cm. Un regalo muy divertido para los niños. Viene en rojo, verde o amarillo: elige el color al agregarlo al carrito.",
    "feats": [
     "Control remoto",
     "Gira 360°",
     "Luces y música",
     "Recargable",
     "Medidas: 18 x 17 cm",
-    "Color según disponibilidad"
+    "Rojo, verde o amarillo, a elegir"
    ],
    "imgs": [
     "img/p/p-160-1.jpg",
@@ -7757,7 +8105,22 @@
    "thumb": "img/p/p-160-s.jpg",
    "src": "adbf5f6633ce",
    "added": "2026-11-15T04:36:58.665191+00:00",
-   "status": "pendiente"
+   "status": "pendiente",
+   "opciones": [
+    {
+     "nombre": "Color",
+     "valores": [
+      "Rojo",
+      "Verde",
+      "Amarillo"
+     ],
+     "fotos": [
+      0,
+      1,
+      2
+     ]
+    }
+   ]
   },
   {
    "id": "P-161",
@@ -8239,12 +8602,12 @@
    "name": "Salida de baño de toalla 135 x 80 cm",
    "cat": "cuidado",
    "price": 4,
-   "desc": "Salida de baño tipo vestido de toalla, suave, cómoda y absorbente. Es de secado rápido y se puede lavar en lavadora. Medida aproximada: 135 x 80 cm. Ideal para la casa o para viajes. Disponible en celeste y amarillo, según disponibilidad.",
+   "desc": "Salida de baño tipo vestido de toalla, suave, cómoda y absorbente. Es de secado rápido y se puede lavar en lavadora. Medida aproximada: 135 x 80 cm. Ideal para la casa o para viajes. Disponible en celeste y amarillo: elige el color al agregarla al carrito.",
    "feats": [
     "Medidas aprox.: 135 x 80 cm",
     "Secado rápido",
     "Lavable en lavadora",
-    "Celeste o amarillo, según disponibilidad"
+    "Celeste o amarillo, a elegir"
    ],
    "imgs": [
     "img/p/p-184-3.jpg"
@@ -8252,7 +8615,20 @@
    "thumb": "img/p/p-184-s.jpg",
    "src": "f789c31faafb",
    "added": "2026-11-15T04:36:58.665191+00:00",
-   "status": "pendiente"
+   "status": "pendiente",
+   "opciones": [
+    {
+     "nombre": "Color",
+     "valores": [
+      "Celeste",
+      "Amarillo"
+     ],
+     "fotos": [
+      0,
+      null
+     ]
+    }
+   ]
   },
   {
    "id": "P-185",
@@ -8282,11 +8658,11 @@
    "name": "Tapete de yoga",
    "cat": "deporte",
    "price": 10,
-   "desc": "Tapete para yoga o para hacer ejercicios en casa, con excelente acabado. Disponible en naranja y celeste, según disponibilidad.",
+   "desc": "Tapete para yoga o para hacer ejercicios en casa, con excelente acabado. Disponible en naranja y celeste: elige el color al agregarlo al carrito.",
    "feats": [
     "Para yoga y ejercicio en casa",
     "Excelente acabado",
-    "Naranja o celeste, según disponibilidad"
+    "Naranja o celeste, a elegir"
    ],
    "imgs": [
     "img/p/p-186-1.jpg"
@@ -8294,7 +8670,20 @@
    "thumb": "img/p/p-186-s.jpg",
    "src": "e69f86c3bcc4",
    "added": "2026-11-15T04:36:58.665191+00:00",
-   "status": "pendiente"
+   "status": "pendiente",
+   "opciones": [
+    {
+     "nombre": "Color",
+     "valores": [
+      "Naranja",
+      "Celeste"
+     ],
+     "fotos": [
+      null,
+      0
+     ]
+    }
+   ]
   },
   {
    "id": "P-187",
@@ -9086,12 +9475,12 @@
    "name": "Bacinica sillita para bebé",
    "cat": "bebes",
    "price": 14,
-   "desc": "Bacinica tipo sillita con respaldo y apoyabrazos para que tu peque se sienta seguro y tranquilo. La tapa se abre fácil y el recipiente se saca para limpiarlo rápido. Recomendada desde los 18 meses hasta los 4 años aproximadamente. Disponible en rosado y azul, según disponibilidad.",
+   "desc": "Bacinica tipo sillita con respaldo y apoyabrazos para que tu peque se sienta seguro y tranquilo. La tapa se abre fácil y el recipiente se saca para limpiarlo rápido. Recomendada desde los 18 meses hasta los 4 años aproximadamente. Disponible en rosado y azul: elige el color al agregarla al carrito.",
    "feats": [
     "Respaldo y apoyabrazos",
     "Recipiente desmontable",
     "De 18 meses a 4 años aprox.",
-    "Rosado o azul, según disponibilidad"
+    "Rosado o azul, a elegir"
    ],
    "imgs": [
     "img/p/p-124-0.jpg"
@@ -9099,7 +9488,20 @@
    "thumb": "img/p/p-124-s.jpg",
    "src": "2cf4b0ea76d8",
    "added": "2026-11-14T23:18:16.903581+00:00",
-   "status": "pendiente"
+   "status": "pendiente",
+   "opciones": [
+    {
+     "nombre": "Color",
+     "valores": [
+      "Rosado",
+      "Azul"
+     ],
+     "fotos": [
+      0,
+      null
+     ]
+    }
+   ]
   },
   {
    "id": "P-125",

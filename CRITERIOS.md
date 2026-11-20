@@ -18,15 +18,37 @@ Elegir primero, en este orden:
 - Ponchos e impermeables: talla o medidas, material y si trae capucha.
 - Nunca poner teléfonos, enlaces, nombres ni marcas del proveedor.
 
-## 3. Colores
+## 3. Colores, modelos y opciones para elegir
 
-- Si el proveedor dice que hay **un solo color** (por ejemplo "disponible solo en negro"):
+Leer **siempre el texto completo** de la publicación y **mirar todas las fotos** para decidir si la clienta puede elegir.
+
+### Con botones para elegir (campo `opciones`)
+
+Cuando el proveedor **ofrece elegir** entre colores, modelos, diseños, figuras, tallas o tamaños, todos al mismo precio. Señales: enumera lo que hay ("disponible en rojo, azul y amarillo", "modelos: caballos y flores", "escoja su color", "colores: ..."), o las fotos muestran cada modelo con su nombre o número.
+
+```json
+"opciones": [
+  {"nombre": "Color", "valores": ["Rojo", "Azul", "Amarillo"], "fotos": [0, 1, null]},
+  {"nombre": "Modelo", "valores": ["Caballos", "Flores"]}
+]
+```
+
+- Un grupo por cada cosa a elegir. Nombres: Color, Modelo, Diseño, Figura, Talla, Tamaño o Aroma.
+- Valores cortos, con mayúscula inicial y como los ofrece el proveedor ("Rosado", "Azul marino", "Caballos"). Mínimo 2 valores. Sin comas, corchetes ni el signo |.
+- `fotos` es opcional: la posición en `imgs` de la foto que muestra cada valor (o `null`). Al tocar el color, la tienda muestra esa foto, y la hoja de pedidos y el correo usan esa foto.
+- Si el precio cambia según el modelo o el tamaño, no es una opción: cada uno se publica como producto aparte.
+- La descripción no dice "según disponibilidad": nombra lo que hay y termina con "elige el color (o el diseño, la talla) al agregarlo al carrito". En las características, por ejemplo "Rosado o azul, a elegir".
+- En la tienda la clienta no puede agregar el producto sin elegir, y el pedido llega con la elección (por ejemplo "Color: Rojo · Modelo: Caballos").
+
+### Sin botones
+
+- Si el proveedor dice **surtido, al azar, variados o según disponibilidad** (aunque nombre algunos colores): no se deja elegir. Va en la descripción: "Color surtido, según disponibilidad" o "Disponible en rosado y azul (según disponibilidad)".
+- Si no dice nada y las fotos muestran varios colores: "Color según disponibilidad".
+- Si hay **un solo color** (por ejemplo "disponible solo en negro"):
   - el color va en el nombre (por ejemplo "Espejo de cuerpo entero con soporte, negro"),
   - la primera característica dice "Disponible solo en color negro" y la descripción también lo dice,
   - se **quitan todas las fotos que muestren otros colores**.
-- Si dice **varios colores**: "Disponible en rosado y azul (según disponibilidad)".
-- Si dice **colores al azar o surtidos**: "Color surtido, según disponibilidad".
-- Si no dice nada y las fotos muestran varios colores: "Color según disponibilidad".
+- Ante la duda, sin botones: solo se promete lo que el proveedor asegura.
 
 ## 4. Fotos
 

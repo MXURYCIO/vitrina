@@ -9,7 +9,7 @@
  */
 
 // Versión de este programa. La página de revisión avisa si en Google quedó una versión anterior.
-const VERSION = '2026-11-20c';
+const VERSION = '2026-11-20d';
 
 const CONFIG = {
   HOJA: 'Pedidos',
@@ -125,7 +125,7 @@ function crearPedido_(d) {
     if (!p || !(Number(p.price) > 0) || (est[id] || p.status || 'aprobado') !== 'aprobado') { faltan.push(p ? p.name : id); return; }
     const op = opcionValida_(p, opcion);
     if (op === null) { sinElegir.push(`${p.name} (${gruposOpcion_(p).map(g => String(g.nombre).toLowerCase()).join(' y ')})`); return; }
-    items.push({ id, qty, name: p.name, opcion: op, price: Number(p.price), foto: fotoUrl_(p, op) });
+    items.push({ id, qty, name: p.name, opcion: op, price: Number(p.price), foto: fotoUrl_(p, op), pedir: p.pedir || null });
   });
   if (faltan.length) return { ok: false, code: 'catalogo', error: `Ya no está disponible: ${[...new Set(faltan)].join(', ')}. Quítalo del carrito para continuar.` };
   if (sinElegir.length) return { ok: false, code: 'catalogo', error: `Falta elegir: ${[...new Set(sinElegir)].join(', ')}. Elígelo en el carrito para continuar.` };
@@ -415,8 +415,8 @@ function proveedorTexto_(items) {
   let mapa = {};
   try { mapa = origenMapa_(); } catch (e) { console.error(e); }
   return items.map(i => {
-    const o = mapa[i.id], ini = `${i.id} x${i.qty}${i.opcion ? ` (${i.opcion})` : ''}`;
-    return o ? `${ini}: ${o.tienda} · publicación ${o.num} · ${o.url}` : `${ini}: sin dato`;
+    const o = origenItem_(mapa, i), ini = `${i.id} x${i.qty}${i.opcion ? ` (${i.opcion})` : ''}`;
+    return o ? `${ini}: ${o.tienda}${o.ref ? ' · ' + o.ref : ''}${o.url ? ' · ' + o.url : ''}` : `${ini}: sin dato`;
   }).join('\n');
 }
 
@@ -493,10 +493,10 @@ function escribirArticulos_(sh, fila, items, mapa) {
   items.forEach((i, k) => {
     if (k) texto += '\n';
     texto += `${i.qty} x ${nombreItem_(i)} (${i.id}): `;
-    const o = mapa[i.id];
-    if (o && o.tienda) {
-      const a = texto.length; texto += o.tienda; enlaces.push([a, texto.length, o.url]);
-      texto += ` · publicación ${o.num}`;
+    const o = origenItem_(mapa, i);
+    if (o) {
+      const a = texto.length; texto += o.tienda; if (o.url) enlaces.push([a, texto.length, o.url]);
+      if (o.ref) texto += ` · ${o.ref}`;
     } else {
       texto += 'tienda sin dato';
     }
@@ -513,7 +513,7 @@ function itemsDeFila_(r, cat) {
   return codigosDeFila_(r).map((x, k) => {
     const p = cat[x.id];
     const nombre = p ? String(p.name) : String(lineas[k] || '').replace(/^\d+\s*x\s*/, '').replace(/\s*\([^()]*:[^()]*\)$/, '') || x.id;
-    return { id: x.id, qty: x.qty, opcion: x.opcion, name: nombre, foto: fotoUrl_(p, x.opcion) };
+    return { id: x.id, qty: x.qty, opcion: x.opcion, name: nombre, foto: fotoUrl_(p, x.opcion), pedir: p ? p.pedir || null : null };
   });
 }
 
@@ -879,8 +879,8 @@ function avisar_(p) {
     let mapa = {};
     try { mapa = origenMapa_(); } catch (e) {}
     const filasHtml = p.items.map(i => {
-      const o = mapa[i.id];
-      const tienda = o && o.tienda ? `<a href="${h(o.url)}">${h(o.tienda)}</a> · publicación ${h(o.num)}` : 'tienda sin dato';
+      const o = origenItem_(mapa, i);
+      const tienda = o ? `${o.url ? `<a href="${h(o.url)}">${h(o.tienda)}</a>` : h(o.tienda)}${o.ref ? ' · ' + h(o.ref) : ''}` : 'tienda sin dato';
       return `<tr><td style="padding:6px 10px 6px 0">${i.foto ? `<img src="${h(i.foto)}" width="90" height="90" style="object-fit:cover;border-radius:8px" alt="">` : ''}</td>` +
         `<td style="padding:6px 0;font:14px Arial,sans-serif"><b>${i.qty} x ${h(i.name)}</b> (${h(i.id)})` +
         `${i.opcion ? `<br><b style="color:#1E66F5">${h(i.opcion)}</b>` : ''}<br>${fmt_(i.price * i.qty)}<br>Pedir en: ${tienda}</td></tr>`;
@@ -1054,6 +1054,23 @@ function carpeta_() {
   return f;
 }
 
+/* Productos con oferta (catálogo Boom): "antes" es el precio normal y "hasta" el último día de la oferta.
+ * Pasada esa fecha (hora de Ecuador) vale el precio normal, igual que en la tienda. */
+function precioVigente_(p) {
+  const antes = Number(p && p.antes);
+  if (!(antes > Number(p.price)) || !p.hasta) return p;
+  const hoy = Utilities.formatDate(new Date(), 'America/Guayaquil', 'yyyy-MM-dd');
+  return hoy > String(p.hasta) ? Object.assign({}, p, { price: antes }) : p;
+}
+
+// Dónde pedir un artículo: tienda de Telegram (hoja "Proveedores") o, para los productos de catálogo, el campo "pedir" de products.json.
+function origenItem_(mapa, i) {
+  const o = mapa && mapa[i.id];
+  if (o && o.tienda) return { tienda: o.tienda, ref: `publicación ${o.num}`, url: o.url };
+  const q = i.pedir;
+  return q && q.tienda ? { tienda: String(q.tienda), ref: String(q.ref || ''), url: String(q.url || '') } : null;
+}
+
 function catalogo_() {
   if (!CONFIG.PRODUCTOS_URL) return null;
   const cache = CacheService.getScriptCache();
@@ -1069,7 +1086,7 @@ function catalogo_() {
   try {
     const data = JSON.parse(txt);
     const list = Array.isArray(data) ? data : data.products;
-    return Object.fromEntries(list.map(p => [p.id, p]));
+    return Object.fromEntries(list.map(p => [p.id, precioVigente_(p)]));
   } catch (err) { return null; }
 }
 

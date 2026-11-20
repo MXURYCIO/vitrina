@@ -9,7 +9,7 @@
  */
 
 // Versión de este programa. La página de revisión avisa si en Google quedó una versión anterior.
-const VERSION = '2026-11-20';
+const VERSION = '2026-11-20b';
 
 const CONFIG = {
   HOJA: 'Pedidos',
@@ -220,13 +220,17 @@ function ocrTexto_(bytes, mime) {
   return texto;
 }
 
-// Valor de un número escrito con decimales: "1.234,56", "1,234.56", "12,50", "12.5"
-function numero_(raw) {
+// Valores posibles de un número escrito con decimales: "1.234,56", "1,234.56", "12,50", "12.5".
+// El primero es la lectura normal. Con tres cifras después del separador ("4,500") también se prueba
+// como decimal con un dígito de más (4,50), porque la marca de agua del banco pegada al monto
+// a veces se lee como un 0 extra.
+function numeros_(raw) {
   const k = Math.max(raw.lastIndexOf('.'), raw.lastIndexOf(','));
-  if (k < 0) return Number(raw);
-  const dec = raw.slice(k + 1);
-  if (dec.length === 3) return Number(raw.replace(/[.,]/g, '')); // "1.000" es mil, no uno
-  return Number(raw.slice(0, k).replace(/[.,]/g, '') + '.' + dec);
+  if (k < 0) return [Number(raw)];
+  const ent = raw.slice(0, k).replace(/[.,]/g, ''), dec = raw.slice(k + 1);
+  const decimal = Number(ent + '.' + dec.slice(0, 2));
+  if (dec.length === 3) return [Number(ent + dec), decimal]; // "1.000" es mil, pero "4,500" puede ser 4,50
+  return [decimal];
 }
 
 function analizarComprobante_(texto, monto, abono, num, total) {
@@ -238,25 +242,27 @@ function analizarComprobante_(texto, monto, abono, num, total) {
     return out;
   }
   // el lector a veces separa los decimales o confunde la O con el cero: "10 , 00", "$ 1O.00"
-  const n = t.replace(/(\d)[oO](?=\d|[.,]\d)/g, '$10').replace(/(\d)\s*([.,])\s*(\d{2})(?!\d)/g, '$1$2$3')
+  const n = t.replace(/(\d)[oO](?=\d|[.,]\d)/g, '$10').replace(/(\d[.,]\d)[oO](?![a-z\d])/gi, '$10')
+    .replace(/(\d)\s*([.,])\s*(\d{2})(?!\d)/g, '$1$2$3')
     .replace(/(\$|usd|us\$)\s+(?=\d)/gi, '$1');
   const montos = [];
   // con decimales: "$5,00", "USD 12.50", "1.234,56", "12,5"
   const re = /(\$|usd|us\$)?(\d{1,3}(?:[.,]\d{3})+(?:[.,]\d{1,2})?|\d{1,6}[.,]\d{1,2})(?![\d])/gi;
   let m;
   while ((m = re.exec(n))) {
-    const v = numero_(m[2]);
-    if (v > 0 && v < 100000) montos.push({ v, signo: !!m[1] });
+    const [v, ...otros] = numeros_(m[2]);
+    if (v > 0 && v < 100000) montos.push({ v, signo: !!m[1], otros });
   }
   // sin decimales pero con signo o palabra de monto: "$20", "Monto: 20", "Valor 15 USD"
   const re2 = /(?:\$|usd|us\$|monto|valor|importe|total|cantidad|transferido|depositado)[:\s]*(\d{1,6})(?!\d|[.,]\d)/gi;
   while ((m = re2.exec(n))) {
     const v = Number(m[1]);
-    if (v > 0 && v < 100000) montos.push({ v, signo: true });
+    if (v > 0 && v < 100000) montos.push({ v, signo: true, otros: [] });
   }
   const conSigno = montos.filter(x => x.signo).map(x => x.v);
-  const todos = montos.map(x => x.v);
-  const lista = [...new Set(conSigno.length ? conSigno : todos)];
+  // para comparar con lo esperado también cuentan las otras lecturas posibles de cada número
+  const todos = montos.flatMap(x => [x.v, ...x.otros]);
+  const lista = [...new Set(conSigno.length ? conSigno : montos.map(x => x.v))];
   const cerca = (a, b) => Math.abs(a - b) < 0.006;
   // búsqueda directa de cada valor esperado en el texto, por si el número quedó pegado a otras palabras
   const compacto = n.replace(/\s/g, '');

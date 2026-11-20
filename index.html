@@ -344,6 +344,10 @@ body.rv-ped #tools,body.rv-ped .sec-head,body.rv-ped #grid,body.rv-ped #empty{di
 .pd-origen span{flex:1;min-width:0}
 .pd-origen a{display:inline-flex;align-items:center;gap:4px;color:var(--accent);font-weight:700;text-decoration:none}
 .rv-plist li{display:grid;gap:4px}
+.rv-plist li.rv-pi{grid-template-columns:64px 1fr;column-gap:12px;align-items:center}
+.rv-pi > :not(.rv-pimg){grid-column:2}
+.rv-pimg{grid-row:1 / span 2;width:64px;height:64px;object-fit:cover;border-radius:12px;background:var(--accent-soft)}
+.rv-releer{margin-top:10px;width:100%}
 .rv-prov{display:inline-flex;align-items:center;gap:6px;width:fit-content;max-width:100%;padding:6px 10px;border-radius:10px;background:var(--accent-soft);color:var(--accent);font-size:13px;text-decoration:none}
 .rv-prov svg{flex:none;width:15px;height:15px}
 .rv-prov.off{background:var(--field);color:var(--muted)}
@@ -1570,6 +1574,7 @@ document.addEventListener('click', e => {
     case 'rvorder': openRvOrder(t.dataset.code); break;
     case 'rvvp': rvVisDias = Number(t.dataset.d) || 1; renderVisits(); loadVisits(); break;
     case 'rvvr': loadVisits(); break;
+    case 'rvreleer': rvReleer(t.dataset.code, t); break;
     case 'rvest': if (t.getAttribute('aria-pressed') !== 'true') rvSetEstado(t.dataset.code, t.dataset.s); break;
     case 'rvallok': rvDecide(ALL.filter(p => eff(p) === 'pendiente').map(p => p.id), 'aprobado', '', t, true); break;
     case 'rvchip': { const ta = $('#rvCom'); if (ta) { ta.value = (ta.value.trim() ? ta.value.trim() + '\n' : '') + t.dataset.v; ta.focus(); } break; }
@@ -1889,6 +1894,7 @@ function renderReviewBar() {
   bar.hidden = false;
   const HEAD = { productos: ['Revisión de productos', 'Las clientas solo ven los aprobados.'], pedidos: ['Pedidos de clientas', 'Busca un pedido y cambia su estado.'], visitas: ['Visitas de la tienda', 'Cuántas personas entran y cuánto se quedan.'] }[rvTab];
   bar.innerHTML = `<div class="rv-head"><span class="rv-ic">${ic(rvTab === 'visitas' ? 'eye' : 'shield')}</span><div><strong>${HEAD[0]}</strong><span>${HEAD[1]}</span></div></div>
+    ${gasVieja ? `<p class="rv-alertbox">${ic('warn')}<span>${GAS_MSG}</span></p>` : ''}
     <div class="rv-seg" role="tablist">${[['productos', 'Productos'], ['pedidos', 'Pedidos'], ['visitas', 'Visitas']].map(([k, l]) => `<button type="button" role="tab" data-act="rvtab" data-t="${k}" aria-selected="${rvTab === k}">${l}</button>`).join('')}</div>
     ${rvTab !== 'productos' ? '' : `<dl class="rv-counts"><div><dt>Por aprobar</dt><dd>${n.pendiente}</dd></div><div><dt>Por editar</dt><dd>${n.editar}</dd></div><div><dt>Aprobados</dt><dd>${n.aprobado}</dd></div><div><dt>Rechazados</dt><dd>${n.rechazado}</dd></div></dl>
     <button class="btn primary rv-all" type="button" data-act="rvall"${n.pendiente ? '' : ' disabled'}>${ic('check')}${n.pendiente ? `Aprobar todos (${n.pendiente})` : 'No hay productos por aprobar'}</button>`}`;
@@ -1896,11 +1902,22 @@ function renderReviewBar() {
 /* ---------- Pedidos (solo dueño) ---------- */
 const OP_LABEL = { pendiente: 'Pendiente', aprobado: 'Aprobado', camino: 'En camino', entregado: 'Entregado', rechazado: 'Rechazado' };
 let rvTab = 'productos', rvOrders = [], rvOrdersOk = false, rvFilter = 'todos', rvQuery = '', rvBusy = false;
+// versión del programa de Google (google-apps-script/Codigo.gs) que necesita esta página
+const GAS_VERSION = '2026-11-20';
+var gasVieja = false;
+const GAS_MSG = 'El programa de Google de la tienda está desactualizado. Copia otra vez Codigo.gs en Apps Script e implementa una nueva versión (Implementar → Administrar implementaciones → editar → Nueva versión).';
+function verGas(r) {
+  if (!r || r.pin) return;
+  const vieja = !r.version || r.version < GAS_VERSION;
+  if (vieja !== gasVieja) { gasVieja = vieja; renderReviewBar(); }
+}
 async function rvApi(body) {
   const pin = getPin();
   if (!pin) { openPin(); throw new Error('pin'); }
   const r = await api({ action: 'admin', pin, ...body });
   if (r && r.pin) { store.set('vt-pin', ''); applyVisible(); openPin(r.error); throw new Error('pin'); }
+  verGas(r);
+  if (r && !r.ok && (r.error === 'Acción desconocida.' || !r.version)) throw new Error(GAS_MSG);
   if (!r || !r.ok) throw new Error((r && r.error) || 'No se pudo completar. Inténtalo de nuevo.');
   return r;
 }
@@ -1949,16 +1966,32 @@ function openRvOrder(code) {
     <div class="rv-estados">${Object.keys(OP_LABEL).map(k => `<button class="rv-est" type="button" data-act="rvest" data-code="${esc(o.code)}" data-s="${k}" aria-pressed="${o.estado === k}">${OP_LABEL[k]}</button>`).join('')}</div>
     <h3 class="od-sub">Productos</h3>
     <ul class="rv-plist">${o.productos.map((l, i) => { const id = (String(o.codigos || '').split(',')[i] || '').trim().split(/\s+/)[0]; const pr = origenDe(id);
-      return `<li><span>${esc(l)}${id ? ` <small class="muted">${esc(id)}</small>` : ''}</span>${pr ? `<a class="rv-prov" href="${esc(pr.url)}" target="_blank" rel="noopener">${ic('store')}<span>Pedir en <b>${esc(pr.tienda)}</b> · publicación ${esc(pr.num)}</span>${ic('link')}</a>` : (o.proveedor ? '' : `<span class="rv-prov off">Proveedor sin dato</span>`)}</li>`; }).join('')}</ul>
+      const ft = ALL.find(p => p.id === id); const th = ft && (ft.thumb || (ft.imgs || [])[0]);
+      return `<li${th ? ' class="rv-pi"' : ''}>${th ? `<img class="rv-pimg" src="${esc(th)}" alt="" loading="lazy">` : ''}<span>${esc(l)}${id ? ` <small class="muted">${esc(id)}</small>` : ''}</span>${pr ? `<a class="rv-prov" href="${esc(pr.url)}" target="_blank" rel="noopener">${ic('store')}<span>Pedir en <b>${esc(pr.tienda)}</b> · publicación ${esc(pr.num)}</span>${ic('link')}</a>` : (o.proveedor ? '' : `<span class="rv-prov off">Proveedor sin dato</span>`)}</li>`; }).join('')}</ul>
     ${!Object.keys(ORIGEN).length && o.proveedor ? `<p class="rv-note">${ic('store')}<span>${esc(o.proveedor)}</span></p>` : ''}
     <dl class="sum"><div><dt>Total</dt><dd>${money(o.total)}</dd></div><div class="hl"><dt>Abono</dt><dd>${money(o.abono)}</dd></div><div><dt>Saldo por cobrar</dt><dd>${money(o.saldo)}</dd></div></dl>
     <h3 class="od-sub">Comprobante</h3>
     <dl class="sum rv-dl"><div><dt>N.º</dt><dd>${esc(o.num) || '-'}</dd></div><div><dt>Monto depositado</dt><dd>${money(o.monto)}</dd></div>${o.lectura ? `<div><dt>Lectura de la foto</dt><dd>${esc(o.lectura)}</dd></div>` : ''}</dl>
+    ${o.foto ? `<button class="btn secondary rv-releer" type="button" data-act="rvreleer" data-code="${esc(o.code)}">${ic('refresh')}Volver a leer el comprobante</button>` : ''}
     <h3 class="od-sub">Clienta</h3>
     <dl class="sum rv-dl"><div><dt>Nombre</dt><dd>${esc(o.nombre)} ${esc(o.apellido)}</dd></div><div><dt>Cédula</dt><dd>${esc(o.cedula)}</dd></div>
       <div><dt>Celular</dt><dd><a href="tel:${esc(cel)}">${esc(o.celular)}</a></dd></div>
       <div><dt>Entrega</dt><dd>${esc(o.direccion)}${o.ciudad ? ', ' + esc(o.ciudad) : ''}</dd></div>${o.envio ? `<div><dt>Envío</dt><dd>${esc(o.envio)}</dd></div>` : ''}</dl>
     <div class="rv-links">${o.foto ? `<a class="btn secondary" href="${esc(o.foto)}" target="_blank" rel="noopener">${ic('image')}Ver foto del comprobante</a>` : ''}${wa ? `<a class="btn secondary" href="${wa}" target="_blank" rel="noopener">${ic('chat')}Escribir por WhatsApp</a>` : ''}</div>`);
+}
+async function rvReleer(code, btn) {
+  btn.disabled = true; btn.lastChild.textContent = 'Leyendo el comprobante…';
+  try {
+    const r = await rvApi({ op: 'releer', code });
+    const i = rvOrders.findIndex(x => x.code === code);
+    if (i >= 0 && r.pedido) rvOrders[i] = r.pedido;
+    renderOrdersPanel();
+    if (sheet.classList.contains('open') && sheet.dataset.kind === 'rvorder') openRvOrder(code);
+    toast(r.pedido && r.pedido.alertas ? 'Leído otra vez: todavía hay algo que revisar' : 'Leído otra vez: el comprobante está bien');
+  } catch (e) {
+    if (e.message !== 'pin') toast(e.name === 'TypeError' || e.message === 'red' ? 'Sin conexión. Inténtalo de nuevo.' : e.message);
+    btn.disabled = false; btn.lastChild.textContent = 'Volver a leer el comprobante';
+  }
 }
 async function rvSetEstado(code, estado) {
   $$('.rv-est').forEach(b => { b.disabled = true; });
@@ -2040,7 +2073,7 @@ async function loadOrigen(key) {
       try { out[id] = dec.decode(await crypto.subtle.decrypt({ name: 'RSA-OAEP' }, key, Uint8Array.from(atob(b64), c => c.charCodeAt(0)))); } catch (e) {}
     }));
     ORIGEN = out;
-    const firma = Object.keys(out).length + ':' + Object.keys(out).sort().slice(-1)[0];
+    const firma = 'v2:' + Object.keys(out).length + ':' + Object.keys(out).sort().slice(-1)[0];
     if (firma !== store.get('vt-origen', '') && Object.keys(out).length) {
       rvApi({ op: 'origen', mapa: out }).then(() => store.set('vt-origen', firma), () => {});
     }
@@ -2164,7 +2197,7 @@ async function submitPin() {
   try {
     const r = await api({ action: 'admin', pin, op: 'revision' });
     if (!r || !r.ok) { btn.disabled = false; btn.textContent = 'Entrar'; pinErr((r && r.error) || 'PIN incorrecto.'); return; }
-    store.set('vt-pin', pin); setRevision(r.revision); loadCostos(r.llave);
+    store.set('vt-pin', pin); verGas(r); setRevision(r.revision); loadCostos(r.llave);
     const next = rvPending; rvPending = null;
     closeSheet(); applyVisible();
     if (next) next(); else toast('Listo, ya puedes revisar');
@@ -2224,7 +2257,7 @@ if (REVIEW) {
   if (rvLocked()) { renderReviewBar(); setTimeout(() => { if (rvLocked()) openPin(); }, 400); }
   // si este celular ya tiene el PIN, trae los comentarios de edición
   if (LIVE && getPin()) api({ action: 'admin', pin: getPin(), op: 'revision' })
-    .then(r => { if (r && r.ok) { setRevision(r.revision); renderGrid(); loadCostos(r.llave); } else if (r && r.pin) { store.set('vt-pin', ''); applyVisible(); openPin(r.error); } }, () => {});
+    .then(r => { verGas(r); if (r && r.ok) { setRevision(r.revision); renderGrid(); loadCostos(r.llave); } else if (r && r.pin) { store.set('vt-pin', ''); applyVisible(); openPin(r.error); } }, () => {});
 }
 $('#trackHint').hidden = LIVE;
 renderChips(); renderGrid(); renderOrders(); updateBadge(); deadline(); footNote();

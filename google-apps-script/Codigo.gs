@@ -8,6 +8,9 @@
  * También responde el seguimiento de pedidos (código + últimos 4 del celular).
  */
 
+// Versión de este programa. La página de revisión avisa si en Google quedó una versión anterior.
+const VERSION = '2026-11-20';
+
 const CONFIG = {
   HOJA: 'Pedidos',
   LIBRO: 'Tienda Online · Pedidos',
@@ -23,7 +26,7 @@ const CONFIG = {
   TITULAR_CLAVES: ['Yomaira', 'Moreira Litardo']      // partes del nombre del titular que pueden salir en el comprobante
 };
 
-const COLS = ['Fecha', 'Código', 'Estado', 'Nombre', 'Apellido', 'Cédula', 'Celular', 'Ciudad/cantón', 'Dirección', 'Envío', 'Productos', 'Códigos',
+const COLS = ['Fecha', 'Código', 'Estado', 'Nombre', 'Apellido', 'Cédula', 'Celular', 'Ciudad/cantón', 'Dirección', 'Envío', 'Productos', 'Foto artículo', 'Tienda', 'Códigos',
   'Total', 'Abono', 'Saldo', 'N.º comprobante', 'Monto depositado', 'Comprobante', 'Alertas',
   'Aceptó condiciones', 'Huella foto', 'Comprobante leído', 'Proveedor'];
 const C = Object.fromEntries(COLS.map((c, i) => [c, i]));
@@ -55,7 +58,7 @@ function doGet(e) {
   const p = (e && e.parameter) || {};
   if (p.action === 'track') return out_(consultar_(p.code, p.last4));
   if (p.action === 'estados') return out_({ ok: true, estados: estados_() });
-  return out_({ ok: true, tienda: 'Tienda Online' });
+  return out_({ ok: true, tienda: 'Tienda Online', version: VERSION });
 }
 
 /* Ejecuta esta función una vez si quieres crear la hoja y la carpeta antes del primer pedido. */
@@ -68,6 +71,7 @@ function configurar() {
   try { const p = comp.getParents(); if (p.hasNext()) p.next().setName(CONFIG.CARPETA_RAIZ); } catch (err) {}
   resumen_();
   hojaRev_();
+  try { completarPedidos(); } catch (err) { console.error(err); }
   console.log('Hoja de pedidos: ' + ss.getUrl());
   return ss.getUrl();
 }
@@ -115,7 +119,7 @@ function crearPedido_(d) {
   Object.keys(pedidos).forEach(id => {
     const p = catalogo[id];
     if (!p || !(Number(p.price) > 0) || (est[id] || p.status || 'aprobado') !== 'aprobado') { faltan.push(p ? p.name : id); return; }
-    items.push({ id, qty: pedidos[id], name: p.name, price: Number(p.price) });
+    items.push({ id, qty: pedidos[id], name: p.name, price: Number(p.price), foto: fotoUrl_(p) });
   });
   if (faltan.length) return { ok: false, code: 'catalogo', error: `Ya no está disponible: ${faltan.join(', ')}. Quítalo del carrito para continuar.` };
   if (!items.length) return { ok: false, error: 'El carrito está vacío.' };
@@ -132,7 +136,7 @@ function crearPedido_(d) {
   if (bytes.length > 6 * 1024 * 1024) return { ok: false, error: 'La foto del comprobante es muy pesada.' };
   const huella = Utilities.base64Encode(Utilities.computeDigest(Utilities.DigestAlgorithm.MD5, bytes));
   // lectura automática de la foto: monto, cuenta de destino y número de comprobante (antes del candado, porque tarda unos segundos)
-  const lectura = leerComprobante_(bytes, mime, monto, abono, num);
+  const lectura = leerComprobante_(bytes, mime, monto, abono, num, total);
 
   const lock = LockService.getScriptLock();
   lock.waitLock(20000);
@@ -152,20 +156,26 @@ function crearPedido_(d) {
       if (String(r[C['N.º comprobante']]).replace(/\s/g, '').toUpperCase() === numNorm) alertas.push(`N.º de comprobante ya usado en ${r[C['Código']]}`);
       if (r[C['Huella foto']] && r[C['Huella foto']] === huella) alertas.push(`Misma foto que ${r[C['Código']]}`);
     });
-    if (!(monto > 0) || monto + 0.005 < abono) alertas.push(`Monto ${fmt_(monto || 0)} menor al abono ${fmt_(abono)}`);
+    // el monto que escribió la clienta solo cuenta si la foto no muestra ya un pago completo
+    if ((!(monto > 0) || monto + 0.005 < abono) && !(lectura.pagado + 0.005 >= abono)) alertas.push(`Monto ${fmt_(monto || 0)} menor al abono ${fmt_(abono)}`);
     lectura.alertas.forEach(a => alertas.push(a));
 
     const ahora = new Date();
     const proveedor = proveedorTexto_(items);
-    const fila = [ahora, code, 'Pendiente', texto_(nombre), texto_(apellido), "'" + cedula, "'" + cel,
-      texto_(ciudad), texto_(direccion), envio,
-      items.map(i => `${i.qty} x ${i.name}`).join('\n'), items.map(i => `${i.id} x${i.qty}`).join(', '),
-      total, abono, r2_(total - abono), "'" + num, monto > 0 ? monto : '', 'Ver foto', alertas.join(' · '), ahora, huella, lectura.resumen,
-      proveedor];
-    sh.appendRow(fila);
+    const v = {
+      'Fecha': ahora, 'Código': code, 'Estado': 'Pendiente', 'Nombre': texto_(nombre), 'Apellido': texto_(apellido),
+      'Cédula': "'" + cedula, 'Celular': "'" + cel, 'Ciudad/cantón': texto_(ciudad), 'Dirección': texto_(direccion), 'Envío': envio,
+      'Productos': items.map(i => `${i.qty} x ${i.name}`).join('\n'), 'Foto artículo': '', 'Tienda': '',
+      'Códigos': items.map(i => `${i.id} x${i.qty}`).join(', '),
+      'Total': total, 'Abono': abono, 'Saldo': r2_(total - abono), 'N.º comprobante': "'" + num, 'Monto depositado': monto > 0 ? monto : '',
+      'Comprobante': 'Ver foto', 'Alertas': alertas.join(' · '), 'Aceptó condiciones': ahora, 'Huella foto': huella,
+      'Comprobante leído': lectura.resumen, 'Proveedor': proveedor
+    };
+    sh.appendRow(COLS.map(c => v[c]));
     const r = sh.getLastRow();
     sh.getRange(r, C['Comprobante'] + 1).setRichTextValue(
       SpreadsheetApp.newRichTextValue().setText('Ver foto').setLinkUrl(archivo.getUrl()).build());
+    try { escribirArticulos_(sh, r, items); } catch (err) { console.error(err); }
     if (alertas.length) sh.getRange(r, 1, 1, COLS.length).setBackground('#FDE2E2');
 
     cache.put(kCel, String(usados + 1), 3600);
@@ -179,53 +189,94 @@ function crearPedido_(d) {
 
 /* ---------- Lectura automática del comprobante ----------
  * Convierte la foto en texto con el lector de Google Drive y revisa tres cosas:
- * que el monto declarado aparezca, que no sea menor al abono y que se vea la cuenta (o el nombre) de destino.
+ * que se vea el pago (el monto que escribió la clienta, el abono o el total), que no sea menor al abono
+ * y que se vea la cuenta (o el nombre) de destino.
  * Nunca rechaza el pedido: solo agrega alertas para que la dueña lo revise antes de aprobar. */
-function leerComprobante_(bytes, mime, monto, abono, num) {
+function leerComprobante_(bytes, mime, monto, abono, num, total) {
+  return analizarComprobante_(ocrTexto_(bytes, mime), monto, abono, num, total);
+}
+
+function ocrTexto_(bytes, mime) {
   let texto = '', id = null;
   try {
-    const f = Drive.Files.create({ name: 'lectura-comprobante-temporal', mimeType: 'application/vnd.google-apps.document' },
-      Utilities.newBlob(bytes, mime, 'comprobante'), { ocrLanguage: 'es', fields: 'id' });
-    id = f.id;
+    const blob = Utilities.newBlob(bytes, mime, 'comprobante');
+    if (typeof Drive.Files.create === 'function') {
+      // servicio avanzado de Drive, versión 3
+      id = Drive.Files.create({ name: 'lectura-comprobante-temporal', mimeType: 'application/vnd.google-apps.document' },
+        blob, { ocrLanguage: 'es', fields: 'id' }).id;
+    } else {
+      // versión 2 del mismo servicio
+      id = Drive.Files.insert({ title: 'lectura-comprobante-temporal', mimeType: mime }, blob, { ocr: true, ocrLanguage: 'es' }).id;
+    }
     const res = UrlFetchApp.fetch('https://www.googleapis.com/drive/v3/files/' + id + '/export?mimeType=text%2Fplain',
       { headers: { Authorization: 'Bearer ' + ScriptApp.getOAuthToken() }, muteHttpExceptions: true });
     if (res.getResponseCode() === 200) texto = res.getContentText();
+    else console.error('Lectura del comprobante: ' + res.getResponseCode() + ' ' + res.getContentText().slice(0, 300));
   } catch (err) {
     console.error(err);
   } finally {
-    if (id) { try { Drive.Files.remove(id); } catch (e) { try { DriveApp.getFileById(id).setTrashed(true); } catch (e2) {} } }
+    if (id) { try { DriveApp.getFileById(id).setTrashed(true); } catch (e) { try { Drive.Files.remove(id); } catch (e2) {} } }
   }
-  return analizarComprobante_(texto, monto, abono, num);
+  return texto;
 }
 
-function analizarComprobante_(texto, monto, abono, num) {
-  const t = String(texto || '').replace(/ /g, ' ');
-  const out = { texto: t, alertas: [], resumen: '' };
+// Valor de un número escrito con decimales: "1.234,56", "1,234.56", "12,50", "12.5"
+function numero_(raw) {
+  const k = Math.max(raw.lastIndexOf('.'), raw.lastIndexOf(','));
+  if (k < 0) return Number(raw);
+  const dec = raw.slice(k + 1);
+  if (dec.length === 3) return Number(raw.replace(/[.,]/g, '')); // "1.000" es mil, no uno
+  return Number(raw.slice(0, k).replace(/[.,]/g, '') + '.' + dec);
+}
+
+function analizarComprobante_(texto, monto, abono, num, total) {
+  const t = String(texto || '').replace(/\u00a0/g, ' ');
+  const out = { texto: t, alertas: [], resumen: '', pagado: 0 };
   if (!t.replace(/\s/g, '')) {
     out.alertas.push('No se pudo leer la foto del comprobante');
     out.resumen = 'No se pudo leer la foto';
     return out;
   }
-  // montos: "$5,00", "$ 5.00", "USD 12.50", "1.234,56"
+  // el lector a veces separa los decimales o confunde la O con el cero: "10 , 00", "$ 1O.00"
+  const n = t.replace(/(\d)[oO](?=\d|[.,]\d)/g, '$10').replace(/(\d)\s*([.,])\s*(\d{2})(?!\d)/g, '$1$2$3')
+    .replace(/(\$|usd|us\$)\s+(?=\d)/gi, '$1');
   const montos = [];
-  const re = /(\$|usd|us\$)?\s?(\d{1,3}(?:[.,]\d{3})+[.,]\d{2}|\d{1,5}[.,]\d{2})(?!\d)/gi;
+  // con decimales: "$5,00", "USD 12.50", "1.234,56", "12,5"
+  const re = /(\$|usd|us\$)?(\d{1,3}(?:[.,]\d{3})+(?:[.,]\d{1,2})?|\d{1,6}[.,]\d{1,2})(?![\d])/gi;
   let m;
-  while ((m = re.exec(t))) {
-    const raw = m[2], k = Math.max(raw.lastIndexOf('.'), raw.lastIndexOf(','));
-    const v = Number(raw.slice(0, k).replace(/[.,]/g, '') + '.' + raw.slice(k + 1));
+  while ((m = re.exec(n))) {
+    const v = numero_(m[2]);
     if (v > 0 && v < 100000) montos.push({ v, signo: !!m[1] });
+  }
+  // sin decimales pero con signo o palabra de monto: "$20", "Monto: 20", "Valor 15 USD"
+  const re2 = /(?:\$|usd|us\$|monto|valor|importe|total|cantidad|transferido|depositado)[:\s]*(\d{1,6})(?!\d|[.,]\d)/gi;
+  while ((m = re2.exec(n))) {
+    const v = Number(m[1]);
+    if (v > 0 && v < 100000) montos.push({ v, signo: true });
   }
   const conSigno = montos.filter(x => x.signo).map(x => x.v);
   const todos = montos.map(x => x.v);
   const lista = [...new Set(conSigno.length ? conSigno : todos)];
   const cerca = (a, b) => Math.abs(a - b) < 0.006;
+  // búsqueda directa de cada valor esperado en el texto, por si el número quedó pegado a otras palabras
+  const compacto = n.replace(/\s/g, '');
+  const aparece = v => {
+    const f = v.toFixed(2), formas = [f, f.replace('.', ','), v.toFixed(2).replace(/0$/, '').replace(/[.,]$/, '')];
+    if (Number.isInteger(v)) formas.push('$' + v, v + ',0', v + '.0');
+    return formas.some(x => new RegExp('(^|[^\\d.,])' + x.replace(/[.$]/g, '\\$&') + '(?![.,]?\\d)').test(compacto));
+  };
+  const esperados = [...new Set([monto, abono, total].map(Number).filter(v => v > 0))];
+  const vistos = esperados.filter(v => todos.some(x => cerca(x, v)) || aparece(v));
+  out.pagado = vistos.length ? Math.max(...vistos) : 0;
   const digitos = t.replace(/\D/g, '');
   const plano = sinTildes_(t);
 
-  if (!todos.length) out.alertas.push('No se encontró el monto en el comprobante');
-  else {
-    if (!(monto > 0) || !todos.some(v => cerca(v, monto))) out.alertas.push(`El comprobante no muestra ${fmt_(monto || 0)} (se leyó ${lista.slice(0, 3).map(fmt_).join(', ')})`);
-    if (Math.max(...lista) + 0.005 < abono) out.alertas.push(`El comprobante muestra ${fmt_(Math.max(...lista))}, menos que el abono ${fmt_(abono)}`);
+  if (!vistos.length) {
+    if (!lista.length) out.alertas.push('No se encontró el monto en el comprobante');
+    else out.alertas.push(`El comprobante no muestra ${fmt_(monto || abono)} (se leyó ${lista.slice(0, 3).map(fmt_).join(', ')})`);
+    if (lista.length && Math.max(...lista) + 0.005 < abono) out.alertas.push(`El comprobante muestra ${fmt_(Math.max(...lista))}, menos que el abono ${fmt_(abono)}`);
+  } else if (out.pagado + 0.005 < abono) {
+    out.alertas.push(`El comprobante muestra ${fmt_(out.pagado)}, menos que el abono ${fmt_(abono)}`);
   }
   const ult4 = CONFIG.CUENTA_DESTINO.slice(-4);
   const cuentaOk = digitos.includes(ult4) || CONFIG.TITULAR_CLAVES.some(k => plano.includes(sinTildes_(k)));
@@ -233,7 +284,8 @@ function analizarComprobante_(texto, monto, abono, num) {
   const nd = String(num || '').replace(/\D/g, '');
   const numOk = nd.length >= 4 && digitos.includes(nd);
   if (nd.length >= 4 && !numOk) out.alertas.push(`El N.º de comprobante ${num} no aparece en la foto`);
-  out.resumen = `Monto leído: ${lista.length ? lista.slice(0, 3).map(fmt_).join(', ') : 'no se encontró'} · Cuenta destino: ${cuentaOk ? 'sí' : 'no'} · N.º: ${numOk ? 'sí' : 'no'}`;
+  const leido = vistos.length ? `${fmt_(out.pagado)} (coincide)` : lista.length ? lista.slice(0, 3).map(fmt_).join(', ') : 'no se encontró';
+  out.resumen = `Monto leído: ${leido} · Cuenta destino: ${cuentaOk ? 'sí' : 'no'} · N.º: ${numOk ? 'sí' : 'no'}`;
   return out;
 }
 
@@ -255,6 +307,15 @@ function admin_(d) {
     return { ok: false, pin: true, error: 'PIN incorrecto.' };
   }
   // la llave COSTOS_LLAVE (Propiedades del script) descifra costos.json: el precio de Telegram que solo ve el dueño
+  try {
+    return Object.assign(adminOp_(d), { version: VERSION });
+  } catch (err) {
+    console.error(err);
+    return { ok: false, version: VERSION, error: 'Error en Google: ' + String(err && err.message || err).slice(0, 200) };
+  }
+}
+
+function adminOp_(d) {
   if (d.op === 'revision') return { ok: true, revision: leerRev_(), llave: PropertiesService.getScriptProperties().getProperty('COSTOS_LLAVE') || '' };
   if (d.op === 'pedidos') return buscarPedidos_(String(d.q || ''));
   if (d.op === 'estado') return cambiarEstado_(String(d.code || ''), String(d.estado || ''));
@@ -262,12 +323,13 @@ function admin_(d) {
     // prueba de la lectura automática sin crear pedido
     if (!d.photo || !/^data:image\/(jpeg|png|webp);base64,/.test(d.photo)) return { ok: false, error: 'Falta la foto.' };
     const bytes = Utilities.base64Decode(d.photo.slice(d.photo.indexOf(',') + 1));
-    const l = leerComprobante_(bytes, d.photo.slice(5, d.photo.indexOf(';')), Number(d.monto), Number(d.abono || d.monto), String(d.num || ''));
+    const l = leerComprobante_(bytes, d.photo.slice(5, d.photo.indexOf(';')), Number(d.monto), Number(d.abono || d.monto), String(d.num || ''), Number(d.total || 0));
     return { ok: true, resumen: l.resumen, alertas: l.alertas, texto: l.texto.slice(0, 600) };
   }
   if (d.op === 'decidir') return decidir_(d);
   if (d.op === 'visitas') return resumenVisitas_(Number(d.dias) || 1);
   if (d.op === 'origen') return guardarOrigen_(d.mapa);
+  if (d.op === 'releer') return releer_(String(d.code || ''));
   return { ok: false, error: 'Acción desconocida.' };
 }
 
@@ -296,10 +358,13 @@ function guardarOrigen_(mapa) {
     if (sh.getLastRow() > 1) sh.getRange(2, 1, sh.getLastRow() - 1, PROV_COLS.length).clearContent();
     sh.getRange(2, 1, filas.length, PROV_COLS.length).setValues(filas);
     CacheService.getScriptCache().remove('origen');
-    return { ok: true, n: filas.length };
   } finally {
     lock.releaseLock();
   }
+  // con la lista de tiendas al día, completa la foto y la tienda de los pedidos que no la tienen
+  let completados = 0;
+  try { completados = completarPedidos(); } catch (err) { console.error(err); }
+  return { ok: true, n: filas.length, completados };
 }
 
 function hojaProv_() {
@@ -340,6 +405,108 @@ function proveedorTexto_(items) {
     const o = mapa[i.id];
     return o ? `${i.id} x${i.qty}: ${o.tienda} · publicación ${o.num} · ${o.url}` : `${i.id} x${i.qty}: sin dato`;
   }).join('\n');
+}
+
+/* ---------- Foto y tienda de cada artículo en la hoja de pedidos ----------
+ * "Foto artículo" muestra la foto del producto pedido (la del primero si son varios).
+ * "Tienda" dice en qué tienda de Telegram pedir cada artículo, con enlace a la publicación y a la foto. */
+const BASE_TIENDA_ = CONFIG.PRODUCTOS_URL.replace(/products\.json$/, '');
+function fotoUrl_(p) {
+  const rel = p && (p.thumb || (Array.isArray(p.imgs) && p.imgs[0]));
+  return rel ? (/^https?:/.test(rel) ? rel : BASE_TIENDA_ + rel) : '';
+}
+
+function escribirArticulos_(sh, fila, items, mapa) {
+  if (!mapa) { mapa = {}; try { mapa = origenMapa_(); } catch (e) { console.error(e); } }
+  const conFoto = items.find(i => i.foto);
+  const celdaFoto = sh.getRange(fila, C['Foto artículo'] + 1);
+  if (conFoto) celdaFoto.setFormula(`=IMAGE("${conFoto.foto}")`); else celdaFoto.setValue('Sin foto');
+  // texto con enlaces: "1 x Producto (P-216): Tienda · publicación 123 · ver foto"
+  let texto = '';
+  const enlaces = [];
+  items.forEach((i, k) => {
+    if (k) texto += '\n';
+    texto += `${i.qty} x ${i.name} (${i.id}): `;
+    const o = mapa[i.id];
+    if (o && o.tienda) {
+      const a = texto.length; texto += o.tienda; enlaces.push([a, texto.length, o.url]);
+      texto += ` · publicación ${o.num}`;
+    } else {
+      texto += 'tienda sin dato';
+    }
+    if (i.foto) { texto += ' · '; const a = texto.length; texto += 'ver foto'; enlaces.push([a, texto.length, i.foto]); }
+  });
+  const rt = SpreadsheetApp.newRichTextValue().setText(texto);
+  enlaces.forEach(([a, b, url]) => { if (url) rt.setLinkUrl(a, b, url); });
+  sh.getRange(fila, C['Tienda'] + 1).setRichTextValue(rt.build()).setWrap(true).setVerticalAlignment('middle');
+  if (sh.getRowHeight(fila) < 96) sh.setRowHeight(fila, 96);
+}
+
+function itemsDeFila_(r, cat) {
+  const lineas = String(r[C['Productos']] || '').split('\n');
+  return String(r[C['Códigos']] || '').split(',').map(x => x.trim()).filter(Boolean).map((x, k) => {
+    const m = x.match(/^(\S+)\s+x(\d+)$/);
+    if (!m) return null;
+    const p = cat[m[1]];
+    const nombre = p ? String(p.name) : String(lineas[k] || '').replace(/^\d+\s*x\s*/, '') || m[1];
+    return { id: m[1], qty: Number(m[2]), name: nombre, foto: fotoUrl_(p) };
+  }).filter(Boolean);
+}
+
+/* Completa "Foto artículo", "Tienda" y "Proveedor" en los pedidos que no los tienen (también los anteriores a este cambio).
+ * Se ejecuta sola al abrir la página de revisión con el PIN; también se puede ejecutar a mano desde el editor. */
+function completarPedidos() {
+  const cat = catalogo_();
+  if (!cat) return 0;
+  let mapa = {};
+  try { mapa = origenMapa_(); } catch (e) { console.error(e); }
+  const sh = hoja_();
+  const n = sh.getLastRow() - 1;
+  if (n < 1) return 0;
+  const vals = sh.getRange(2, 1, n, COLS.length).getValues();
+  const forms = sh.getRange(2, C['Foto artículo'] + 1, n, 1).getFormulas();
+  let hechos = 0;
+  for (let i = 0; i < n && hechos < 150; i++) {
+    const r = vals[i];
+    if (!r[C['Código']] || !r[C['Códigos']]) continue;
+    const tienda = String(r[C['Tienda']] || '');
+    const falta = !forms[i][0] && r[C['Foto artículo']] !== 'Sin foto' || !tienda || /sin dato/.test(tienda);
+    if (!falta) continue;
+    const items = itemsDeFila_(r, cat);
+    if (!items.length) continue;
+    escribirArticulos_(sh, i + 2, items, mapa);
+    if (!r[C['Proveedor']] || /sin dato/.test(String(r[C['Proveedor']]))) sh.getRange(i + 2, C['Proveedor'] + 1).setValue(proveedorTexto_(items));
+    hechos++;
+  }
+  return hechos;
+}
+
+/* Vuelve a leer la foto del comprobante de un pedido con la lectura actual y rehace sus alertas
+ * (se conservan las de comprobante repetido). Lo usa el botón "Volver a leer" de la página de revisión. */
+function releer_(code) {
+  code = code.toUpperCase().trim();
+  if (!/^PED-[A-Z0-9]{4}$/.test(code)) return { ok: false, error: 'Código no válido.' };
+  const sh = hoja_();
+  if (sh.getLastRow() < 2) return { ok: false, error: 'No encontrado.' };
+  const celda = sh.getRange(2, C['Código'] + 1, sh.getLastRow() - 1, 1).createTextFinder(code).matchEntireCell(true).findNext();
+  if (!celda) return { ok: false, error: 'No encontrado.' };
+  const fila = celda.getRow();
+  const r = sh.getRange(fila, 1, 1, COLS.length).getValues()[0];
+  const rich = sh.getRange(fila, C['Comprobante'] + 1).getRichTextValue();
+  const url = rich && rich.getLinkUrl() || '';
+  const id = (url.match(/[-\w]{25,}/) || [])[0];
+  if (!id) return { ok: false, error: 'No se encontró la foto del comprobante.' };
+  const blob = DriveApp.getFileById(id).getBlob();
+  const monto = Number(r[C['Monto depositado']]) || 0, abono = Number(r[C['Abono']]) || 0, total = Number(r[C['Total']]) || 0;
+  const l = leerComprobante_(blob.getBytes(), blob.getContentType(), monto, abono, String(r[C['N.º comprobante']] || ''), total);
+  const alertas = String(r[C['Alertas']] || '').split(' · ').filter(a => /^(N\.º de comprobante ya usado|Misma foto)/.test(a));
+  if ((!(monto > 0) || monto + 0.005 < abono) && !(l.pagado + 0.005 >= abono)) alertas.push(`Monto ${fmt_(monto)} menor al abono ${fmt_(abono)}`);
+  l.alertas.forEach(a => alertas.push(a));
+  sh.getRange(fila, C['Alertas'] + 1).setValue(alertas.join(' · '));
+  sh.getRange(fila, C['Comprobante leído'] + 1).setValue(l.resumen);
+  sh.getRange(fila, 1, 1, COLS.length).setBackground(alertas.length ? '#FDE2E2' : null);
+  const r2 = sh.getRange(fila, 1, 1, COLS.length).getValues()[0];
+  return { ok: true, pedido: filaPedido_(r2, rich), texto: l.texto.slice(0, 600) };
 }
 
 /* ---------- Visitas de la tienda ----------
@@ -644,7 +811,19 @@ function avisar_(p) {
     `Hoja de pedidos: ${libro_().getUrl()}`
   ].join('\n');
   try {
-    MailApp.sendEmail({ to: para, subject: asunto, body: cuerpo, attachments: [p.archivo.getBlob()] });
+    // versión con fotos: cada artículo con su foto y la tienda donde pedirlo
+    const h = x => String(x == null ? '' : x).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    let mapa = {};
+    try { mapa = origenMapa_(); } catch (e) {}
+    const filasHtml = p.items.map(i => {
+      const o = mapa[i.id];
+      const tienda = o && o.tienda ? `<a href="${h(o.url)}">${h(o.tienda)}</a> · publicación ${h(o.num)}` : 'tienda sin dato';
+      return `<tr><td style="padding:6px 10px 6px 0">${i.foto ? `<img src="${h(i.foto)}" width="90" height="90" style="object-fit:cover;border-radius:8px" alt="">` : ''}</td>` +
+        `<td style="padding:6px 0;font:14px Arial,sans-serif"><b>${i.qty} x ${h(i.name)}</b> (${h(i.id)})<br>${fmt_(i.price * i.qty)}<br>Pedir en: ${tienda}</td></tr>`;
+    }).join('');
+    const html = `<div style="font:14px Arial,sans-serif">${h(cuerpo).replace(/\n/g, '<br>')}</div>` +
+      `<h3 style="font:bold 15px Arial,sans-serif;margin:18px 0 6px">Artículos pedidos</h3><table style="border-collapse:collapse">${filasHtml}</table>`;
+    MailApp.sendEmail({ to: para, subject: asunto, body: cuerpo, htmlBody: html, attachments: [p.archivo.getBlob()] });
   } catch (err) { console.error(err); }
 }
 
@@ -675,23 +854,41 @@ function hoja_() {
     sh = ss.getSheets()[0];
     if (sh.getLastRow() > 0 || sh.getName() === 'Resumen') sh = ss.insertSheet(CONFIG.HOJA); else sh.setName(CONFIG.HOJA);
   }
-  const enc = sh.getRange(1, 1, 1, COLS.length).getValues()[0];
-  if (enc.join('|') !== COLS.join('|')) {
-    // si solo faltan columnas nuevas al final, se agregan sin tocar los pedidos que ya hay
-    const n = enc.indexOf('');
-    const soloFaltan = n > 0 && enc.slice(0, n).join('|') === COLS.slice(0, n).join('|') && enc.slice(n).every(v => v === '');
-    if (soloFaltan) agregarCols_(sh, n); else preparar_(sh);
+  const ancho = Math.max(1, sh.getLastColumn());
+  const enc = sh.getRange(1, 1, 1, ancho).getValues()[0].map(v => String(v).trim());
+  let n = enc.length;
+  while (n && !enc[n - 1]) n--;
+  const actual = enc.slice(0, n);
+  if (actual.join('|') !== COLS.join('|')) {
+    // si a la hoja solo le faltan columnas nuevas, se insertan en su lugar sin tocar los pedidos que ya hay
+    let j = 0;
+    COLS.forEach(c => { if (j < n && actual[j] === c) j++; });
+    if (n > 0 && j === n) agregarCols_(sh, actual); else preparar_(sh);
   }
   return sh;
 }
 
-function agregarCols_(sh, desde) {
-  sh.getRange(1, desde + 1, 1, COLS.length - desde).setValues([COLS.slice(desde)])
-    .setFontWeight('bold').setBackground('#1E66F5').setFontColor('#FFFFFF');
-  if (C['Comprobante leído'] >= desde) {
-    sh.setColumnWidth(C['Comprobante leído'] + 1, 280);
-    sh.getRange(2, C['Comprobante leído'] + 1, Math.max(1, sh.getMaxRows() - 1), 1).setWrap(true);
-  }
+function agregarCols_(sh, actual) {
+  const enc = actual.slice();
+  COLS.forEach((c, i) => {
+    if (enc[i] === c) return;
+    if (i < enc.length) sh.insertColumnBefore(i + 1);
+    else if (sh.getMaxColumns() < i + 1) sh.insertColumnAfter(sh.getMaxColumns());
+    enc.splice(i, 0, c);
+    sh.getRange(1, i + 1).setValue(c).setFontWeight('bold').setBackground('#1E66F5').setFontColor('#FFFFFF');
+    const col = sh.getRange(2, i + 1, Math.max(1, sh.getMaxRows() - 1), 1);
+    col.clearDataValidations().setNumberFormat('General').setFontWeight('normal').setFontColor(null);
+    formatoCol_(sh, c);
+  });
+}
+
+function formatoCol_(sh, c) {
+  const filas = Math.max(1, sh.getMaxRows() - 1);
+  const ancho = { 'Foto artículo': 110, 'Tienda': 300, 'Comprobante leído': 280, 'Proveedor': 300 }[c];
+  if (!ancho) return;
+  sh.setColumnWidth(C[c] + 1, ancho);
+  const r = sh.getRange(2, C[c] + 1, filas, 1).setVerticalAlignment('middle');
+  if (c === 'Foto artículo') r.setHorizontalAlignment('center'); else r.setWrap(true);
 }
 
 /* Pone los encabezados y formatos. Si cambian las columnas, rehace la hoja (solo mientras no haya pedidos con el formato anterior). */
@@ -721,8 +918,7 @@ function preparar_(sh) {
   sh.setColumnWidth(C['Envío'] + 1, 170);
   sh.setColumnWidth(C['Alertas'] + 1, 240);
   sh.hideColumns(C['Huella foto'] + 1);
-  sh.setColumnWidth(C['Comprobante leído'] + 1, 280);
-  sh.getRange(2, C['Comprobante leído'] + 1, filas, 1).setWrap(true);
+  ['Foto artículo', 'Tienda', 'Comprobante leído', 'Proveedor'].forEach(c => formatoCol_(sh, c));
 }
 
 /* Hoja "Resumen": las cuentas de la tienda con fórmulas que se actualizan solas con cada pedido. */

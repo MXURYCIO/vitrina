@@ -10,6 +10,12 @@ Tienda en línea pensada para celular: catálogo, carrito, reserva con abono del
 - `CRITERIOS.md`: las reglas para elegir y preparar productos (temporada, descripciones, colores, fotos, precio).
 - `google-apps-script/Codigo.gs`: el programa que va en la hoja de Google "Tienda Online · Pedidos". Recibe los pedidos, guarda los comprobantes en Drive, marca alertas y envía el aviso por correo.
 
+## Hoja de pedidos
+
+Cada pedido trae, junto a "Productos", la columna **Foto artículo** (la foto del producto pedido; si son varios, la del primero) y la columna **Tienda** (en qué tienda de Telegram pedir cada artículo, con enlace a la publicación y a la foto de cada uno). El correo de aviso también muestra la foto y la tienda de cada artículo. Los pedidos anteriores se completan solos la próxima vez que abres `#revisar` con tu PIN.
+
+La lectura automática del comprobante acepta el monto que escribió la clienta, el abono o el total, aunque el lector de la foto separe los decimales ("10 , 00"), no traiga centavos ("$20") o confunda la O con el cero. Si un pedido quedó con una alerta que no corresponde, en `#revisar` → Pedidos → el pedido, toca **Volver a leer el comprobante**.
+
 ## Estados de un pedido
 
 Se cambian en la columna **Estado** de la hoja: Pendiente, Aprobado, En camino, Entregado o Rechazado. La clienta ve el cambio al consultar su pedido con el código y los últimos 4 dígitos de su celular.

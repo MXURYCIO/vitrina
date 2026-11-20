@@ -1,16 +1,20 @@
 name: Textos de Telegram del catálogo
 
 # Baja el texto original de los productos ya publicados, para revisar colores y modelos.
-# El resultado queda como artefacto por un día; no se sube al repositorio.
+# El resultado se cifra con la llave pública que se pasa al lanzarla y queda un rato en la rama
+# "textos-tmp", que se borra después de leerla. Nunca se sube en claro.
 on:
   workflow_dispatch:
     inputs:
+      llave:
+        description: 'Llave pública (PEM en base64) para cifrar el resultado'
+        required: true
       ids:
         description: 'IDs separados por espacio (vacío = todos)'
         default: ''
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   textos:
@@ -24,9 +28,20 @@ jobs:
       - run: pip install -q requests beautifulsoup4
       - env:
           IDS: ${{ github.event.inputs.ids }}
-        run: python scripts/textos_telegram.py textos.json $IDS
-      - uses: actions/upload-artifact@v4
-        with:
-          name: textos
-          path: textos.json
-          retention-days: 1
+        run: python scripts/textos_telegram.py /tmp/textos.json $IDS
+      - name: Cifrar y dejar en la rama textos-tmp
+        env:
+          LLAVE: ${{ github.event.inputs.llave }}
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mkdir -p /tmp/out && cd /tmp/out
+          echo "$LLAVE" | base64 -d > /tmp/pub.pem
+          openssl rand -hex 32 > /tmp/k.txt
+          openssl enc -aes-256-cbc -pbkdf2 -pass file:/tmp/k.txt -in /tmp/textos.json -out textos.enc
+          openssl pkeyutl -encrypt -pubin -inkey /tmp/pub.pem -pkeyopt rsa_padding_mode:oaep -in /tmp/k.txt -out k.enc
+          rm -f /tmp/k.txt /tmp/textos.json
+          git init -q -b textos-tmp
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A && git commit -qm "Textos cifrados (temporal)"
+          git push -qf "https://x-access-token:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git" textos-tmp

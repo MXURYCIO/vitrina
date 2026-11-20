@@ -16,6 +16,15 @@ Cada pedido trae, junto a "Productos", la columna **Foto artículo** (la foto de
 
 La lectura automática del comprobante acepta el monto que escribió la clienta, el abono o el total, aunque el lector de la foto separe los decimales ("10 , 00"), no traiga centavos ("$20") o confunda la O con el cero. Si un pedido quedó con una alerta que no corresponde, en `#revisar` → Pedidos → el pedido, toca **Volver a leer el comprobante**.
 
+## Pedido por WhatsApp
+
+En el carrito, el botón principal es **Enviar pedido por WhatsApp** (si `TIENDA.whatsapp` tiene el número). Abre WhatsApp con el pedido escrito: código, productos con su color o aroma, total, abono del 50%, saldo y un enlace al pedido con fotos (`#pedido-PED-XXXX`). La clienta no llena formularios: el abono y los datos de entrega se coordinan por chat. Debajo queda el enlace para reservar en la página con comprobante, como antes.
+
+- Al tocar el botón, el carrito se registra en la hoja "Pedidos" (Envío "Por WhatsApp", fila verde, sin datos personales) con la foto y la tienda de cada artículo, y llega un correo con el resumen.
+- En `#revisar` → Pedidos sale como "Pedido por WhatsApp", con cada producto, su foto y dónde pedirlo (tienda de Telegram con publicación y contacto, o "Revista web Boom" con la página). Cuando llegue el abono, se marca Aprobado.
+- La clienta ve su pedido en "Mis pedidos" o con el enlace del mensaje, solo con el código. Si quien abre el enlace tiene el PIN guardado (la dueña), sale el botón "Ver detalle para la tienda".
+- Los teléfonos de pedidos de cada tienda de Telegram están en `canales.json` → `contactos`.
+
 ## Productos Boom (catálogo por campaña)
 
 Además de lo que llega de Telegram, la tienda vende los productos del catálogo Boom (marcas WIP WIP, TesQui, Ameli, Aku y RunRun) con los precios del catálogo, tal cual. Se ven con el botón verde **Productos Boom**, junto a Categorías y Filtro (y en la barra flotante). La dirección `https://tiendaonline-ec.github.io/#boom` abre directo esa sección, para compartirla.

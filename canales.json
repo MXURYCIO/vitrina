@@ -4,5 +4,11 @@
     "importadorapandita",
     "tuhogartextiles"
   ],
-  "lista_negra": []
+  "lista_negra": [],
+  "contactos": {
+    "Kaydeecuador": "GYE 098 704 5171 · Provincias 098 733 1567",
+    "importadorapandita": "098 420 3279",
+    "tuhogartextiles": "Letamendi y Chimborazo, frente al Gran Aki (Guayaquil)"
+  },
+  "nota_contactos": "Teléfonos de pedidos que cada tienda publica en su canal. Salen en la página de revisión, la hoja de pedidos y el correo."
 }

@@ -35,7 +35,7 @@
   --ok:#14834A; --ok-soft:rgba(20,131,74,.12);
   --info:#0B87A8; --info-soft:rgba(11,135,168,.12);
   --warn:#9A5B07; --warn-soft:rgba(214,138,20,.14);
-  --bad:#C42B2B; --bad-soft:rgba(196,43,43,.10); --boom-ink:#075C33; --sun:#D98300; --moon:#4A6FD8; --knob:#FFFFFF;
+  --bad:#C42B2B; --bad-soft:rgba(196,43,43,.10); --boom-ink:#075C33; --sun:#D98300; --moon:#4A6FD8; --knob:#FFFFFF; --share:#15803D;
   --glass-tint:rgba(255,255,255,.10); --glass-tint-lens:rgba(255,255,255,.03);
   --glass-strong:rgba(255,255,255,.38); --glass-sheet:rgba(243,246,250,.56); --glass-sel:rgba(255,255,255,.34);
   --rim-hi:rgba(255,255,255,1); --rim-lo:rgba(255,255,255,.50);
@@ -62,7 +62,7 @@
     --ok:#3BCB7F; --ok-soft:rgba(59,203,127,.16);
     --info:#38BDF8; --info-soft:rgba(56,189,248,.16);
     --warn:#FFB547; --warn-soft:rgba(255,181,71,.15);
-    --bad:#FF6B6B; --bad-soft:rgba(255,107,107,.15); --boom-ink:#8BE3B4; --sun:#FFC24D; --moon:#A9C2FF; --knob:#3A4558;
+    --bad:#FF6B6B; --bad-soft:rgba(255,107,107,.15); --boom-ink:#8BE3B4; --sun:#FFC24D; --moon:#A9C2FF; --knob:#3A4558; --share:#18864A;
     --glass-tint:rgba(40,48,62,.14); --glass-tint-lens:rgba(30,38,52,.06);
     --glass-strong:rgba(36,44,58,.40); --glass-sheet:rgba(16,21,30,.60); --glass-sel:rgba(255,255,255,.12);
     --rim-hi:rgba(255,255,255,.48); --rim-lo:rgba(255,255,255,.14);
@@ -80,7 +80,7 @@
     --ok:#3BCB7F; --ok-soft:rgba(59,203,127,.16);
     --info:#38BDF8; --info-soft:rgba(56,189,248,.16);
     --warn:#FFB547; --warn-soft:rgba(255,181,71,.15);
-    --bad:#FF6B6B; --bad-soft:rgba(255,107,107,.15); --boom-ink:#8BE3B4; --sun:#FFC24D; --moon:#A9C2FF; --knob:#3A4558;
+    --bad:#FF6B6B; --bad-soft:rgba(255,107,107,.15); --boom-ink:#8BE3B4; --sun:#FFC24D; --moon:#A9C2FF; --knob:#3A4558; --share:#18864A;
     --glass-tint:rgba(40,48,62,.14); --glass-tint-lens:rgba(30,38,52,.06);
     --glass-strong:rgba(36,44,58,.40); --glass-sheet:rgba(16,21,30,.60); --glass-sel:rgba(255,255,255,.12);
     --rim-hi:rgba(255,255,255,.48); --rim-lo:rgba(255,255,255,.14);
@@ -505,6 +505,12 @@ body.rv-ped #tools,body.rv-ped .sec-head,body.rv-ped #grid,body.rv-ped #empty{di
 .btn.primary{background:var(--accent-glass);color:var(--accent-ink);box-shadow:inset 0 1px 0 rgba(255,255,255,.55),inset 0 0 0 .5px rgba(255,255,255,.35),inset 0 -4px 10px rgba(0,0,0,.12),0 12px 26px -14px var(--accent)}
 .btn.secondary{background:var(--glass-strong);color:var(--fg);box-shadow:0 0 0 .5px var(--edge),inset 0 1px 0 var(--rim-hi)}
 .foot-stack{display:grid;gap:10px}
+/* Carrito: dos caminos con la misma importancia, lado a lado */
+.foot-duo{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.btn.duo{height:auto;min-height:56px;padding:8px 12px;gap:8px;font-size:16px;line-height:1.15;text-align:left}
+.btn.duo span{min-width:0;text-wrap:balance}
+.btn.duo svg{flex:none}
+.btn.verde{background:var(--share);color:#FFFFFF;box-shadow:inset 0 1px 0 rgba(255,255,255,.45),inset 0 0 0 .5px rgba(255,255,255,.3),inset 0 -4px 10px rgba(0,0,0,.12),0 12px 26px -14px var(--share)}
 
 /* ---------- Barra inferior ---------- */
 .dock{position:fixed;left:0;right:0;bottom:0;z-index:40;display:flex;justify-content:center;align-items:center;gap:10px;
@@ -618,7 +624,6 @@ body.rv-ped #tools,body.rv-ped .sec-head,body.rv-ped #grid,body.rv-ped #empty{di
 /* pedido por WhatsApp */
 .btn.wa{background:#1FA855;color:#FFFFFF;box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 10px 22px -12px #1FA855;text-decoration:none}
 .btn.wa svg{width:20px;height:20px}
-.wa-alt.link-btn{justify-self:center;height:auto;padding:6px 10px;background:none;box-shadow:none;font-size:13px;font-weight:600;color:var(--muted);text-decoration:underline}
 .done-ic.wa-ic{background:#1FA855;color:#FFFFFF}
 .rv-wa{display:inline-flex;align-items:center;gap:6px;color:#13803F;font-weight:700}
 .rv-wa svg{width:16px;height:16px}
@@ -1454,8 +1459,8 @@ function openCart() {
      <div class="cart-clear" id="cartClear">${clearBtn()}</div>
      <dl class="sum"><div><dt>Total del pedido</dt><dd>${money(t)}</dd></div><div class="hl"><dt>Abono para reservar (50%)</dt><dd>${money(a)}</dd></div><div><dt>Saldo a pagar al recibir</dt><dd>${money(s)}</dd></div></dl>
      <p class="ship-mini">${ic('truck')}<span>Entregamos todo junto y pagas el saldo al recibir. Fuera de ${TIENDA.zonaLocal[0]}, el envío se paga aparte.</span></p>`,
-    `<div class="foot-stack"><button class="btn primary" type="button" data-act="share">${ic('share')}Enviar o compartir carrito</button>
-      <button class="link-btn plain wa-alt" type="button" data-act="checkout">O reserva aquí con tu comprobante</button></div>`);
+    `<div class="foot-duo"><button class="btn duo verde" type="button" data-act="share">${ic('share')}<span>Compartir carrito</span></button>
+      <button class="btn duo primary" type="button" data-act="checkout">${ic('cash')}<span>Continuar al pago</span></button></div>`);
 }
 
 const field = (id, label, o = {}) => `<div class="field"><label for="${id}">${label}</label><input id="${id}" type="${o.type || 'text'}" autocomplete="${o.ac || 'off'}"${o.im ? ` inputmode="${o.im}"` : ''}${o.max ? ` maxlength="${o.max}"` : ''}${o.ph ? ` placeholder="${o.ph}"` : ''} value="${esc(o.val || '')}"><p class="msg" data-for="${id}"></p></div>`;

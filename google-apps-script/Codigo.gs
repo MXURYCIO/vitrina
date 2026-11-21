@@ -9,7 +9,7 @@
  */
 
 // Versión de este programa. La página de revisión avisa si en Google quedó una versión anterior.
-const VERSION = '2026-11-21b';
+const VERSION = '2026-11-21c';
 
 const CONFIG = {
   HOJA: 'Pedidos',
@@ -25,7 +25,8 @@ const CONFIG = {
   // Desde esta fecha cada pedido se consulta solo con su código. Los anteriores con celular piden además sus
   // últimos 4 dígitos. Cuando ya se hayan entregado todos los anteriores, poner '2000-01-01' para quitar ese paso.
   CODIGO_SOLO_DESDE: '2026-11-21T00:00:00-05:00',
-  MAX_CONSULTAS_FALLIDAS_POR_HORA: 300,
+  MAX_FALLIDAS_POR_CLIENTE: 10,          // búsquedas de pedido sin resultado por celular; luego debe esperar una hora
+  MAX_CONSULTAS_FALLIDAS_POR_HORA: 300,  // tope de toda la tienda, contra programas que prueban códigos al azar
   ZONA_LOCAL: ['La Maná', 'Guasaganda', 'Pucayacu'], // donde se entrega directamente; lo demás va por servicio de entrega
   CUENTA_DESTINO: '2216883431',                       // cuenta donde depositan (la misma que muestra la tienda)
   TITULAR_CLAVES: ['Yomaira', 'Moreira Litardo']      // partes del nombre del titular que pueden salir en el comprobante
@@ -49,10 +50,10 @@ function doPost(e) {
     if (d.action === 'visita') return out_(visita_(d));
     if (d.action === 'estados') return out_({ ok: true, estados: estados_() });
     if (d.action === 'admin') return out_(admin_(d));
-    if (d.action === 'track') return out_(consultar_(d.code, d.last4));
+    if (d.action === 'track') return out_(consultar_(d.code, d.last4, d.dev, true));
     if (d.action === 'trackMany') {
       const list = Array.isArray(d.list) ? d.list.slice(0, 20) : [];
-      return out_({ ok: true, orders: list.map(x => consultar_(x.code, x.last4)).filter(r => r.ok) });
+      return out_({ ok: true, orders: list.map(x => consultar_(x.code, x.last4, '', false)).filter(r => r.ok) });
     }
     return out_({ ok: false, error: 'Acción desconocida.' });
   } catch (err) {
@@ -63,7 +64,7 @@ function doPost(e) {
 
 function doGet(e) {
   const p = (e && e.parameter) || {};
-  if (p.action === 'track') return out_(consultar_(p.code, p.last4));
+  if (p.action === 'track') return out_(consultar_(p.code, p.last4, '', true));
   if (p.action === 'estados') return out_({ ok: true, estados: estados_() });
   return out_({ ok: true, tienda: 'Tienda Online', version: VERSION });
 }
@@ -865,15 +866,22 @@ function hojaRev_() {
 }
 
 /* ---------- Seguimiento ---------- */
-function consultar_(code, last4) {
+// dev: identificador al azar del celular de la clienta (lo crea la página); contar: false en la actualización automática de "Mis pedidos"
+function consultar_(code, last4, dev, contar) {
   code = String(code || '').toUpperCase().trim();
   last4 = String(last4 || '').trim();
   if (!/^PED-[A-Z0-9]{4}$/.test(code) || !(/^\d{4}$/.test(last4) || last4 === '')) return { ok: false, error: 'Datos incompletos.' };
-  // Límite de búsquedas fallidas por hora, para que nadie pruebe códigos al azar
+  // Límite de búsquedas sin resultado: 10 por celular y 300 en toda la tienda; se libera una hora después del último intento
   const cache = CacheService.getScriptCache();
-  const fallidas = Number(cache.get('trackFail')) || 0;
-  if (fallidas >= CONFIG.MAX_CONSULTAS_FALLIDAS_POR_HORA) return { ok: false, error: 'Demasiadas búsquedas. Inténtalo en una hora.' };
-  const falla = (extra) => { cache.put('trackFail', String(fallidas + 1), 3600); return Object.assign({ ok: false, error: 'No encontrado.' }, extra || {}); };
+  const kDev = 'tf_' + String(dev || '').replace(/[^A-Za-z0-9]/g, '').slice(0, 24);
+  const fDev = contar && kDev.length > 3 ? Number(cache.get(kDev)) || 0 : 0;
+  const fTodas = contar ? Number(cache.get('trackFail')) || 0 : 0;
+  const espera = { ok: false, bloqueado: true, error: `Hiciste ${CONFIG.MAX_FALLIDAS_POR_CLIENTE} búsquedas sin resultado. Espera una hora e inténtalo de nuevo.` };
+  if (fDev >= CONFIG.MAX_FALLIDAS_POR_CLIENTE || fTodas >= CONFIG.MAX_CONSULTAS_FALLIDAS_POR_HORA) return espera;
+  const falla = () => {
+    if (contar) { cache.put('trackFail', String(fTodas + 1), 3600); if (kDev.length > 3) cache.put(kDev, String(fDev + 1), 3600); }
+    return { ok: false, error: 'No encontrado.', quedan: Math.max(0, CONFIG.MAX_FALLIDAS_POR_CLIENTE - fDev - 1) };
+  };
   const sh = hoja_();
   if (sh.getLastRow() < 2) return falla();
   const celda = sh.getRange(2, C['Código'] + 1, sh.getLastRow() - 1, 1).createTextFinder(code).matchEntireCell(true).findNext();

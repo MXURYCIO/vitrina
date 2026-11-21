@@ -56,7 +56,7 @@ Se cambian en la columna **Estado** de la hoja: Pendiente, Aprobado, En camino, 
 
 - Desde el 21 de noviembre de 2026 basta el código. Los pedidos anteriores con celular piden además los últimos 4 dígitos (la página muestra ese campo solo cuando hace falta).
 - Cuando ya se hayan entregado todos los anteriores, para quitar ese paso: en `google-apps-script/Codigo.gs` cambiar `CODIGO_SOLO_DESDE` a `'2000-01-01'` y publicar una versión nueva del programa.
-- Hay un límite de 300 búsquedas fallidas por hora, para que nadie pruebe códigos al azar.
+- Cada celular puede hacer 10 búsquedas sin resultado; después debe esperar una hora (desde el 3.er intento que queda le avisa cuántos le quedan). En toda la tienda hay además un tope de 300 por hora contra programas que prueban códigos al azar.
 
 ## Carga de productos nuevos (domingos, martes y jueves)
 

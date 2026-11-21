@@ -1945,6 +1945,15 @@ $('#qClear').addEventListener('click', e => { e.preventDefault(); const q = $('#
 $('#q').addEventListener('keydown', e => { if (e.key === 'Enter') e.target.blur(); });
 
 /* Consulta de un pedido con su código y los últimos 4 del celular (en "Mis pedidos" y en "Checa tu pedido") */
+// Identificador al azar de este celular: el programa de Google cuenta con él las búsquedas sin resultado (máximo 10 por hora)
+const DEV = (() => {
+  let d = store.get('vt-dev', '');
+  if (!/^[a-z0-9]{16}$/.test(d)) {
+    const a = new Uint8Array(16); try { crypto.getRandomValues(a); } catch (e) { a.forEach((_, i) => { a[i] = Math.random() * 256; }); }
+    d = [...a].map(x => 'abcdefghijklmnopqrstuvwxyz0123456789'[x % 36]).join(''); store.set('vt-dev', d);
+  }
+  return d;
+})();
 async function consultarPedido(raw, l4) {
   const code = 'PED-' + String(raw || '').toUpperCase().replace(/[^A-Z0-9]/g, '').replace(/^(PED|VT)/, '');
   l4 = String(l4 || '').trim();
@@ -1954,10 +1963,13 @@ async function consultarPedido(raw, l4) {
   const nada = 'No encontramos un pedido con ese código. Revísalo e inténtalo de nuevo.';
   if (!LIVE) return local ? { order: local } : { error: nada };
   try {
-    const r = await api({ action: 'track', code, last4: l4 || (local && local.phone ? String(local.phone).slice(-4) : '') });
+    const r = await api({ action: 'track', code, last4: l4 || (local && local.phone ? String(local.phone).replace(/\D/g, '').slice(-4) : ''), dev: DEV });
     if (r && r.need4) return { need4: true, error: r.error };   // pedido anterior al 21 de noviembre
-    if (r && !r.ok && /Demasiadas/.test(r.error || '')) return { error: r.error };
-    if (!r || !r.ok) return { error: l4 ? 'No encontramos un pedido con ese código y esos 4 dígitos.' : nada };
+    if (r && r.bloqueado) return { error: r.error };              // 10 búsquedas sin resultado: esperar una hora
+    if (!r || !r.ok) {
+      const q = r && Number.isFinite(r.quedan) && r.quedan <= 3 ? ` ${r.quedan === 0 ? 'Llegaste al límite: espera una hora para buscar otra vez.' : `Te ${r.quedan === 1 ? 'queda 1 intento' : `quedan ${r.quedan} intentos`}.`}` : '';
+      return { error: (l4 ? 'No encontramos un pedido con ese código y esos 4 dígitos.' : nada) + q };
+    }
     if (local) { local.status = r.status; store.set('vt-orders', orders); renderOrders(); }
     return { order: local ? { ...local, status: r.status } : r };   // r.via = 'whatsapp' en los pedidos enviados por WhatsApp
   } catch (x) { return { error: 'No se pudo consultar. Revisa tu conexión e inténtalo de nuevo.' }; }
@@ -2236,7 +2248,7 @@ function renderReviewBar() {
 const OP_LABEL = { pendiente: 'Pendiente', aprobado: 'Aprobado', camino: 'En camino', entregado: 'Entregado', rechazado: 'Rechazado' };
 let rvTab = 'productos', rvOrders = [], rvOrdersOk = false, rvFilter = 'todos', rvQuery = '', rvBusy = false;
 // versión del programa de Google (google-apps-script/Codigo.gs) que necesita esta página
-const GAS_VERSION = '2026-11-21b';
+const GAS_VERSION = '2026-11-21c';
 var gasVieja = false;
 const GAS_MSG = 'El programa de Google de la tienda está desactualizado. Copia otra vez Codigo.gs en Apps Script e implementa una nueva versión (Implementar → Administrar implementaciones → editar → Nueva versión).';
 function verGas(r) {

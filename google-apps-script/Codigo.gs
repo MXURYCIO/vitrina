@@ -9,7 +9,7 @@
  */
 
 // Versión de este programa. La página de revisión avisa si en Google quedó una versión anterior.
-const VERSION = '2026-11-20e';
+const VERSION = '2026-11-21';
 
 const CONFIG = {
   HOJA: 'Pedidos',
@@ -27,7 +27,7 @@ const CONFIG = {
   TITULAR_CLAVES: ['Yomaira', 'Moreira Litardo']      // partes del nombre del titular que pueden salir en el comprobante
 };
 
-const ENVIO_WA = 'Por WhatsApp';
+const ENVIO_WA = 'Carrito compartido';
 const COLS = ['Fecha', 'Código', 'Estado', 'Nombre', 'Apellido', 'Cédula', 'Celular', 'Ciudad/cantón', 'Dirección', 'Envío', 'Productos', 'Foto artículo', 'Tienda', 'Códigos',
   'Total', 'Abono', 'Saldo', 'N.º comprobante', 'Monto depositado', 'Comprobante', 'Alertas',
   'Aceptó condiciones', 'Huella foto', 'Comprobante leído', 'Proveedor'];
@@ -184,19 +184,25 @@ function avisarCarrito_(p) {
 /* ---------- Pedidos ---------- */
 function crearPedido_(d) {
   const t = s => String(s == null ? '' : s).trim();
-  const nombre = t(d.name).slice(0, 60), apellido = t(d.last).slice(0, 60), cedula = t(d.cedula), cel = t(d.phone);
+  // la página pide un solo campo "Nombre y apellido": se separa aquí (2-3 palabras: nombre + apellidos; 4 o más: mitad y mitad)
+  let nombre = t(d.name).replace(/\s+/g, ' ').slice(0, 80), apellido = t(d.last).replace(/\s+/g, ' ').slice(0, 60);
+  if (!apellido) {
+    const w = nombre.split(' ');
+    const k = w.length >= 4 ? Math.floor(w.length / 2) : 1;
+    if (w.length > 1) { nombre = w.slice(0, k).join(' '); apellido = w.slice(k).join(' '); }
+  }
+  const cedula = t(d.cedula), cel = t(d.phone);
   const ciudad = t(d.city).replace(/\s+/g, ' ').slice(0, 60), direccion = t(d.address).replace(/\s+/g, ' ').slice(0, 200);
-  const num = t(d.receipt && d.receipt.num).slice(0, 40);
+  let num = t(d.receipt && d.receipt.num).slice(0, 40);   // opcionales: si no vienen, se leen de la foto
   const monto = Number(d.receipt && d.receipt.amount);
 
-  if (nombre.length < 2 || apellido.length < 2) return { ok: false, error: 'Faltan el nombre o el apellido.' };
-  if (!cedulaOk_(cedula)) return { ok: false, error: 'La cédula no es válida.' };
+  if (nombre.length < 2) return { ok: false, error: 'Falta tu nombre.' };
+  if (cedula && !cedulaOk_(cedula)) return { ok: false, error: 'La cédula no es válida.' };
   if (!/^09\d{8}$/.test(cel)) return { ok: false, error: 'El celular no es válido.' };
   if (ciudad.length < 3) return { ok: false, error: 'Falta la ciudad o cantón de entrega.' };
   if (direccion.length < 5) return { ok: false, error: 'Falta la dirección de entrega.' };
   const envio = esLocal_(ciudad) ? 'Local' : 'Servicio de entrega (costo aparte)';
   if (!Array.isArray(d.items) || !d.items.length) return { ok: false, error: 'El carrito está vacío.' };
-  if (num.length < 4) return { ok: false, error: 'Falta el número de comprobante.' };
   if (!d.photo || !/^data:image\/(jpeg|png|webp);base64,/.test(d.photo)) return { ok: false, error: 'Falta la foto del comprobante.' };
   if (!d.terms) return { ok: false, error: 'Debes aceptar las condiciones.' };
 
@@ -221,6 +227,7 @@ function crearPedido_(d) {
   const huella = Utilities.base64Encode(Utilities.computeDigest(Utilities.DigestAlgorithm.MD5, bytes));
   // lectura automática de la foto: monto, cuenta de destino y número de comprobante (antes del candado, porque tarda unos segundos)
   const lectura = leerComprobante_(bytes, mime, monto, abono, num, total);
+  if (!num && lectura.numero) num = lectura.numero;
 
   const lock = LockService.getScriptLock();
   lock.waitLock(20000);
@@ -237,21 +244,21 @@ function crearPedido_(d) {
     const alertas = [];
     const numNorm = num.replace(/\s/g, '').toUpperCase();
     datos.forEach(r => {
-      if (String(r[C['N.º comprobante']]).replace(/\s/g, '').toUpperCase() === numNorm) alertas.push(`N.º de comprobante ya usado en ${r[C['Código']]}`);
+      if (numNorm && String(r[C['N.º comprobante']]).replace(/\s/g, '').toUpperCase() === numNorm) alertas.push(`N.º de comprobante ya usado en ${r[C['Código']]}`);
       if (r[C['Huella foto']] && r[C['Huella foto']] === huella) alertas.push(`Misma foto que ${r[C['Código']]}`);
     });
     // el monto que escribió la clienta solo cuenta si la foto no muestra ya un pago completo
-    if ((!(monto > 0) || monto + 0.005 < abono) && !(lectura.pagado + 0.005 >= abono)) alertas.push(`Monto ${fmt_(monto || 0)} menor al abono ${fmt_(abono)}`);
+    if (monto > 0 && monto + 0.005 < abono && !(lectura.pagado + 0.005 >= abono)) alertas.push(`Monto ${fmt_(monto)} menor al abono ${fmt_(abono)}`);
     lectura.alertas.forEach(a => alertas.push(a));
 
     const ahora = new Date();
     const proveedor = proveedorTexto_(items);
     const v = {
       'Fecha': ahora, 'Código': code, 'Estado': 'Pendiente', 'Nombre': texto_(nombre), 'Apellido': texto_(apellido),
-      'Cédula': "'" + cedula, 'Celular': "'" + cel, 'Ciudad/cantón': texto_(ciudad), 'Dirección': texto_(direccion), 'Envío': envio,
+      'Cédula': cedula ? "'" + cedula : '', 'Celular': "'" + cel, 'Ciudad/cantón': texto_(ciudad), 'Dirección': texto_(direccion), 'Envío': envio,
       'Productos': items.map(i => `${i.qty} x ${nombreItem_(i)}`).join('\n'), 'Foto artículo': '', 'Tienda': '',
       'Códigos': items.map(codigoItem_).join(', '),
-      'Total': total, 'Abono': abono, 'Saldo': r2_(total - abono), 'N.º comprobante': "'" + num, 'Monto depositado': monto > 0 ? monto : '',
+      'Total': total, 'Abono': abono, 'Saldo': r2_(total - abono), 'N.º comprobante': num ? "'" + num : '', 'Monto depositado': monto > 0 ? monto : (lectura.pagado > 0 ? lectura.pagado : ''),
       'Comprobante': 'Ver foto', 'Alertas': alertas.join(' · '), 'Aceptó condiciones': ahora, 'Huella foto': huella,
       'Comprobante leído': lectura.resumen, 'Proveedor': proveedor
     };
@@ -373,9 +380,15 @@ function analizarComprobante_(texto, monto, abono, num, total) {
   if (!cuentaOk) out.alertas.push(`No se ve la cuenta de destino (termina en ${ult4}) ni el nombre del titular`);
   const nd = String(num || '').replace(/\D/g, '');
   const numOk = nd.length >= 4 && digitos.includes(nd);
+  // si la clienta no escribió el número, se toma el que aparece junto a "comprobante", "transacción", "referencia" o "documento"
+  if (!nd) {
+    const conEspacios = String(t).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+    const m = conEspacios.match(/(?:comprobante|transaccion|referencia|documento|operacion)[^0-9\n]{0,25}(\d{6,14})(?!\d)/);
+    if (m) out.numero = m[1];
+  }
   if (nd.length >= 4 && !numOk) out.alertas.push(`El N.º de comprobante ${num} no aparece en la foto`);
   const leido = vistos.length ? `${fmt_(out.pagado)} (coincide)` : lista.length ? lista.slice(0, 3).map(fmt_).join(', ') : 'no se encontró';
-  out.resumen = `Monto leído: ${leido} · Cuenta destino: ${cuentaOk ? 'sí' : 'no'} · N.º: ${numOk ? 'sí' : 'no'}`;
+  out.resumen = `Monto leído: ${leido} · Cuenta destino: ${cuentaOk ? 'sí' : 'no'} · N.º: ${numOk ? 'sí' : out.numero ? out.numero + ' (leído)' : 'no'}`;
   return out;
 }
 

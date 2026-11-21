@@ -7,6 +7,7 @@
 <meta name="theme-color" content="#080B11" media="(prefers-color-scheme: dark)">
 <meta name="description" content="Productos para el hogar, la cocina y el cuidado personal. Reserva con el 50% y sigue tu pedido con tu código.">
 <title>Tienda Online</title>
+<script>try{var vt=JSON.parse(localStorage.getItem("vt-tema")||"null");if(vt==="dark"||vt==="light")document.documentElement.setAttribute("data-theme",vt)}catch(e){}</script>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%231E66F5'/%3E%3Cg fill='none' stroke='white' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9h12l-1 9.5a1 1 0 0 1-1 .9H8a1 1 0 0 1-1-.9L6 9Z'/%3E%3Cpath d='M9.5 11V8a2.5 2.5 0 0 1 5 0v3'/%3E%3C/g%3E%3C/svg%3E">
 <link rel="apple-touch-icon" href="img/icono-180.png">
 <meta property="og:type" content="website">
@@ -34,7 +35,7 @@
   --ok:#14834A; --ok-soft:rgba(20,131,74,.12);
   --info:#0B87A8; --info-soft:rgba(11,135,168,.12);
   --warn:#9A5B07; --warn-soft:rgba(214,138,20,.14);
-  --bad:#C42B2B; --bad-soft:rgba(196,43,43,.10); --boom-ink:#075C33;
+  --bad:#C42B2B; --bad-soft:rgba(196,43,43,.10); --boom-ink:#075C33; --sun:#D98300; --moon:#4A6FD8; --knob:#FFFFFF;
   --glass-tint:rgba(255,255,255,.10); --glass-tint-lens:rgba(255,255,255,.03);
   --glass-strong:rgba(255,255,255,.38); --glass-sheet:rgba(243,246,250,.56); --glass-sel:rgba(255,255,255,.34);
   --rim-hi:rgba(255,255,255,1); --rim-lo:rgba(255,255,255,.50);
@@ -61,7 +62,7 @@
     --ok:#3BCB7F; --ok-soft:rgba(59,203,127,.16);
     --info:#38BDF8; --info-soft:rgba(56,189,248,.16);
     --warn:#FFB547; --warn-soft:rgba(255,181,71,.15);
-    --bad:#FF6B6B; --bad-soft:rgba(255,107,107,.15); --boom-ink:#8BE3B4;
+    --bad:#FF6B6B; --bad-soft:rgba(255,107,107,.15); --boom-ink:#8BE3B4; --sun:#FFC24D; --moon:#A9C2FF; --knob:#3A4558;
     --glass-tint:rgba(40,48,62,.14); --glass-tint-lens:rgba(30,38,52,.06);
     --glass-strong:rgba(36,44,58,.40); --glass-sheet:rgba(16,21,30,.60); --glass-sel:rgba(255,255,255,.12);
     --rim-hi:rgba(255,255,255,.48); --rim-lo:rgba(255,255,255,.14);
@@ -79,7 +80,7 @@
     --ok:#3BCB7F; --ok-soft:rgba(59,203,127,.16);
     --info:#38BDF8; --info-soft:rgba(56,189,248,.16);
     --warn:#FFB547; --warn-soft:rgba(255,181,71,.15);
-    --bad:#FF6B6B; --bad-soft:rgba(255,107,107,.15); --boom-ink:#8BE3B4;
+    --bad:#FF6B6B; --bad-soft:rgba(255,107,107,.15); --boom-ink:#8BE3B4; --sun:#FFC24D; --moon:#A9C2FF; --knob:#3A4558;
     --glass-tint:rgba(40,48,62,.14); --glass-tint-lens:rgba(30,38,52,.06);
     --glass-strong:rgba(36,44,58,.40); --glass-sheet:rgba(16,21,30,.60); --glass-sel:rgba(255,255,255,.12);
     --rim-hi:rgba(255,255,255,.48); --rim-lo:rgba(255,255,255,.14);
@@ -129,6 +130,23 @@ p{margin:0}
 .top-row{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
 .eyebrow{margin:0 0 4px;font-size:13px;font-weight:600;color:var(--muted);letter-spacing:.01em}
 .large-title{margin:0;font-family:var(--font-display);font-weight:800;font-size:clamp(34px,9.6vw,46px);line-height:1.02;letter-spacing:-.032em;text-wrap:balance}
+.theme-sw{flex:none;position:relative;display:inline-grid;grid-template-columns:1fr 1fr;align-items:center;height:38px;margin-top:2px;padding:3px;border:0;border-radius:19px;color:var(--muted);
+  background:var(--glass-strong);-webkit-backdrop-filter:blur(10px) saturate(1.9);backdrop-filter:blur(10px) saturate(1.9);
+  box-shadow:0 0 0 .5px var(--edge),inset 0 1px 0 var(--rim-hi),0 8px 20px -14px var(--shadow)}
+.theme-sw::before{content:"";position:absolute;top:3px;bottom:3px;left:3px;width:calc(50% - 3px);border-radius:16px;background:var(--knob);
+  box-shadow:0 1px 4px -1px var(--shadow),0 0 0 .5px var(--hair);transition:transform .38s var(--ease-spring)}
+.theme-sw[aria-checked="true"]::before{transform:translateX(100%)}
+.theme-sw .ts{position:relative;z-index:1;display:inline-flex;align-items:center;justify-content:center;gap:6px;height:32px;min-width:34px;padding:0 7px;font-size:13px;font-weight:650;transition:color .25s}
+.theme-sw .ts svg{width:18px;height:18px}
+.theme-sw[aria-checked="false"] .ts-sol,.theme-sw[aria-checked="true"] .ts-luna{color:var(--fg)}
+.theme-sw[aria-checked="false"] .ts-sol svg{color:var(--sun)}
+.theme-sw[aria-checked="true"] .ts-luna svg{color:var(--moon)}
+.theme-sw .ts-t{display:none}
+.theme-sw:active::before{transform:scale(.94)}
+.theme-sw[aria-checked="true"]:active::before{transform:translateX(100%) scale(.94)}
+@media (min-width:560px){.theme-sw .ts{padding:0 12px}.theme-sw .ts-t{display:inline}}
+@media (prefers-reduced-motion: reduce){.theme-sw::before{transition:none}}
+.top-row>div:first-child{min-width:0}
 .preview-pill{flex:none;margin-top:6px;padding:5px 10px;border-radius:999px;background:var(--accent-soft);color:var(--accent);font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
 
 .search{display:flex;align-items:center;gap:10px;height:46px;margin-top:16px;padding:0 6px 0 14px;border-radius:23px;background:var(--glass-strong);
@@ -765,6 +783,7 @@ body.rv-ped #tools,body.rv-ped .sec-head,body.rv-ped #grid,body.rv-ped #empty{di
           <h1 class="large-title" id="ttlTienda">Tienda Online</h1>
         </div>
         <span class="preview-pill">Vista previa</span>
+        <button class="theme-sw" type="button" role="switch" aria-checked="false" aria-label="Modo oscuro" title="Cambiar a modo oscuro" data-act="tema"><span class="ts ts-sol"><span data-ic="sun" style="display:contents"></span><span class="ts-t">Claro</span></span><span class="ts ts-luna"><span data-ic="moon" style="display:contents"></span><span class="ts-t">Oscuro</span></span></button>
       </div>
       <label class="search" for="q">
         <span data-ic="search" aria-hidden="true" style="display:contents"></span>
@@ -805,8 +824,13 @@ body.rv-ped #tools,body.rv-ped .sec-head,body.rv-ped #grid,body.rv-ped #empty{di
 
   <main id="view-pedidos" hidden>
     <header>
-      <p class="eyebrow">Seguimiento</p>
-      <h1 class="large-title" id="ttlPedidos">Mis pedidos</h1>
+      <div class="top-row">
+        <div>
+          <p class="eyebrow">Seguimiento</p>
+          <h1 class="large-title" id="ttlPedidos">Mis pedidos</h1>
+        </div>
+        <button class="theme-sw" type="button" role="switch" aria-checked="false" aria-label="Modo oscuro" title="Cambiar a modo oscuro" data-act="tema"><span class="ts ts-sol"><span data-ic="sun" style="display:contents"></span><span class="ts-t">Claro</span></span><span class="ts ts-luna"><span data-ic="moon" style="display:contents"></span><span class="ts-t">Oscuro</span></span></button>
+      </div>
     </header>
     <form class="track" id="trackForm" novalidate>
       <h2>Buscar un pedido</h2>
@@ -867,6 +891,23 @@ const store = {
 };
 const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+/* ---------- Modo claro / oscuro (se recuerda en este aparato) ---------- */
+const temaMQ = matchMedia('(prefers-color-scheme: dark)');
+const temaGuardado = () => { const t = store.get('vt-tema', ''); return t === 'dark' || t === 'light' ? t : ''; };
+const esOscuro = () => { const t = document.documentElement.dataset.theme; return t ? t === 'dark' : temaMQ.matches; };
+function pintarTema() {
+  const t = temaGuardado(), root = document.documentElement;
+  if (t) root.dataset.theme = t; else delete root.dataset.theme;
+  const osc = esOscuro();
+  $$('meta[name="theme-color"]').forEach(m => { m.content = (t ? osc : /dark/.test(m.media)) ? '#080B11' : '#EDF0F5'; });
+  $$('.theme-sw').forEach(b => { b.setAttribute('aria-checked', String(osc)); b.title = osc ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'; });
+}
+function cambiarTema() {
+  store.set('vt-tema', esOscuro() ? 'light' : 'dark');
+  if (document.startViewTransition && !reduceMotion) document.startViewTransition(pintarTema); else pintarTema();
+}
+if (temaMQ.addEventListener) temaMQ.addEventListener('change', () => { if (!temaGuardado()) pintarTema(); });
+
 /* ---------- Íconos ---------- */
 const P = {
   store:'<path d="M4 10v9a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-9"/><path d="M3 9.5 4.7 4.7A1 1 0 0 1 5.6 4h12.8a1 1 0 0 1 .9.7L21 9.5"/><path d="M3 9.5a3 3 0 0 0 6 0 3 3 0 0 0 6 0 3 3 0 0 0 6 0"/><path d="M10 20v-5h4v5"/>',
@@ -878,6 +919,7 @@ const P = {
   close:'<path d="M6 6l12 12M18 6 6 18"/>',
   check:'<path d="m5 12.5 4.5 4.5L19 7.5"/>',
   moon:'<path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5Z"/>',
+  sun:'<circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/>',
   cal:'<rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/>',
   copy:'<rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/>',
   trash:'<path d="M4 7h16M9 7V4.5h6V7M6.5 7l1 12.5a1 1 0 0 0 1 .9h7a1 1 0 0 0 1-.9l1-12.5"/>',
@@ -1080,6 +1122,7 @@ const allOrders = () => LIVE ? [...orders] : [...orders, EXAMPLE];
 
 /* ---------- Íconos estáticos ---------- */
 $$('[data-ic]').forEach(el => { if (el.style.display === 'contents') el.outerHTML = ic(el.dataset.ic); else el.innerHTML = ic(el.dataset.ic); });
+pintarTema();
 
 /* ---------- Tienda ---------- */
 const norm = s => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
@@ -1790,6 +1833,7 @@ document.addEventListener('click', e => {
     case 'gal': galTo(galIdx() + (+t.dataset.d)); break;
     case 'galto': galTo(+t.dataset.i); break;
     case 'track': openTrack(); break;
+    case 'tema': cambiarTema(); break;
     case 'fsearch': closeSheet(); window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' }); setTimeout(() => { const q = $('#q'); if (q) q.focus({ preventScroll: true }); }, reduceMotion ? 0 : 420); break;
     case 'cats': openCats(); break;
     case 'boom': {

@@ -1,0 +1,39 @@
+name: Sincronizar aprobaciones
+
+# Copia en products.json lo que el dueño aprobó o rechazó en la página de revisión,
+# para que la tienda muestre los productos al instante. Solo hace un commit si algo cambió.
+on:
+  schedule:
+    - cron: '23 * * * *'   # cada hora
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: catalogo
+  cancel-in-progress: false
+
+jobs:
+  sincronizar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install requests
+      - run: python scripts/sincronizar_estados.py
+      - name: Guardar si cambió
+        run: |
+          if git diff --quiet -- products.json; then exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add products.json
+          git commit -qm "Sincroniza las aprobaciones de la página de revisión"
+          for i in 1 2 3; do
+            git pull -q --rebase origin "${GITHUB_REF_NAME}" && git push -q origin "HEAD:${GITHUB_REF_NAME}" && exit 0
+            sleep 5
+          done
+          exit 1

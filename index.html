@@ -225,6 +225,13 @@ p{margin:0}
 @media (min-width:620px){.grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:22px 16px}}
 @media (min-width:920px){.grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
 .card{min-width:0;display:flex;flex-direction:column;gap:8px}
+/* Rendimiento: el navegador no dibuja las tarjetas que están fuera de la pantalla (544 productos) */
+.grid:not(.rv-list)>.card{content-visibility:auto;contain-intrinsic-size:auto 280px}
+/* En el celular, sin desenfoque en las etiquetas de las tarjetas (mismo aspecto, desplazamiento más fluido) */
+@media (pointer:coarse){
+  .grid .price-pill{-webkit-backdrop-filter:none;backdrop-filter:none;background:rgba(255,255,255,.84)}
+  .grid .add{-webkit-backdrop-filter:none;backdrop-filter:none;background:var(--accent)}
+}
 .media{position:relative;aspect-ratio:1/1;max-width:100%;border-radius:var(--r-card);overflow:hidden;background:linear-gradient(155deg,var(--g1),var(--g2));box-shadow:inset 0 0 0 .5px var(--hair)}
 .media::after,.pd-media::after,.thumb::after{content:"";position:absolute;inset:0;background:var(--media-dim);pointer-events:none}
 .media svg,.pd-media svg,.thumb svg{display:block;width:100%;height:100%}
@@ -530,7 +537,9 @@ body.rv-ped #tools,body.rv-ped .sec-head,body.rv-ped #grid,body.rv-ped #empty{di
 .compact{position:fixed;z-index:41;top:calc(env(safe-area-inset-top,0px) + 8px);left:50%;
   translate:-50% calc(-100% - 24px - env(safe-area-inset-top,0px));opacity:0;height:40px;padding:0 20px;border:0;border-radius:20px;
   color:var(--fg);font-family:var(--font-display);font-size:16px;font-weight:700;letter-spacing:-.01em;white-space:nowrap;
+  display:inline-flex;align-items:center;gap:7px;padding-left:14px;
   transition:translate .55s var(--ease-spring),opacity .25s,transform .45s var(--ease-spring)}
+.compact svg{width:18px;height:18px;color:var(--accent)}
 .title-off .compact{translate:-50% 0;opacity:1}
 
 .edge-top{position:fixed;inset:0 0 auto;z-index:39;height:calc(env(safe-area-inset-top,0px) + 62px);pointer-events:none;
@@ -547,14 +556,6 @@ body.rv-ped #tools,body.rv-ped .sec-head,body.rv-ped #grid,body.rv-ped #empty{di
 .fly{position:fixed;z-index:70;width:18px;height:18px;margin:-9px 0 0 -9px;border-radius:9px;background:var(--accent);box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 6px 14px -4px var(--accent);pointer-events:none}
 
 /* ---------- Hojas ---------- */
-.to-top{position:fixed;z-index:41;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(env(safe-area-inset-bottom,0px) + 90px);
-  width:48px;height:48px;border:0;border-radius:24px;display:grid;place-items:center;color:var(--fg);
-  opacity:0;transform:translateY(14px) scale(.85);pointer-events:none;transition:opacity .25s,transform .45s var(--ease-spring),bottom .45s var(--ease-spring)}
-.to-top svg{width:22px;height:22px}
-.to-top.on{opacity:1;transform:none;pointer-events:auto}
-.to-top:active{transform:scale(.9)}
-.dock.min~.to-top{bottom:calc(env(safe-area-inset-bottom,0px) + 74px)}
-@media (min-width:620px){.to-top{right:max(28px,env(safe-area-inset-right,0px))}}
 /* Accesos rápidos: en el celular flotan arriba (se esconden al bajar); en PC van en una barra a la izquierda */
 .fab{position:fixed;z-index:41;left:50%;top:calc(env(safe-area-inset-top,0px) + 56px);display:flex;gap:2px;padding:4px;border-radius:28px;
   translate:-50% calc(-100% - 90px);opacity:0;pointer-events:none;transition:translate .5s var(--ease-spring),opacity .25s}
@@ -564,6 +565,7 @@ body.rv-ped #tools,body.rv-ped .sec-head,body.rv-ped #grid,body.rv-ped #empty{di
 .fab button:active{transform:scale(.92)}
 .fab button[aria-pressed="true"]{color:var(--accent);background:var(--accent-soft)}
 .fab button[hidden]{display:none}
+.fab .fab-up{display:none}
 @media (max-width:359px){.fab button{min-width:58px}}
 @media (min-width:1000px){
   .app{padding-left:max(16px,min(100px,calc(100px - (100vw - 1120px) / 2)))}
@@ -571,6 +573,7 @@ body.rv-ped #tools,body.rv-ped .sec-head,body.rv-ped #grid,body.rv-ped #empty{di
   .fab.on{translate:0 -50%}
   .fab button{width:70px;min-width:0;height:62px;border-radius:26px;font-size:11px}
   .fab button:hover{background:var(--accent-soft)}
+  .fab .fab-up{display:flex}
 }
 .scrim{position:fixed;inset:0;z-index:50;background:var(--scrim);opacity:0;pointer-events:none;transition:opacity .35s}
 .scrim.on{opacity:1;pointer-events:auto}
@@ -849,13 +852,14 @@ body.rv-ped #tools,body.rv-ped .sec-head,body.rv-ped #grid,body.rv-ped #empty{di
 
 <div class="edge-top" aria-hidden="true"></div>
 <div class="edge-bottom" aria-hidden="true"></div>
-<button class="compact glass" id="compact" type="button" aria-hidden="true" tabindex="-1">Tienda Online</button>
+<button class="compact glass" id="compact" type="button" aria-hidden="true" tabindex="-1" aria-label="Volver arriba"><span data-ic="up" style="display:contents"></span><span id="compactTxt">Tienda Online</span></button>
 <nav class="fab glass" id="fab" aria-label="Accesos rápidos" aria-hidden="true">
   <button type="button" data-act="fsearch" tabindex="-1"><span data-ic="search" style="display:contents"></span><span>Buscar</span></button>
   <button type="button" data-act="cats" data-f="cat" tabindex="-1"><span data-ic="grid" style="display:contents"></span><span>Categorías</span></button>
   <button type="button" data-act="sorts" data-f="sort" tabindex="-1"><span data-ic="sliders" style="display:contents"></span><span>Filtro</span></button>
   <button type="button" data-act="boom" data-f="boom" class="fab-boom" tabindex="-1" hidden><span data-ic="spark" style="display:contents"></span><span>Boom</span></button>
   <button type="button" data-act="track" class="fab-track" tabindex="-1"><span data-ic="box" style="display:contents"></span><span>Mi pedido</span></button>
+  <button type="button" data-act="subir" class="fab-up" tabindex="-1"><span data-ic="up" style="display:contents"></span><span>Subir</span></button>
 </nav>
 
 <nav class="dock" id="dock" aria-label="Navegación principal">
@@ -866,8 +870,6 @@ body.rv-ped #tools,body.rv-ped .sec-head,body.rv-ped #grid,body.rv-ped #empty{di
   </div>
   <button class="cart-btn glass" id="cartBtn" type="button" aria-label="Abrir carrito"><span data-ic="bag" style="display:contents"></span><span class="badge" id="badge" hidden>0</span></button>
 </nav>
-
-<button class="to-top glass" id="toTop" type="button" aria-label="Volver arriba" tabindex="-1"><span data-ic="up" style="display:contents"></span></button>
 
 <div class="scrim" id="scrim"></div>
 <section class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle" inert>
@@ -1787,7 +1789,7 @@ function setView(v, fromHash) {
   $('#tabs').dataset.sel = v === 'pedidos' ? '1' : '0';
   const ind = $('#tabInd');
   if (changed && !reduceMotion) { ind.classList.add('stretch'); setTimeout(() => ind.classList.remove('stretch'), 230); }
-  $('#compact').textContent = v === 'pedidos' ? 'Mis pedidos' : TIENDA.nombre;
+  $('#compactTxt').textContent = v === 'pedidos' ? 'Mis pedidos' : TIENDA.nombre;
   if (changed) { window.scrollTo(0, 0); relensSoon(); }
   if (v === 'pedidos') refreshOrders();
   if (!fromHash && !REVIEW && location.hash !== '#' + v && !(v === 'tienda' && state.boom)) { try { location.hash = v; } catch (e) {} }
@@ -1818,7 +1820,7 @@ function copyText(v) {
 document.addEventListener('click', e => {
   const t = e.target.closest('[data-add],[data-open],[data-act],[data-cat],.tab');
   if (!t) return;
-  if (t.classList.contains('tab')) { setView(t.dataset.view); return; }
+  if (t.classList.contains('tab')) { if (t.dataset.view === state.view && window.scrollY > 0) subir(); else setView(t.dataset.view); return; }
   if (t.dataset.add) { addToCart(t.dataset.add, 1, t); return; }
   if (t.dataset.open) { openProduct(t.dataset.open); return; }
   if (t.dataset.cat) { state.cat = t.dataset.cat; renderChips(); renderGrid(); return; }
@@ -1833,6 +1835,7 @@ document.addEventListener('click', e => {
     case 'gal': galTo(galIdx() + (+t.dataset.d)); break;
     case 'galto': galTo(+t.dataset.i); break;
     case 'track': openTrack(); break;
+    case 'subir': subir(); break;
     case 'tema': cambiarTema(); break;
     case 'fsearch': closeSheet(); window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' }); setTimeout(() => { const q = $('#q'); if (q) q.focus({ preventScroll: true }); }, reduceMotion ? 0 : 420); break;
     case 'cats': openCats(); break;
@@ -1885,9 +1888,8 @@ document.addEventListener('click', e => {
   }
 });
 $('#cartBtn').addEventListener('click', openCart);
-const toTop = $('#toTop');
-toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' }));
-$('#compact').addEventListener('click', () => window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' }));
+const subir = () => window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+$('#compact').addEventListener('click', subir);
 $('#sheetClose').addEventListener('click', closeSheet);
 scrim.addEventListener('click', closeSheet);
 document.addEventListener('keydown', e => {
@@ -2031,8 +2033,6 @@ function onScroll() {
       root.classList.toggle('title-off', off);
       compact.setAttribute('aria-hidden', String(!off)); compact.tabIndex = off ? 0 : -1;
     }
-    const arriba = y > window.innerHeight * 1.2;
-    if (arriba !== toTop.classList.contains('on')) { toTop.classList.toggle('on', arriba); toTop.tabIndex = arriba ? 0 : -1; }
     if (y > lastY + 8 && y > 260) dock.classList.add('min');
     else if (y < lastY - 8 || y < 140) dock.classList.remove('min');
     fabUpdate(y);
@@ -2132,10 +2132,15 @@ window.addEventListener('resize', () => relensSoon(150));
 if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => relensSoon(0));
 
 async function loadCatalog() {
-  let ok = false, est0;
-  // decisiones del dueño (aprobado, rechazado, editar) guardadas en Google; si tardan, se muestra el catálogo y luego se actualiza
+  let ok = false;
+  // Las decisiones del dueño (aprobado, rechazado, editar) ya vienen en products.json: las copia cada hora la acción
+  // "Sincronizar aprobaciones". Los productos se muestran al instante y, cuando Google responde (1 a 4 s), se aplican
+  // los cambios más recientes. Solo se vuelve a dibujar la lista si algo cambió.
   const estP = LIVE ? api({ action: 'estados' }).then(r => (r && r.ok && r.estados) || null, () => null) : Promise.resolve(null);
-  const espera = new Promise(r => setTimeout(() => r(undefined), 4000));
+  const guardado = LIVE ? store.get('vt-est', null) : null;
+  if (guardado && typeof guardado === 'object') EST = guardado;
+  const ordenar = () => { if (REVIEW) ALL.sort((a, b) => (RV_ORDER[eff(a)] ?? 9) - (RV_ORDER[eff(b)] ?? 9)); };
+  const firma = () => ALL.map(p => p.id + eff(p)).join();
   try {
     const res = await fetch('products.json', { cache: 'no-cache' });
     if (!res.ok) return;
@@ -2147,16 +2152,19 @@ async function loadCatalog() {
       .map(ofertaVigente);
     ok = true;
     if (!clean.length && !LIVE) return;
-    est0 = await Promise.race([estP, espera]);
-    if (est0) EST = est0;
-    estDone = est0 !== undefined;
-    if (REVIEW) clean.sort((a, b) => (RV_ORDER[eff(a)] ?? 9) - (RV_ORDER[eff(b)] ?? 9));
-    ALL = clean;
+    ALL = clean; ordenar();
     applyVisible();
   } catch (e) {} finally {
     if (state.loading) { state.loading = false; state.loadFail = !ok; renderGrid(); }
   }
-  if (ok && est0 === undefined) { const est = await estP; estDone = true; if (est) EST = est; applyVisible(); }
+  if (!ok) return;
+  const f0 = firma();
+  const est = await estP;
+  estDone = true;
+  if (est) { EST = est; store.set('vt-est', est); }
+  ordenar();
+  if (firma() !== f0) { applyVisible(); return; }
+  if (!REVIEW) { const n = Object.keys(cart).length; Object.keys(cart).forEach(k => { if (!byId[keyId(k)]) delete cart[k]; }); if (Object.keys(cart).length !== n) { saveCart(); updateBadge(); } }
 }
 function applyVisible() {
   PRODUCTS = REVIEW ? ALL : ALL.filter(p => eff(p) === 'aprobado');

@@ -46,6 +46,10 @@ Cuando un producto tiene botones para elegir, la clienta no puede agregarlo sin 
 
 Para revisar los productos ya publicados con su texto original de Telegram está la acción "Textos de Telegram del catálogo" (`.github/workflows/textos.yml`): se lanza con una llave pública, deja el resultado cifrado en la rama temporal `textos-tmp`, y lanzándola con "borrar" = si se borra esa rama después de leerla.
 
+## Celular
+
+Para volver arriba se toca la barra "↑ Tienda Online" que aparece arriba al bajar, o otra vez la pestaña Tienda. En la computadora también está "Subir" en la barra de la izquierda. Ya no hay botón flotante abajo a la derecha, porque quedaba encima del botón + de los productos. Las tarjetas fuera de la pantalla no se dibujan hasta acercarse, para que la lista de más de 500 productos se mueva fluida.
+
 ## Estados de un pedido
 
 Se cambian en la columna **Estado** de la hoja: Pendiente, Aprobado, En camino, Entregado o Rechazado. La clienta ve el cambio al consultar su pedido con el código y los últimos 4 dígitos de su celular.
@@ -64,6 +68,7 @@ Se cambian en la columna **Estado** de la hoja: Pendiente, Aprobado, En camino, 
 ## Página de revisión (`#revisar`, con PIN)
 
 - **Productos:** aprobar, rechazar o pedir cambios. Cada producto muestra el precio de Telegram, la ganancia y de qué tienda de Telegram sale (con el número de publicación y un botón para abrirla).
+- Las decisiones se guardan en Google y la acción "Sincronizar aprobaciones" (`.github/workflows/estados.yml`, cada hora) las copia al campo `status` de `products.json`. Así la tienda muestra los productos apenas abre, sin esperar a Google; al responder Google se aplican los cambios de la última hora.
 - **Pedidos:** buscar pedidos y cambiar su estado. Cada producto del pedido dice en qué tienda pedirlo y el número de publicación.
 - **Visitas:** personas en línea ahora, visitantes y visitas de hoy, 7 o 30 días, tiempo promedio, productos más vistos, de dónde llegan (WhatsApp, Facebook, directo...), dispositivo y visitas recientes. Se actualiza solo cada minuto. Solo se guardan números anónimos en la hoja "Visitas".
 

@@ -1111,6 +1111,7 @@ const STEPS = [
 const statusPill = s => `<span class="status" data-s="${LABELS[s] ? s : 'pendiente'}">${LABELS[s] || LABELS.pendiente}</span>`;
 
 const SORTS = [
+  { id: 'new', label: 'Recién agregados', short: 'Recientes' },
   { id: 'rec', label: 'Recomendados', short: '' },
   { id: 'az', label: 'Nombre: de la A a la Z', short: 'A a Z' },
   { id: 'za', label: 'Nombre: de la Z a la A', short: 'Z a A' },
@@ -1163,6 +1164,7 @@ function toGrid() {
 const byName = (a, b) => a.name.localeCompare(b.name, 'es', { sensitivity: 'base', numeric: true });
 function sortList(list) {
   switch (state.sort) {
+    case 'new': { const n = p => +(String(p.id).match(/\d+/) || [0])[0]; return list.sort((a, b) => String(b.added || '').localeCompare(String(a.added || '')) || n(b) - n(a) || byName(a, b)); }
     case 'az': return list.sort(byName);
     case 'za': return list.sort((a, b) => byName(b, a));
     case 'pdesc': return list.sort((a, b) => b.price - a.price || byName(a, b));
@@ -1186,7 +1188,7 @@ function renderGrid() {
       </div>
       <button class="card-text" type="button" data-open="${p.id}"><span class="name">${esc(p.name)}</span><span class="cat">${grupos(p).length ? `<span class="cat-opt">${esc(optResumen(p))}</span>` : catLabel(p.cat)}</span></button>
     </article>`).join('');
-  $('#secTitle').textContent = state.q.trim() ? 'Resultados' : state.boom ? (state.cat === 'todo' ? 'Productos Boom' : `Boom · ${catLabel(state.cat)}`) : state.cat === 'todo' ? (REVIEW ? 'Productos' : state.sort !== 'rec' ? 'Todos los productos' : 'Llegaron hoy') : catLabel(state.cat);
+  $('#secTitle').textContent = state.q.trim() ? 'Resultados' : state.boom ? (state.cat === 'todo' ? 'Productos Boom' : `Boom · ${catLabel(state.cat)}`) : state.cat === 'todo' ? (REVIEW ? 'Productos' : state.sort === 'new' ? 'Recién agregados' : state.sort !== 'rec' ? 'Todos los productos' : 'Llegaron hoy') : catLabel(state.cat);
   const nota = $('#boomNote');
   if (nota) { nota.hidden = !state.boom || REVIEW; if (state.boom) { const h = PRODUCTS.find(p => esBoom(p) && p.hasta); nota.innerHTML = `${ic('spark')}<span>Productos de limpieza, hogar y cuidado personal de las marcas WIP WIP, TesQui y Ameli, con los precios del catálogo Boom.${h ? ` Ofertas hasta el ${fechaCorta(h.hasta)}.` : ''}</span>`; } }
   $('#count').textContent = `${list.length} ${list.length === 1 ? 'producto' : 'productos'}`;

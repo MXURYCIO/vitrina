@@ -4,7 +4,7 @@ Tienda en línea pensada para celular: catálogo, carrito, reserva con abono del
 
 ## Archivos
 
-- `index.html`: la tienda completa (diseño, carrito, reserva y seguimiento). Arriba del código está `TIENDA`, con la dirección de Google, el número de WhatsApp y los datos bancarios.
+- `index.html`: la tienda completa (diseño, carrito, reserva y seguimiento). Arriba del código está `TIENDA`, con la dirección de Google y los datos bancarios.
 - `products.json`: el catálogo. Los domingos, martes y jueves por la noche se agregan productos nuevos "Por aprobar"; las clientas los ven solo cuando el dueño los aprueba. Si el proveedor deja elegir color, modelo o diseño, el producto lleva `opciones` y la tienda muestra botones para elegir (ver `CRITERIOS.md`, sección 3).
 - `costos.json`: el precio de Telegram de cada producto, cifrado. Solo lo ve el dueño en la página de revisión.
 - `CRITERIOS.md`: las reglas para elegir y preparar productos (temporada, descripciones, colores, fotos, precio).
@@ -16,14 +16,18 @@ Cada pedido trae, junto a "Productos", la columna **Foto artículo** (la foto de
 
 La lectura automática del comprobante acepta el monto que escribió la clienta, el abono o el total, aunque el lector de la foto separe los decimales ("10 , 00"), no traiga centavos ("$20") o confunda la O con el cero. Si un pedido quedó con una alerta que no corresponde, en `#revisar` → Pedidos → el pedido, toca **Volver a leer el comprobante**.
 
-## Pedido por WhatsApp
+## Compartir el carrito
 
-En el carrito, el botón principal es **Enviar pedido por WhatsApp** (si `TIENDA.whatsapp` tiene el número). Abre WhatsApp con el pedido escrito: código, productos con su color o aroma, total, abono del 50%, saldo y un enlace al pedido con fotos (`#pedido-PED-XXXX`). La clienta no llena formularios: el abono y los datos de entrega se coordinan por chat. Debajo queda el enlace para reservar en la página con comprobante, como antes.
+Debajo del resumen del carrito, el botón principal es **Enviar o compartir carrito**. En el celular abre las opciones de compartir del propio teléfono (WhatsApp, Telegram, correo, mensajes...); en la computadora abre un menú con WhatsApp, Telegram, Correo y Copiar texto. El mensaje lleva el código, los productos con su color o modelo, total, abono del 50%, saldo, un enlace al pedido con fotos (`#pedido-PED-XXXX`) y dos líneas para que la clienta escriba su nombre y su dirección. La clienta no llena formularios: el abono y la entrega se coordinan por chat. Debajo queda el enlace "O reserva aquí con tu comprobante".
 
-- Al tocar el botón, el carrito se registra en la hoja "Pedidos" (Envío "Por WhatsApp", fila verde, sin datos personales) con la foto y la tienda de cada artículo, y llega un correo con el resumen.
-- En `#revisar` → Pedidos sale como "Pedido por WhatsApp", con cada producto, su foto y dónde pedirlo (tienda de Telegram con publicación y contacto, o "Revista web Boom" con la página). Cuando llegue el abono, se marca Aprobado.
+- Al compartir, el carrito se registra en la hoja "Pedidos" (Envío "Carrito compartido", fila verde, sin datos personales) con la foto y la tienda de cada artículo, y llega un correo con el resumen.
+- En `#revisar` → Pedidos sale como "Carrito compartido", con cada producto, su foto y dónde pedirlo (tienda de Telegram con publicación y contacto, o "Revista web Boom" con la página). Cuando llegue el abono, se marca Aprobado.
 - La clienta ve su pedido en "Mis pedidos" o con el enlace del mensaje, solo con el código. Si quien abre el enlace tiene el PIN guardado (la dueña), sale el botón "Ver detalle para la tienda".
 - Los teléfonos de pedidos de cada tienda de Telegram están en `canales.json` → `contactos`.
+
+## Reserva en la página (con comprobante)
+
+Formulario corto en dos pasos: 1) nombre y apellido, celular, ciudad y dirección; 2) depositar el abono y subir la foto del comprobante. No pide cédula, monto ni número de comprobante: el programa de Google los lee de la foto. Las condiciones de reserva quedan plegadas en "Ver condiciones".
 
 ## Productos Boom (catálogo por campaña)
 

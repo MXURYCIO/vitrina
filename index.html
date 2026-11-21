@@ -586,6 +586,14 @@ body.rv-ped #tools,body.rv-ped .sec-head,body.rv-ped #grid,body.rv-ped #empty{di
 .feats svg{flex:none;width:18px;height:18px;margin-top:2px;color:var(--ok)}
 .buy-row{display:flex;gap:10px;align-items:center}
 .buy-row .btn{flex:1;min-width:0}
+/* compartir carrito y reserva corta */
+.share-opts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:12px 0 14px}
+.share-opt{display:grid;justify-items:center;gap:6px;padding:12px 4px;border:0;border-radius:16px;background:var(--field);color:var(--fg);font-size:13px;font-weight:600;text-decoration:none;box-shadow:inset 0 0 0 1px var(--hair)}
+.share-opt svg{width:24px;height:24px;color:var(--accent)}
+.share-txt{width:100%;min-height:150px;padding:12px;border:0;border-radius:14px;background:var(--field);color:var(--fg);font:13px/1.45 inherit;box-shadow:inset 0 0 0 1px var(--hair);resize:vertical}
+.terms-det{margin:6px 2px 0;font-size:14px;color:var(--muted)}
+.terms-det summary{cursor:pointer;font-weight:600;color:var(--accent);padding:6px 0}
+.terms-det .terms{margin-top:6px}
 /* pedido por WhatsApp */
 .btn.wa{background:#1FA855;color:#FFFFFF;box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 10px 22px -12px #1FA855;text-decoration:none}
 .btn.wa svg{width:20px;height:20px}
@@ -682,10 +690,11 @@ body.rv-ped #tools,body.rv-ped .sec-head,body.rv-ped #grid,body.rv-ped #empty{di
 .bank-amt{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 0;border-bottom:.5px solid var(--hair)}
 .bank-amt span{color:var(--muted);font-size:14px}
 .bank-amt strong{font-size:26px;font-weight:800;color:var(--accent);font-variant-numeric:tabular-nums;letter-spacing:-.02em}
-.bank-row{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:10px;padding:9px 0}
+.bank-row{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:10px;padding:9px 0}
 .bank-row+.bank-row{border-top:.5px solid var(--hair)}
-.bank-row .k{color:var(--muted);font-size:14px}
-.bank-row .v{font-weight:600;text-align:right;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.bank-row .kv{display:grid;gap:1px;min-width:0}
+.bank-row .k{color:var(--muted);font-size:13px}
+.bank-row .v{font-weight:650;font-size:16px;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
 .copy{width:34px;height:34px;border:0;border-radius:17px;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent)}
 .copy svg{width:16px;height:16px}
 .upload{display:flex;align-items:center;gap:12px;padding:14px;border-radius:18px;border:1.5px dashed var(--muted);background:var(--field);cursor:pointer;min-width:0;transition:border-color .2s}
@@ -889,6 +898,8 @@ const P = {
   cash:'<rect x="3" y="6.5" width="18" height="11" rx="2.5"/><circle cx="12" cy="12" r="2.4"/><path d="M6.5 9.5v5M17.5 9.5v5"/>',
   chevL:'<path d="m14.5 6-6 6 6 6"/>',
   chevR:'<path d="m9.5 6 6 6-6 6"/>',
+  mail:'<rect x="3" y="5.5" width="18" height="13" rx="2.5"/><path d="M4 7.5l8 5.5 8-5.5"/>',
+  share:'<circle cx="18" cy="5" r="2.6"/><circle cx="6" cy="12" r="2.6"/><circle cx="18" cy="19" r="2.6"/><path d="M8.3 10.8l7.4-4.4M8.3 13.2l7.4 4.4"/>',
   spark:'<path d="M12 3.5l1.9 4.6 4.6 1.9-4.6 1.9L12 16.5l-1.9-4.6L5.5 10l4.6-1.9z"/><path d="M18.5 15l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"/>',
   truck:'<path d="M3.5 16.5V7a1 1 0 0 1 1-1H14v10.5"/><path d="M14 9.5h3.5l3 3.3v3.7h-1.4"/><path d="M9.1 16.5h5.8"/><circle cx="7" cy="17" r="1.9"/><circle cx="17" cy="17" r="1.9"/>'
 };
@@ -1397,9 +1408,9 @@ function openCart() {
         <p class="line-total">${money(p.price * q)}</p></li>`; }).join('')}</ul>
      <div class="cart-clear" id="cartClear">${clearBtn()}</div>
      <dl class="sum"><div><dt>Total del pedido</dt><dd>${money(t)}</dd></div><div class="hl"><dt>Abono para reservar (50%)</dt><dd>${money(a)}</dd></div><div><dt>Saldo a pagar al recibir</dt><dd>${money(s)}</dd></div></dl>
-     <p class="ship-mini">${ic('cash')}<span>Entregamos el pedido completo, no por partes. El saldo lo pagas al recibirlo.</span></p>
-     <p class="ship-mini">${ic('truck')}<span>Entregamos en ${TIENDA.zona}. A otras ciudades enviamos por servicio de entrega, con costo de envío aparte.</span></p>`,
-    WA() ? waPie() : `<button class="btn primary" type="button" data-act="checkout">Reservar con ${money(a)}</button>`);
+     <p class="ship-mini">${ic('truck')}<span>Entregamos todo junto y pagas el saldo al recibir. Fuera de ${TIENDA.zonaLocal[0]}, el envío se paga aparte.</span></p>`,
+    `<div class="foot-stack"><button class="btn primary" type="button" data-act="share">${ic('share')}Enviar o compartir carrito</button>
+      <button class="link-btn plain wa-alt" type="button" data-act="checkout">O reserva aquí con tu comprobante</button></div>`);
 }
 
 const field = (id, label, o = {}) => `<div class="field"><label for="${id}">${label}</label><input id="${id}" type="${o.type || 'text'}" autocomplete="${o.ac || 'off'}"${o.im ? ` inputmode="${o.im}"` : ''}${o.max ? ` maxlength="${o.max}"` : ''}${o.ph ? ` placeholder="${o.ph}"` : ''} value="${esc(o.val || '')}"><p class="msg" data-for="${id}"></p></div>`;
@@ -1417,7 +1428,7 @@ function paintShip() {
   const n = shipNote(($('#cCiudad') || {}).value);
   box.className = 'ship-note' + (n.k ? ' ' + n.k : ''); box.innerHTML = n.html;
 }
-const bankRow = (k, v) => `<div class="bank-row"><span class="k">${k}</span><span class="v">${esc(v)}</span><button class="copy" type="button" data-act="copy" data-v="${esc(v)}" aria-label="Copiar ${k.toLowerCase()}">${ic('copy')}</button></div>`;
+const bankRow = (k, v) => `<div class="bank-row"><span class="kv"><span class="k">${k}</span><span class="v">${esc(v)}</span></span><button class="copy" type="button" data-act="copy" data-v="${esc(v)}" aria-label="Copiar ${k.toLowerCase()}">${ic('copy')}</button></div>`;
 function openCheckout() {
   const { t, a } = totals();
   if (!t) { openCart(); return; }
@@ -1427,30 +1438,21 @@ function openCheckout() {
   openSheet('checkout', 'Reservar pedido',
     `${LIVE ? '' : '<p class="demo-note">Versión de prueba: el pedido se guarda solo en este celular.</p>'}
      <form id="coForm" class="co" novalidate>
-       <section class="co-sec"><h3><span class="n">1</span>Tus datos</h3>
-         <div class="fields two">${field('cNombre', 'Nombre', { ac:'given-name', val:d.cNombre })}${field('cApellido', 'Apellido', { ac:'family-name', val:d.cApellido })}</div>
-         <div class="fields two">${field('cCedula', 'Cédula', { im:'numeric', max:10, val:d.cCedula })}${field('cCel', 'Celular', { type:'tel', ac:'tel', im:'numeric', max:10, ph:'09xxxxxxxx', val:d.cCel })}</div>
-       </section>
-       <section class="co-sec"><h3><span class="n">2</span>Dirección de entrega</h3>
-         ${field('cCiudad', 'Ciudad o cantón', { ac:'address-level2', max:60, ph:'Ej.: La Maná', val:d.cCiudad })}
-         ${area('cDir', 'Dirección', { ac:'street-address', max:200, ph:'Barrio, calle y una referencia (ej.: frente al parque)', val:d.cDir })}
+       <section class="co-sec"><h3><span class="n">1</span>Tus datos y entrega</h3>
+         <div class="fields two">${field('cNombre', 'Nombre y apellido', { ac:'name', max:80, val:d.cNombre })}${field('cCel', 'Celular', { type:'tel', ac:'tel', im:'numeric', max:10, ph:'09xxxxxxxx', val:d.cCel })}</div>
+         <div class="fields two">${field('cCiudad', 'Ciudad o cantón', { ac:'address-level2', max:60, ph:'Ej.: La Maná', val:d.cCiudad })}${field('cDir', 'Dirección', { ac:'street-address', max:200, ph:'Barrio y una referencia', val:d.cDir })}</div>
          <p id="shipNote" class="ship-note${shipNote(d.cCiudad).k ? ' ' + shipNote(d.cCiudad).k : ''}">${shipNote(d.cCiudad).html}</p>
        </section>
-       <section class="co-sec"><h3><span class="n">3</span>Deposita el abono</h3>
-         <div class="bank"><div class="bank-amt"><span>Monto a depositar</span><strong>${money(a)}</strong></div>
-           ${bankRow('Banco', TIENDA.banco.banco)}${bankRow(TIENDA.banco.tipo, TIENDA.banco.numero)}${bankRow('Titular', TIENDA.banco.titular)}${TIENDA.banco.cedula ? bankRow('Cédula', TIENDA.banco.cedula) : ''}</div>
-       </section>
-       <section class="co-sec"><h3><span class="n">4</span>Sube tu comprobante</h3>
-         <label class="upload" for="cFoto" id="upLabel">${ic('upload')}<span class="u-txt"><strong id="upTitle">Foto del comprobante</strong><small id="upSub">Toca para elegir la imagen</small></span><img id="upPrev" alt="Vista previa del comprobante" hidden></label>
+       <section class="co-sec"><h3><span class="n">2</span>Deposita ${money(a)} y sube la foto</h3>
+         <div class="bank">${bankRow(TIENDA.banco.banco + ' · ' + TIENDA.banco.tipo, TIENDA.banco.numero)}${bankRow('Titular', TIENDA.banco.titular)}</div>
+         <label class="upload" for="cFoto" id="upLabel">${ic('upload')}<span class="u-txt"><strong id="upTitle">Foto del comprobante</strong><small id="upSub">Toca para elegirla</small></span><img id="upPrev" alt="Vista previa del comprobante" hidden></label>
          <input id="cFoto" class="vh" type="file" accept="image/*">
          <p class="msg" data-for="cFoto"></p>
-         <div class="fields two">${field('cNum', 'N.º de comprobante', { val:d.cNum })}${field('cMonto', 'Monto depositado', { im:'decimal', max:8, ph:money(a).slice(1), val:d.cMonto })}</div>
        </section>
-       <section class="co-sec"><h3><span class="n">5</span>Condiciones</h3>
-         <ul class="terms"><li>El abono del 50% reserva tu pedido.</li><li>Entregamos tu pedido completo, en una sola entrega. No entregamos por partes ni productos sueltos.</li><li>Al recibir tu pedido pagas el 50% restante. Sin ese pago no se entrega.</li><li>El abono no se devuelve. Solo si algún producto de tu pedido no está disponible, te devolvemos el abono de ese producto (el 50% de su precio).</li><li>Confirmamos tu pedido cuando verificamos el depósito.</li><li>Entregamos en ${TIENDA.zona}. A otras ciudades enviamos por servicio de entrega y el costo del envío lo pagas aparte.</li></ul>
-         <label class="check" for="cTerms" id="termsLabel"><input id="cTerms" type="checkbox"><span class="box">${ic('check')}</span><span>Leí y acepto las condiciones de reserva</span></label>
-         <p class="msg" data-for="cTerms"></p>
-       </section>
+       <label class="check" for="cTerms" id="termsLabel"><input id="cTerms" type="checkbox"><span class="box">${ic('check')}</span><span>Acepto las condiciones de reserva</span></label>
+       <p class="msg" data-for="cTerms"></p>
+       <details class="terms-det"><summary>Ver condiciones</summary>
+         <ul class="terms"><li>El abono del 50% reserva tu pedido; lo confirmamos al verificar el depósito.</li><li>Entregamos todo el pedido junto, no por partes, y al recibirlo pagas el 50% restante.</li><li>El abono no se devuelve, salvo la parte de un producto que no esté disponible.</li><li>Fuera de ${TIENDA.zona}, el envío por servicio de entrega se paga aparte.</li></ul></details>
        <p class="form-error" id="coErr" role="alert" hidden></p>
      </form>`,
     `<button class="btn primary" type="submit" form="coForm">Enviar pedido</button>`);
@@ -1534,18 +1536,12 @@ async function submitCheckout() {
   const form = $('#coForm'); if (!form || sending) return;
   const v = id => (($('#' + id) || {}).value || '').trim();
   const { t, a } = totals();
-  const monto = parseFloat(v('cMonto').replace(',', '.'));
   const e = {};
-  if (v('cNombre').length < 2) e.cNombre = 'Escribe tu nombre.';
-  if (v('cApellido').length < 2) e.cApellido = 'Escribe tu apellido.';
-  if (!cedulaOk(v('cCedula'))) e.cCedula = 'Revisa tu cédula: deben ser 10 dígitos válidos.';
-  if (!/^09\d{8}$/.test(v('cCel'))) e.cCel = 'Escribe tu celular de 10 dígitos, empieza con 09.';
+  if (v('cNombre').length < 3) e.cNombre = 'Escribe tu nombre y apellido.';
+  if (!/^09\d{8}$/.test(v('cCel'))) e.cCel = 'Celular de 10 dígitos, empieza con 09.';
   if (v('cCiudad').length < 3) e.cCiudad = 'Escribe tu ciudad o cantón.';
-  if (v('cDir').length < 8) e.cDir = 'Escribe tu dirección con una referencia para encontrarte.';
+  if (v('cDir').length < 5) e.cDir = 'Escribe tu dirección con una referencia.';
   if (!$('#cFoto').files.length) e.cFoto = 'Sube la foto de tu comprobante.';
-  if (v('cNum').length < 4) e.cNum = 'Escribe el número que aparece en tu comprobante.';
-  if (!(monto > 0)) e.cMonto = 'Escribe el monto que depositaste.';
-  else if (monto + 0.005 < a) e.cMonto = `El abono es ${money(a)}. Revisa el monto.`;
   if (!$('#cTerms').checked) e.cTerms = 'Acepta las condiciones para enviar el pedido.';
   $$('.msg', form).forEach(m => {
     const id = m.dataset.for; m.textContent = e[id] || '';
@@ -1565,15 +1561,15 @@ async function submitCheckout() {
   if (mal) { openProduct(mal.p.id, mal.k); toast(`Elige ${faltaElegir(mal.p)} de ${mal.p.name}`, 3500); return; }
   const now = new Date().toISOString();
   const items = cartLines().map(({ p, q, o }) => ({ id: p.id, name: p.name, price: p.price, qty: q, opcion: optNorm(p, o) || '' }));
-  const order = { code: '', date: now, name: v('cNombre'), last: v('cApellido'), phone: v('cCel'),
+  const order = { code: '', date: now, name: v('cNombre').replace(/\s+/g, ' '), last: '', phone: v('cCel'),
     city: v('cCiudad'), address: v('cDir').replace(/\s+/g, ' '),
-    items, total: t, abono: a, status: 'pendiente', receipt: { num: v('cNum'), amount: monto }, termsAt: now };
+    items, total: t, abono: a, status: 'pendiente', receipt: {}, termsAt: now };
   if (LIVE) {
     const btn = $('#sheetFoot .btn'), errBox = $('#coErr');
     sending = true; btn.disabled = true; btn.textContent = 'Enviando pedido…'; errBox.hidden = true;
     try {
       const photo = await compressImage($('#cFoto').files[0]);
-      const r = await api({ action: 'order', name: order.name, last: order.last, cedula: v('cCedula'), phone: order.phone,
+      const r = await api({ action: 'order', name: order.name, last: '', cedula: '', phone: order.phone,
         city: order.city, address: order.address, items, total: t, receipt: order.receipt, photo, terms: true });
       if (!r || !r.ok) { const e = new Error((r && r.error) || 'No se pudo enviar el pedido.'); e.server = true; e.code = r && r.code; throw e; }
       order.code = r.code; order.date = r.date || now; order.total = r.total; order.abono = r.abono;
@@ -1599,14 +1595,16 @@ async function submitCheckout() {
   updateBadge(); renderOrders();
   openSuccess(order);
 }
-/* ---------- Pedido por WhatsApp ----------
-   La clienta arma su carrito y con un solo toque lo envía por WhatsApp a la tienda; el abono se coordina por chat.
-   Al tocar, el carrito se registra en Google con un código (sin datos personales) para el resumen de la tienda. */
+/* ---------- Compartir carrito ----------
+   La clienta arma su carrito y lo comparte con las opciones de su celular (WhatsApp, Telegram, correo...).
+   Al compartirlo, el carrito se registra en Google con un código (sin datos personales) para el resumen de la tienda;
+   el abono y la entrega se coordinan por chat. */
 const WA = () => String(TIENDA.whatsapp || '').replace(/\D/g, '');
 const linkPedido = code => `${location.origin}${location.pathname}#pedido-${code}`;
-let waCode = '';
+const esCompartido = o => o && (o.via === 'compartido' || o.via === 'whatsapp');
+let waCode = '', compartiendo = null;
 function itemsCarrito() { return cartLines().map(({ p, q, o }) => ({ id: p.id, name: p.name, price: p.price, qty: q, opcion: optNorm(p, o) || '' })); }
-function textoWhatsapp(o) {
+function textoPedido(o) {
   const L = [`Hola, quiero hacer este pedido en ${TIENDA.nombre} 🛍️`];
   if (o.code) L.push(`Código: ${o.code}`);
   L.push('');
@@ -1619,23 +1617,47 @@ function textoWhatsapp(o) {
   L.push('', 'Mi nombre: ', 'Ciudad y dirección de entrega: ');
   return L.join('\n');
 }
-const urlWhatsapp = o => `https://wa.me/${WA()}?text=${encodeURIComponent(textoWhatsapp(o))}`;
 function pedidoCarrito() {
   const { t, a } = totals();
   if (!waCode) waCode = newCode();
-  return { code: waCode, date: new Date().toISOString(), name: '', last: '', phone: '', city: '', address: '', items: itemsCarrito(), total: t, abono: a, status: 'pendiente', via: 'whatsapp' };
+  return { code: waCode, date: new Date().toISOString(), name: '', last: '', phone: '', city: '', address: '', items: itemsCarrito(), total: t, abono: a, status: 'pendiente', via: 'compartido' };
 }
-function waPie() {
+const conNombres = o => ({ ...o, items: (o.items || []).map(it => ({ ...it, name: it.name || (byId[it.id] || {}).name || it.id, price: it.price != null ? it.price : (byId[it.id] || {}).price || 0 })) });
+// abre las opciones para compartir del celular; si el navegador no las tiene (algunas computadoras), un menú propio
+async function compartir(o, nuevo) {
+  const text = textoPedido(o);
+  if (navigator.share) {
+    try { await navigator.share({ title: `Pedido ${o.code} · ${TIENDA.nombre}`, text }); }
+    catch (e) { if (e && e.name === 'AbortError') return; openMenuCompartir(o, text, nuevo); return; }
+    if (nuevo) pedidoCompartido(o);
+    return;
+  }
+  openMenuCompartir(o, text, nuevo);
+}
+function compartirCarrito() {
   const mal = lineMal();
-  // si falta elegir color o modelo, el botón lleva a elegirlo; si no, es un enlace directo a WhatsApp (abre la app al instante)
-  const btn = mal ? `<button class="btn wa" type="button" data-act="checkout">${ic('chat')}Enviar pedido por WhatsApp</button>`
-    : `<a class="btn wa" href="${urlWhatsapp(pedidoCarrito())}" target="_blank" rel="noopener" data-act="wa">${ic('chat')}Enviar pedido por WhatsApp</a>`;
-  return `<div class="foot-stack">${btn}<button class="link-btn plain wa-alt" type="button" data-act="checkout">O reserva aquí con tu comprobante de depósito</button></div>`;
+  if (mal) { openProduct(mal.p.id, mal.k); toast(`Elige ${faltaElegir(mal.p)} de ${mal.p.name}`, 3500); return; }
+  const o = pedidoCarrito(); if (!o.items.length) return;
+  compartir(o, true);
 }
-// al tocar el enlace: se registra el carrito (sin esperar) y queda en "Mis pedidos"; WhatsApp se abre solo con el enlace
-function enviarWhatsapp(a) {
-  const o = pedidoCarrito();
-  if (!o.items.length) return;
+function openMenuCompartir(o, text, nuevo) {
+  compartiendo = nuevo ? o : null;
+  const t = encodeURIComponent(text);
+  const opc = [
+    ['WhatsApp', 'chat', `https://wa.me/${WA()}?text=${t}`],
+    ['Telegram', 'share', `https://t.me/share/url?url=${encodeURIComponent(linkPedido(o.code))}&text=${t}`],
+    ['Correo', 'mail', `mailto:?subject=${encodeURIComponent(`Pedido ${o.code} · ${TIENDA.nombre}`)}&body=${t}`]
+  ];
+  openSheet('share', 'Compartir carrito',
+    `<p class="muted">Elige por dónde enviarlo:</p>
+     <div class="share-opts">${opc.map(([n, i, u]) => `<a class="share-opt" href="${esc(u)}" target="_blank" rel="noopener" data-act="compartido">${ic(i)}<span>${n}</span></a>`).join('')}
+       <button class="share-opt" type="button" data-act="copiarpedido">${ic('copy')}<span>Copiar texto</span></button></div>
+     <textarea class="share-txt" id="shareTxt" readonly aria-label="Texto del pedido">${esc(text)}</textarea>`, '');
+}
+// ya compartido: se registra (sin esperar), queda en "Mis pedidos" y se vacía el carrito
+function pedidoCompartido(o) {
+  if (!o) return;
+  compartiendo = null;
   if (LIVE) {
     try {
       fetch(TIENDA.api, { method: 'POST', keepalive: true, headers: { 'Content-Type': 'text/plain;charset=utf-8' },
@@ -1644,14 +1666,12 @@ function enviarWhatsapp(a) {
   }
   orders = orders.filter(x => x.code !== o.code); orders.unshift(o); store.set('vt-orders', orders); renderOrders();
   cart = {}; saveCart(); updateBadge(); waCode = '';
-  const url = a.getAttribute('href');
-  setTimeout(() => openSheet('success', 'Pedido listo',
-    `<div class="done"><span class="done-ic wa-ic">${ic('chat')}</span><p class="done-t">Envía el mensaje en WhatsApp</p>
-      <p class="muted">Se abrió WhatsApp con tu pedido escrito. Solo toca enviar; por ahí te confirmamos y te pasamos los datos para el abono del 50%.</p>
-      <div class="code-box"><span>Tu código de pedido</span><strong>${o.code}</strong><button class="copy-lg" type="button" data-act="copy" data-v="${o.code}">${ic('copy')}Copiar código</button></div>
-      <p class="ship-mini done-pay">${ic('cash')}<span>Te entregamos el pedido completo, no por partes. Al recibirlo pagas el saldo de ${money(o.total - o.abono)}.</span></p></div>`,
-    `<div class="foot-stack"><a class="btn wa" href="${esc(url)}" target="_blank" rel="noopener">${ic('chat')}Abrir WhatsApp otra vez</a>
-      <button class="btn secondary" type="button" data-act="order" data-code="${o.code}">Ver mi pedido</button></div>`), 60);
+  setTimeout(() => openSheet('success', 'Carrito enviado',
+    `<div class="done"><span class="done-ic">${ic('check')}</span><p class="done-t">¡Listo! Tu pedido es el ${o.code}</p>
+      <p class="muted">Te respondemos por ese chat con los datos para el abono del 50%.</p>
+      <p class="ship-mini done-pay">${ic('cash')}<span>Te entregamos todo junto y pagas el saldo de ${money(o.total - o.abono)} al recibir.</span></p></div>`,
+    `<div class="foot-stack"><button class="btn secondary" type="button" data-act="reshare" data-code="${o.code}">${ic('share')}Compartir otra vez</button>
+      <button class="btn primary" type="button" data-act="order" data-code="${o.code}">Ver mi pedido</button></div>`), 80);
 }
 
 function openSuccess(o) {
@@ -1688,14 +1708,14 @@ function openOrderObj(o) {
   openSheet('order', 'Mi pedido',
     `${o.example ? '<p class="demo-note">Pedido de ejemplo para mostrar el seguimiento.</p>' : ''}
      <div class="od-head"><div><p class="od-code">${o.code}</p><p class="muted sm">${fmtDate(o.date)}</p></div>${statusPill(o.status)}</div>
-     ${o.via === 'whatsapp' && o.status === 'pendiente' ? `<p class="ship-note ok">${ic('chat')}<span>Pedido enviado por WhatsApp. Por ahí te confirmamos y te pasamos los datos para el abono del 50%.</span></p>` : ''}
-     ${o.status === 'rechazado' ? `<p class="rejected">No pudimos verificar tu comprobante. ${TIENDA.whatsapp ? 'Escríbenos por WhatsApp para revisarlo.' : 'Comunícate con la tienda para revisarlo.'}</p>` : `<ol class="timeline">${STEPS.map((s, i) => `<li class="${i < idx ? 'is-done' : i === idx ? 'is-now' : ''}"><span class="tl-dot">${i < idx ? ic('check', 2.6) : ''}</span><div><p class="tl-t">${s[1]}</p>${i <= idx ? `<p class="tl-d">${o.via === 'whatsapp' && i === 0 ? 'Recibimos tu pedido por WhatsApp. Te confirmamos por ahí cuando recibamos el abono.' : s[2]}</p>` : ''}</div></li>`).join('')}</ol>`}
+     ${esCompartido(o) && o.status === 'pendiente' ? `<p class="ship-note ok">${ic('chat')}<span>Carrito enviado por chat. Por ahí te confirmamos y te pasamos los datos para el abono del 50%.</span></p>` : ''}
+     ${o.status === 'rechazado' ? `<p class="rejected">No pudimos verificar tu comprobante. ${TIENDA.whatsapp ? 'Escríbenos por WhatsApp para revisarlo.' : 'Comunícate con la tienda para revisarlo.'}</p>` : `<ol class="timeline">${STEPS.map((s, i) => `<li class="${i < idx ? 'is-done' : i === idx ? 'is-now' : ''}"><span class="tl-dot">${i < idx ? ic('check', 2.6) : ''}</span><div><p class="tl-t">${s[1]}</p>${i <= idx ? `<p class="tl-d">${esCompartido(o) && i === 0 ? 'Te confirmamos por el chat cuando recibamos el abono.' : s[2]}</p>` : ''}</div></li>`).join('')}</ol>`}
      <h3 class="od-sub">Productos</h3>
      <ul class="lines">${rows}</ul>
      ${o.city ? `<h3 class="od-sub">Entrega</h3><p class="ship-note">${ic(esLocal(o.city) ? 'pin' : 'truck')}<span>${esc(o.address)}, ${esc(o.city)}${esLocal(o.city) ? '' : '<br>Envío por servicio de entrega, con costo aparte.'}</span></p>` : ''}
      <dl class="sum"><div><dt>Total</dt><dd>${money(o.total)}</dd></div><div><dt>Abono</dt><dd>${money(o.abono)}</dd></div><div class="hl"><dt>Saldo a pagar al recibir</dt><dd>${money(o.total - o.abono)}</dd></div></dl>
      <p class="ship-mini">${ic('cash')}<span>Entregamos el pedido completo, no por partes. El saldo se paga al recibirlo.</span></p>`,
-    `${o.via === 'whatsapp' && WA() && !getPin() && o.items && o.items.length && o.status === 'pendiente' ? `<a class="btn wa" href="${esc(urlWhatsapp({ ...o, items: o.items.map(it => ({ ...it, name: it.name || (byId[it.id] || {}).name || it.id, price: it.price != null ? it.price : (byId[it.id] || {}).price || 0 })) }))}" target="_blank" rel="noopener">${ic('chat')}Enviar por WhatsApp</a>` : ''}
+    `${esCompartido(o) && !getPin() && orders.some(x => x.code === o.code) && o.status === 'pendiente' ? `<button class="btn primary" type="button" data-act="reshare" data-code="${o.code}">${ic('share')}Compartir otra vez</button>` : ''}
      ${LIVE && !REVIEW && getPin() ? `<button class="btn secondary" type="button" data-act="verrv" data-code="${o.code}">${ic('shield')}Ver detalle para la tienda</button>` : ''}
      ${orders.some(x => x.code === o.code) ? `<div class="ord-rm" id="ordRm"><button class="btn secondary" type="button" data-act="ordrm" data-code="${o.code}">${ic('trash')}Quitar de Mis pedidos</button></div>` : ''}`.trim());
 }
@@ -1791,7 +1811,10 @@ document.addEventListener('click', e => {
     case 'clearno': $('#cartClear').innerHTML = clearBtn(); break;
     case 'clearyes': cart = {}; saveCart(); updateBadge(); openCart(); toast('Carrito vacío'); break;
     case 'checkout': openCheckout(); break;
-    case 'wa': enviarWhatsapp(t); break;
+    case 'share': compartirCarrito(); break;
+    case 'compartido': if (compartiendo) { const o = compartiendo; setTimeout(() => pedidoCompartido(o), 400); } break;
+    case 'copiarpedido': { const tx = $('#shareTxt'); copyText(tx ? tx.value : ''); if (compartiendo) { const o = compartiendo; setTimeout(() => pedidoCompartido(o), 1200); } break; }
+    case 'reshare': { const o = allOrders().find(x => x.code === t.dataset.code); if (o) compartir(conNombres(o), false); break; }
     case 'browse': closeSheet(); setView('tienda'); break;
     case 'copy': copyText(t.dataset.v); break;
     case 'order': openOrder(t.dataset.code); break;
@@ -2145,7 +2168,7 @@ function renderReviewBar() {
 const OP_LABEL = { pendiente: 'Pendiente', aprobado: 'Aprobado', camino: 'En camino', entregado: 'Entregado', rechazado: 'Rechazado' };
 let rvTab = 'productos', rvOrders = [], rvOrdersOk = false, rvFilter = 'todos', rvQuery = '', rvBusy = false;
 // versión del programa de Google (google-apps-script/Codigo.gs) que necesita esta página
-const GAS_VERSION = '2026-11-20e';
+const GAS_VERSION = '2026-11-21';
 var gasVieja = false;
 const GAS_MSG = 'El programa de Google de la tienda está desactualizado. Copia otra vez Codigo.gs en Apps Script e implementa una nueva versión (Implementar → Administrar implementaciones → editar → Nueva versión).';
 function verGas(r) {
@@ -2186,7 +2209,7 @@ function renderOrderList() {
   if (!list.length) return `<p class="empty">${rvQuery ? 'No hay pedidos que coincidan con la búsqueda.' : rvOrdersOk ? 'Todavía no hay pedidos con este estado.' : ''}</p>`;
   return list.map(o => `<button class="rv-order${o.alertas ? ' alert' : ''}" type="button" data-act="rvorder" data-code="${esc(o.code)}">
       <span class="rv-o-top"><strong>${esc(o.code)}</strong><span class="op-pill" data-s="${o.estado}">${OP_LABEL[o.estado]}</span></span>
-      <span class="rv-o-name">${o.envio === 'Por WhatsApp' && !o.nombre ? `<span class="rv-wa">${ic('chat')}Pedido por WhatsApp</span>` : `${esc(o.nombre)} ${esc(o.apellido)}`}</span>
+      <span class="rv-o-name">${/compartido|whatsapp/i.test(o.envio) && !o.nombre ? `<span class="rv-wa">${ic('share')}Carrito compartido</span>` : `${esc(o.nombre)} ${esc(o.apellido)}`}</span>
       <span class="rv-meta">${esc(o.fecha)} · Total ${money(o.total)} · Abono ${money(o.abono)}</span>
       ${(() => { const t = [...new Set(String(o.codigos || '').split(',').map(x => origenDe(x.trim().split(/\s+/)[0])).filter(Boolean).map(x => x.tienda))]; return t.length ? `<span class="rv-o-prov">${ic('store')}${t.map(esc).join(' · ')}</span>` : ''; })()}
       ${o.alertas ? `<span class="rv-o-alert">${ic('warn')}Revisar comprobante</span>` : ''}</button>`).join('');
@@ -2214,7 +2237,7 @@ function openRvOrder(code) {
       return `<li${th ? ' class="rv-pi"' : ''}>${th ? `<img class="rv-pimg" src="${esc(th)}" alt="" loading="lazy">` : ''}<span>${esc(sinOpc)}${id ? ` <small class="muted">${esc(id)}</small>` : ''}${opc ? `<span class="rv-opt">${esc(opc)}</span>` : ''}</span>${pr ? `<a class="rv-prov" href="${esc(pr.url || '#')}" target="_blank" rel="noopener">${ic('store')}<span>Pedir en <b>${esc(pr.tienda)}</b> · ${esc(pr.ref)}${pr.contacto ? `<br>Contacto: ${esc(pr.contacto)}` : ''}</span>${ic('link')}</a>` : (o.proveedor ? '' : `<span class="rv-prov off">Proveedor sin dato</span>`)}</li>`; }).join('')}</ul>
     ${!Object.keys(ORIGEN).length && o.proveedor ? `<p class="rv-note">${ic('store')}<span>${esc(o.proveedor)}</span></p>` : ''}
     <dl class="sum"><div><dt>Total</dt><dd>${money(o.total)}</dd></div><div class="hl"><dt>Abono</dt><dd>${money(o.abono)}</dd></div><div><dt>Saldo por cobrar</dt><dd>${money(o.saldo)}</dd></div></dl>
-    ${o.envio === 'Por WhatsApp' && !o.num ? `<p class="ship-note ok">${ic('chat')}<span>Pedido enviado por WhatsApp. El abono y los datos de entrega se coordinan por chat. Cuando recibas el abono, márcalo como Aprobado.</span></p>` : `<h3 class="od-sub">Comprobante</h3>
+    ${/compartido|whatsapp/i.test(o.envio) && !o.foto ? `<p class="ship-note ok">${ic('share')}<span>Carrito compartido por chat. El abono y los datos de entrega se coordinan por ahí. Cuando recibas el abono, márcalo como Aprobado.</span></p>` : `<h3 class="od-sub">Comprobante</h3>
     <dl class="sum rv-dl"><div><dt>N.º</dt><dd>${esc(o.num) || '-'}</dd></div><div><dt>Monto depositado</dt><dd>${money(o.monto)}</dd></div>${o.lectura ? `<div><dt>Lectura de la foto</dt><dd>${esc(o.lectura)}</dd></div>` : ''}</dl>
     ${o.foto ? `<button class="btn secondary rv-releer" type="button" data-act="rvreleer" data-code="${esc(o.code)}">${ic('refresh')}Volver a leer el comprobante</button>` : ''}
     `}${o.nombre || o.celular ? `<h3 class="od-sub">Clienta</h3>
@@ -2516,7 +2539,7 @@ if (REVIEW) {
   }
 }
 $('#trackHint').hidden = LIVE;
-if (WA()) { $('#how2t').textContent = 'Envía tu pedido por WhatsApp'; $('#how2d').textContent = 'Desde el carrito, con un solo botón. Por ahí te pasamos los datos para el abono del 50%.'; }
+$('#how2t').textContent = 'Comparte tu carrito'; $('#how2d').textContent = 'Envíalo por WhatsApp u otra app. Por ahí te pasamos los datos para el abono del 50%.';
 renderChips(); renderGrid(); renderOrders(); updateBadge(); deadline(); footNote();
 loadCatalog();
 visInit();
@@ -2525,7 +2548,7 @@ if (!REVIEW && !store.get('vt-welcome', 0)) {
     `<div class="welcome"><p class="welcome-intro">Productos para tu hogar, tu cocina y tu cuidado personal. Así funciona:</p>
       <ol class="w-steps">
         <li><span class="step-n">1</span><div><strong>Elige y agrega al carrito</strong><p>Toca un producto para ver sus fotos y detalles.</p></div></li>
-        <li><span class="step-n">2</span><div><strong>${WA() ? 'Envía tu pedido por WhatsApp' : 'Reserva con el 50%'}</strong><p>${WA() ? 'Desde el carrito, con un solo botón. Por ahí te confirmamos y te pasamos los datos para el abono del 50%.' : 'Deposita el abono a nuestra cuenta y sube la foto del comprobante.'}</p></div></li>
+        <li><span class="step-n">2</span><div><strong>Comparte tu carrito</strong><p>Envíalo por WhatsApp u otra app. Por ahí te pasamos los datos para el abono del 50%.</p></div></li>
         <li><span class="step-n">3</span><div><strong>Sigue tu pedido</strong><p>Recibes un código para ver si está aprobado, en camino o entregado.</p></div></li>
         <li><span class="step-n">4</span><div><strong>Recibe todo junto</strong><p>Te entregamos el pedido completo, no por partes, y pagas el 50% restante al recibirlo.</p></div></li>
       </ol>

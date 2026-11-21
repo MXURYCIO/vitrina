@@ -842,13 +842,13 @@ body.rv-ped #tools,body.rv-ped .sec-head,body.rv-ped #grid,body.rv-ped #empty{di
     </header>
     <form class="track" id="trackForm" novalidate>
       <h2>Buscar un pedido</h2>
-      <div class="fields two">
+      <div class="fields">
         <div class="field"><label for="tCode">Código de pedido</label><input id="tCode" type="text" placeholder="PED-H4QX" autocomplete="off" autocapitalize="characters" spellcheck="false"></div>
-        <div class="field"><label for="tPhone">Últimos 4 del celular (si lo diste)</label><input id="tPhone" type="text" inputmode="numeric" maxlength="4" placeholder="1234" autocomplete="off"></div>
+        <div class="field" id="tPhoneF" hidden><label for="tPhone">Últimos 4 dígitos de tu celular</label><input id="tPhone" type="text" inputmode="numeric" maxlength="4" placeholder="1234" autocomplete="off"></div>
       </div>
       <p class="form-error" id="trackErr" role="alert" hidden></p>
       <button class="btn primary" type="submit">Ver estado</button>
-      <p class="hint" id="trackHint">Prueba con el pedido de ejemplo: PED-H4QX y 1234.</p>
+      <p class="hint" id="trackHint">Prueba con el pedido de ejemplo: PED-H4QX.</p>
     </form>
     <h2 class="sec-title" id="ordersHead">En este celular</h2>
     <div class="order-list" id="orderList"></div>
@@ -1719,8 +1719,10 @@ function pedidoCompartido(o) {
   orders = orders.filter(x => x.code !== o.code); orders.unshift(o); store.set('vt-orders', orders); renderOrders();
   cart = {}; saveCart(); updateBadge(); waCode = '';
   setTimeout(() => openSheet('success', 'Carrito enviado',
-    `<div class="done"><span class="done-ic">${ic('check')}</span><p class="done-t">¡Listo! Tu pedido es el ${o.code}</p>
+    `<div class="done"><span class="done-ic">${ic('check')}</span><p class="done-t">¡Listo! Carrito enviado</p>
       <p class="muted">Te respondemos por ese chat con los datos para el abono del 50%.</p>
+      <div class="code-box"><span>Tu código de pedido</span><strong>${o.code}</strong><button class="copy-lg" type="button" data-act="copy" data-v="${o.code}">${ic('copy')}Copiar código</button></div>
+      <p class="muted sm">Guárdalo: con este código ves cómo va tu pedido en "Mis pedidos".</p>
       <p class="ship-mini done-pay">${ic('cash')}<span>Te entregamos todo junto y pagas el saldo de ${money(o.total - o.abono)} al recibir.</span></p></div>`,
     `<div class="foot-stack"><button class="btn secondary" type="button" data-act="reshare" data-code="${o.code}">${ic('share')}Compartir otra vez</button>
       <button class="btn primary" type="button" data-act="order" data-code="${o.code}">Ver mi pedido</button></div>`), 80);
@@ -1731,7 +1733,7 @@ function openSuccess(o) {
   openSheet('success', 'Pedido enviado',
     `<div class="done"><span class="done-ic">${ic('check')}</span><p class="done-t">Recibimos tu pedido</p><p class="muted">Revisaremos tu comprobante y actualizaremos el estado.</p>
       <div class="code-box"><span>Tu código de pedido</span><strong>${o.code}</strong><button class="copy-lg" type="button" data-act="copy" data-v="${o.code}">${ic('copy')}Copiar código</button></div>
-      <p class="muted sm">Para ver tu pedido usa este código y los últimos 4 dígitos de tu celular (${o.phone.slice(-4)}).</p>
+      <p class="muted sm">Guárdalo: con este código ves cómo va tu pedido en "Mis pedidos".</p>
       <p class="ship-mini done-pay">${ic('cash')}<span>Te entregamos el pedido completo, no por partes. Al recibirlo pagas el saldo de ${money(o.total - o.abono)}.</span></p></div>`,
     `<div class="foot-stack">${TIENDA.whatsapp ? `<a class="btn primary" href="https://wa.me/${TIENDA.whatsapp}?text=${encodeURIComponent(text)}" target="_blank" rel="noopener">${ic('chat')}Enviar por WhatsApp</a>` : ''}
       <button class="btn ${TIENDA.whatsapp ? 'secondary' : 'primary'}" type="button" data-act="order" data-code="${o.code}">Ver mi pedido</button></div>`);
@@ -1777,7 +1779,7 @@ async function refreshOrders() {
   if (!LIVE || refreshing || !orders.length) return;
   refreshing = true;
   try {
-    const r = await api({ action: 'trackMany', list: orders.slice(0, 20).map(o => ({ code: o.code, last4: String(o.phone).slice(-4) })) });
+    const r = await api({ action: 'trackMany', list: orders.slice(0, 20).map(o => ({ code: o.code, last4: String(o.phone || '').replace(/\D/g, '').slice(-4) })) });
     if (r && r.ok) {
       r.orders.forEach(u => { const o = orders.find(x => x.code === u.code); if (o) o.status = u.status; });
       store.set('vt-orders', orders); renderOrders();
@@ -1946,42 +1948,49 @@ $('#q').addEventListener('keydown', e => { if (e.key === 'Enter') e.target.blur(
 async function consultarPedido(raw, l4) {
   const code = 'PED-' + String(raw || '').toUpperCase().replace(/[^A-Z0-9]/g, '').replace(/^(PED|VT)/, '');
   l4 = String(l4 || '').trim();
-  if (code.length < 8 || !(/^\d{4}$/.test(l4) || l4 === '')) return { error: 'Escribe el código y, si diste tu celular, sus últimos 4 dígitos.' };
-  const local = allOrders().find(x => x.code === code && (l4 ? String(x.phone).slice(-4) === l4 : !x.phone));
-  const nada = 'No encontramos un pedido con esos datos. Revisa el código y el celular.';
+  if (code.length < 8) return { error: 'Escribe el código de tu pedido. Empieza con PED-, por ejemplo PED-H4QX.' };
+  if (!(/^\d{4}$/.test(l4) || l4 === '')) return { error: 'Escribe los 4 últimos dígitos de tu celular.' };
+  const local = allOrders().find(x => x.code === code);   // pedidos guardados en este mismo celular
+  const nada = 'No encontramos un pedido con ese código. Revísalo e inténtalo de nuevo.';
   if (!LIVE) return local ? { order: local } : { error: nada };
   try {
-    const r = await api({ action: 'track', code, last4: l4 });
-    if (!r || !r.ok) return { error: nada };
+    const r = await api({ action: 'track', code, last4: l4 || (local && local.phone ? String(local.phone).slice(-4) : '') });
+    if (r && r.need4) return { need4: true, error: r.error };   // pedido anterior al 21 de noviembre
+    if (r && !r.ok && /Demasiadas/.test(r.error || '')) return { error: r.error };
+    if (!r || !r.ok) return { error: l4 ? 'No encontramos un pedido con ese código y esos 4 dígitos.' : nada };
     if (local) { local.status = r.status; store.set('vt-orders', orders); renderOrders(); }
     return { order: local ? { ...local, status: r.status } : r };   // r.via = 'whatsapp' en los pedidos enviados por WhatsApp
   } catch (x) { return { error: 'No se pudo consultar. Revisa tu conexión e inténtalo de nuevo.' }; }
 }
+$('#tCode').addEventListener('input', () => { $('#tPhoneF').hidden = true; $('#tPhone').value = ''; $('#trackErr').hidden = true; });
 $('#trackForm').addEventListener('submit', async e => {
   e.preventDefault();
   const err = $('#trackErr'), btn = $('#trackForm .btn');
   btn.disabled = true; btn.textContent = 'Buscando…';
-  const r = await consultarPedido($('#tCode').value, $('#tPhone').value);
+  const r = await consultarPedido($('#tCode').value, $('#tPhoneF').hidden ? '' : $('#tPhone').value);
   btn.disabled = false; btn.textContent = 'Ver estado';
+  if (r.need4) { $('#tPhoneF').hidden = false; $('#tPhone').focus(); }
   if (r.error) { err.textContent = r.error; err.hidden = false; return; }
   err.hidden = true; openOrderObj(r.order);
 });
 function openTrack() {
   const ult = orders[0];
   openSheet('track', 'Checa tu pedido',
-    `<form id="trackSheet" class="rv-form" novalidate><p class="muted">Escribe el código de tu pedido. Si lo hiciste aquí con tu comprobante, pon también los últimos 4 dígitos de tu celular.</p>
-      ${field('sCode', 'Código de pedido', { ph: 'PED-H4QX', val: ult ? ult.code : '' })}${field('sPhone', 'Últimos 4 del celular (si lo diste)', { im: 'numeric', max: 4, ph: '1234', val: ult ? String(ult.phone || '').slice(-4) : '' })}
+    `<form id="trackSheet" class="rv-form" novalidate><p class="muted">Escribe el código de tu pedido. Lo recibiste al hacerlo y empieza con PED-.</p>
+      ${field('sCode', 'Código de pedido', { ph: 'PED-H4QX', val: ult ? ult.code : '' })}<div id="sPhoneF" hidden>${field('sPhone', 'Últimos 4 dígitos de tu celular', { im: 'numeric', max: 4, ph: '1234' })}</div>
       <p class="form-error" id="sErr" role="alert" hidden></p></form>`,
     `<button class="btn primary" type="submit" form="trackSheet">Ver estado</button>`);
   const c = $('#sCode'); c.setAttribute('autocapitalize', 'characters'); c.setAttribute('spellcheck', 'false');
+  c.addEventListener('input', () => { $('#sPhoneF').hidden = true; $('#sPhone').value = ''; $('#sErr').hidden = true; });
   if (!ult) setTimeout(() => c.focus({ preventScroll: true }), 320);
 }
 async function submitTrackSheet() {
   const err = $('#sErr'), btn = $('#sheetFoot .btn'); if (!err || !btn) return;
   btn.disabled = true; btn.textContent = 'Buscando…';
-  const r = await consultarPedido($('#sCode').value, $('#sPhone').value);
+  const r = await consultarPedido($('#sCode').value, $('#sPhoneF').hidden ? '' : $('#sPhone').value);
   if (!$('#sErr')) return;
   btn.disabled = false; btn.textContent = 'Ver estado';
+  if (r.need4) { $('#sPhoneF').hidden = false; $('#sPhone').focus(); }
   if (r.error) { err.textContent = r.error; err.hidden = false; return; }
   openOrderObj(r.order);
 }
@@ -2227,7 +2236,7 @@ function renderReviewBar() {
 const OP_LABEL = { pendiente: 'Pendiente', aprobado: 'Aprobado', camino: 'En camino', entregado: 'Entregado', rechazado: 'Rechazado' };
 let rvTab = 'productos', rvOrders = [], rvOrdersOk = false, rvFilter = 'todos', rvQuery = '', rvBusy = false;
 // versión del programa de Google (google-apps-script/Codigo.gs) que necesita esta página
-const GAS_VERSION = '2026-11-21';
+const GAS_VERSION = '2026-11-21b';
 var gasVieja = false;
 const GAS_MSG = 'El programa de Google de la tienda está desactualizado. Copia otra vez Codigo.gs en Apps Script e implementa una nueva versión (Implementar → Administrar implementaciones → editar → Nueva versión).';
 function verGas(r) {

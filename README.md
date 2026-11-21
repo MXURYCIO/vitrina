@@ -52,7 +52,11 @@ Para volver arriba se toca la barra "↑ Tienda Online" que aparece arriba al ba
 
 ## Estados de un pedido
 
-Se cambian en la columna **Estado** de la hoja: Pendiente, Aprobado, En camino, Entregado o Rechazado. La clienta ve el cambio al consultar su pedido con el código y los últimos 4 dígitos de su celular.
+Se cambian en la columna **Estado** de la hoja: Pendiente, Aprobado, En camino, Entregado o Rechazado. La clienta ve el cambio al consultar su pedido en "Mis pedidos" con su código (PED-XXXX), que recibe al hacer el pedido y que también sale en la hoja, en el correo de aviso y en `#revisar`.
+
+- Desde el 21 de noviembre de 2026 basta el código. Los pedidos anteriores con celular piden además los últimos 4 dígitos (la página muestra ese campo solo cuando hace falta).
+- Cuando ya se hayan entregado todos los anteriores, para quitar ese paso: en `google-apps-script/Codigo.gs` cambiar `CODIGO_SOLO_DESDE` a `'2000-01-01'` y publicar una versión nueva del programa.
+- Hay un límite de 300 búsquedas fallidas por hora, para que nadie pruebe códigos al azar.
 
 ## Carga de productos nuevos (domingos, martes y jueves)
 

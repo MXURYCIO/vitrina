@@ -9,7 +9,7 @@
  */
 
 // Versión de este programa. La página de revisión avisa si en Google quedó una versión anterior.
-const VERSION = '2026-11-21';
+const VERSION = '2026-11-21b';
 
 const CONFIG = {
   HOJA: 'Pedidos',
@@ -22,6 +22,10 @@ const CONFIG = {
   MAX_PEDIDOS_POR_CELULAR_HORA: 5,
   MAX_PEDIDOS_POR_HORA: 40,
   MAX_CARRITOS_POR_HORA: 60,
+  // Desde esta fecha cada pedido se consulta solo con su código. Los anteriores con celular piden además sus
+  // últimos 4 dígitos. Cuando ya se hayan entregado todos los anteriores, poner '2000-01-01' para quitar ese paso.
+  CODIGO_SOLO_DESDE: '2026-11-21T00:00:00-05:00',
+  MAX_CONSULTAS_FALLIDAS_POR_HORA: 300,
   ZONA_LOCAL: ['La Maná', 'Guasaganda', 'Pucayacu'], // donde se entrega directamente; lo demás va por servicio de entrega
   CUENTA_DESTINO: '2216883431',                       // cuenta donde depositan (la misma que muestra la tienda)
   TITULAR_CLAVES: ['Yomaira', 'Moreira Litardo']      // partes del nombre del titular que pueden salir en el comprobante
@@ -865,18 +869,27 @@ function consultar_(code, last4) {
   code = String(code || '').toUpperCase().trim();
   last4 = String(last4 || '').trim();
   if (!/^PED-[A-Z0-9]{4}$/.test(code) || !(/^\d{4}$/.test(last4) || last4 === '')) return { ok: false, error: 'Datos incompletos.' };
+  // Límite de búsquedas fallidas por hora, para que nadie pruebe códigos al azar
+  const cache = CacheService.getScriptCache();
+  const fallidas = Number(cache.get('trackFail')) || 0;
+  if (fallidas >= CONFIG.MAX_CONSULTAS_FALLIDAS_POR_HORA) return { ok: false, error: 'Demasiadas búsquedas. Inténtalo en una hora.' };
+  const falla = (extra) => { cache.put('trackFail', String(fallidas + 1), 3600); return Object.assign({ ok: false, error: 'No encontrado.' }, extra || {}); };
   const sh = hoja_();
-  if (sh.getLastRow() < 2) return { ok: false, error: 'No encontrado.' };
+  if (sh.getLastRow() < 2) return falla();
   const celda = sh.getRange(2, C['Código'] + 1, sh.getLastRow() - 1, 1).createTextFinder(code).matchEntireCell(true).findNext();
-  if (!celda) return { ok: false, error: 'No encontrado.' };
+  if (!celda) return falla();
   const r = sh.getRange(celda.getRow(), 1, 1, COLS.length).getValues()[0];
-  // pedidos con celular: se piden sus últimos 4 dígitos; los enviados por WhatsApp (sin celular) se consultan solo con el código
+  // Pedidos desde CODIGO_SOLO_DESDE: basta el código. Anteriores con celular: también sus últimos 4 dígitos.
+  // Los carritos compartidos (sin celular) siempre se consultan solo con el código.
+  const fecha = r[C['Fecha']] instanceof Date ? r[C['Fecha']] : new Date(r[C['Fecha']]);
+  const soloCodigo = fecha.getTime() >= new Date(CONFIG.CODIGO_SOLO_DESDE).getTime();
   const cel = String(r[C['Celular']] || '').replace(/\D/g, '');
-  if (cel ? cel.slice(-4) !== last4 : r[C['Envío']] !== ENVIO_WA) return { ok: false, error: 'No encontrado.' };
+  if (!soloCodigo && cel && cel.slice(-4) !== last4) return last4 ? falla() : { ok: false, need4: true, error: 'Este pedido es anterior al 21 de noviembre: escribe también los últimos 4 dígitos de tu celular.' };
+  if (!soloCodigo && !cel && r[C['Envío']] !== ENVIO_WA) return falla();
   const items = codigosDeFila_(r);
   return {
     ok: true, code, status: ESTADO_KEY[r[C['Estado']]] || 'pendiente',
-    date: new Date(r[C['Fecha']]).toISOString(), total: Number(r[C['Total']]), abono: Number(r[C['Abono']]),
+    date: fecha.toISOString(), total: Number(r[C['Total']]), abono: Number(r[C['Abono']]),
     items, lines: String(r[C['Productos']]).split('\n').filter(Boolean), via: r[C['Envío']] === ENVIO_WA ? 'whatsapp' : ''
   };
 }
